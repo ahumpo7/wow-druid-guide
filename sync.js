@@ -6,14 +6,76 @@
 const fs = require('fs');
 const path = require('path');
 
-const questiePath = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\Questie.lua';
-const pawnPath = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\91\\Chongo-Darkwind\\SavedVariables\\Pawn.lua';
+function findGameFiles() {
+  const possibleBases = [
+    'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account',
+    'C:\\World of Warcraft\\_forever_\\WTF\\Account',
+    'D:\\World of Warcraft\\_forever_\\WTF\\Account',
+    'C:\\Games\\World of Warcraft\\_forever_\\WTF\\Account',
+    'D:\\Games\\World of Warcraft\\_forever_\\WTF\\Account',
+    'E:\\World of Warcraft\\_forever_\\WTF\\Account',
+  ];
+
+  let foundQuestie = null;
+  let foundPawn = null;
+
+  const defaultQuestie = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\Questie.lua';
+  const defaultPawn = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\91\\Chongo-Darkwind\\SavedVariables\\Pawn.lua';
+
+  if (fs.existsSync(defaultQuestie)) foundQuestie = defaultQuestie;
+  if (fs.existsSync(defaultPawn)) foundPawn = defaultPawn;
+
+  if (!foundQuestie || !foundPawn) {
+    for (const base of possibleBases) {
+      if (fs.existsSync(base)) {
+        try {
+          const accounts = fs.readdirSync(base);
+          for (const acc of accounts) {
+            const accDir = path.join(base, acc);
+            if (!fs.statSync(accDir).isDirectory()) continue;
+
+            const qCandidate = path.join(accDir, 'SavedVariables', 'Questie.lua');
+            if (!foundQuestie && fs.existsSync(qCandidate)) {
+              foundQuestie = qCandidate;
+            }
+
+            const subdirs = fs.readdirSync(accDir);
+            for (const sub of subdirs) {
+              const subDir = path.join(accDir, sub);
+              if (!fs.statSync(subDir).isDirectory()) continue;
+
+              const p1 = path.join(subDir, 'SavedVariables', 'Pawn.lua');
+              if (!foundPawn && fs.existsSync(p1) && sub.toLowerCase().includes('chongo')) {
+                foundPawn = p1;
+              }
+
+              try {
+                const charDirs = fs.readdirSync(subDir);
+                for (const cd of charDirs) {
+                  const charDir = path.join(subDir, cd);
+                  if (!fs.statSync(charDir).isDirectory()) continue;
+                  const p2 = path.join(charDir, 'SavedVariables', 'Pawn.lua');
+                  if (!foundPawn && fs.existsSync(p2) && cd.toLowerCase().includes('chongo')) {
+                    foundPawn = p2;
+                  }
+                }
+              } catch (_) {}
+            }
+          }
+        } catch (_) {}
+      }
+    }
+  }
+
+  return { questiePath: foundQuestie, pawnPath: foundPawn };
+}
 
 function runSync() {
+  const { questiePath, pawnPath } = findGameFiles();
   let name = 'Chongo';
-  let level = 11;
+  let level = 13;
 
-  if (fs.existsSync(questiePath)) {
+  if (questiePath && fs.existsSync(questiePath)) {
     const text = fs.readFileSync(questiePath, 'utf8');
     const pKeyMatch = text.match(/\["profileKeys"\]\s*=\s*\{\s*\["([^"]+)"\]/);
     if (pKeyMatch) name = pKeyMatch[1].split(' ')[0];
