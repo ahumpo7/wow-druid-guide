@@ -1166,53 +1166,108 @@
 
         <h4 style="color: var(--skyborne-blue); font-size: 1.1rem; margin-bottom: 12px;">Essential Quality-of-Life Macros</h4>
 
-        <!-- Macro 1: Emergency Stun & Heal -->
+        <!-- LEVEL 10-19 ACTIVE MACROS -->
+        <div style="margin-bottom: 12px;">
+          <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Active Now (Level 10–19 Bear Era)</span>
+        </div>
+
+        <!-- Macro 1: Bear Powershift & Root Breaker -->
         <div class="macro-box">
           <div class="macro-top">
-            <span class="macro-title">1. Bear Emergency Bash & Heal</span>
-            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Bash\n/cast [stance:1] Bash\n/cancelform\n/cast Healing Touch')">Copy Macro</button>
+            <span class="macro-title">1. Bear Form Powershift (Break Roots & Slows Instantly)</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip Bear Form
+/cancelform [noform:1]
+/cast !Bear Form</div>
+          <div class="macro-explain">⚡ Essential leveling tool! Instantly breaks Frost Novas, slow effects, and roots in one press. The exclamation point prevents accidentally leaving Bear form if you spam the button!</div>
+        </div>
+
+        <!-- Macro 2: Emergency Self-Heal -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">2. Emergency Self-Heal (Drop Form & Heal Self)</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip Healing Touch
+/cancelform
+/cast [@player] Healing Touch</div>
+          <div class="macro-explain">In Bear Form, you cannot cast spells. This macro drops Bear form in 0.0 seconds and immediately casts Healing Touch on yourself without deselecting the mob you are fighting!</div>
+        </div>
+
+        <!-- Macro 3: Auto-Attack & Maul -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">3. Auto-Attack & Maul (Never Get Stuck With 0 Rage)</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip Maul
+/startattack
+/cast Maul</div>
+          <div class="macro-explain">In classic WoW, if you don't have enough Rage for Maul, your character stops auto-attacking! Adding /startattack ensures your Bear paws keep swinging and generating rage even when you have 0 Rage.</div>
+        </div>
+
+        <!-- Macro 4: Emergency Bash from Caster -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">4. Emergency Stun & Bash</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
           </div>
           <div class="macro-code">#showtooltip Bash
-/cast [stance:1] Bash
-/cancelform
-/cast Healing Touch</div>
-          <div class="macro-explain">Stuns the enemy with Bash, drops form instantly, and begins casting Healing Touch while the enemy is completely locked down.</div>
+/cast [noform:1] Bear Form
+/cast Bash</div>
+          <div class="macro-explain">If you get caught in humanoid/caster form, pressing this immediately shifts you into Bear Form and queues your Bash stun on the target.</div>
         </div>
 
-        <!-- Macro 2: Powershift Cat Form -->
+        <!-- LEVEL 20+ UPCOMING MACROS -->
+        <div style="margin: 20px 0 12px 0;">
+          <span style="background: rgba(245, 158, 11, 0.15); color: var(--gold-light); border: 1px solid rgba(245, 158, 11, 0.4); padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Upcoming: Cat Form & High-Level Era (Level 20+)</span>
+        </div>
+
+        <!-- Macro 5: Powershift Cat Form -->
         <div class="macro-box">
           <div class="macro-top">
-            <span class="macro-title">2. Cat Form Powershift (Cleanses Slows & Grants Instant Energy)</span>
-            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Cat Form\n/cancelform\n/cast Cat Form')">Copy Macro</button>
+            <span class="macro-title">5. Cat Form Powershift (Cleanses Slows & Grants Instant Energy)</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
           </div>
           <div class="macro-code">#showtooltip Cat Form
-/cancelform
-/cast Cat Form</div>
-          <div class="macro-explain">Breaks Frost Novas, slow effects, and roots instantly. When paired with Furor (and Wolfshead Helm), instantly yields 40–60 Energy in a single click!</div>
+/cancelform [noform:3]
+/cast !Cat Form</div>
+          <div class="macro-explain">⚠️ Requires Level 20 Cat Form. Breaks slows and roots instantly. When paired with Furor talent (and Wolfshead Helm), instantly yields 40–60 Energy in a single click!</div>
         </div>
 
-        <!-- Macro 3: Faerie Fire Smart Target -->
+        <!-- Macro 6: Spam-Safe Prowl -->
         <div class="macro-box">
           <div class="macro-top">
-            <span class="macro-title">3. Smart Faerie Fire (Feral or Normal)</span>
-            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Faerie Fire (Feral)\n/cast [stance:1/3] Faerie Fire (Feral);\n/cast Faerie Fire')">Copy Macro</button>
+            <span class="macro-title">6. Spam-Safe Prowl / Stealth (Level 20+)</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
           </div>
-          <div class="macro-code">#showtooltip Faerie Fire (Feral)
-/cast [stance:1/3] Faerie Fire (Feral);
-/cast Faerie Fire</div>
-          <div class="macro-explain">Automatically casts Faerie Fire (Feral) if you are in Bear or Cat form, or standard Faerie Fire if in caster form!</div>
+          <div class="macro-code">#showtooltip Prowl
+/cast [nostealth] Prowl</div>
+          <div class="macro-explain">⚠️ Requires Level 20. Spamming normal Prowl cancels stealth if clicked twice. This macro ensures you only enter stealth and never accidentally break it!</div>
         </div>
 
-        <!-- Macro 4: Read Ley Line + Innervate Battery -->
+        <!-- Macro 7: Smart Faerie Fire -->
         <div class="macro-box">
           <div class="macro-top">
-            <span class="macro-title">4. Skyborne Super-Mana Battery (Level 40+)</span>
-            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Innervate\n/cast Read Ley Line\n/cast Innervate')">Copy Macro</button>
+            <span class="macro-title">7. Smart Faerie Fire (Feral or Normal)</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip
+/cast [form:1/3] Faerie Fire (Feral); Faerie Fire</div>
+          <div class="macro-explain">⚠️ Requires Level 30 Feral Talent. Automatically casts Faerie Fire (Feral) if you are in Bear or Cat form, or standard Faerie Fire if in caster form!</div>
+        </div>
+
+        <!-- Macro 8: Read Ley Line + Innervate Battery -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">8. Skyborne Super-Mana Battery (Level 40+)</span>
+            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
           </div>
           <div class="macro-code">#showtooltip Innervate
 /cast Read Ley Line
-/cast Innervate</div>
-          <div class="macro-explain">Combines the Alliance Skyborne active spirit multiplier with Innervate to instantly skyrocket your mana regen to hundreds of mana per tick!</div>
+/cast [@player] Innervate</div>
+          <div class="macro-explain">⚠️ Requires Level 40 Innervate. Combines the Alliance Skyborne active spirit multiplier with Innervate to instantly skyrocket your mana regen to hundreds of mana per tick!</div>
         </div>
 
       </div>

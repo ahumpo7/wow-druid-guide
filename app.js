@@ -2280,10 +2280,13 @@ function copyMacro(btn, explicitCode) {
     const box = btn.closest(".macro-box");
     if (box) {
       const codeEl = box.querySelector(".macro-code");
-      if (codeEl) code = codeEl.textContent.trim();
+      if (codeEl) code = codeEl.innerText || codeEl.textContent;
     }
   }
   if (!code) return;
+
+  // Normalize linebreaks so WoW macro box receives authentic separate lines
+  code = code.replace(/\r\n/g, "\n").replace(/\r/g, "\n").trim();
 
   function setCopied() {
     const originalText = btn.textContent;
