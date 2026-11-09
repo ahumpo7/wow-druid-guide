@@ -1,0 +1,2042 @@
+{
+  "1": {
+    "armorPrimary": {
+      "name": "Handcrafted Leather Boots",
+      "slot": "Feet",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+12 Armor",
+      "tip": "Super cheap on AH or craft at LW 1."
+    },
+    "armorAlt": {
+      "name": "Worn Leather Pants",
+      "slot": "Legs",
+      "quality": "common",
+      "source": "Vendor / Quest",
+      "stats": "+14 Armor",
+      "tip": "Standard starting piece."
+    },
+    "weaponPrimary": {
+      "name": "Acolyte's Staff",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Starting Gear",
+      "stats": "4.5 DPS",
+      "tip": "Basic melee swing tool."
+    },
+    "weaponAlt": {
+      "name": "Walking Stick",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Town Weapon Vendor",
+      "stats": "5.1 DPS",
+      "tip": "Available for copper at weapon vendor."
+    }
+  },
+  "2": {
+    "armorPrimary": {
+      "name": "Handcrafted Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+22 Armor",
+      "tip": "First crafted chest."
+    },
+    "armorAlt": {
+      "name": "Light Leather Bracers",
+      "slot": "Wrists",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+10 Armor",
+      "tip": "Fills empty wrist slot."
+    },
+    "weaponPrimary": {
+      "name": "Walking Stick",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Weaponsmith Vendor",
+      "stats": "5.1 DPS",
+      "tip": "Solid vendor staff."
+    },
+    "weaponAlt": {
+      "name": "Club",
+      "type": "One-Hand Mace",
+      "quality": "common",
+      "source": "Starting Gear",
+      "stats": "3.8 DPS",
+      "tip": "1H mace alternative."
+    }
+  },
+  "3": {
+    "armorPrimary": {
+      "name": "Handcrafted Leather Pants",
+      "slot": "Legs",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+26 Armor",
+      "tip": "Crafted at LW 20."
+    },
+    "armorAlt": {
+      "name": "Rugged Leather Belt",
+      "slot": "Waist",
+      "quality": "common",
+      "source": "Vendor / AH",
+      "stats": "+12 Armor",
+      "tip": "Fills waist slot."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Spiked Club",
+      "type": "Two-Hand Staff / Mace",
+      "quality": "common",
+      "source": "Weapon Vendor",
+      "stats": "5.8 DPS",
+      "tip": "Early vendor weapon."
+    },
+    "weaponAlt": {
+      "name": "Acolyte's Staff",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Starting Gear",
+      "stats": "4.5 DPS",
+      "tip": "Fine for early Wrath pulls."
+    }
+  },
+  "4": {
+    "armorPrimary": {
+      "name": "Embossed Leather Gloves",
+      "slot": "Hands",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+24 Armor",
+      "tip": "Crafted at LW 35."
+    },
+    "armorAlt": {
+      "name": "Handcrafted Leather Boots",
+      "slot": "Feet",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+16 Armor",
+      "tip": "Easy to craft or buy."
+    },
+    "weaponPrimary": {
+      "name": "Gnarled Staff",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Weapon Vendor / AH",
+      "stats": "6.4 DPS",
+      "tip": "Higher melee DPS."
+    },
+    "weaponAlt": {
+      "name": "Wooden Mallet",
+      "type": "Two-Hand Mace",
+      "quality": "common",
+      "source": "Weapon Vendor",
+      "stats": "6.0 DPS",
+      "tip": "Available from macesmith."
+    }
+  },
+  "5": {
+    "armorPrimary": {
+      "name": "Handcrafted Leather Vest of the Boar",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+1 Strength, +1 Spirit",
+      "tip": "First green stat piece."
+    },
+    "armorAlt": {
+      "name": "Embossed Leather Boots",
+      "slot": "Feet",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+22 Armor",
+      "tip": "LW 40 craft."
+    },
+    "weaponPrimary": {
+      "name": "Large Club of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+1 Strength, +1 Stamina",
+      "tip": "Great early stat stick."
+    },
+    "weaponAlt": {
+      "name": "Gnarled Staff",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Weapon Vendor",
+      "stats": "7.1 DPS",
+      "tip": "Vendor fallback."
+    }
+  },
+  "6": {
+    "armorPrimary": {
+      "name": "Rugged Leather Pants of the Monkey",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+1 Agility, +1 Stamina",
+      "tip": "Great early agility."
+    },
+    "armorAlt": {
+      "name": "Embossed Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+36 Armor",
+      "tip": "Solid physical armor."
+    },
+    "weaponPrimary": {
+      "name": "Quarterstaff",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Stormwind / Darnassus Vendor",
+      "stats": "7.8 DPS",
+      "tip": "Bought for 1 silver."
+    },
+    "weaponAlt": {
+      "name": "Large Club of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+1 Strength, +1 Agility",
+      "tip": "High damage scaling."
+    }
+  },
+  "7": {
+    "armorPrimary": {
+      "name": "Embossed Leather Cloak",
+      "slot": "Back",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+14 Armor",
+      "tip": "Fills cloak slot."
+    },
+    "armorAlt": {
+      "name": "Handcrafted Leather Boots of the Tiger",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+1 Agi, +1 Str",
+      "tip": "Double offensive stats."
+    },
+    "weaponPrimary": {
+      "name": "Wooden Mallet of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+1 Strength, +2 Stamina",
+      "tip": "Good health boost."
+    },
+    "weaponAlt": {
+      "name": "Quarterstaff",
+      "type": "Two-Hand Staff",
+      "quality": "common",
+      "source": "Weapon Vendor",
+      "stats": "8.2 DPS",
+      "tip": "Vendor fallback."
+    }
+  },
+  "8": {
+    "armorPrimary": {
+      "name": "Brawler's Harness of the Tiger",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Strength, +1 Agility",
+      "tip": "Noticeable melee punch."
+    },
+    "armorAlt": {
+      "name": "Embossed Leather Pants",
+      "slot": "Legs",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+42 Armor",
+      "tip": "High armor value."
+    },
+    "weaponPrimary": {
+      "name": "Large Club of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Strength, +1 Agility",
+      "tip": "Top level 8 weapon."
+    },
+    "weaponAlt": {
+      "name": "Quarterstaff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Stamina",
+      "tip": "High survivability."
+    }
+  },
+  "9": {
+    "armorPrimary": {
+      "name": "Fine Leather Boots of the Tiger",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Agility, +1 Strength",
+      "tip": "Stacking early agility."
+    },
+    "armorAlt": {
+      "name": "Fine Leather Cloak",
+      "slot": "Back",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+18 Armor",
+      "tip": "Cheap cloak craft."
+    },
+    "weaponPrimary": {
+      "name": "Gnarled Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Strength, +2 Agility",
+      "tip": "+6 total Attack Power!"
+    },
+    "weaponAlt": {
+      "name": "Staff of the Windcaller",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Zephras Isle Quest",
+      "stats": "+3 Spirit, +2 Stamina",
+      "tip": "Free quest reward."
+    }
+  },
+  "10": {
+    "armorPrimary": {
+      "name": "Embossed Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+62 Armor, +3 Stamina",
+      "tip": "Massive armor jump for Bear Form!"
+    },
+    "armorAlt": {
+      "name": "Rugged Leather Pants of the Bear",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Strength, +2 Stamina",
+      "tip": "Great tanking stats."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Spiked Mace",
+      "type": "Two-Hand Mace",
+      "quality": "common",
+      "source": "Stormwind / Ironforge Vendor",
+      "stats": "10.5 DPS, High Base Damage",
+      "tip": "Purchase from town weaponsmith for 2 silver."
+    },
+    "weaponAlt": {
+      "name": "Oak Mallet of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Strength, +2 Agility",
+      "tip": "AH alternative."
+    }
+  },
+  "11": {
+    "armorPrimary": {
+      "name": "Embossed Leather Boots",
+      "slot": "Feet",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+44 Armor",
+      "tip": "Crafted at LW 55."
+    },
+    "armorAlt": {
+      "name": "Light Leather Bracers of the Bear",
+      "slot": "Wrists",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Stamina",
+      "tip": "Cheap wrist upgrade."
+    },
+    "weaponPrimary": {
+      "name": "Wooden Mallet of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Strength, +2 Agility",
+      "tip": "Scales Maul and auto-attacks."
+    },
+    "weaponAlt": {
+      "name": "Quarterstaff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+3 Stamina",
+      "tip": "Health pool booster."
+    }
+  },
+  "12": {
+    "armorPrimary": {
+      "name": "Fine Leather Tunic",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+72 Armor, +3 Agility",
+      "tip": "Crafted at LW 75."
+    },
+    "armorAlt": {
+      "name": "Embossed Leather Pants of the Bear",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+3 Strength, +2 Stamina",
+      "tip": "Heavy tanking stats."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Spiked Mace",
+      "type": "Two-Hand Mace",
+      "quality": "common",
+      "source": "Weaponsmith Vendor",
+      "stats": "12.2 DPS",
+      "tip": "Rock solid vendor weapon."
+    },
+    "weaponAlt": {
+      "name": "Ashwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+3 Strength, +2 Agility",
+      "tip": "+8 Attack Power!"
+    }
+  },
+  "13": {
+    "armorPrimary": {
+      "name": "Fine Leather Boots",
+      "slot": "Feet",
+      "quality": "common",
+      "source": "Leatherworking / AH",
+      "stats": "+50 Armor, +3 Agility",
+      "tip": "Crafted at LW 85."
+    },
+    "armorAlt": {
+      "name": "Serpent Gloves of the Tiger",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Strength, +2 Agility",
+      "tip": "AH green gloves."
+    },
+    "weaponPrimary": {
+      "name": "Ashwood Staff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+3 Strength, +3 Stamina",
+      "tip": "Perfect balance of damage and HP."
+    },
+    "weaponAlt": {
+      "name": "Large Club of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+3 Strength, +2 Agility",
+      "tip": "Pure offensive pick."
+    }
+  },
+  "14": {
+    "armorPrimary": {
+      "name": "Hillman's Leather Vest",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+82 Armor, +4 Str, +4 Stam",
+      "tip": "Crafted at LW 100. Huge stats!"
+    },
+    "armorAlt": {
+      "name": "Fine Leather Cloak of the Monkey",
+      "slot": "Back",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+2 Agility, +2 Stamina",
+      "tip": "Dodge and health."
+    },
+    "weaponPrimary": {
+      "name": "Oaken Philosophy",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+4 Spirit, +3 Stamina",
+      "tip": "Great out-of-combat regen."
+    },
+    "weaponAlt": {
+      "name": "Ashwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+3 Strength, +3 Agility",
+      "tip": "+9 Feral AP."
+    }
+  },
+  "15": {
+    "armorPrimary": {
+      "name": "Hillman's Belt",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+56 Armor, +4 Agi, +4 Str",
+      "tip": "Crafted at LW 120. +12 Attack Power!"
+    },
+    "armorAlt": {
+      "name": "Burning Leather Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+4 Strength, +3 Stamina",
+      "tip": "Great armor and damage."
+    },
+    "weaponPrimary": {
+      "name": "Elm Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+4 Strength, +4 Agility",
+      "tip": "+12 total Feral AP!"
+    },
+    "weaponAlt": {
+      "name": "Cudgel of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Stamina, +3 Strength",
+      "tip": "Massive health for Bear."
+    }
+  },
+  "16": {
+    "armorPrimary": {
+      "name": "Hillman's Shoulders",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+64 Armor, +4 Agi, +4 Str",
+      "tip": "Fills shoulder slot early!"
+    },
+    "armorAlt": {
+      "name": "Wolfclaw Gloves",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+4 Agility, +3 Strength",
+      "tip": "Strong melee gloves."
+    },
+    "weaponPrimary": {
+      "name": "Sturdy Quarterstaff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+4 Strength, +4 Agility",
+      "tip": "Excellent physical DPS."
+    },
+    "weaponAlt": {
+      "name": "Heavy War Mace of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Stamina, +4 Strength",
+      "tip": "High survivability."
+    }
+  },
+  "17": {
+    "armorPrimary": {
+      "name": "Deviate Scale Gloves",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+58 Armor, +4 Agility",
+      "tip": "Crafted at LW 105."
+    },
+    "armorAlt": {
+      "name": "Hillman's Leather Boots",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+52 Armor, +3 Str, +3 Stam",
+      "tip": "Great all-around boots."
+    },
+    "weaponPrimary": {
+      "name": "Heavy War Mace of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Strength, +4 Agility",
+      "tip": "+14 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Staff of Westfall",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "People's Militia Quest",
+      "stats": "+5 Spirit, +4 Intellect",
+      "tip": "Solo quest reward in Westfall."
+    }
+  },
+  "18": {
+    "armorPrimary": {
+      "name": "Deviate Scale Belt",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+49 Armor, +5 Agi, +6 Stam, +5 Spirit",
+      "tip": "Amazing leveling belt. BiS until level 30!"
+    },
+    "armorAlt": {
+      "name": "Bandit Jerkin of the Tiger",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Agility, +4 Strength",
+      "tip": "+13 Attack Power."
+    },
+    "weaponPrimary": {
+      "name": "Dense Club of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Strength, +5 Agility",
+      "tip": "Super high stat stick."
+    },
+    "weaponAlt": {
+      "name": "Glacial Stone",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+6 Stamina, +4 Spirit",
+      "tip": "Defense and healing stats."
+    }
+  },
+  "19": {
+    "armorPrimary": {
+      "name": "Feet of the Lynx",
+      "slot": "Feet",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+8 Agility, +3 Strength",
+      "tip": "THE iconic twink boots! Huge +11 AP and crit."
+    },
+    "armorAlt": {
+      "name": "Blackened Defias Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+6 Agility, +4 Stamina",
+      "tip": "Clean agility pants."
+    },
+    "weaponPrimary": {
+      "name": "Staff of the Blessed Seer",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+4 Strength, +4 Agi, +4 Stam, +4 Spirit",
+      "tip": "All-stats powerhouse staff."
+    },
+    "weaponAlt": {
+      "name": "Heavy Spiked Flail of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Strength, +5 Agility",
+      "tip": "Budget AH option."
+    }
+  },
+  "20": {
+    "armorPrimary": {
+      "name": "Deviate Scale Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+78 Armor, +7 Agi, +7 Stam",
+      "tip": "Crafted at LW 125. Massive for Cat Form!"
+    },
+    "armorAlt": {
+      "name": "Toughened Leather Armor",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+98 Armor, +5 Str, +5 Stam",
+      "tip": "High bear mitigation."
+    },
+    "weaponPrimary": {
+      "name": "Staff of the Friar",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+4 Strength, +5 Agi, +5 Stam",
+      "tip": "Incredible Cat Form scaling."
+    },
+    "weaponAlt": {
+      "name": "Solid Iron Maul of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+6 Strength, +5 Agility",
+      "tip": "+17 Feral AP."
+    }
+  },
+  "21": {
+    "armorPrimary": {
+      "name": "Toughened Leather Gloves",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+62 Armor, +5 Str, +4 Agi",
+      "tip": "LW 135 craft."
+    },
+    "armorAlt": {
+      "name": "Bandit Boots of the Tiger",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Agility, +4 Strength",
+      "tip": "Affordable AH upgrade."
+    },
+    "weaponPrimary": {
+      "name": "Hardened Iron Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+6 Strength, +5 Agility",
+      "tip": "Massive claw and maul boost."
+    },
+    "weaponAlt": {
+      "name": "Heavy Iron Mace of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Stamina, +4 Strength",
+      "tip": "Tanking backup."
+    }
+  },
+  "22": {
+    "armorPrimary": {
+      "name": "Barbaric Harness",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+108 Armor, +8 Str, +8 Stam",
+      "tip": "Crafted at LW 145. King of early bear armor!"
+    },
+    "armorAlt": {
+      "name": "Bandit Cinch of the Tiger",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Agility, +5 Strength",
+      "tip": "Strong budget belt."
+    },
+    "weaponPrimary": {
+      "name": "Skullcrusher of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Strength, +6 Agility",
+      "tip": "+20 total Feral AP!"
+    },
+    "weaponAlt": {
+      "name": "Totem of the West Wind",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Agility, +4 Stamina",
+      "tip": "High crit staff."
+    }
+  },
+  "23": {
+    "armorPrimary": {
+      "name": "Barbaric Shoulders",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+78 Armor, +5 Str, +5 Agi",
+      "tip": "Crafted at LW 150."
+    },
+    "armorAlt": {
+      "name": "Bandit Pants of the Tiger",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+6 Agility, +5 Strength",
+      "tip": "Good AH pants."
+    },
+    "weaponPrimary": {
+      "name": "Cedar Walking Stick of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+6 Strength, +6 Agility",
+      "tip": "Balanced hybrid staff."
+    },
+    "weaponAlt": {
+      "name": "Flanged Mace of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Stamina, +5 Strength",
+      "tip": "Solid tank mace."
+    }
+  },
+  "24": {
+    "armorPrimary": {
+      "name": "Barbaric Belt",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+68 Armor, +6 Str, +5 Agi",
+      "tip": "Crafted at LW 155."
+    },
+    "armorAlt": {
+      "name": "Superior Leather Pants of the Tiger",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Agility, +6 Strength",
+      "tip": "Great budget green."
+    },
+    "weaponPrimary": {
+      "name": "Bronze-Headed Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Strength, +7 Agility",
+      "tip": "+21 Feral AP!"
+    },
+    "weaponAlt": {
+      "name": "Ogre-Beater of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+8 Stamina, +5 Strength",
+      "tip": "High health pool."
+    }
+  },
+  "25": {
+    "armorPrimary": {
+      "name": "Barbaric Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+98 Armor, +7 Str, +7 Agi",
+      "tip": "Crafted at LW 160. +21 Attack Power!"
+    },
+    "armorAlt": {
+      "name": "Spidersilk Boots",
+      "slot": "Feet",
+      "quality": "rare",
+      "source": "Tailoring / AH",
+      "stats": "+4 Stamina, +7 Spirit",
+      "tip": "Crafted alternative with high regen."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Bronze Club of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+8 Strength, +7 Agility",
+      "tip": "+23 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Relic Hunter Staff",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Wetlands Quest: Excavation",
+      "stats": "+7 Spirit, +5 Stamina",
+      "tip": "Free solo quest weapon."
+    }
+  },
+  "26": {
+    "armorPrimary": {
+      "name": "Panther Hunter Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Nesingwary STV Quest",
+      "stats": "+8 Agility, +6 Strength",
+      "tip": "Easy solo hunting quest in STV."
+    },
+    "armorAlt": {
+      "name": "Robust Bracers of the Tiger",
+      "slot": "Wrists",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Agility, +4 Strength",
+      "tip": "AH wrist piece."
+    },
+    "weaponPrimary": {
+      "name": "Ironwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+8 Strength, +8 Agility",
+      "tip": "+24 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Heavy War Mace of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+8 Strength, +7 Agility",
+      "tip": "AH mace alternative."
+    }
+  },
+  "27": {
+    "armorPrimary": {
+      "name": "Barbaric Bracers",
+      "slot": "Wrists",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+52 Armor, +5 Str, +4 Agi",
+      "tip": "Crafted at LW 165."
+    },
+    "armorAlt": {
+      "name": "Wolfclaw Leggings of the Tiger",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Agility, +7 Strength",
+      "tip": "AH green pants."
+    },
+    "weaponPrimary": {
+      "name": "Warsong Staff",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "PvP Vendor / AH",
+      "stats": "+8 Strength, +8 Stamina",
+      "tip": "Warsong Outrider weapon."
+    },
+    "weaponAlt": {
+      "name": "Heavy Mallet of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+8 Strength, +8 Agility",
+      "tip": "Heavy hitting 2H mace."
+    }
+  },
+  "28": {
+    "armorPrimary": {
+      "name": "Nightscape Boots",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+74 Armor, +7 Agi, +7 Stam",
+      "tip": "Crafted at LW 175."
+    },
+    "armorAlt": {
+      "name": "Raptor Hunter Tunic (Prep)",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Nesingwary STV Quest",
+      "stats": "+8 Str, +10 Agi",
+      "tip": "STV hunting chain."
+    },
+    "weaponPrimary": {
+      "name": "Battleworn Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+9 Strength, +8 Agility",
+      "tip": "+26 Feral AP!"
+    },
+    "weaponAlt": {
+      "name": "Staff of Hale Magefire",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+11 Intellect, +6 Stamina",
+      "tip": "Great hybrid/healer staff."
+    }
+  },
+  "29": {
+    "armorPrimary": {
+      "name": "Panther Armor",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Nesingwary STV Quest",
+      "stats": "+10 Agility, +6 Strength",
+      "tip": "Reward from Panther Chapter 2."
+    },
+    "armorAlt": {
+      "name": "Insignia Cloak of the Tiger",
+      "slot": "Back",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+5 Agility, +5 Strength",
+      "tip": "Clean offensive cloak."
+    },
+    "weaponPrimary": {
+      "name": "Iron-Headed Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+9 Strength, +9 Agility",
+      "tip": "+27 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Skullsplitter",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+10 Strength, +5 Stamina",
+      "tip": "Hard hitting 2H mace."
+    }
+  },
+  "30": {
+    "armorPrimary": {
+      "name": "Tigerstrike Mantle",
+      "slot": "Back",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+31 Armor, +8 Str, +3 Agi",
+      "tip": "Rare BOE cloak. +19 Attack Power!"
+    },
+    "armorAlt": {
+      "name": "Nightscape Tunic",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+115 Armor, +8 Agi, +9 Stam",
+      "tip": "Crafted at LW 185."
+    },
+    "weaponPrimary": {
+      "name": "Tok'kar's Murloc Basher",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Swamp of Sorrows Quest",
+      "stats": "+10 Strength, +9 Stamina",
+      "tip": "High damage solo quest mace."
+    },
+    "weaponAlt": {
+      "name": "Beater of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+10 Strength, +9 Agility",
+      "tip": "+29 Feral AP."
+    }
+  },
+  "31": {
+    "armorPrimary": {
+      "name": "Humbert's Helm",
+      "slot": "Head",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+85 Armor, +8 Agi, +7 Str, +7 Stam",
+      "tip": "Iconic rare helm. Huge stat boost!"
+    },
+    "armorAlt": {
+      "name": "Nightscape Shoulders",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+85 Armor, +8 Agi, +7 Stam",
+      "tip": "Crafted at LW 190."
+    },
+    "weaponPrimary": {
+      "name": "Knight's War Hammer of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+10 Strength, +10 Agility",
+      "tip": "+30 Feral AP!"
+    },
+    "weaponAlt": {
+      "name": "Heavy Darkwood Staff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+10 Stamina, +8 Strength",
+      "tip": "Great tank staff."
+    }
+  },
+  "32": {
+    "armorPrimary": {
+      "name": "Nightscape Pants",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+105 Armor, +14 Agi, +13 Stam",
+      "tip": "Crafted at LW 195. Massive stats!"
+    },
+    "armorAlt": {
+      "name": "Tiger Hunter Gloves",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Nesingwary STV Quest",
+      "stats": "+7 Agility, +6 Strength",
+      "tip": "STV hunting reward."
+    },
+    "weaponPrimary": {
+      "name": "Cudgel of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+11 Strength, +10 Agility",
+      "tip": "+32 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Ogre Toothpick",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Desolace Quest",
+      "stats": "+10 Agility, +8 Stamina",
+      "tip": "Desolace solo quest weapon."
+    }
+  },
+  "33": {
+    "armorPrimary": {
+      "name": "Raptor Hunter Tunic",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Nesingwary STV Quest",
+      "stats": "+115 Armor, +8 Str, +15 Agi",
+      "tip": "Legendary Nesingwary finale reward!"
+    },
+    "armorAlt": {
+      "name": "Nightscape Cloak",
+      "slot": "Back",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+34 Armor, +7 Agi, +6 Stam",
+      "tip": "Crafted at LW 195."
+    },
+    "weaponPrimary": {
+      "name": "Ironwood Mallet of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+11 Strength, +11 Agility",
+      "tip": "+33 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Staff of the Timbermaw",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+11 Agility, +9 Stamina",
+      "tip": "High crit staff."
+    }
+  },
+  "34": {
+    "armorPrimary": {
+      "name": "Guardian Leather Belt",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+78 Armor, +8 Agi, +8 Stam",
+      "tip": "Crafted at LW 200."
+    },
+    "armorAlt": {
+      "name": "Tracker's Headband of the Tiger",
+      "slot": "Head",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+9 Agility, +8 Strength",
+      "tip": "Budget helm on AH."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Darkwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+12 Strength, +11 Agility",
+      "tip": "+35 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Lead-Weighted Club of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+12 Stamina, +9 Strength",
+      "tip": "Great Bear health."
+    }
+  },
+  "35": {
+    "armorPrimary": {
+      "name": "Nightscape Headband",
+      "slot": "Head",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+95 Armor, +12 Agi, +11 Stam",
+      "tip": "Crafted at LW 205."
+    },
+    "armorAlt": {
+      "name": "Swashbuckler's Eyepatch",
+      "slot": "Head",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+10 Agility, +8 Stamina",
+      "tip": "Pirate drop in STV."
+    },
+    "weaponPrimary": {
+      "name": "The Pacifier",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+18 Strength, +8 Stamina",
+      "tip": "+36 Attack Power! Amazing 2H mace."
+    },
+    "weaponAlt": {
+      "name": "Staff of the Ancient Leader",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+11 Strength, +11 Agility",
+      "tip": "Hybrid rare staff."
+    }
+  },
+  "36": {
+    "armorPrimary": {
+      "name": "Nightscape Tunic",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+128 Armor, +10 Agi, +11 Stam",
+      "tip": "Crafted at LW 210."
+    },
+    "armorAlt": {
+      "name": "Falcon's Leather Vest",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+11 Agility, +9 Intellect",
+      "tip": "Hybrid AH drop."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Knotwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+12 Strength, +12 Agility",
+      "tip": "+36 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Maul of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+13 Strength, +11 Agility",
+      "tip": "Heavy hitting mace."
+    }
+  },
+  "37": {
+    "armorPrimary": {
+      "name": "Wild Leather Boots",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+90 Armor, +10 Agi, +10 Stam",
+      "tip": "Crafted at LW 225."
+    },
+    "armorAlt": {
+      "name": "Tracker's Boots of the Tiger",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+10 Agility, +9 Strength",
+      "tip": "AH green boots."
+    },
+    "weaponPrimary": {
+      "name": "Bludgeon of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+13 Strength, +12 Agility",
+      "tip": "+38 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Staff of the Sun",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+13 Agility, +10 Spirit",
+      "tip": "Clean agility staff."
+    }
+  },
+  "38": {
+    "armorPrimary": {
+      "name": "Wild Leather Helmet",
+      "slot": "Head",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+108 Armor, +10 Str, +8 Agi",
+      "tip": "Crafted at LW 225."
+    },
+    "armorAlt": {
+      "name": "Big Voodoo Pants",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+105 Armor, +12 Agi, +10 Stam",
+      "tip": "Troll pattern craft."
+    },
+    "weaponPrimary": {
+      "name": "Skull-Cracking Cudgel of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+13 Strength, +13 Agility",
+      "tip": "+39 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Lead-Filled Staff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+14 Stamina, +10 Strength",
+      "tip": "Huge Bear tanking staff."
+    }
+  },
+  "39": {
+    "armorPrimary": {
+      "name": "Girdle of the Beast",
+      "slot": "Waist",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+78 Armor, +12 Str, +12 Agi",
+      "tip": "One of the best leveling belts in game!"
+    },
+    "armorAlt": {
+      "name": "Basilisk Hide Pants",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Tanaris / STV Quest",
+      "stats": "+12 Agility, +10 Stamina",
+      "tip": "Solid quest reward."
+    },
+    "weaponPrimary": {
+      "name": "The Judge's Gavel",
+      "type": "One-Hand Mace",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+10 Strength, +5 Agility",
+      "tip": "Pair with an Off-hand."
+    },
+    "weaponAlt": {
+      "name": "Heavy War Hammer of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+14 Strength, +13 Agility",
+      "tip": "Massive 2H strikes."
+    }
+  },
+  "40": {
+    "armorPrimary": {
+      "name": "Wolfshead Helm",
+      "slot": "Head",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+109 Armor, +10 Spirit",
+      "tip": "CORE ITEM FOR CAT DPS. +20 Energy on shift! Kept until level 60."
+    },
+    "armorAlt": {
+      "name": "Nightscape Tunic (Max)",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+135 Armor, +12 Agi, +12 Stam",
+      "tip": "Crafted chest backup."
+    },
+    "weaponPrimary": {
+      "name": "Smashing Mallet of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+14 Strength, +14 Agility",
+      "tip": "+42 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Hand of Righteousness",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+15 Strength, +10 Stamina",
+      "tip": "Rare 2H mace."
+    }
+  },
+  "41": {
+    "armorPrimary": {
+      "name": "Wild Leather Shoulders",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+98 Armor, +10 Agi, +12 Stam",
+      "tip": "Crafted at LW 230."
+    },
+    "armorAlt": {
+      "name": "Tracker's Cloak of the Tiger",
+      "slot": "Back",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+7 Agility, +6 Strength",
+      "tip": "Clean AH cloak."
+    },
+    "weaponPrimary": {
+      "name": "Hardened Knotwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+15 Strength, +14 Agility",
+      "tip": "+44 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Maul of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+15 Stamina, +11 Strength",
+      "tip": "Dire Bear tank mace."
+    }
+  },
+  "42": {
+    "armorPrimary": {
+      "name": "Wild Leather Vest",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+142 Armor, +14 Agi, +13 Stam",
+      "tip": "Crafted at LW 235."
+    },
+    "armorAlt": {
+      "name": "Girdle of the Beast",
+      "slot": "Waist",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+78 Armor, +12 Str, +12 Agi",
+      "tip": "Top tier belt."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Ironwood Club of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+15 Strength, +15 Agility",
+      "tip": "+45 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Staff of the Earth",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+15 Stamina, +12 Strength",
+      "tip": "High HP staff."
+    }
+  },
+  "43": {
+    "armorPrimary": {
+      "name": "Wild Leather Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+125 Armor, +16 Agi, +14 Stam",
+      "tip": "Crafted at LW 240."
+    },
+    "armorAlt": {
+      "name": "Huntsman's Armor of the Tiger",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+14 Agility, +12 Strength",
+      "tip": "Heavy offensive chest."
+    },
+    "weaponPrimary": {
+      "name": "Warden Staff",
+      "type": "Two-Hand Staff",
+      "quality": "epic",
+      "source": "Auction House BOE",
+      "stats": "+260 Armor, +10 Def, +11 Stam",
+      "tip": "UNDISPUTED BiS BEAR TANK WEAPON! Dire Bear turns +260 armor into nearly +1,000 armor!"
+    },
+    "weaponAlt": {
+      "name": "Heavy Knotwood Mallet of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+15 Strength, +15 Agility",
+      "tip": "Budget Cat DPS mace."
+    }
+  },
+  "44": {
+    "armorPrimary": {
+      "name": "Big Voodoo Shoulders",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+95 Armor, +11 Agi, +8 Stam",
+      "tip": "Crafted at LW 240."
+    },
+    "armorAlt": {
+      "name": "Scraggle's Bone Amulet",
+      "slot": "Neck",
+      "quality": "rare",
+      "source": "Tanaris Solo Quest",
+      "stats": "+7 Str, +6 Agi, +6 Stam",
+      "tip": "Super easy Tanaris quest necklace."
+    },
+    "weaponPrimary": {
+      "name": "Resilient Knotwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+16 Strength, +15 Agility",
+      "tip": "+47 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "The Shatterer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+17 Strength, +10 Stamina",
+      "tip": "Hard hitting 2H mace."
+    }
+  },
+  "45": {
+    "armorPrimary": {
+      "name": "Rune of the Guard Captain",
+      "slot": "Trinket",
+      "quality": "rare",
+      "source": "Hinterlands Quest: Job Opening",
+      "stats": "+20 Attack Power, +1% Hit Chance",
+      "tip": "Solo quest reward in Hinterlands! Kept for raid hit cap."
+    },
+    "armorAlt": {
+      "name": "Frostbite Gloves of the Tiger",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+12 Agility, +11 Strength",
+      "tip": "Great AH gloves."
+    },
+    "weaponPrimary": {
+      "name": "Dense Knotwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+16 Strength, +16 Agility",
+      "tip": "+48 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "War Maul of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+17 Strength, +15 Agility",
+      "tip": "Heavy 2H mace."
+    }
+  },
+  "46": {
+    "armorPrimary": {
+      "name": "Dark Phantom Cape",
+      "slot": "Back",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+38 Armor, +15 Agility",
+      "tip": "Huge +15 Agility on a cloak!"
+    },
+    "armorAlt": {
+      "name": "Chitinous Plate Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Tanaris Solo Quest",
+      "stats": "+14 Agility, +12 Stamina",
+      "tip": "Wastewander quest reward."
+    },
+    "weaponPrimary": {
+      "name": "Spiked Wooden Mallet of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+17 Strength, +16 Agility",
+      "tip": "+50 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Stonevault Staff",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+12 Agility, +12 Stamina",
+      "tip": "Balanced hybrid staff."
+    }
+  },
+  "47": {
+    "armorPrimary": {
+      "name": "Tough Scorpid Breastplate",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+152 Armor, +12 Agi, +12 Stam",
+      "tip": "Crafted at LW 245."
+    },
+    "armorAlt": {
+      "name": "Tracker's Gloves of the Tiger",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+13 Agility, +11 Strength",
+      "tip": "High DPS gloves."
+    },
+    "weaponPrimary": {
+      "name": "Dense Stone Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+17 Strength, +17 Agility",
+      "tip": "+51 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Smasher of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+18 Stamina, +13 Strength",
+      "tip": "Great tanking mace."
+    }
+  },
+  "48": {
+    "armorPrimary": {
+      "name": "Tough Scorpid Shoulders",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+108 Armor, +11 Agi, +11 Stam",
+      "tip": "Crafted at LW 250."
+    },
+    "armorAlt": {
+      "name": "Mark of the Chosen",
+      "slot": "Trinket",
+      "quality": "rare",
+      "source": "Maraudon Solo Pre-Quest",
+      "stats": "+25 All Stats Proc when struck",
+      "tip": "Best leveling survival trinket."
+    },
+    "weaponPrimary": {
+      "name": "Mighty Ironwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+18 Strength, +17 Agility",
+      "tip": "+53 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Heavy Mithril Mace of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+18 Strength, +16 Agility",
+      "tip": "AH mace alternative."
+    }
+  },
+  "49": {
+    "armorPrimary": {
+      "name": "Tough Scorpid Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+135 Armor, +14 Agi, +13 Stam",
+      "tip": "Crafted at LW 255."
+    },
+    "armorAlt": {
+      "name": "Quickdraw Belt",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+88 Armor, +14 Agility",
+      "tip": "High agility belt."
+    },
+    "weaponPrimary": {
+      "name": "Lordly Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+18 Strength, +18 Agility",
+      "tip": "+54 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Skullstone Hammer of the Bear",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+18 Stamina, +14 Strength",
+      "tip": "Dire Bear tank mace."
+    }
+  },
+  "50": {
+    "armorPrimary": {
+      "name": "Chimeric Gloves",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+88 Armor, +12 Agi, +12 Stam",
+      "tip": "Crafted at LW 265."
+    },
+    "armorAlt": {
+      "name": "Stormshroud Pants",
+      "slot": "Legs",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+138 Armor, +14 Agi, +14 Stam",
+      "tip": "Crafted elemental leather."
+    },
+    "weaponPrimary": {
+      "name": "The Chief's Enforcer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+30 Strength, +10 Stamina",
+      "tip": "+60 Feral AP! Massive critical burst."
+    },
+    "weaponAlt": {
+      "name": "Resilient Ironwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+19 Strength, +18 Agility",
+      "tip": "Solid 2H staff alternative."
+    }
+  },
+  "51": {
+    "armorPrimary": {
+      "name": "Chimeric Boots",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+102 Armor, +12 Agi, +12 Stam",
+      "tip": "Crafted at LW 270."
+    },
+    "armorAlt": {
+      "name": "Shadowskin Tunic",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+155 Armor, +15 Agility",
+      "tip": "Pure agility chest."
+    },
+    "weaponPrimary": {
+      "name": "Dense Ironwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+19 Strength, +18 Agility",
+      "tip": "+56 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Heavy Dark Iron Mallet",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+20 Strength, +14 Stamina",
+      "tip": "High strength mace."
+    }
+  },
+  "52": {
+    "armorPrimary": {
+      "name": "Stormshroud Armor",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+165 Armor, +15 Agi, +14 Stam, +Lightning Proc",
+      "tip": "Crafted at LW 275. Free damage procs!"
+    },
+    "armorAlt": {
+      "name": "Chimeric Tunic",
+      "slot": "Chest",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+158 Armor, +15 Agi, +14 Stam",
+      "tip": "LW 275 fallback."
+    },
+    "weaponPrimary": {
+      "name": "The Chief's Enforcer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Auction House BOE",
+      "stats": "+30 Strength",
+      "tip": "+60 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Solid Ironwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+19 Strength, +19 Agility",
+      "tip": "+57 Feral AP."
+    }
+  },
+  "53": {
+    "armorPrimary": {
+      "name": "Devilsaur Gauntlets",
+      "slot": "Hands",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+103 Armor, +28 AP, +1% Crit, Set: +2% Hit",
+      "tip": "PRE-RAID BiS! Buy on AH or craft at LW 300."
+    },
+    "armorAlt": {
+      "name": "Chimeric Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+138 Armor, +16 Agi, +14 Stam",
+      "tip": "Crafted at LW 280."
+    },
+    "weaponPrimary": {
+      "name": "Ironbark Staff",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Western Plaguelands Quest",
+      "stats": "+10 Str, +10 Agi, +10 Stam",
+      "tip": "Clean solo cauldron quest reward."
+    },
+    "weaponAlt": {
+      "name": "Heavy Stone Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+20 Strength, +19 Agility",
+      "tip": "AH high stat staff."
+    }
+  },
+  "54": {
+    "armorPrimary": {
+      "name": "Chimeric Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+138 Armor, +16 Agi, +14 Stam",
+      "tip": "Crafted at LW 280."
+    },
+    "armorAlt": {
+      "name": "Slagplate Leggings of the Tiger",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+16 Agility, +15 Strength",
+      "tip": "Heavy offensive pants."
+    },
+    "weaponPrimary": {
+      "name": "Ironbark Staff",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Western Plaguelands Quest",
+      "stats": "+10 Str, +10 Agi, +10 Stam",
+      "tip": "Balanced hybrid stats."
+    },
+    "weaponAlt": {
+      "name": "Grand Darkwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+20 Strength, +19 Agility",
+      "tip": "+59 Feral AP."
+    }
+  },
+  "55": {
+    "armorPrimary": {
+      "name": "Devilsaur Leggings",
+      "slot": "Legs",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+148 Armor, +46 AP, +1% Crit, Set: +2% Hit",
+      "tip": "PRE-RAID BiS! Complete the 2-set for +2% Hit."
+    },
+    "armorAlt": {
+      "name": "Stormshroud Shoulders",
+      "slot": "Shoulders",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+112 Armor, +13 Agi, +12 Stam",
+      "tip": "Crafted at LW 285."
+    },
+    "weaponPrimary": {
+      "name": "Bonecrusher",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Dire Maul Solo/Group Quest",
+      "stats": "+30 Strength",
+      "tip": "+60 Attack Power! Superb for Cat Form."
+    },
+    "weaponAlt": {
+      "name": "Mighty War Hammer of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+20 Strength, +20 Agility",
+      "tip": "High damage AH alternative."
+    }
+  },
+  "56": {
+    "armorPrimary": {
+      "name": "Stormshroud Shoulders",
+      "slot": "Shoulders",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+112 Armor, +13 Agi, +12 Stam",
+      "tip": "Crafted at LW 285."
+    },
+    "armorAlt": {
+      "name": "Bracers of the Eclipse",
+      "slot": "Wrists",
+      "quality": "rare",
+      "source": "Auction House BOE / Dire Maul",
+      "stats": "+76 Armor, +10 Str, +19 Agi",
+      "tip": "BiS bracers on AH."
+    },
+    "weaponPrimary": {
+      "name": "Grand Ironwood Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+21 Strength, +20 Agility",
+      "tip": "+62 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Heavy Dark Iron Club",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+22 Strength, +16 Stamina",
+      "tip": "Great tanking mace."
+    }
+  },
+  "57": {
+    "armorPrimary": {
+      "name": "Frostsaber Leather Gloves",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+98 Armor, +14 Agi, +13 Stam",
+      "tip": "Crafted at LW 290."
+    },
+    "armorAlt": {
+      "name": "Devilsaur Gauntlets",
+      "slot": "Hands",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+28 AP, +1% Crit",
+      "tip": "BiS gloves if not yet equipped."
+    },
+    "weaponPrimary": {
+      "name": "Grand Stone Staff of the Tiger",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+21 Strength, +21 Agility",
+      "tip": "+63 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Smasher of the Tiger",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Auction House BOE",
+      "stats": "+22 Strength, +20 Agility",
+      "tip": "AH mace alternative."
+    }
+  },
+  "58": {
+    "armorPrimary": {
+      "name": "Mark of Fordring",
+      "slot": "Neck",
+      "quality": "rare",
+      "source": "EPL Quest: In Dreams",
+      "stats": "+26 Attack Power, +1% Crit Chance",
+      "tip": "Epic solo quest chain in EPL! Raid BiS."
+    },
+    "armorAlt": {
+      "name": "Frostsaber Boots",
+      "slot": "Feet",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+112 Armor, +15 Agi, +14 Stam",
+      "tip": "Crafted at LW 295."
+    },
+    "weaponPrimary": {
+      "name": "Warden Staff",
+      "type": "Two-Hand Staff",
+      "quality": "epic",
+      "source": "Auction House BOE",
+      "stats": "+260 Armor, +10 Def, +11 Stam",
+      "tip": "Unbeatable Bear Tanking weapon in Classic."
+    },
+    "weaponAlt": {
+      "name": "Hammer of the Northern Wind",
+      "type": "One-Hand Mace",
+      "quality": "epic",
+      "source": "Auction House BOE",
+      "stats": "+Frost damage proc",
+      "tip": "Epic 1H mace to pair with Off-hand."
+    }
+  },
+  "59": {
+    "armorPrimary": {
+      "name": "Frostsaber Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking / AH",
+      "stats": "+148 Armor, +16 Agi, +15 Stam",
+      "tip": "Crafted at LW 300."
+    },
+    "armorAlt": {
+      "name": "Devilsaur Leggings",
+      "slot": "Legs",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+46 AP, +1% Crit",
+      "tip": "Top tier physical pants."
+    },
+    "weaponPrimary": {
+      "name": "Bonecrusher",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Dire Maul Quest",
+      "stats": "+30 Strength",
+      "tip": "+60 Feral AP."
+    },
+    "weaponAlt": {
+      "name": "Timeless Staff",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Caverns of Time / Quest",
+      "stats": "+15 Str, +15 Agi, +15 Stam",
+      "tip": "Balanced hybrid staff."
+    }
+  },
+  "60": {
+    "armorPrimary": {
+      "name": "Devilsaur Armor Set (Gauntlets & Leggings)",
+      "slot": "Set",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+2% Hit Chance, +46 Agi, +28 AP",
+      "tip": "THE GOLD STANDARD FOR CAT DPS HEADING INTO RAIDS!"
+    },
+    "armorAlt": {
+      "name": "Wolfshead Helm",
+      "slot": "Head",
+      "quality": "rare",
+      "source": "Leatherworking / AH",
+      "stats": "+20 Energy on Cat Shift / +5 Rage Bear",
+      "tip": "Permanent BiS Powershifting Helm throughout vanilla."
+    },
+    "weaponPrimary": {
+      "name": "Warden Staff",
+      "type": "Two-Hand Staff",
+      "quality": "epic",
+      "source": "Auction House BOE",
+      "stats": "+260 Armor, +10 Def, +11 Stam",
+      "tip": "Best Bear Tanking weapon in Vanilla/Forever."
+    },
+    "weaponAlt": {
+      "name": "Bonecrusher",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Dire Maul Quest",
+      "stats": "+30 Strength (+60 AP)",
+      "tip": "Supreme Cat DPS quest weapon."
+    }
+  }
+}

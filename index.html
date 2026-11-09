@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WoW Forever: Alliance Skyborne Feral Druid Leveling Codex (9-60)</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Sticky Top Header -->
+  <header class="header-banner">
+    <div class="header-container">
+      <div class="brand-section">
+        <div class="class-icon-wrapper" title="Feral Druid - WoW Forever">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <h1><span class="druid-text">Feral Druid</span> Leveling Codex</h1>
+          <div class="brand-sub">
+            <span class="badge-skyborne">Skyborne Race</span>
+            <span class="badge-alliance">Alliance High Order</span>
+            <span>• World of Warcraft: Forever</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Interactive Character Sync Widget -->
+      <div class="header-sync-widget">
+        <div class="header-sync-pill" onclick="openSyncModal()" title="Click to view Character & Level Sync settings">
+          <span class="sync-status-dot" title="Status: Synced & Saved"></span>
+          <span class="sync-char-name" id="headerCharName">Chongo</span>
+          <span class="sync-char-sep">•</span>
+          <span class="sync-char-level">Lvl <strong id="headerCharLvl">11</strong></span>
+        </div>
+        <div class="header-quick-step">
+          <button type="button" class="btn-header-step" onclick="quickStepLevel(-1)" title="Previous Level (Step Down)">-</button>
+          <button type="button" class="btn-header-step" onclick="quickStepLevel(1)" title="Next Level / Ding! (Step Up)">+1</button>
+        </div>
+        <button class="btn-header-sync" id="btnHeaderDirectSync" onclick="directSyncHeaderClick()" title="1-Click Instant Sync from WoW Client">
+          ⚡ Sync
+        </button>
+      </div>
+
+      <nav class="nav-tabs">
+        <button class="nav-tab-btn active" data-tab="tab-codex">📖 Level Codex</button>
+        <button class="nav-tab-btn" data-tab="tab-classquests">📜 Class Quests</button>
+        <button class="nav-tab-btn" data-tab="tab-armor-mockup">🛡️ Armor Mockup (Maxroll)</button>
+        <button class="nav-tab-btn" data-tab="tab-stats">⚔️ Weapons & Stats</button>
+        <button class="nav-tab-btn" data-tab="tab-talents">🌲 Talent Build</button>
+        <button class="nav-tab-btn" data-tab="tab-professions">✂️ Skinning & LW</button>
+        <button class="nav-tab-btn" data-tab="tab-skyborne">✨ Skyborne & Macros</button>
+        <button class="nav-tab-btn" data-tab="tab-tracker">☑️ Progress Tracker</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Wrapper -->
+  <main class="main-wrapper">
+
+    <!-- TAB 1: LEVEL-BY-LEVEL CODEX -->
+    <div id="tab-codex" class="view-panel active">
+      
+      <!-- Interactive Level Jumper & Slider Bar -->
+      <section class="level-control-card">
+        <div class="level-control-top">
+          <div class="current-level-display">
+            <div class="level-badge-huge">
+              <span class="lvl-lbl">LEVEL</span>
+              <span class="lvl-val">9</span>
+            </div>
+            <div class="level-title-group">
+              <h2 id="levelMainTitle">Level 9: Zephras Isle Finale & Skyborne Pre-Ascension</h2>
+              <p id="levelMainSub">Zephras Isle • High Order Enclave</p>
+            </div>
+          </div>
+
+          <div class="level-buttons-group">
+            <button class="btn-ctrl" id="prevLevelBtn">◀ Previous Level</button>
+            <button class="btn-ctrl btn-primary" id="nextLevelBtn">Next Level (10) ▶</button>
+          </div>
+        </div>
+
+        <div class="slider-container">
+          <input type="range" id="levelSlider" min="1" max="60" value="9" step="1">
+        </div>
+
+        <!-- Quick Milestone Jumpers -->
+        <div class="milestones-strip">
+          <span class="milestone-label">Key Milestones:</span>
+          <button class="pill-jump current-milestone" data-lvl="9">Level 9 (You are here!)</button>
+          <button class="pill-jump" data-lvl="10">Lvl 10 (Bear Form)</button>
+          <button class="pill-jump" data-lvl="16">Lvl 16 (Aquatic Form)</button>
+          <button class="pill-jump" data-lvl="20">Lvl 20 (Cat Form!)</button>
+          <button class="pill-jump" data-lvl="30">Lvl 30 (Travel & Aura)</button>
+          <button class="pill-jump" data-lvl="40">Lvl 40 (Mount & Dire Bear)</button>
+          <button class="pill-jump" data-lvl="50">Lvl 50 (Un'Goro Speedrun)</button>
+          <button class="pill-jump" data-lvl="60">Lvl 60 (Raid Ready)</button>
+        </div>
+      </section>
+
+      <!-- 2-Column Content Grid for Level Information -->
+      <div class="level-content-grid">
+        
+        <!-- Left Main Column -->
+        <div class="main-column">
+          
+          <!-- Class Quest Callout (Appears dynamically) -->
+          <div id="classQuestCallout" class="quest-callout" style="display: flex;">
+            <div class="quest-callout-icon">⭐</div>
+            <div class="quest-callout-text">
+              <strong>Prepare for Level 10:</strong> At Level 10, speak to your town trainer <strong>Lotheluum Starbreeze</strong> to pick up <em>"The Great Ursera Spirit"</em>, which directs you to <strong>Urs'endris</strong> at the <strong>East Pylon Watchtower (coords 69.8, 61.7)</strong> for your Bear Form quest!
+            </div>
+          </div>
+
+          <!-- Where to Level Card -->
+          <div class="guide-card">
+            <div class="card-header-with-badge">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Where You Should Be Leveling
+              </h3>
+              <span class="tag-badge zone" id="zoneRange">Bracket: 8-10</span>
+            </div>
+
+            <div class="zone-info-box">
+              <div class="zone-header">
+                <span class="zone-name" id="zoneName">Zephras Isle (Gustberry Lowlands & High Order Enclave)</span>
+              </div>
+              <div class="zone-hubs" id="zoneHubs">Flight Paths / Hubs: High Order Enclave / Akir's Descent</div>
+              <div class="zone-instructions" id="zoneInstructions">
+                You are currently Level 9! Wrap up the final remaining quests in the southern Gustberry Lowlands and near the waterfall of Akir. Stock up on food and water. You are right at the door of Level 10, where your entire Druid journey transforms with Bear Form and your first talent point!
+              </div>
+            </div>
+          </div>
+
+          <!-- Talent Point for this Level -->
+          <div class="guide-card highlight-card">
+            <div class="card-header-with-badge">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.84L19.53 19H4.47L12 5.84zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg>
+                Talent Pick for this Level
+              </h3>
+              <span class="tag-badge talent">Skill Tree Investment</span>
+            </div>
+
+            <div class="talent-spotlight" id="talentSpotlightContent">
+              <div class="talent-desc" style="border-left-color: #64748b;">
+                <em>First talent point unlocks at Level 10! Get ready to invest in Ferocity.</em>
+              </div>
+            </div>
+          </div>
+
+          <!-- Trainer Spells: What to Buy vs Skip -->
+          <div class="guide-card">
+            <div class="card-header-with-badge">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg>
+                Class Trainer: What to Buy vs Skip
+              </h3>
+              <span class="tag-badge" style="background: rgba(234, 179, 8, 0.2); color: #fde047;">Gold Saver</span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 12px;">
+              Saving silver is crucial so you have the <strong>90–100 gold</strong> needed for your 60% Mount at level 40. Only buy abilities that boost physical Feral damage or core emergency utility!
+            </p>
+
+            <div class="spells-grid">
+              <div class="spells-col">
+                <div class="spells-col-title train">
+                  <span>✓ Must Train</span>
+                </div>
+                <div id="spellsTrainList">
+                  <div class="spell-item"><span class="spell-name">Moonfire (Rank 2)</span><span class="spell-role">BUY</span></div>
+                  <div class="spell-item"><span class="spell-name">Rejuvenation (Rank 2)</span><span class="spell-role">BUY</span></div>
+                </div>
+              </div>
+
+              <div class="spells-col">
+                <div class="spells-col-title skip">
+                  <span>✕ Safe to Skip (Save Silver)</span>
+                </div>
+                <div id="spellsSkipList">
+                  <div class="spell-item"><span class="spell-name" style="color:#f87171;">Thorns (Rank 1 upgrade)</span><span class="spell-role">SKIP</span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Combat Rotation & Tactics -->
+          <div class="guide-card">
+            <div class="card-header-with-badge">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24"><path d="M14.5 13.5l2.5-2.5-4-4L10.5 9.5l4 4zM2 19.5l4 4L17.5 12l-4-4L2 19.5zM22 6.5l-4.5-4.5-2 2 4.5 4.5 2-2z"/></svg>
+                Optimal Combat Rotation & Tactics
+              </h3>
+              <span class="tag-badge" style="background: rgba(249, 115, 22, 0.2); color: #fb923c;">Combat Guide</span>
+            </div>
+            
+            <div class="rotation-steps" id="rotationStepsList">
+              <div class="rot-step">
+                <div class="rot-num">1</div>
+                <div class="rot-desc">Open with 2x Wrath from max 30 yards range</div>
+              </div>
+              <div class="rot-step">
+                <div class="rot-num">2</div>
+                <div class="rot-desc">Apply Moonfire Rank 2 while mob runs toward you</div>
+              </div>
+              <div class="rot-step">
+                <div class="rot-num">3</div>
+                <div class="rot-desc">Melee with your weapon to conserve mana; re-apply Rejuvenation if below 70% HP</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Optimal Non-Dungeon Gear (AH, Crafted & Solo Quests) -->
+          <div class="guide-card highlight-card">
+            <div class="card-header-with-badge">
+              <h3 class="card-title">
+                <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+                Optimal Non-Dungeon Armor & Weapons (AH & Solo)
+              </h3>
+              <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: var(--gold-light); border: 1px solid var(--gold-accent);">
+                No Dungeon Required
+              </span>
+            </div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 14px;">
+              You do <strong>not</strong> need to group for dungeons to stay geared! Below are the best items you can purchase directly from the <strong>Auction House (AH)</strong>, craft with <strong>Leatherworking</strong>, or earn from solo quests, with an alternate option for each slot:
+            </p>
+
+            <div id="nonDungeonGearMainContainer">
+              <!-- Populated dynamically via JavaScript per level -->
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Sidebar Column -->
+        <div class="sidebar-column">
+          
+          <!-- Stat Priority Card -->
+          <div class="sidebar-widget">
+            <h4 class="widget-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="var(--druid-color)"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+              Current Stat Priorities
+            </h4>
+            <div class="stat-prio-list" id="statPriorityContainer">
+              <div class="stat-prio-item">
+                <span class="stat-prio-name">1. Strength & Armor</span>
+                <span class="stat-prio-badge prio-1">Top Priority</span>
+              </div>
+              <div class="stat-prio-item">
+                <span class="stat-prio-name">2. Stamina</span>
+                <span class="stat-prio-badge prio-2">High</span>
+              </div>
+              <div class="stat-prio-item">
+                <span class="stat-prio-name">3. Spirit</span>
+                <span class="stat-prio-badge prio-3">Medium (Regen)</span>
+              </div>
+              <div class="stat-prio-item">
+                <span class="stat-prio-name">4. Agility</span>
+                <span class="stat-prio-badge prio-4">Good for dodge</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dungeon Drops & Upgrades to Hunt -->
+          <div class="sidebar-widget">
+            <h4 class="widget-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#38bdf8"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+              🏰 Optional Dungeon Drops (If Grouping)
+            </h4>
+            <div id="gearItemList">
+              <div class="gear-item-card">
+                <div class="gear-item-top">
+                  <span class="gear-name uncommon">Staff of the Windcaller</span>
+                  <span class="gear-source">Zephras Isle Quest</span>
+                </div>
+                <div class="gear-stats">+3 Spirit, +2 Stamina</div>
+                <div class="gear-tip">Great high-spirit stat stick before leaving the island.</div>
+              </div>
+            </div>
+            <p id="generalGearTip" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px; font-style: italic;">
+              Prioritize leather with Agility or Strength if you find any 'Of the Tiger' / 'Of the Bear' drops.
+            </p>
+          </div>
+
+          <!-- Skyborne Alliance Racial Synergies -->
+          <div class="sidebar-widget">
+            <h4 class="widget-title">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#38bdf8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              Alliance Skyborne Synergies
+            </h4>
+            <div class="racial-box">
+              <div class="racial-box-header">🕊️ Walk on Air (Active Glide)</div>
+              <div class="racial-box-desc">Jump off any mountain, bluff, or cliff and glide downward safely. Prevents fall deaths and bypasses long zone routes!</div>
+            </div>
+            <div class="racial-box">
+              <div class="racial-box-header">⚡ Wind Blessed (Passive)</div>
+              <div class="racial-box-desc">Grants a permanent <strong>+2% attack and casting speed</strong>. Faster auto-attacks mean more Omen of Clarity procs!</div>
+            </div>
+            <div class="racial-box">
+              <div class="racial-box-header">🌀 Read Ley Line (Alliance Active)</div>
+              <div class="racial-box-desc">Multiplies Spirit-based mana regeneration. Cast after combat or with Innervate at level 40+ to fill your entire mana bar in 3 seconds!</div>
+            </div>
+            <div class="racial-box">
+              <div class="racial-box-header">🔥 Elemental Insight (Passive)</div>
+              <div class="racial-box-desc">Deals <strong>+5% extra damage</strong> against Elementals (Badlands, Searing Gorge, Un'Goro, Silithus).</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB: DRUID CLASS QUESTS MASTER DIRECTORY -->
+    <div id="tab-classquests" class="view-panel">
+      
+      <!-- Level 10 Bear Form Walkthrough (Top Highlight) -->
+      <div class="guide-card highlight-card">
+        <div class="card-header-with-badge">
+          <h3 class="card-title">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            Level 10: Bear Form — "Strength and Mercy" (Skyborne Walkthrough)
+          </h3>
+          <span class="tag-badge" style="background: rgba(255, 125, 10, 0.2); color: var(--druid-color); border: 1px solid var(--druid-color);">Critical Class Quest</span>
+        </div>
+
+        <div style="background: rgba(255, 125, 10, 0.08); border-left: 4px solid var(--druid-color); padding: 16px; border-radius: var(--radius-md); margin-bottom: 20px;">
+          <h4 style="color: var(--druid-color); font-size: 1.05rem; margin-bottom: 6px;">📍 Urs'endris Exact Location & Cave Pathing Clarification:</h4>
+          <p style="font-size: 0.92rem; color: #e2e8f0; line-height: 1.7;">
+            Many players get confused by the coordinates on Zephras Isle! <strong>Urs'endris is NOT in the cave.</strong> Urs'endris is the quest giver standing outside at the <strong>East Pylon Watchtower (69.8, 61.7)</strong>.<br>
+            The coordinates <strong>(53.7, 65.0)</strong> are for the <strong>cave where Ur'endra lives</strong>, which you must approach strictly from the <strong>northern side</strong>.
+          </p>
+        </div>
+
+        <div class="rotation-steps">
+          
+          <div class="rot-step">
+            <div class="rot-num">1</div>
+            <div class="rot-desc">
+              <strong>Hit Level 10 & Talk to Trainer:</strong> In the town hub / High Order Enclave on Zephras Isle, speak with Druid Trainer <strong>Lotheluum Starbreeze</strong>. Pick up the opening prerequisite quest: <em>"The Great Ursera Spirit"</em>.
+            </div>
+          </div>
+
+          <div class="rot-step">
+            <div class="rot-num">2</div>
+            <div class="rot-desc">
+              <strong>Find Urs'endris at East Pylon Watchtower (Coords: 69.8, 61.7):</strong><br>
+              Head eastward toward the coast, northeast of Valanaar and near the waterfall below the Shrine of Akir. Speak to <strong>Urs'endris</strong> at coordinates <strong>(69.8, 61.7)</strong>. Turn in the prerequisite quest and accept <strong>"Strength and Mercy"</strong>. Urs'endris asks you to put down his mad mate, Ur'endra.
+            </div>
+          </div>
+
+          <div class="rot-step">
+            <div class="rot-num">3</div>
+            <div class="rot-desc">
+              <strong>Locate the Overlook Standing Stones Cave (Coords: 53.7, 65.0):</strong><br>
+              Travel west into the bluffs between the Shen'dar Highlands and the Gustberry Lowlands toward coordinates <strong>(53.7, 65.0)</strong>.
+            </div>
+          </div>
+
+          <div class="rot-step">
+            <div class="rot-num">4</div>
+            <div class="rot-desc">
+              <strong>⚠️ CRITICAL PATHING WARNING — Approach from the NORTH:</strong><br>
+              The southern face of the bluff has sheer vertical rock walls that cannot be climbed. <strong>Circle around to the NORTHERN side of the mountain ridge</strong> to find the open dirt ramp leading up into the cave entrance!
+            </div>
+          </div>
+
+          <div class="rot-step">
+            <div class="rot-num">5</div>
+            <div class="rot-desc">
+              <strong>Defeat Ur'endra:</strong><br>
+              Enter the northern cave entrance. Pull Ur'endra with <em>Wrath</em> from max range, apply <em>Moonfire</em>, keep <em>Rejuvenation</em> on yourself, and finish her with melee swings.
+            </div>
+          </div>
+
+          <div class="rot-step">
+            <div class="rot-num">6</div>
+            <div class="rot-desc">
+              <strong>Turn In & Unlock Bear Form!</strong><br>
+              Return to <strong>Urs'endris at the East Pylon Watchtower (69.8, 61.7)</strong>. Turn in <em>"Strength and Mercy"</em> to instantly unlock <strong>Bear Form</strong>, plus <em>Maul (Rank 1)</em>, <em>Growl (Rank 1)</em>, and <em>Demoralizing Roar (Rank 1)</em>!<br>
+              Once complete, take the High Order portal to <strong>Stormwind City</strong> to start mainland questing!
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Level 16: Aquatic Form Walkthrough -->
+      <div class="guide-card">
+        <div class="card-header-with-badge">
+          <h3 class="card-title">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+            Level 16: Aquatic Form — "Trial of the Sea Lion"
+          </h3>
+          <span class="tag-badge" style="background: rgba(56, 189, 248, 0.2); color: var(--skyborne-blue);">50% Swim Speed + Infinite Breath</span>
+        </div>
+
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px;">
+          Unlocks Aquatic Form (50% increased swim speed and underwater breathing). You must retrieve two halves of the Sea Lion Pendant from opposite sides of the world.
+        </p>
+
+        <div class="rotation-steps">
+          <div class="rot-step">
+            <div class="rot-num">1</div>
+            <div class="rot-desc">
+              <strong>Teleport to Moonglade:</strong> Use your <em>Teleport: Moonglade</em> spell. Speak with <strong>Dendrite Starblaze</strong> in the village of Nighthaven to accept <em>"Trial of the Sea Lion"</em>.
+            </div>
+          </div>
+          <div class="rot-step">
+            <div class="rot-num">2</div>
+            <div class="rot-desc">
+              <strong>Darkshore Half (Pendant of the Sea Lion):</strong><br>
+              Fly to Auberdine in Darkshore. Swim north along the coast to Cliffspring River falls at coordinates <strong>(56.0, 8.0)</strong>. Dive deep underwater to find the Strange Lockbox and loot the half pendant.
+            </div>
+          </div>
+          <div class="rot-step">
+            <div class="rot-num">3</div>
+            <div class="rot-desc">
+              <strong>Westfall Half (Pendant of Agility):</strong><br>
+              Take the boat/flight to Westfall. Head to the coast southwest of the lighthouse near coordinates <strong>(28.0, 33.0)</strong>. Dive underwater near the submerged ruins to loot the half pendant from the lockbox.
+            </div>
+          </div>
+          <div class="rot-step">
+            <div class="rot-num">4</div>
+            <div class="rot-desc">
+              <strong>Forge the Pendant in Moonglade:</strong><br>
+              Teleport back to Moonglade. Bring both halves to the Shrine of Remulos to forge the complete <strong>Sea Lion Pendant</strong>. Turn it in to learn <strong>Aquatic Form</strong>!
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Major Forms Summary Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        
+        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 6px;">🐾 Level 20: Cat Form & Prowl</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            • <strong>How to unlock:</strong> No long quest chain needed! Simply visit any Druid Trainer (Stormwind Park or Darnassus) at Level 20.<br>
+            • <strong>What unlocks:</strong> Cat Form, Prowl (stealth), Claw, Rip, and Tiger's Fury.<br>
+            • <strong>Speed Spike:</strong> Combine with 2/2 <em>Feline Swiftness</em> for +30% permanent outdoor movement speed!
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="color: var(--skyborne-blue); font-size: 1rem; margin-bottom: 6px;">🐆 Level 30: Travel Form</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            • <strong>How to unlock:</strong> Train directly at your Druid Trainer at Level 30.<br>
+            • <strong>Speed:</strong> Increases your outdoor movement speed by <strong>+40%</strong> instantly.<br>
+            • <strong>Tactical Power:</strong> Shifting into Travel Form instantly dispels all active roots and movement slows!
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="color: var(--gold-accent); font-size: 1rem; margin-bottom: 6px;">🐻 Level 40: Dire Bear Form</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            • <strong>How to unlock:</strong> Trained at any Druid Trainer at Level 40.<br>
+            • <strong>Armor Multiplier:</strong> Replaces normal Bear Form and multiplies armor from items by <strong>+360%</strong> (up from +180%)!<br>
+            • <strong>Tanking:</strong> Massive health pool scaling from <em>Heart of the Wild</em>.
+          </p>
+        </div>
+
+        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+          <h4 style="color: #c084fc; font-size: 1rem; margin-bottom: 6px;">🐲 Level 52+: Sunken Temple Class Quest</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
+            • <strong>Quest:</strong> <em>"Blood of Morphaz"</em> (starts in Felwood / Moonglade).<br>
+            • <strong>Dungeon:</strong> Defeat dragon boss Morphaz inside Sunken Temple (Temple of Atal'Hakkar).<br>
+            • <strong>Reward:</strong> <strong>Grizzled Pelt</strong> (+15 Stamina, +337 Armor in Dire Bear) — the premier tanking cloak in Vanilla!
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- TAB 2: MAXROLL-STYLE ARMOR & EQUIPMENT MOCKUP -->
+    <div id="tab-armor-mockup" class="view-panel">
+      <div class="maxroll-paperdoll-wrapper">
+        
+        <!-- Preset Selector Bar -->
+        <div class="preset-switcher-bar" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
+          <div style="display: flex; align-items: center; gap: 10px; flex-wrap: wrap;">
+            <div class="preset-label-group">
+              <span class="preset-label-title">⚙️ Gear Tier Preset:</span>
+            </div>
+            <div class="preset-buttons">
+              <button class="btn-preset active" data-preset="chongo_live" style="background: rgba(56, 189, 248, 0.2); border-color: var(--skyborne-blue); color: #fff;">👤 Chongo's Live Gear (Synced)</button>
+              <button class="btn-preset" data-preset="lvl10_20">Lvl 10–20 (Deadmines Era)</button>
+              <button class="btn-preset" data-preset="lvl20_35">Lvl 20–35 (Cat Sprint Era)</button>
+              <button class="btn-preset" data-preset="lvl35_50">Lvl 35–50 (Dire Bear & Mount)</button>
+              <button class="btn-preset" data-preset="lvl60_bis">Lvl 60 Pre-Raid BiS (God Tier)</button>
+            </div>
+          </div>
+          <button type="button" class="btn-site-run-sync" onclick="executeGameSyncFromSite()" title="Directly executes game sync script from live WoW WTF files">
+            ⚡ Run Sync from Game (.bat)
+          </button>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <h2 id="mockupPresetTitle" style="color: #fff; font-size: 1.4rem; font-weight: 800;">Level 10–20 (Deadmines Era)</h2>
+          <p id="mockupPresetSub" style="color: var(--text-muted); font-size: 0.9rem;">Early Bear Tanking & Questing Setup</p>
+        </div>
+
+        <!-- 3-Column Paperdoll Grid -->
+        <div class="paperdoll-grid">
+          
+          <!-- Left Column (Armor Slots) -->
+          <div class="paperdoll-col left">
+            
+            <!-- Head Slot -->
+            <div class="gear-slot-item" id="slotHead">
+              <div class="slot-icon-box rarity-uncommon">👑</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Head</span>
+                <span class="slot-item-name uncommon">Feathered Headdress</span>
+                <span class="slot-source-text">Westfall / Loch Modan Quest</span>
+              </div>
+            </div>
+
+            <!-- Neck Slot -->
+            <div class="gear-slot-item" id="slotNeck">
+              <div class="slot-icon-box rarity-rare">📿</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Neck</span>
+                <span class="slot-item-name rare">Sentinel's Medallion</span>
+                <span class="slot-source-text">Warsong Gulch Vendor / Quest</span>
+              </div>
+            </div>
+
+            <!-- Shoulders Slot -->
+            <div class="gear-slot-item" id="slotShoulders">
+              <div class="slot-icon-box rarity-uncommon">🛡️</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Shoulders</span>
+                <span class="slot-item-name uncommon">Serpent's Shoulders</span>
+                <span class="slot-source-text">Wailing Caverns Drop</span>
+              </div>
+            </div>
+
+            <!-- Back / Cloak Slot -->
+            <div class="gear-slot-item" id="slotBack">
+              <div class="slot-icon-box rarity-rare">🧣</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Back</span>
+                <span class="slot-item-name rare">Engineer's Cloak</span>
+                <span class="slot-source-text">Deadmines - Sneed</span>
+              </div>
+            </div>
+
+            <!-- Chest Slot -->
+            <div class="gear-slot-item" id="slotChest">
+              <div class="slot-icon-box rarity-rare">🥋</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Chest</span>
+                <span class="slot-item-name rare">Tunic of Westfall</span>
+                <span class="slot-source-text">Quest: The Defias Brotherhood</span>
+              </div>
+            </div>
+
+            <!-- Wrists Slot -->
+            <div class="gear-slot-item" id="slotWrists">
+              <div class="slot-icon-box rarity-uncommon">⛓️</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Wrists</span>
+                <span class="slot-item-name uncommon">Wrangler's Wristbands of the Bear</span>
+                <span class="slot-source-text">World Drop</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Center Column (Character Silhouette & Live Stats Sheet) -->
+          <div class="paperdoll-center">
+            
+            <div class="character-hero-card">
+              <div class="character-druid-crest">🐾</div>
+              <h3 class="character-hero-name">Skyborne Feral Druid</h3>
+              <div class="character-hero-badges">
+                <span class="badge-skyborne">High Order</span>
+                <span class="badge-alliance">Alliance</span>
+                <span style="background: rgba(255, 125, 10, 0.2); color: var(--druid-color); border: 1px solid var(--druid-color); padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700;">14 / 32 / 5 Hybrid</span>
+              </div>
+
+              <!-- Live Stats Sheet -->
+              <div class="character-stats-sheet">
+                <div class="stat-entry">
+                  <span class="stat-entry-lbl">Health (HP):</span>
+                  <span class="stat-entry-val" id="statHp">840</span>
+                </div>
+                <div class="stat-entry">
+                  <span class="stat-entry-lbl">Mana (MP):</span>
+                  <span class="stat-entry-val" id="statMp">760</span>
+                </div>
+                <div class="stat-entry">
+                  <span class="stat-entry-lbl">Cat Attack Power:</span>
+                  <span class="stat-entry-val highlight" id="statCatAp">242 AP</span>
+                </div>
+                <div class="stat-entry">
+                  <span class="stat-entry-lbl">Bear Form Armor:</span>
+                  <span class="stat-entry-val highlight" id="statBearArmor">1,620 (61% Reduc)</span>
+                </div>
+                <div class="stat-entry">
+                  <span class="stat-entry-lbl">Melee Crit Chance:</span>
+                  <span class="stat-entry-val" id="statCrit">11.2%</span>
+                </div>
+                <div class="stat-entry">
+                  <span class="stat-entry-lbl">Dodge Chance:</span>
+                  <span class="stat-entry-val" id="statDodge">9.5%</span>
+                </div>
+                <div class="stat-entry" style="grid-column: span 2;">
+                  <span class="stat-entry-lbl">Hit Chance (PvE Cap 9%):</span>
+                  <span class="stat-entry-val" id="statHit">0%</span>
+                </div>
+              </div>
+
+              <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-md); padding: 10px; margin-top: 14px; text-align: left; font-size: 0.82rem; color: #cbd5e1;">
+                💡 <strong>Maxroll Pro Tip:</strong> Hover or click on any piece of gear to reveal its authentic WoW tooltip with full stats, drop source, and special feral modifiers!
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Right Column (Armor & Jewelry Slots) -->
+          <div class="paperdoll-col right">
+            
+            <!-- Hands Slot -->
+            <div class="gear-slot-item" id="slotHands">
+              <div class="slot-icon-box rarity-rare">🧤</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Hands</span>
+                <span class="slot-item-name rare">Gloves of the Fang</span>
+                <span class="slot-source-text">Wailing Caverns Drop</span>
+              </div>
+            </div>
+
+            <!-- Waist Slot -->
+            <div class="gear-slot-item" id="slotWaist">
+              <div class="slot-icon-box rarity-uncommon">🎗️</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Waist</span>
+                <span class="slot-item-name uncommon">Deviate Scale Belt</span>
+                <span class="slot-source-text">Leatherworking (115)</span>
+              </div>
+            </div>
+
+            <!-- Legs Slot -->
+            <div class="gear-slot-item" id="slotLegs">
+              <div class="slot-icon-box rarity-rare">👖</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Legs</span>
+                <span class="slot-item-name rare">Leggings of the Fang</span>
+                <span class="slot-source-text">Wailing Caverns - Cobrahn</span>
+              </div>
+            </div>
+
+            <!-- Feet Slot -->
+            <div class="gear-slot-item" id="slotFeet">
+              <div class="slot-icon-box rarity-rare">🥾</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Feet</span>
+                <span class="slot-item-name rare">Footpads of the Fang</span>
+                <span class="slot-source-text">Wailing Caverns - Anacondra</span>
+              </div>
+            </div>
+
+            <!-- Finger 1 -->
+            <div class="gear-slot-item" id="slotRing1">
+              <div class="slot-icon-box rarity-rare">💍</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Finger 1</span>
+                <span class="slot-item-name rare">Silverlaine's Family Seal</span>
+                <span class="slot-source-text">SFK - Baron Silverlaine</span>
+              </div>
+            </div>
+
+            <!-- Finger 2 -->
+            <div class="gear-slot-item" id="slotRing2">
+              <div class="slot-icon-box rarity-uncommon">💍</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Finger 2</span>
+                <span class="slot-item-name uncommon">Meadow Ring of the Tiger</span>
+                <span class="slot-source-text">World Drop (+Agi / +Str)</span>
+              </div>
+            </div>
+
+            <!-- Trinket 1 -->
+            <div class="gear-slot-item" id="slotTrinket1">
+              <div class="slot-icon-box rarity-uncommon">🔮</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Trinket 1</span>
+                <span class="slot-item-name uncommon">Minor Recombobulator</span>
+                <span class="slot-source-text">Gnomeregan Quest</span>
+              </div>
+            </div>
+
+            <!-- Trinket 2 -->
+            <div class="gear-slot-item" id="slotTrinket2">
+              <div class="slot-icon-box rarity-rare">🔮</div>
+              <div class="slot-details">
+                <span class="slot-label-text">Trinket 2</span>
+                <span class="slot-item-name rare">Insignia of the Alliance</span>
+                <span class="slot-source-text">PvP Rank 2 Officer</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- Bottom Weapons & Off-Hand & Relic Row -->
+        <div class="weapons-equipment-bar">
+          
+          <!-- Main Hand Weapon -->
+          <div class="weapon-slot-card" id="slotMainHand">
+            <div class="slot-icon-box rarity-rare">🔨</div>
+            <div class="slot-details">
+              <span class="slot-label-text">Main Hand / Two-Hand</span>
+              <span class="slot-item-name rare">Smite's Mighty Hammer</span>
+              <span class="slot-source-text">The Deadmines - Mr. Smite</span>
+              <div><span class="weapon-slot-badge badge-2h">Two-Handed (Recommended)</span></div>
+            </div>
+          </div>
+
+          <!-- Off-Hand Slot -->
+          <div class="weapon-slot-card" id="slotOffHand">
+            <div class="slot-icon-box rarity-disabled">🚫</div>
+            <div class="slot-details">
+              <span class="slot-label-text">Off-Hand</span>
+              <span class="slot-item-name disabled">Empty (2H Equipped)</span>
+              <span class="slot-source-text">Shields Prohibited for Druids</span>
+              <div><span class="weapon-slot-badge badge-no-shield">Shields Prohibited</span></div>
+            </div>
+          </div>
+
+          <!-- Relic / Idol Slot -->
+          <div class="weapon-slot-card" id="slotRelic">
+            <div class="slot-icon-box rarity-uncommon">🗿</div>
+            <div class="slot-details">
+              <span class="slot-label-text">Relic (Ranged Slot)</span>
+              <span class="slot-item-name uncommon">Idol of Brutality</span>
+              <span class="slot-source-text">Early Druid Quest</span>
+              <div><span class="weapon-slot-badge badge-relic">Relic / Idol</span></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- LEVEL-APPROPRIATE NON-DUNGEON UPGRADE ADVISOR (SOLO QUESTS & AUCTION HOUSE ONLY) -->
+        <div class="paperdoll-upgrade-advisor" id="paperdollUpgradeAdvisor">
+          <div class="advisor-header-card">
+            <div class="advisor-title-box">
+              <span class="badge-advisor-tag">100% Solo Quests & AH • Zero Dungeons</span>
+              <h3 class="advisor-main-title">
+                🎒 Upgrade Suggestions for Level <span id="advisorLevelBadge">11</span>
+              </h3>
+              <p class="advisor-subtitle">
+                Guaranteed upgrades you can earn entirely through <strong>Solo Quests</strong>, <strong>Auction House (BoE)</strong>, and <strong>Leatherworking Crafting</strong>. Zero dungeon farming required!
+              </p>
+            </div>
+            <div class="advisor-controls-box">
+              <div class="advisor-filter-buttons">
+                <button type="button" class="btn-adv-filter active" data-filter="all">🌟 All Slots</button>
+                <button type="button" class="btn-adv-filter" data-filter="weapon">⚔️ Weapons</button>
+                <button type="button" class="btn-adv-filter" data-filter="chest-legs">🥋 Core Armor</button>
+                <button type="button" class="btn-adv-filter" data-filter="accessories">🧤 Gloves/Boots/Belt</button>
+                <button type="button" class="btn-adv-filter" data-filter="ah">🏷️ Auction House / LW</button>
+                <button type="button" class="btn-adv-filter" data-filter="quest">📜 Quests Only</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dynamic Upgrade Comparison Cards Grid -->
+          <div class="advisor-cards-grid" id="advisorCardsContainer">
+            <!-- Rendered dynamically by renderUpgradeAdvisor(currentLevel) -->
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 3: WEAPONS, OFF-HANDS & STATS -->
+    <div id="tab-stats" class="view-panel">
+      <div class="guide-card">
+        <h3 class="card-title" style="margin-bottom: 16px;">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          The Golden Rule of Feral Weapons (Critical Knowledge!)
+        </h3>
+        
+        <div style="background: rgba(255, 125, 10, 0.1); border-left: 4px solid var(--druid-color); padding: 16px; border-radius: var(--radius-md); margin-bottom: 20px;">
+          <h4 style="color: var(--druid-color); font-size: 1.1rem; margin-bottom: 8px;">⚠️ Weapons are STAT STICKS in Classic / Vanilla / WoW Forever</h4>
+          <p style="font-size: 0.95rem; color: #e2e8f0; line-height: 1.7;">
+            When you shift into Cat Form or Bear Form, <strong>your weapon's DPS, swing speed, and weapon damage range do NOT affect your paw auto-attacks!</strong><br>
+            • <strong>Cat Form</strong> attacks at a fixed <strong>1.0-second weapon speed</strong>.<br>
+            • <strong>Bear Form</strong> attacks at a fixed <strong>2.5-second weapon speed</strong>.<br>
+            • <strong>What actually determines your damage?</strong> The <em>stats</em> on the weapon (+Strength, +Agility, +Attack Power) and Feral Attack Power! A slow 50 DPS mace with zero stats is completely useless compared to a fast green staff with +15 Agility!
+          </p>
+        </div>
+
+        <h3 class="card-title" style="margin-bottom: 12px;">Feral Stat Hierarchy</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="color: var(--druid-color); font-weight: 700; font-size: 1rem; margin-bottom: 6px;">1. Agility (Agi) — Supreme for Cat</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              • <strong>1 Agility = 1 Attack Power (AP)</strong> in Cat Form.<br>
+              • <strong>20 Agility = 1% Critical Strike chance</strong>.<br>
+              • Also provides valuable Dodge chance and raw Armor for Bear tanking.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="color: var(--gold-light); font-weight: 700; font-size: 1rem; margin-bottom: 6px;">2. Strength (Str) — Supreme for Bear & Cat</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              • <strong>1 Strength = 2 Attack Power (AP)</strong> in both Bear and Cat forms!<br>
+              • Multiplied further by the <em>Heart of the Wild</em> talent (+20% Strength in Cat form).
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="color: #38bdf8; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">3. Stamina (Stam) — Health Pool</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              • 1 Stamina = 10 Hit Points.<br>
+              • In Bear Form, multiplied by the +20% Stamina bonus from <em>Heart of the Wild</em>. Essential for surviving dungeon boss cleaves.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <div style="color: #94a3b8; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">4. Spirit (Spi) — Regeneration</div>
+            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
+              • Restores Health and Mana out of combat.<br>
+              • Synergizes directly with your Alliance Skyborne racial <strong>Read Ley Line</strong> to instantly recover mana between shifts without drinking.
+            </p>
+          </div>
+
+        </div>
+
+        <h3 class="card-title" style="margin-bottom: 12px;">Legendary Feral Leveling Weapons You Must Seek</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div class="gear-item-card">
+            <div class="gear-item-top">
+              <span class="gear-name rare">Smite's Mighty Hammer (Level 18)</span>
+              <span class="gear-source">Mr. Smite (Deadmines)</span>
+            </div>
+            <div class="gear-stats">+11 Strength, +4 Agility</div>
+            <div class="gear-tip">+26 total Attack Power! Lasts until level 28+.</div>
+          </div>
+
+          <div class="gear-item-card">
+            <div class="gear-item-top">
+              <span class="gear-name rare">Manual Crowd Pumper (Level 29)</span>
+              <span class="gear-source">Crowd Pumper 9-60 (Gnomeregan)</span>
+            </div>
+            <div class="gear-stats">+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s</div>
+            <div class="gear-tip">The +50% attack speed active turns your Cat Form into an absolute buzzsaw on elite bosses!</div>
+          </div>
+
+          <div class="gear-item-card">
+            <div class="gear-item-top">
+              <span class="gear-name epic">Warden Staff (Level 43)</span>
+              <span class="gear-source">World Drop / Auction House</span>
+            </div>
+            <div class="gear-stats">+260 Armor, +10 Defense, +11 Stamina</div>
+            <div class="gear-tip">Armor on weapons multiplies by your Dire Bear form, granting nearly 1,000 extra armor! BiS Bear tank weapon.</div>
+          </div>
+
+          <div class="gear-item-card">
+            <div class="gear-item-top">
+              <span class="gear-name rare">Ironbark Staff (Level 54)</span>
+              <span class="gear-source">Western Plaguelands Quest</span>
+            </div>
+            <div class="gear-stats">+10 Strength, +10 Agility, +10 Stamina</div>
+            <div class="gear-tip">Balanced hybrid staff for late-50s questing.</div>
+          </div>
+        </div>
+
+        <!-- WEAPON TYPES, OFF-HANDS & IDOLS DEEP DIVE -->
+        <div style="margin-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 24px;">
+          <h3 class="card-title" style="margin-bottom: 8px;">
+            <svg viewBox="0 0 24 24"><path d="M14.5 13.5l2.5-2.5-4-4L10.5 9.5l4 4zM2 19.5l4 4L17.5 12l-4-4L2 19.5zM22 6.5l-4.5-4.5-2 2 4.5 4.5 2-2z"/></svg>
+            Complete Feral Weapon & Off-Hand Arsenal Matrix
+          </h3>
+          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
+            Druids have unique weapon restrictions. Knowing what you can wield, what weapon trainers teach them, and why shields are prohibited is vital for your journey.
+          </p>
+
+          <div class="weapon-matrix-grid">
+            
+            <!-- Staves -->
+            <div class="weapon-type-card allowed">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Two-Handed Staves (2H)</span>
+                <span class="weapon-status-tag yes">✓ Baseline Allowed</span>
+              </div>
+              <div class="weapon-card-desc">
+                <strong>Best leveling category!</strong> Druids learn Staves automatically at Level 1. Staves carry enormous stat bundles (+Strength, +Agility, +Stamina) and late-game armor (e.g. <em>Warden Staff</em> +260 Armor).
+              </div>
+            </div>
+
+            <!-- Two-Handed Maces -->
+            <div class="weapon-type-card allowed">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Two-Handed Maces (2H)</span>
+                <span class="weapon-status-tag yes">✓ Trainable (Ironforge)</span>
+              </div>
+              <div class="weapon-card-desc">
+                <strong>The heavy hitter!</strong> Must be trained by Weapon Master Bixi Wobblestaff in the Military Ward of Ironforge (cost: 10 silver). Unlocks <em>Smite's Mighty Hammer</em> (+11 Str, +4 Agi) and <em>Manual Crowd Pumper</em>.
+              </div>
+            </div>
+
+            <!-- One-Handed Maces -->
+            <div class="weapon-type-card allowed">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">One-Handed Maces (1H)</span>
+                <span class="weapon-status-tag yes">✓ Baseline Allowed</span>
+              </div>
+              <div class="weapon-card-desc">
+                Allowed by default. Can be paired with an <strong>Off-Hand item</strong> ("Held in Off-hand"). Good if you find a very high Agility 1H mace and a strong off-hand like the Furbolg Medicine Pouch.
+              </div>
+            </div>
+
+            <!-- Daggers -->
+            <div class="weapon-type-card allowed">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Daggers (1H)</span>
+                <span class="weapon-status-tag yes">✓ Trainable (Darnassus/SW)</span>
+              </div>
+              <div class="weapon-card-desc">
+                Can be learned from Weapon Master Ilyenia Moonfire in Darnassus or Woo Ping in Stormwind. High Agility daggers are usable with an Off-hand, but 2H staves/maces usually offer higher total stats.
+              </div>
+            </div>
+
+            <!-- Off-Hand ("Held in Off-hand") -->
+            <div class="weapon-type-card allowed">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Off-Hand Items ("Held in Off-hand")</span>
+                <span class="weapon-status-tag yes">✓ Allowed with 1H</span>
+              </div>
+              <div class="weapon-card-desc">
+                You can equip tomes, lanterns, and relics in your off-hand <strong>only when using a 1-Handed Mace or Dagger</strong>. (e.g. <em>Furbolg Medicine Pouch</em> with +10 Stamina and self-heal ward).
+              </div>
+            </div>
+
+            <!-- Relics / Idols -->
+            <div class="weapon-type-card allowed">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Idols (Relic / Ranged Slot)</span>
+                <span class="weapon-status-tag yes">✓ Druid Exclusive!</span>
+              </div>
+              <div class="weapon-card-desc">
+                Goes into your character's ranged paperdoll slot! Idols provide direct passive bonuses to shapeshift abilities: <strong>Idol of Ferocity</strong> (-3 Energy on Claw/Rake) and <strong>Idol of Brutality</strong> (-3 Rage on Maul/Swipe).
+              </div>
+            </div>
+
+            <!-- Shields -->
+            <div class="weapon-type-card prohibited">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Shields</span>
+                <span class="weapon-status-tag no">✕ PROHIBITED</span>
+              </div>
+              <div class="weapon-card-desc">
+                <strong>Druids can NEVER equip shields!</strong> Do not buy or roll on shields. Your Bear Form (+180% to +360% Armor multiplier) naturally provides more physical damage reduction than shield-wearing warriors!
+              </div>
+            </div>
+
+            <!-- Swords & Axes -->
+            <div class="weapon-type-card prohibited">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Swords & Axes (1H and 2H)</span>
+                <span class="weapon-status-tag no">✕ PROHIBITED</span>
+              </div>
+              <div class="weapon-card-desc">
+                Druids cannot learn or equip swords or axes of any kind. Never bid on swords, daggers are your only bladed option.
+              </div>
+            </div>
+
+            <!-- Bows, Guns, Crossbows, Wands -->
+            <div class="weapon-type-card prohibited">
+              <div class="weapon-card-header">
+                <span class="weapon-card-title">Bows, Guns, Crossbows, Wands</span>
+                <span class="weapon-status-tag no">✕ PROHIBITED</span>
+              </div>
+              <div class="weapon-card-desc">
+                Druids cannot shoot ranged weapons. Your ranged equipment slot is reserved exclusively for <strong>Druid Idols (Relics)</strong>!
+              </div>
+            </div>
+
+          </div>
+
+          <!-- 2H vs 1H + Off-Hand Tactical Guide -->
+          <div style="background: rgba(0, 0, 0, 0.35); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; margin-top: 20px;">
+            <h4 style="color: var(--gold-light); font-size: 1.05rem; margin-bottom: 8px;">⚔️ When Should You Use 2H vs 1H + Off-Hand?</h4>
+            <div style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.7;">
+              • <strong>95% of Leveling: ALWAYS use a Two-Handed Staff or 2H Mace!</strong><br>
+              In Classic and WoW Forever, early two-handed weapons carry massive stat combinations like +11 Strength and +4 Agility on Smite's Mighty Hammer (equivalent to +26 Attack Power and crit). Early 1-handed weapons and off-hands have split, diluted stats.<br><br>
+              • <strong>When is 1H + Off-Hand worth considering?</strong><br>
+              Only if you obtain a top-tier Agility dagger or mace paired with a specialized utility off-hand such as the <strong>Furbolg Medicine Pouch</strong> (Timbermaw reputation, grants +10 Stamina and plants a healing totem that ticks 100 HP every 3 seconds) or high +Intellect/+Spirit off-hands when queuing as a dungeon healer!
+            </div>
+          </div>
+
+          <!-- Alliance Weapon Master Locations -->
+          <div style="background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: var(--radius-md); padding: 16px; margin-top: 14px;">
+            <h4 style="color: #60a5fa; font-size: 1rem; margin-bottom: 6px;">🏛️ Alliance Weapon Master Directory (Train for 10 Silver each):</h4>
+            <ul style="font-size: 0.88rem; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 6px;">
+              <li>• <strong>Ironforge (Military Ward):</strong> Weapon Master Bixi Wobblestaff teaches <strong>Two-Handed Maces</strong>. <em>(Visit him as soon as you reach level 18 for Smite's Mighty Hammer!)</em></li>
+              <li>• <strong>Darnassus (Warrior's Terrace):</strong> Weapon Master Ilyenia Moonfire teaches <strong>Daggers</strong> and <strong>Fist Weapons</strong>.</li>
+              <li>• <strong>Stormwind (Old Town):</strong> Weapon Master Woo Ping teaches <strong>One-Handed Swords</strong> (not for druids) and <strong>Daggers</strong>.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 4: FULL TALENT BUILD & INTERACTIVE ALLOCATOR -->
+    <div id="tab-talents" class="view-panel">
+      <div class="guide-card">
+        <h3 class="card-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2L1 21h22L12 2zm0 3.84L19.53 19H4.47L12 5.84zM11 10v4h2v-4h-2zm0 6v2h2v-2h-2z"/></svg>
+          Master Leveling Build: 14 / 32 / 5 Feral Hybrid (Interactive Tracker)
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
+          Keep track of your talents in real time! Click <strong>[ + ]</strong> or <strong>[ − ]</strong> on any talent to match your character in-game, or click <strong>⚡ Auto-Learn to Current Level</strong> to instantly allocate points based on your current level. Everything is saved automatically across refreshes!
+        </p>
+
+        <!-- Interactive Talent Points Header & Actions -->
+        <div class="talent-control-bar">
+          <div class="talent-points-display">
+            <span class="points-pill available" id="talentsPointsAvail">0 Pts</span>
+            <span class="points-pill spent" id="talentsPointsSpent">0 Spent</span>
+            <span class="points-pill remaining" id="talentsPointsRem">0 Remaining</span>
+            <span class="points-pill" style="background: rgba(255,255,255,0.06); color: #fff;" id="talentsCurrentLevelBadge">Level 9</span>
+          </div>
+
+          <div class="talent-actions-group">
+            <button class="btn-talent-action primary" onclick="autoLearnTalentsToCurrentLevel()">
+              ⚡ Auto-Learn to Current Level
+            </button>
+            <button class="btn-talent-action" onclick="resetTalents()">
+              🔄 Reset / Respec
+            </button>
+          </div>
+        </div>
+
+        <div class="talent-tree-grid">
+          
+          <div class="tree-card active-tree">
+            <div class="tree-name-header">
+              <span>🐾 Feral Combat Tree</span>
+              <span class="tree-points-count" id="feralTreePoints">0 / 32</span>
+            </div>
+            <div class="talent-list-simple" id="feralTalentsList">
+              <!-- Loaded via JavaScript -->
+            </div>
+          </div>
+
+          <div class="tree-card active-tree">
+            <div class="tree-name-header">
+              <span>🌙 Balance Tree</span>
+              <span class="tree-points-count" id="balanceTreePoints">0 / 14</span>
+            </div>
+            <div class="talent-list-simple" id="balanceTalentsList">
+              <!-- Loaded via JavaScript -->
+            </div>
+          </div>
+
+          <div class="tree-card active-tree">
+            <div class="tree-name-header">
+              <span>🌿 Restoration Tree</span>
+              <span class="tree-points-count" id="restoTreePoints">0 / 5</span>
+            </div>
+            <div class="talent-list-simple" id="restoTalentsList">
+              <!-- Loaded via JavaScript -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 4: PROFESSIONS ROAD -->
+    <div id="tab-professions" class="view-panel">
+      <div class="guide-card">
+        <h3 class="card-title">
+          <svg viewBox="0 0 24 24"><path d="M20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
+          Professions Mastery: Skinning & Leatherworking (1-300)
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
+          Skinning and Leatherworking is the premier combination for Feral Druids. You skin the hundreds of beasts you kill while leveling and craft your own Agility armor, leg kits, and the legendary <strong>Wolfshead Helm</strong> and <strong>Devilsaur Armor</strong>!
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px;">
+          
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 1: Levels 10–25 (Apprentice)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Westfall, Loch Modan, Darkshore</p>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
+              • Skin boars, coyotes, vultures, and crocolisks for <strong>Light Leather</strong>.<br>
+              • Craft: <em>Light Armor Kits</em> (+8 armor to chest/gloves/boots) and <em>Embossed Leather Boots</em>.
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 2: Levels 25–35 (Journeyman)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Duskwood, Wetlands, Ashenvale</p>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
+              • Skin wolves and raptors for <strong>Medium & Heavy Leather</strong>.<br>
+              • Craft: <em>Deviate Scale Belt</em> (+5 Agi, +6 Stam) and <em>Barbaric Leggings</em> (+Strength, +Agility).
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 3: Levels 35–45 (Expert)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Stranglethorn Vale, Badlands, Feralas</p>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
+              • Skin panthers, tigers, and yetis for <strong>Thick Leather</strong>.<br>
+              • <strong>CRAFT WOLFSHEAD HELM (LW 225):</strong> Gives +20 Energy when shifting into Cat and +5 Rage in Bear!
+            </p>
+          </div>
+
+          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 4: Levels 45–60 (Artisan)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Un'Goro Crater, Winterspring, EPL</p>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
+              • Skin dinosaurs and yetis for <strong>Rugged Leather & Devilsaur Leather</strong>.<br>
+              • Craft: <em>Devilsaur Gauntlets & Leggings</em> (+2% Hit, +46 Agility, +28 AP!).
+            </p>
+          </div>
+
+        </div>
+
+        <h3 class="card-title" style="margin-bottom: 12px;">Secondary Survival Professions</h3>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
+          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md);">
+            <h4 style="color: #4ade80; font-size: 0.95rem; margin-bottom: 4px;">🩹 First Aid (MANDATORY)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Never spend your valuable mana healing after combat! Bandage yourself with Heavy Wool, Silk, and Mageweave Bandages to keep 100% mana ready for shapeshifting.
+            </p>
+          </div>
+          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md);">
+            <h4 style="color: #fb923c; font-size: 0.95rem; margin-bottom: 4px;">🍖 Cooking (Well Fed Buff)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">
+              Cook the meats you loot from your skinning targets (Wolf flank, Tiger meat). Grants persistent +Stamina and +Spirit "Well Fed" buffs for zero cost.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 5: SKYBORNE RACIALS & MACROS -->
+    <div id="tab-skyborne" class="view-panel">
+      <div class="guide-card">
+        <h3 class="card-title">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+          Alliance Skyborne Master Guide & 1-Click Essential Macros
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
+          As an Alliance Skyborne, your unique racials offer extraordinary advantages. Pair them with these essential Druid macros to play like a seasoned veteran!
+        </p>
+
+        <h4 style="color: var(--skyborne-blue); font-size: 1.1rem; margin-bottom: 12px;">Essential Quality-of-Life Macros</h4>
+
+        <!-- Macro 1: Emergency Stun & Heal -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">1. Bear Emergency Bash & Heal</span>
+            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Bash\n/cast [stance:1] Bash\n/cancelform\n/cast Healing Touch')">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip Bash
+/cast [stance:1] Bash
+/cancelform
+/cast Healing Touch</div>
+          <div class="macro-explain">Stuns the enemy with Bash, drops form instantly, and begins casting Healing Touch while the enemy is completely locked down.</div>
+        </div>
+
+        <!-- Macro 2: Powershift Cat Form -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">2. Cat Form Powershift (Cleanses Slows & Grants Instant Energy)</span>
+            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Cat Form\n/cancelform\n/cast Cat Form')">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip Cat Form
+/cancelform
+/cast Cat Form</div>
+          <div class="macro-explain">Breaks Frost Novas, slow effects, and roots instantly. When paired with Furor (and Wolfshead Helm), instantly yields 40–60 Energy in a single click!</div>
+        </div>
+
+        <!-- Macro 3: Faerie Fire Smart Target -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">3. Smart Faerie Fire (Feral or Normal)</span>
+            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Faerie Fire (Feral)\n/cast [stance:1/3] Faerie Fire (Feral);\n/cast Faerie Fire')">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip Faerie Fire (Feral)
+/cast [stance:1/3] Faerie Fire (Feral);
+/cast Faerie Fire</div>
+          <div class="macro-explain">Automatically casts Faerie Fire (Feral) if you are in Bear or Cat form, or standard Faerie Fire if in caster form!</div>
+        </div>
+
+        <!-- Macro 4: Read Ley Line + Innervate Battery -->
+        <div class="macro-box">
+          <div class="macro-top">
+            <span class="macro-title">4. Skyborne Super-Mana Battery (Level 40+)</span>
+            <button class="btn-copy" onclick="copyMacro(this, '#showtooltip Innervate\n/cast Read Ley Line\n/cast Innervate')">Copy Macro</button>
+          </div>
+          <div class="macro-code">#showtooltip Innervate
+/cast Read Ley Line
+/cast Innervate</div>
+          <div class="macro-explain">Combines the Alliance Skyborne active spirit multiplier with Innervate to instantly skyrocket your mana regen to hundreds of mana per tick!</div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- TAB 6: PROGRESS TRACKER -->
+    <div id="tab-tracker" class="view-panel">
+      <div class="guide-card">
+        <h3 class="card-title">
+          <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-7 14l-5-5 1.41-1.41L12 14.17l7.59-7.59L21 8l-9 9z"/></svg>
+          Your Leveling Milestones Checklist
+        </h3>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
+          Check off items as you complete them in-game! Your progress automatically saves to your browser so you can keep track of where you are.
+        </p>
+
+        <div id="checklistItemsContainer">
+          <!-- Loaded via JavaScript -->
+        </div>
+      </div>
+    </div>
+
+    <!-- IN-GAME SYNC & ACCOUNT LINK MODAL -->
+    <div id="syncAccountModal" class="sync-modal-backdrop">
+      <div class="sync-modal">
+        <div class="sync-modal-header">
+          <h3 class="sync-modal-title">
+            <span>🔗 Character & In-Game Sync</span>
+          </h3>
+          <button class="sync-modal-close" onclick="closeSyncModal()">&times;</button>
+        </div>
+
+        <div class="sync-info-box">
+          <strong>Why can't websites read the game directly?</strong><br>
+          For your PC security, web browsers run inside a sandboxed environment and cannot read external game RAM or private server client states without an in-game macro or character save. Use any of the 3 instant methods below to keep your character synchronized:
+        </div>
+
+        <!-- METHOD 1: Instant Direct Sync (Recommended & Most Reliable) -->
+        <div class="sync-section-card">
+          <div class="sync-section-title">
+            <span>🎯 Method 1: Instant Character Sync (Recommended)</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px;">
+            Set your character name and level right here. All zones, non-dungeon gear, talent points, and trainer spells update immediately and save permanently:
+          </p>
+          <div class="sync-direct-controls">
+            <input type="text" id="directSyncNameInput" class="sync-input" placeholder="Character Name (e.g. Thunderpaw)" style="flex: 2;">
+            <div class="modal-level-stepper">
+              <button type="button" class="btn-step-modal" onclick="stepModalLevel(-1)" title="Level Down">-</button>
+              <input type="number" id="directSyncLevelInput" class="sync-input" style="width: 70px; text-align: center;" min="1" max="60" value="9">
+              <button type="button" class="btn-step-modal" onclick="stepModalLevel(1)" title="Level Up">+</button>
+            </div>
+            <button class="sync-btn" onclick="handleDirectLevelSync()">Save & Sync Now</button>
+          </div>
+        </div>
+
+        <!-- METHOD 2: Universal In-Game Macro -->
+        <div class="sync-section-card">
+          <div class="sync-section-title">
+            <span>⚡ Method 2: Universal In-Game Macro</span>
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">
+            In World of Warcraft, open chat and type <code>/macro</code>. Create a new macro, click <strong>Copy Macro</strong> below, paste it into the macro in-game, and click it. It automatically puts your character code into chat:
+          </p>
+          <div class="macro-box">
+            <div class="macro-top">
+              <span class="macro-title">Universal Character Exporter Macro</span>
+              <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+            </div>
+            <div class="macro-code">/run local n,l=UnitName("player"),UnitLevel("player") local eb=ChatFrame1EditBox or ChatFrameEditBox or (DEFAULT_CHAT_FRAME and DEFAULT_CHAT_FRAME.editBox) if eb then eb:Show() eb:SetFocus() eb:SetText(n..":"..l) eb:HighlightText() end DEFAULT_CHAT_FRAME:AddMessage("SYNC STRING: "..n..":"..l)</div>
+          </div>
+
+          <div style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 6px;">
+            Paste the in-game output (or simply type <code>Name:Level</code> or your level number):
+          </div>
+          <div class="sync-input-row">
+            <input type="text" id="inGameSyncInput" class="sync-input" placeholder='Paste here, e.g. Thunderpaw:12 or 9'>
+            <button class="sync-btn" onclick="handleInGameSyncString()">Sync String</button>
+          </div>
+        </div>
+
+        <!-- METHOD 3: SavedVariables / File Auto-Detect -->
+        <div class="sync-section-card">
+          <div class="sync-section-title">
+            <span>📁 Method 3: Auto-Detect via Local WoW Client File</span>
+          </div>
+          <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 10px;">
+            <div style="font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
+              <span class="sync-status-dot"></span>
+              <span>Detected Live Client: <strong style="color: var(--skyborne-blue);">Chongo</strong> • Level 11 (Darkwind Realm)</span>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; word-break: break-all;">
+              Found in: <code>C:\Program Files (x86)\World of Warcraft\_forever_\WTF\Account\1714350#2\SavedVariables\Questie.lua</code>
+            </p>
+            <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+              <button type="button" class="btn-site-run-sync" onclick="executeGameSyncFromSite()" style="font-size: 0.85rem; padding: 7px 16px;">
+                ⚡ Run Live Sync (.bat / Server)
+              </button>
+              <button type="button" class="sync-btn" onclick="loadDetectedClientCharacter()" style="font-size: 0.85rem; padding: 7px 16px;">
+                ↻ Reload Cached: Chongo (Lvl 11)
+              </button>
+              <button type="button" class="btn-ctrl" onclick="document.getElementById('wtfFileInput').click()" style="font-size: 0.85rem; padding: 7px 16px; cursor: pointer;">
+                📂 Select Local WoW File (.lua)
+              </button>
+            </div>
+          </div>
+          <input type="file" id="wtfFileInput" style="display:none;" accept=".lua,.txt,.log" onchange="handleWtfFileUpload(event)">
+        </div>
+
+        <div id="syncFeedbackMsg" class="level-sync-feedback"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="synced_character.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
