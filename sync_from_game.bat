@@ -17,8 +17,6 @@ if %errorlevel% neq 0 (
 node "%~dp0sync.js"
 echo.
 echo ========================================================
-echo  SUCCESS! Your level and equipped gear are synced.
-echo  Your live guide is now updated:
-echo  https://ahumpo7.github.io/wow-druid-guide/
+echo  Press any key to close this window...
 echo ========================================================
-timeout /t 4
+pause >nul

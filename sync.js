@@ -14,7 +14,34 @@ function findGameFiles() {
     'C:\\Games\\World of Warcraft\\_forever_\\WTF\\Account',
     'D:\\Games\\World of Warcraft\\_forever_\\WTF\\Account',
     'E:\\World of Warcraft\\_forever_\\WTF\\Account',
+    'C:\\World of Warcraft\\WTF\\Account',
+    'D:\\World of Warcraft\\WTF\\Account',
+    'C:\\Program Files (x86)\\World of Warcraft\\WTF\\Account',
   ];
+
+  const userHome = process.env.USERPROFILE || process.env.HOME;
+  if (userHome) {
+    possibleBases.push(
+      path.join(userHome, 'Desktop', 'World of Warcraft', '_forever_', 'WTF', 'Account'),
+      path.join(userHome, 'Downloads', 'World of Warcraft', '_forever_', 'WTF', 'Account')
+    );
+  }
+
+  // Check for custom override in wow_path.txt
+  const customConfig = path.join(__dirname, 'wow_path.txt');
+  if (fs.existsSync(customConfig)) {
+    const customLine = fs.readFileSync(customConfig, 'utf8').trim();
+    if (customLine) {
+      if (customLine.toLowerCase().endsWith('account')) {
+        possibleBases.unshift(customLine);
+      } else if (customLine.toLowerCase().endsWith('wtf')) {
+        possibleBases.unshift(path.join(customLine, 'Account'));
+      } else {
+        possibleBases.unshift(path.join(customLine, 'WTF', 'Account'));
+        possibleBases.unshift(path.join(customLine, '_forever_', 'WTF', 'Account'));
+      }
+    }
+  }
 
   let foundQuestie = null;
   let foundPawn = null;
@@ -71,7 +98,26 @@ function findGameFiles() {
 }
 
 function runSync() {
+  console.log("========================================================");
+  console.log(" WoW Forever - Live Character Exporter & Cloud Syncer");
+  console.log("========================================================");
+
   const { questiePath, pawnPath } = findGameFiles();
+
+  console.log(`\n[1] Searching for WoW SavedVariables on this PC...`);
+  if (questiePath) {
+    console.log(`    ✓ Found Questie.lua: ${questiePath}`);
+  } else {
+    console.log(`    ⚠️ Questie.lua not found in standard paths.`);
+    console.log(`       (Tip: Create wow_path.txt in this folder with your WoW directory if custom)`);
+  }
+
+  if (pawnPath) {
+    console.log(`    ✓ Found Pawn.lua:    ${pawnPath}`);
+  } else {
+    console.log(`    ⚠️ Pawn.lua not found in standard paths.`);
+  }
+
   let name = 'Chongo';
   let level = 13;
 
@@ -184,22 +230,40 @@ function runSync() {
 window.WOW_SYNCED_DATA = ${JSON.stringify(resultData, null, 2)};
 `;
 
+  console.log(`\n[2] Character state parsed:`);
+  console.log(`    Name:      ${name}`);
+  console.log(`    Level:     ${level}`);
+  console.log(`    Weapon:    ${liveItems.mainHand.name} (${liveItems.mainHand.quality})`);
+  console.log(`    Chest:     ${liveItems.chest.name} (${liveItems.chest.quality})`);
+
+  console.log(`\n[3] Updating local sync bridge...`);
   const dest = path.join(__dirname, 'synced_character.js');
   fs.writeFileSync(dest, fileContent, 'utf8');
 
   const jsonDest = path.join(__dirname, 'synced_character.json');
   fs.writeFileSync(jsonDest, JSON.stringify(resultData, null, 2), 'utf8');
+  console.log(`    ✓ Saved synced_character.js and synced_character.json`);
 
   // Cloud Sync to GitHub Gist (allows ANY browser or 2nd PC to load live character)
+  console.log(`\n[4] Uploading to GitHub Cloud Gist (584b8b9450a8b85003934d27acfa7c7c)...`);
   try {
     const { execSync } = require('child_process');
-    execSync(`gh gist edit 584b8b9450a8b85003934d27acfa7c7c -a "${jsonDest}"`, { stdio: 'ignore', timeout: 5000 });
-    console.log(`[CLOUD SYNC] ✓ Live character data uploaded to GitHub Cloud Gist!`);
+    execSync(`gh gist edit 584b8b9450a8b85003934d27acfa7c7c -a "${jsonDest}"`, { stdio: 'pipe', encoding: 'utf8', timeout: 10000 });
+    console.log(`    ✓ [SUCCESS] Live character data uploaded to GitHub Cloud!`);
+    console.log(`    👉 Any browser or 2nd PC will now see Level ${level} & ${liveItems.mainHand.name}!`);
   } catch (gistErr) {
-    // Graceful fallback if offline or gh CLI not configured on 2nd PC
+    console.error(`    ❌ [CLOUD UPLOAD FAILED]`);
+    if (gistErr.stderr) {
+      console.error(`    Error output: ${gistErr.stderr.toString().trim()}`);
+    } else {
+      console.error(`    Error details: ${gistErr.message}`);
+    }
+    console.log(`\n    💡 How to fix this on this PC:`);
+    console.log(`       1. Open PowerShell and run: gh auth status`);
+    console.log(`       2. If not logged in, run:   gh auth login`);
+    console.log(`          (Select GitHub.com -> HTTPS -> Login with a web browser)`);
   }
 
-  console.log(`[SUCCESS] Synced: ${name} • Level ${level} with weapon: ${liveItems.mainHand.name} (${liveItems.mainHand.quality})!`);
   return resultData;
 }
 
