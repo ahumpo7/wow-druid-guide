@@ -4,6 +4,7 @@
   "class": "Druid",
   "race": "Alliance Skyborne",
   "level": 17,
+  "money": 14428,
   "liveGear": {
     "head": {
       "slot": "Head",
@@ -41,101 +42,108 @@
     "back": {
       "slot": "Back",
       "type": "Cloak",
-      "name": "Hunter's Simple Cloak",
+      "name": "War Paint Cloak",
       "quality": "uncommon",
-      "source": "Zephras Isle Quest Reward",
-      "armor": "14 Armor",
+      "source": "Currently Equipped on Chongo",
+      "armor": "15 Armor",
       "stats": [
-        "+2 Stamina",
-        "+1 Agility"
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Requires Level 8"
+      "req": "Requires Level 10 (Item Level 16)",
+      "tip": "Green BoE cloak."
     },
     "chest": {
       "slot": "Chest",
       "type": "Leather",
-      "name": "Bandit's Jerkin",
-      "quality": "common",
-      "source": "Equipped from Quest / Drop",
-      "armor": "42 Armor",
+      "name": "Disciple's Vest of the Owl",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Chongo",
+      "armor": "62 Armor",
       "stats": [
-        "+2 Agility",
-        "+1 Strength"
+        "+3 Intellect",
+        "+3 Spirit"
       ],
-      "req": "Requires Level 7"
+      "req": "Requires Level 11 (Item Level 16)",
+      "tip": "Green world drop leather chest piece."
     },
     "wrists": {
       "slot": "Wrists",
       "type": "Leather",
-      "name": "Worn Leather Bracers",
-      "quality": "poor",
-      "source": "Starting Quest / Vendor",
-      "armor": "12 Armor",
+      "name": "Hunting Bracers",
+      "quality": "common",
+      "source": "Currently Equipped on Chongo",
+      "armor": "28 Armor",
       "stats": [
-        "+1 Stamina"
+        "No stat enchant (Pure Armor)"
       ],
-      "req": "Requires Level 9"
+      "req": "Requires Level 9 (Item Level 14)",
+      "tip": "White leather bracers."
     },
     "hands": {
       "slot": "Hands",
       "type": "Leather",
-      "name": "Ragged Leather Gloves",
-      "quality": "poor",
-      "source": "Early Quest / Drop",
-      "armor": "16 Armor",
+      "name": "Evergreen Gloves",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Chongo",
+      "armor": "44 Armor",
       "stats": [
-        "+1 Armor bonus"
+        "+2 Agility (+0.1% Crit)",
+        "+3 Stamina (+30 HP)"
       ],
-      "req": "Requires Level 4"
+      "req": "Requires Level 12 (Item Level 18)",
+      "tip": "Solo quest reward from Darkshore."
     },
     "waist": {
       "slot": "Waist",
       "type": "Leather",
-      "name": "Wolfhide Belt",
-      "quality": "common",
-      "source": "Leatherworking / Quest",
-      "armor": "28 Armor",
+      "name": "Prospector's Sash",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Chongo",
+      "armor": "45 Armor",
       "stats": [
-        "+2 Strength",
-        "+1 Stamina"
+        "+3 Stamina (+30 HP)",
+        "+3 Agility (+0.15% Crit)"
       ],
-      "req": "Requires Level 10"
+      "req": "Requires Level 13 (Item Level 18)",
+      "tip": "Great green belt providing defense and combat stats."
     },
     "legs": {
       "slot": "Legs",
       "type": "Leather",
-      "name": "Gardening Pants",
-      "quality": "common",
-      "source": "Gustberry Lowlands Quest Reward",
-      "armor": "38 Armor",
+      "name": "Hunting Pants",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Chongo",
+      "armor": "63 Armor",
       "stats": [
-        "+2 Stamina",
-        "+1 Spirit"
+        "+3 Stamina (+30 HP)"
       ],
-      "req": "Requires Level 5"
+      "req": "Requires Level 11 (Item Level 16)",
+      "tip": "Green leather pants with health boost."
     },
     "feet": {
       "slot": "Feet",
       "type": "Leather",
-      "name": "Ragged Leather Boots",
-      "quality": "poor",
-      "source": "Starting Quest / Vendor",
-      "armor": "15 Armor",
+      "name": "Nomad Sandals",
+      "quality": "common",
+      "source": "Currently Equipped on Chongo",
+      "armor": "35 Armor",
       "stats": [
-        "+1 Armor bonus"
+        "No stat enchant (Pure Armor)"
       ],
-      "req": "Requires Level 3"
+      "req": "Requires Level 8 (Item Level 12)",
+      "tip": "White leather boots providing armor."
     },
     "ring1": {
-      "slot": "Finger",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
+      "slot": "Equipped",
+      "type": "Armor",
+      "name": "Item #264908",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "Rings start around lvl 14-16"
-      ]
+        "+4 Feral Combat Stats"
+      ],
+      "req": "Item Level 17"
     },
     "ring2": {
       "slot": "Finger",
@@ -173,16 +181,17 @@
     "mainHand": {
       "slot": "Two-Hand",
       "type": "Two-Handed Staff",
-      "name": "Sturdy Quarterstaff of the Bear",
-      "quality": "uncommon",
+      "name": "Crescent Staff",
+      "quality": "rare",
       "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "+4 Strength (+8 AP)",
-        "+4 Stamina"
+        "+7 Intellect",
+        "+7 Stamina (+70 HP)",
+        "+7 Spirit"
       ],
-      "req": "Item Level 13 (Requires Level 10)",
-      "tip": "⭐ GREAT WEAPON PICK! Two-handed staff with Strength and Stamina — perfect for Bear Form and leveling!"
+      "req": "Requires Level 10 (Item Level 17)",
+      "tip": "⭐ Outstanding quest staff with massive stats for leveling!"
     },
     "offHand": {
       "slot": "Off-Hand",
@@ -208,5 +217,5 @@
       ]
     }
   },
-  "syncedAt": "2026-11-11T19:17:02.084Z"
+  "syncedAt": "2026-11-11T19:35:07.988Z"
 }
