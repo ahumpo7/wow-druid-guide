@@ -1087,66 +1087,273 @@
     <!-- TAB 4: PROFESSIONS ROAD -->
     <div id="tab-professions" class="view-panel">
       <div class="guide-card">
-        <h3 class="card-title">
-          <svg viewBox="0 0 24 24"><path d="M20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
-          Professions Mastery: Skinning & Leatherworking (1-300)
-        </h3>
-        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
-          Skinning and Leatherworking is the premier combination for Feral Druids. You skin the hundreds of beasts you kill while leveling and craft your own Agility armor, leg kits, and the legendary <strong>Wolfshead Helm</strong> and <strong>Devilsaur Armor</strong>!
+        <div class="card-header-with-badge" style="margin-bottom: 8px;">
+          <h3 class="card-title" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <svg viewBox="0 0 24 24"><path d="M20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
+            Optimal Leatherworking 1–300 Speed & Feral Mastery Guide
+            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); font-weight: 600; text-transform: uppercase;">Minimal Mats • 100% Solo</span>
+          </h3>
+          <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">Alliance 1-300 Blueprint</span>
+        </div>
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.5;">
+          Skinning & Leatherworking is the supreme profession combination for Feral Druids. You skin hundreds of beasts while solo questing, craft your own high-agility armor, and unlock the legendary <strong>Wolfshead Helm</strong> (infinite Cat powershifting) and <strong>Devilsaur Armor</strong> (Pre-Raid BiS forever). Follow this mathematically optimal, lowest-material route from 1 to 300!
         </p>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px;">
-          
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 1: Levels 10–25 (Apprentice)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Westfall, Loch Modan, Darkshore</p>
-            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
-              • Skin boars, coyotes, vultures, and crocolisks for <strong>Light Leather</strong>.<br>
-              • Craft: <em>Light Armor Kits</em> (+8 armor to chest/gloves/boots) and <em>Embossed Leather Boots</em>.
-            </p>
+        <!-- Interactive Skill Tracker Bar -->
+        <div class="lw-header-bar">
+          <div class="lw-tracker-box">
+            <span style="font-size: 0.88rem; font-weight: 700; color: #fff;">Your Current LW Skill:</span>
+            <div class="lw-skill-input-wrap">
+              <button class="lw-btn-step" onclick="adjustLwSkill(-5)" title="Down 5">-5</button>
+              <button class="lw-btn-step" onclick="adjustLwSkill(-1)" title="Down 1">-1</button>
+              <input type="number" id="lwSkillInput" class="lw-skill-input" min="1" max="300" value="1" onchange="setLwSkill(this.value)">
+              <button class="lw-btn-step" onclick="adjustLwSkill(1)" title="Up 1">+1</button>
+              <button class="lw-btn-step" onclick="adjustLwSkill(5)" title="Up 5">+5</button>
+            </div>
           </div>
 
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 2: Levels 25–35 (Journeyman)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Duskwood, Wetlands, Ashenvale</p>
-            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
-              • Skin wolves and raptors for <strong>Medium & Heavy Leather</strong>.<br>
-              • Craft: <em>Deviate Scale Belt</em> (+5 Agi, +6 Stam) and <em>Barbaric Leggings</em> (+Strength, +Agility).
-            </p>
+          <div class="lw-progress-container">
+            <div style="display:flex; justify-content:space-between; font-size:0.82rem; font-weight:700;">
+              <span id="lwSkillLabel" style="color: #fff;">Skill: 1 / 300</span>
+              <span id="lwPhaseLabel" style="color: var(--gold-accent);">Apprentice</span>
+            </div>
+            <div class="lw-progress-bar-bg">
+              <div id="lwProgressBar" class="lw-progress-bar-fill" style="width: 1%;"></div>
+            </div>
           </div>
 
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 3: Levels 35–45 (Expert)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Stranglethorn Vale, Badlands, Feralas</p>
-            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
-              • Skin panthers, tigers, and yetis for <strong>Thick Leather</strong>.<br>
-              • <strong>CRAFT WOLFSHEAD HELM (LW 225):</strong> Gives +20 Energy when shifting into Cat and +5 Rage in Bear!
-            </p>
+          <div id="lwActiveCallout" style="width: 100%; font-size: 0.84rem; color: #cbd5e1; background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; border-left: 3px solid #10b981;">
+            👉 <strong>Current Optimal Craft:</strong> Light Armor Kit (Skill 1–45) • Requires 1x Light Leather per craft.
           </div>
-
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 8px;">Phase 4: Levels 45–60 (Artisan)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 8px;">• Zones: Un'Goro Crater, Winterspring, EPL</p>
-            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
-              • Skin dinosaurs and yetis for <strong>Rugged Leather & Devilsaur Leather</strong>.<br>
-              • Craft: <em>Devilsaur Gauntlets & Leggings</em> (+2% Hit, +46 Agility, +28 AP!).
-            </p>
-          </div>
-
         </div>
 
-        <h3 class="card-title" style="margin-bottom: 12px;">Secondary Survival Professions</h3>
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 14px;">
-          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md);">
-            <h4 style="color: #4ade80; font-size: 0.95rem; margin-bottom: 4px;">🩹 First Aid (MANDATORY)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Never spend your valuable mana healing after combat! Bandage yourself with Heavy Wool, Silk, and Mageweave Bandages to keep 100% mana ready for shapeshifting.
+        <!-- Feral Druid Crafting Trinity Showcase -->
+        <h3 class="card-title" style="margin-bottom: 12px; font-size: 1.05rem;">
+          🏆 The Feral Druid Crafting Trinity (Why We Level LW)
+        </h3>
+        <div class="lw-trinity-grid">
+          <div class="lw-trinity-card">
+            <div class="lw-trinity-header">
+              <span class="lw-trinity-name">Wolfshead Helm</span>
+              <span class="lw-trinity-badge">Skill 225 • Lvl 40</span>
+            </div>
+            <div class="lw-trinity-effect">⚡ Cat Shift: +20 Energy • Bear Shift: +5 Rage</div>
+            <div class="lw-trinity-desc">
+              THE GREATEST DRUID ITEM IN CLASSIC. Paired with <strong>Furor (5/5)</strong>, you start in Cat Form with <strong>60 Energy immediately</strong>! Enables unlimited powershifting burst. Equipped all the way through Naxxramas!
+            </div>
+            <div class="lw-trinity-mats">
+              <strong>Recipe:</strong> Vendor Jannamin (Darnassus Craftsmen's Terrace 64.6, 21.6) or AH.<br>
+              <strong>Reagents:</strong> 18x Thick Leather, 2x Cured Thick Hide, 2x Thick Wolfhide, 1x Swiftthistle.
+            </div>
+          </div>
+
+          <div class="lw-trinity-card">
+            <div class="lw-trinity-header">
+              <span class="lw-trinity-name">Devilsaur Gauntlets & Leggings</span>
+              <span class="lw-trinity-badge">Skill 290–300 • Lvl 53+</span>
+            </div>
+            <div class="lw-trinity-effect">🔥 2-Set Bonus: +2% Hit Chance, +28 Attack Power, +46 Agility</div>
+            <div class="lw-trinity-desc">
+              The undisputed Pre-Raid BiS set for Feral Cat DPS. Solo farm Devilsaurs in Un'Goro Crater using Prowl and Bear Form to craft this without spending hundreds of gold on the AH!
+            </div>
+            <div class="lw-trinity-mats">
+              <strong>Recipe:</strong> Pattern sold by Nergal in Un'Goro Crater (Lakkari Tar Pits) or AH.<br>
+              <strong>Reagents:</strong> 30x Devilsaur Leather, 40x Rugged Leather, 2x Rune Thread.
+            </div>
+          </div>
+
+          <div class="lw-trinity-card">
+            <div class="lw-trinity-header">
+              <span class="lw-trinity-name">Warbear Harness & Woolies</span>
+              <span class="lw-trinity-badge">Skill 275 • Lvl 50+</span>
+            </div>
+            <div class="lw-trinity-effect">🛡️ Dire Bear Fortress: +27 Stamina, +11 Agility</div>
+            <div class="lw-trinity-desc">
+              The premier defensive Dire Bear tanking pieces for dungeon boss soloing and high-tier raids. Provides massive raw health and armor.
+            </div>
+            <div class="lw-trinity-mats">
+              <strong>Recipe:</strong> Meilosh (Timbermaw Hold Vendor - Friendly rep).<br>
+              <strong>Reagents:</strong> 28x Rugged Leather, 12x Warbear Leather, 2x Rune Thread.
+            </div>
+          </div>
+
+          <div class="lw-trinity-card">
+            <div class="lw-trinity-header">
+              <span class="lw-trinity-name">Deviate Scale Belt</span>
+              <span class="lw-trinity-badge">Skill 115 • Lvl 18</span>
+            </div>
+            <div class="lw-trinity-effect">🌱 Early Leveling Godsend: +5 Agility, +6 Stamina, +5 Spirit</div>
+            <div class="lw-trinity-desc">
+              Unmatched early leveling stats for your upcoming Level 20 Cat Form! Eliminates the need for any dungeon waist drops until your mid-30s.
+            </div>
+            <div class="lw-trinity-mats">
+              <strong>Recipe:</strong> BoE World Drop (WC / Barrens / AH).<br>
+              <strong>Reagents:</strong> 6x Medium Leather, 4x Deviate Scale, 1x Fine Thread.
+            </div>
+          </div>
+        </div>
+
+        <!-- Phase Navigation Filters -->
+        <div class="lw-filter-nav">
+          <button class="lw-filter-btn active" onclick="filterLwPhase('all')">📋 All Phases (1–300)</button>
+          <button class="lw-filter-btn" onclick="filterLwPhase('apprentice')">1–75 (Apprentice)</button>
+          <button class="lw-filter-btn" onclick="filterLwPhase('journeyman')">75–150 (Journeyman)</button>
+          <button class="lw-filter-btn" onclick="filterLwPhase('expert')">150–225 (Expert)</button>
+          <button class="lw-filter-btn" onclick="filterLwPhase('artisan')">225–300 (Artisan)</button>
+          <button class="lw-filter-btn" onclick="filterLwPhase('tribal')">👑 Tribal Specialization</button>
+          <button class="lw-filter-btn" onclick="filterLwPhase('shopping')">🎒 Materials & Farming Hotspots</button>
+        </div>
+
+        <!-- Dynamic Step Containers -->
+        <div id="lwPhasesContainer">
+          <!-- Populated dynamically via JavaScript -->
+        </div>
+
+        <!-- Tribal Specialization Deep-Dive Card -->
+        <div id="lwTribalCard" class="lw-phase-card" style="border-left: 4px solid #f59e0b; margin-top: 20px;">
+          <div class="lw-phase-header">
+            <div class="lw-phase-title">
+              <span>👑 The Feral Mandate: Tribal Leatherworking Specialization</span>
+            </div>
+            <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">Req: Level 40 + Skill 225</span>
+          </div>
+
+          <div class="lw-trainer-callout">
+            <strong>Why Tribal Specialization is Non-Negotiable for Druids:</strong><br>
+            • <strong>Elemental LW</strong> is for Rogues (agility/resist).<br>
+            • <strong>Dragonscale LW</strong> is Mail armor for Hunters/Enhancement Shamans.<br>
+            • <strong>Tribal LW</strong> is the ONLY specialization that crafts the <strong>Wolfshead Helm</strong> (BiS through Naxxramas) and the <strong>Devilsaur Armor Set</strong> (+2% Hit)!
+          </div>
+
+          <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 8px;">Alliance Specialization Quest Walkthrough</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
+            Travel to <strong>Feathermoon Stronghold</strong> in Feralas and speak to <strong>Pratt McGrubben</strong> (coordinates 30.6, 42.6). Before leaving the mainland, pre-craft and bring the following 6 Wild Leather pieces in your bags so you can complete the entire chain in 1 minute:
+          </p>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-bottom: 14px;">
+            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
+              <span style="color:#4ade80;">✔ 6x</span> <strong>Wild Leather Shoulders</strong><br>
+              <span style="color:var(--text-muted); font-size:0.75rem;">(36 Thick Leather, 6 Cured Thick Hide)</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
+              <span style="color:#4ade80;">✔ 1x</span> <strong>Wild Leather Vest</strong><br>
+              <span style="color:var(--text-muted); font-size:0.75rem;">(12 Thick Leather, 2 Cured Thick Hide)</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
+              <span style="color:#4ade80;">✔ 1x</span> <strong>Wild Leather Helmet</strong><br>
+              <span style="color:var(--text-muted); font-size:0.75rem;">(10 Thick Leather, 1 Cured Thick Hide)</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
+              <span style="color:#4ade80;">✔ 2x</span> <strong>Wild Leather Boots</strong><br>
+              <span style="color:var(--text-muted); font-size:0.75rem;">(20 Thick Leather, 2 Cured Thick Hide)</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
+              <span style="color:#4ade80;">✔ 2x</span> <strong>Wild Leather Leggings</strong><br>
+              <span style="color:var(--text-muted); font-size:0.75rem;">(24 Thick Leather, 2 Cured Thick Hide)</span>
+            </div>
+            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
+              <span style="color:#4ade80;">✔ 2x</span> <strong>Wild Leather Cloak</strong><br>
+              <span style="color:var(--text-muted); font-size:0.75rem;">(16 Thick Leather, 2 Cured Thick Hide)</span>
+            </div>
+          </div>
+
+          <div style="font-size: 0.82rem; color: #cbd5e1; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 4px;">
+            <strong>Final Turn-in:</strong> Hand in <strong>1x Thick Wolfhide</strong> (skinned from lvl 43-50 wolves in Hinterlands/Feralas) and <strong>1x Wildvine</strong> (dropped from Hinterlands/STV Trolls or AH). Pratt McGrubben will certify you as a Master Tribal Leatherworker!
+          </div>
+        </div>
+
+        <!-- Total Materials & Farming Hotspots Card -->
+        <div id="lwShoppingCard" class="lw-phase-card" style="margin-top: 20px;">
+          <div class="lw-phase-header">
+            <div class="lw-phase-title">
+              <span>🎒 Total 1–300 Materials Shopping & Skinning Hotspots</span>
+            </div>
+            <span class="tag-badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;">Optimal Estimates</span>
+          </div>
+
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
+            Skin beasts during your solo leveling journey to naturally collect all required hides. Here is the estimated total inventory needed to reach 300:
+          </p>
+
+          <div class="lw-mats-grid">
+            <div class="lw-mat-card">
+              <div class="lw-mat-card-header">
+                <span>Light Leather</span>
+                <span class="lw-mat-qty">~260 – 280x</span>
+              </div>
+              <div class="lw-mat-source">
+                <strong>Skinning Hotspots:</strong> Westfall (coyotes, boars, vultures), Loch Modan (bears, crocolisks), Darkshore.
+              </div>
+            </div>
+
+            <div class="lw-mat-card">
+              <div class="lw-mat-card-header">
+                <span>Medium Leather & Hides</span>
+                <span class="lw-mat-qty">~150x Leather • ~15x Hides</span>
+              </div>
+              <div class="lw-mat-source">
+                <strong>Skinning Hotspots:</strong> Redridge Mountains (gnolls, murlocs), Ashenvale (wolves, bears), Wetlands (crocs). Keep all Medium Hides!
+              </div>
+            </div>
+
+            <div class="lw-mat-card">
+              <div class="lw-mat-card-header">
+                <span>Heavy Leather & Hides</span>
+                <span class="lw-mat-qty">~300x Leather • ~15x Hides</span>
+              </div>
+              <div class="lw-mat-source">
+                <strong>Skinning Hotspots:</strong> Duskwood (starving wolves, spiders), Wetlands (raptors), Northern STV (Nesingwary tigers). Keep all Heavy Hides!
+              </div>
+            </div>
+
+            <div class="lw-mat-card">
+              <div class="lw-mat-card-header">
+                <span>Thick Leather & Hides</span>
+                <span class="lw-mat-qty">~420x Leather • ~15x Hides</span>
+              </div>
+              <div class="lw-mat-source">
+                <strong>Skinning Hotspots:</strong> Feralas (Rage Scar Yetis in inland caves have dense, non-elite 100% skinning rate!), STV (Nesingwary raptors & panthers).
+              </div>
+            </div>
+
+            <div class="lw-mat-card">
+              <div class="lw-mat-card-header">
+                <span>Rugged Leather</span>
+                <span class="lw-mat-qty">~380 – 420x</span>
+              </div>
+              <div class="lw-mat-source">
+                <strong>Skinning Hotspots:</strong> Winterspring (Frostsaber cats & yetis), Un'Goro Crater (pterodactyls, stegodons), Western Plaguelands.
+              </div>
+            </div>
+
+            <div class="lw-mat-card">
+              <div class="lw-mat-card-header">
+                <span>Vendor Reagents</span>
+                <span class="lw-mat-qty">Cheap Trade Vendor</span>
+              </div>
+              <div class="lw-mat-source">
+                • <strong>Threads:</strong> 70x Coarse, 75x Fine, 90x Silken, 20x Heavy Silken, 40x Rune Thread.<br>
+                • <strong>Dyes & Salt:</strong> 30x Gray Dye, 40x Black Dye, 60x Salt.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Secondary Survival Professions -->
+        <h3 class="card-title" style="margin-top: 24px; margin-bottom: 12px; font-size: 1.05rem;">
+          Secondary Survival Professions
+        </h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
+          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: #4ade80; font-size: 0.95rem; margin-bottom: 4px;">🩹 First Aid (MANDATORY FOR FERAL)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+              Never spend your valuable mana healing after combat! Bandage yourself with Heavy Wool, Silk, and Mageweave Bandages to keep 100% mana ready for instant shapeshifting. Combine with <strong>Bash (3.0s stun)</strong> for uninterrupted in-combat bandaging.
             </p>
           </div>
-          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md);">
-            <h4 style="color: #fb923c; font-size: 0.95rem; margin-bottom: 4px;">🍖 Cooking (Well Fed Buff)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted);">
-              Cook the meats you loot from your skinning targets (Wolf flank, Tiger meat). Grants persistent +Stamina and +Spirit "Well Fed" buffs for zero cost.
+          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
+            <h4 style="color: #fb923c; font-size: 0.95rem; margin-bottom: 4px;">🍖 Cooking (Free "Well Fed" Stat Buffs)</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
+              Cook the meats you loot from your skinning targets (Coyote meat, Wolf flank, Tiger meat, Raptor eggs). Grants persistent +Stamina and +Spirit "Well Fed" buffs for zero coin cost.
             </p>
           </div>
         </div>

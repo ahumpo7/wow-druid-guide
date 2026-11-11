@@ -2413,3 +2413,346 @@ body {
 .btn-site-run-sync:active {
   transform: translateY(0);
 }
+
+/* ==========================================================================
+   Leatherworking 1-300 Optimal Master Training Guide Styles
+   ========================================================================== */
+
+.lw-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-md);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+}
+
+.lw-tracker-box {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.lw-skill-input-wrap {
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.lw-skill-input {
+  width: 70px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-align: center;
+  padding: 6px 8px;
+  outline: none;
+}
+
+.lw-btn-step {
+  background: rgba(255, 255, 255, 0.06);
+  border: none;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all 0.15s;
+}
+
+.lw-btn-step:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+.lw-progress-container {
+  flex: 1;
+  min-width: 200px;
+}
+
+.lw-progress-bar-bg {
+  width: 100%;
+  height: 9px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  overflow: hidden;
+  margin-top: 5px;
+}
+
+.lw-progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #10b981 0%, #34d399 100%);
+  width: 1%;
+  transition: width 0.3s ease;
+}
+
+.lw-filter-nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.lw-filter-btn {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 7px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.84rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.lw-filter-btn:hover {
+  background: var(--bg-card-hover);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.lw-filter-btn.active {
+  background: rgba(16, 185, 129, 0.2);
+  color: #4ade80;
+  border-color: #10b981;
+}
+
+/* Holy Trinity Gear Cards */
+.lw-trinity-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.lw-trinity-card {
+  background: linear-gradient(145deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.8) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.35);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  position: relative;
+  overflow: hidden;
+}
+
+.lw-trinity-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f59e0b, #fbbf24);
+}
+
+.lw-trinity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.lw-trinity-name {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #60a5fa;
+}
+
+.lw-trinity-name.epic {
+  color: #c084fc;
+}
+
+.lw-trinity-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.4);
+}
+
+.lw-trinity-effect {
+  font-size: 0.84rem;
+  color: #4ade80;
+  font-weight: 600;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.lw-trinity-desc {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.lw-trinity-mats {
+  font-size: 0.76rem;
+  color: #cbd5e1;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 10px;
+  border-radius: 4px;
+  border-left: 2px solid #f59e0b;
+}
+
+/* Phase Container & Step Cards */
+.lw-phase-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.lw-phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  margin-bottom: 14px;
+}
+
+.lw-phase-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lw-phase-meta {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.lw-trainer-callout {
+  background: rgba(56, 189, 248, 0.08);
+  border-left: 3px solid #38bdf8;
+  padding: 10px 14px;
+  border-radius: 0 4px 4px 0;
+  font-size: 0.84rem;
+  color: #cbd5e1;
+  margin-bottom: 14px;
+  line-height: 1.45;
+}
+
+.lw-trainer-callout.warning {
+  background: rgba(239, 68, 68, 0.08);
+  border-left-color: #ef4444;
+  color: #fca5a5;
+}
+
+.lw-step-item {
+  display: grid;
+  grid-template-columns: 90px 1.5fr 1fr 1.8fr;
+  gap: 14px;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid transparent;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+
+@media (max-width: 860px) {
+  .lw-step-item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.lw-step-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.lw-step-item.active-craft {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid #10b981 !important;
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.3);
+}
+
+.lw-range-badge {
+  font-weight: 700;
+  font-size: 0.84rem;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-align: center;
+  display: inline-block;
+}
+
+.lw-recipe-name {
+  font-weight: 600;
+  color: #fff;
+}
+
+.lw-craft-count {
+  font-size: 0.76rem;
+  color: var(--gold-accent);
+  margin-left: 6px;
+}
+
+.lw-mats-text {
+  color: #94a3b8;
+  font-size: 0.82rem;
+}
+
+.lw-tip-text {
+  color: #cbd5e1;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+/* Shopping List Grid */
+.lw-mats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.lw-mat-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.lw-mat-card-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.lw-mat-qty {
+  color: #4ade80;
+}
+
+.lw-mat-source {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}

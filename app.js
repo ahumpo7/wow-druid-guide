@@ -1494,6 +1494,7 @@ function initApp() {
   try { renderTalentTreeSummary(); } catch (e) { console.error("renderTalents error:", e); }
   try { initMaxrollPaperdoll(); } catch (e) { console.error("initPaperdoll error:", e); }
   try { initUpgradeAdvisor(); } catch (e) { console.error("initUpgradeAdvisor error:", e); }
+  try { initLeatherworkingGuide(); } catch (e) { console.error("initLW error:", e); }
   try { checkCloudCharacterSync(); } catch (e) { console.error("cloudSync error:", e); }
 }
 
@@ -5548,3 +5549,404 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
   }).join("");
 }
 window.renderUpgradeAdvisor = renderUpgradeAdvisor;
+
+// ==========================================================================
+// Optimal Leatherworking 1-300 Training Guide Data & Interactive Engine
+// ==========================================================================
+
+const LEATHERWORKING_PHASES = [
+  {
+    id: "apprentice",
+    name: "Phase 1: Apprentice Leatherworking",
+    range: "1 – 75",
+    req: "Character Level 10 (Skill 50 for Journeyman)",
+    trainer: "Alliance Apprentice Trainers: Adele Fielder (Elwynn Forest), Simon Tanner (Stormwind - Old Town 71.8, 62.8), Fimble Finespindle (Ironforge - Great Forge 40.0, 32.0), Telonis (Darnassus - Craftsmen's Terrace 64.6, 21.6).",
+    warning: false,
+    steps: [
+      {
+        min: 1, max: 45,
+        range: "1 – 45",
+        recipe: "Light Armor Kit",
+        crafts: "~45–50",
+        mats: "1x Light Leather",
+        tip: "Keep these! Apply them to your chest, gloves, and boots for +8 Armor per piece (+24 Armor, heavily multiplied by Bear Form).",
+        diff: "orange"
+      },
+      {
+        min: 45, max: 55,
+        range: "45 – 55",
+        recipe: "Handstitched Leather Cloak",
+        crafts: "10",
+        mats: "2x Light Leather, 1x Coarse Thread",
+        tip: "Fast and cheap cloaks using standard vendor Coarse Thread.",
+        diff: "orange"
+      },
+      {
+        min: 55, max: 75,
+        range: "55 – 75",
+        recipe: "Embossed Leather Gloves",
+        crafts: "20–25",
+        mats: "3x Light Leather, 2x Coarse Thread",
+        tip: "⚠️ TRAINER CHECK: Learn Journeyman Leatherworking as soon as you reach skill 50-75 so your skill cap raises to 150!",
+        diff: "yellow"
+      }
+    ]
+  },
+  {
+    id: "journeyman",
+    name: "Phase 2: Journeyman Leatherworking",
+    range: "75 – 150",
+    req: "Character Level 10+, Skill 50+",
+    trainer: "Alliance Journeyman Trainers: Simon Tanner (Stormwind), Fimble Finespindle (Ironforge), Telonis (Darnassus).",
+    warning: false,
+    steps: [
+      {
+        min: 75, max: 85,
+        range: "75 – 85",
+        recipe: "Embossed Leather Gloves / Fine Leather Belt",
+        crafts: "10",
+        mats: "6x Light Leather, 2x Coarse Thread (for Belt)",
+        tip: "Finish out any remaining Light Leather stocks before transitioning to Medium Leather.",
+        diff: "yellow"
+      },
+      {
+        min: 85, max: 100,
+        range: "85 – 100",
+        recipe: "Fine Leather Belt",
+        crafts: "15",
+        mats: "6x Light Leather, 2x Coarse Thread",
+        tip: "Solid vendor value. Keep at least 1-2 belts in your bank for future Cured Medium Hide crafts.",
+        diff: "yellow"
+      },
+      {
+        min: 100, max: 115,
+        range: "100 – 115",
+        recipe: "Cured Medium Hide",
+        crafts: "15",
+        mats: "1x Medium Hide, 1x Salt",
+        tip: "🔥 CRITICAL: SAVE ALL CURED HIDES! Do NOT sell these. You will need them for upcoming boots. (If short on hides, craft Medium Armor Kits with 4x Medium Leather).",
+        diff: "orange"
+      },
+      {
+        min: 115, max: 120,
+        range: "115 – 120",
+        recipe: "Fine Leather Boots (or Deviate Scale Belt)",
+        crafts: "5",
+        mats: "2x Medium Leather, 1x Cured Medium Hide, 1x Fine Thread",
+        tip: "⭐ FERAL BIAS: If you have the Deviate Scale Belt pattern (WC drop or AH), craft it now for +5 Agi, +6 Stam, +5 Spirit!",
+        diff: "orange"
+      },
+      {
+        min: 120, max: 135,
+        range: "120 – 135",
+        recipe: "Dark Leather Boots",
+        crafts: "15",
+        mats: "4x Medium Leather, 2x Fine Thread, 1x Gray Dye",
+        tip: "Gray Dye is bought cheap from trade vendors. Great stamina and armor boots.",
+        diff: "yellow"
+      },
+      {
+        min: 135, max: 150,
+        range: "135 – 150",
+        recipe: "Dark Leather Pants",
+        crafts: "15",
+        mats: "12x Medium Leather, 1x Fine Thread, 1x Gray Dye",
+        tip: "⚠️ TRAINER CHECK: Equip 1 pair for yourself (+5 Agi, +4 Stam) and sell the rest. Train Expert Leatherworking at skill 125-150!",
+        diff: "orange"
+      }
+    ]
+  },
+  {
+    id: "expert",
+    name: "Phase 3: Expert Leatherworking",
+    range: "150 – 225",
+    req: "Character Level 20+, Skill 125+",
+    trainer: "Alliance Expert Trainers: Telonis (Darnassus - Craftsmen's Terrace 64.6, 21.6), Simon Tanner (Stormwind - Old Town 71.8, 62.8), Fimble Finespindle (Ironforge - Great Forge 40.0, 32.0).",
+    warning: false,
+    steps: [
+      {
+        min: 150, max: 155,
+        range: "150 – 155",
+        recipe: "Heavy Armor Kit",
+        crafts: "5–7",
+        mats: "5x Heavy Leather, 1x Fine Thread",
+        tip: "Quick initial points using basic Heavy Leather from Duskwood or Wetlands beasts.",
+        diff: "orange"
+      },
+      {
+        min: 155, max: 165,
+        range: "155 – 165",
+        recipe: "Cured Heavy Hide",
+        crafts: "10–15",
+        mats: "1x Heavy Hide, 3x Salt",
+        tip: "🔥 CRITICAL: SAVE ALL CURED HEAVY HIDES! You will strictly need them to craft Barbaric Shoulders at 180.",
+        diff: "orange"
+      },
+      {
+        min: 165, max: 180,
+        range: "165 – 180",
+        recipe: "Hillman's Leather Gloves",
+        crafts: "15",
+        mats: "14x Heavy Leather, 4x Fine Thread",
+        tip: "Trainer recipe. Straightforward bulk craft using Heavy Leather from Stranglethorn or Wetlands.",
+        diff: "yellow"
+      },
+      {
+        min: 180, max: 190,
+        range: "180 – 190",
+        recipe: "Barbaric Shoulders",
+        crafts: "10",
+        mats: "8x Heavy Leather, 1x Cured Heavy Hide, 2x Fine Thread",
+        tip: "⭐ FERAL UPGRADE: Equip a pair! Grants +5 Strength, +4 Agility. Uses the Cured Heavy Hides you saved.",
+        diff: "orange"
+      },
+      {
+        min: 190, max: 205,
+        range: "190 – 205",
+        recipe: "Duskworker Gloves",
+        crafts: "15",
+        mats: "16x Heavy Leather, 1x Silken Thread, 2x Black Dye",
+        tip: "Black Dye and Silken Thread are bought from trade goods vendors. Pushes you smoothly to Thick Leather.",
+        diff: "yellow"
+      },
+      {
+        min: 205, max: 225,
+        range: "205 – 225",
+        recipe: "Nightscape Tunic",
+        crafts: "20",
+        mats: "7x Thick Leather, 2x Silken Thread",
+        tip: "⚡ ULTRA EFFICIENT: Costs only 7 Thick Leather per craft (one of the cheapest skill-ups in Vanilla). Equip 1 (+10 Agi, +11 Stam)!",
+        diff: "orange"
+      }
+    ]
+  },
+  {
+    id: "artisan",
+    name: "Phase 4: Artisan Leatherworking",
+    range: "225 – 300",
+    req: "Character Level 35+, Skill 200+",
+    trainer: "🚨 CRITICAL ALLIANCE TRAINER: Artisan is NOT in Stormwind or Ironforge! You MUST visit Drakk Stonehand at Aerie Peak in The Hinterlands (13.4, 43.4).",
+    warning: true,
+    steps: [
+      {
+        min: 225, max: 235,
+        range: "225 – 235",
+        recipe: "Nightscape Headband",
+        crafts: "10",
+        mats: "5x Thick Leather, 2x Silken Thread",
+        tip: "Learned directly from Drakk Stonehand in Hinterlands. Extremely cheap (5 Thick Leather each).",
+        diff: "orange"
+      },
+      {
+        min: 235, max: 250,
+        range: "235 – 250",
+        recipe: "Nightscape Pants",
+        crafts: "15",
+        mats: "14x Thick Leather, 4x Silken Thread",
+        tip: "⭐ FERAL UPGRADE: Fantastic leveling legs (+14 Agility, +13 Stamina)! Equip for Cat DPS.",
+        diff: "orange"
+      },
+      {
+        min: 250, max: 260,
+        range: "250 – 260",
+        recipe: "Nightscape Boots",
+        crafts: "10",
+        mats: "16x Thick Leather, 2x Heavy Silken Thread",
+        tip: "Solid +9 Agility, +9 Stamina boots. Takes you right to the Rugged Leather threshold.",
+        diff: "yellow"
+      },
+      {
+        min: 260, max: 280,
+        range: "260 – 280",
+        recipe: "Wicked Leather Gauntlets (or Rugged Armor Kit)",
+        crafts: "20",
+        mats: "8x Rugged Leather, 1x Black Dye, 1x Rune Thread",
+        tip: "Recipe sold by vendor Wulmort Jinglepocket / AH. Alternative: Rugged Armor Kit (5x Rugged Leather) from 250 to 275.",
+        diff: "yellow"
+      },
+      {
+        min: 280, max: 300,
+        range: "280 – 300",
+        recipe: "Wicked Leather Headband",
+        crafts: "20",
+        mats: "12x Rugged Leather, 1x Black Dye, 1x Rune Thread",
+        tip: "Recipe sold by vendor or AH. Alternatively, craft your endgame Devilsaur Gauntlets (at 290) and Devilsaur Leggings (at 300) to finish!",
+        diff: "yellow"
+      }
+    ]
+  }
+];
+
+let currentLwSkill = 1;
+try {
+  const savedLw = localStorage.getItem("wow_druid_lw_skill");
+  if (savedLw && !isNaN(parseInt(savedLw, 10))) {
+    currentLwSkill = Math.max(1, Math.min(300, parseInt(savedLw, 10)));
+  }
+} catch (e) {}
+
+let activeLwFilter = "all";
+
+function initLeatherworkingGuide() {
+  const inputEl = document.getElementById("lwSkillInput");
+  if (inputEl) inputEl.value = currentLwSkill;
+  renderLeatherworkingGuide();
+}
+
+function setLwSkill(val) {
+  const parsed = parseInt(val, 10);
+  if (isNaN(parsed)) return;
+  currentLwSkill = Math.max(1, Math.min(300, parsed));
+  try { localStorage.setItem("wow_druid_lw_skill", currentLwSkill); } catch (e) {}
+  
+  const inputEl = document.getElementById("lwSkillInput");
+  if (inputEl) inputEl.value = currentLwSkill;
+  renderLeatherworkingGuide();
+}
+
+function adjustLwSkill(delta) {
+  setLwSkill(currentLwSkill + delta);
+}
+
+function filterLwPhase(phaseKey) {
+  activeLwFilter = phaseKey;
+  
+  document.querySelectorAll(".lw-filter-btn").forEach(btn => {
+    btn.classList.toggle("active", btn.getAttribute("onclick").includes(`'${phaseKey}'`));
+  });
+
+  const phasesContainer = document.getElementById("lwPhasesContainer");
+  const tribalCard = document.getElementById("lwTribalCard");
+  const shoppingCard = document.getElementById("lwShoppingCard");
+
+  if (phaseKey === "tribal") {
+    if (phasesContainer) phasesContainer.style.display = "none";
+    if (tribalCard) {
+      tribalCard.style.display = "block";
+      tribalCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    if (shoppingCard) shoppingCard.style.display = "none";
+    return;
+  }
+
+  if (phaseKey === "shopping") {
+    if (phasesContainer) phasesContainer.style.display = "none";
+    if (tribalCard) tribalCard.style.display = "none";
+    if (shoppingCard) {
+      shoppingCard.style.display = "block";
+      shoppingCard.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    return;
+  }
+
+  if (phasesContainer) phasesContainer.style.display = "block";
+  if (tribalCard) tribalCard.style.display = "block";
+  if (shoppingCard) shoppingCard.style.display = "block";
+
+  renderLeatherworkingGuide();
+}
+
+function getPhaseNameForSkill(skill) {
+  if (skill < 75) return "Apprentice";
+  if (skill < 150) return "Journeyman";
+  if (skill < 225) return "Expert";
+  if (skill < 300) return "Artisan";
+  return "Master (Max 300)";
+}
+
+function renderLeatherworkingGuide() {
+  const container = document.getElementById("lwPhasesContainer");
+  const skillLabel = document.getElementById("lwSkillLabel");
+  const phaseLabel = document.getElementById("lwPhaseLabel");
+  const progressBar = document.getElementById("lwProgressBar");
+  const calloutEl = document.getElementById("lwActiveCallout");
+
+  if (skillLabel) skillLabel.textContent = `Skill: ${currentLwSkill} / 300`;
+  if (phaseLabel) phaseLabel.textContent = getPhaseNameForSkill(currentLwSkill);
+  if (progressBar) {
+    const pct = Math.min(100, Math.round((currentLwSkill / 300) * 100));
+    progressBar.style.width = `${Math.max(1, pct)}%`;
+  }
+
+  // Find active step matching current skill
+  let activeStep = null;
+  let activePhaseObj = null;
+
+  for (const phase of LEATHERWORKING_PHASES) {
+    for (const step of phase.steps) {
+      if (currentLwSkill >= step.min && currentLwSkill < step.max) {
+        activeStep = step;
+        activePhaseObj = phase;
+        break;
+      }
+    }
+    if (activeStep) break;
+  }
+
+  if (!activeStep && currentLwSkill >= 300) {
+    if (calloutEl) {
+      calloutEl.innerHTML = `🎉 <strong>Skill 300 Reached!</strong> You are at max Leatherworking. Craft your Devilsaur Set, Wolfshead Helm, and Warbear Armor!`;
+    }
+  } else if (activeStep && calloutEl) {
+    calloutEl.innerHTML = `
+      👉 <strong>Current Optimal Craft:</strong> <span style="color:#fff; font-weight:700;">${activeStep.recipe}</span> (Skill ${activeStep.range}) • 
+      Mats: <span style="color:#4ade80;">${activeStep.mats}</span> • 
+      Expected Crafts: <span style="color:var(--gold-accent);">${activeStep.crafts}</span>
+    `;
+  }
+
+  if (!container) return;
+
+  const filteredPhases = (activeLwFilter === "all")
+    ? LEATHERWORKING_PHASES
+    : LEATHERWORKING_PHASES.filter(p => p.id === activeLwFilter);
+
+  container.innerHTML = filteredPhases.map(phase => {
+    return `
+      <div class="lw-phase-card">
+        <div class="lw-phase-header">
+          <div class="lw-phase-title">
+            <span>${phase.name}</span>
+          </div>
+          <div class="lw-phase-meta">
+            <span>Range: <strong>${phase.range}</strong></span>
+            <span>${phase.req}</span>
+          </div>
+        </div>
+
+        <div class="lw-trainer-callout ${phase.warning ? 'warning' : ''}">
+          ${phase.trainer}
+        </div>
+
+        <div class="lw-steps-list">
+          ${phase.steps.map(step => {
+            const isCurrent = (currentLwSkill >= step.min && currentLwSkill < step.max);
+            return `
+              <div class="lw-step-item ${isCurrent ? 'active-craft' : ''}">
+                <div>
+                  <span class="lw-range-badge">${step.range}</span>
+                  ${isCurrent ? '<div style="font-size:0.68rem; font-weight:700; color:#4ade80; margin-top:3px;">ACTIVE</div>' : ''}
+                </div>
+                <div>
+                  <span class="lw-recipe-name">${step.recipe}</span>
+                  <span class="lw-craft-count">(${step.crafts} crafts)</span>
+                </div>
+                <div class="lw-mats-text">
+                  ${step.mats}
+                </div>
+                <div class="lw-tip-text">
+                  ${step.tip}
+                </div>
+              </div>
+            `;
+          }).join("")}
+        </div>
+      </div>
+    `;
+  }).join("");
+}
+
+window.initLeatherworkingGuide = initLeatherworkingGuide;
+window.setLwSkill = setLwSkill;
+window.adjustLwSkill = adjustLwSkill;
+window.filterLwPhase = filterLwPhase;
