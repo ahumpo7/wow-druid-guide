@@ -3,14 +3,14 @@
   "realm": "Darkwind (WoW Forever)",
   "class": "Druid",
   "race": "Alliance Skyborne",
-  "level": 13,
+  "level": 17,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 13)",
+      "source": "Not yet equipped (Level 17)",
       "armor": "0 Armor",
       "stats": [
         "No head armor available until lvl 14+"
@@ -208,5 +208,5 @@
       ]
     }
   },
-  "syncedAt": "2026-11-09T13:31:06.236Z"
+  "syncedAt": "2026-11-11T02:39:53.328Z"
 }
