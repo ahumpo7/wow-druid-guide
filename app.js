@@ -1320,16 +1320,35 @@ if (Object.keys(userTalentsState).length === 0 && currentLevel >= 10) {
 
 const GITHUB_GIST_ID = "584b8b9450a8b85003934d27acfa7c7c";
 const GITHUB_GIST_API_URL = `https://api.github.com/gists/${GITHUB_GIST_ID}`;
+const GITHUB_GIST_RAW_URL = `https://gist.githubusercontent.com/ahumpo7/${GITHUB_GIST_ID}/raw/synced_character.json`;
 
 async function checkCloudCharacterSync() {
   try {
-    const res = await fetch(GITHUB_GIST_API_URL, {
-      headers: { "Accept": "application/vnd.github.v3+json" }
-    });
-    if (!res.ok) return null;
-    const json = await res.json();
-    if (!json || !json.files || !json.files["synced_character.json"]) return null;
-    const cloudChar = JSON.parse(json.files["synced_character.json"].content);
+    let cloudChar = null;
+
+    // Strategy 1: Direct Raw Gist URL (Fast, zero rate-limit, no mixed-content issues on GitHub Pages)
+    try {
+      const rawRes = await fetch(`${GITHUB_GIST_RAW_URL}?t=${Date.now()}`, { cache: "no-store" });
+      if (rawRes.ok) {
+        cloudChar = await rawRes.json();
+      }
+    } catch (rawErr) {
+      console.warn("Raw Gist fetch failed, trying REST API:", rawErr);
+    }
+
+    // Strategy 2: GitHub REST API fallback
+    if (!cloudChar) {
+      const res = await fetch(`${GITHUB_GIST_API_URL}?t=${Date.now()}`, {
+        headers: { "Accept": "application/vnd.github.v3+json" }
+      });
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.files && json.files["synced_character.json"]) {
+          cloudChar = JSON.parse(json.files["synced_character.json"].content);
+        }
+      }
+    }
+
     if (!cloudChar || !cloudChar.name) return null;
 
     console.log(`[Cloud Sync] Loaded ${cloudChar.name} (Lvl ${cloudChar.level}) from GitHub Cloud!`);
@@ -1344,8 +1363,8 @@ async function checkCloudCharacterSync() {
       }
     }
 
-    // Advance level if cloud data is higher or current level is lower
-    if (cloudChar.level && cloudChar.level >= currentLevel) {
+    // Always align level if cloud data is valid
+    if (cloudChar.level) {
       userProfileState.name = cloudChar.name;
       userProfileState.level = cloudChar.level;
       setLevel(cloudChar.level);
@@ -1382,99 +1401,101 @@ async function executeGameSyncFromSite() {
   if (feedbackEl) {
     feedbackEl.style.display = "block";
     feedbackEl.style.color = "#38bdf8";
-    feedbackEl.textContent = "⚡ Checking companion server and GitHub cloud sync...";
+    feedbackEl.textContent = "⚡ Syncing live character data...";
   }
 
-  try {
-    const res = await fetch("http://127.0.0.1:3888/api/sync", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" }
-    });
-    
-    if (res.ok) {
-      const json = await res.json();
-      if (json && json.character) {
-        window.WOW_SYNCED_DATA = json.character;
-        if (typeof MAXROLL_GEAR_PRESETS !== "undefined" && MAXROLL_GEAR_PRESETS.chongo_live) {
-          MAXROLL_GEAR_PRESETS.chongo_live.items = json.character.liveGear;
-        }
-        loadDetectedClientCharacter();
-        if (typeof renderPaperdoll === "function") {
-          renderPaperdoll(currentPresetKey);
-        }
-        if (typeof renderUpgradeAdvisor === "function") {
-          renderUpgradeAdvisor(currentLevel);
-        }
+  const isLocalOrigin = (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.protocol === "http:");
 
-        if (btnHeader) {
-          btnHeader.innerHTML = "✓ Synced!";
-          btnHeader.style.backgroundColor = "#4ade80";
-          btnHeader.style.color = "#000";
-          setTimeout(() => {
-            btnHeader.innerHTML = origHeader;
-            btnHeader.style.backgroundColor = "";
-            btnHeader.style.color = "";
-          }, 2500);
-        }
+  // If running on local server, try local companion server first
+  if (isLocalOrigin) {
+    try {
+      const res = await fetch("http://127.0.0.1:3888/api/sync", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" }
+      });
+      
+      if (res.ok) {
+        const json = await res.json();
+        if (json && json.character) {
+          window.WOW_SYNCED_DATA = json.character;
+          if (typeof MAXROLL_GEAR_PRESETS !== "undefined" && MAXROLL_GEAR_PRESETS.chongo_live) {
+            MAXROLL_GEAR_PRESETS.chongo_live.items = json.character.liveGear;
+          }
+          loadDetectedClientCharacter();
+          if (typeof renderPaperdoll === "function") renderPaperdoll(currentPresetKey);
+          if (typeof renderUpgradeAdvisor === "function") renderUpgradeAdvisor(currentLevel);
 
-        if (feedbackEl) {
-          feedbackEl.style.color = "#4ade80";
-          feedbackEl.textContent = `✓ Successfully synced live game files: ${json.character.name} (Lvl ${json.character.level}) with ${json.character.liveGear.mainHand.name}!`;
-          setTimeout(() => {
-            feedbackEl.style.display = "none";
-            closeSyncModal();
-          }, 2000);
+          if (btnHeader) {
+            btnHeader.innerHTML = "✓ Synced!";
+            btnHeader.style.backgroundColor = "#4ade80";
+            btnHeader.style.color = "#000";
+            setTimeout(() => {
+              btnHeader.innerHTML = origHeader;
+              btnHeader.style.backgroundColor = "";
+              btnHeader.style.color = "";
+            }, 2500);
+          }
+
+          if (feedbackEl) {
+            feedbackEl.style.color = "#4ade80";
+            feedbackEl.innerHTML = `✓ Synced with game client: <strong>${json.character.name} (Lvl ${json.character.level})</strong>!<br><span style="font-size:0.75rem; color:#94a3b8;">💡 In WoW, type /reload before syncing to save new XP/gear to disk.</span>`;
+            setTimeout(() => {
+              feedbackEl.style.display = "none";
+              closeSyncModal();
+            }, 3500);
+          }
+          return;
         }
-        return;
       }
+    } catch (localErr) {
+      console.log("Local server sync not available, falling back to cloud sync...", localErr);
     }
-    throw new Error("Invalid response from local sync server");
-  } catch (err) {
-    console.log("Local companion server not reachable; trying GitHub Cloud Sync...", err);
-    // Try GitHub Cloud Gist sync (works from 2nd computer, phone, or remote browser!)
-    const cloudResult = await checkCloudCharacterSync();
-    if (cloudResult) {
-      if (btnHeader) {
-        btnHeader.innerHTML = "☁️ Synced!";
-        btnHeader.style.backgroundColor = "#38bdf8";
-        btnHeader.style.color = "#000";
-        setTimeout(() => {
-          btnHeader.innerHTML = origHeader;
-          btnHeader.style.backgroundColor = "";
-          btnHeader.style.color = "";
-        }, 2500);
-      }
-      if (feedbackEl) {
-        feedbackEl.style.color = "#38bdf8";
-        feedbackEl.textContent = `☁️ Synced from GitHub Cloud: ${cloudResult.name} (Lvl ${cloudResult.level}) • ${cloudResult.liveGear.mainHand.name}!`;
-        setTimeout(() => {
-          feedbackEl.style.display = "none";
-          closeSyncModal();
-        }, 2200);
-      }
-      return;
-    }
+  }
 
-    // Fallback to cached bridge if offline
-    loadDetectedClientCharacter();
+  // Cloud Sync (works seamlessly on GitHub Pages, 2nd PC, mobile, etc.)
+  const cloudResult = await checkCloudCharacterSync();
+  if (cloudResult) {
     if (btnHeader) {
-      btnHeader.innerHTML = "✓ Synced!";
-      btnHeader.style.backgroundColor = "#4ade80";
+      btnHeader.innerHTML = "☁️ Synced!";
+      btnHeader.style.backgroundColor = "#38bdf8";
       btnHeader.style.color = "#000";
       setTimeout(() => {
         btnHeader.innerHTML = origHeader;
         btnHeader.style.backgroundColor = "";
         btnHeader.style.color = "";
-      }, 2000);
+      }, 2500);
     }
     if (feedbackEl) {
-      feedbackEl.style.color = "#f59e0b";
-      feedbackEl.textContent = "Synced with local cached bridge.";
+      const timeStr = cloudResult.syncedAt ? new Date(cloudResult.syncedAt).toLocaleTimeString() : "recent";
+      feedbackEl.style.color = "#38bdf8";
+      feedbackEl.innerHTML = `☁️ Synced from Cloud Gist: <strong>${cloudResult.name} (Lvl ${cloudResult.level})</strong><br><span style="font-size:0.75rem; color:#94a3b8;">Equipped: ${cloudResult.liveGear.mainHand.name} • Saved at ${timeStr}<br>💡 In WoW, type <strong>/reload</strong> to write latest level/items to disk!</span>`;
       setTimeout(() => {
         feedbackEl.style.display = "none";
         closeSyncModal();
-      }, 2500);
+      }, 4000);
     }
+    return;
+  }
+
+  // Fallback to cached bridge if offline
+  loadDetectedClientCharacter();
+  if (btnHeader) {
+    btnHeader.innerHTML = "✓ Synced!";
+    btnHeader.style.backgroundColor = "#4ade80";
+    btnHeader.style.color = "#000";
+    setTimeout(() => {
+      btnHeader.innerHTML = origHeader;
+      btnHeader.style.backgroundColor = "";
+      btnHeader.style.color = "";
+    }, 2000);
+  }
+  if (feedbackEl) {
+    feedbackEl.style.color = "#f59e0b";
+    feedbackEl.textContent = "Synced with local cached bridge.";
+    setTimeout(() => {
+      feedbackEl.style.display = "none";
+      closeSyncModal();
+    }, 2500);
   }
 }
 window.executeGameSyncFromSite = executeGameSyncFromSite;
