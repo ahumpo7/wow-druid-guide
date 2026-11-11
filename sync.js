@@ -370,6 +370,8 @@ function runSync() {
   // 4. Cross-reference BagBrother items (catches newer weapons or gear changes)
   for (const slotNum in bagBrotherEquip) {
     const itemId = bagBrotherEquip[slotNum];
+    // Ignore internal server aura / cosmetic token IDs (> 100000)
+    if (!itemId || itemId > 100000) continue;
     const key = slotMap[slotNum];
     if (key && (!liveItems[key] || liveItems[key].name === "None Equipped" || (slotNum === '16' && itemId === 4566))) {
       const resolved = resolveItemStats(itemId, (ITEM_DB[itemId] ? ITEM_DB[itemId].name : `Item #${itemId}`), (ITEM_DB[itemId] ? ITEM_DB[itemId].quality : "uncommon"), level, parseInt(slotNum, 10));

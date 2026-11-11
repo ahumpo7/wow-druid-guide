@@ -138,16 +138,15 @@ window.WOW_SYNCED_DATA = {
       "tip": "White leather boots providing armor."
     },
     "ring1": {
-      "slot": "Equipped",
-      "type": "Armor",
-      "name": "Item #264908",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
+      "slot": "Finger",
+      "type": "Empty",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "+4 Feral Combat Stats"
-      ],
-      "req": "Item Level 17"
+        "Rings start around lvl 14-16"
+      ]
     },
     "ring2": {
       "slot": "Finger",
@@ -220,5 +219,5 @@ window.WOW_SYNCED_DATA = {
       ]
     }
   },
-  "syncedAt": "2026-11-11T19:43:06.093Z"
+  "syncedAt": "2026-11-11T19:47:44.810Z"
 };
