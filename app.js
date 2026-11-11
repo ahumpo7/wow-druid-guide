@@ -142,7 +142,7 @@ const DRUID_LEVEL_DATA = {
     zone: "Westfall (Moonbrook & Sentinel Tower) or Darkshore",
     zoneRange: "13-17",
     hubs: "Sentinel Hill / Auberdine",
-    zoneInstructions: "Finish up the People's Militia quest chain in Westfall. You are now eligible to pick up Deadmines pre-quests, or head to Darkshore for coastal quests.",
+    zoneInstructions: "SOLO ROUTE: Finish up the People's Militia quest chain in Westfall (Defias scouts and harvest watchers). Skip the elite Deadmines dungeon quests and turn in your completed Sentinel Hill quests. Head toward Darkshore or begin traveling east toward Lakeshire in Redridge Mountains.",
     talent: {
       name: "Ferocity (Rank 5/5)",
       tree: "Feral Combat",
@@ -203,11 +203,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   17: {
-    title: "First Dungeon Run: The Deadmines!",
-    zone: "Westfall (Moonbrook - The Deadmines)",
-    zoneRange: "16-20",
-    hubs: "Sentinel Hill",
-    zoneInstructions: "Form a Deadmines dungeon group. With maxed Ferocity, Demoralizing Roar, and Swipe, you are an extraordinary Bear Tank! Deadmines has several best-in-slot leveling weapons and leather drops.",
+    title: "Westfall Coastal Finale & Redridge Mountains Entry",
+    zone: "Westfall (Coast & Moonbrook) & Redridge Mountains",
+    zoneRange: "16-19",
+    hubs: "Sentinel Hill (Westfall) / Lakeshire (Redridge)",
+    zoneInstructions: "SOLO LEVELING ROUTE:\n1. Complete Captain Sanders' Hidden Treasure chain off the Westfall coast (free 8-slot bag and huge solo XP).\n2. Finish the Moonbrook Defias outdoor quests (Defias Trappers and Smugglers outside the portal).\n3. Travel east to Lakeshire in Redridge Mountains. Grab the flight path and start the Lakeside gnoll and murloc bounties. In Bear Form with Thick Hide, you can easily face-tank 2-3 mobs at once.",
     talent: {
       name: "Thick Hide (Rank 1/3)",
       tree: "Feral Combat",
@@ -218,9 +218,9 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["No spells at 17."],
     trainerSkip: [],
     rotation: [
-      "In Dungeons: Let Enrage generate 20 rage -> Pull with Faerie Fire or Moonfire -> Bear Form -> Swipe twice to lock threat on group -> Maul skull target."
+      "Solo Combat: Pull from 30 yards with Moonfire (or Faerie Fire at 18) -> Shift into Bear Form -> Enrage for quick rage -> Maul on swing timer -> Bash if you need to shift out and cast Healing Touch."
     ],
-    gearTip: "Smite's Mighty Hammer from Mr. Smite in Deadmines is the holy grail of early Feral weapons!",
+    gearTip: "Look for 'Heavy Spiked Mace of the Bear' on the AH or 'Hillborne Gloves' quest reward in Redridge. No dungeon drops needed!",
     dungeonGear: [
       { name: "Smite's Mighty Hammer", quality: "rare", source: "Mr. Smite (Deadmines)", stats: "+11 Strength, +4 Agility", tip: "INSANE weapon. 11 Strength gives 22 Feral Attack Power. Lasts you until level 28+!" },
       { name: "Tunic of Westfall", quality: "rare", source: "The Defias Brotherhood Quest", stats: "+11 Agility, +5 Stamina", tip: "Massive agility boost for upcoming Cat form!" },
@@ -232,7 +232,7 @@ const DRUID_LEVEL_DATA = {
     zone: "Loch Modan (Mo'grosh Stronghold) or Redridge Mountains",
     zoneRange: "17-21",
     hubs: "Thelsamar / Lakeshire",
-    zoneInstructions: "Head to Lakeshire in Redridge Mountains to hunt gnolls and orcs along the road, or finish the elite ogre quests in Loch Modan with a partner.",
+    zoneInstructions: "SOLO ROUTE: Redridge Mountains offers high-density solo kill quests around Lake Everstill (Murlocs, Hilary's Necklace) and the gnolls along the road. Skip the elite castle quests (Stonewatch Keep) for now—stick to yellow-level outdoor beasts and humanoids where your Bear armor minimizes food/drink downtime.",
     talent: {
       name: "Thick Hide (Rank 2/3)",
       tree: "Feral Combat",
@@ -366,7 +366,7 @@ const DRUID_LEVEL_DATA = {
     zone: "Duskwood (Raven Hill cemetery) / Wetlands (Menethil Harbor)",
     zoneRange: "23-28",
     hubs: "Darkshire / Menethil Harbor",
-    zoneInstructions: "Pick up the flight path in Menethil Harbor (Wetlands). Wetlands has excellent raptor, crocolisk, and dragonkin kill quests.",
+    zoneInstructions: "SOLO ROUTE: Pick up the flight path in Menethil Harbor (Wetlands). Wetlands and Duskwood have incredible solo leveling density. Hunt crocolisks, spiders, and raptors along the road. Shred is unlocked—open from Prowl behind mobs for huge burst damage!",
     talent: {
       name: "Sharpened Claws (Rank 3/3)",
       tree: "Feral Combat",
@@ -377,8 +377,8 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["Shred (Rank 1 - Huge damage attack from behind target!)", "Demoralizing Roar (Rank 3)", "Moonfire (Rank 4)"],
     trainerSkip: ["Entangling Roots (Rank 3 - Skip)"],
     rotation: [
-      "Solo: Open with Rake -> Claw -> Rip.",
-      "In Dungeons (DPS role): Sneak behind the boss/mob while the tank holds threat -> Shred for massive critical damage!"
+      "Solo Cat: Open with Prowl -> Rake -> Claw -> Rip.",
+      "Solo Shred: When Bash or roots are active, circle behind the mob and hit Shred for massive critical burst damage!"
     ],
     gearTip: "Look for 'Wolfshead Helm' crafting plans or save heavy leather for it later.",
     dungeonGear: []
@@ -431,7 +431,7 @@ const DRUID_LEVEL_DATA = {
     zone: "Ashenvale (Forest Song) / Redridge (Stonewatch Keep)",
     zoneRange: "26-31",
     hubs: "Astranaar / Lakeshire",
-    zoneInstructions: "Group up for Stonewatch Keep elite quests in Redridge or do the satyr and demonic quests in eastern Ashenvale.",
+    zoneInstructions: "SOLO ROUTE: Skip the Stonewatch Keep elite castle quests in Redridge. Head to Forest Song in eastern Ashenvale or clear the Hermit of Duskwood quests. Stick to yellow humanoid and beast camps where you can skin every kill for steady leather income.",
     talent: {
       name: "Predatory Strikes (Rank 2/3)",
       tree: "Feral Combat",
@@ -448,11 +448,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   28: {
-    title: "Capping Predatory Strikes & Stockades Run",
-    zone: "Stormwind City (The Stockade) / Duskwood (Rotting Orchard)",
-    zoneRange: "27-32",
-    hubs: "Stormwind / Darkshire",
-    zoneInstructions: "Run The Stockade dungeon in Stormwind. High humanoid density with fast dungeon quests and good linen/wool cloth for First Aid.",
+    title: "Capping Predatory Strikes & Duskwood Solo Power Grinding",
+    zone: "Duskwood (Rotting Orchard & Raven Hill) & Ashenvale (Forest Song)",
+    zoneRange: "26-30",
+    hubs: "Darkshire / Astranaar",
+    zoneInstructions: "SOLO ROUTE: Skip the Stockade dungeon entirely! Duskwood has the premier solo quest hubs in Vanilla. Clear The Night Watch Part 3 (ghouls and skeletons in Raven Hill cemetery) and the Rotting Orchard spiders. With maxed Predatory Strikes, your Cat Form attack power spikes enormously, letting you drop mobs in 4-5 seconds flat from Prowl + Ravage.",
     talent: {
       name: "Predatory Strikes (Rank 3/3)",
       tree: "Feral Combat",
@@ -463,7 +463,8 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["Faerie Fire (Feral) (Rank 1 - Castable in Bear/Cat form!)", "Healing Touch (Rank 6)"],
     trainerSkip: ["Starfire (Rank 2 - Skip)"],
     rotation: [
-      "REVOLUTIONARY SPELL: Faerie Fire (Feral) can be cast directly while in Cat or Bear form for ZERO mana! Cast it on every single mob immediately on pull to strip 250+ armor!"
+      "REVOLUTIONARY SPELL: Faerie Fire (Feral) can be cast directly while in Cat or Bear form for ZERO mana! Cast it on every single mob immediately on pull to strip 250+ armor!",
+      "Solo Cat Prowl: Prowl behind target -> Ravage (or Claw) -> Faerie Fire (Feral) -> Rake -> Claw to 5 Combo Points -> Rip -> Shift Bear if fighting multiple adds."
     ],
     gearTip: "Hunt for 'Manual Crowd Pumper' in Gnomeregan soon (gives insane attack speed active).",
     dungeonGear: [
@@ -597,11 +598,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   35: {
-    title: "Heart of the Wild Rank 2 & Scarlet Monastery",
-    zone: "Scarlet Monastery (Graveyard & Library) / Stranglethorn",
+    title: "Heart of the Wild Rank 2 & Desolace Solo Expansion",
+    zone: "Desolace (Ghost Walker Post) & Stranglethorn Vale (Nesingwary)",
     zoneRange: "34-39",
-    hubs: "Southshore -> Scarlet Monastery (Tirisval Glades)",
-    zoneInstructions: "Run Scarlet Monastery Library and Armory. Amazing leather drops, rings, and weapons drop here.",
+    hubs: "Nijel's Point (Desolace) / Rebel Camp (STV)",
+    zoneInstructions: "SOLO ROUTE: Avoid the long travel time and group coordination of Scarlet Monastery. Head to Nijel's Point in Desolace to initiate the Gelkis Centaur alliance and clear the Kodo Graveyard. Alternatively, solo the Nesingwary Panther & Tiger Chapter 2 hunts in northern Stranglethorn. With Heart of the Wild, your stamina and cat strength make solo mob grinding rapid and virtually downtime-free.",
     talent: {
       name: "Heart of the Wild (Rank 2/5)",
       tree: "Feral Combat",
@@ -612,9 +613,9 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["No spells at 35."],
     trainerSkip: [],
     rotation: [
-      "In Scarlet Monastery: Bear tanking through Library with Swipe and Demoralizing Roar keeps caster mobs locked down."
+      "Solo Grinding: Faerie Fire (Feral) -> Prowl Ravage -> Rake -> Claw -> Ferocious Bite -> Cast Rejuvenation after combat -> Travel Form or Prowl to next mob. Downtime is essentially zero!"
     ],
-    gearTip: "Look for 'Loksey's Training Stick' or SM Armory drops.",
+    gearTip: "Skin every raptor and kodo for Thick Leather. Craft Barbaric Harness or save leather for Wolfshead Helm.",
     dungeonGear: [
       { name: "Triprunner Dungarees", quality: "rare", source: "Gnomeregan Quest", stats: "+18 Agility, +4 Strength", tip: "Still supreme if you haven't done Gnomeregan yet!" }
     ]
@@ -684,10 +685,10 @@ const DRUID_LEVEL_DATA = {
   },
   39: {
     title: "The Eve of Level 40: Dire Bear Prep",
-    zone: "Badlands (Coyote kill quests) / Swamp of Sorrows entry",
+    zone: "Badlands (Dustbelcher Grotto) & Northern Stranglethorn",
     zoneRange: "38-43",
     hubs: "Thelsamar / Lakeshire (Rest & bank prep)",
-    zoneInstructions: "Sell gathered leather, extra herbs, and dungeon blues on the Auction House. Ensure you reach 90+ gold for your level 40 mount!",
+    zoneInstructions: "SOLO ROUTE: Badlands offers clustered solo beast and humanoid grinding (Coyotes, Rock Elementals, Buzzards). Sell gathered leather, herbs, and BoE green drops on the Auction House. Ensure you reach 90+ gold for your level 40 mount purchase!",
     talent: {
       name: "Primal Fury (Rank 1/2)",
       tree: "Feral Combat",
@@ -705,21 +706,21 @@ const DRUID_LEVEL_DATA = {
   },
   40: {
     title: "LEVEL 40 MILESTONE: DIRE BEAR FORM & MOUNT!",
-    zone: "Alliance Capital (Stormwind / Darnassus) -> Tanaris (Gadgetzan)",
-    zoneRange: "40-45",
-    hubs: "Gadgetzan (Tanaris)",
-    zoneInstructions: "CONGRATULATIONS! Buy your 60% Mount and Riding Skill! Visit your Druid trainer to learn Dire Bear Form (huge armor and health jump!) and talent into Berserk / capstone. Then fly to Gadgetzan in Tanaris to begin the desert quest chains.",
+    zone: "Stormwind / Darnassus -> Tanaris (Gadgetzan) & Dustwallow Marsh",
+    zoneRange: "40-44",
+    hubs: "Gadgetzan (Tanaris) / Theramore (Dustwallow)",
+    zoneInstructions: "SOLO MILESTONE ACHIEVED!\n1. Mount Up: Purchase your 60% Mount and Riding Skill in Elwynn Forest / Darnassus.\n2. Train Spells: Learn Dire Bear Form (+360% armor bonus!), Ferocious Bite Rank 3, and Innervate.\n3. Head to Tanaris: Fly or ride to Gadgetzan to unlock the flight path and start the Wastewander Bandit bounty quests. Your outdoor travel time is now cut in half!",
     talent: {
       name: "Berserk / Primal Fury (Rank 2/2)",
       tree: "Feral Combat",
       rank: "2/2",
       effect: "In WoW Forever, unlocks deep burst potential and guarantees 5 Rage on every Bear critical strike.",
-      why: "Dire Bear form combined with maxed Primal Fury transforms you into an indestructible tank for Zul'Farrak and high-level dungeons."
+      why: "Dire Bear form combined with maxed Primal Fury transforms you into an indestructible solo tank. You can round up 3-4 yellow mobs at once and cleave them down with zero risk of dying."
     },
     trainerTrain: ["Dire Bear Form (Massive armor multiplier!)", "Ferocious Bite (Rank 3)", "Innervate (Crucial mana battery!)"],
     trainerSkip: ["Hurricane (Rank 1 - Huge mana drain, totally skip)"],
     rotation: [
-      "DIRE BEAR UPGRADE: Your Bear form is now Dire Bear (+360% armor bonus!). You can now easily tank 4-5 dungeon elites simultaneously.",
+      "DIRE BEAR UPGRADE: Your Bear form is now Dire Bear (+360% armor bonus!). You can now easily solo multiple mobs simultaneously with Swipe and Maul.",
       "Skyborne Innervate Synergy: Pair 'Innervate' with your Alliance racial 'Read Ley Line' to refill your entire mana bar in a few seconds flat!"
     ],
     gearTip: "Look for 'Warden Staff' (Epic level 43 world drop staff with +260 Armor and +10 Defense)—the undisputed best Bear tanking weapon in Vanilla!",
@@ -750,11 +751,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   42: {
-    title: "Furor Rank 2 & Zul'Farrak Pre-Quests",
-    zone: "Tanaris (Land's End Beach) / Feralas (Gordunni Outpost)",
+    title: "Furor Rank 2 & Tanaris Wastewander Bounties",
+    zone: "Tanaris (Gadgetzan & Sandsorrow Watch) / Feralas entry",
     zoneRange: "42-47",
     hubs: "Gadgetzan / Feathermoon",
-    zoneInstructions: "Complete pirate hunting quests in southern Tanaris and ogre investigations in Feralas.",
+    zoneInstructions: "SOLO ROUTE: Clear the Wastewander bandit camps in Tanaris (Water Pouch turn-ins give great repeatable XP and raw coin). In Feralas, take the boat from Menethil or fly from Darnassus to Feathermoon Stronghold to begin coastal island solo quests.",
     talent: {
       name: "Furor (Rank 2/5 - Restoration)",
       tree: "Restoration",
@@ -792,11 +793,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   44: {
-    title: "Zul'Farrak Dungeon Crawl!",
-    zone: "Tanaris (Zul'Farrak)",
+    title: "Feralas Inland Wilderness & Tanaris Dunerunner Hunts",
+    zone: "Feralas (Feathermoon Stronghold) & Tanaris (Noonshade Ruins)",
     zoneRange: "43-48",
-    hubs: "Gadgetzan",
-    zoneInstructions: "Assemble a Zul'Farrak group. As a Dire Bear tank with Leader of the Pack, you will breeze through the famous Pyramid stairs event!",
+    hubs: "Feathermoon Stronghold (Feralas) / Gadgetzan",
+    zoneInstructions: "SOLO ROUTE: Skip Zul'Farrak dungeon groups! Feralas is one of the greatest solo questing zones in Classic for Druids. Pick up the Gordunni Ogre and Yeti hunting quests from Feathermoon Stronghold. The yetis in the inland caves drop massive amounts of Thick Leather and vendor trash. In Tanaris, solo the Dunerunners and Basilisks south of Gadgetzan.",
     talent: {
       name: "Furor (Rank 4/5 - Restoration)",
       tree: "Restoration",
@@ -807,9 +808,10 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["Barkskin (Rank 1 - Reduces physical damage taken by 20%!)", "Rejuvenation (Rank 7)"],
     trainerSkip: ["Thorns (Rank 5 - Skip)"],
     rotation: [
-      "Barkskin Trick: You can cast Barkskin right before shifting into Dire Bear for 20% flat damage reduction on dangerous pull spikes!"
+      "Barkskin Trick: You can cast Barkskin right before shifting into Dire Bear for 20% flat damage reduction on dangerous pull spikes!",
+      "Solo Farming: Keep Faerie Fire (Feral) on target -> Cat DPS rotation -> Shift out to heal with Regrowth + Rejuvenation -> Re-enter Cat. Downtime is zero."
     ],
-    gearTip: "Look for Zul'Farrak drops like 'Bad Mojo Mask' and 'Zum'rah's Vexing Cane'.",
+    gearTip: "Skin Yetis and Ogres for Thick and Heavy Leather. Save money toward your epic mount at 60.",
     dungeonGear: [
       { name: "Sul'thraze the Lasher", quality: "epic", source: "Zul'Farrak combined drops", stats: "High stats", tip: "Fun to combine, but stick to 2H high agility/strength stat sticks for Feral." }
     ]
@@ -836,11 +838,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   46: {
-    title: "Branching to Balance: Nature's Grasp & Maraudon Prep",
+    title: "Branching to Balance: Nature's Grasp & Thorium Point Solo Prep",
     zone: "Tanaris (Thistleshrub Valley) / Searing Gorge entry",
     zoneRange: "45-50",
     hubs: "Thorium Point (Searing Gorge) / Gadgetzan",
-    zoneInstructions: "Thorium Point in Searing Gorge offers condensed kill and collection quests. Grab the flight path on the northern ridge.",
+    zoneInstructions: "SOLO ROUTE: Skip Maraudon dungeon attunements. Clear Thistleshrub Valley south of Gadgetzan (dense plant/elemental spawns for fast solo XP). Ride into Searing Gorge and unlock the Thorium Point flight path on the northern ridge to prepare for the compact solo kill bounties.",
     talent: {
       name: "Nature's Grasp (Rank 1/1 - Balance Tree)",
       tree: "Balance",
@@ -857,11 +859,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   47: {
-    title: "Improved Nature's Grasp (50% Root Chance)",
+    title: "Improved Nature's Grasp (50% Root Chance) & Searing Gorge Bounties",
     zone: "Searing Gorge (The Cauldron) / Hinterlands (Jintha'Alor)",
     zoneRange: "46-51",
     hubs: "Thorium Point / Aerie Peak",
-    zoneInstructions: "Group up for the Jintha'Alor elite quest chain in the Hinterlands. Outstanding quest rewards and XP.",
+    zoneInstructions: "SOLO ROUTE: Clear the compact solo bounties from Thorium Point in Searing Gorge (Heavy Golems, Magma Elementals, Dark Iron Geologists). In the Hinterlands, hunt the silvermane wolves and owlbeasts in the western forests. Skip the elite Jintha'Alor temple unless using Prowl to solo grab ground chests.",
     talent: {
       name: "Improved Nature's Grasp (Rank 1/4)",
       tree: "Balance",
@@ -878,11 +880,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   48: {
-    title: "Maraudon Dungeon Run: Earth Song Falls",
-    zone: "Desolace (Maraudon) / Tanaris",
+    title: "Tanaris Southbreak Shore & Feralas Yeti Farming",
+    zone: "Tanaris (Southbreak Shore) & Feralas (Rage Scar Hold)",
     zoneRange: "47-52",
-    hubs: "Nijel's Point -> Maraudon",
-    zoneInstructions: "Run Maraudon (Orange, Purple, and Princess Theradras). Princess Theradras drops the legendary Ring of the Earth Song (+Attack Power and Hit) and Blackstone Ring.",
+    hubs: "Gadgetzan / Feathermoon Stronghold",
+    zoneInstructions: "SOLO ROUTE: Avoid the hours-long grind of Maraudon groups. Farm the Southbreak Shore pirate camps in Tanaris for Pirate Hats, lockboxes, and raw silver. In Feralas, clear Rage Scar Hold yetis—they are tightly grouped, non-elite, and can be skinned for stacks of Thick and Rugged Leather worth considerable gold.",
     talent: {
       name: "Improved Nature's Grasp (Rank 2/4)",
       tree: "Balance",
@@ -985,11 +987,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   53: {
-    title: "Sunken Temple (Temple of Atal'Hakkar) Run",
-    zone: "Swamp of Sorrows (Sunken Temple) / Felwood",
+    title: "Felwood Furbolg Solo Power Grind & Jaedenar Perimeter",
+    zone: "Felwood (Emerald Sanctuary / Timbermaw Gate) & Burning Steppes",
     zoneRange: "52-57",
     hubs: "Nethergarde Keep / Emerald Sanctuary",
-    zoneInstructions: "Run Sunken Temple dungeon in Swamp of Sorrows. Pick up your Level 50+ Druid class quest line leading into Sunken Temple for epic rewards!",
+    zoneInstructions: "SOLO ROUTE: Bypass the confusing corridors and group wipes of Sunken Temple. Felwood is a goldmine for solo Druids. Hunt Deadwood Furbolgs in southern and northern Felwood to build Timbermaw Hold reputation early. Cleanse Corrupted Whipper Root and Night Dragon plants with Cenarion Plant Salves to get free instant-cast combat healing and mana consumables!",
     talent: {
       name: "Naturalist (Rank 1/5 - Restoration) or Thick Hide",
       tree: "Restoration",
@@ -1000,9 +1002,10 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["No spells at 53."],
     trainerSkip: [],
     rotation: [
-      "Sunken Temple Bosses: Omen of Clarity Clearcasting procs allow you to maintain relentless Claw and Ferocious Bite pressure without running out of energy."
+      "Solo Clearcasting: Omen of Clarity procs allow non-stop Claw, Rake, and 5-point Ferocious Bite pressure with zero energy cost.",
+      "Consumable Farming: Farm Whipper Root Tubers and Night Dragon's Breath in Felwood for instant 800+ HP heals in combat!"
     ],
-    gearTip: "Complete the Druid Sunken Temple quest to choose between 'Grizzled Pelt' or 'Forest's Embrace'.",
+    gearTip: "Skin Deadwood and Timbermaw beasts for Rugged Leather. Save all furbolg feathers and beads for rep turn-ins.",
     dungeonGear: [
       { name: "Grizzled Pelt", quality: "rare", source: "Druid Class Quest (Sunken Temple)", stats: "+15 Stamina, +337 Armor in Dire Bear", tip: "Phenomenal Dire Bear tanking cloak!" }
     ]
@@ -1050,11 +1053,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   56: {
-    title: "Blackrock Depths (BRD): The Prison & Arena",
-    zone: "Blackrock Mountain (Blackrock Depths - BRD)",
+    title: "Western Plaguelands: The Four Plague Cauldron Solo Chains",
+    zone: "Western Plaguelands (Felstone Field, Dalson's Tears & Sorrow Hill)",
     zoneRange: "54-59",
-    hubs: "Morgan's Vigil (Burning Steppes)",
-    zoneInstructions: "Run Blackrock Depths (BRD) Prison and Arena runs. BRD is loaded with pre-raid Best-in-Slot gear for Feral Druids, including Savage Gladiator Chain / leather pieces and ironfoe.",
+    hubs: "Chillwind Camp (WPL)",
+    zoneInstructions: "SOLO ROUTE: Skip Blackrock Depths group runs! Western Plaguelands offers the four famous Plague Cauldron solo quest chains (Felstone Field, Dalson's Tears, Writhing Haunt, Gahrron's Withering). Each cauldron field quest rewards 4,000–6,000 turn-in XP! In Dire Bear Form, you can easily solo the undead guards and Cauldron Lords with zero danger.",
     talent: {
       name: "Naturalist (Rank 4/5)",
       tree: "Restoration",
@@ -1065,9 +1068,9 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["Healing Touch (Rank 12)"],
     trainerSkip: ["Thorns (Rank 7 - Skip)"],
     rotation: [
-      "BRD Tanking: Use Feral Charge on Shadowforge Seneschals, Barkskin before trash pulls, Swipe for AoE agro."
+      "Solo Undead Farming: Pull with Faerie Fire (Feral) -> Shred/Claw in Cat Form -> If 2+ adds arrive, shift Dire Bear -> Swipe to cleave -> Maul -> Bash to self-heal."
     ],
-    gearTip: "Look for 'Savage Gladiator Chain' or 'Lord Blackwood's Blade' in BRD.",
+    gearTip: "Turn in Scourgestones at Chillwind Camp. Farm Hearthglen perimeter or Sorrow Hill for Runecloth.",
     dungeonGear: [
       { name: "Band of the Penitent", quality: "rare", source: "BRD Quests", stats: "+Str, +Agi, +Stam", tip: "Solid tank and DPS leveling ring." }
     ]
@@ -1094,11 +1097,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   58: {
-    title: "Scholomance & Stratholme Pre-Raid Infiltration",
-    zone: "Western Plaguelands (Scholomance) / Stratholme",
+    title: "Eastern Plaguelands: Light's Hope Chapel Solo Blitz",
+    zone: "Eastern Plaguelands (Light's Hope Chapel & Corin's Crossing)",
     zoneRange: "56-60",
     hubs: "Chillwind Camp / Light's Hope",
-    zoneInstructions: "Begin your Scholomance Skeleton Key questline and Stratholme dungeon runs. You are now running end-game level 60 dungeons as an indispensable Bear Tank or Leader of the Pack Cat DPS!",
+    zoneInstructions: "SOLO ROUTE: Skip Stratholme and Scholomance dungeon groups. Eastern Plaguelands has dozens of open-world solo Scourge quests centered around Light's Hope Chapel. Farm Corin's Crossing, Browman Mill, and Blackwood Lake. Collect Scourge Scraps and Bone Fragments for Argent Dawn reputation tokens. Use Prowl to bypass heavy trash packs and assassinate named quest targets.",
     talent: {
       name: "Subtlety or Nurturing Instinct (Rank 1/2)",
       tree: "Restoration",
@@ -1109,9 +1112,9 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["Rejuvenation (Rank 9)"],
     trainerSkip: ["Starfire (Rank 6 - Skip)"],
     rotation: [
-      "Dungeon Prowl Stealth runs: You can stealth past trash in Scholomance and Stratholme to reach specific boss rooms directly!"
+      "Solo Stealth Assassination: Prowl into enemy camps -> Identify named quest mob -> Ravage -> Tiger's Fury + Claw -> Ferocious Bite -> Loot quest item -> Walk on Air glide or Shadowmeld/Prowl away."
     ],
-    gearTip: "Equip 'Devilsaur Gauntlets' and 'Devilsaur Leggings' (+2% Hit, +28 Attack Power, +Agility) craftable at Leatherworking 300.",
+    gearTip: "Equip 'Devilsaur Gauntlets' and 'Devilsaur Leggings' craftable with Leatherworking 300. Incredible solo DPS boost!",
     dungeonGear: [
       { name: "Devilsaur Armor Set", quality: "rare", source: "Leatherworking (Crafted)", stats: "+2% Hit Chance, +46 Agility, +28 AP", tip: "The absolute gold standard for Feral Cat DPS heading into Molten Core!" }
     ]
@@ -1138,11 +1141,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   60: {
-    title: "LEVEL 60 MAXIMUM LEVEL: PRE-RAID ASCENSION!",
-    zone: "Blackrock Mountain / Stratholme / Scholomance / Dire Maul",
+    title: "LEVEL 60 MAXIMUM LEVEL: SOLO MASTER & PRE-RAID WORLD ASCENSION!",
+    zone: "Winterspring / Eastern Plaguelands / Silithus (Cenarion Hold)",
     zoneRange: "60 (Max)",
-    hubs: "Ironforge / Stormwind / Light's Hope",
-    zoneInstructions: "YOU DID IT! You are now Level 60! As an Alliance Skyborne Feral Druid, you bring unmatched versatility to raids and dungeons: +3% Crit Leader of the Pack aura for your melee group, off-tank Dire Bear survivability with massive armor, instant Innervate mana batteries, and Walk on Air utility.",
+    hubs: "Everlook / Light's Hope Chapel / Cenarion Hold",
+    zoneInstructions: "SOLO MASTERY ACHIEVED: You have reached Level 60 entirely solo! As an Alliance Feral Druid, you are the ultimate open-world solo powerhouse: stealth-farm high-tier herb/ore nodes in Silithus and EPL, solo farm Timbermaw Hold reputation for BiS agility enchant recipes, grind Devilsaur leather in Un'Goro Crater with zero downtime, and complete world epic questlines at your own pace.",
     talent: {
       name: "Master Feral Hybrid (14/32/5 or 0/46/5)",
       tree: "Mastery",
@@ -1153,8 +1156,8 @@ const DRUID_LEVEL_DATA = {
     trainerTrain: ["Ferocious Bite (Rank 6)", "Healing Touch (Rank 13)", "Mark of the Wild (Rank 7)"],
     trainerSkip: [],
     rotation: [
-      "Raid Cat DPS: Maintain Faerie Fire (Feral) -> Shred behind boss -> Rip or Ferocious Bite with Clearcasting -> Powershift with Wolfshead Helm for instant energy refreshes.",
-      "Raid Bear Tank: Pull with Faerie Fire -> Maul on swing timer -> Swipe on AoE -> Bash to interrupt deadly spells -> Barkskin for emergency mitigation."
+      "Solo Level 60 Cat Farming: Maintain Faerie Fire (Feral) -> Shred behind mob -> Ferocious Bite -> Powershift with Wolfshead Helm for instant energy refreshes -> Endless farming rhythm.",
+      "Solo Elite / Named Mob Bear: Pull with Faerie Fire -> Maul on swing timer -> Bash to interrupt deadly spells -> Barkskin + Frenzied Regeneration for extreme survivability."
     ],
     gearTip: "Pursue Pre-Raid BiS: Wolfshead Helm, Devilsaur Set, Blackstone Ring, Warden Staff (for Bear), Bonecrusher / Crowd Pumper (for Cat), and Mark of the Dragon Lord.",
     dungeonGear: [
