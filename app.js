@@ -209,11 +209,11 @@ const DRUID_LEVEL_DATA = {
     hubs: "Sentinel Hill",
     zoneInstructions: "Form a Deadmines dungeon group. With maxed Ferocity, Demoralizing Roar, and Swipe, you are an extraordinary Bear Tank! Deadmines has several best-in-slot leveling weapons and leather drops.",
     talent: {
-      name: "Thick Hide (Rank 1/3) or Feral Instinct (1/5)",
+      name: "Thick Hide (Rank 1/3)",
       tree: "Feral Combat",
-      rank: "1/5",
-      effect: "Increases threat generated in Bear Form by 3% or Armor by 2%.",
-      why: "Setting up deep feral tier access while making dungeon tanking foolproof."
+      rank: "1/3",
+      effect: "Increases your Armor contribution from items by 3.3% (compounded by Bear Form's +180% Armor multiplier).",
+      why: "BEST SOLO CHOICE: In solo play, you take 100% of all incoming physical damage. Threat talents provide zero benefit when fighting alone, but Thick Hide amplifies your armor against every mob, significantly reducing physical damage taken and downtime."
     },
     trainerTrain: ["No spells at 17."],
     trainerSkip: [],
@@ -234,11 +234,11 @@ const DRUID_LEVEL_DATA = {
     hubs: "Thelsamar / Lakeshire",
     zoneInstructions: "Head to Lakeshire in Redridge Mountains to hunt gnolls and orcs along the road, or finish the elite ogre quests in Loch Modan with a partner.",
     talent: {
-      name: "Feral Instinct (Rank 2/5)",
+      name: "Thick Hide (Rank 2/3)",
       tree: "Feral Combat",
-      rank: "2/5",
-      effect: "Increases threat generated in Bear Form by 6% and reduces chance of enemies seeing you in Prowl.",
-      why: "Improves threat control and prepares stealth detection reduction for level 20 Cat Form."
+      rank: "2/3",
+      effect: "Increases your Armor contribution from items by 6.6% (compounded by Bear Form's +180% Armor multiplier).",
+      why: "Doubles your armor bonus from gear. You take noticeably less physical damage from multiple gnolls and beasts in Redridge and Westfall."
     },
     trainerTrain: ["Faerie Fire (Rank 1 - Reduces enemy armor by 175 and prevents stealth!)", "Rejuvenation (Rank 4)"],
     trainerSkip: ["Hibernate (Rank 1 - Rarely needed in leveling, train only if needed for beasts)"],
@@ -255,11 +255,11 @@ const DRUID_LEVEL_DATA = {
     hubs: "Lakeshire",
     zoneInstructions: "Complete 'Free at Last' and the bellygrub boar quest in Redridge. You are 1 level away from unlocking Cat Form, the biggest speed spike in the entire leveling process!",
     talent: {
-      name: "Feral Instinct (Rank 3/5)",
+      name: "Thick Hide (Rank 3/3)",
       tree: "Feral Combat",
-      rank: "3/5",
-      effect: "Increases Bear threat by 9% and reduces enemy detection in Prowl.",
-      why: "Unlocks tier 3 of the Feral tree for Feline Swiftness next level."
+      rank: "3/3",
+      effect: "Increases your Armor contribution from items by 10% (MAX RANK).",
+      why: "Reaches the 10-point threshold in Feral Combat! You are now maximally resilient and ready to unlock Tier 3 (Feline Swiftness +30% movement speed) the exact second you hit Level 20."
     },
     trainerTrain: ["No spells at 19."],
     trainerSkip: [],
@@ -1191,10 +1191,12 @@ for (let lvl = 2; lvl <= 8; lvl++) {
 
 // Interactive Talent Configuration & Level-by-Level Order
 const DRUID_TALENTS_CONFIG = [
-  // Feral Combat (32 points)
+  // Feral Combat
   { id: "ferocity", name: "Ferocity", max: 5, tree: "feral", icon: "🐾", desc: "Reduces Rage cost of Maul/Swipe and Energy of Claw/Rake by 1 per rank." },
+  { id: "feral_aggression", name: "Feral Aggression", max: 5, tree: "feral", icon: "🐯", desc: "Increases Demoralizing Roar attack power reduction by 8%-40% and Ferocious Bite damage by 3%-15%." },
+  { id: "thick_hide", name: "Thick Hide", max: 3, tree: "feral", icon: "🛡️", desc: "Increases your Armor contribution from items by 3.3% / 6.6% / 10% (massively multiplied in Bear Form)." },
   { id: "brutal_impact", name: "Brutal Impact", max: 2, tree: "feral", icon: "💥", desc: "Increases stun duration of Bash and Pounce by 0.5s per rank." },
-  { id: "feral_instinct", name: "Feral Instinct", max: 5, tree: "feral", icon: "👁️", desc: "Increases threat in Bear Form and reduces stealth detection." },
+  { id: "feral_instinct", name: "Feral Instinct", max: 1, tree: "feral", icon: "👁️", desc: "Increases threat in Bear Form and reduces chance of detection in Prowl." },
   { id: "feline_swiftness", name: "Feline Swiftness", max: 2, tree: "feral", icon: "🐆", desc: "Increases movement speed by 15% / 30% outdoors in Cat Form." },
   { id: "sharpened_claws", name: "Sharpened Claws", max: 3, tree: "feral", icon: "⚔️", desc: "Increases critical strike chance in forms by 2% per rank." },
   { id: "feral_charge", name: "Feral Charge", max: 1, tree: "feral", icon: "🛡️", desc: "Bear gap closer that roots for 4s and interrupts spellcasts." },
@@ -1205,38 +1207,39 @@ const DRUID_TALENTS_CONFIG = [
   { id: "heart_of_the_wild", name: "Heart of the Wild", max: 5, tree: "feral", icon: "❤️", desc: "Increases Int by 20%, Bear Stamina by 20%, Cat Strength by 20%." },
   { id: "primal_fury", name: "Primal Fury / Berserk", max: 2, tree: "feral", icon: "⚡", desc: "Critical strikes in Bear Form generate 5 extra Rage." },
 
-  // Balance (14 points)
+  // Balance
   { id: "natures_grasp", name: "Nature's Grasp", max: 1, tree: "balance", icon: "🌿", desc: "When struck, 35% chance to entangle enemy in roots." },
   { id: "imp_natures_grasp", name: "Imp. Nature's Grasp", max: 4, tree: "balance", icon: "🌱", desc: "Increases root chance by 15% per rank." },
   { id: "natural_weapons", name: "Natural Weapons", max: 3, tree: "balance", icon: "🗡️", desc: "Increases physical damage in all forms by 3% / 6% / 10%." },
   { id: "omen_of_clarity", name: "Omen of Clarity", max: 1, tree: "balance", icon: "✨", desc: "Melee attacks have a chance to make next ability cost 0 resources!" },
 
-  // Restoration (5 points)
+  // Restoration
   { id: "furor", name: "Furor", max: 5, tree: "resto", icon: "⚡", desc: "100% chance to gain 10 Rage in Bear, or 40 Energy in Cat Form on shift." },
   { id: "naturalist", name: "Naturalist", max: 5, tree: "resto", icon: "🍃", desc: "Reduces Healing Touch cast time by 0.5s and boosts physical damage by 10%." }
 ];
 
-// Optimal Leveling Allocation Order for Levels 10 through 60 (51 points)
+// Optimal Leveling Allocation Order for Levels 10 through 60 (51 points total)
 const TALENT_LEVEL_ORDER = [
-  "ferocity", "ferocity", "ferocity", "ferocity", "ferocity", // 10-14
-  "brutal_impact", "brutal_impact", // 15-16
-  "feral_instinct", "feral_instinct", "feral_instinct", // 17-19
-  "feline_swiftness", "feline_swiftness", // 20-21
-  "sharpened_claws", "sharpened_claws", "sharpened_claws", // 22-24
-  "feral_charge", // 25
-  "predatory_strikes", "predatory_strikes", "predatory_strikes", // 26-28
-  "blood_frenzy", // 29
-  "leader_of_the_pack", // 30
-  "savage_fury", "savage_fury", // 31-32
-  "blood_frenzy", // 33
-  "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", // 34-38
-  "primal_fury", "primal_fury", // 39-40
-  "furor", "furor", "furor", "furor", "furor", // 41-45
-  "natures_grasp", "imp_natures_grasp", "imp_natures_grasp", // 46-48
-  "natural_weapons", "natural_weapons", "natural_weapons", // 49-51
-  "omen_of_clarity", // 52
-  "naturalist", "naturalist", "naturalist", "naturalist", "naturalist", // 53-57
-  "feral_instinct", "feral_instinct" // 58-59
+  "ferocity", "ferocity", "ferocity", "ferocity", "ferocity", // 10-14 (Rage & Energy conservation)
+  "brutal_impact", "brutal_impact", // 15-16 (3.0s stun enables full Healing Touch)
+  "thick_hide", "thick_hide", "thick_hide", // 17-19 (Best Solo Play: +10% armor from items, multiplied by Bear)
+  "feline_swiftness", "feline_swiftness", // 20-21 (+30% move speed outdoors in Cat Form)
+  "sharpened_claws", "sharpened_claws", "sharpened_claws", // 22-24 (+6% crit)
+  "feral_charge", // 25 (Bear root + spell interrupt)
+  "predatory_strikes", "predatory_strikes", "predatory_strikes", // 26-28 (+150% level as Attack Power)
+  "blood_frenzy", // 29 (Extra combo points on crit)
+  "leader_of_the_pack", // 30 (+3% physical crit aura)
+  "savage_fury", "savage_fury", // 31-32 (+20% Claw, Rake, Maul, Swipe damage)
+  "blood_frenzy", // 33 (Max Blood Frenzy)
+  "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", // 34-38 (+20% Stam in Bear, +20% Str in Cat)
+  "primal_fury", "primal_fury", // 39-40 (5 Rage on Bear crits)
+  "furor", "furor", "furor", "furor", "furor", // 41-45 (Instant 10 Rage on Bear shift / 40 Energy on Cat shift)
+  "natures_grasp", "imp_natures_grasp", "imp_natures_grasp", "imp_natures_grasp", // 46-49 (Instant root defensive utility)
+  "natural_weapons", "natural_weapons", "natural_weapons", // 50-52 (+10% physical damage in all forms)
+  "omen_of_clarity", // 53 (Clearcasting proc for 0 mana/rage/energy abilities)
+  "naturalist", "naturalist", "naturalist", "naturalist", "naturalist", // 54-58 (+10% melee damage & faster heals)
+  "feral_instinct", // 59 (WoW Forever 1-point cap: extra threat & stealth level)
+  "feral_aggression" // 60 (Increased Demoralizing Roar AP reduction / Bite damage)
 ];
 
 // Safe LocalStorage Helper Functions (Immune to corrupted values or disabled storage)
@@ -1291,6 +1294,24 @@ if (Object.keys(userTalentsState).length === 0 && currentLevel >= 10) {
     const tid = TALENT_LEVEL_ORDER[i];
     userTalentsState[tid] = (userTalentsState[tid] || 0) + 1;
   }
+  safeSetJSON("wow_druid_talents", userTalentsState);
+} else {
+  // Migration: Rebalance any old feral_instinct allocations to Thick Hide & enforce talent rank limits
+  if (userTalentsState["feral_instinct"] && (userTalentsState["feral_instinct"] > 1 || currentLevel < 59)) {
+    const fiPoints = userTalentsState["feral_instinct"];
+    if (currentLevel < 59) {
+      userTalentsState["thick_hide"] = (userTalentsState["thick_hide"] || 0) + fiPoints;
+      delete userTalentsState["feral_instinct"];
+    } else if (fiPoints > 1) {
+      userTalentsState["feral_instinct"] = 1;
+      userTalentsState["thick_hide"] = Math.min(3, (userTalentsState["thick_hide"] || 0) + (fiPoints - 1));
+    }
+  }
+  DRUID_TALENTS_CONFIG.forEach(t => {
+    if (userTalentsState[t.id] && userTalentsState[t.id] > t.max) {
+      userTalentsState[t.id] = t.max;
+    }
+  });
   safeSetJSON("wow_druid_talents", userTalentsState);
 }
 
@@ -1879,6 +1900,15 @@ function getTreePointsSpent(treeName) {
   return total;
 }
 
+function getTreeTargetPoints(treeName) {
+  let count = 0;
+  TALENT_LEVEL_ORDER.forEach(tid => {
+    const t = DRUID_TALENTS_CONFIG.find(x => x.id === tid);
+    if (t && t.tree === treeName) count++;
+  });
+  return count;
+}
+
 window.adjustTalentPoint = function(id, delta) {
   const cfg = DRUID_TALENTS_CONFIG.find(t => t.id === id);
   if (!cfg) return;
@@ -1955,9 +1985,9 @@ function renderTalentTreeSummary() {
   const balanceSpentEl = document.getElementById("balanceTreePoints");
   const restoSpentEl = document.getElementById("restoTreePoints");
 
-  if (feralSpentEl) feralSpentEl.textContent = `${getTreePointsSpent("feral")} / 32`;
-  if (balanceSpentEl) balanceSpentEl.textContent = `${getTreePointsSpent("balance")} / 14`;
-  if (restoSpentEl) restoSpentEl.textContent = `${getTreePointsSpent("resto")} / 5`;
+  if (feralSpentEl) feralSpentEl.textContent = `${getTreePointsSpent("feral")} / ${getTreeTargetPoints("feral")}`;
+  if (balanceSpentEl) balanceSpentEl.textContent = `${getTreePointsSpent("balance")} / ${getTreeTargetPoints("balance")}`;
+  if (restoSpentEl) restoSpentEl.textContent = `${getTreePointsSpent("resto")} / ${getTreeTargetPoints("resto")}`;
 
   // Render individual talent trees
   renderTreeNodes("feralTalentsList", "feral", remaining);
