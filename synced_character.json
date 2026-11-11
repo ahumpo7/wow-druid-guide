@@ -181,17 +181,16 @@
     "mainHand": {
       "slot": "Two-Hand",
       "type": "Two-Handed Staff",
-      "name": "Crescent Staff",
-      "quality": "rare",
+      "name": "Sturdy Quarterstaff of the Bear",
+      "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "+7 Intellect",
-        "+7 Stamina (+70 HP)",
-        "+7 Spirit"
+        "+4 Strength (+8 AP)",
+        "+4 Stamina (+40 HP)"
       ],
-      "req": "Requires Level 10 (Item Level 17)",
-      "tip": "⭐ Outstanding quest staff with massive stats for leveling!"
+      "req": "Requires Level 8 (Item Level 13)",
+      "tip": "⭐ Excellent Bear & Cat leveling staff with raw Strength and Stamina!"
     },
     "offHand": {
       "slot": "Off-Hand",
@@ -217,5 +216,5 @@
       ]
     }
   },
-  "syncedAt": "2026-11-11T19:35:07.988Z"
+  "syncedAt": "2026-11-11T19:43:06.093Z"
 }

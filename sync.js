@@ -10,9 +10,9 @@ const path = require('path');
 const ITEM_DB = {
   // Two-Hand Staffs & Maces
   15397: { name: "Oakthrush Staff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["+2 Strength (+4 AP)", "+2 Stamina (+20 HP)"], req: "Requires Level 9 (Item Level 14)", tip: "⭐ Guaranteed solo quest reward from Teldrassil / Darkshore." },
-  4566: { name: "Crescent Staff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "rare", armor: null, stats: ["+7 Intellect", "+7 Stamina (+70 HP)", "+7 Spirit"], req: "Requires Level 10 (Item Level 17)", tip: "⭐ Outstanding quest staff with massive stats for leveling!" },
+  4566: { name: "Sturdy Quarterstaff of the Bear", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 8 (Item Level 13)", tip: "⭐ Excellent Bear & Cat leveling staff with raw Strength and Stamina!" },
   6505: { name: "Heavy Spiked Mace", slot: "Two-Hand", type: "Two-Handed Mace", quality: "uncommon", armor: null, stats: ["+5 Strength (+10 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 14", tip: "Top-tier early 2H mace for Bear Form." },
-  2077: { name: "Sturdy Quarterstaff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 10", tip: "Classic Bear leveling staff." },
+  2042: { name: "Staff of Westfall", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["+11 Intellect (+165 Mana)", "+5 Spirit"], req: "Requires Level 14", tip: "⭐ Guaranteed solo quest reward from Sentinel Hill, Westfall." },
   1129: { name: "Wooden Mallet", slot: "One-Hand", type: "One-Handed Mace", quality: "uncommon", armor: null, stats: ["+2 Strength", "+2 Agility"], req: "Requires Level 11", tip: "One-handed mace." },
   
   // Off-Hands

@@ -2418,7 +2418,7 @@ const MAXROLL_GEAR_PRESETS = {
       ring2: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around lvl 14-16"] },
       trinket1: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
       trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
-      mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Crescent Staff", quality: "rare", source: "Currently Equipped on Chongo", armor: null, stats: ["+7 Intellect", "+7 Stamina (+70 HP)", "+7 Spirit"], req: "Requires Level 10 (Item Level 17)", tip: "⭐ Outstanding quest staff with massive stats for leveling!" },
+      mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Sturdy Quarterstaff of the Bear", quality: "uncommon", source: "Currently Equipped on Chongo", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 8 (Item Level 13)", tip: "⭐ Excellent Bear & Cat leveling staff with raw Strength and Stamina!" },
       offHand: { slot: "Off-Hand", type: "None (2H Equipped)", name: "Empty (2H Staff in Use)", quality: "disabled", source: "Two-Handed Weapon Occupies Both Hands", armor: null, stats: ["Two-Handed weapon equipped in Main Hand."], req: "Two-Hander in Use" },
       relic: { slot: "Relic / Idol", type: "Idol", name: "Empty Idol Slot", quality: "common", source: "Druid Relic", armor: null, stats: ["Idols become available in level 50+ dungeons and Stratholme"] }
     }
@@ -3370,12 +3370,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Great 2H."
     },
     "weaponAlt": {
-      "name": "Crescent Staff",
+      "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "rare",
-      "source": "Solo/Quest: Leaders of the Fang",
-      "stats": "20.9 DPS, +7 Intellect, +7 Stamina (+70 HP), +7 Spirit",
-      "tip": "Giant stat pool."
+      "quality": "uncommon",
+      "source": "Solo Quest: The People's Militia",
+      "stats": "20.3 DPS, +11 Intellect (+165 Mana), +5 Spirit",
+      "tip": "Guaranteed solo quest staff from Sentinel Hill, Westfall."
     }
   },
   "18": {
@@ -4977,15 +4977,15 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "slot": "Two-Hand Weapon",
     "slotKey": "mainHand",
     "category": "weapon",
-    "minLevel": 10,
-    "maxLevel": 20,
-    "upgradeName": "Crescent Staff",
-    "quality": "rare",
+    "minLevel": 14,
+    "maxLevel": 22,
+    "upgradeName": "Oaken Philosophy",
+    "quality": "uncommon",
     "sourceType": "quest",
-    "sourceDesc": "Solo/Quest: Leaders of the Fang (Wailing Caverns quest chain)",
-    "stats": "20.9 DPS, +7 Intellect, +7 Stamina (+70 HP), +7 Spirit",
-    "gain": "+70 HP, +105 Mana, huge out-of-combat Spirit regen",
-    "tip": "⭐ Massive leveling stat stick! The huge mana and health pools minimize downtime between pulls."
+    "sourceDesc": "Solo Quest: The Absent Minded Prospector (Darkshore)",
+    "stats": "14.8 DPS, +4 Intellect, +3 Spirit",
+    "gain": "+60 Mana, +3 Spirit regen",
+    "tip": "100% guaranteed solo quest reward in Darkshore. Great hybrid caster/feral leveling staff."
   },
   {
     "slot": "Two-Hand Weapon",
@@ -5683,9 +5683,9 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
       eqName.includes(upgName) ||
       upgName.includes(eqName) ||
       (upg.slotKey === "mainHand" && (
-        (upgName.includes("crescent staff") && eqName.includes("crescent staff")) ||
         (upgName.includes("oakthrush") && eqName.includes("oakthrush")) ||
-        (upgName.includes("quarterstaff") && eqName.includes("quarterstaff"))
+        (upgName.includes("quarterstaff") && eqName.includes("quarterstaff")) ||
+        (upgName.includes("spiked mace") && eqName.includes("spiked mace"))
       ))
     );
 
