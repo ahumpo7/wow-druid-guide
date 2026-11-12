@@ -41,30 +41,32 @@
     },
     "back": {
       "slot": "Back",
-      "type": "Cloak",
+      "type": "Cloth",
       "name": "War Paint Cloak",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
       "armor": "15 Armor",
       "stats": [
-        "+2 Stamina (+20 HP)"
+        "+1 Strength (+2 AP)",
+        "+1 Agility (+1 Cat AP)",
+        "+1 Stamina (+10 HP)"
       ],
-      "req": "Requires Level 10 (Item Level 16)",
-      "tip": "Green BoE cloak."
+      "req": "Requires Level 10",
+      "tip": "⭐ Currently equipped on Chongo! BoE cloak with trifecta stats."
     },
     "chest": {
       "slot": "Chest",
-      "type": "Leather",
+      "type": "Cloth",
       "name": "Disciple's Vest of the Owl",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "62 Armor",
+      "armor": "25 Armor",
       "stats": [
-        "+3 Intellect",
-        "+3 Spirit"
+        "+2 Intellect (+30 Mana)",
+        "+2 Spirit"
       ],
-      "req": "Requires Level 11 (Item Level 16)",
-      "tip": "Green world drop leather chest piece."
+      "req": "Requires Level 11",
+      "tip": "⭐ Currently equipped on Chongo! BoE cloth chest with intellect and spirit."
     },
     "wrists": {
       "slot": "Wrists",
@@ -77,22 +79,22 @@
         "+2 Stamina (+20 HP)",
         "+2 Spirit"
       ],
-      "req": "Requires Level 12 (Item Level 17)",
-      "tip": "⭐ Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)."
+      "req": "Requires Level 12",
+      "tip": "⭐ Currently equipped on Chongo! Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)."
     },
     "hands": {
       "slot": "Hands",
-      "type": "Leather",
+      "type": "Cloth",
       "name": "Evergreen Gloves",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "44 Armor",
+      "armor": "20 Armor",
       "stats": [
-        "+2 Agility (+0.1% Crit)",
-        "+3 Stamina (+30 HP)"
+        "+3 Intellect (+45 Mana)",
+        "+2 Spirit"
       ],
-      "req": "Requires Level 12 (Item Level 18)",
-      "tip": "Solo quest reward from Darkshore."
+      "req": "Requires Level 12",
+      "tip": "⭐ Currently equipped on Chongo! Quest reward: Tharnariun's Hope (Darkshore)."
     },
     "waist": {
       "slot": "Waist",
@@ -100,13 +102,13 @@
       "name": "Prospector's Sash",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "45 Armor",
+      "armor": "42 Armor",
       "stats": [
         "+3 Stamina (+30 HP)",
-        "+3 Agility (+0.15% Crit)"
+        "+2 Spirit"
       ],
-      "req": "Requires Level 13 (Item Level 18)",
-      "tip": "Great green belt providing defense and combat stats."
+      "req": "Requires Level 13",
+      "tip": "⭐ Currently equipped on Chongo! BoE leather belt."
     },
     "legs": {
       "slot": "Legs",
@@ -114,12 +116,13 @@
       "name": "Hunting Pants",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "63 Armor",
+      "armor": "62 Armor",
       "stats": [
-        "+3 Stamina (+30 HP)"
+        "+3 Agility (+3 Cat AP / +0.15% Crit)",
+        "+2 Spirit"
       ],
-      "req": "Requires Level 11 (Item Level 16)",
-      "tip": "Green leather pants with health boost."
+      "req": "Requires Level 11",
+      "tip": "⭐ Currently equipped on Chongo! BoE green leather pants."
     },
     "feet": {
       "slot": "Feet",
@@ -127,12 +130,12 @@
       "name": "Nomad Sandals",
       "quality": "common",
       "source": "Currently Equipped on Chongo",
-      "armor": "35 Armor",
+      "armor": "40 Armor",
       "stats": [
-        "No stat enchant (Pure Armor)"
+        "Pure Armor (Starter Footwear)"
       ],
-      "req": "Requires Level 8 (Item Level 12)",
-      "tip": "White leather boots providing armor."
+      "req": "Requires Level 8",
+      "tip": "⭐ Currently equipped on Chongo! White leather boots."
     },
     "ring1": {
       "slot": "Finger",
@@ -186,11 +189,12 @@
       "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "+2 Strength (+4 AP)",
-        "+2 Stamina (+20 HP)"
+        "21-32 Damage (9.5 DPS)",
+        "+2 Stamina (+20 HP)",
+        "+2 Intellect (+30 Mana)"
       ],
-      "req": "Requires Level 9 (Item Level 14)",
-      "tip": "⭐ Guaranteed solo quest reward from Teldrassil / Darkshore."
+      "req": "Requires Level 9",
+      "tip": "⭐ Guaranteed solo quest reward: The Fragments Within (Darkshore)."
     },
     "offHand": {
       "slot": "Off-Hand",
@@ -216,5 +220,5 @@
       ]
     }
   },
-  "syncedAt": "2026-11-12T01:12:16.332Z"
+  "syncedAt": "2026-11-12T01:43:14.860Z"
 }

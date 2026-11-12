@@ -8,51 +8,90 @@ const path = require('path');
 
 // Classic WoW Item Database for common leveling gear & Chongo's items
 const ITEM_DB = {
-  // Two-Hand Staffs & Maces
-  15397: { name: "Oakthrush Staff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["+2 Strength (+4 AP)", "+2 Stamina (+20 HP)"], req: "Requires Level 9 (Item Level 14)", tip: "⭐ Guaranteed solo quest reward from Teldrassil / Darkshore." },
-  4566: { name: "Sturdy Quarterstaff of the Bear", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 8 (Item Level 13)", tip: "⭐ Excellent Bear & Cat leveling staff with raw Strength and Stamina!" },
-  6505: { name: "Heavy Spiked Mace", slot: "Two-Hand", type: "Two-Handed Mace", quality: "uncommon", armor: null, stats: ["+5 Strength (+10 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 14", tip: "Top-tier early 2H mace for Bear Form." },
-  2042: { name: "Staff of Westfall", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["+11 Intellect (+165 Mana)", "+5 Spirit"], req: "Requires Level 14", tip: "⭐ Guaranteed solo quest reward from Sentinel Hill, Westfall." },
+  // Two-Hand Staffs & Maces (Classic 1.12 Verified Stats)
+  15397: { name: "Oakthrush Staff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["21-32 Damage (9.5 DPS)", "+2 Stamina (+20 HP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 9", tip: "⭐ Guaranteed solo quest reward: The Fragments Within (Darkshore)." },
+  4566: { name: "Sturdy Quarterstaff of the Bear", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["20-30 Damage (8.9 DPS)", "+3 Strength (+6 AP)", "+3 Stamina (+30 HP)"], req: "Requires Level 8", tip: "⭐ BoE world drop staff with raw Strength and Stamina for Bear Form." },
+  6505: { name: "Heavy Spiked Mace", slot: "Two-Hand", type: "Two-Handed Mace", quality: "uncommon", armor: null, stats: ["34-51 Damage (12.5 DPS)", "+6 Strength (+12 AP)"], req: "Requires Level 14", tip: "⭐ Sold by weapon vendors in Loch Modan (Nillen Andemar) and Redridge (Brog Hamfist)." },
+  2042: { name: "Staff of Westfall", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["49-74 Damage (20.5 DPS)", "+11 Spirit", "+5 Intellect (+75 Mana)"], req: "Requires Level 18", tip: "⭐ Guaranteed solo quest reward: The Defias Brotherhood (Sentinel Hill, Westfall)." },
+  5195: { name: "Smite's Mighty Hammer", slot: "Two-Hand", type: "Two-Handed Mace", quality: "rare", armor: null, stats: ["44-67 Damage (20.6 DPS)", "+11 Strength (+22 AP)", "+4 Agility (+0.2% Crit)"], req: "Requires Level 18", tip: "Dungeon drop from Mr. Smite in The Deadmines." },
   1129: { name: "Wooden Mallet", slot: "One-Hand", type: "One-Handed Mace", quality: "uncommon", armor: null, stats: ["+2 Strength", "+2 Agility"], req: "Requires Level 11", tip: "One-handed mace." },
+  9449: { name: "Manual Crowd Pumper", slot: "Two-Hand", type: "Two-Handed Mace", quality: "rare", armor: null, stats: ["80-121 Damage (50.3 DPS)", "+16 Strength (+32 AP)", "+5 Agility", "Use: +50% Attack Speed for 30s (3 charges)"], req: "Requires Level 29", tip: "Crowd Pumper 9-60 in Gnomeregan." },
+  943: { name: "Warden Staff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "epic", armor: "260 Armor", stats: ["120-181 Damage (62.7 DPS)", "+260 Armor (+936 in Dire Bear)", "+10 Defense", "+11 Stamina (+110 HP)"], req: "Requires Level 43", tip: "🏆 Undisputed #1 Bear tanking weapon in Classic WoW." },
+  18396: { name: "Bonecrusher", slot: "Two-Hand", type: "Two-Handed Mace", quality: "rare", armor: null, stats: ["129-194 Damage (53.8 DPS)", "+30 Strength (+60 AP)", "Equip: +1% Critical Strike"], req: "Requires Level 58", tip: "Dire Maul quest reward: The Treasure of the Shen'dralar." },
   
   // Off-Hands
-  5611: { name: "Tear of Grief", slot: "Off-Hand", type: "Held In Off-hand", quality: "uncommon", armor: null, stats: ["+3 Intellect", "+2 Spirit"], req: "Requires Level 12 (Item Level 16)", tip: "Quest reward held in off-hand." },
+  5611: { name: "Tear of Grief", slot: "Off-Hand", type: "Held In Off-hand", quality: "uncommon", armor: null, stats: ["+3 Intellect", "+2 Spirit"], req: "Requires Level 12", tip: "Quest reward held in off-hand." },
 
-  // Leather Chestpieces
-  6266: { name: "Disciple's Vest of the Owl", slot: "Chest", type: "Leather", quality: "uncommon", armor: "62 Armor", stats: ["+3 Intellect", "+3 Spirit"], req: "Requires Level 11 (Item Level 16)", tip: "Green world drop leather chest piece." },
-  5957: { name: "Handstitched Leather Vest", slot: "Chest", type: "Leather", quality: "common", armor: "22 Armor", stats: ["No stat enchant (Pure Armor)"], req: "Requires Level 1", tip: "Basic crafted leather vest." },
-  2041: { name: "Tunic of Westfall", slot: "Chest", type: "Leather", quality: "rare", armor: "74 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Stamina (+50 HP)"], req: "Requires Level 14", tip: "🔥 Premier solo quest chest from Westfall Defias chain!" },
-  10410: { name: "Blackened Defias Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "81 Armor", stats: ["+10 Agility", "+3 Stamina"], req: "Requires Level 18", tip: "High agility rogue/druid armor." },
+  // Chestpieces
+  6266: { name: "Disciple's Vest of the Owl", slot: "Chest", type: "Cloth", quality: "uncommon", armor: "25 Armor", stats: ["+2 Intellect (+30 Mana)", "+2 Spirit"], req: "Requires Level 11", tip: "⭐ Currently equipped on Chongo! BoE cloth chest with intellect and spirit." },
+  5957: { name: "Handstitched Leather Vest", slot: "Chest", type: "Leather", quality: "common", armor: "22 Armor", stats: ["Pure Armor"], req: "Requires Level 1", tip: "Basic crafted leather vest." },
+  2041: { name: "Tunic of Westfall", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Stamina (+50 HP)"], req: "Requires Level 19", tip: "🔥 Premier solo quest chest from The Defias Brotherhood in Westfall!" },
+  10410: { name: "Blackened Defias Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Stamina (+110 HP)", "+4 Strength (+8 AP)", "+3 Agility"], req: "Requires Level 19", tip: "Dropped by Edwin VanCleef in The Deadmines." },
+  2314: { name: "Dark Leather Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "78 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)"], req: "Requires Level 15", tip: "Crafted via Leatherworking (Skill 75)." },
+  8175: { name: "Nightscape Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "113 Armor", stats: ["+15 Agility (+15 Cat AP / +0.75% Crit)", "+6 Stamina (+60 HP)"], req: "Requires Level 36", tip: "Crafted via Leatherworking (Skill 205)." },
+  15064: { name: "Warbear Harness", slot: "Chest", type: "Leather", quality: "rare", armor: "158 Armor", stats: ["+27 Stamina (+270 HP)", "+11 Strength (+22 AP)"], req: "Requires Level 50", tip: "Crafted via Leatherworking (Skill 275 - Timbermaw)." },
+  14637: { name: "Cadaverous Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "172 Armor", stats: ["+8 Strength", "+8 Agility", "Equip: +60 Attack Power"], req: "Requires Level 56", tip: "Scholomance mini-bosses." },
 
   // Belts / Waist
-  14559: { name: "Prospector's Sash", slot: "Waist", type: "Leather", quality: "uncommon", armor: "45 Armor", stats: ["+3 Stamina (+30 HP)", "+3 Agility (+0.15% Crit)"], req: "Requires Level 13 (Item Level 18)", tip: "Great green belt providing defense and combat stats." },
-  6468: { name: "Deviate Scale Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "52 Armor", stats: ["+5 Agility", "+6 Stamina (+60 HP)", "+5 Spirit"], req: "Requires Level 16", tip: "Top crafted belt for Feral leveling." },
-  4249: { name: "Hillman's Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "51 Armor", stats: ["+4 Strength (+8 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 20", tip: "Crafted via Leatherworking." },
+  14559: { name: "Prospector's Sash", slot: "Waist", type: "Leather", quality: "uncommon", armor: "42 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 13", tip: "⭐ Currently equipped on Chongo! BoE leather belt." },
+  6468: { name: "Deviate Scale Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "51 Armor", stats: ["+6 Stamina (+60 HP)", "+5 Agility (+0.25% Crit)", "+3 Spirit"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 115)." },
+  4249: { name: "Hillman's Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "48 Armor", stats: ["+4 Stamina (+40 HP)", "+4 Spirit"], req: "Requires Level 20", tip: "Crafted via Leatherworking (Skill 95)." },
+  5742: { name: "Barbaric Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "62 Armor", stats: ["+11 Strength (+22 AP)", "Use: Increases Rage by 30"], req: "Requires Level 35", tip: "Crafted via Leatherworking (Skill 200)." },
+  13252: { name: "Cloudrunner Girdle", slot: "Waist", type: "Leather", quality: "rare", armor: "185 Armor", stats: ["+15 Agility", "+14 Strength"], req: "Requires Level 55", tip: "Quartermaster Zigris in LBRS." },
 
   // Legs
-  2974: { name: "Hunting Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "63 Armor", stats: ["+3 Stamina (+30 HP)"], req: "Requires Level 11 (Item Level 16)", tip: "Green leather pants with health boost." },
-  4248: { name: "Dark Leather Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "69 Armor", stats: ["+5 Agility", "+4 Stamina (+40 HP)"], req: "Requires Level 19", tip: "Crafted via Leatherworking (Skill 115)." },
-  14562: { name: "Prospector's Pads", slot: "Legs", type: "Leather", quality: "uncommon", armor: "70 Armor", stats: ["+4 Agility", "+4 Stamina"], req: "Requires Level 16", tip: "BoE world drop." },
+  2974: { name: "Hunting Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "62 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+2 Spirit"], req: "Requires Level 11", tip: "⭐ Currently equipped on Chongo! BoE green leather pants." },
+  14563: { name: "Prospector's Woolies", slot: "Legs", type: "Leather", quality: "uncommon", armor: "69 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)", "+1 Strength (+2 AP)"], req: "Requires Level 16", tip: "BoE world drop leather pants." },
+  4248: { name: "Dark Leather Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "72 Armor", stats: ["+8 Agility (+8 Cat AP / +0.4% Crit)"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 115)." },
+  7367: { name: "Barbaric Leggings", slot: "Legs", type: "Leather", quality: "uncommon", armor: "87 Armor", stats: ["+7 Agility", "+7 Stamina", "+7 Spirit"], req: "Requires Level 29", tip: "Crafted via Leatherworking (Skill 170)." },
+  9639: { name: "Triprunner Dungarees", slot: "Legs", type: "Leather", quality: "rare", armor: "101 Armor", stats: ["+18 Agility", "+6 Stamina", "+3 Strength"], req: "Requires Level 25", tip: "Gnomeregan quest reward: Rig Wars." },
+  15062: { name: "Devilsaur Leggings", slot: "Legs", type: "Leather", quality: "rare", armor: "148 Armor", stats: ["+12 Stamina", "Equip: +46 Attack Power", "Equip: +1% Critical Strike"], req: "Requires Level 55", tip: "Crafted via Leatherworking (Skill 300). 2-piece Devilsaur set bonus grants +2% Hit!" },
 
   // Boots / Feet
-  9751: { name: "Nomad Sandals", slot: "Feet", type: "Leather", quality: "common", armor: "35 Armor", stats: ["No stat enchant (Pure Armor)"], req: "Requires Level 8 (Item Level 12)", tip: "White leather boots providing armor." },
-  1121: { name: "Feet of the Lynx", slot: "Feet", type: "Leather", quality: "rare", armor: "44 Armor", stats: ["+8 Agility (+8 Cat AP / +0.4% Crit)", "+3 Strength (+6 AP)"], req: "Requires Level 19", tip: "Supreme twink/leveling boots." },
-  4247: { name: "Dark Leather Boots", slot: "Feet", type: "Leather", quality: "uncommon", armor: "53 Armor", stats: ["+3 Agility", "+3 Stamina (+30 HP)"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 100)." },
+  9751: { name: "Nomad Sandals", slot: "Feet", type: "Leather", quality: "common", armor: "40 Armor", stats: ["Pure Armor (Starter Footwear)"], req: "Requires Level 8", tip: "⭐ Currently equipped on Chongo! White leather boots." },
+  9776: { name: "Bandit Boots of the Bear", slot: "Feet", type: "Leather", quality: "uncommon", armor: "53 Armor", stats: ["+3 Strength (+6 AP)", "+3 Stamina (+30 HP)"], req: "Requires Level 15", tip: "BoE world drop leather boots with Bear stats." },
+  4247: { name: "Dark Leather Boots", slot: "Feet", type: "Leather", quality: "uncommon", armor: "51 Armor", stats: ["+5 Agility (+5 Cat AP / +0.25% Crit)"], req: "Requires Level 15", tip: "Crafted via Leatherworking (Skill 100)." },
+  1121: { name: "Feet of the Lynx", slot: "Feet", type: "Leather", quality: "rare", armor: "63 Armor", stats: ["+8 Agility (+8 Cat AP / +0.4% Crit)", "+3 Strength (+6 AP)"], req: "Requires Level 19", tip: "🔥 Single best low-level physical DPS boots in Classic WoW (BoE)." },
+  12553: { name: "Swiftwalker Boots", slot: "Feet", type: "Leather", quality: "rare", armor: "115 Armor", stats: ["+21 Agility", "+7 Stamina", "+4 Strength"], req: "Requires Level 54", tip: "Blackrock Depths: Princess Moira / High Priestess." },
 
   // Wrists
-  15403: { name: "Ridgeback Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "33 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Spirit"], req: "Requires Level 12 (Item Level 17)", tip: "⭐ Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)." },
-  3207: { name: "Hunting Bracers", slot: "Wrists", type: "Leather", quality: "common", armor: "28 Armor", stats: ["No stat enchant (Pure Armor)"], req: "Requires Level 9 (Item Level 14)", tip: "White leather bracers." },
-  14558: { name: "Prospector's Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "29 Armor", stats: ["+3 Strength (+6 AP)", "+2 Stamina (+20 HP)"], req: "Requires Level 15", tip: "Solid green bracers." },
+  15403: { name: "Ridgeback Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "33 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Spirit"], req: "Requires Level 12", tip: "⭐ Currently equipped on Chongo! Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)." },
+  3207: { name: "Hunting Bracers", slot: "Wrists", type: "Leather", quality: "common", armor: "25 Armor", stats: ["Pure Armor"], req: "Requires Level 9", tip: "White leather bracers." },
+  14558: { name: "Prospector's Cuffs", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "32 Armor", stats: ["+2 Agility (+2 Cat AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 12", tip: "BoE green leather bracers." },
+  9775: { name: "Bandit Bracers of the Bear", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "33 Armor", stats: ["+2 Strength (+4 AP)", "+2 Stamina (+20 HP)"], req: "Requires Level 14", tip: "BoE green leather bracers with Bear stats." },
+  5964: { name: "Barbaric Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "47 Armor", stats: ["+6 Stamina (+60 HP)", "+4 Agility", "+4 Spirit"], req: "Requires Level 27", tip: "Crafted via Leatherworking (Skill 155)." },
+  18375: { name: "Bracers of the Eclipse", slot: "Wrists", type: "Leather", quality: "rare", armor: "76 Armor", stats: ["+10 Agility", "+9 Stamina", "Equip: +24 Attack Power"], req: "Requires Level 57", tip: "Prince Tortheldrin in Dire Maul West." },
 
   // Gloves / Hands
-  7738: { name: "Evergreen Gloves", slot: "Hands", type: "Leather", quality: "uncommon", armor: "44 Armor", stats: ["+2 Agility (+0.1% Crit)", "+3 Stamina (+30 HP)"], req: "Requires Level 12 (Item Level 18)", tip: "Solo quest reward from Darkshore." },
-  15405: { name: "Shucking Gloves", slot: "Hands", type: "Leather", quality: "uncommon", armor: "44 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Intellect"], req: "Requires Level 12 (Item Level 17)", tip: "Solo quest reward: Fruit of the Sea (Darkshore)." },
-  4246: { name: "Dark Leather Gloves", slot: "Hands", type: "Leather", quality: "uncommon", armor: "64 Armor", stats: ["+5 Agility", "+4 Stamina"], req: "Requires Level 23", tip: "Crafted via Leatherworking." },
+  7738: { name: "Evergreen Gloves", slot: "Hands", type: "Cloth", quality: "uncommon", armor: "20 Armor", stats: ["+3 Intellect (+45 Mana)", "+2 Spirit"], req: "Requires Level 12", tip: "⭐ Currently equipped on Chongo! Quest reward: Tharnariun's Hope (Darkshore)." },
+  15405: { name: "Shucking Gloves", slot: "Hands", type: "Leather", quality: "uncommon", armor: "45 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 12", tip: "Guaranteed solo quest reward: Fruit of the Sea (Darkshore)." },
+  4246: { name: "Dark Leather Gloves", slot: "Hands", type: "Leather", quality: "uncommon", armor: "54 Armor", stats: ["Equip: Increases lockpicking skill slightly"], req: "Requires Level 21", tip: "Crafted via Leatherworking (Skill 120)." },
+  4976: { name: "Brawler Gloves", slot: "Hands", type: "Leather", quality: "rare", armor: "62 Armor", stats: ["+8 Strength (+16 AP)", "+7 Stamina (+70 HP)"], req: "Requires Level 23", tip: "BoE rare physical gloves." },
+  15063: { name: "Devilsaur Gauntlets", slot: "Hands", type: "Leather", quality: "rare", armor: "103 Armor", stats: ["+9 Stamina (+90 HP)", "Equip: +28 Attack Power", "Equip: +1% Critical Strike"], req: "Requires Level 53", tip: "Crafted via Leatherworking (Skill 290). 2-piece Devilsaur set bonus grants +2% Hit!" },
 
   // Cloaks / Back
-  14724: { name: "War Paint Cloak", slot: "Back", type: "Cloak", quality: "uncommon", armor: "15 Armor", stats: ["+2 Stamina (+20 HP)"], req: "Requires Level 10 (Item Level 16)", tip: "Green BoE cloak." },
-  4251: { name: "Hunter's Simple Cloak", slot: "Back", type: "Cloak", quality: "uncommon", armor: "14 Armor", stats: ["+2 Stamina", "+1 Agility"], req: "Requires Level 8", tip: "Zephras Isle quest cloak." },
-  4242: { name: "Hillman's Cloak", slot: "Back", type: "Cloak", quality: "uncommon", armor: "21 Armor", stats: ["+4 Strength (+8 AP)", "+3 Stamina (+30 HP)"], req: "Requires Level 20", tip: "Crafted via Leatherworking." }
+  14724: { name: "War Paint Cloak", slot: "Back", type: "Cloth", quality: "uncommon", armor: "15 Armor", stats: ["+1 Strength (+2 AP)", "+1 Agility (+1 Cat AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 10", tip: "⭐ Currently equipped on Chongo! BoE cloak with trifecta stats." },
+  5193: { name: "Cape of the Brotherhood", slot: "Back", type: "Cloth", quality: "rare", armor: "21 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)", "+3 Stamina (+30 HP)"], req: "Requires Level 20", tip: "Edwin VanCleef in The Deadmines." },
+  13340: { name: "Cape of the Black Baron", slot: "Back", type: "Cloth", quality: "rare", armor: "45 Armor", stats: ["+15 Agility", "Equip: +20 Attack Power"], req: "Requires Level 58", tip: "Baron Rivendare in Stratholme." },
+
+  // Headgear
+  7720: { name: "Humbert's Helm", slot: "Head", type: "Leather", quality: "uncommon", armor: "76 Armor", stats: ["+7 Agility (+7 Cat AP / +0.35% Crit)", "+8 Stamina (+80 HP)"], req: "Requires Level 25", tip: "BoE drop from Dun Garok Riflemen in Hillsbrad. First non-engineering helm in Classic!" },
+  8345: { name: "Wolfshead Helm", slot: "Head", type: "Leather", quality: "rare", armor: "109 Armor", stats: ["+10 Spirit", "Equip: When shifting to Cat gain 20 Energy; to Bear gain 5 Rage"], req: "Requires Level 40", tip: "👑 The single most important Feral Druid item in Classic WoW (LW 225)." },
+
+  // Rings
+  20439: { name: "Protector's Band", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Agility (+4 Cat AP / +0.2% Crit)", "+2 Stamina (+20 HP)"], req: "Requires Level 18", tip: "Warsong Gulch PvP vendor (Honored rep, 0 dungeon runs)." },
+  12015: { name: "Prairie Ring of the Tiger", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+3 Strength (+6 AP)", "+3 Agility (+3 Cat AP / +0.15% Crit)"], req: "Requires Level 20", tip: "BoE world drop ring." },
+  17713: { name: "Blackstone Ring", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+6 Strength (+12 AP)", "Equip: +1% Hit Chance"], req: "Requires Level 49", tip: "Princess Theradras in Maraudon." },
+  18500: { name: "Tarnished Elven Ring", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+15 Agility", "Equip: +1% Hit Chance"], req: "Requires Level 56", tip: "Dire Maul North Tribute Run." },
+
+  // Trinkets
+  18834: { name: "Insignia of the Alliance", slot: "Trinket", type: "Trinket", quality: "rare", armor: null, stats: ["Use: Dispels Stun, Fear, and Polymorph effects"], req: "Requires PvP Rank 2", tip: "Purchased from PvP Officers Hall." },
+  13965: { name: "Blackhand's Breadth", slot: "Trinket", type: "Trinket", quality: "rare", armor: null, stats: ["Equip: Increases critical strike chance by 2%"], req: "Requires Level 55", tip: "Quest reward: General Drakkisath's Demise." },
+  11815: { name: "Hand of Justice", slot: "Trinket", type: "Trinket", quality: "rare", armor: null, stats: ["Equip: +20 Attack Power", "Equip: 2% chance on hit to grant 1 extra attack"], req: "Requires Level 53", tip: "Emperor Dagran Thaurissan in BRD." },
+
+  // Relics / Idols
+  22397: { name: "Idol of Ferocity", slot: "Relic / Idol", type: "Idol", quality: "rare", armor: null, stats: ["Equip: Reduces the Energy cost of Claw and Rake by 3"], req: "Requires Level 55", tip: "Magistrate Barthilas in Stratholme." },
+  23198: { name: "Idol of Brutality", slot: "Relic / Idol", type: "Idol", quality: "rare", armor: null, stats: ["Equip: Increases damage dealt by Maul by 50 and Swipe by 10"], req: "Requires Level 60", tip: "Magistrate Barthilas in Stratholme." }
 };
 
 function findGameFiles() {
