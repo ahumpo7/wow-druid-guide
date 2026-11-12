@@ -3,15 +3,15 @@
   "realm": "Darkwind (WoW Forever)",
   "class": "Druid",
   "race": "Alliance Skyborne",
-  "level": 17,
-  "money": 14428,
+  "level": 18,
+  "money": 10027,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 17)",
+      "source": "Not yet equipped (Level 18)",
       "armor": "0 Armor",
       "stats": [
         "No head armor available until lvl 14+"
@@ -69,15 +69,16 @@
     "wrists": {
       "slot": "Wrists",
       "type": "Leather",
-      "name": "Hunting Bracers",
-      "quality": "common",
+      "name": "Ridgeback Bracers",
+      "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "28 Armor",
+      "armor": "33 Armor",
       "stats": [
-        "No stat enchant (Pure Armor)"
+        "+2 Stamina (+20 HP)",
+        "+2 Spirit"
       ],
-      "req": "Requires Level 9 (Item Level 14)",
-      "tip": "White leather bracers."
+      "req": "Requires Level 12 (Item Level 17)",
+      "tip": "⭐ Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)."
     },
     "hands": {
       "slot": "Hands",
@@ -180,16 +181,16 @@
     "mainHand": {
       "slot": "Two-Hand",
       "type": "Two-Handed Staff",
-      "name": "Sturdy Quarterstaff of the Bear",
+      "name": "Oakthrush Staff",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "+4 Strength (+8 AP)",
-        "+4 Stamina (+40 HP)"
+        "+2 Strength (+4 AP)",
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Requires Level 8 (Item Level 13)",
-      "tip": "⭐ Excellent Bear & Cat leveling staff with raw Strength and Stamina!"
+      "req": "Requires Level 9 (Item Level 14)",
+      "tip": "⭐ Guaranteed solo quest reward from Teldrassil / Darkshore."
     },
     "offHand": {
       "slot": "Off-Hand",
@@ -215,5 +216,5 @@
       ]
     }
   },
-  "syncedAt": "2026-11-11T19:47:44.810Z"
+  "syncedAt": "2026-11-12T01:12:16.332Z"
 }

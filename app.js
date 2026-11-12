@@ -2395,21 +2395,21 @@ const MAXROLL_GEAR_PRESETS = {
     title: "Chongo's Live Equipped Gear",
     subtitle: "Synced live from WoW Forever client (Pawn.lua cache)",
     stats: {
-      hp: "680",
-      mp: "710",
-      catAp: "165",
-      bearArmor: "790 (44% Reduc)",
-      crit: "8.2%",
-      dodge: "6.8%",
+      hp: "740",
+      mp: "730",
+      catAp: "172",
+      bearArmor: "925 (48% Reduc)",
+      crit: "8.4%",
+      dodge: "7.1%",
       hit: "0%"
     },
     items: (typeof window !== "undefined" && window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.liveGear) ? window.WOW_SYNCED_DATA.liveGear : {
-      head: { slot: "Head", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped (Level 17)", armor: "0 Armor", stats: ["No head armor available until lvl 14+"] },
+      head: { slot: "Head", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped (Level 18)", armor: "0 Armor", stats: ["No head armor available until lvl 14+"] },
       neck: { slot: "Neck", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Neck items become available at lvl 18+"] },
       shoulders: { slot: "Shoulders", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Shoulders start dropping around lvl 17"] },
       back: { slot: "Back", type: "Cloak", name: "War Paint Cloak", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "15 Armor", stats: ["+2 Stamina (+20 HP)"], req: "Requires Level 10" },
       chest: { slot: "Chest", type: "Leather", name: "Disciple's Vest of the Owl", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "62 Armor", stats: ["+3 Intellect", "+3 Spirit"], req: "Requires Level 11" },
-      wrists: { slot: "Wrists", type: "Leather", name: "Hunting Bracers", quality: "common", source: "Currently Equipped on Chongo", armor: "28 Armor", stats: ["No stat enchant (Pure Armor)"], req: "Requires Level 9" },
+      wrists: { slot: "Wrists", type: "Leather", name: "Ridgeback Bracers", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "33 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Spirit"], req: "Requires Level 12" },
       hands: { slot: "Hands", type: "Leather", name: "Evergreen Gloves", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "44 Armor", stats: ["+2 Agility (+0.1% Crit)", "+3 Stamina (+30 HP)"], req: "Requires Level 12" },
       waist: { slot: "Waist", type: "Leather", name: "Prospector's Sash", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "45 Armor", stats: ["+3 Stamina (+30 HP)", "+3 Agility (+0.15% Crit)"], req: "Requires Level 13" },
       legs: { slot: "Legs", type: "Leather", name: "Hunting Pants", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "63 Armor", stats: ["+3 Stamina (+30 HP)"], req: "Requires Level 11" },
@@ -2418,7 +2418,7 @@ const MAXROLL_GEAR_PRESETS = {
       ring2: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around lvl 14-16"] },
       trinket1: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
       trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
-      mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Sturdy Quarterstaff of the Bear", quality: "uncommon", source: "Currently Equipped on Chongo", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Stamina (+40 HP)"], req: "Requires Level 8 (Item Level 13)", tip: "⭐ Excellent Bear & Cat leveling staff with raw Strength and Stamina!" },
+      mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Oakthrush Staff", quality: "uncommon", source: "Currently Equipped on Chongo", armor: null, stats: ["+2 Strength (+4 AP)", "+2 Stamina (+20 HP)"], req: "Requires Level 9 (Item Level 14)", tip: "⭐ Guaranteed solo quest reward from Teldrassil / Darkshore." },
       offHand: { slot: "Off-Hand", type: "None (2H Equipped)", name: "Empty (2H Staff in Use)", quality: "disabled", source: "Two-Handed Weapon Occupies Both Hands", armor: null, stats: ["Two-Handed weapon equipped in Main Hand."], req: "Two-Hander in Use" },
       relic: { slot: "Relic / Idol", type: "Idol", name: "Empty Idol Slot", quality: "common", source: "Druid Relic", armor: null, stats: ["Idols become available in level 50+ dungeons and Stratholme"] }
     }
@@ -2599,8 +2599,61 @@ function renderPaperdoll(presetKey) {
   if (titleEl) titleEl.textContent = data.title;
   if (subEl) subEl.textContent = data.subtitle;
 
-  // Stats Sheet
-  const s = data.stats;
+  // Stats Sheet: dynamically calculate if chongo_live, or use preset defaults
+  let s = data.stats;
+  if (presetKey === "chongo_live" && data.items) {
+    let baseArmor = 0;
+    let bonusStr = 0, bonusAgi = 0, bonusStam = 0, bonusInt = 0, bonusSpi = 0;
+
+    for (const [k, item] of Object.entries(data.items)) {
+      if (item && item.armor) {
+        const m = String(item.armor).match(/(\d+)\s*Armor/i);
+        if (m) baseArmor += parseInt(m[1], 10);
+      }
+      if (item && item.stats && Array.isArray(item.stats)) {
+        for (const st of item.stats) {
+          const sm = String(st).match(/\+(\d+)\s+(Strength|Agility|Stamina|Intellect|Spirit)/i);
+          if (sm) {
+            const val = parseInt(sm[1], 10);
+            const type = sm[2].toLowerCase();
+            if (type === "strength") bonusStr += val;
+            if (type === "agility") bonusAgi += val;
+            if (type === "stamina") bonusStam += val;
+            if (type === "intellect") bonusInt += val;
+            if (type === "spirit") bonusSpi += val;
+          }
+        }
+      }
+    }
+
+    const lvl = currentLevel || 18;
+    // Base stats for Druid around level 18
+    const baseDruidHp = 290 + (lvl * 15);
+    const totalHp = baseDruidHp + (bonusStam * 10);
+    const baseDruidMp = 340 + (lvl * 17);
+    const totalMp = baseDruidMp + (bonusInt * 15);
+
+    // Armor: Bear Form = Base Armor * 2.8 (or 3.08 with Thick Hide 10%)
+    // Agility provides +2 armor in caster/cat
+    const thickHideMultiplier = (userTalentsState && userTalentsState["thick_hide"]) ? (2.8 * (1 + userTalentsState["thick_hide"] * 0.033)) : 3.08;
+    const bearArmorVal = Math.round((baseArmor * thickHideMultiplier) + (bonusAgi * 2));
+    // Classic armor DR formula against level 18 mob: DR = Armor / (Armor + 400 + (85 * mobLevel))
+    const dr = Math.round((bearArmorVal / (bearArmorVal + 400 + (85 * lvl))) * 100);
+
+    // Cat AP = Level * 2 + bonusStr * 2 + bonusAgi
+    const catApVal = (lvl * 2) + (bonusStr * 2) + bonusAgi + 80;
+
+    s = {
+      hp: String(totalHp),
+      mp: String(totalMp),
+      catAp: String(catApVal),
+      bearArmor: `${bearArmorVal} (${dr}% Reduc)`,
+      crit: `${(7.5 + (bonusAgi * 0.05)).toFixed(1)}%`,
+      dodge: `${(6.5 + (bonusAgi * 0.05)).toFixed(1)}%`,
+      hit: "0%"
+    };
+  }
+
   setElementText("statHp", s.hp);
   setElementText("statMp", s.mp);
   setElementText("statCatAp", s.catAp);
@@ -5654,6 +5707,23 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
 
   const currentItems = (MAXROLL_GEAR_PRESETS.chongo_live && MAXROLL_GEAR_PRESETS.chongo_live.items) ? MAXROLL_GEAR_PRESETS.chongo_live.items : {};
 
+  // Check which slots Chongo has optimal gear equipped
+  const isSlotOptimal = (slotKey) => {
+    const eq = currentItems[slotKey];
+    if (!eq || !eq.name || eq.name === "None Equipped") return false;
+    const name = eq.name.toLowerCase();
+    if (slotKey === "mainHand") {
+      // Oakthrush Staff or Sturdy Quarterstaff or Heavy Spiked Mace
+      return name.includes("oakthrush") || name.includes("quarterstaff") || name.includes("spiked mace");
+    }
+    if (slotKey === "hands") return name.includes("evergreen") || name.includes("shucking") || name.includes("hillborne");
+    if (slotKey === "waist") return name.includes("prospector") || name.includes("deviate");
+    if (slotKey === "legs") return name.includes("hunting") || name.includes("dark leather") || name.includes("prospector");
+    if (slotKey === "wrists") return name.includes("ridgeback") || name.includes("bandit") || name.includes("prospector");
+    if (slotKey === "back") return name.includes("war paint") || name.includes("engineer");
+    return false;
+  };
+
   // Filter upgrades relevant to the character level
   let list = FERAL_NON_DUNGEON_UPGRADES.filter(u => {
     // Show items within appropriate level range
@@ -5670,44 +5740,134 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
   });
 
   if (list.length === 0) {
-    // Fallback to show items available around this level
     list = FERAL_NON_DUNGEON_UPGRADES.filter(u => u.minLevel <= lvl);
   }
 
-  container.innerHTML = list.map(upg => {
-    const equipped = currentItems[upg.slotKey];
+  // Deduplicate and group by slot to eliminate conflicting recommendations:
+  // If Chongo has an optimal item equipped for a slot (e.g. Oakthrush Staff for mainHand),
+  // show ONE clean "✅ Slot Optimal" card for that slot, and do NOT show lower/equal sidegrades!
+  const renderedSlots = new Set();
+  const prioritizedCards = [];
+
+  // Pass 1: For each slot, determine if it is currently optimal
+  for (const upg of list) {
+    const slotKey = upg.slotKey;
+    const equipped = currentItems[slotKey];
     const eqName = (equipped && equipped.name) ? equipped.name.toLowerCase() : "";
     const upgName = upg.upgradeName.toLowerCase();
-    const isCurrentlyEquipped = equipped && eqName && (
+
+    const isDirectlyEquipped = equipped && eqName && (
       eqName === upgName ||
       eqName.includes(upgName) ||
       upgName.includes(eqName) ||
-      (upg.slotKey === "mainHand" && (
-        (upgName.includes("oakthrush") && eqName.includes("oakthrush")) ||
-        (upgName.includes("quarterstaff") && eqName.includes("quarterstaff")) ||
-        (upgName.includes("spiked mace") && eqName.includes("spiked mace"))
-      ))
+      (slotKey === "mainHand" && upgName.includes("oakthrush") && eqName.includes("oakthrush")) ||
+      (slotKey === "wrists" && upgName.includes("ridgeback") && eqName.includes("ridgeback"))
     );
 
-    const isOptimal = isCurrentlyEquipped;
-    const cardClass = isOptimal ? "advisor-card is-optimal" : "advisor-card";
-    const statusTag = isOptimal 
-      ? '<span class="adv-status-tag optimal">✅ Currently Equipped & Optimal</span>'
-      : `<span class="adv-status-tag upgrade-ready">⚡ Recommended Upgrade (Lvl ${upg.minLevel}+)</span>`;
+    if (isSlotOptimal(slotKey)) {
+      if (!renderedSlots.has(slotKey)) {
+        renderedSlots.add(slotKey);
+        // Add the single clean optimal card representing Chongo's equipped piece
+        prioritizedCards.push({
+          type: "optimal",
+          slot: upg.slot,
+          slotKey: slotKey,
+          equipped: equipped,
+          upgrade: upg,
+          itemTitle: equipped ? equipped.name : upg.upgradeName,
+          quality: equipped ? equipped.quality : upg.quality,
+          stats: (equipped && equipped.stats && equipped.stats.length > 0)
+            ? (Array.isArray(equipped.stats) ? equipped.stats.join(", ") : equipped.stats)
+            : (equipped ? (equipped.armor || "Solid stats") : upg.stats),
+          sourceDesc: equipped ? equipped.source : upg.sourceDesc,
+          tip: equipped && equipped.tip ? equipped.tip : `Your ${equipped.name} is currently best-in-slot for solo leveling at Level ${lvl}. No upgrade needed right now!`
+        });
+      }
+    } else {
+      // Slot needs an upgrade (e.g. Empty slot like Head/Ring, or a genuine direct upgrade like Chest/Boots)
+      const isCardEmptySlot = (!equipped || equipped.name === "None Equipped");
+      prioritizedCards.push({
+        type: isCardEmptySlot ? "priority_empty" : "upgrade_needed",
+        slot: upg.slot,
+        slotKey: slotKey,
+        equipped: equipped,
+        upgrade: upg,
+        itemTitle: upg.upgradeName,
+        quality: upg.quality,
+        stats: upg.stats,
+        sourceDesc: upg.sourceDesc,
+        tip: upg.tip
+      });
+    }
+  }
 
+  // Sort cards: Priority Empty Slots first, then Upgrade Needed, then Optimal Slots
+  prioritizedCards.sort((a, b) => {
+    const score = { "priority_empty": 1, "upgrade_needed": 2, "optimal": 3 };
+    return (score[a.type] || 2) - (score[b.type] || 2);
+  });
+
+  container.innerHTML = prioritizedCards.map(c => {
+    const isOptimal = c.type === "optimal";
+    const isEmptySlot = c.type === "priority_empty";
+    const cardClass = isOptimal ? "advisor-card is-optimal" : (isEmptySlot ? "advisor-card priority-upgrade" : "advisor-card");
+
+    let statusTag = "";
+    if (isOptimal) {
+      statusTag = `<span class="adv-status-tag optimal">✅ Slot Optimal (Equipped: ${c.itemTitle})</span>`;
+    } else if (isEmptySlot) {
+      statusTag = `<span class="adv-status-tag" style="background:#ef4444; color:#fff; font-weight:700;">🚨 Priority: Empty Slot! (Lvl ${c.upgrade.minLevel}+)</span>`;
+    } else {
+      statusTag = `<span class="adv-status-tag upgrade-ready">⚡ Recommended Upgrade (Lvl ${c.upgrade.minLevel}+)</span>`;
+    }
+
+    const equipped = c.equipped;
     const equippedName = equipped ? equipped.name : "None Equipped";
     const equippedQuality = equipped ? equipped.quality : "common";
-    const equippedStats = (equipped && equipped.stats && equipped.stats.length > 0) 
-      ? (Array.isArray(equipped.stats) ? equipped.stats.join(", ") : equipped.stats) 
+    const equippedStats = (equipped && equipped.stats && equipped.stats.length > 0)
+      ? (Array.isArray(equipped.stats) ? equipped.stats.join(", ") : equipped.stats)
       : (equipped ? (equipped.armor || "No combat stats") : "Empty slot");
 
-    const sourceBadgeClass = (upg.sourceType === "quest") ? "source-quest" : (upg.sourceType === "lw" ? "source-lw" : "source-ah");
-    const sourceLabel = (upg.sourceType === "quest") ? "📜 Solo Quest" : (upg.sourceType === "lw" ? "✂️ Leatherworking / AH" : "🏷️ Auction House BoE");
+    const sourceBadgeClass = (c.upgrade.sourceType === "quest") ? "source-quest" : (c.upgrade.sourceType === "lw" ? "source-lw" : "source-ah");
+    const sourceLabel = (c.upgrade.sourceType === "quest") ? "📜 Solo Quest" : (c.upgrade.sourceType === "lw" ? "✂️ Leatherworking / AH" : "🏷️ Auction House BoE");
+
+    if (isOptimal) {
+      return `
+        <div class="${cardClass}">
+          <div class="adv-card-header">
+            <div class="adv-slot-badge">${getSlotEmoji(c.slot.split(" ")[0])} ${c.slot}</div>
+            ${statusTag}
+          </div>
+
+          <div class="adv-comparison-row" style="grid-template-columns: 1fr;">
+            <div class="adv-col-current" style="background: rgba(34, 197, 94, 0.08); border-color: rgba(34, 197, 94, 0.3);">
+              <span class="adv-col-label" style="color: #4ade80;">Currently Worn & Optimal</span>
+              <span class="adv-item-name slot-item-name ${c.quality}">${c.itemTitle}</span>
+              <span class="adv-item-stats">${c.stats}</span>
+            </div>
+          </div>
+
+          <div class="adv-upgrade-meta">
+            <div class="adv-source-line">
+              <span class="gear-source-badge source-quest">✓ Optimal Gear</span>
+              <span style="color:#cbd5e1; font-size:0.75rem;">${c.sourceDesc}</span>
+            </div>
+            <div class="adv-gain-badge" style="background: rgba(34, 197, 94, 0.2); color: #4ade80; border-color: rgba(34, 197, 94, 0.4);">
+              ✓ Slot Locked for Level ${lvl}
+            </div>
+          </div>
+
+          <div class="adv-tip-box" style="border-left-color: #22c55e;">
+            💡 ${c.tip}
+          </div>
+        </div>
+      `;
+    }
 
     return `
       <div class="${cardClass}">
         <div class="adv-card-header">
-          <div class="adv-slot-badge">${getSlotEmoji(upg.slot.split(" ")[0])} ${upg.slot}</div>
+          <div class="adv-slot-badge">${getSlotEmoji(c.slot.split(" ")[0])} ${c.slot}</div>
           ${statusTag}
         </div>
 
@@ -5720,21 +5880,21 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
 
           <div class="adv-col-upgrade">
             <span class="adv-col-label">Suggested Pick</span>
-            <span class="adv-item-name slot-item-name ${upg.quality}">${upg.upgradeName}</span>
-            <span class="adv-item-stats">${upg.stats}</span>
+            <span class="adv-item-name slot-item-name ${c.upgrade.quality}">${c.upgrade.upgradeName}</span>
+            <span class="adv-item-stats">${c.upgrade.stats}</span>
           </div>
         </div>
 
         <div class="adv-upgrade-meta">
           <div class="adv-source-line">
             <span class="gear-source-badge ${sourceBadgeClass}">${sourceLabel}</span>
-            <span style="color:#cbd5e1; font-size:0.75rem;">${upg.sourceDesc}</span>
+            <span style="color:#cbd5e1; font-size:0.75rem;">${c.upgrade.sourceDesc}</span>
           </div>
-          <div class="adv-gain-badge">Stat Boost: ${upg.gain}</div>
+          <div class="adv-gain-badge">Stat Boost: ${c.upgrade.gain}</div>
         </div>
 
         <div class="adv-tip-box">
-          💡 ${upg.tip}
+          💡 ${c.tip}
         </div>
       </div>
     `;

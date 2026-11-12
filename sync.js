@@ -40,6 +40,7 @@ const ITEM_DB = {
   4247: { name: "Dark Leather Boots", slot: "Feet", type: "Leather", quality: "uncommon", armor: "53 Armor", stats: ["+3 Agility", "+3 Stamina (+30 HP)"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 100)." },
 
   // Wrists
+  15403: { name: "Ridgeback Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "33 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Spirit"], req: "Requires Level 12 (Item Level 17)", tip: "⭐ Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)." },
   3207: { name: "Hunting Bracers", slot: "Wrists", type: "Leather", quality: "common", armor: "28 Armor", stats: ["No stat enchant (Pure Armor)"], req: "Requires Level 9 (Item Level 14)", tip: "White leather bracers." },
   14558: { name: "Prospector's Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "29 Armor", stats: ["+3 Strength (+6 AP)", "+2 Stamina (+20 HP)"], req: "Requires Level 15", tip: "Solid green bracers." },
 
@@ -373,7 +374,7 @@ function runSync() {
     // Ignore internal server aura / cosmetic token IDs (> 100000)
     if (!itemId || itemId > 100000) continue;
     const key = slotMap[slotNum];
-    if (key && (!liveItems[key] || liveItems[key].name === "None Equipped" || (slotNum === '16' && itemId === 4566))) {
+    if (key && (!liveItems[key] || liveItems[key].name === "None Equipped")) {
       const resolved = resolveItemStats(itemId, (ITEM_DB[itemId] ? ITEM_DB[itemId].name : `Item #${itemId}`), (ITEM_DB[itemId] ? ITEM_DB[itemId].quality : "uncommon"), level, parseInt(slotNum, 10));
       liveItems[key] = {
         ...liveItems[key],
