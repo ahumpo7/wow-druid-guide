@@ -140,19 +140,37 @@ function findGameFiles() {
   let foundQuestie = null;
   let foundPawn = null;
   let foundBagBrother = null;
+  let foundConsole = null;
+  let foundGeneralLog = null;
 
   const defaultQuestie = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\Questie.lua';
   const defaultPawn = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\91\\Chongo-Darkwind\\SavedVariables\\Pawn.lua';
   const defaultBB = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\BagBrother.lua';
+  const defaultConsole = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\SavedVariables\\Blizzard_Console.lua';
+  const defaultGeneralLog = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\Logs\\General.log';
 
   if (fs.existsSync(defaultQuestie)) foundQuestie = defaultQuestie;
   if (fs.existsSync(defaultPawn)) foundPawn = defaultPawn;
   if (fs.existsSync(defaultBB)) foundBagBrother = defaultBB;
+  if (fs.existsSync(defaultConsole)) foundConsole = defaultConsole;
+  if (fs.existsSync(defaultGeneralLog)) foundGeneralLog = defaultGeneralLog;
 
-  if (!foundQuestie || !foundPawn || !foundBagBrother) {
+  if (!foundQuestie || !foundPawn || !foundBagBrother || !foundConsole || !foundGeneralLog) {
     for (const base of possibleBases) {
       if (fs.existsSync(base)) {
         try {
+          const wtfDir = base.toLowerCase().endsWith('account') ? path.dirname(base) : base;
+          const rootDir = path.dirname(wtfDir);
+          
+          if (!foundConsole) {
+            const cCand = path.join(wtfDir, 'SavedVariables', 'Blizzard_Console.lua');
+            if (fs.existsSync(cCand)) foundConsole = cCand;
+          }
+          if (!foundGeneralLog) {
+            const gCand = path.join(rootDir, 'Logs', 'General.log');
+            if (fs.existsSync(gCand)) foundGeneralLog = gCand;
+          }
+
           const accounts = fs.readdirSync(base);
           for (const acc of accounts) {
             const accDir = path.join(base, acc);
@@ -192,7 +210,13 @@ function findGameFiles() {
     }
   }
 
-  return { questiePath: foundQuestie, pawnPath: foundPawn, bagBrotherPath: foundBagBrother };
+  return {
+    questiePath: foundQuestie,
+    pawnPath: foundPawn,
+    bagBrotherPath: foundBagBrother,
+    consolePath: foundConsole,
+    generalLogPath: foundGeneralLog
+  };
 }
 
 function resolveItemStats(id, name, quality, itemLevel, slotNum) {
@@ -261,21 +285,133 @@ function resolveItemStats(id, name, quality, itemLevel, slotNum) {
   };
 }
 
+function extractProfessions(consolePath, generalLogPath) {
+  const skillMap = {
+    165: 'leatherworking',
+    2945: 'leatherworking',
+    393: 'skinning',
+    2947: 'skinning',
+    95: 'cooking',
+    3014: 'cooking',
+    129: 'firstAid',
+    3012: 'firstAid',
+    356: 'fishing',
+    3013: 'fishing',
+    182: 'herbalism',
+    2946: 'herbalism',
+    186: 'mining',
+    2949: 'mining',
+    202: 'engineering',
+    2944: 'engineering',
+    171: 'alchemy',
+    2942: 'alchemy',
+    333: 'enchanting',
+    2943: 'enchanting',
+    197: 'tailoring',
+    2951: 'tailoring',
+    164: 'blacksmithing',
+    2941: 'blacksmithing'
+  };
+
+  const detected = {
+    leatherworking: 0,
+    skinning: 0,
+    cooking: 0,
+    firstAid: 0,
+    fishing: 0
+  };
+
+  const regex = /Skill (\d+) increased from (\d+) to (\d+)/g;
+
+  function parseText(text) {
+    if (!text) return;
+    let m;
+    while ((m = regex.exec(text)) !== null) {
+      const id = parseInt(m[1], 10);
+      const toVal = parseInt(m[3], 10);
+      const profKey = skillMap[id];
+      if (profKey) {
+        if (!detected[profKey] || toVal > detected[profKey]) {
+          detected[profKey] = toVal;
+        }
+      }
+    }
+  }
+
+  if (consolePath && fs.existsSync(consolePath)) {
+    try {
+      parseText(fs.readFileSync(consolePath, 'utf8'));
+    } catch (_) {}
+  }
+
+  if (generalLogPath && fs.existsSync(generalLogPath)) {
+    try {
+      parseText(fs.readFileSync(generalLogPath, 'utf8'));
+    } catch (_) {}
+  }
+
+  function getRankAndMax(level) {
+    if (level <= 0) return { rank: 'Untrained', max: 75 };
+    if (level < 75) return { rank: 'Apprentice', max: 75 };
+    if (level < 150) return { rank: 'Journeyman', max: 150 };
+    if (level < 225) return { rank: 'Expert', max: 225 };
+    return { rank: 'Artisan', max: 300 };
+  }
+
+  return {
+    leatherworking: {
+      name: 'Leatherworking',
+      level: detected.leatherworking,
+      ...getRankAndMax(detected.leatherworking),
+      icon: '✂️'
+    },
+    skinning: {
+      name: 'Skinning',
+      level: detected.skinning,
+      ...getRankAndMax(detected.skinning),
+      icon: '🗡️'
+    },
+    cooking: {
+      name: 'Cooking',
+      level: detected.cooking,
+      ...getRankAndMax(detected.cooking),
+      icon: '🍖'
+    },
+    firstAid: {
+      name: 'First Aid',
+      level: detected.firstAid,
+      ...getRankAndMax(detected.firstAid),
+      icon: '🩹'
+    },
+    fishing: {
+      name: 'Fishing',
+      level: detected.fishing,
+      ...getRankAndMax(detected.fishing),
+      icon: '🎣'
+    }
+  };
+}
+
 function runSync() {
   console.log("========================================================");
   console.log(" WoW Forever - Live Character Exporter & Cloud Syncer");
   console.log("========================================================");
 
-  const { questiePath, pawnPath, bagBrotherPath } = findGameFiles();
+  const { questiePath, pawnPath, bagBrotherPath, consolePath, generalLogPath } = findGameFiles();
 
-  console.log(`\n[1] Searching for WoW SavedVariables on this PC...`);
-  if (questiePath) console.log(`    ✓ Found Questie.lua:    ${questiePath}`);
-  if (pawnPath)    console.log(`    ✓ Found Pawn.lua:       ${pawnPath}`);
-  if (bagBrotherPath) console.log(`    ✓ Found BagBrother.lua: ${bagBrotherPath}`);
+  console.log(`\n[1] Searching for WoW SavedVariables & Game Logs on this PC...`);
+  if (questiePath)    console.log(`    ✓ Found Questie.lua:         ${questiePath}`);
+  if (pawnPath)       console.log(`    ✓ Found Pawn.lua:            ${pawnPath}`);
+  if (bagBrotherPath) console.log(`    ✓ Found BagBrother.lua:      ${bagBrotherPath}`);
+  if (consolePath)    console.log(`    ✓ Found Blizzard_Console.lua:${consolePath}`);
+  if (generalLogPath) console.log(`    ✓ Found General.log:         ${generalLogPath}`);
 
   let name = 'Chongo';
   let level = 17;
   let money = 0;
+
+  // Extract real-time profession skill levels
+  const professions = extractProfessions(consolePath, generalLogPath);
 
   // 1. Read Questie for profile key and level check
   if (questiePath && fs.existsSync(questiePath)) {
@@ -497,6 +633,7 @@ function runSync() {
     level,
     money,
     liveGear: liveItems,
+    professions,
     syncedAt: new Date().toISOString()
   };
 
@@ -508,19 +645,26 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(resultData, null, 2)};
 `;
 
   console.log(`\n[2] Character state parsed:`);
-  console.log(`    Name:      ${name}`);
-  console.log(`    Level:     ${level}`);
+  console.log(`    Name:        ${name}`);
+  console.log(`    Level:       ${level}`);
   if (money > 0) {
     const gold = Math.floor(money / 10000);
     const silver = Math.floor((money % 10000) / 100);
     const copper = money % 100;
-    console.log(`    Gold:      ${gold}g ${silver}s ${copper}c`);
+    console.log(`    Gold:        ${gold}g ${silver}s ${copper}c`);
   }
-  console.log(`    Weapon:    ${liveItems.mainHand.name} (${liveItems.mainHand.quality}) - ${liveItems.mainHand.stats.join(", ")}`);
-  console.log(`    Chest:     ${liveItems.chest.name} (${liveItems.chest.quality}) - ${liveItems.chest.stats.join(", ")}`);
-  console.log(`    Legs:      ${liveItems.legs.name} (${liveItems.legs.quality}) - ${liveItems.legs.stats.join(", ")}`);
-  console.log(`    Hands:     ${liveItems.hands.name} (${liveItems.hands.quality}) - ${liveItems.hands.stats.join(", ")}`);
-  console.log(`    Back:      ${liveItems.back.name} (${liveItems.back.quality}) - ${liveItems.back.stats.join(", ")}`);
+  console.log(`    Professions:`);
+  console.log(`      ✂️ Leatherworking: ${professions.leatherworking.level} / ${professions.leatherworking.max} (${professions.leatherworking.rank})`);
+  console.log(`      🗡️ Skinning:       ${professions.skinning.level} / ${professions.skinning.max} (${professions.skinning.rank})`);
+  console.log(`      🍖 Cooking:        ${professions.cooking.level} / ${professions.cooking.max} (${professions.cooking.rank})`);
+  if (professions.firstAid.level > 0) {
+    console.log(`      🩹 First Aid:      ${professions.firstAid.level} / ${professions.firstAid.max} (${professions.firstAid.rank})`);
+  }
+  console.log(`    Weapon:      ${liveItems.mainHand.name} (${liveItems.mainHand.quality}) - ${liveItems.mainHand.stats.join(", ")}`);
+  console.log(`    Chest:       ${liveItems.chest.name} (${liveItems.chest.quality}) - ${liveItems.chest.stats.join(", ")}`);
+  console.log(`    Legs:        ${liveItems.legs.name} (${liveItems.legs.quality}) - ${liveItems.legs.stats.join(", ")}`);
+  console.log(`    Hands:       ${liveItems.hands.name} (${liveItems.hands.quality}) - ${liveItems.hands.stats.join(", ")}`);
+  console.log(`    Back:        ${liveItems.back.name} (${liveItems.back.quality}) - ${liveItems.back.stats.join(", ")}`);
 
   console.log(`\n[3] Updating local sync bridge...`);
   const dest = path.join(__dirname, 'synced_character.js');

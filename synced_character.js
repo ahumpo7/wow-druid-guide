@@ -8,7 +8,7 @@ window.WOW_SYNCED_DATA = {
   "class": "Druid",
   "race": "Alliance Skyborne",
   "level": 18,
-  "money": 10027,
+  "money": 13554,
   "liveGear": {
     "head": {
       "slot": "Head",
@@ -102,16 +102,14 @@ window.WOW_SYNCED_DATA = {
     "waist": {
       "slot": "Waist",
       "type": "Leather",
-      "name": "Prospector's Sash",
+      "name": "Item #6558",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "42 Armor",
+      "armor": "50 Armor",
       "stats": [
-        "+3 Stamina (+30 HP)",
-        "+2 Spirit"
+        "+4 Feral Combat Stats"
       ],
-      "req": "Requires Level 13",
-      "tip": "⭐ Currently equipped on Chongo! BoE leather belt."
+      "req": "Item Level 18"
     },
     "legs": {
       "slot": "Legs",
@@ -223,5 +221,42 @@ window.WOW_SYNCED_DATA = {
       ]
     }
   },
-  "syncedAt": "2026-11-12T02:07:18.394Z"
+  "professions": {
+    "leatherworking": {
+      "name": "Leatherworking",
+      "level": 75,
+      "rank": "Journeyman",
+      "max": 150,
+      "icon": "✂️"
+    },
+    "skinning": {
+      "name": "Skinning",
+      "level": 126,
+      "rank": "Journeyman",
+      "max": 150,
+      "icon": "🗡️"
+    },
+    "cooking": {
+      "name": "Cooking",
+      "level": 90,
+      "rank": "Journeyman",
+      "max": 150,
+      "icon": "🍖"
+    },
+    "firstAid": {
+      "name": "First Aid",
+      "level": 0,
+      "rank": "Untrained",
+      "max": 75,
+      "icon": "🩹"
+    },
+    "fishing": {
+      "name": "Fishing",
+      "level": 0,
+      "rank": "Untrained",
+      "max": 75,
+      "icon": "🎣"
+    }
+  },
+  "syncedAt": "2026-11-12T14:50:37.465Z"
 };

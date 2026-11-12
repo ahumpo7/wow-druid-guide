@@ -33,7 +33,9 @@
           <span class="sync-status-dot" title="Status: Synced & Saved"></span>
           <span class="sync-char-name" id="headerCharName">Chongo</span>
           <span class="sync-char-sep">•</span>
-          <span class="sync-char-level">Lvl <strong id="headerCharLvl">11</strong></span>
+          <span class="sync-char-level">Lvl <strong id="headerCharLvl">18</strong></span>
+          <span class="header-prof-pill" id="headerProfLw" title="Leatherworking: 75/150">✂️ 75</span>
+          <span class="header-prof-pill" id="headerProfSkin" title="Skinning: 126/150">🗡️ 126</span>
         </div>
         <div class="header-quick-step">
           <button type="button" class="btn-header-step" onclick="quickStepLevel(-1)" title="Previous Level (Step Down)">-</button>
@@ -1099,6 +1101,79 @@
           Skinning & Leatherworking is the supreme profession combination for Feral Druids. You skin hundreds of beasts while solo questing, craft your own high-agility armor, and unlock the legendary <strong>Wolfshead Helm</strong> (infinite Cat powershifting) and <strong>Devilsaur Armor</strong> (Pre-Raid BiS forever). Follow this mathematically optimal, lowest-material route from 1 to 300!
         </p>
 
+        <!-- Live In-Game Synced Professions Status Dashboard -->
+        <div class="prof-sync-banner" id="liveProfessionsBanner">
+          <div class="prof-sync-header">
+            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+              <span class="sync-status-dot"></span>
+              <span class="prof-sync-title">Live In-Game Professions (<strong style="color: var(--skyborne-blue);" id="profCharName">Chongo</strong>)</span>
+              <span class="tag-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--skyborne-blue); border: 1px solid rgba(56, 189, 248, 0.3);">Real-Time WoW Sync</span>
+            </div>
+            <button type="button" class="btn-prof-sync" onclick="directSyncHeaderClick()" title="Sync live professions from game client">⚡ Re-Sync</button>
+          </div>
+          <div class="prof-sync-grid">
+            <!-- Leatherworking Card -->
+            <div class="prof-sync-card" id="profCardLw">
+              <div class="prof-sync-card-top">
+                <span class="prof-sync-name">✂️ Leatherworking</span>
+                <span class="prof-sync-rank" id="profRankLw">Journeyman</span>
+              </div>
+              <div class="prof-sync-val">
+                <span id="profValLw">75</span> <span class="prof-sync-max" id="profMaxLw">/ 150</span>
+              </div>
+              <div class="prof-sync-bar-bg">
+                <div class="prof-sync-bar-fill" id="profBarLw" style="width: 50%; background: #4ade80;"></div>
+              </div>
+              <div class="prof-sync-status" id="profNoteLw">⚠️ Apprentice cap (75) reached! Train Journeyman in Darnassus or Teldrassil.</div>
+            </div>
+
+            <!-- Skinning Card -->
+            <div class="prof-sync-card" id="profCardSkinning">
+              <div class="prof-sync-card-top">
+                <span class="prof-sync-name">🗡️ Skinning</span>
+                <span class="prof-sync-rank" id="profRankSkinning">Journeyman</span>
+              </div>
+              <div class="prof-sync-val">
+                <span id="profValSkinning">126</span> <span class="prof-sync-max" id="profMaxSkinning">/ 150</span>
+              </div>
+              <div class="prof-sync-bar-bg">
+                <div class="prof-sync-bar-fill" id="profBarSkinning" style="width: 84%; background: #38bdf8;"></div>
+              </div>
+              <div class="prof-sync-status" id="profNoteSkinning">Skinning up to lvl 27 beasts cleanly in Ashenvale & Wetlands.</div>
+            </div>
+
+            <!-- Cooking Card -->
+            <div class="prof-sync-card" id="profCardCooking">
+              <div class="prof-sync-card-top">
+                <span class="prof-sync-name">🍖 Cooking</span>
+                <span class="prof-sync-rank" id="profRankCooking">Journeyman</span>
+              </div>
+              <div class="prof-sync-val">
+                <span id="profValCooking">90</span> <span class="prof-sync-max" id="profMaxCooking">/ 150</span>
+              </div>
+              <div class="prof-sync-bar-bg">
+                <div class="prof-sync-bar-fill" id="profBarCooking" style="width: 60%; background: #fb923c;"></div>
+              </div>
+              <div class="prof-sync-status" id="profNoteCooking">Craft Strider Stew & Boar Ribs for constant +Stamina Well Fed buffs.</div>
+            </div>
+
+            <!-- First Aid Card -->
+            <div class="prof-sync-card" id="profCardFirstAid">
+              <div class="prof-sync-card-top">
+                <span class="prof-sync-name">🩹 First Aid</span>
+                <span class="prof-sync-rank" id="profRankFirstAid">Untrained</span>
+              </div>
+              <div class="prof-sync-val">
+                <span id="profValFirstAid">0</span> <span class="prof-sync-max" id="profMaxFirstAid">/ 75</span>
+              </div>
+              <div class="prof-sync-bar-bg">
+                <div class="prof-sync-bar-fill" id="profBarFirstAid" style="width: 0%; background: #a78bfa;"></div>
+              </div>
+              <div class="prof-sync-status" id="profNoteFirstAid">Learn from Byancie (Dolanaar) or Dannelor (Darnassus).</div>
+            </div>
+          </div>
+        </div>
+
         <!-- Interactive Skill Tracker Bar -->
         <div class="lw-header-bar">
           <div class="lw-tracker-box">
@@ -1708,17 +1783,22 @@
           <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 10px;">
             <div style="font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
               <span class="sync-status-dot"></span>
-              <span>Detected Live Client: <strong style="color: var(--skyborne-blue);">Chongo</strong> • Level 11 (Darkwind Realm)</span>
+              <span>Detected Live Client: <strong style="color: var(--skyborne-blue);" id="modalCharName">Chongo</strong> • Level <span id="modalCharLvl">18</span> (Darkwind Realm)</span>
+            </div>
+            <div id="modalProfessionsBadges" style="margin: 6px 0 10px 0; font-size: 0.82rem; color: #cbd5e1; display: flex; gap: 8px; flex-wrap: wrap;">
+              <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 4px; color: #4ade80;">✂️ LW: 75/150</span>
+              <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px; color: #38bdf8;">🗡️ Skinning: 126/150</span>
+              <span style="background: rgba(251, 146, 60, 0.15); border: 1px solid rgba(251, 146, 60, 0.3); padding: 2px 8px; border-radius: 4px; color: #fb923c;">🍖 Cooking: 90/150</span>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; word-break: break-all;">
-              Found in: <code>C:\Program Files (x86)\World of Warcraft\_forever_\WTF\Account\1714350#2\SavedVariables\Questie.lua</code>
+              Found in: <code>C:\Program Files (x86)\World of Warcraft\_forever_\WTF\SavedVariables\Blizzard_Console.lua</code>
             </p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
               <button type="button" class="btn-site-run-sync" onclick="executeGameSyncFromSite()" style="font-size: 0.85rem; padding: 7px 16px;">
                 ⚡ Run Live Sync (.bat / Server)
               </button>
-              <button type="button" class="sync-btn" onclick="loadDetectedClientCharacter()" style="font-size: 0.85rem; padding: 7px 16px;">
-                ↻ Reload Cached: Chongo (Lvl 11)
+              <button type="button" class="sync-btn" onclick="loadDetectedClientCharacter()" style="font-size: 0.85rem; padding: 7px 16px;" id="btnReloadCached">
+                ↻ Reload Cached: Chongo (Lvl 18)
               </button>
               <button type="button" class="btn-ctrl" onclick="document.getElementById('wtfFileInput').click()" style="font-size: 0.85rem; padding: 7px 16px; cursor: pointer;">
                 📂 Select Local WoW File (.lua)

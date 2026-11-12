@@ -1371,6 +1371,9 @@ async function checkCloudCharacterSync() {
     }
 
     updateCharacterProfileUI();
+    if (cloudChar.professions) {
+      updateSyncedProfessionsUI(cloudChar.professions);
+    }
     if (typeof renderUpgradeAdvisor === "function") {
       renderUpgradeAdvisor(currentLevel);
     }
@@ -1420,6 +1423,9 @@ async function executeGameSyncFromSite() {
           window.WOW_SYNCED_DATA = json.character;
           if (typeof MAXROLL_GEAR_PRESETS !== "undefined" && MAXROLL_GEAR_PRESETS.chongo_live) {
             MAXROLL_GEAR_PRESETS.chongo_live.items = json.character.liveGear;
+          }
+          if (json.character.professions) {
+            updateSyncedProfessionsUI(json.character.professions);
           }
           loadDetectedClientCharacter();
           if (typeof renderPaperdoll === "function") renderPaperdoll(currentPresetKey);
@@ -2214,6 +2220,9 @@ function loadDetectedClientCharacter() {
   safeSetJSON("wow_druid_profile", userProfileState);
   setLevel(detectedLevel);
   updateCharacterProfileUI();
+  if (syncedData && syncedData.professions) {
+    updateSyncedProfessionsUI(syncedData.professions);
+  }
 
   // If live gear was updated, re-render paperdoll immediately
   if (syncedData && syncedData.liveGear && MAXROLL_GEAR_PRESETS.chongo_live) {
@@ -2326,8 +2335,151 @@ function updateCharacterProfileUI() {
   const directLvlInput = document.getElementById("directSyncLevelInput");
   if (directNameInput && !directNameInput.value) directNameInput.value = name;
   if (directLvlInput && !directLvlInput.matches(":focus")) directLvlInput.value = currentLevel;
+
+  // Auto-sync professions UI if available
+  if (typeof updateSyncedProfessionsUI === "function") {
+    updateSyncedProfessionsUI();
+  }
 }
 window.updateCharacterProfileUI = updateCharacterProfileUI;
+
+function updateSyncedProfessionsUI(profData) {
+  const profs = profData || (typeof window !== "undefined" && window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.professions) || null;
+  if (!profs) return;
+
+  const charName = (typeof window !== "undefined" && window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.name) || userProfileState.name || "Chongo";
+
+  // 1. Header Badges inside .header-sync-pill
+  const lwPill = document.getElementById("headerProfLw");
+  const skinPill = document.getElementById("headerProfSkin");
+  if (lwPill && profs.leatherworking) {
+    lwPill.textContent = `✂️ ${profs.leatherworking.level}`;
+    lwPill.title = `Leatherworking: ${profs.leatherworking.level}/${profs.leatherworking.max} (${profs.leatherworking.rank})`;
+    lwPill.style.display = "inline-block";
+  }
+  if (skinPill && profs.skinning) {
+    skinPill.textContent = `🗡️ ${profs.skinning.level}`;
+    skinPill.title = `Skinning: ${profs.skinning.level}/${profs.skinning.max} (${profs.skinning.rank})`;
+    skinPill.style.display = "inline-block";
+  }
+
+  // 2. Tab 4 Live Professions Dashboard Banner
+  const profNameEl = document.getElementById("profCharName");
+  if (profNameEl) profNameEl.textContent = charName;
+
+  // Leatherworking
+  if (profs.leatherworking) {
+    const valEl = document.getElementById("profValLw");
+    const maxEl = document.getElementById("profMaxLw");
+    const rankEl = document.getElementById("profRankLw");
+    const barEl = document.getElementById("profBarLw");
+    const noteEl = document.getElementById("profNoteLw");
+
+    if (valEl) valEl.textContent = profs.leatherworking.level;
+    if (maxEl) maxEl.textContent = `/ ${profs.leatherworking.max}`;
+    if (rankEl) rankEl.textContent = profs.leatherworking.rank;
+    if (barEl) {
+      const pct = Math.min(100, Math.round((profs.leatherworking.level / profs.leatherworking.max) * 100));
+      barEl.style.width = `${Math.max(2, pct)}%`;
+    }
+    if (noteEl) {
+      if (profs.leatherworking.level === 75) {
+        noteEl.innerHTML = `⚠️ <strong>Apprentice cap (75) reached!</strong> Visit a Journeyman trainer in Darnassus or Teldrassil so your skill raises to 150.`;
+      } else if (profs.leatherworking.level === 150) {
+        noteEl.innerHTML = `⚠️ <strong>Journeyman cap (150) reached!</strong> Train Expert Leatherworking (requires Character Level 20).`;
+      } else {
+        noteEl.innerHTML = `Active crafting step highlighted below in the 1–300 blueprint!`;
+      }
+    }
+
+    // Automatically align the interactive LW guide's current skill
+    if (typeof currentLwSkill !== "undefined" && currentLwSkill !== profs.leatherworking.level) {
+      currentLwSkill = profs.leatherworking.level;
+      try { localStorage.setItem("wow_druid_lw_skill", currentLwSkill); } catch (_) {}
+      const inputEl = document.getElementById("lwSkillInput");
+      if (inputEl) inputEl.value = currentLwSkill;
+      if (typeof renderLeatherworkingGuide === "function") {
+        renderLeatherworkingGuide();
+      }
+    }
+  }
+
+  // Skinning
+  if (profs.skinning) {
+    const valEl = document.getElementById("profValSkinning");
+    const maxEl = document.getElementById("profMaxSkinning");
+    const rankEl = document.getElementById("profRankSkinning");
+    const barEl = document.getElementById("profBarSkinning");
+    const noteEl = document.getElementById("profNoteSkinning");
+
+    if (valEl) valEl.textContent = profs.skinning.level;
+    if (maxEl) maxEl.textContent = `/ ${profs.skinning.max}`;
+    if (rankEl) rankEl.textContent = profs.skinning.rank;
+    if (barEl) {
+      const pct = Math.min(100, Math.round((profs.skinning.level / profs.skinning.max) * 100));
+      barEl.style.width = `${Math.max(2, pct)}%`;
+    }
+    if (noteEl) {
+      const maxBeastLevel = Math.floor(profs.skinning.level / 5) + 10;
+      noteEl.textContent = `Can cleanly skin up to level ${maxBeastLevel} beasts in Darkshore, Westfall, Redridge & Ashenvale.`;
+    }
+  }
+
+  // Cooking
+  if (profs.cooking) {
+    const valEl = document.getElementById("profValCooking");
+    const maxEl = document.getElementById("profMaxCooking");
+    const rankEl = document.getElementById("profRankCooking");
+    const barEl = document.getElementById("profBarCooking");
+    const noteEl = document.getElementById("profNoteCooking");
+
+    if (valEl) valEl.textContent = profs.cooking.level;
+    if (maxEl) maxEl.textContent = `/ ${profs.cooking.max}`;
+    if (rankEl) rankEl.textContent = profs.cooking.rank;
+    if (barEl) {
+      const pct = Math.min(100, Math.round((profs.cooking.level / profs.cooking.max) * 100));
+      barEl.style.width = `${Math.max(2, pct)}%`;
+    }
+    if (noteEl) {
+      noteEl.textContent = `Craft Crab Cake, Boar Ribs & Strider Stew for persistent Well Fed stat buffs!`;
+    }
+  }
+
+  // First Aid
+  if (profs.firstAid) {
+    const valEl = document.getElementById("profValFirstAid");
+    const maxEl = document.getElementById("profMaxFirstAid");
+    const rankEl = document.getElementById("profRankFirstAid");
+    const barEl = document.getElementById("profBarFirstAid");
+    const noteEl = document.getElementById("profNoteFirstAid");
+
+    if (valEl) valEl.textContent = profs.firstAid.level;
+    if (maxEl) maxEl.textContent = `/ ${profs.firstAid.max}`;
+    if (rankEl) rankEl.textContent = profs.firstAid.rank;
+    if (barEl) {
+      const pct = Math.min(100, Math.round((profs.firstAid && profs.firstAid.max ? (profs.firstAid.level / profs.firstAid.max) * 100 : 0)));
+      barEl.style.width = `${Math.max(0, pct)}%`;
+    }
+    if (noteEl) {
+      if (profs.firstAid.level === 0) {
+        noteEl.innerHTML = `Learn at Byancie (Dolanaar) or Dannelor (Darnassus). Bandages save mana for shapeshifts!`;
+      } else {
+        noteEl.innerHTML = `Keep Linen / Heavy Linen Bandages in hotbar with Bash macro.`;
+      }
+    }
+  }
+
+  // 3. Modal Summary Badges
+  const modalBadges = document.getElementById("modalProfessionsBadges");
+  if (modalBadges && profs.leatherworking && profs.skinning && profs.cooking) {
+    modalBadges.innerHTML = `
+      <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 4px; color: #4ade80;">✂️ LW: ${profs.leatherworking.level}/${profs.leatherworking.max}</span>
+      <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px; color: #38bdf8;">🗡️ Skinning: ${profs.skinning.level}/${profs.skinning.max}</span>
+      <span style="background: rgba(251, 146, 60, 0.15); border: 1px solid rgba(251, 146, 60, 0.3); padding: 2px 8px; border-radius: 4px; color: #fb923c;">🍖 Cooking: ${profs.cooking.level}/${profs.cooking.max}</span>
+    `;
+  }
+}
+window.updateSyncedProfessionsUI = updateSyncedProfessionsUI;
 
 function copyMacro(btn, explicitCode) {
   let code = explicitCode;
@@ -6063,9 +6215,18 @@ try {
 let activeLwFilter = "all";
 
 function initLeatherworkingGuide() {
+  if (typeof window !== "undefined" && window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.professions && window.WOW_SYNCED_DATA.professions.leatherworking) {
+    const syncedLw = window.WOW_SYNCED_DATA.professions.leatherworking.level;
+    if (syncedLw && syncedLw > 0) {
+      currentLwSkill = syncedLw;
+    }
+  }
   const inputEl = document.getElementById("lwSkillInput");
   if (inputEl) inputEl.value = currentLwSkill;
   renderLeatherworkingGuide();
+  if (typeof updateSyncedProfessionsUI === "function") {
+    updateSyncedProfessionsUI();
+  }
 }
 
 function setLwSkill(val) {
