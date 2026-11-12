@@ -223,5 +223,5 @@ window.WOW_SYNCED_DATA = {
       ]
     }
   },
-  "syncedAt": "2026-11-12T01:49:20.463Z"
+  "syncedAt": "2026-11-12T02:07:18.394Z"
 };

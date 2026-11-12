@@ -67,7 +67,7 @@ const DRUID_LEVEL_DATA = {
     ],
     gearTip: "In Bear Form, Armor from items is multiplied by your Bear Form bonus (+180% armor!). Leather with high Armor and Stamina turns you into a juggernaut.",
     dungeonGear: [
-      { name: "Heavy Spiked Mace", quality: "common", source: "Weaponsmith Vendor", stats: "High base DPS", tip: "Remember: feral attack power scales with level in classic, but stat bonuses on weapons are huge." }
+      { name: "Heavy Spiked Mace", quality: "uncommon", source: "Weaponsmith Vendor", stats: "34-51 Damage (12.5 DPS), +6 Strength", tip: "Remember: feral attack power scales with level in classic, but stat bonuses on weapons are huge." }
     ]
   },
   11: {
@@ -2444,11 +2444,11 @@ const MAXROLL_GEAR_PRESETS = {
       back: { slot: "Back", type: "Cloth", name: "Cape of the Brotherhood", quality: "rare", source: "The Deadmines - Edwin VanCleef", armor: "21 Armor", stats: ["+6 Agility", "+3 Stamina"], req: "Requires Level 20" },
       chest: { slot: "Chest", type: "Leather", name: "Tunic of Westfall", quality: "rare", source: "Quest: The Defias Brotherhood", armor: "92 Armor", stats: ["+11 Agility", "+5 Stamina"], req: "Requires Level 19" },
       wrists: { slot: "Wrists", type: "Leather", name: "Bandit Bracers of the Bear", quality: "uncommon", source: "Auction House (BoE World Drop)", armor: "33 Armor", stats: ["+2 Strength", "+2 Stamina"], req: "Requires Level 14" },
-      hands: { slot: "Hands", type: "Leather", name: "Gloves of the Fang", quality: "rare", source: "Wailing Caverns Drop", armor: "54 Armor", stats: ["+4 Agility", "+4 Strength"], req: "Requires Level 19" },
+      hands: { slot: "Hands", type: "Leather", name: "Gloves of the Fang", quality: "uncommon", source: "Wailing Caverns Drop", armor: "54 Armor", stats: ["+4 Agility", "+4 Strength"], req: "Requires Level 19" },
       waist: { slot: "Waist", type: "Leather", name: "Deviate Scale Belt", quality: "uncommon", source: "Crafted via Leatherworking (Skill 115)", armor: "51 Armor", stats: ["+6 Stamina", "+5 Agility", "+3 Spirit"], req: "Requires Level 18" },
       legs: { slot: "Legs", type: "Leather", name: "Leggings of the Fang", quality: "rare", source: "Wailing Caverns - Lord Cobrahn", armor: "78 Armor", stats: ["+5 Agility", "+4 Strength", "+4 Stamina"], req: "Requires Level 18" },
       feet: { slot: "Feet", type: "Leather", name: "Feet of the Lynx", quality: "rare", source: "Auction House (BoE World Drop)", armor: "63 Armor", stats: ["+8 Agility", "+3 Strength"], req: "Requires Level 19" },
-      ring1: { slot: "Finger", type: "Ring", name: "Protector's Band", quality: "uncommon", source: "Warsong Gulch Vendor (Honored)", armor: null, stats: ["+4 Strength", "+4 Agility", "+2 Stamina"], req: "Requires Level 18" },
+      ring1: { slot: "Finger", type: "Ring", name: "Protector's Band", quality: "rare", source: "Warsong Gulch Vendor (Honored)", armor: null, stats: ["+4 Strength", "+4 Agility", "+2 Stamina"], req: "Requires Level 18" },
       ring2: { slot: "Finger", type: "Ring", name: "Silverlaine's Family Seal", quality: "rare", source: "Shadowfang Keep - Baron Silverlaine", armor: null, stats: ["+3 Strength", "+3 Stamina"], req: "Requires Level 18" },
       trinket1: { slot: "Trinket", type: "Trinket", name: "Insignia of the Alliance", quality: "rare", source: "PvP Rank 2 Officer", armor: null, stats: ["Use: Dispels Stun, Fear, and Polymorph"], req: "Requires PvP Rank 2" },
       trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
@@ -2474,7 +2474,7 @@ const MAXROLL_GEAR_PRESETS = {
     items: {
       head: { slot: "Head", type: "Leather", name: "Humbert's Helm", quality: "uncommon", source: "Dun Garok Riflemen (Hillsbrad) / BoE", armor: "76 Armor", stats: ["+7 Agility", "+8 Stamina"], req: "Requires Level 25" },
       neck: { slot: "Neck", type: "Necklace", name: "River Pride Choker", quality: "rare", source: "Auction House (BoE World Drop)", armor: null, stats: ["+9 Stamina", "+4 Strength"], req: "Requires Level 28" },
-      shoulders: { slot: "Shoulders", type: "Leather", name: "Forest Tracker Epaulets", quality: "uncommon", source: "Auction House (BoE World Drop)", armor: "78 Armor", stats: ["+11 Agility", "+8 Stamina"], req: "Requires Level 26" },
+      shoulders: { slot: "Shoulders", type: "Leather", name: "Forest Tracker Epaulets", quality: "rare", source: "Auction House (BoE World Drop)", armor: "78 Armor", stats: ["+11 Agility", "+8 Stamina"], req: "Requires Level 26" },
       back: { slot: "Back", type: "Cloth", name: "Tigerstrike Mantle", quality: "rare", source: "Auction House (BoE World Drop)", armor: "25 Armor", stats: ["+8 Agility", "+7 Stamina"], req: "Requires Level 30" },
       chest: { slot: "Chest", type: "Leather", name: "Raptor Hunter Tunic", quality: "uncommon", source: "Quest: Raptor Mastery (Stranglethorn Vale)", armor: "117 Armor", stats: ["+16 Stamina", "+4 Strength", "+3 Agility"], req: "Requires Level 38" },
       wrists: { slot: "Wrists", type: "Leather", name: "Barbaric Bracers", quality: "uncommon", source: "Crafted via Leatherworking (Skill 155)", armor: "47 Armor", stats: ["+6 Stamina", "+4 Agility", "+4 Spirit"], req: "Requires Level 27" },
@@ -2518,7 +2518,7 @@ const MAXROLL_GEAR_PRESETS = {
       feet: { slot: "Feet", type: "Leather", name: "Albino Crocscale Boots", quality: "rare", source: "Zul'Farrak - Gahz'rilla", armor: "98 Armor", stats: ["+15 Agility", "+5 Stamina"], req: "Requires Level 46" },
       ring1: { slot: "Finger", type: "Ring", name: "Blackstone Ring", quality: "rare", source: "Maraudon - Princess Theradras", armor: null, stats: ["+6 Strength", "Equip: +1% Hit Chance"], req: "Requires Level 49" },
       ring2: { slot: "Finger", type: "Ring", name: "Prairie Ring of the Tiger", quality: "uncommon", source: "Auction House (BoE World Drop)", armor: null, stats: ["+3 Strength", "+3 Agility"], req: "Requires Level 20" },
-      trinket1: { slot: "Trinket", type: "Trinket", name: "Mark of the Chosen", quality: "rare", source: "Maraudon Quest: The Pariah's Instructions", armor: null, stats: ["Equip: 2% chance when struck in combat to gain +25 to all Attributes for 1 min."], req: "Requires Level 39" },
+      trinket1: { slot: "Trinket", type: "Trinket", name: "Mark of the Chosen", quality: "uncommon", source: "Maraudon Quest: The Pariah's Instructions", armor: null, stats: ["Equip: 2% chance when struck in combat to gain +25 to all Attributes for 1 min."], req: "Requires Level 39" },
       trinket2: { slot: "Trinket", type: "Trinket", name: "Insignia of the Alliance", quality: "rare", source: "PvP Rank 2 Officer", armor: null, stats: ["Use: Dispels Stun, Fear, and Slows"], req: "Requires PvP Rank 2" },
       mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Warden Staff", quality: "epic", source: "Auction House (BoE World Drop)", armor: "260 Armor", stats: ["120-181 Damage (62.7 DPS)", "+260 Armor", "+10 Defense", "+11 Stamina"], equip: "Dire Bear multiplies this +260 Armor by 360% to yield over +936 effective armor! Undisputed best tanking weapon.", req: "Requires Level 43" },
       offHand: { slot: "Off-Hand", type: "None (2H Equipped)", name: "Empty (Two-Hand Staff Equipped)", quality: "disabled", source: "Shields Prohibited for Druid", armor: null, stats: ["Druids CANNOT equip shields.", "Off-hand slots are empty when wielding staves/2H maces."], req: "Two-Hander in Use" },
@@ -3417,10 +3417,10 @@ const NON_DUNGEON_GEAR_DATA = {
     "weaponAlt": {
       "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: The People's Militia",
+      "quality": "rare",
+      "source": "Quest: The Defias Brotherhood",
       "stats": "20.3 DPS, +11 Intellect (+165 Mana), +5 Spirit",
-      "tip": "Guaranteed solo quest staff from Sentinel Hill, Westfall."
+      "tip": "Guaranteed quest staff from the Defias Brotherhood storyline."
     }
   },
   "18": {
@@ -3435,7 +3435,7 @@ const NON_DUNGEON_GEAR_DATA = {
     "armorAlt": {
       "name": "Protector's Band",
       "slot": "Finger",
-      "quality": "uncommon",
+      "quality": "rare",
       "source": "Warsong Gulch Friendly Vendor",
       "stats": "+4 Agility, +2 Stamina (+20 HP)",
       "tip": "Zero dungeon PvP vendor ring."
@@ -3443,10 +3443,10 @@ const NON_DUNGEON_GEAR_DATA = {
     "weaponPrimary": {
       "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: The People's Militia (Westfall)",
+      "quality": "rare",
+      "source": "Quest: The Defias Brotherhood",
       "stats": "20.3 DPS, +11 Intellect (+165 Mana), +5 Spirit",
-      "tip": "Solo quest reward in Westfall with gigantic mana pool."
+      "tip": "Defias Brotherhood quest reward with gigantic mana pool."
     },
     "weaponAlt": {
       "name": "Quarterstaff of the Tiger",
@@ -3485,8 +3485,8 @@ const NON_DUNGEON_GEAR_DATA = {
     "weaponAlt": {
       "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: The People's Militia",
+      "quality": "rare",
+      "source": "Quest: The Defias Brotherhood",
       "stats": "20.3 DPS, +11 Intellect, +5 Spirit",
       "tip": "High intellect."
     }
@@ -3519,10 +3519,10 @@ const NON_DUNGEON_GEAR_DATA = {
     "weaponAlt": {
       "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: The People's Militia",
+      "quality": "rare",
+      "source": "Quest: The Defias Brotherhood",
       "stats": "20.3 DPS, +11 Intellect, +5 Spirit",
-      "tip": "Solo quest staff."
+      "tip": "Defias quest staff."
     }
   },
   "21": {
@@ -5053,7 +5053,7 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "minLevel": 18,
     "maxLevel": 28,
     "upgradeName": "Staff of Westfall",
-    "quality": "uncommon",
+    "quality": "rare",
     "sourceType": "quest",
     "sourceDesc": "Solo Quest Chain: The Defias Brotherhood (Sentinel Hill, Westfall)",
     "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
@@ -5333,7 +5333,7 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "minLevel": 22,
     "maxLevel": 32,
     "upgradeName": "Wolfclaw Gloves",
-    "quality": "uncommon",
+    "quality": "rare",
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "61 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +6 Stamina (+60 HP), +5 Strength (+10 AP)",
@@ -5557,7 +5557,7 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "minLevel": 18,
     "maxLevel": 28,
     "upgradeName": "Protector's Band",
-    "quality": "uncommon",
+    "quality": "rare",
     "sourceType": "quest",
     "sourceDesc": "Warsong Gulch Alliance Vendor (Silverwing Grove, Ashenvale)",
     "stats": "+4 Strength (+8 AP), +4 Agility (+4 Cat AP / +0.2% Crit), +2 Stamina (+20 HP)",
