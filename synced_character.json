@@ -56,17 +56,16 @@
     },
     "chest": {
       "slot": "Chest",
-      "type": "Cloth",
-      "name": "Disciple's Vest of the Owl",
-      "quality": "uncommon",
+      "type": "Leather",
+      "name": "Handstitched Leather Vest",
+      "quality": "common",
       "source": "Currently Equipped on Chongo",
-      "armor": "25 Armor",
+      "armor": "22 Armor",
       "stats": [
-        "+2 Intellect (+30 Mana)",
-        "+2 Spirit"
+        "Pure Armor"
       ],
-      "req": "Requires Level 11",
-      "tip": "⭐ Currently equipped on Chongo! BoE cloth chest with intellect and spirit."
+      "req": "Requires Level 1",
+      "tip": "Basic crafted leather vest."
     },
     "wrists": {
       "slot": "Wrists",
@@ -84,17 +83,17 @@
     },
     "hands": {
       "slot": "Hands",
-      "type": "Cloth",
-      "name": "Evergreen Gloves",
+      "type": "Leather",
+      "name": "Shucking Gloves",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "20 Armor",
+      "armor": "45 Armor",
       "stats": [
-        "+3 Intellect (+45 Mana)",
-        "+2 Spirit"
+        "+2 Stamina (+20 HP)",
+        "+2 Intellect (+30 Mana)"
       ],
       "req": "Requires Level 12",
-      "tip": "⭐ Currently equipped on Chongo! Quest reward: Tharnariun's Hope (Darkshore)."
+      "tip": "Guaranteed solo quest reward: Fruit of the Sea (Darkshore)."
     },
     "waist": {
       "slot": "Waist",
@@ -184,17 +183,17 @@
     "mainHand": {
       "slot": "Two-Hand",
       "type": "Two-Handed Staff",
-      "name": "Oakthrush Staff",
+      "name": "Sturdy Quarterstaff of the Bear",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "21-32 Damage (9.5 DPS)",
-        "+2 Stamina (+20 HP)",
-        "+2 Intellect (+30 Mana)"
+        "20-30 Damage (8.9 DPS)",
+        "+3 Strength (+6 AP)",
+        "+3 Stamina (+30 HP)"
       ],
-      "req": "Requires Level 9",
-      "tip": "⭐ Guaranteed solo quest reward: The Fragments Within (Darkshore)."
+      "req": "Requires Level 8",
+      "tip": "⭐ BoE world drop staff with raw Strength and Stamina for Bear Form."
     },
     "offHand": {
       "slot": "Off-Hand",
@@ -220,5 +219,5 @@
       ]
     }
   },
-  "syncedAt": "2026-11-12T01:43:14.860Z"
+  "syncedAt": "2026-11-12T01:49:20.463Z"
 }

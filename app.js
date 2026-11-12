@@ -2393,7 +2393,7 @@ const MAXROLL_GEAR_PRESETS = {
   chongo_live: {
     id: "chongo_live",
     title: "Chongo's Live Equipped Gear",
-    subtitle: "Synced live from WoW Forever client (Pawn.lua cache)",
+    subtitle: "Synced live from WoW Forever client (BagBrother & Pawn)",
     stats: {
       hp: "740",
       mp: "730",
@@ -2408,9 +2408,9 @@ const MAXROLL_GEAR_PRESETS = {
       neck: { slot: "Neck", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Neck items become available at lvl 18+"] },
       shoulders: { slot: "Shoulders", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Shoulders start dropping around lvl 17"] },
       back: { slot: "Back", type: "Cloth", name: "War Paint Cloak", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "15 Armor", stats: ["+1 Strength (+2 AP)", "+1 Agility (+1 Cat AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 10" },
-      chest: { slot: "Chest", type: "Cloth", name: "Disciple's Vest of the Owl", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "25 Armor", stats: ["+2 Intellect (+30 Mana)", "+2 Spirit"], req: "Requires Level 11" },
+      chest: { slot: "Chest", type: "Leather", name: "Handstitched Leather Vest", quality: "common", source: "Currently Equipped on Chongo", armor: "22 Armor", stats: ["Pure Armor"], req: "Requires Level 1" },
       wrists: { slot: "Wrists", type: "Leather", name: "Ridgeback Bracers", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "33 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Spirit"], req: "Requires Level 12" },
-      hands: { slot: "Hands", type: "Cloth", name: "Evergreen Gloves", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "20 Armor", stats: ["+3 Intellect (+45 Mana)", "+2 Spirit"], req: "Requires Level 12" },
+      hands: { slot: "Hands", type: "Leather", name: "Shucking Gloves", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "45 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 12" },
       waist: { slot: "Waist", type: "Leather", name: "Prospector's Sash", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "42 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 13" },
       legs: { slot: "Legs", type: "Leather", name: "Hunting Pants", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "62 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+2 Spirit"], req: "Requires Level 11" },
       feet: { slot: "Feet", type: "Leather", name: "Nomad Sandals", quality: "common", source: "Currently Equipped on Chongo", armor: "40 Armor", stats: ["Pure Armor (Starter Footwear)"], req: "Requires Level 8" },
@@ -2418,7 +2418,7 @@ const MAXROLL_GEAR_PRESETS = {
       ring2: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around lvl 18-20"] },
       trinket1: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
       trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
-      mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Oakthrush Staff", quality: "uncommon", source: "Currently Equipped on Chongo", armor: null, stats: ["21-32 Damage (9.5 DPS)", "+2 Stamina (+20 HP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 9", tip: "⭐ Guaranteed solo quest reward: The Fragments Within (Darkshore)." },
+      mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Sturdy Quarterstaff of the Bear", quality: "uncommon", source: "Currently Equipped on Chongo", armor: null, stats: ["20-30 Damage (8.9 DPS)", "+3 Strength (+6 AP)", "+3 Stamina (+30 HP)"], req: "Requires Level 8", tip: "⭐ BoE world drop staff with raw Strength and Stamina for Bear Form." },
       offHand: { slot: "Off-Hand", type: "None (2H Equipped)", name: "Empty (2H Staff in Use)", quality: "disabled", source: "Two-Handed Weapon Occupies Both Hands", armor: null, stats: ["Two-Handed weapon equipped in Main Hand."], req: "Two-Hander in Use" },
       relic: { slot: "Relic / Idol", type: "Idol", name: "Empty Idol Slot", quality: "common", source: "Druid Relic", armor: null, stats: ["Idols become available in level 50+ dungeons and Stratholme"] }
     }

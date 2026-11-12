@@ -362,8 +362,65 @@ function runSync() {
     13: 'trinket1', 14: 'trinket2', 15: 'back', 16: 'mainHand', 17: 'offHand'
   };
 
-  // 3. Parse Pawn.lua items accurately using multiline block parser
+  // 3. Collect Pawn.lua item metadata (links, names, qualities) by item ID
+  const pawnMeta = {};
   if (pawnPath && fs.existsSync(pawnPath)) {
+    const pawnText = fs.readFileSync(pawnPath, 'utf8');
+    const slotBlocks = pawnText.match(/\[(\d+)\]\s*=\s*\{([\s\S]*?)\}/g);
+    if (slotBlocks) {
+      for (const block of slotBlocks) {
+        const idM = block.match(/\["ID"\]\s*=\s*(\d+)/);
+        const lvlM = block.match(/\["Level"\]\s*=\s*(\d+)/);
+        const linkM = block.match(/\["Link"\]\s*=\s*"([^"]+)"/);
+
+        if (idM && linkM) {
+          const itemId = parseInt(idM[1], 10);
+          const itemLvl = lvlM ? parseInt(lvlM[1], 10) : 10;
+          const itemLink = linkM[1];
+          const nameMatch = itemLink.match(/\|h\[([^\]]+)\]\|h/);
+          const itemName = nameMatch ? nameMatch[1] : "Equipped Item";
+
+          let quality = "common";
+          if (itemLink.includes("cnIQ0") || itemLink.includes("9d9d9d")) quality = "poor";
+          else if (itemLink.includes("cnIQ1") || itemLink.includes("ffffff")) quality = "common";
+          else if (itemLink.includes("cnIQ2") || itemLink.includes("1eff00")) quality = "uncommon";
+          else if (itemLink.includes("cnIQ3") || itemLink.includes("0070dd")) quality = "rare";
+          else if (itemLink.includes("cnIQ4") || itemLink.includes("a335ee")) quality = "epic";
+          else if (itemLink.includes("cnIQ5") || itemLink.includes("ff8000")) quality = "legendary";
+
+          pawnMeta[itemId] = { itemName, quality, itemLvl };
+        }
+      }
+    }
+  }
+
+  // 4. Primary Source of Truth: BagBrother equipment list
+  // BagBrother directly tracks currently equipped inventory in real time
+  const hasBagBrotherEquip = Object.keys(bagBrotherEquip).length > 0;
+  if (hasBagBrotherEquip) {
+    for (const slotNum in bagBrotherEquip) {
+      const itemId = bagBrotherEquip[slotNum];
+      // Filter out empty or internal server aura / cosmetic tokens (> 100000)
+      if (!itemId || itemId > 100000) continue;
+      const key = slotMap[slotNum];
+      if (!key) continue;
+
+      const meta = pawnMeta[itemId] || {};
+      const itemName = meta.itemName || (ITEM_DB[itemId] ? ITEM_DB[itemId].name : `Item #${itemId}`);
+      const quality = meta.quality || (ITEM_DB[itemId] ? ITEM_DB[itemId].quality : "uncommon");
+      const itemLvl = meta.itemLvl || (ITEM_DB[itemId] && ITEM_DB[itemId].req ? parseInt(ITEM_DB[itemId].req.replace(/\D/g, ''), 10) || level : level);
+
+      const resolved = resolveItemStats(itemId, itemName, quality, itemLvl, parseInt(slotNum, 10));
+      liveItems[key] = {
+        ...liveItems[key],
+        ...resolved,
+        name: itemName,
+        quality: quality,
+        source: `Currently Equipped on ${name}`
+      };
+    }
+  } else if (pawnPath && fs.existsSync(pawnPath)) {
+    // Fallback: If BagBrother has no equip table, use Pawn.lua slots
     const pawnText = fs.readFileSync(pawnPath, 'utf8');
     const slotBlocks = pawnText.match(/\[(\d+)\]\s*=\s*\{([\s\S]*?)\}/g);
     if (slotBlocks) {
@@ -371,13 +428,13 @@ function runSync() {
         const slotM = block.match(/\[(\d+)\]\s*=/);
         if (!slotM) continue;
         const slotNum = parseInt(slotM[1], 10);
-
         const idM = block.match(/\["ID"\]\s*=\s*(\d+)/);
         const lvlM = block.match(/\["Level"\]\s*=\s*(\d+)/);
         const linkM = block.match(/\["Link"\]\s*=\s*"([^"]+)"/);
 
         if (idM && linkM) {
           const itemId = parseInt(idM[1], 10);
+          if (itemId > 100000) continue;
           const itemLvl = lvlM ? parseInt(lvlM[1], 10) : 10;
           const itemLink = linkM[1];
           const nameMatch = itemLink.match(/\|h\[([^\]]+)\]\|h/);
@@ -404,22 +461,6 @@ function runSync() {
           }
         }
       }
-    }
-  }
-
-  // 4. Cross-reference BagBrother items (catches newer weapons or gear changes)
-  for (const slotNum in bagBrotherEquip) {
-    const itemId = bagBrotherEquip[slotNum];
-    // Ignore internal server aura / cosmetic token IDs (> 100000)
-    if (!itemId || itemId > 100000) continue;
-    const key = slotMap[slotNum];
-    if (key && (!liveItems[key] || liveItems[key].name === "None Equipped")) {
-      const resolved = resolveItemStats(itemId, (ITEM_DB[itemId] ? ITEM_DB[itemId].name : `Item #${itemId}`), (ITEM_DB[itemId] ? ITEM_DB[itemId].quality : "uncommon"), level, parseInt(slotNum, 10));
-      liveItems[key] = {
-        ...liveItems[key],
-        ...resolved,
-        source: `Currently Equipped on ${name}`
-      };
     }
   }
 
