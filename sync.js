@@ -23,8 +23,8 @@ const ITEM_DB = {
   5611: { name: "Tear of Grief", slot: "Off-Hand", type: "Held In Off-hand", quality: "uncommon", armor: null, stats: ["+3 Intellect", "+2 Spirit"], req: "Requires Level 12", tip: "Quest reward held in off-hand." },
 
   // Chestpieces
-  6266: { name: "Disciple's Vest of the Owl", slot: "Chest", type: "Cloth", quality: "uncommon", armor: "25 Armor", stats: ["+2 Intellect (+30 Mana)", "+2 Spirit"], req: "Requires Level 11", tip: "⭐ Currently equipped on Chongo! BoE cloth chest with intellect and spirit." },
-  5957: { name: "Handstitched Leather Vest", slot: "Chest", type: "Leather", quality: "common", armor: "22 Armor", stats: ["Pure Armor"], req: "Requires Level 1", tip: "Basic crafted leather vest." },
+  6266: { name: "Disciple's Vest of the Owl", slot: "Chest", type: "Cloth", quality: "uncommon", armor: "25 Armor", stats: ["+2 Intellect (+30 Mana)", "+2 Spirit"], req: "Requires Level 8", tip: "⭐ BoE cloth chest with intellect and spirit." },
+  5957: { name: "Handstitched Leather Vest", slot: "Chest", type: "Leather", quality: "common", armor: "45 Armor", stats: ["45 Armor (Pure Armor)"], req: "Requires Level 3", tip: "⭐ Crafted Leatherworking chestpiece equipped on Chongo." },
   2041: { name: "Tunic of Westfall", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Stamina (+50 HP)"], req: "Requires Level 19", tip: "🔥 Premier solo quest chest from The Defias Brotherhood in Westfall!" },
   10410: { name: "Blackened Defias Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Stamina (+110 HP)", "+4 Strength (+8 AP)", "+3 Agility"], req: "Requires Level 19", tip: "Dropped by Edwin VanCleef in The Deadmines." },
   2314: { name: "Dark Leather Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "78 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)"], req: "Requires Level 15", tip: "Crafted via Leatherworking (Skill 75)." },
@@ -33,13 +33,15 @@ const ITEM_DB = {
   14637: { name: "Cadaverous Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "172 Armor", stats: ["+8 Strength", "+8 Agility", "Equip: +60 Attack Power"], req: "Requires Level 56", tip: "Scholomance mini-bosses." },
 
   // Belts / Waist
-  14559: { name: "Prospector's Sash", slot: "Waist", type: "Leather", quality: "uncommon", armor: "42 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 13", tip: "⭐ Currently equipped on Chongo! BoE leather belt." },
+  6558: { name: "Bard's Belt of the Tiger", slot: "Waist", type: "Leather", quality: "uncommon", armor: "39 Armor", stats: ["+2 Strength (+4 AP)", "+2 Agility (+2 Cat AP / +0.1% Crit)"], req: "Requires Level 10", tip: "⭐ BoE leather belt equipped on Chongo." },
+  14559: { name: "Prospector's Sash", slot: "Waist", type: "Leather", quality: "uncommon", armor: "42 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 13", tip: "BoE leather belt." },
   6468: { name: "Deviate Scale Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "51 Armor", stats: ["+6 Stamina (+60 HP)", "+5 Agility (+0.25% Crit)", "+3 Spirit"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 115)." },
   4249: { name: "Hillman's Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "48 Armor", stats: ["+4 Stamina (+40 HP)", "+4 Spirit"], req: "Requires Level 20", tip: "Crafted via Leatherworking (Skill 95)." },
   5742: { name: "Barbaric Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "62 Armor", stats: ["+11 Strength (+22 AP)", "Use: Increases Rage by 30"], req: "Requires Level 35", tip: "Crafted via Leatherworking (Skill 200)." },
   13252: { name: "Cloudrunner Girdle", slot: "Waist", type: "Leather", quality: "rare", armor: "185 Armor", stats: ["+15 Agility", "+14 Strength"], req: "Requires Level 55", tip: "Quartermaster Zigris in LBRS." },
 
   // Legs
+  1310: { name: "Smith's Trousers", slot: "Legs", type: "Leather", quality: "uncommon", armor: "68 Armor", stats: ["+4 Strength (+8 AP)", "+4 Agility (+4 Cat AP / +0.2% Crit)"], req: "Requires Level 20", tip: "⭐ Solo quest reward from The Everstill Bridge in Redridge Mountains. Equipped on Chongo!" },
   2974: { name: "Hunting Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "62 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+2 Spirit"], req: "Requires Level 11", tip: "⭐ Currently equipped on Chongo! BoE green leather pants." },
   14563: { name: "Prospector's Woolies", slot: "Legs", type: "Leather", quality: "uncommon", armor: "69 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)", "+1 Strength (+2 AP)"], req: "Requires Level 16", tip: "BoE world drop leather pants." },
   4248: { name: "Dark Leather Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "72 Armor", stats: ["+8 Agility (+8 Cat AP / +0.4% Crit)"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 115)." },
@@ -82,7 +84,9 @@ const ITEM_DB = {
   8345: { name: "Wolfshead Helm", slot: "Head", type: "Leather", quality: "rare", armor: "109 Armor", stats: ["+10 Spirit", "Equip: When shifting to Cat gain 20 Energy; to Bear gain 5 Rage"], req: "Requires Level 40", tip: "👑 The single most important Feral Druid item in Classic WoW (LW 225)." },
 
   // Shoulders
-  3202: { name: "Forest Tracker Epaulets", slot: "Shoulders", type: "Leather", quality: "rare", armor: "78 Armor", stats: ["+11 Agility", "+8 Stamina"], req: "Requires Level 26", tip: "BoE rare leather shoulders." },
+  4251: { name: "Hillman's Shoulders", slot: "Shoulders", type: "Leather", quality: "uncommon", armor: "65 Armor", stats: ["+5 Stamina (+50 HP)", "+4 Spirit"], req: "Requires Level 21", tip: "Crafted via Leatherworking (Skill 130) or Buy on AH." },
+  14561: { name: "Prospector's Pads", slot: "Shoulders", type: "Leather", quality: "uncommon", armor: "64 Armor", stats: ["+4 Stamina (+40 HP)", "+4 Spirit"], req: "Requires Level 20", tip: "BoE world drop leather shoulders." },
+  3202: { name: "Forest Tracker Epaulets", slot: "Shoulders", type: "Leather", quality: "rare", armor: "78 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Strength (+10 AP)"], req: "Requires Level 26", tip: "BoE rare leather shoulders." },
 
   // Rings
   20439: { name: "Protector's Band", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Agility (+4 Cat AP / +0.2% Crit)", "+2 Stamina (+20 HP)"], req: "Requires Level 18", tip: "Warsong Gulch PvP vendor (Honored rep, 0 dungeon runs)." },
@@ -97,6 +101,7 @@ const ITEM_DB = {
   11815: { name: "Hand of Justice", slot: "Trinket", type: "Trinket", quality: "rare", armor: null, stats: ["Equip: +20 Attack Power", "Equip: 2% chance on hit to grant 1 extra attack"], req: "Requires Level 53", tip: "Emperor Dagran Thaurissan in BRD." },
 
   // Relics / Idols
+  263411: { name: "Idol of Shifting Tides", slot: "Relic / Idol", type: "Idol", quality: "uncommon", armor: null, stats: ["Equip: Reduces the mana cost of shapeshifting spells by 40."], req: "Requires Level 16", tip: "⭐ Class relic rewarded from early Druid questline in WoW Forever. Equipped on Chongo!" },
   22397: { name: "Idol of Ferocity", slot: "Relic / Idol", type: "Idol", quality: "rare", armor: null, stats: ["Equip: Reduces the Energy cost of Claw and Rake by 3"], req: "Requires Level 55", tip: "Magistrate Barthilas in Stratholme." },
   23198: { name: "Idol of Brutality", slot: "Relic / Idol", type: "Idol", quality: "rare", armor: null, stats: ["Equip: Increases damage dealt by Maul by 50 and Swipe by 10"], req: "Requires Level 60", tip: "Magistrate Barthilas in Stratholme." }
 };
@@ -500,9 +505,9 @@ function runSync() {
   };
 
   const slotMap = {
-    1: 'head', 2: 'neck', 3: 'shoulders', 5: 'chest', 6: 'waist', 7: 'legs',
+    1: 'head', 2: 'neck', 3: 'shoulders', 4: 'shirt', 5: 'chest', 6: 'waist', 7: 'legs',
     8: 'feet', 9: 'wrists', 10: 'hands', 11: 'ring1', 12: 'ring2',
-    13: 'trinket1', 14: 'trinket2', 15: 'back', 16: 'mainHand', 17: 'offHand'
+    13: 'trinket1', 14: 'trinket2', 15: 'back', 16: 'mainHand', 17: 'offHand', 18: 'relic'
   };
 
   // 3. Collect Pawn.lua item metadata (links, names, qualities) by item ID
@@ -543,8 +548,10 @@ function runSync() {
   if (hasBagBrotherEquip) {
     for (const slotNum in bagBrotherEquip) {
       const itemId = bagBrotherEquip[slotNum];
-      // Filter out empty or internal server aura / cosmetic tokens (> 100000)
-      if (!itemId || itemId > 100000) continue;
+      // Slot 4 is shirt - keep it separate from chest (Slot 5)
+      if (parseInt(slotNum, 10) === 4) continue;
+      // Filter out empty or internal server aura / cosmetic tokens (> 100000) except known items like 263411
+      if (!itemId || (itemId > 100000 && itemId !== 263411)) continue;
       const key = slotMap[slotNum];
       if (!key) continue;
 

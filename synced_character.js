@@ -8,7 +8,7 @@ window.WOW_SYNCED_DATA = {
   "class": "Druid",
   "race": "Alliance Skyborne",
   "level": 20,
-  "money": 10633,
+  "money": 13395,
   "liveGear": {
     "head": {
       "slot": "Head",
@@ -64,12 +64,12 @@ window.WOW_SYNCED_DATA = {
       "name": "Handstitched Leather Vest",
       "quality": "common",
       "source": "Currently Equipped on Chongo",
-      "armor": "22 Armor",
+      "armor": "45 Armor",
       "stats": [
-        "Pure Armor"
+        "45 Armor (Pure Armor)"
       ],
-      "req": "Requires Level 1",
-      "tip": "Basic crafted leather vest."
+      "req": "Requires Level 3",
+      "tip": "⭐ Crafted Leatherworking chestpiece equipped on Chongo."
     },
     "wrists": {
       "slot": "Wrists",
@@ -102,14 +102,16 @@ window.WOW_SYNCED_DATA = {
     "waist": {
       "slot": "Waist",
       "type": "Leather",
-      "name": "Item #6558",
+      "name": "Bard's Belt of the Tiger",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "56 Armor",
+      "armor": "39 Armor",
       "stats": [
-        "+4 Feral Combat Stats"
+        "+2 Strength (+4 AP)",
+        "+2 Agility (+2 Cat AP / +0.1% Crit)"
       ],
-      "req": "Item Level 20"
+      "req": "Requires Level 10",
+      "tip": "⭐ BoE leather belt equipped on Chongo."
     },
     "legs": {
       "slot": "Legs",
@@ -117,11 +119,13 @@ window.WOW_SYNCED_DATA = {
       "name": "Smith's Trousers",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "80 Armor",
+      "armor": "68 Armor",
       "stats": [
-        "+4 Feral Combat Stats"
+        "+4 Strength (+8 AP)",
+        "+4 Agility (+4 Cat AP / +0.2% Crit)"
       ],
-      "req": "Item Level 20"
+      "req": "Requires Level 20",
+      "tip": "⭐ Solo quest reward from The Everstill Bridge in Redridge Mountains. Equipped on Chongo!"
     },
     "feet": {
       "slot": "Feet",
@@ -210,13 +214,15 @@ window.WOW_SYNCED_DATA = {
     "relic": {
       "slot": "Relic / Idol",
       "type": "Idol",
-      "name": "Empty Idol Slot",
-      "quality": "common",
-      "source": "Druid Relic",
+      "name": "Idol of Shifting Tides",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "Idols become available in level 50+ dungeons and Stratholme"
-      ]
+        "Equip: Reduces the mana cost of shapeshifting spells by 40."
+      ],
+      "req": "Requires Level 16",
+      "tip": "⭐ Class relic rewarded from early Druid questline in WoW Forever. Equipped on Chongo!"
     }
   },
   "professions": {
@@ -236,7 +242,7 @@ window.WOW_SYNCED_DATA = {
     },
     "cooking": {
       "name": "Cooking",
-      "level": 94,
+      "level": 100,
       "rank": "Journeyman",
       "max": 150,
       "icon": "🍖"
@@ -256,5 +262,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🎣"
     }
   },
-  "syncedAt": "2026-11-13T01:03:07.225Z"
+  "syncedAt": "2026-11-13T12:37:31.073Z"
 };

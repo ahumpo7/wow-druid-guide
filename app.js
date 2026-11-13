@@ -2710,19 +2710,19 @@ const MAXROLL_GEAR_PRESETS = {
       neck: { slot: "Neck", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Neck items become available at lvl 18+"] },
       shoulders: { slot: "Shoulders", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Shoulders start dropping around lvl 17"] },
       back: { slot: "Back", type: "Cloth", name: "War Paint Cloak", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "15 Armor", stats: ["+1 Strength (+2 AP)", "+1 Agility (+1 Cat AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 10" },
-      chest: { slot: "Chest", type: "Leather", name: "Handstitched Leather Vest", quality: "common", source: "Currently Equipped on Chongo", armor: "22 Armor", stats: ["Pure Armor"], req: "Requires Level 1" },
+      chest: { slot: "Chest", type: "Leather", name: "Handstitched Leather Vest", quality: "common", source: "Currently Equipped on Chongo", armor: "45 Armor", stats: ["45 Armor (Pure Armor)"], req: "Requires Level 3" },
       wrists: { slot: "Wrists", type: "Leather", name: "Ridgeback Bracers", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "33 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Spirit"], req: "Requires Level 12" },
       hands: { slot: "Hands", type: "Leather", name: "Shucking Gloves", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "45 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 12" },
-      waist: { slot: "Waist", type: "Leather", name: "Prospector's Sash", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "42 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 13" },
-      legs: { slot: "Legs", type: "Leather", name: "Hunting Pants", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "62 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+2 Spirit"], req: "Requires Level 11" },
-      feet: { slot: "Feet", type: "Leather", name: "Nomad Sandals", quality: "common", source: "Currently Equipped on Chongo", armor: "40 Armor", stats: ["Pure Armor (Starter Footwear)"], req: "Requires Level 8" },
+      waist: { slot: "Waist", type: "Leather", name: "Bard's Belt of the Tiger", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "39 Armor", stats: ["+2 Strength (+4 AP)", "+2 Agility (+2 Cat AP / +0.1% Crit)"], req: "Requires Level 10" },
+      legs: { slot: "Legs", type: "Leather", name: "Smith's Trousers", quality: "uncommon", source: "Currently Equipped on Chongo", armor: "68 Armor", stats: ["+4 Strength (+8 AP)", "+4 Agility (+4 Cat AP / +0.2% Crit)"], req: "Requires Level 20" },
+      feet: { slot: "Feet", type: "Leather", name: "Nomad Sandals", quality: "common", source: "Currently Equipped on Chongo", armor: "40 Armor", stats: ["Pure Armor (Starter Footwear)"], req: "Requires Level 7" },
       ring1: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around lvl 18-20"] },
       ring2: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around lvl 18-20"] },
       trinket1: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
       trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
       mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "Sturdy Quarterstaff of the Bear", quality: "uncommon", source: "Currently Equipped on Chongo", armor: null, stats: ["20-30 Damage (8.9 DPS)", "+3 Strength (+6 AP)", "+3 Stamina (+30 HP)"], req: "Requires Level 8", tip: "⭐ BoE world drop staff with raw Strength and Stamina for Bear Form." },
       offHand: { slot: "Off-Hand", type: "None (2H Equipped)", name: "Empty (2H Staff in Use)", quality: "disabled", source: "Two-Handed Weapon Occupies Both Hands", armor: null, stats: ["Two-Handed weapon equipped in Main Hand."], req: "Two-Hander in Use" },
-      relic: { slot: "Relic / Idol", type: "Idol", name: "Empty Idol Slot", quality: "common", source: "Druid Relic", armor: null, stats: ["Idols become available in level 50+ dungeons and Stratholme"] }
+      relic: { slot: "Relic / Idol", type: "Idol", name: "Idol of Shifting Tides", quality: "uncommon", source: "Currently Equipped on Chongo", armor: null, stats: ["Equip: Reduces the mana cost of shapeshifting spells by 40."], req: "Requires Level 16" }
     }
   },
 
@@ -3157,12 +3157,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "First crafted chest."
     },
     "armorAlt": {
-      "name": "Handcrafted Leather Pants",
-      "slot": "Legs",
-      "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "20 Armor",
-      "tip": "Crafted at LW 20."
+      "name": "Tattered Leather Vest",
+      "slot": "Chest",
+      "quality": "poor",
+      "source": "Starting Gear / Vendor",
+      "stats": "18 Armor",
+      "tip": "Basic starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
@@ -3191,12 +3191,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "First crafted chest."
     },
     "armorAlt": {
-      "name": "Handcrafted Leather Pants",
-      "slot": "Legs",
-      "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "20 Armor",
-      "tip": "Crafted at LW 20."
+      "name": "Tattered Leather Vest",
+      "slot": "Chest",
+      "quality": "poor",
+      "source": "Starting Gear / Vendor",
+      "stats": "18 Armor",
+      "tip": "Basic starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
@@ -3225,12 +3225,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "First crafted chest."
     },
     "armorAlt": {
-      "name": "Handcrafted Leather Pants",
-      "slot": "Legs",
-      "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "20 Armor",
-      "tip": "Crafted at LW 20."
+      "name": "Tattered Leather Vest",
+      "slot": "Chest",
+      "quality": "poor",
+      "source": "Starting Gear / Vendor",
+      "stats": "18 Armor",
+      "tip": "Basic starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
@@ -3259,12 +3259,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "First crafted chest."
     },
     "armorAlt": {
-      "name": "Handcrafted Leather Pants",
-      "slot": "Legs",
-      "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "20 Armor",
-      "tip": "Crafted at LW 20."
+      "name": "Tattered Leather Vest",
+      "slot": "Chest",
+      "quality": "poor",
+      "source": "Starting Gear / Vendor",
+      "stats": "18 Armor",
+      "tip": "Basic starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
@@ -3327,12 +3327,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Guaranteed quest reward pants."
     },
     "armorAlt": {
-      "name": "Embossed Leather Gloves",
-      "slot": "Hands",
+      "name": "Handcrafted Leather Pants",
+      "slot": "Legs",
       "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "28 Armor",
-      "tip": "Crafted at LW 55."
+      "source": "Leatherworking (Skill 30)",
+      "stats": "24 Armor",
+      "tip": "Crafted leather leggings."
     },
     "weaponPrimary": {
       "name": "Quarterstaff",
@@ -3361,12 +3361,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Solid early physical chest."
     },
     "armorAlt": {
-      "name": "Embossed Leather Gloves",
-      "slot": "Hands",
+      "name": "Handcrafted Leather Vest",
+      "slot": "Chest",
       "quality": "common",
       "source": "Leatherworking / Vendor",
-      "stats": "28 Armor",
-      "tip": "Crafted at LW 55."
+      "stats": "22 Armor",
+      "tip": "Starter crafted leather chest."
     },
     "weaponPrimary": {
       "name": "Quarterstaff",
@@ -3395,12 +3395,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Solid early physical chest."
     },
     "armorAlt": {
-      "name": "Hunter's Simple Cloak",
-      "slot": "Back",
-      "quality": "uncommon",
-      "source": "Solo Quest: Zephras Isle",
-      "stats": "14 Armor, +2 Stamina, +1 Agility",
-      "tip": "Guaranteed solo quest cloak."
+      "name": "Embossed Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking (Skill 55) / Vendor",
+      "stats": "32 Armor",
+      "tip": "Sturdy crafted leather vest."
     },
     "weaponPrimary": {
       "name": "Quarterstaff",
@@ -3429,12 +3429,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Solid early physical chest."
     },
     "armorAlt": {
-      "name": "Hunter's Simple Cloak",
-      "slot": "Back",
-      "quality": "uncommon",
-      "source": "Solo Quest: Zephras Isle",
-      "stats": "14 Armor, +2 Stamina, +1 Agility",
-      "tip": "Guaranteed solo quest cloak."
+      "name": "Embossed Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking (Skill 55) / Vendor",
+      "stats": "32 Armor",
+      "tip": "Sturdy crafted leather vest."
     },
     "weaponPrimary": {
       "name": "Oakthrush Staff",
@@ -3463,12 +3463,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Huge stat boost once you unlock Bear Form at 10!"
     },
     "armorAlt": {
-      "name": "War Paint Cloak",
-      "slot": "Back",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "15 Armor, +2 Stamina (+20 HP)",
-      "tip": "Extra health cloak for Bear leveling."
+      "name": "Embossed Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking (Skill 55)",
+      "stats": "32 Armor",
+      "tip": "Solid baseline armor chest."
     },
     "weaponPrimary": {
       "name": "Oakthrush Staff",
@@ -3497,12 +3497,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Great mana pool & regeneration between Bear pulls."
     },
     "armorAlt": {
-      "name": "Hunting Pants of the Bear",
-      "slot": "Legs",
+      "name": "Hunting Tunic of the Bear",
+      "slot": "Chest",
       "quality": "uncommon",
       "source": "Auction House BoE",
-      "stats": "63 Armor, +3 Stamina (+30 HP)",
-      "tip": "Solid health legs."
+      "stats": "45 Armor, +3 Strength, +3 Stamina",
+      "tip": "Top solo physical leveling chest."
     },
     "weaponPrimary": {
       "name": "Oakthrush Staff",
@@ -3565,12 +3565,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "First green belt with real stats."
     },
     "armorAlt": {
-      "name": "Bandit Boots of the Bear",
-      "slot": "Feet",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "47 Armor, +3 Strength, +3 Stamina",
-      "tip": "Armor & stats."
+      "name": "Embossed Leather Belt",
+      "slot": "Waist",
+      "quality": "common",
+      "source": "Leatherworking (Skill 75) / AH",
+      "stats": "34 Armor",
+      "tip": "Reliable crafted waist piece."
     },
     "weaponPrimary": {
       "name": "Oakthrush Staff",
@@ -3591,20 +3591,20 @@ const NON_DUNGEON_GEAR_DATA = {
   },
   "14": {
     "armorPrimary": {
-      "name": "Feathered Headdress",
-      "slot": "Head",
-      "quality": "uncommon",
-      "source": "Solo Quest: In Defense of the King's Lands",
-      "stats": "46 Armor (+128 Bear Armor), +4 Spirit, +3 Stamina",
-      "tip": "⭐ Fills empty Head slot! First available non-dungeon headpiece."
-    },
-    "armorAlt": {
       "name": "Tiger Band / Savanna Ring",
       "slot": "Finger",
       "quality": "uncommon",
       "source": "Auction House BoE",
       "stats": "+2 Strength, +2 Agility",
-      "tip": "First level rings start at 14!"
+      "tip": "First available rings begin around level 14!"
+    },
+    "armorAlt": {
+      "name": "Prairie Ring of the Bear",
+      "slot": "Finger",
+      "quality": "uncommon",
+      "source": "Auction House BoE",
+      "stats": "+2 Strength, +2 Stamina",
+      "tip": "Survival ring for Bear Form."
     },
     "weaponPrimary": {
       "name": "Heavy Spiked Mace of the Bear",
@@ -3633,12 +3633,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "First green bracers with strength."
     },
     "armorAlt": {
-      "name": "Engineer's Cloak",
-      "slot": "Back",
-      "quality": "uncommon",
-      "source": "Auction House BoE / Engineering",
-      "stats": "18 Armor, +4 Agility (+4 Cat AP / +0.2% Crit)",
-      "tip": "High agility cloak."
+      "name": "Embossed Leather Bracers",
+      "slot": "Wrists",
+      "quality": "common",
+      "source": "Leatherworking (Skill 60)",
+      "stats": "24 Armor",
+      "tip": "Simple crafted bracers."
     },
     "weaponPrimary": {
       "name": "Heavy Spiked Mace of the Bear",
@@ -3667,12 +3667,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "⭐ One of the best leveling belts in Classic. Craft or buy on AH!"
     },
     "armorAlt": {
-      "name": "Deviate Scale Boots",
-      "slot": "Feet",
+      "name": "Prospector's Sash",
+      "slot": "Waist",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 105) / AH",
-      "stats": "53 Armor, +3 Agility, +2 Stamina, +2 Spirit",
-      "tip": "Crafted boots."
+      "source": "Auction House BoE",
+      "stats": "42 Armor, +3 Stamina, +2 Spirit",
+      "tip": "Budget world drop belt."
     },
     "weaponPrimary": {
       "name": "Heavy Spiked Mace of the Bear",
@@ -3701,12 +3701,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Guaranteed solo quest reward in Lakeshire!"
     },
     "armorAlt": {
-      "name": "Prospector's Pads of the Bear",
-      "slot": "Legs",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "70 Armor, +4 Strength, +4 Stamina",
-      "tip": "Heavy armor & HP."
+      "name": "Embossed Leather Gloves",
+      "slot": "Hands",
+      "quality": "common",
+      "source": "Leatherworking (Skill 60)",
+      "stats": "32 Armor",
+      "tip": "Crafted leather gloves."
     },
     "weaponPrimary": {
       "name": "Heavy Spiked Mace of the Bear",
@@ -3735,12 +3735,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🔥 THE GREATEST SOLO QUEST CHEST IN CLASSIC. Massive agility for Cat and Bear!"
     },
     "armorAlt": {
-      "name": "Protector's Band",
-      "slot": "Finger",
+      "name": "Blackened Defias Armor",
+      "slot": "Chest",
       "quality": "rare",
-      "source": "Warsong Gulch Friendly Vendor",
-      "stats": "+4 Agility, +2 Stamina (+20 HP)",
-      "tip": "Zero dungeon PvP vendor ring."
+      "source": "The Deadmines - Edwin VanCleef",
+      "stats": "92 Armor, +11 Stamina, +4 Strength, +3 Agility",
+      "tip": "Supreme dungeon alternative."
     },
     "weaponPrimary": {
       "name": "Staff of Westfall",
@@ -3769,12 +3769,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 Famous twink boots. Massive agility right before unlocking Cat Form!"
     },
     "armorAlt": {
-      "name": "Dark Leather Pants",
-      "slot": "Legs",
+      "name": "Dark Leather Boots",
+      "slot": "Feet",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 115) / AH",
-      "stats": "69 Armor, +5 Agility, +4 Stamina (+40 HP)",
-      "tip": "Crafted agility pants."
+      "source": "Leatherworking (Skill 100) / AH",
+      "stats": "54 Armor, +4 Agility, +3 Stamina",
+      "tip": "Crafted boots for Cat Form."
     },
     "weaponPrimary": {
       "name": "Quarterstaff of the Tiger",
@@ -3803,12 +3803,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "First premier crafted shoulder piece for Feral!"
     },
     "armorAlt": {
-      "name": "Hillman's Belt",
-      "slot": "Waist",
+      "name": "Prospector's Pads",
+      "slot": "Shoulders",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 120) / AH",
-      "stats": "51 Armor, +4 Strength (+8 AP), +4 Stamina (+40 HP)",
-      "tip": "Crafted strength belt."
+      "source": "Auction House BoE World Drop",
+      "stats": "64 Armor, +4 Stamina, +4 Spirit",
+      "tip": "Alternative world-drop leather shoulders."
     },
     "weaponPrimary": {
       "name": "Quarterstaff of the Tiger",
@@ -3837,12 +3837,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Core crafted agility chest."
     },
     "armorAlt": {
-      "name": "Dark Leather Boots",
-      "slot": "Feet",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 100) / AH",
-      "stats": "53 Armor, +3 Agility, +3 Stamina",
-      "tip": "Crafted boots."
+      "name": "Tunic of Westfall",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Quest: The Defias Brotherhood",
+      "stats": "92 Armor, +11 Agility, +5 Stamina",
+      "tip": "Solo quest chest reward."
     },
     "weaponPrimary": {
       "name": "Cedar Walking Stick of the Tiger",
@@ -3871,12 +3871,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Core crafted agility chest."
     },
     "armorAlt": {
-      "name": "Dark Leather Boots",
-      "slot": "Feet",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 100) / AH",
-      "stats": "53 Armor, +3 Agility, +3 Stamina",
-      "tip": "Crafted boots."
+      "name": "Tunic of Westfall",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Quest: The Defias Brotherhood",
+      "stats": "92 Armor, +11 Agility, +5 Stamina",
+      "tip": "Solo quest chest reward."
     },
     "weaponPrimary": {
       "name": "Cedar Walking Stick of the Tiger",
@@ -3905,12 +3905,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Core crafted agility chest."
     },
     "armorAlt": {
-      "name": "Dark Leather Gloves",
-      "slot": "Hands",
+      "name": "Toughened Leather Armor",
+      "slot": "Chest",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 145) / AH",
-      "stats": "64 Armor, +5 Agility, +4 Stamina",
-      "tip": "Crafted agility gloves."
+      "source": "Leatherworking (Skill 155) / AH",
+      "stats": "98 Armor, +7 Stamina, +6 Agility",
+      "tip": "High armor crafted chest."
     },
     "weaponPrimary": {
       "name": "Cedar Walking Stick of the Tiger",
@@ -3939,12 +3939,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Superb crafted feral combat legs."
     },
     "armorAlt": {
-      "name": "Dark Leather Gloves",
-      "slot": "Hands",
+      "name": "Dark Leather Pants",
+      "slot": "Legs",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 145) / AH",
-      "stats": "64 Armor, +5 Agility, +4 Stamina",
-      "tip": "Crafted agility gloves."
+      "source": "Leatherworking (Skill 115) / AH",
+      "stats": "67 Armor, +6 Agility, +4 Stamina",
+      "tip": "Crafted agility leggings."
     },
     "weaponPrimary": {
       "name": "Cedar Walking Stick of the Tiger",
@@ -3973,12 +3973,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Superb crafted feral combat legs."
     },
     "armorAlt": {
-      "name": "Dark Leather Gloves",
-      "slot": "Hands",
+      "name": "Dark Leather Pants",
+      "slot": "Legs",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 145) / AH",
-      "stats": "64 Armor, +5 Agility, +4 Stamina",
-      "tip": "Crafted agility gloves."
+      "source": "Leatherworking (Skill 115) / AH",
+      "stats": "67 Armor, +6 Agility, +4 Stamina",
+      "tip": "Crafted agility leggings."
     },
     "weaponPrimary": {
       "name": "Cedar Walking Stick of the Tiger",
@@ -4007,12 +4007,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Crafted feral legs."
     },
     "armorAlt": {
-      "name": "Barbaric Belt",
-      "slot": "Waist",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 200) / AH",
-      "stats": "65 Armor, +7 Strength (+14 AP), +6 Stamina (+60 HP)",
-      "tip": "Crafted strength belt."
+      "name": "Triprunner Dungarees",
+      "slot": "Legs",
+      "quality": "rare",
+      "source": "Gnomeregan Quest",
+      "stats": "82 Armor, +18 Agility, +4 Strength",
+      "tip": "Massive agility quest reward pants."
     },
     "weaponPrimary": {
       "name": "Dutiful Quarterstaff",
@@ -4041,12 +4041,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Great high agility shoulders."
     },
     "armorAlt": {
-      "name": "Barbaric Belt",
-      "slot": "Waist",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 200) / AH",
-      "stats": "65 Armor, +7 Strength (+14 AP), +6 Stamina (+60 HP)",
-      "tip": "Crafted strength belt."
+      "name": "Forest Tracker Epaulets",
+      "slot": "Shoulders",
+      "quality": "rare",
+      "source": "Auction House (BoE World Drop)",
+      "stats": "78 Armor, +11 Agility, +5 Strength",
+      "tip": "Premier world-drop Feral shoulders."
     },
     "weaponPrimary": {
       "name": "Dutiful Quarterstaff",
@@ -4075,12 +4075,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Great high agility shoulders."
     },
     "armorAlt": {
-      "name": "Barbaric Belt",
-      "slot": "Waist",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 200) / AH",
-      "stats": "65 Armor, +7 Strength (+14 AP), +6 Stamina (+60 HP)",
-      "tip": "Crafted strength belt."
+      "name": "Forest Tracker Epaulets",
+      "slot": "Shoulders",
+      "quality": "rare",
+      "source": "Auction House (BoE World Drop)",
+      "stats": "78 Armor, +11 Agility, +5 Strength",
+      "tip": "Premier world-drop Feral shoulders."
     },
     "weaponPrimary": {
       "name": "Dutiful Quarterstaff",
@@ -4109,12 +4109,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Great high agility shoulders."
     },
     "armorAlt": {
-      "name": "Barbaric Belt",
-      "slot": "Waist",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 200) / AH",
-      "stats": "65 Armor, +7 Strength (+14 AP), +6 Stamina (+60 HP)",
-      "tip": "Crafted strength belt."
+      "name": "Forest Tracker Epaulets",
+      "slot": "Shoulders",
+      "quality": "rare",
+      "source": "Auction House (BoE World Drop)",
+      "stats": "78 Armor, +11 Agility, +5 Strength",
+      "tip": "Premier world-drop Feral shoulders."
     },
     "weaponPrimary": {
       "name": "Dutiful Quarterstaff",
@@ -4143,12 +4143,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Great high agility shoulders."
     },
     "armorAlt": {
-      "name": "Barbaric Belt",
-      "slot": "Waist",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 200) / AH",
-      "stats": "65 Armor, +7 Strength (+14 AP), +6 Stamina (+60 HP)",
-      "tip": "Crafted strength belt."
+      "name": "Forest Tracker Epaulets",
+      "slot": "Shoulders",
+      "quality": "rare",
+      "source": "Auction House (BoE World Drop)",
+      "stats": "78 Armor, +11 Agility, +5 Strength",
+      "tip": "Premier world-drop Feral shoulders."
     },
     "weaponPrimary": {
       "name": "Dutiful Quarterstaff",
@@ -4347,12 +4347,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Core mid-game leather armor."
     },
     "armorAlt": {
-      "name": "Nightscape Pants",
-      "slot": "Legs",
+      "name": "Raptor Hunter Tunic",
+      "slot": "Chest",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 230) / AH",
-      "stats": "109 Armor, +14 Agility, +8 Stamina",
-      "tip": "Huge agility pants."
+      "source": "Solo Quest: Raptor Mastery (STV)",
+      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
+      "tip": "Phenomenal STV solo quest reward chest."
     },
     "weaponPrimary": {
       "name": "Manual Crowd Pumper",
@@ -4381,12 +4381,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Core mid-game leather armor."
     },
     "armorAlt": {
-      "name": "Nightscape Pants",
-      "slot": "Legs",
+      "name": "Raptor Hunter Tunic",
+      "slot": "Chest",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 230) / AH",
-      "stats": "109 Armor, +14 Agility, +8 Stamina",
-      "tip": "Huge agility pants."
+      "source": "Solo Quest: Raptor Mastery (STV)",
+      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
+      "tip": "Phenomenal STV solo quest reward chest."
     },
     "weaponPrimary": {
       "name": "Manual Crowd Pumper",
@@ -4415,12 +4415,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Core mid-game leather armor."
     },
     "armorAlt": {
-      "name": "Nightscape Pants",
-      "slot": "Legs",
+      "name": "Raptor Hunter Tunic",
+      "slot": "Chest",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 230) / AH",
-      "stats": "109 Armor, +14 Agility, +8 Stamina",
-      "tip": "Huge agility pants."
+      "source": "Solo Quest: Raptor Mastery (STV)",
+      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
+      "tip": "Phenomenal STV solo quest reward chest."
     },
     "weaponPrimary": {
       "name": "Manual Crowd Pumper",
@@ -4449,12 +4449,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "Core mid-game leather armor."
     },
     "armorAlt": {
-      "name": "Nightscape Pants",
-      "slot": "Legs",
+      "name": "Raptor Hunter Tunic",
+      "slot": "Chest",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 230) / AH",
-      "stats": "109 Armor, +14 Agility, +8 Stamina",
-      "tip": "Huge agility pants."
+      "source": "Solo Quest: Raptor Mastery (STV)",
+      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
+      "tip": "Phenomenal STV solo quest reward chest."
     },
     "weaponPrimary": {
       "name": "Manual Crowd Pumper",
@@ -4483,12 +4483,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Manual Crowd Pumper",
@@ -4517,12 +4517,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Manual Crowd Pumper",
@@ -4551,12 +4551,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Manual Crowd Pumper",
@@ -4585,12 +4585,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4619,12 +4619,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4653,12 +4653,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4687,12 +4687,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4721,12 +4721,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4755,12 +4755,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4789,12 +4789,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
     },
     "armorAlt": {
-      "name": "Nightscape Boots",
-      "slot": "Feet",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 235) / AH",
-      "stats": "89 Armor, +13 Agility, +8 Stamina",
-      "tip": "High agility boots."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility, +8 Stamina",
+      "tip": "Budget agility/stamina helm before crafting Wolfshead."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4823,12 +4823,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4857,12 +4857,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4891,12 +4891,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4925,12 +4925,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4959,12 +4959,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -4993,12 +4993,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -5027,12 +5027,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -5061,12 +5061,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
@@ -5095,12 +5095,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Bonecrusher",
@@ -5129,12 +5129,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Bonecrusher",
@@ -5163,12 +5163,12 @@ const NON_DUNGEON_GEAR_DATA = {
       "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
     },
     "armorAlt": {
-      "name": "Warbear Harness",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 275 - Timbermaw) / AH",
-      "stats": "158 Armor (+442 Bear Armor), +11 Agility, +27 Stamina (+270 HP)",
-      "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+      "name": "Warbear Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Crafted via Leatherworking (Skill 285)",
+      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
+      "tip": "High Strength crafted leather pants."
     },
     "weaponPrimary": {
       "name": "Bonecrusher",
@@ -5879,6 +5879,62 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "stats": "+3 Strength (+6 AP), +3 Agility (+3 Cat AP / +0.15% Crit)",
     "gain": "Fills empty Ring slot! +6 Bear AP, +9 Cat AP, +0.15% Crit",
     "tip": "BoE world drop ring. First random enchantment rings start at level 20."
+  },
+  {
+    "slot": "Shoulders",
+    "slotKey": "shoulders",
+    "category": "accessories",
+    "minLevel": 20,
+    "maxLevel": 28,
+    "upgradeName": "Prospector's Pads",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "64 Armor, +4 Stamina (+40 HP), +4 Spirit",
+    "gain": "+64 Armor (+179 Bear Armor), +40 HP, +4 Spirit",
+    "tip": "⭐ Earliest equipable leather shoulders at level 20! Replaces empty shoulder slot."
+  },
+  {
+    "slot": "Shoulders",
+    "slotKey": "shoulders",
+    "category": "accessories",
+    "minLevel": 21,
+    "maxLevel": 30,
+    "upgradeName": "Hillman's Shoulders",
+    "quality": "uncommon",
+    "sourceType": "lw",
+    "sourceDesc": "Crafted via Leatherworking (Skill 130) or Buy on AH",
+    "stats": "65 Armor, +5 Stamina (+50 HP), +4 Spirit",
+    "gain": "+65 Armor (+182 Bear Armor), +50 HP, +4 Spirit",
+    "tip": "Crafted leather shoulders providing great survivability."
+  },
+  {
+    "slot": "Shoulders",
+    "slotKey": "shoulders",
+    "category": "accessories",
+    "minLevel": 26,
+    "maxLevel": 38,
+    "upgradeName": "Forest Tracker Epaulets",
+    "quality": "rare",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "78 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Strength (+10 AP)",
+    "gain": "+78 Armor, +10 Bear AP, +21 Cat AP, +0.55% Crit",
+    "tip": "🔥 Top-tier rare physical leather shoulders for mid-level Feral leveling."
+  },
+  {
+    "slot": "Shoulders",
+    "slotKey": "shoulders",
+    "category": "accessories",
+    "minLevel": 30,
+    "maxLevel": 42,
+    "upgradeName": "Barbaric Shoulders",
+    "quality": "uncommon",
+    "sourceType": "lw",
+    "sourceDesc": "Crafted via Leatherworking (Skill 175) or Buy on AH",
+    "stats": "76 Armor, +6 Stamina (+60 HP), +5 Agility, +5 Spirit",
+    "gain": "+76 Armor, +5 Agility, +60 HP",
+    "tip": "Crafted via Leatherworking with Heavy Leather."
   }
 ];
 
@@ -5941,8 +5997,8 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
     }
     if (slotKey === "chest") return name.includes("westfall") || name.includes("blackened defias") || name.includes("dark leather");
     if (slotKey === "hands") return name.includes("evergreen") || name.includes("shucking") || name.includes("brawler") || name.includes("wolfclaw");
-    if (slotKey === "waist") return name.includes("prospector") || name.includes("deviate");
-    if (slotKey === "legs") return name.includes("hunting") || name.includes("dark leather") || name.includes("prospector") || name.includes("barbaric");
+    if (slotKey === "waist") return name.includes("prospector") || name.includes("deviate") || name.includes("bard's belt") || name.includes("hillman");
+    if (slotKey === "legs") return name.includes("hunting") || name.includes("dark leather") || name.includes("prospector") || name.includes("barbaric") || name.includes("smith's trousers");
     if (slotKey === "wrists") return name.includes("ridgeback") || name.includes("bandit") || name.includes("prospector");
     if (slotKey === "feet") return name.includes("lynx") || name.includes("dark leather") || name.includes("bandit");
     if (slotKey === "back") return name.includes("war paint") || name.includes("brotherhood") || name.includes("tigerstrike");
