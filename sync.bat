@@ -9,6 +9,12 @@ echo [!] NOTE: World of Warcraft only writes to disk when you
 echo     type /reload in chat or log out to character select!
 echo.
 echo Running sync routine...
+
+where git >nul 2>nul
+if %errorlevel% equ 0 (
+    echo [*] Checking for latest guide and database updates from GitHub...
+    git pull origin main --quiet
+)
 echo.
 
 node sync.js

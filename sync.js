@@ -632,7 +632,7 @@ function runSync() {
     };
   }
 
-  const resultData = {
+  let resultData = {
     name,
     realm: "Darkwind (WoW Forever)",
     class: "Druid",
@@ -681,10 +681,31 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(resultData, null, 2)};
   fs.writeFileSync(jsonDest, JSON.stringify(resultData, null, 2), 'utf8');
   console.log(`    ✓ Saved synced_character.js and synced_character.json`);
 
-  // Cloud Sync to GitHub Gist
+  // Cloud Sync to GitHub Gist with Conflict Prevention
   console.log(`\n[4] Uploading to GitHub Cloud Gist (584b8b9450a8b85003934d27acfa7c7c)...`);
   try {
     const { execSync } = require('child_process');
+
+    // Pre-check: Fetch current Gist data to prevent overwriting newer progress from another PC (e.g. Computer B)
+    let remoteChar = null;
+    try {
+      const gistRaw = execSync('gh gist view 584b8b9450a8b85003934d27acfa7c7c', { stdio: 'pipe', encoding: 'utf8', timeout: 8000 });
+      const jsonStart = gistRaw.indexOf('{');
+      if (jsonStart !== -1) {
+        remoteChar = JSON.parse(gistRaw.slice(jsonStart));
+      }
+    } catch (_) {}
+
+    if (remoteChar && remoteChar.level > level) {
+      console.log(`    ℹ️ Remote Cloud Gist has higher level (${remoteChar.level}) than local WTF files (${level})!`);
+      console.log(`    👉 Another PC (e.g. Computer B) has newer progress. Preserving Cloud Gist and updating local cache.`);
+      resultData = remoteChar;
+      fs.writeFileSync(jsonDest, JSON.stringify(remoteChar, null, 2), 'utf8');
+      fs.writeFileSync(dest, `/**\n * World of Warcraft: Forever - Client Sync Bridge\n * Synced from Cloud Gist.\n */\nwindow.WOW_SYNCED_DATA = ${JSON.stringify(remoteChar, null, 2)};\n`, 'utf8');
+      return resultData;
+    }
+
+    // Local files are equal or newer: proceed to upload
     execSync(`gh gist edit 584b8b9450a8b85003934d27acfa7c7c -a "${jsonDest}"`, { stdio: 'pipe', encoding: 'utf8', timeout: 10000 });
     console.log(`    ✓ [SUCCESS] Live character data uploaded to GitHub Cloud!`);
     console.log(`    👉 Any browser or 2nd PC will now see Level ${level} & ${liveItems.mainHand.name}!`);
@@ -696,7 +717,6 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(resultData, null, 2)};
       console.error(`    Error details: ${gistErr.message}`);
     }
   }
-
   return resultData;
 }
 

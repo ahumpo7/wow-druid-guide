@@ -1472,31 +1472,52 @@ const GITHUB_GIST_ID = "584b8b9450a8b85003934d27acfa7c7c";
 const GITHUB_GIST_API_URL = `https://api.github.com/gists/${GITHUB_GIST_ID}`;
 const GITHUB_GIST_RAW_URL = `https://gist.githubusercontent.com/ahumpo7/${GITHUB_GIST_ID}/raw/synced_character.json`;
 
-async function checkCloudCharacterSync() {
+async function checkCloudCharacterSync(forceFresh = false) {
   try {
     let cloudChar = null;
 
-    // Strategy 1: Direct Raw Gist URL (Fast, zero rate-limit, no mixed-content issues on GitHub Pages)
-    try {
-      const rawRes = await fetch(`${GITHUB_GIST_RAW_URL}?t=${Date.now()}`, { cache: "no-store" });
-      if (rawRes.ok) {
-        cloudChar = await rawRes.json();
+    // Strategy 1: Direct GitHub REST API if fresh sync requested (Instant, bypasses CDN cache lag)
+    if (forceFresh) {
+      try {
+        const apiRes = await fetch(`${GITHUB_GIST_API_URL}?t=${Date.now()}`, {
+          headers: { "Accept": "application/vnd.github.v3+json" }
+        });
+        if (apiRes.ok) {
+          const json = await apiRes.json();
+          if (json && json.files && json.files["synced_character.json"]) {
+            cloudChar = JSON.parse(json.files["synced_character.json"].content);
+          }
+        }
+      } catch (apiErr) {
+        console.warn("GitHub REST API fetch failed, falling back to raw Gist:", apiErr);
       }
-    } catch (rawErr) {
-      console.warn("Raw Gist fetch failed, trying REST API:", rawErr);
     }
 
-    // Strategy 2: GitHub REST API fallback
+    // Strategy 2: Raw Gist URL (Fast background check)
     if (!cloudChar) {
-      const res = await fetch(`${GITHUB_GIST_API_URL}?t=${Date.now()}`, {
-        headers: { "Accept": "application/vnd.github.v3+json" }
-      });
-      if (res.ok) {
-        const json = await res.json();
-        if (json && json.files && json.files["synced_character.json"]) {
-          cloudChar = JSON.parse(json.files["synced_character.json"].content);
+      try {
+        const rawRes = await fetch(`${GITHUB_GIST_RAW_URL}?t=${Date.now()}`, { cache: "no-store" });
+        if (rawRes.ok) {
+          cloudChar = await rawRes.json();
         }
+      } catch (rawErr) {
+        console.warn("Raw Gist fetch failed, trying REST API:", rawErr);
       }
+    }
+
+    // Strategy 3: REST API fallback if raw failed
+    if (!cloudChar && !forceFresh) {
+      try {
+        const res = await fetch(`${GITHUB_GIST_API_URL}?t=${Date.now()}`, {
+          headers: { "Accept": "application/vnd.github.v3+json" }
+        });
+        if (res.ok) {
+          const json = await res.json();
+          if (json && json.files && json.files["synced_character.json"]) {
+            cloudChar = JSON.parse(json.files["synced_character.json"].content);
+          }
+        }
+      } catch (_) {}
     }
 
     if (!cloudChar || !cloudChar.name) return null;
@@ -1540,7 +1561,7 @@ async function checkCloudCharacterSync() {
 }
 window.checkCloudCharacterSync = checkCloudCharacterSync;
 
-// Direct 1-Click Header Sync Action & Companion Server Bridge
+// Direct 1-Click Header Sync Action & Multi-Computer Bridge
 async function executeGameSyncFromSite() {
   const btnHeader = document.getElementById("btnHeaderDirectSync");
   const origHeader = btnHeader ? btnHeader.innerHTML : "⚡ Sync";
@@ -1557,74 +1578,99 @@ async function executeGameSyncFromSite() {
     feedbackEl.textContent = "⚡ Syncing live character data...";
   }
 
-  const isLocalOrigin = (location.hostname === "localhost" || location.hostname === "127.0.0.1" || location.protocol === "http:");
+  // Step 1: Check GitHub Cloud Gist with forceFresh=true (instant REST API)
+  let cloudResult = null;
+  try {
+    cloudResult = await checkCloudCharacterSync(true);
+  } catch (cErr) {
+    console.warn("Cloud Gist fetch check failed:", cErr);
+  }
 
-  // If running on local server, try local companion server first
-  if (isLocalOrigin) {
+  // Step 2: If running directly on localhost, check local companion server with a strict 1200ms timeout
+  const isLocalHost = (location.hostname === "localhost" || location.hostname === "127.0.0.1");
+  let localResult = null;
+  if (isLocalHost) {
     try {
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 1200);
       const res = await fetch("http://127.0.0.1:3888/api/sync", {
         method: "POST",
-        headers: { "Content-Type": "application/json" }
+        headers: { "Content-Type": "application/json" },
+        signal: controller.signal
       });
-      
+      clearTimeout(timeoutId);
       if (res.ok) {
         const json = await res.json();
         if (json && json.character) {
-          window.WOW_SYNCED_DATA = json.character;
-          if (typeof MAXROLL_GEAR_PRESETS !== "undefined" && MAXROLL_GEAR_PRESETS.chongo_live) {
-            MAXROLL_GEAR_PRESETS.chongo_live.items = json.character.liveGear;
-          }
-          if (json.character.professions) {
-            updateSyncedProfessionsUI(json.character.professions);
-          }
-          loadDetectedClientCharacter();
-          if (typeof renderPaperdoll === "function") renderPaperdoll(currentPresetKey);
-          if (typeof renderUpgradeAdvisor === "function") renderUpgradeAdvisor(currentLevel);
-
-          if (btnHeader) {
-            btnHeader.innerHTML = "✓ Synced!";
-            btnHeader.style.backgroundColor = "#4ade80";
-            btnHeader.style.color = "#000";
-            setTimeout(() => {
-              btnHeader.innerHTML = origHeader;
-              btnHeader.style.backgroundColor = "";
-              btnHeader.style.color = "";
-            }, 2500);
-          }
-
-          if (feedbackEl) {
-            feedbackEl.style.color = "#4ade80";
-            feedbackEl.innerHTML = `✓ Synced with game client: <strong>${json.character.name} (Lvl ${json.character.level})</strong>!<br><span style="font-size:0.75rem; color:#94a3b8;">💡 In WoW, type /reload before syncing to save new XP/gear to disk.</span>`;
-            setTimeout(() => {
-              feedbackEl.style.display = "none";
-              closeSyncModal();
-            }, 3500);
-          }
-          return;
+          localResult = json.character;
         }
       }
     } catch (localErr) {
-      console.log("Local server sync not available, falling back to cloud sync...", localErr);
+      console.log("Local companion server not active or timed out:", localErr.message);
     }
   }
 
-  // Cloud Sync (works seamlessly on GitHub Pages, 2nd PC, mobile, etc.)
-  const cloudResult = await checkCloudCharacterSync();
-  if (cloudResult) {
+  // Step 3: Choose whichever source is newer or higher level
+  let chosen = null;
+  let sourceDesc = "Cloud";
+
+  if (cloudResult && localResult) {
+    if (cloudResult.level > localResult.level) {
+      chosen = cloudResult;
+      sourceDesc = "Cloud Gist (Computer B)";
+    } else if (localResult.level > cloudResult.level) {
+      chosen = localResult;
+      sourceDesc = "Local Client";
+    } else {
+      const cloudTime = new Date(cloudResult.syncedAt || 0).getTime();
+      const localTime = new Date(localResult.syncedAt || 0).getTime();
+      if (cloudTime >= localTime) {
+        chosen = cloudResult;
+        sourceDesc = "Cloud Gist";
+      } else {
+        chosen = localResult;
+        sourceDesc = "Local Client";
+      }
+    }
+  } else if (cloudResult) {
+    chosen = cloudResult;
+    sourceDesc = "Cloud Gist";
+  } else if (localResult) {
+    chosen = localResult;
+    sourceDesc = "Local Client";
+  }
+
+  if (chosen) {
+    window.WOW_SYNCED_DATA = chosen;
+    if (typeof MAXROLL_GEAR_PRESETS !== "undefined" && MAXROLL_GEAR_PRESETS.chongo_live) {
+      MAXROLL_GEAR_PRESETS.chongo_live.items = chosen.liveGear;
+    }
+    if (chosen.level) {
+      userProfileState.name = chosen.name;
+      userProfileState.level = chosen.level;
+      setLevel(chosen.level);
+    }
+    updateCharacterProfileUI();
+    if (chosen.professions) {
+      updateSyncedProfessionsUI(chosen.professions);
+    }
+    if (typeof renderPaperdoll === "function") renderPaperdoll(currentPresetKey || "chongo_live");
+    if (typeof renderUpgradeAdvisor === "function") renderUpgradeAdvisor(currentLevel);
+
     if (btnHeader) {
-      btnHeader.innerHTML = "☁️ Synced!";
-      btnHeader.style.backgroundColor = "#38bdf8";
+      btnHeader.innerHTML = `✓ Lvl ${chosen.level} Synced!`;
+      btnHeader.style.backgroundColor = "#4ade80";
       btnHeader.style.color = "#000";
       setTimeout(() => {
         btnHeader.innerHTML = origHeader;
         btnHeader.style.backgroundColor = "";
         btnHeader.style.color = "";
-      }, 2500);
+      }, 3000);
     }
+
     if (feedbackEl) {
-      const timeStr = cloudResult.syncedAt ? new Date(cloudResult.syncedAt).toLocaleTimeString() : "recent";
-      feedbackEl.style.color = "#38bdf8";
-      feedbackEl.innerHTML = `☁️ Synced from Cloud Gist: <strong>${cloudResult.name} (Lvl ${cloudResult.level})</strong><br><span style="font-size:0.75rem; color:#94a3b8;">Equipped: ${cloudResult.liveGear.mainHand.name} • Saved at ${timeStr}<br>💡 In WoW, type <strong>/reload</strong> to write latest level/items to disk!</span>`;
+      feedbackEl.style.color = "#4ade80";
+      feedbackEl.innerHTML = `✓ Synced from ${sourceDesc}: <strong>${chosen.name} (Lvl ${chosen.level})</strong>!<br><span style="font-size:0.75rem; color:#94a3b8;">Equipped: ${chosen.liveGear && chosen.liveGear.mainHand ? chosen.liveGear.mainHand.name : "Staff"}<br>💡 In WoW, type <strong>/reload</strong> before syncing to write latest level/items to disk!</span>`;
       setTimeout(() => {
         feedbackEl.style.display = "none";
         closeSyncModal();
@@ -2985,7 +3031,10 @@ function renderSlot(elementId, itemData, isWeaponRow = false) {
   if (!el || !itemData) return;
 
   // Store data on the element for tooltip
-  el.dataset.itemJson = JSON.stringify(itemData);
+  try {
+    if (el.dataset) el.dataset.itemJson = JSON.stringify(itemData);
+    else el.setAttribute('data-item-json', JSON.stringify(itemData));
+  } catch (_) {}
 
   const iconBox = el.querySelector(".slot-icon-box");
   const nameEl = el.querySelector(".slot-item-name");
