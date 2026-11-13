@@ -262,5 +262,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🎣"
     }
   },
-  "syncedAt": "2026-11-13T12:37:31.073Z"
+  "syncedAt": "2026-11-13T13:04:33.858Z"
 };

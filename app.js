@@ -3152,33 +3152,33 @@ const NON_DUNGEON_GEAR_DATA = {
       "name": "Handcrafted Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "22 Armor",
-      "tip": "First crafted chest."
+      "source": "Leatherworking (Skill 1) / Vendor",
+      "stats": "28 Armor",
+      "tip": "Basic starter leather chest crafted from Ruined Leather Scraps."
     },
     "armorAlt": {
       "name": "Tattered Leather Vest",
       "slot": "Chest",
       "quality": "poor",
       "source": "Starting Gear / Vendor",
-      "stats": "18 Armor",
-      "tip": "Basic starter chestpiece."
+      "stats": "23 Armor",
+      "tip": "Initial starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "source": "Weapon Vendor (12 copper)",
+      "stats": "6-10 Damage (4.2 DPS)",
+      "tip": "Basic vendor staff available from starting zone weapon vendors."
     },
     "weaponAlt": {
-      "name": "Walking Stick",
+      "name": "Novice's Staff",
       "type": "Two-Hand Staff",
-      "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "quality": "poor",
+      "source": "Starting Gear",
+      "stats": "5-8 Damage (3.1 DPS)",
+      "tip": "Initial starter weapon."
     }
   },
   "2": {
@@ -3186,33 +3186,33 @@ const NON_DUNGEON_GEAR_DATA = {
       "name": "Handcrafted Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "22 Armor",
-      "tip": "First crafted chest."
+      "source": "Leatherworking (Skill 1) / Vendor",
+      "stats": "28 Armor",
+      "tip": "Basic starter leather chest crafted from Ruined Leather Scraps."
     },
     "armorAlt": {
       "name": "Tattered Leather Vest",
       "slot": "Chest",
       "quality": "poor",
       "source": "Starting Gear / Vendor",
-      "stats": "18 Armor",
-      "tip": "Basic starter chestpiece."
+      "stats": "23 Armor",
+      "tip": "Initial starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "source": "Weapon Vendor (12 copper)",
+      "stats": "6-10 Damage (4.2 DPS)",
+      "tip": "Basic vendor staff available from starting zone weapon vendors."
     },
     "weaponAlt": {
-      "name": "Walking Stick",
+      "name": "Novice's Staff",
       "type": "Two-Hand Staff",
-      "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "quality": "poor",
+      "source": "Starting Gear",
+      "stats": "5-8 Damage (3.1 DPS)",
+      "tip": "Initial starter weapon."
     }
   },
   "3": {
@@ -3220,33 +3220,33 @@ const NON_DUNGEON_GEAR_DATA = {
       "name": "Handcrafted Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "22 Armor",
-      "tip": "First crafted chest."
+      "source": "Leatherworking (Skill 1) / Vendor",
+      "stats": "28 Armor",
+      "tip": "Basic starter leather chest crafted from Ruined Leather Scraps."
     },
     "armorAlt": {
       "name": "Tattered Leather Vest",
       "slot": "Chest",
       "quality": "poor",
       "source": "Starting Gear / Vendor",
-      "stats": "18 Armor",
-      "tip": "Basic starter chestpiece."
+      "stats": "23 Armor",
+      "tip": "Initial starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "source": "Weapon Vendor (12 copper)",
+      "stats": "6-10 Damage (4.2 DPS)",
+      "tip": "Basic vendor staff available from starting zone weapon vendors."
     },
     "weaponAlt": {
-      "name": "Walking Stick",
+      "name": "Novice's Staff",
       "type": "Two-Hand Staff",
-      "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "quality": "poor",
+      "source": "Starting Gear",
+      "stats": "5-8 Damage (3.1 DPS)",
+      "tip": "Initial starter weapon."
     }
   },
   "4": {
@@ -3254,883 +3254,883 @@ const NON_DUNGEON_GEAR_DATA = {
       "name": "Handcrafted Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "22 Armor",
-      "tip": "First crafted chest."
+      "source": "Leatherworking (Skill 1) / Vendor",
+      "stats": "28 Armor",
+      "tip": "Basic starter leather chest crafted from Ruined Leather Scraps."
     },
     "armorAlt": {
       "name": "Tattered Leather Vest",
       "slot": "Chest",
       "quality": "poor",
       "source": "Starting Gear / Vendor",
-      "stats": "18 Armor",
-      "tip": "Basic starter chestpiece."
+      "stats": "23 Armor",
+      "tip": "Initial starter chestpiece."
     },
     "weaponPrimary": {
       "name": "Walking Stick",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "source": "Weapon Vendor (12 copper)",
+      "stats": "6-10 Damage (4.2 DPS)",
+      "tip": "Basic vendor staff available from starting zone weapon vendors."
     },
     "weaponAlt": {
-      "name": "Heavy Spiked Club",
+      "name": "Novice's Staff",
       "type": "Two-Hand Staff",
-      "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.8 DPS",
-      "tip": "Early 2H club."
+      "quality": "poor",
+      "source": "Starting Gear",
+      "stats": "5-8 Damage (3.1 DPS)",
+      "tip": "Initial starter weapon."
     }
   },
   "5": {
     "armorPrimary": {
-      "name": "Gardening Pants",
-      "slot": "Legs",
-      "quality": "common",
-      "source": "Solo Quest: Gustberry Lowlands",
-      "stats": "38 Armor, +2 Stamina, +1 Spirit",
-      "tip": "Guaranteed quest reward pants."
-    },
-    "armorAlt": {
       "name": "Handcrafted Leather Pants",
       "slot": "Legs",
       "quality": "common",
-      "source": "Leatherworking / Vendor",
+      "source": "Leatherworking (Skill 15) / Vendor",
+      "stats": "25 Armor",
+      "tip": "First crafted leather leg armor for physical defense."
+    },
+    "armorAlt": {
+      "name": "Battered Leather Pants",
+      "slot": "Legs",
+      "quality": "poor",
+      "source": "Starting Gear / Vendor",
       "stats": "20 Armor",
-      "tip": "Crafted at LW 20."
+      "tip": "Basic starter pants."
     },
     "weaponPrimary": {
-      "name": "Walking Stick",
+      "name": "Quarterstaff",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.1 DPS",
-      "tip": "Basic vendor staff."
+      "source": "Weapon Vendor (1s 54c)",
+      "stats": "11-17 Damage (6.1 DPS)",
+      "tip": "Immediate DPS upgrade over Walking Stick from weapon vendors."
     },
     "weaponAlt": {
       "name": "Heavy Spiked Club",
-      "type": "Two-Hand Staff",
+      "type": "Two-Hand Mace",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.8 DPS",
-      "tip": "Early 2H club."
+      "source": "Weapon Vendor (1s 44c)",
+      "stats": "11-18 Damage (5.2 DPS)",
+      "tip": "Two-handed blunt mace alternative from weapon vendors."
     }
   },
   "6": {
     "armorPrimary": {
-      "name": "Gardening Pants",
-      "slot": "Legs",
-      "quality": "common",
-      "source": "Solo Quest: Gustberry Lowlands",
-      "stats": "38 Armor, +2 Stamina, +1 Spirit",
-      "tip": "Guaranteed quest reward pants."
-    },
-    "armorAlt": {
       "name": "Handcrafted Leather Pants",
       "slot": "Legs",
       "quality": "common",
-      "source": "Leatherworking (Skill 30)",
-      "stats": "24 Armor",
-      "tip": "Crafted leather leggings."
+      "source": "Leatherworking (Skill 15) / Vendor",
+      "stats": "25 Armor",
+      "tip": "First crafted leather leg armor for physical defense."
+    },
+    "armorAlt": {
+      "name": "Battered Leather Pants",
+      "slot": "Legs",
+      "quality": "poor",
+      "source": "Starting Gear / Vendor",
+      "stats": "20 Armor",
+      "tip": "Basic starter pants."
     },
     "weaponPrimary": {
       "name": "Quarterstaff",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "7.1 DPS",
-      "tip": "Solid vendor staff."
+      "source": "Weapon Vendor (1s 54c)",
+      "stats": "11-17 Damage (6.1 DPS)",
+      "tip": "Immediate DPS upgrade over Walking Stick from weapon vendors."
     },
     "weaponAlt": {
       "name": "Heavy Spiked Club",
-      "type": "Two-Hand Staff",
+      "type": "Two-Hand Mace",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.8 DPS",
-      "tip": "Early 2H club."
+      "source": "Weapon Vendor (1s 44c)",
+      "stats": "11-18 Damage (5.2 DPS)",
+      "tip": "Two-handed blunt mace alternative from weapon vendors."
     }
   },
   "7": {
     "armorPrimary": {
-      "name": "Bandit's Jerkin",
+      "name": "Handstitched Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Solo Quest / Drop",
-      "stats": "42 Armor, +2 Agility, +1 Strength",
-      "tip": "Solid early physical chest."
+      "source": "Leatherworking (Skill 40) / AH",
+      "stats": "45 Armor",
+      "tip": "Sturdy crafted leather vest offering 45 raw armor. Currently equipped on Chongo!"
     },
     "armorAlt": {
-      "name": "Handcrafted Leather Vest",
+      "name": "Embossed Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Leatherworking / Vendor",
-      "stats": "22 Armor",
-      "tip": "Starter crafted leather chest."
+      "source": "Leatherworking (Skill 55) / Vendor",
+      "stats": "56 Armor",
+      "tip": "Heavy vendor/crafted chestpiece with 56 raw armor."
     },
     "weaponPrimary": {
       "name": "Quarterstaff",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "7.1 DPS",
-      "tip": "Solid vendor staff."
+      "source": "Weapon Vendor (1s 54c)",
+      "stats": "11-17 Damage (6.1 DPS)",
+      "tip": "Immediate DPS upgrade over Walking Stick from weapon vendors."
     },
     "weaponAlt": {
       "name": "Heavy Spiked Club",
-      "type": "Two-Hand Staff",
+      "type": "Two-Hand Mace",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "5.8 DPS",
-      "tip": "Early 2H club."
+      "source": "Weapon Vendor (1s 44c)",
+      "stats": "11-18 Damage (5.2 DPS)",
+      "tip": "Two-handed blunt mace alternative from weapon vendors."
     }
   },
   "8": {
     "armorPrimary": {
-      "name": "Bandit's Jerkin",
+      "name": "Handstitched Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Solo Quest / Drop",
-      "stats": "42 Armor, +2 Agility, +1 Strength",
-      "tip": "Solid early physical chest."
+      "source": "Leatherworking (Skill 40) / AH",
+      "stats": "45 Armor",
+      "tip": "Sturdy crafted leather vest offering 45 raw armor. Currently equipped on Chongo!"
     },
     "armorAlt": {
       "name": "Embossed Leather Vest",
       "slot": "Chest",
       "quality": "common",
       "source": "Leatherworking (Skill 55) / Vendor",
-      "stats": "32 Armor",
-      "tip": "Sturdy crafted leather vest."
+      "stats": "56 Armor",
+      "tip": "Heavy vendor/crafted chestpiece with 56 raw armor."
     },
     "weaponPrimary": {
       "name": "Quarterstaff",
       "type": "Two-Hand Staff",
       "quality": "common",
-      "source": "Weapon Vendor",
-      "stats": "7.1 DPS",
-      "tip": "Solid vendor staff."
+      "source": "Weapon Vendor (1s 54c)",
+      "stats": "11-17 Damage (6.1 DPS)",
+      "tip": "Immediate DPS upgrade over Walking Stick from weapon vendors."
     },
     "weaponAlt": {
-      "name": "Staff of the Windcaller",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: Zephras Isle",
-      "stats": "+3 Spirit, +2 Stamina",
-      "tip": "Spirit stat stick."
+      "name": "Heavy Spiked Club",
+      "type": "Two-Hand Mace",
+      "quality": "common",
+      "source": "Weapon Vendor (1s 44c)",
+      "stats": "11-18 Damage (5.2 DPS)",
+      "tip": "Two-handed blunt mace alternative from weapon vendors."
     }
   },
   "9": {
     "armorPrimary": {
-      "name": "Bandit's Jerkin",
+      "name": "Handstitched Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Solo Quest / Drop",
-      "stats": "42 Armor, +2 Agility, +1 Strength",
-      "tip": "Solid early physical chest."
+      "source": "Leatherworking (Skill 40) / AH",
+      "stats": "45 Armor",
+      "tip": "Sturdy crafted leather vest offering 45 raw armor. Currently equipped on Chongo!"
     },
     "armorAlt": {
       "name": "Embossed Leather Vest",
       "slot": "Chest",
       "quality": "common",
       "source": "Leatherworking (Skill 55) / Vendor",
-      "stats": "32 Armor",
-      "tip": "Sturdy crafted leather vest."
+      "stats": "56 Armor",
+      "tip": "Heavy vendor/crafted chestpiece with 56 raw armor."
     },
     "weaponPrimary": {
       "name": "Oakthrush Staff",
       "type": "Two-Hand Staff",
       "quality": "uncommon",
-      "source": "Solo Quest: The Master's Glaive",
-      "stats": "12.8 DPS, +2 Strength (+4 AP), +2 Stamina (+20 HP)",
-      "tip": "⭐ Guaranteed quest reward. Best Bear weapon at level 9."
+      "source": "Solo Quest: The Fragments Within (Darkshore)",
+      "stats": "21-32 Damage (9.5 DPS), +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
+      "tip": "Guaranteed solo quest reward from Darkshore. Great early leveling stats."
     },
     "weaponAlt": {
-      "name": "Staff of the Windcaller",
+      "name": "Sturdy Quarterstaff of the Bear",
       "type": "Two-Hand Staff",
       "quality": "uncommon",
-      "source": "Solo Quest: Zephras Isle",
-      "stats": "+3 Spirit, +2 Stamina",
-      "tip": "Spirit stat stick."
+      "source": "Auction House / BoE World Drop",
+      "stats": "20-30 Damage (8.9 DPS), +3 Strength (+6 AP), +3 Stamina (+30 HP)",
+      "tip": "Classic Bear leveling staff offering raw Strength and Stamina."
     }
   },
   "10": {
     "armorPrimary": {
-      "name": "Hunting Tunic of the Bear",
+      "name": "Embossed Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking (Skill 55) / Vendor",
+      "stats": "56 Armor",
+      "tip": "Solid 56 Armor leather chestpiece."
+    },
+    "armorAlt": {
+      "name": "Handstitched Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking (Skill 40) / AH",
+      "stats": "45 Armor",
+      "tip": "Reliable leveling chestpiece currently worn by Chongo."
+    },
+    "weaponPrimary": {
+      "name": "Oakthrush Staff",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Solo Quest: The Fragments Within (Darkshore)",
+      "stats": "21-32 Damage (9.5 DPS), +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
+      "tip": "Guaranteed solo quest reward from Darkshore. Great early leveling stats."
+    },
+    "weaponAlt": {
+      "name": "Sturdy Quarterstaff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "20-30 Damage (8.9 DPS), +3 Strength (+6 AP), +3 Stamina (+30 HP)",
+      "tip": "Classic Bear leveling staff offering raw Strength and Stamina."
+    }
+  },
+  "11": {
+    "armorPrimary": {
+      "name": "Embossed Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking (Skill 55) / Vendor",
+      "stats": "56 Armor",
+      "tip": "Solid 56 Armor leather chestpiece."
+    },
+    "armorAlt": {
+      "name": "Handstitched Leather Vest",
+      "slot": "Chest",
+      "quality": "common",
+      "source": "Leatherworking (Skill 40) / AH",
+      "stats": "45 Armor",
+      "tip": "Reliable leveling chestpiece currently worn by Chongo."
+    },
+    "weaponPrimary": {
+      "name": "Oakthrush Staff",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Solo Quest: The Fragments Within (Darkshore)",
+      "stats": "21-32 Damage (9.5 DPS), +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
+      "tip": "Guaranteed solo quest reward from Darkshore. Great early leveling stats."
+    },
+    "weaponAlt": {
+      "name": "Sturdy Quarterstaff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "20-30 Damage (8.9 DPS), +3 Strength (+6 AP), +3 Stamina (+30 HP)",
+      "tip": "Classic Bear leveling staff offering raw Strength and Stamina."
+    }
+  },
+  "12": {
+    "armorPrimary": {
+      "name": "Shucking Gloves",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Solo Quest: Fruit of the Sea (Darkshore)",
+      "stats": "45 Armor, +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
+      "tip": "Solo quest reward in Darkshore. Currently equipped on Chongo!"
+    },
+    "armorAlt": {
+      "name": "Prospector's Mitts",
+      "slot": "Hands",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "43 Armor, +2 Agility, +1 Strength",
+      "tip": "BoE leather gloves with offensive feral stats."
+    },
+    "weaponPrimary": {
+      "name": "Oakthrush Staff",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Solo Quest: The Fragments Within (Darkshore)",
+      "stats": "21-32 Damage (9.5 DPS), +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
+      "tip": "Guaranteed solo quest reward from Darkshore. Great early leveling stats."
+    },
+    "weaponAlt": {
+      "name": "Sturdy Quarterstaff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "20-30 Damage (8.9 DPS), +3 Strength (+6 AP), +3 Stamina (+30 HP)",
+      "tip": "Classic Bear leveling staff offering raw Strength and Stamina."
+    }
+  },
+  "13": {
+    "armorPrimary": {
+      "name": "Prospector's Sash",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "42 Armor, +3 Stamina (+30 HP), +2 Spirit",
+      "tip": "Green BoE leather belt offering stamina and spirit."
+    },
+    "armorAlt": {
+      "name": "Bard's Belt of the Tiger",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "39 Armor, +2 Strength (+4 AP), +2 Agility (+2 Cat AP / +0.1% Crit)",
+      "tip": "Offensive leveling belt with Strength and Agility. Currently equipped on Chongo!"
+    },
+    "weaponPrimary": {
+      "name": "Oakthrush Staff",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Solo Quest: The Fragments Within (Darkshore)",
+      "stats": "21-32 Damage (9.5 DPS), +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
+      "tip": "Guaranteed solo quest reward from Darkshore. Great early leveling stats."
+    },
+    "weaponAlt": {
+      "name": "Sturdy Quarterstaff of the Bear",
+      "type": "Two-Hand Staff",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "20-30 Damage (8.9 DPS), +3 Strength (+6 AP), +3 Stamina (+30 HP)",
+      "tip": "Classic Bear leveling staff offering raw Strength and Stamina."
+    }
+  },
+  "14": {
+    "armorPrimary": {
+      "name": "Bandit Bracers of the Bear",
+      "slot": "Wrists",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "33 Armor, +2 Strength (+4 AP), +2 Stamina (+20 HP)",
+      "tip": "Sturdy green leather bracers with Strength and Stamina."
+    },
+    "armorAlt": {
+      "name": "Ridgeback Bracers",
+      "slot": "Wrists",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "33 Armor, +2 Stamina (+20 HP), +2 Spirit",
+      "tip": "Defensive leather bracers currently equipped on Chongo."
+    },
+    "weaponPrimary": {
+      "name": "Heavy Spiked Mace",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Weapon Vendor: Nillen Andemar (Loch Modan) / Brog Hamfist (Redridge)",
+      "stats": "34-51 Damage (12.5 DPS), +6 Strength (+12 AP)",
+      "tip": "Top pick! Buy for 18 silver from vendors in Loch Modan or Redridge. Huge +6 Strength boost."
+    },
+    "weaponAlt": {
+      "name": "Ironwood Maul",
+      "type": "Two-Hand Mace",
+      "quality": "uncommon",
+      "source": "Weapon Vendor: Antonio Perelli / Brog Hamfist",
+      "stats": "26-40 Damage (11.8 DPS), +5 Stamina (+50 HP)",
+      "tip": "Vendor-bought defensive 2H mace offering +5 Stamina (+50 HP)."
+    }
+  },
+  "15": {
+    "armorPrimary": {
+      "name": "Dark Leather Tunic",
       "slot": "Chest",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "64 Armor, +3 Strength (+6 AP), +3 Stamina (+30 HP)",
-      "tip": "Huge stat boost once you unlock Bear Form at 10!"
+      "source": "Leatherworking (Skill 100) / AH",
+      "stats": "78 Armor, +6 Agility (+6 Cat AP / +0.3% Crit)",
+      "tip": "First major crafted Agility leather chest for Druids!"
     },
     "armorAlt": {
       "name": "Embossed Leather Vest",
       "slot": "Chest",
       "quality": "common",
-      "source": "Leatherworking (Skill 55)",
-      "stats": "32 Armor",
-      "tip": "Solid baseline armor chest."
+      "source": "Leatherworking (Skill 55) / Vendor",
+      "stats": "56 Armor",
+      "tip": "Reliable raw armor chestpiece."
     },
     "weaponPrimary": {
-      "name": "Oakthrush Staff",
-      "type": "Two-Hand Staff",
+      "name": "Heavy Spiked Mace",
+      "type": "Two-Hand Mace",
       "quality": "uncommon",
-      "source": "Solo Quest: The Master's Glaive",
-      "stats": "12.8 DPS, +2 Strength (+4 AP), +2 Stamina (+20 HP)",
-      "tip": "⭐ Guaranteed quest reward. Best Bear weapon at level 10."
+      "source": "Weapon Vendor: Nillen Andemar (Loch Modan) / Brog Hamfist (Redridge)",
+      "stats": "34-51 Damage (12.5 DPS), +6 Strength (+12 AP)",
+      "tip": "Top pick! Buy for 18 silver from vendors in Loch Modan or Redridge. Huge +6 Strength boost."
     },
     "weaponAlt": {
-      "name": "Sturdy Quarterstaff of the Bear",
-      "type": "Two-Hand Staff",
+      "name": "Ironwood Maul",
+      "type": "Two-Hand Mace",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+4 Strength (+8 AP), +4 Stamina (+40 HP)",
-      "tip": "AH alternative if not questing in Darkshore."
+      "source": "Weapon Vendor: Antonio Perelli / Brog Hamfist",
+      "stats": "26-40 Damage (11.8 DPS), +5 Stamina (+50 HP)",
+      "tip": "Vendor-bought defensive 2H mace offering +5 Stamina (+50 HP)."
     }
   },
-  "11": {
+  "16": {
     "armorPrimary": {
-      "name": "Disciple's Vest of the Owl",
-      "slot": "Chest",
+      "name": "Prospector's Woolies",
+      "slot": "Legs",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "62 Armor, +3 Intellect, +3 Spirit",
-      "tip": "Great mana pool & regeneration between Bear pulls."
+      "source": "Auction House / BoE World Drop",
+      "stats": "69 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +1 Strength (+2 AP)",
+      "tip": "Agility and Strength leather legs for leveling."
     },
     "armorAlt": {
-      "name": "Hunting Tunic of the Bear",
-      "slot": "Chest",
+      "name": "Smith's Trousers",
+      "slot": "Legs",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "45 Armor, +3 Strength, +3 Stamina",
-      "tip": "Top solo physical leveling chest."
+      "source": "Auction House / BoE World Drop",
+      "stats": "68 Armor, +4 Strength (+8 AP), +4 Agility (+4 Cat AP / +0.2% Crit)",
+      "tip": "Balanced Strength and Agility pants currently equipped on Chongo."
     },
     "weaponPrimary": {
-      "name": "Oakthrush Staff",
-      "type": "Two-Hand Staff",
+      "name": "Heavy Spiked Mace",
+      "type": "Two-Hand Mace",
       "quality": "uncommon",
-      "source": "Solo Quest: The Master's Glaive",
-      "stats": "12.8 DPS, +2 Strength, +2 Stamina",
-      "tip": "Main feral weapon."
+      "source": "Weapon Vendor: Nillen Andemar (Loch Modan) / Brog Hamfist (Redridge)",
+      "stats": "34-51 Damage (12.5 DPS), +6 Strength (+12 AP)",
+      "tip": "Top pick! Buy for 18 silver from vendors in Loch Modan or Redridge. Huge +6 Strength boost."
     },
     "weaponAlt": {
-      "name": "Sturdy Quarterstaff of the Bear",
-      "type": "Two-Hand Staff",
+      "name": "Ironwood Maul",
+      "type": "Two-Hand Mace",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+4 Strength, +4 Stamina",
-      "tip": "AH BoE 2H staff."
+      "source": "Weapon Vendor: Antonio Perelli / Brog Hamfist",
+      "stats": "26-40 Damage (11.8 DPS), +5 Stamina (+50 HP)",
+      "tip": "Vendor-bought defensive 2H mace offering +5 Stamina (+50 HP)."
     }
   },
-  "12": {
+  "17": {
     "armorPrimary": {
-      "name": "Evergreen Gloves",
+      "name": "Prospector's Mitts of the Bear",
       "slot": "Hands",
       "quality": "uncommon",
-      "source": "Solo Quest: The Absent Minded Prospector",
-      "stats": "44 Armor, +2 Agility (+0.1% Crit), +3 Stamina (+30 HP)",
-      "tip": "Guaranteed solo quest gloves with real feral stats!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "47 Armor, +3 Strength (+6 AP), +3 Stamina (+30 HP)",
+      "tip": "Feral leveling gloves with Strength and Stamina."
     },
     "armorAlt": {
       "name": "Shucking Gloves",
       "slot": "Hands",
       "quality": "uncommon",
       "source": "Solo Quest: Fruit of the Sea (Darkshore)",
-      "stats": "44 Armor, +2 Stamina (+20 HP), +2 Intellect",
-      "tip": "Alternative Darkshore solo quest reward."
+      "stats": "45 Armor, +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
+      "tip": "Currently equipped on Chongo."
     },
     "weaponPrimary": {
-      "name": "Oakthrush Staff",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: The Master's Glaive",
-      "stats": "12.8 DPS, +2 Strength, +2 Stamina",
-      "tip": "Excellent stats."
-    },
-    "weaponAlt": {
-      "name": "Sturdy Quarterstaff of the Bear",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+4 Strength, +4 Stamina",
-      "tip": "Heavy HP & AP."
-    }
-  },
-  "13": {
-    "armorPrimary": {
-      "name": "Prospector's Sash of the Bear",
-      "slot": "Waist",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "45 Armor, +3 Stamina, +3 Agility (or +3 Str)",
-      "tip": "First green belt with real stats."
-    },
-    "armorAlt": {
-      "name": "Embossed Leather Belt",
-      "slot": "Waist",
-      "quality": "common",
-      "source": "Leatherworking (Skill 75) / AH",
-      "stats": "34 Armor",
-      "tip": "Reliable crafted waist piece."
-    },
-    "weaponPrimary": {
-      "name": "Oakthrush Staff",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: The Master's Glaive",
-      "stats": "12.8 DPS, +2 Strength, +2 Stamina",
-      "tip": "Solid weapon."
-    },
-    "weaponAlt": {
-      "name": "Sturdy Quarterstaff of the Bear",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+4 Strength, +4 Stamina",
-      "tip": "AH weapon."
-    }
-  },
-  "14": {
-    "armorPrimary": {
-      "name": "Tiger Band / Savanna Ring",
-      "slot": "Finger",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+2 Strength, +2 Agility",
-      "tip": "First available rings begin around level 14!"
-    },
-    "armorAlt": {
-      "name": "Prairie Ring of the Bear",
-      "slot": "Finger",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+2 Strength, +2 Stamina",
-      "tip": "Survival ring for Bear Form."
-    },
-    "weaponPrimary": {
-      "name": "Heavy Spiked Mace of the Bear",
+      "name": "Heavy Spiked Mace",
       "type": "Two-Hand Mace",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength (+10 AP), +4 Stamina (+40 HP)",
-      "tip": "⭐ Premier level 14 Two-Hander for Bear Form!"
+      "source": "Weapon Vendor: Nillen Andemar (Loch Modan) / Brog Hamfist (Redridge)",
+      "stats": "34-51 Damage (12.5 DPS), +6 Strength (+12 AP)",
+      "tip": "Top pick! Buy for 18 silver from vendors in Loch Modan or Redridge. Huge +6 Strength boost."
     },
     "weaponAlt": {
-      "name": "Oaken Philosophy",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: The Absent Minded Prospector",
-      "stats": "14.8 DPS, +4 Intellect, +3 Spirit",
-      "tip": "Regen staff."
-    }
-  },
-  "15": {
-    "armorPrimary": {
-      "name": "Prospector's Bracers of the Bear",
-      "slot": "Wrists",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "29 Armor, +3 Strength (+6 AP), +2 Stamina (+20 HP)",
-      "tip": "First green bracers with strength."
-    },
-    "armorAlt": {
-      "name": "Embossed Leather Bracers",
-      "slot": "Wrists",
-      "quality": "common",
-      "source": "Leatherworking (Skill 60)",
-      "stats": "24 Armor",
-      "tip": "Simple crafted bracers."
-    },
-    "weaponPrimary": {
-      "name": "Heavy Spiked Mace of the Bear",
+      "name": "Ironwood Maul",
       "type": "Two-Hand Mace",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "Top 2H mace."
-    },
-    "weaponAlt": {
-      "name": "Elm Staff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+4 Strength, +4 Agility",
-      "tip": "+12 total Cat AP."
+      "source": "Weapon Vendor: Antonio Perelli / Brog Hamfist",
+      "stats": "26-40 Damage (11.8 DPS), +5 Stamina (+50 HP)",
+      "tip": "Vendor-bought defensive 2H mace offering +5 Stamina (+50 HP)."
     }
   },
-  "16": {
+  "18": {
     "armorPrimary": {
       "name": "Deviate Scale Belt",
       "slot": "Waist",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 115) / AH",
-      "stats": "52 Armor (+145 Bear Armor), +5 Agility, +6 Stamina (+60 HP), +5 Spirit",
-      "tip": "⭐ One of the best leveling belts in Classic. Craft or buy on AH!"
+      "stats": "51 Armor, +6 Stamina (+60 HP), +5 Agility (+0.25% Crit), +3 Spirit",
+      "tip": "Premier leveling belt crafted by Leatherworkers. Fantastic Stamina and Agility!"
     },
     "armorAlt": {
       "name": "Prospector's Sash",
       "slot": "Waist",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "42 Armor, +3 Stamina, +2 Spirit",
-      "tip": "Budget world drop belt."
+      "source": "Auction House / BoE World Drop",
+      "stats": "42 Armor, +3 Stamina (+30 HP), +2 Spirit",
+      "tip": "Solid alternative BoE belt."
     },
     "weaponPrimary": {
-      "name": "Heavy Spiked Mace of the Bear",
-      "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "High Bear DPS & health."
-    },
-    "weaponAlt": {
-      "name": "Sturdy Quarterstaff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+4 Strength, +4 Agility",
-      "tip": "Offensive hybrid staff."
-    }
-  },
-  "17": {
-    "armorPrimary": {
-      "name": "Hillborne Gloves",
-      "slot": "Hands",
-      "quality": "uncommon",
-      "source": "Solo Quest: A Free Lunch (Redridge)",
-      "stats": "51 Armor, +4 Strength (+8 AP), +3 Stamina (+30 HP)",
-      "tip": "Guaranteed solo quest reward in Lakeshire!"
-    },
-    "armorAlt": {
-      "name": "Embossed Leather Gloves",
-      "slot": "Hands",
-      "quality": "common",
-      "source": "Leatherworking (Skill 60)",
-      "stats": "32 Armor",
-      "tip": "Crafted leather gloves."
-    },
-    "weaponPrimary": {
-      "name": "Heavy Spiked Mace of the Bear",
-      "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "Great 2H."
-    },
-    "weaponAlt": {
       "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
       "quality": "rare",
-      "source": "Quest: The Defias Brotherhood",
-      "stats": "20.3 DPS, +11 Intellect (+165 Mana), +5 Spirit",
-      "tip": "Guaranteed quest staff from the Defias Brotherhood storyline."
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
+    },
+    "weaponAlt": {
+      "name": "Smite's Mighty Hammer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
-  "18": {
+  "19": {
     "armorPrimary": {
       "name": "Tunic of Westfall",
       "slot": "Chest",
       "quality": "rare",
       "source": "Solo Quest: The Defias Brotherhood (Westfall)",
-      "stats": "74 Armor (+207 Bear Armor), +11 Agility (+11 Cat AP / +0.55% Crit), +5 Stamina (+50 HP)",
-      "tip": "🔥 THE GREATEST SOLO QUEST CHEST IN CLASSIC. Massive agility for Cat and Bear!"
+      "stats": "92 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Stamina (+50 HP)",
+      "tip": "Incredible solo quest reward! Huge +11 Agility gives Attack Power and Melee Crit."
     },
     "armorAlt": {
       "name": "Blackened Defias Armor",
       "slot": "Chest",
       "quality": "rare",
-      "source": "The Deadmines - Edwin VanCleef",
-      "stats": "92 Armor, +11 Stamina, +4 Strength, +3 Agility",
-      "tip": "Supreme dungeon alternative."
+      "source": "Deadmines: Edwin VanCleef",
+      "stats": "92 Armor, +11 Stamina (+110 HP), +4 Strength (+8 AP), +3 Agility",
+      "tip": "Massive +11 Stamina tanking chest from Edwin VanCleef."
     },
     "weaponPrimary": {
       "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
       "quality": "rare",
-      "source": "Quest: The Defias Brotherhood",
-      "stats": "20.3 DPS, +11 Intellect (+165 Mana), +5 Spirit",
-      "tip": "Defias Brotherhood quest reward with gigantic mana pool."
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
     },
     "weaponAlt": {
-      "name": "Quarterstaff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+5 Strength (+10 AP), +5 Agility (+5 AP / Crit)",
-      "tip": "+15 Cat AP!"
-    }
-  },
-  "19": {
-    "armorPrimary": {
-      "name": "Feet of the Lynx",
-      "slot": "Feet",
+      "name": "Smite's Mighty Hammer",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Auction House BoE",
-      "stats": "44 Armor, +8 Agility (+8 Cat AP / +0.4% Crit), +3 Strength (+6 AP)",
-      "tip": "👑 Famous twink boots. Massive agility right before unlocking Cat Form!"
-    },
-    "armorAlt": {
-      "name": "Dark Leather Boots",
-      "slot": "Feet",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 100) / AH",
-      "stats": "54 Armor, +4 Agility, +3 Stamina",
-      "tip": "Crafted boots for Cat Form."
-    },
-    "weaponPrimary": {
-      "name": "Quarterstaff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+5 Strength, +5 Agility",
-      "tip": "+15 AP in Cat Form!"
-    },
-    "weaponAlt": {
-      "name": "Staff of Westfall",
-      "type": "Two-Hand Staff",
-      "quality": "rare",
-      "source": "Quest: The Defias Brotherhood",
-      "stats": "20.3 DPS, +11 Intellect, +5 Spirit",
-      "tip": "High intellect."
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
   "20": {
+    "armorPrimary": {
+      "name": "Prospector's Pads",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "64 Armor, +4 Stamina (+40 HP), +4 Spirit",
+      "tip": "First available leather shoulder armor for Druids in Classic WoW!"
+    },
+    "armorAlt": {
+      "name": "Hillman's Shoulders",
+      "slot": "Shoulders",
+      "quality": "uncommon",
+      "source": "Leatherworking (Skill 130) / AH",
+      "stats": "65 Armor, +5 Stamina (+50 HP), +4 Spirit",
+      "tip": "Crafted leather shoulders (requires level 21 to equip)."
+    },
+    "weaponPrimary": {
+      "name": "Staff of Westfall",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
+    },
+    "weaponAlt": {
+      "name": "Smite's Mighty Hammer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
+    }
+  },
+  "21": {
     "armorPrimary": {
       "name": "Hillman's Shoulders",
       "slot": "Shoulders",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 130) / AH",
-      "stats": "77 Armor (+215 Bear Armor), +5 Strength (+10 AP), +5 Stamina (+50 HP)",
-      "tip": "First premier crafted shoulder piece for Feral!"
+      "stats": "65 Armor, +5 Stamina (+50 HP), +4 Spirit",
+      "tip": "Crafted leather shoulders with solid Stamina and Spirit."
     },
     "armorAlt": {
       "name": "Prospector's Pads",
       "slot": "Shoulders",
       "quality": "uncommon",
-      "source": "Auction House BoE World Drop",
-      "stats": "64 Armor, +4 Stamina, +4 Spirit",
-      "tip": "Alternative world-drop leather shoulders."
+      "source": "Auction House / BoE World Drop",
+      "stats": "64 Armor, +4 Stamina (+40 HP), +4 Spirit",
+      "tip": "World drop leather shoulders."
     },
     "weaponPrimary": {
-      "name": "Quarterstaff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+5 Strength, +5 Agility",
-      "tip": "Cat Form unlocked at 20! Scales Claw & Shred."
-    },
-    "weaponAlt": {
       "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
       "quality": "rare",
-      "source": "Quest: The Defias Brotherhood",
-      "stats": "20.3 DPS, +11 Intellect, +5 Spirit",
-      "tip": "Defias quest staff."
-    }
-  },
-  "21": {
-    "armorPrimary": {
-      "name": "Dark Leather Tunic",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 100) / AH",
-      "stats": "88 Armor (+246 in Bear), +7 Agility, +6 Stamina (+60 HP)",
-      "tip": "Core crafted agility chest."
-    },
-    "armorAlt": {
-      "name": "Tunic of Westfall",
-      "slot": "Chest",
-      "quality": "rare",
-      "source": "Quest: The Defias Brotherhood",
-      "stats": "92 Armor, +11 Agility, +5 Stamina",
-      "tip": "Solo quest chest reward."
-    },
-    "weaponPrimary": {
-      "name": "Cedar Walking Stick of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "+18 Cat AP!"
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
     },
     "weaponAlt": {
-      "name": "Heavy Spiked Mace of the Bear",
+      "name": "Smite's Mighty Hammer",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "Solid Bear weapon."
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
   "22": {
     "armorPrimary": {
-      "name": "Dark Leather Tunic",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 100) / AH",
-      "stats": "88 Armor (+246 in Bear), +7 Agility, +6 Stamina (+60 HP)",
-      "tip": "Core crafted agility chest."
+      "name": "Wolfclaw Gloves",
+      "slot": "Hands",
+      "quality": "rare",
+      "source": "Auction House / BoE World Drop",
+      "stats": "61 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +6 Stamina (+60 HP), +5 Strength (+10 AP)",
+      "tip": "Incredible feral gloves packed with Strength, Agility, and Stamina!"
     },
     "armorAlt": {
-      "name": "Tunic of Westfall",
-      "slot": "Chest",
+      "name": "Brawler Gloves",
+      "slot": "Hands",
       "quality": "rare",
-      "source": "Quest: The Defias Brotherhood",
-      "stats": "92 Armor, +11 Agility, +5 Stamina",
-      "tip": "Solo quest chest reward."
+      "source": "Auction House / BoE World Drop",
+      "stats": "62 Armor, +8 Strength (+16 AP), +7 Stamina (+70 HP)",
+      "tip": "Heavy Strength and Stamina gloves for Bear tanking and brawling."
     },
     "weaponPrimary": {
-      "name": "Cedar Walking Stick of the Tiger",
+      "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "+18 Cat AP!"
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
     },
     "weaponAlt": {
-      "name": "Heavy Spiked Mace of the Bear",
+      "name": "Smite's Mighty Hammer",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "Solid Bear weapon."
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
   "23": {
     "armorPrimary": {
-      "name": "Dark Leather Tunic",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 100) / AH",
-      "stats": "88 Armor (+246 in Bear), +7 Agility, +6 Stamina (+60 HP)",
-      "tip": "Core crafted agility chest."
+      "name": "Brawler Gloves",
+      "slot": "Hands",
+      "quality": "rare",
+      "source": "Auction House / BoE World Drop",
+      "stats": "62 Armor, +8 Strength (+16 AP), +7 Stamina (+70 HP)",
+      "tip": "+8 Strength gives 16 Attack Power, perfect for Bear and Cat leveling."
     },
     "armorAlt": {
-      "name": "Toughened Leather Armor",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 155) / AH",
-      "stats": "98 Armor, +7 Stamina, +6 Agility",
-      "tip": "High armor crafted chest."
+      "name": "Wolfclaw Gloves",
+      "slot": "Hands",
+      "quality": "rare",
+      "source": "Auction House / BoE World Drop",
+      "stats": "61 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +6 Stamina (+60 HP), +5 Strength (+10 AP)",
+      "tip": "Balanced trifecta stats for Cat and Bear forms."
     },
     "weaponPrimary": {
-      "name": "Cedar Walking Stick of the Tiger",
+      "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "+18 Cat AP!"
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
     },
     "weaponAlt": {
-      "name": "Heavy Spiked Mace of the Bear",
+      "name": "Smite's Mighty Hammer",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "Solid Bear weapon."
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
   "24": {
     "armorPrimary": {
-      "name": "Barbaric Leggings",
-      "slot": "Legs",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 175) / AH",
-      "stats": "84 Armor (+235 in Bear), +7 Agility, +5 Strength",
-      "tip": "Superb crafted feral combat legs."
-    },
-    "armorAlt": {
       "name": "Dark Leather Pants",
       "slot": "Legs",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 115) / AH",
-      "stats": "67 Armor, +6 Agility, +4 Stamina",
-      "tip": "Crafted agility leggings."
+      "stats": "72 Armor, +8 Agility (+8 Cat AP / +0.4% Crit)",
+      "tip": "Crafted leather pants with pure Agility."
+    },
+    "armorAlt": {
+      "name": "Prospector's Woolies",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "69 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +1 Strength (+2 AP)",
+      "tip": "Agility leveling legs."
     },
     "weaponPrimary": {
-      "name": "Cedar Walking Stick of the Tiger",
+      "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "+18 Cat AP!"
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
     },
     "weaponAlt": {
-      "name": "Heavy Spiked Mace of the Bear",
+      "name": "Smite's Mighty Hammer",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "Solid Bear weapon."
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
   "25": {
     "armorPrimary": {
-      "name": "Barbaric Leggings",
-      "slot": "Legs",
+      "name": "Humbert's Helm",
+      "slot": "Head",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 175) / AH",
-      "stats": "84 Armor (+235 in Bear), +7 Agility, +5 Strength",
-      "tip": "Superb crafted feral combat legs."
-    },
-    "armorAlt": {
-      "name": "Dark Leather Pants",
-      "slot": "Legs",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 115) / AH",
-      "stats": "67 Armor, +6 Agility, +4 Stamina",
-      "tip": "Crafted agility leggings."
-    },
-    "weaponPrimary": {
-      "name": "Cedar Walking Stick of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "+18 Cat AP!"
-    },
-    "weaponAlt": {
-      "name": "Heavy Spiked Mace of the Bear",
-      "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "20.0 DPS, +5 Strength, +4 Stamina",
-      "tip": "Solid Bear weapon."
-    }
-  },
-  "26": {
-    "armorPrimary": {
-      "name": "Barbaric Leggings",
-      "slot": "Legs",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 175) / AH",
-      "stats": "84 Armor, +7 Agility, +5 Strength",
-      "tip": "Crafted feral legs."
+      "source": "Dun Garok Riflemen (Hillsbrad) / AH",
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "First accessible non-engineering leather helm in Vanilla WoW! Farmable in Hillsbrad."
     },
     "armorAlt": {
       "name": "Triprunner Dungarees",
       "slot": "Legs",
       "quality": "rare",
-      "source": "Gnomeregan Quest",
-      "stats": "82 Armor, +18 Agility, +4 Strength",
-      "tip": "Massive agility quest reward pants."
+      "source": "Solo Quest: The Grand Betrayal (Gnomeregan)",
+      "stats": "101 Armor, +18 Agility (+18 Cat AP / +0.9% Crit), +6 Stamina (+60 HP), +3 Strength (+6 AP)",
+      "tip": "Unbelievable quest reward leggings with +18 Agility! Lasts until level 40+."
     },
     "weaponPrimary": {
-      "name": "Dutiful Quarterstaff",
+      "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: Morbent Fel (Duskwood)",
-      "stats": "22.8 DPS, +7 Strength (+14 AP), +7 Stamina (+70 HP)",
-      "tip": "Outstanding Duskwood solo quest reward staff."
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
     },
     "weaponAlt": {
-      "name": "Hardened Iron Staff of the Tiger",
-      "type": "Two-Hand Staff",
+      "name": "Smite's Mighty Hammer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
+    }
+  },
+  "26": {
+    "armorPrimary": {
+      "name": "Forest Tracker Epaulets",
+      "slot": "Shoulders",
+      "quality": "rare",
+      "source": "Auction House / BoE World Drop",
+      "stats": "78 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Strength (+10 AP)",
+      "tip": "Massive shoulder upgrade with +11 Agility and +5 Strength."
+    },
+    "armorAlt": {
+      "name": "Hillman's Shoulders",
+      "slot": "Shoulders",
       "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "Offensive hybrid staff."
+      "source": "Leatherworking (Skill 130) / AH",
+      "stats": "65 Armor, +5 Stamina (+50 HP), +4 Spirit",
+      "tip": "Crafted defensive shoulders."
+    },
+    "weaponPrimary": {
+      "name": "Staff of Westfall",
+      "type": "Two-Hand Staff",
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
+    },
+    "weaponAlt": {
+      "name": "Smite's Mighty Hammer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
   "27": {
     "armorPrimary": {
-      "name": "Barbaric Shoulders",
-      "slot": "Shoulders",
+      "name": "Barbaric Bracers",
+      "slot": "Wrists",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 175) / AH",
-      "stats": "91 Armor (+255 in Bear), +8 Agility, +6 Strength",
-      "tip": "Great high agility shoulders."
+      "source": "Leatherworking (Skill 155) / AH",
+      "stats": "47 Armor, +6 Stamina (+60 HP), +4 Agility, +4 Spirit",
+      "tip": "Crafted leather bracers offering great Stamina and Agility."
     },
     "armorAlt": {
-      "name": "Forest Tracker Epaulets",
-      "slot": "Shoulders",
-      "quality": "rare",
-      "source": "Auction House (BoE World Drop)",
-      "stats": "78 Armor, +11 Agility, +5 Strength",
-      "tip": "Premier world-drop Feral shoulders."
+      "name": "Bandit Bracers of the Bear",
+      "slot": "Wrists",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "33 Armor, +2 Strength (+4 AP), +2 Stamina (+20 HP)",
+      "tip": "Earlier leveling bracers."
     },
     "weaponPrimary": {
-      "name": "Dutiful Quarterstaff",
+      "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: Morbent Fel (Duskwood)",
-      "stats": "22.8 DPS, +7 Strength (+14 AP), +7 Stamina (+70 HP)",
-      "tip": "Outstanding Duskwood solo quest reward staff."
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regeneration."
     },
     "weaponAlt": {
-      "name": "Hardened Iron Staff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "Offensive hybrid staff."
+      "name": "Smite's Mighty Hammer",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Deadmines: Mr. Smite (Drop)",
+      "stats": "55-83 Damage (19.7 DPS), +11 Strength (+22 AP), +4 Agility (+0.2% Crit)",
+      "tip": "Outstanding feral melee weapon packed with pure Strength and Agility."
     }
   },
   "28": {
     "armorPrimary": {
-      "name": "Barbaric Shoulders",
-      "slot": "Shoulders",
+      "name": "Barbaric Bracers",
+      "slot": "Wrists",
       "quality": "uncommon",
-      "source": "Leatherworking (Skill 175) / AH",
-      "stats": "91 Armor (+255 in Bear), +8 Agility, +6 Strength",
-      "tip": "Great high agility shoulders."
+      "source": "Leatherworking (Skill 155) / AH",
+      "stats": "47 Armor, +6 Stamina (+60 HP), +4 Agility, +4 Spirit",
+      "tip": "Crafted leather bracers offering great Stamina and Agility."
     },
     "armorAlt": {
-      "name": "Forest Tracker Epaulets",
-      "slot": "Shoulders",
-      "quality": "rare",
-      "source": "Auction House (BoE World Drop)",
-      "stats": "78 Armor, +11 Agility, +5 Strength",
-      "tip": "Premier world-drop Feral shoulders."
+      "name": "Bandit Bracers of the Bear",
+      "slot": "Wrists",
+      "quality": "uncommon",
+      "source": "Auction House / BoE World Drop",
+      "stats": "33 Armor, +2 Strength (+4 AP), +2 Stamina (+20 HP)",
+      "tip": "Earlier leveling bracers."
     },
     "weaponPrimary": {
-      "name": "Dutiful Quarterstaff",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: Morbent Fel (Duskwood)",
-      "stats": "22.8 DPS, +7 Strength (+14 AP), +7 Stamina (+70 HP)",
-      "tip": "Outstanding Duskwood solo quest reward staff."
+      "name": "Archeus",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Legendary solo quest reward from Morgan Ladimore's grave in Duskwood. Massive +12 Str / +12 Sta!"
     },
     "weaponAlt": {
-      "name": "Hardened Iron Staff of the Tiger",
+      "name": "Staff of Westfall",
       "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "Offensive hybrid staff."
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
+      "tip": "Reliable staff with high 20.5 weapon DPS and strong out-of-combat Spirit recovery."
     }
   },
   "29": {
     "armorPrimary": {
-      "name": "Barbaric Shoulders",
-      "slot": "Shoulders",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 175) / AH",
-      "stats": "91 Armor (+255 in Bear), +8 Agility, +6 Strength",
-      "tip": "Great high agility shoulders."
+      "name": "Triprunner Dungarees",
+      "slot": "Legs",
+      "quality": "rare",
+      "source": "Solo Quest: The Grand Betrayal (Gnomeregan)",
+      "stats": "101 Armor, +18 Agility (+18 Cat AP / +0.9% Crit), +6 Stamina (+60 HP), +3 Strength (+6 AP)",
+      "tip": "Superb leather leggings with +18 Agility and 101 Armor."
     },
     "armorAlt": {
-      "name": "Forest Tracker Epaulets",
-      "slot": "Shoulders",
-      "quality": "rare",
-      "source": "Auction House (BoE World Drop)",
-      "stats": "78 Armor, +11 Agility, +5 Strength",
-      "tip": "Premier world-drop Feral shoulders."
+      "name": "Barbaric Leggings",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking (Skill 175) / AH",
+      "stats": "87 Armor, +7 Agility, +7 Stamina (+70 HP), +7 Spirit",
+      "tip": "Crafted balanced leggings."
     },
     "weaponPrimary": {
-      "name": "Dutiful Quarterstaff",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: Morbent Fel (Duskwood)",
-      "stats": "22.8 DPS, +7 Strength (+14 AP), +7 Stamina (+70 HP)",
-      "tip": "Outstanding Duskwood solo quest reward staff."
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Hardened Iron Staff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "Offensive hybrid staff."
+      "name": "Archeus",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "30": {
@@ -4139,202 +4139,202 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Shoulders",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 175) / AH",
-      "stats": "91 Armor (+255 in Bear), +8 Agility, +6 Strength",
-      "tip": "Great high agility shoulders."
+      "stats": "76 Armor, +6 Stamina (+60 HP), +5 Agility, +5 Spirit",
+      "tip": "Crafted leather shoulders with balanced feral stats."
     },
     "armorAlt": {
       "name": "Forest Tracker Epaulets",
       "slot": "Shoulders",
       "quality": "rare",
-      "source": "Auction House (BoE World Drop)",
-      "stats": "78 Armor, +11 Agility, +5 Strength",
-      "tip": "Premier world-drop Feral shoulders."
+      "source": "Auction House / BoE World Drop",
+      "stats": "78 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Strength (+10 AP)",
+      "tip": "Heavy Agility world drop shoulders."
     },
     "weaponPrimary": {
-      "name": "Dutiful Quarterstaff",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Solo Quest: Morbent Fel (Duskwood)",
-      "stats": "22.8 DPS, +7 Strength (+14 AP), +7 Stamina (+70 HP)",
-      "tip": "Outstanding Duskwood solo quest reward staff."
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Hardened Iron Staff of the Tiger",
-      "type": "Two-Hand Staff",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+6 Strength, +6 Agility",
-      "tip": "Offensive hybrid staff."
+      "name": "Archeus",
+      "type": "Two-Hand Mace",
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "31": {
     "armorPrimary": {
-      "name": "Toughened Leather Armor",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 155) / AH",
-      "stats": "98 Armor, +7 Agility, +6 Stamina",
-      "tip": "Solid crafted chest."
-    },
-    "armorAlt": {
-      "name": "Barbaric Harness",
+      "name": "Barbaric Harness of the Bear",
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 190) / AH",
-      "stats": "88 Armor, +7 Strength, +6 Stamina",
-      "tip": "High strength craft."
+      "stats": "96 Armor, +9 Strength (+18 AP), +9 Stamina (+90 HP)",
+      "tip": "Sturdy crafted chest with high Strength and Stamina for Bear Form."
+    },
+    "armorAlt": {
+      "name": "Tunic of Westfall",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "92 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Stamina (+50 HP)",
+      "tip": "Excellent Cat DPS quest chestpiece."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "32": {
     "armorPrimary": {
-      "name": "Toughened Leather Armor",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 155) / AH",
-      "stats": "98 Armor, +7 Agility, +6 Stamina",
-      "tip": "Solid crafted chest."
-    },
-    "armorAlt": {
-      "name": "Barbaric Harness",
+      "name": "Barbaric Harness of the Bear",
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 190) / AH",
-      "stats": "88 Armor, +7 Strength, +6 Stamina",
-      "tip": "High strength craft."
+      "stats": "96 Armor, +9 Strength (+18 AP), +9 Stamina (+90 HP)",
+      "tip": "Sturdy crafted chest with high Strength and Stamina for Bear Form."
+    },
+    "armorAlt": {
+      "name": "Tunic of Westfall",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "92 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Stamina (+50 HP)",
+      "tip": "Excellent Cat DPS quest chestpiece."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "33": {
     "armorPrimary": {
-      "name": "Toughened Leather Armor",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 155) / AH",
-      "stats": "98 Armor, +7 Agility, +6 Stamina",
-      "tip": "Solid crafted chest."
-    },
-    "armorAlt": {
-      "name": "Barbaric Harness",
+      "name": "Barbaric Harness of the Bear",
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 190) / AH",
-      "stats": "88 Armor, +7 Strength, +6 Stamina",
-      "tip": "High strength craft."
+      "stats": "96 Armor, +9 Strength (+18 AP), +9 Stamina (+90 HP)",
+      "tip": "Sturdy crafted chest with high Strength and Stamina for Bear Form."
+    },
+    "armorAlt": {
+      "name": "Tunic of Westfall",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "92 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Stamina (+50 HP)",
+      "tip": "Excellent Cat DPS quest chestpiece."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "34": {
     "armorPrimary": {
-      "name": "Toughened Leather Armor",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 155) / AH",
-      "stats": "98 Armor, +7 Agility, +6 Stamina",
-      "tip": "Solid crafted chest."
-    },
-    "armorAlt": {
-      "name": "Barbaric Harness",
+      "name": "Barbaric Harness of the Bear",
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 190) / AH",
-      "stats": "88 Armor, +7 Strength, +6 Stamina",
-      "tip": "High strength craft."
+      "stats": "96 Armor, +9 Strength (+18 AP), +9 Stamina (+90 HP)",
+      "tip": "Sturdy crafted chest with high Strength and Stamina for Bear Form."
+    },
+    "armorAlt": {
+      "name": "Tunic of Westfall",
+      "slot": "Chest",
+      "quality": "rare",
+      "source": "Solo Quest: The Defias Brotherhood (Westfall)",
+      "stats": "92 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Stamina (+50 HP)",
+      "tip": "Excellent Cat DPS quest chestpiece."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "35": {
     "armorPrimary": {
-      "name": "Toughened Leather Armor",
-      "slot": "Chest",
-      "quality": "uncommon",
-      "source": "Leatherworking (Skill 155) / AH",
-      "stats": "98 Armor, +7 Agility, +6 Stamina",
-      "tip": "Solid crafted chest."
-    },
-    "armorAlt": {
-      "name": "Barbaric Harness",
-      "slot": "Chest",
+      "name": "Barbaric Belt",
+      "slot": "Waist",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 190) / AH",
-      "stats": "88 Armor, +7 Strength, +6 Stamina",
-      "tip": "High strength craft."
+      "stats": "62 Armor, +11 Strength (+22 AP), Use: Increases Rage by 30",
+      "tip": "+11 Strength and an active on-use ability that grants 30 Rage on demand!"
+    },
+    "armorAlt": {
+      "name": "Deviate Scale Belt",
+      "slot": "Waist",
+      "quality": "uncommon",
+      "source": "Leatherworking (Skill 115) / AH",
+      "stats": "51 Armor, +6 Stamina (+60 HP), +5 Agility (+0.25% Crit), +3 Spirit",
+      "tip": "Earlier leveling belt."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "36": {
@@ -4343,32 +4343,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 205) / AH",
-      "stats": "118 Armor (+330 in Bear), +11 Agility, +10 Stamina (+100 HP)",
-      "tip": "Core mid-game leather armor."
+      "stats": "113 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +6 Stamina (+60 HP)",
+      "tip": "Crafted leather chest with a massive +15 Agility for Cat Form!"
     },
     "armorAlt": {
       "name": "Raptor Hunter Tunic",
       "slot": "Chest",
       "quality": "uncommon",
-      "source": "Solo Quest: Raptor Mastery (STV)",
-      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
-      "tip": "Phenomenal STV solo quest reward chest."
+      "source": "Solo Quest: Raptor Mastery (Stranglethorn Vale)",
+      "stats": "122 Armor, +16 Stamina (+160 HP), +8 Agility, +4 Strength",
+      "tip": "Great solo quest reward in STV with +16 Stamina and 122 raw armor."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "37": {
@@ -4377,32 +4377,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 205) / AH",
-      "stats": "118 Armor (+330 in Bear), +11 Agility, +10 Stamina (+100 HP)",
-      "tip": "Core mid-game leather armor."
+      "stats": "113 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +6 Stamina (+60 HP)",
+      "tip": "Crafted leather chest with a massive +15 Agility for Cat Form!"
     },
     "armorAlt": {
       "name": "Raptor Hunter Tunic",
       "slot": "Chest",
       "quality": "uncommon",
-      "source": "Solo Quest: Raptor Mastery (STV)",
-      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
-      "tip": "Phenomenal STV solo quest reward chest."
+      "source": "Solo Quest: Raptor Mastery (Stranglethorn Vale)",
+      "stats": "122 Armor, +16 Stamina (+160 HP), +8 Agility, +4 Strength",
+      "tip": "Great solo quest reward in STV with +16 Stamina and 122 raw armor."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "38": {
@@ -4411,32 +4411,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 205) / AH",
-      "stats": "118 Armor (+330 in Bear), +11 Agility, +10 Stamina (+100 HP)",
-      "tip": "Core mid-game leather armor."
+      "stats": "113 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +6 Stamina (+60 HP)",
+      "tip": "Crafted leather chest with a massive +15 Agility for Cat Form!"
     },
     "armorAlt": {
       "name": "Raptor Hunter Tunic",
       "slot": "Chest",
       "quality": "uncommon",
-      "source": "Solo Quest: Raptor Mastery (STV)",
-      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
-      "tip": "Phenomenal STV solo quest reward chest."
+      "source": "Solo Quest: Raptor Mastery (Stranglethorn Vale)",
+      "stats": "122 Armor, +16 Stamina (+160 HP), +8 Agility, +4 Strength",
+      "tip": "Great solo quest reward in STV with +16 Stamina and 122 raw armor."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "39": {
@@ -4445,32 +4445,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Chest",
       "quality": "uncommon",
       "source": "Leatherworking (Skill 205) / AH",
-      "stats": "118 Armor (+330 in Bear), +11 Agility, +10 Stamina (+100 HP)",
-      "tip": "Core mid-game leather armor."
+      "stats": "113 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +6 Stamina (+60 HP)",
+      "tip": "Crafted leather chest with a massive +15 Agility for Cat Form!"
     },
     "armorAlt": {
       "name": "Raptor Hunter Tunic",
       "slot": "Chest",
       "quality": "uncommon",
-      "source": "Solo Quest: Raptor Mastery (STV)",
-      "stats": "117 Armor, +16 Stamina, +4 Strength, +3 Agility",
-      "tip": "Phenomenal STV solo quest reward chest."
+      "source": "Solo Quest: Raptor Mastery (Stranglethorn Vale)",
+      "stats": "122 Armor, +16 Stamina (+160 HP), +8 Agility, +4 Strength",
+      "tip": "Great solo quest reward in STV with +16 Stamina and 122 raw armor."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Famous feral weapon. +50% attack speed makes Cat shred mobs!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Iron-Clad Bludgeon of the Bear",
+      "name": "Archeus",
       "type": "Two-Hand Mace",
-      "quality": "uncommon",
-      "source": "Auction House BoE",
-      "stats": "+8 Strength, +8 Stamina",
-      "tip": "Reliable Bear stat stick."
+      "quality": "rare",
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "40": {
@@ -4479,32 +4479,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Speed burst weapon."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Archeus",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "41": {
@@ -4513,32 +4513,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Speed burst weapon."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Archeus",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "42": {
@@ -4547,32 +4547,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
-      "name": "Manual Crowd Pumper",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Gnomeregan Drop",
-      "stats": "+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s",
-      "tip": "Speed burst weapon."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "The iconic Feral weapon. Active charge grants 50% haste for incredible burst in Cat & Bear!"
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Archeus",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Solo Quest: A Daughter's Love (Duskwood)",
+      "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+      "tip": "Best non-dungeon alternative with great raw stats for Bear tanking and leveling."
     }
   },
   "43": {
@@ -4581,32 +4581,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina (+110 HP)",
-      "tip": "🏆 THE PREMIER BEAR TANKING WEAPON IN CLASSIC. Lasts all the way to 60!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "44": {
@@ -4615,32 +4615,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina (+110 HP)",
-      "tip": "🏆 THE PREMIER BEAR TANKING WEAPON IN CLASSIC. Lasts all the way to 60!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "45": {
@@ -4649,32 +4649,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina (+110 HP)",
-      "tip": "🏆 THE PREMIER BEAR TANKING WEAPON IN CLASSIC. Lasts all the way to 60!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "46": {
@@ -4683,32 +4683,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina (+110 HP)",
-      "tip": "🏆 THE PREMIER BEAR TANKING WEAPON IN CLASSIC. Lasts all the way to 60!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "47": {
@@ -4717,32 +4717,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina (+110 HP)",
-      "tip": "🏆 THE PREMIER BEAR TANKING WEAPON IN CLASSIC. Lasts all the way to 60!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "48": {
@@ -4751,32 +4751,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina (+110 HP)",
-      "tip": "🏆 THE PREMIER BEAR TANKING WEAPON IN CLASSIC. Lasts all the way to 60!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "49": {
@@ -4785,202 +4785,202 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Head",
       "quality": "rare",
       "source": "Leatherworking (Skill 225) / AH",
-      "stats": "109 Armor, 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-      "tip": "👑 THE #1 MOST IMPORTANT FERAL DRUID ITEM IN CLASSIC WOW. Craft or buy at 40!"
+      "stats": "109 Armor, +10 Spirit, Equip: When shifting into Cat form gain 20 Energy; Bear gain 5 Rage",
+      "tip": "🏆 THE #1 MOST IMPORTANT DRUID ITEM IN CLASSIC WOW! Powers Powershifting rotation through Naxxramas."
     },
     "armorAlt": {
       "name": "Humbert's Helm",
       "slot": "Head",
       "quality": "uncommon",
       "source": "Dun Garok Riflemen (Hillsbrad) / AH",
-      "stats": "76 Armor, +7 Agility, +8 Stamina",
-      "tip": "Budget agility/stamina helm before crafting Wolfshead."
+      "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
+      "tip": "Solid alternative leveling helm until Wolfshead is crafted."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina (+110 HP)",
-      "tip": "🏆 THE PREMIER BEAR TANKING WEAPON IN CLASSIC. Lasts all the way to 60!"
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Spire of the Stoneshaper",
-      "type": "Two-Hand Staff",
+      "name": "Manual Crowd Pummeler",
+      "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Blackrock Depths / AH",
-      "stats": "28.5 DPS, +15 Stamina, +10 Strength",
-      "tip": "Solid alternative 2H."
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "50": {
     "armorPrimary": {
-      "name": "Devilsaur Leggings",
-      "slot": "Legs",
+      "name": "Warbear Harness",
+      "slot": "Chest",
       "quality": "rare",
-      "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "source": "Leatherworking (Skill 275) / AH",
+      "stats": "158 Armor, +27 Stamina (+270 HP), +11 Strength (+22 AP)",
+      "tip": "Colossal +27 Stamina Bear Tank chest crafted by Leatherworkers."
     },
     "armorAlt": {
-      "name": "Warbear Woolies",
-      "slot": "Legs",
+      "name": "Nightscape Tunic",
+      "slot": "Chest",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 205) / AH",
+      "stats": "113 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +6 Stamina (+60 HP)",
+      "tip": "High Agility chest for Cat DPS."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "51": {
     "armorPrimary": {
-      "name": "Devilsaur Leggings",
-      "slot": "Legs",
+      "name": "Warbear Harness",
+      "slot": "Chest",
       "quality": "rare",
-      "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "source": "Leatherworking (Skill 275) / AH",
+      "stats": "158 Armor, +27 Stamina (+270 HP), +11 Strength (+22 AP)",
+      "tip": "Colossal +27 Stamina Bear Tank chest crafted by Leatherworkers."
     },
     "armorAlt": {
-      "name": "Warbear Woolies",
-      "slot": "Legs",
+      "name": "Nightscape Tunic",
+      "slot": "Chest",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 205) / AH",
+      "stats": "113 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +6 Stamina (+60 HP)",
+      "tip": "High Agility chest for Cat DPS."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "52": {
     "armorPrimary": {
-      "name": "Devilsaur Leggings",
-      "slot": "Legs",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
-    },
-    "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "+28 Strength (+56 Attack Power) crafted leather pants for massive feral damage."
+    },
+    "armorAlt": {
+      "name": "Nightscape Pants",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking (Skill 230) / AH",
+      "stats": "107 Armor, +14 Agility, +13 Stamina",
+      "tip": "Crafted leveling pants with Agility and Stamina."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "53": {
     "armorPrimary": {
-      "name": "Devilsaur Leggings",
-      "slot": "Legs",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
-    },
-    "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "+28 Strength (+56 Attack Power) crafted leather pants for massive feral damage."
+    },
+    "armorAlt": {
+      "name": "Nightscape Pants",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking (Skill 230) / AH",
+      "stats": "107 Armor, +14 Agility, +13 Stamina",
+      "tip": "Crafted leveling pants with Agility and Stamina."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "54": {
     "armorPrimary": {
-      "name": "Devilsaur Leggings",
-      "slot": "Legs",
-      "quality": "rare",
-      "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
-    },
-    "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "+28 Strength (+56 Attack Power) crafted leather pants for massive feral damage."
+    },
+    "armorAlt": {
+      "name": "Nightscape Pants",
+      "slot": "Legs",
+      "quality": "uncommon",
+      "source": "Leatherworking (Skill 230) / AH",
+      "stats": "107 Armor, +14 Agility, +13 Stamina",
+      "tip": "Crafted leveling pants with Agility and Stamina."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "55": {
@@ -4989,32 +4989,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Legs",
       "quality": "rare",
       "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "stats": "148 Armor, +12 Stamina (+120 HP), Equip: +46 Attack Power, Equip: +1% Critical Strike",
+      "tip": "Pre-Raid BiS! +46 Attack Power and +1% Melee Crit. Set bonus adds +2% Hit Chance!"
     },
     "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "Crafted Bear Tank and Cat damage pants with +28 Strength and +12 Stamina."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "56": {
@@ -5023,32 +5023,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Legs",
       "quality": "rare",
       "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "stats": "148 Armor, +12 Stamina (+120 HP), Equip: +46 Attack Power, Equip: +1% Critical Strike",
+      "tip": "Pre-Raid BiS! +46 Attack Power and +1% Melee Crit. Set bonus adds +2% Hit Chance!"
     },
     "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "Crafted Bear Tank and Cat damage pants with +28 Strength and +12 Stamina."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "57": {
@@ -5057,32 +5057,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Legs",
       "quality": "rare",
       "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "stats": "148 Armor, +12 Stamina (+120 HP), Equip: +46 Attack Power, Equip: +1% Critical Strike",
+      "tip": "Pre-Raid BiS! +46 Attack Power and +1% Melee Crit. Set bonus adds +2% Hit Chance!"
     },
     "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "Crafted Bear Tank and Cat damage pants with +28 Strength and +12 Stamina."
     },
     "weaponPrimary": {
       "name": "Warden Staff",
       "type": "Two-Hand Staff",
       "quality": "epic",
-      "source": "Auction House BoE",
-      "stats": "+260 Armor (+936 Bear Armor!), +10 Defense, +11 Stamina",
-      "tip": "#1 Bear Tanking weapon in Classic."
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "The #1 Bear Tank weapon in Classic WoW! Multiplies into colossal Armor in Dire Bear Form."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
+      "name": "Manual Crowd Pummeler",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "source": "Gnomeregan: Crowd Pummeler 9-60",
+      "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+      "tip": "Best Cat DPS weapon for burst damage windows and boss pulls."
     }
   },
   "58": {
@@ -5091,32 +5091,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Legs",
       "quality": "rare",
       "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "stats": "148 Armor, +12 Stamina (+120 HP), Equip: +46 Attack Power, Equip: +1% Critical Strike",
+      "tip": "Pre-Raid BiS! +46 Attack Power and +1% Melee Crit. Set bonus adds +2% Hit Chance!"
     },
     "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "Crafted Bear Tank and Cat damage pants with +28 Strength and +12 Stamina."
     },
     "weaponPrimary": {
       "name": "Bonecrusher",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Solo Quest: In Dreams (Western Plaguelands)",
-      "stats": "45.4 DPS, +30 Attack Power, +1% Critical Strike in all forms",
-      "tip": "Top tier Pre-Raid BiS Cat DPS weapon obtainable from an epic solo quest chain!"
+      "source": "Solo Quest: The Treasure of the Shen'dralar (Dire Maul)",
+      "stats": "129-194 Damage (53.8 DPS), +30 Strength (+60 AP), +1% Critical Strike",
+      "tip": "Top tier Pre-Raid BiS Cat DPS weapon! +30 Strength gives 60 Attack Power in feral forms."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
-      "type": "Two-Hand Mace",
-      "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "name": "Warden Staff",
+      "type": "Two-Hand Staff",
+      "quality": "epic",
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "Top tier Pre-Raid BiS Bear Tank weapon! Unmatched survivability and armor."
     }
   },
   "59": {
@@ -5125,32 +5125,32 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Legs",
       "quality": "rare",
       "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "stats": "148 Armor, +12 Stamina (+120 HP), Equip: +46 Attack Power, Equip: +1% Critical Strike",
+      "tip": "Pre-Raid BiS! +46 Attack Power and +1% Melee Crit. Set bonus adds +2% Hit Chance!"
     },
     "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "Crafted Bear Tank and Cat damage pants with +28 Strength and +12 Stamina."
     },
     "weaponPrimary": {
       "name": "Bonecrusher",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Solo Quest: In Dreams (Western Plaguelands)",
-      "stats": "45.4 DPS, +30 Attack Power, +1% Critical Strike in all forms",
-      "tip": "Top tier Pre-Raid BiS Cat DPS weapon obtainable from an epic solo quest chain!"
+      "source": "Solo Quest: The Treasure of the Shen'dralar (Dire Maul)",
+      "stats": "129-194 Damage (53.8 DPS), +30 Strength (+60 AP), +1% Critical Strike",
+      "tip": "Top tier Pre-Raid BiS Cat DPS weapon! +30 Strength gives 60 Attack Power in feral forms."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
-      "type": "Two-Hand Mace",
-      "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "name": "Warden Staff",
+      "type": "Two-Hand Staff",
+      "quality": "epic",
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "Top tier Pre-Raid BiS Bear Tank weapon! Unmatched survivability and armor."
     }
   },
   "60": {
@@ -5159,137 +5159,35 @@ const NON_DUNGEON_GEAR_DATA = {
       "slot": "Legs",
       "quality": "rare",
       "source": "Leatherworking (Skill 300) / AH",
-      "stats": "148 Armor, +46 Attack Power, +1% Critical Strike, +14 Stamina",
-      "tip": "🏆 Pre-Raid BiS (+2% Hit set bonus with Devilsaur Gauntlets)!"
+      "stats": "148 Armor, +12 Stamina (+120 HP), Equip: +46 Attack Power, Equip: +1% Critical Strike",
+      "tip": "Pre-Raid BiS! +46 Attack Power and +1% Melee Crit. Set bonus adds +2% Hit Chance!"
     },
     "armorAlt": {
       "name": "Warbear Woolies",
       "slot": "Legs",
       "quality": "uncommon",
-      "source": "Crafted via Leatherworking (Skill 285)",
-      "stats": "135 Armor, +16 Strength (+32 AP), +12 Stamina (+120 HP)",
-      "tip": "High Strength crafted leather pants."
+      "source": "Leatherworking (Skill 285) / AH",
+      "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+      "tip": "Crafted Bear Tank and Cat damage pants with +28 Strength and +12 Stamina."
     },
     "weaponPrimary": {
       "name": "Bonecrusher",
       "type": "Two-Hand Mace",
       "quality": "rare",
-      "source": "Solo Quest: In Dreams (Western Plaguelands)",
-      "stats": "45.4 DPS, +30 Attack Power, +1% Critical Strike in all forms",
-      "tip": "Top tier Pre-Raid BiS Cat DPS weapon obtainable from an epic solo quest chain!"
+      "source": "Solo Quest: The Treasure of the Shen'dralar (Dire Maul)",
+      "stats": "129-194 Damage (53.8 DPS), +30 Strength (+60 AP), +1% Critical Strike",
+      "tip": "Top tier Pre-Raid BiS Cat DPS weapon! +30 Strength gives 60 Attack Power in feral forms."
     },
     "weaponAlt": {
-      "name": "Fist of Omokk",
-      "type": "Two-Hand Mace",
-      "quality": "rare",
-      "source": "Lower Blackrock Spire / Solo AH",
-      "stats": "+29 Strength, +9 Stamina",
-      "tip": "Huge +58 Attack Power in Cat & Bear!"
+      "name": "Warden Staff",
+      "type": "Two-Hand Staff",
+      "quality": "epic",
+      "source": "Auction House / BoE World Drop",
+      "stats": "89-134 Damage (46.5 DPS), +260 Armor (+936 in Dire Bear), +10 Defense, +11 Stamina (+110 HP)",
+      "tip": "Top tier Pre-Raid BiS Bear Tank weapon! Unmatched survivability and armor."
     }
   }
 };
-
-function renderNonDungeonGear(lvl) {
-  const container = document.getElementById("nonDungeonGearMainContainer");
-  if (!container) return;
-  
-  const gear = NON_DUNGEON_GEAR_DATA[lvl] || NON_DUNGEON_GEAR_DATA[9];
-  if (!gear) {
-    container.innerHTML = '<p style="color:var(--text-muted); font-size:0.88rem;">No non-dungeon gear data available for this level.</p>';
-    return;
-  }
-
-  function getSourceClass(sourceStr) {
-    if (!sourceStr) return "source-ah";
-    const s = sourceStr.toLowerCase();
-    if (s.includes("auction") || s.includes("ah")) return "source-ah";
-    if (s.includes("leatherworking") || s.includes("crafted") || s.includes("lw")) return "source-lw";
-    if (s.includes("quest")) return "source-quest";
-    if (s.includes("vendor")) return "source-vendor";
-    return "source-ah";
-  }
-
-  container.innerHTML = `
-    <div class="non-dungeon-gear-wrapper">
-      <!-- Armor Category Card -->
-      <div class="gear-category-card">
-        <div class="gear-category-header">
-          <div class="gear-category-title">
-            <span>🛡️ Optimal Non-Dungeon Armor</span>
-            <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">(Level ${lvl} Leatherworking / AH / Quest)</span>
-          </div>
-          <span class="gear-source-badge source-ah">Solo / AH Accessible</span>
-        </div>
-        <div class="gear-pair-grid">
-          <!-- Primary Armor -->
-          <div class="gear-pick-box primary">
-            <div class="gear-pick-badge primary">⭐ Primary Recommendation</div>
-            <div class="gear-pick-name-row">
-              <span class="gear-pick-name quality-${gear.armorPrimary.quality}">${gear.armorPrimary.name}</span>
-              <span class="gear-source-badge ${getSourceClass(gear.armorPrimary.source)}">${gear.armorPrimary.source}</span>
-            </div>
-            <div style="font-size:0.75rem; color:var(--text-muted);">Slot: ${gear.armorPrimary.slot}</div>
-            <div class="gear-pick-stats">${gear.armorPrimary.stats}</div>
-            <div class="gear-pick-tip">${gear.armorPrimary.tip}</div>
-          </div>
-          <!-- Alternate Armor -->
-          <div class="gear-pick-box alternate">
-            <div class="gear-pick-badge alternate">🔄 Alternate / Budget Option</div>
-            <div class="gear-pick-name-row">
-              <span class="gear-pick-name quality-${gear.armorAlt.quality}">${gear.armorAlt.name}</span>
-              <span class="gear-source-badge ${getSourceClass(gear.armorAlt.source)}">${gear.armorAlt.source}</span>
-            </div>
-            <div style="font-size:0.75rem; color:var(--text-muted);">Slot: ${gear.armorAlt.slot}</div>
-            <div class="gear-pick-stats">${gear.armorAlt.stats}</div>
-            <div class="gear-pick-tip">${gear.armorAlt.tip}</div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Weapon Category Card -->
-      <div class="gear-category-card">
-        <div class="gear-category-header">
-          <div class="gear-category-title">
-            <span>🔨 Optimal Non-Dungeon Weapon</span>
-            <span style="font-size: 0.8rem; font-weight: normal; color: var(--text-muted);">(Level ${lvl} Two-Hander)</span>
-          </div>
-          <span class="gear-source-badge source-ah">No Dungeon Required</span>
-        </div>
-        <div class="gear-pair-grid">
-          <!-- Primary Weapon -->
-          <div class="gear-pick-box primary">
-            <div class="gear-pick-badge primary">⭐ Primary Recommendation</div>
-            <div class="gear-pick-name-row">
-              <span class="gear-pick-name quality-${gear.weaponPrimary.quality}">${gear.weaponPrimary.name}</span>
-              <span class="gear-source-badge ${getSourceClass(gear.weaponPrimary.source)}">${gear.weaponPrimary.source}</span>
-            </div>
-            <div style="font-size:0.75rem; color:var(--text-muted);">Type: ${gear.weaponPrimary.type}</div>
-            <div class="gear-pick-stats">${gear.weaponPrimary.stats}</div>
-            <div class="gear-pick-tip">${gear.weaponPrimary.tip}</div>
-          </div>
-          <!-- Alternate Weapon -->
-          <div class="gear-pick-box alternate">
-            <div class="gear-pick-badge alternate">🔄 Alternate / Budget Option</div>
-            <div class="gear-pick-name-row">
-              <span class="gear-pick-name quality-${gear.weaponAlt.quality}">${gear.weaponAlt.name}</span>
-              <span class="gear-source-badge ${getSourceClass(gear.weaponAlt.source)}">${gear.weaponAlt.source}</span>
-            </div>
-            <div style="font-size:0.75rem; color:var(--text-muted);">Type: ${gear.weaponAlt.type}</div>
-            <div class="gear-pick-stats">${gear.weaponAlt.stats}</div>
-            <div class="gear-pick-tip">${gear.weaponAlt.tip}</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  `;
-}
-
-
-/* ==========================================================================
-   Armor Mockup Upgrade Advisor System (Non-Dungeon Solo Quests & AH/LW)
-   ========================================================================== */
-
-let currentAdvisorFilter = "all";
 
 const FERAL_NON_DUNGEON_UPGRADES = [
   {
@@ -5304,7 +5202,7 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceDesc": "Solo Quest: The Fragments Within (Darkshore)",
     "stats": "21-32 Damage (9.5 DPS), +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
     "gain": "+20 HP, +30 Mana pool for shifting and healing",
-    "tip": "⭐ Guaranteed solo quest reward from Darkshore. Currently equipped on Chongo!"
+    "tip": "⭐ Guaranteed solo quest reward from Darkshore."
   },
   {
     "slot": "Two-Hand Weapon",
@@ -5318,7 +5216,7 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "20-30 Damage (8.9 DPS), +3 Strength (+6 AP), +3 Stamina (+30 HP)",
     "gain": "+6 Feral AP in Bear & Cat, +30 HP",
-    "tip": "⭐ Classic Bear leveling staff with pure Strength and Stamina."
+    "tip": "⭐ Classic Bear leveling staff with pure Strength and Stamina. Currently equipped on Chongo!"
   },
   {
     "slot": "Two-Hand Weapon",
@@ -5331,20 +5229,20 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Weapon Vendor: Sold by Nillen Andemar (Loch Modan) & Brog Hamfist (Redridge)",
     "stats": "34-51 Damage (12.5 DPS), +6 Strength (+12 AP)",
-    "gain": "+12 Feral AP in Bear & Cat (+3.0 weapon DPS over Oakthrush)",
+    "gain": "+12 Feral AP in Bear & Cat (+3.6 weapon DPS over Sturdy Quarterstaff)",
     "tip": "⭐ Static vendor-bought 2H mace! Buy it for ~18 silver from vendors in Loch Modan or Redridge without relying on RNG."
   },
   {
     "slot": "Two-Hand Weapon",
     "slotKey": "mainHand",
     "category": "weapon",
-    "minLevel": 16,
-    "maxLevel": 24,
+    "minLevel": 13,
+    "maxLevel": 22,
     "upgradeName": "Ironwood Maul",
     "quality": "uncommon",
     "sourceType": "ah",
-    "sourceDesc": "Weapon Vendor: Sold by Antonio Perelli / Nillen Andemar",
-    "stats": "37-56 Damage (14.1 DPS), +5 Stamina (+50 HP)",
+    "sourceDesc": "Weapon Vendor: Sold by Antonio Perelli / Brog Hamfist",
+    "stats": "26-40 Damage (11.8 DPS), +5 Stamina (+50 HP)",
     "gain": "+50 HP, solid defensive Bear weapon",
     "tip": "Reliable vendor-bought 2H mace offering raw survivability."
   },
@@ -5359,8 +5257,36 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "quest",
     "sourceDesc": "Solo Quest Chain: The Defias Brotherhood (Sentinel Hill, Westfall)",
     "stats": "49-74 Damage (20.5 DPS), +11 Spirit, +5 Intellect (+75 Mana)",
-    "gain": "+11.0 weapon DPS, +75 Mana pool, massive Spirit regeneration between pulls",
+    "gain": "+11.6 weapon DPS, +75 Mana pool, massive Spirit regeneration between pulls",
     "tip": "⭐ 100% guaranteed solo quest reward from the Westfall storyline. High DPS and huge spirit regen."
+  },
+  {
+    "slot": "Two-Hand Weapon",
+    "slotKey": "mainHand",
+    "category": "weapon",
+    "minLevel": 28,
+    "maxLevel": 42,
+    "upgradeName": "Archeus",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Solo Quest: A Daughter's Love (Morgan Ladimore, Duskwood)",
+    "stats": "64-97 Damage (24.4 DPS), +12 Strength (+24 AP), +12 Stamina (+120 HP)",
+    "gain": "+24 AP in Bear & Cat, +120 HP survivability",
+    "tip": "⭐ Famous Duskwood solo quest reward. Outstanding stats for leveling and tanking!"
+  },
+  {
+    "slot": "Two-Hand Weapon",
+    "slotKey": "mainHand",
+    "category": "weapon",
+    "minLevel": 29,
+    "maxLevel": 60,
+    "upgradeName": "Manual Crowd Pummeler",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Boss Drop: Crowd Pummeler 9-60 (Gnomeregan)",
+    "stats": "46-70 Damage (29.0 DPS), +16 Strength (+32 AP), +5 Agility (+0.25% Crit), Use: +50% Attack Speed for 30s (3 charges)",
+    "gain": "+32 AP, +0.25% Melee Crit, massive +50% attack speed burst",
+    "tip": "🏆 Legendary Feral weapon. Keep multiple copies in bags for burst DPS phases!"
   },
   {
     "slot": "Two-Hand Weapon",
@@ -5372,7 +5298,7 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "quality": "epic",
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE Epic World Drop)",
-    "stats": "120-181 Damage (62.7 DPS), +260 Armor, +10 Defense, +11 Stamina (+110 HP)",
+    "stats": "89-134 Damage (46.5 DPS), +260 Armor, +10 Defense, +11 Stamina (+110 HP)",
     "gain": "+936 Armor in Dire Bear (+15% Physical Dmg Reduction!), +110 HP",
     "tip": "🏆 THE #1 BEST BEAR TANKING WEAPON IN CLASSIC WOW. Buy on AH or save gold for it—lasts into Ahn'Qiraj!"
   },
@@ -5394,15 +5320,29 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "slot": "Chest",
     "slotKey": "chest",
     "category": "chest-legs",
-    "minLevel": 11,
-    "maxLevel": 18,
-    "upgradeName": "Disciple's Vest of the Owl",
-    "quality": "uncommon",
+    "minLevel": 6,
+    "maxLevel": 14,
+    "upgradeName": "Handstitched Leather Vest",
+    "quality": "common",
     "sourceType": "ah",
-    "sourceDesc": "Auction House (BoE World Drop)",
-    "stats": "25 Armor, +2 Intellect (+30 Mana), +2 Spirit",
-    "gain": "+30 Mana, out-of-combat regeneration",
-    "tip": "⭐ Currently equipped on Chongo! Solid mana vest for early leveling."
+    "sourceDesc": "Crafted via Leatherworking (Skill 40) / AH",
+    "stats": "45 Armor",
+    "gain": "Reliable physical damage reduction in early leveling",
+    "tip": "Currently equipped on Chongo!"
+  },
+  {
+    "slot": "Chest",
+    "slotKey": "chest",
+    "category": "chest-legs",
+    "minLevel": 9,
+    "maxLevel": 16,
+    "upgradeName": "Embossed Leather Vest",
+    "quality": "common",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 55) / Vendor",
+    "stats": "56 Armor",
+    "gain": "+11 Armor over Handstitched Leather Vest (+40 Armor in Bear)",
+    "tip": "Inexpensive crafted or vendor upgrade for pure physical mitigation."
   },
   {
     "slot": "Chest",
@@ -5412,11 +5352,25 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 22,
     "upgradeName": "Dark Leather Tunic",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 75) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 100) / AH",
     "stats": "78 Armor, +6 Agility (+6 Cat AP / +0.3% Crit)",
-    "gain": "+53 Armor (+148 Bear Armor), +6 Agility",
-    "tip": "Clean crafted chest piece with high physical armor and agility."
+    "gain": "+22 Armor, +6 Agility (+6 AP & +0.3% Crit)",
+    "tip": "Crafted early leather chest piece with pure Agility."
+  },
+  {
+    "slot": "Chest",
+    "slotKey": "chest",
+    "category": "chest-legs",
+    "minLevel": 18,
+    "maxLevel": 25,
+    "upgradeName": "Bandit Jerkin of the Bear",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "82 Armor, +5 Strength (+10 AP), +5 Stamina (+50 HP)",
+    "gain": "+10 Feral AP, +50 HP, +82 Armor (+295 in Dire Bear)",
+    "tip": "Excellent BoE chestpiece with Strength and Stamina."
   },
   {
     "slot": "Chest",
@@ -5427,10 +5381,10 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "upgradeName": "Tunic of Westfall",
     "quality": "rare",
     "sourceType": "quest",
-    "sourceDesc": "Solo Quest Chain: The Defias Brotherhood (Sentinel Hill, Westfall)",
+    "sourceDesc": "Solo Quest: The Defias Brotherhood (Westfall)",
     "stats": "92 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Stamina (+50 HP)",
-    "gain": "+67 Armor (+187 Bear Armor), +11 Agility, +50 HP",
-    "tip": "🔥 One of the greatest quest rewards in Vanilla. Unmatched Agility for Cat Form!"
+    "gain": "+11 Agility (+11 AP / +0.55% Crit), +50 HP, +92 Armor",
+    "tip": "⭐ Best solo leveling chest until level 35+. High agility boost."
   },
   {
     "slot": "Chest",
@@ -5440,11 +5394,11 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 30,
     "upgradeName": "Blackened Defias Armor",
     "quality": "rare",
-    "sourceType": "ah",
-    "sourceDesc": "Edwin VanCleef (The Deadmines)",
+    "sourceType": "quest",
+    "sourceDesc": "Boss Drop: Edwin VanCleef (Deadmines)",
     "stats": "92 Armor, +11 Stamina (+110 HP), +4 Strength (+8 AP), +3 Agility",
-    "gain": "+67 Armor (+187 Bear Armor), +110 HP, +8 AP, +3 Agility",
-    "tip": "Alternative high stamina/tank chest if running Deadmines."
+    "gain": "+110 HP, +8 AP, top-tier Bear tanking chest",
+    "tip": "Superb dungeon drop with huge Stamina for Bear Form tanking."
   },
   {
     "slot": "Chest",
@@ -5454,11 +5408,25 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 50,
     "upgradeName": "Nightscape Tunic",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 205) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 205) / AH",
     "stats": "113 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +6 Stamina (+60 HP)",
-    "gain": "Massive armor and +15 Agility for Cat DPS / Bear Tanking (+60 HP).",
-    "tip": "Core mid-game staple craftable by any leatherworker."
+    "gain": "+15 Agility, +60 HP, +113 Armor",
+    "tip": "Huge Agility power spike for Cat DPS."
+  },
+  {
+    "slot": "Chest",
+    "slotKey": "chest",
+    "category": "chest-legs",
+    "minLevel": 36,
+    "maxLevel": 50,
+    "upgradeName": "Raptor Hunter Tunic",
+    "quality": "uncommon",
+    "sourceType": "quest",
+    "sourceDesc": "Solo Quest: Raptor Mastery (Stranglethorn Vale)",
+    "stats": "122 Armor, +16 Stamina (+160 HP), +8 Agility, +4 Strength",
+    "gain": "+160 HP, +122 Armor, +8 Agi, +4 Str",
+    "tip": "Top solo quest reward in STV with immense survivability."
   },
   {
     "slot": "Chest",
@@ -5468,11 +5436,39 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 60,
     "upgradeName": "Warbear Harness",
     "quality": "rare",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 275 - Timbermaw) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 275) / AH",
     "stats": "158 Armor, +27 Stamina (+270 HP), +11 Strength (+22 AP)",
-    "gain": "+270 HP, +22 AP, +442 Armor in Dire Bear",
-    "tip": "Supreme solo/AH Dire Bear tanking chest piece."
+    "gain": "+270 HP, +22 AP, +569 Armor in Dire Bear Form",
+    "tip": "Pre-Raid BiS Bear Tank chestpiece. Massive Stamina!"
+  },
+  {
+    "slot": "Chest",
+    "slotKey": "chest",
+    "category": "chest-legs",
+    "minLevel": 56,
+    "maxLevel": 60,
+    "upgradeName": "Cadaverous Armor",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Scholomance Bosses / AH",
+    "stats": "172 Armor, +8 Strength (+16 AP), +8 Agility, Equip: +60 Attack Power",
+    "gain": "+76 Attack Power, +8 Agility (+0.4% Crit), +172 Armor",
+    "tip": "Pre-Raid BiS Cat DPS chestpiece with an astounding +60 passive AP!"
+  },
+  {
+    "slot": "Legs",
+    "slotKey": "legs",
+    "category": "chest-legs",
+    "minLevel": 10,
+    "maxLevel": 18,
+    "upgradeName": "Smith's Trousers",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "68 Armor, +4 Strength (+8 AP), +4 Agility (+4 Cat AP / +0.2% Crit)",
+    "gain": "+8 Feral AP in Bear & Cat, +0.2% Melee Crit. Currently equipped on Chongo!",
+    "tip": "⭐ Outstanding early leveling pants with balanced Strength and Agility."
   },
   {
     "slot": "Legs",
@@ -5485,22 +5481,22 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "62 Armor, +3 Agility (+3 Cat AP / +0.15% Crit), +2 Spirit",
-    "gain": "+62 Armor, +3 Agility",
-    "tip": "⭐ Currently equipped on Chongo! Solid leather pants."
+    "gain": "+3 Agility, +2 Spirit, +62 Armor",
+    "tip": "Alternative early leather pants with Agility."
   },
   {
     "slot": "Legs",
     "slotKey": "legs",
     "category": "chest-legs",
     "minLevel": 16,
-    "maxLevel": 22,
+    "maxLevel": 24,
     "upgradeName": "Prospector's Woolies",
     "quality": "uncommon",
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "69 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +1 Strength (+2 AP)",
-    "gain": "+7 Armor, +3 Agility, +2 AP",
-    "tip": "Green BoE pants with high agility for early Cat damage."
+    "gain": "+6 Agility, +1 Strength, +69 Armor",
+    "tip": "Solid green leveling pants for Agility."
   },
   {
     "slot": "Legs",
@@ -5510,11 +5506,25 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 28,
     "upgradeName": "Dark Leather Pants",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 115) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 115) / AH",
     "stats": "72 Armor, +8 Agility (+8 Cat AP / +0.4% Crit)",
-    "gain": "+10 Armor (+28 in Bear), +5 Agility (+0.25% Crit)",
-    "tip": "High Agility crafted pants that speed up kill times."
+    "gain": "+8 Agility (+8 AP / +0.4% Crit), +72 Armor",
+    "tip": "Crafted leather pants with pure Agility."
+  },
+  {
+    "slot": "Legs",
+    "slotKey": "legs",
+    "category": "chest-legs",
+    "minLevel": 25,
+    "maxLevel": 40,
+    "upgradeName": "Triprunner Dungarees",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Solo Quest: The Grand Betrayal (Gnomeregan)",
+    "stats": "101 Armor, +18 Agility (+18 Cat AP / +0.9% Crit), +6 Stamina (+60 HP), +3 Strength (+6 AP)",
+    "gain": "+18 Agility, +60 HP, +6 AP, +101 Armor",
+    "tip": "⭐ Best leveling pants in the game until 40+. Immense +18 Agility!"
   },
   {
     "slot": "Legs",
@@ -5524,11 +5534,25 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 40,
     "upgradeName": "Barbaric Leggings",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 170) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 175) / AH",
     "stats": "87 Armor, +7 Agility, +7 Stamina (+70 HP), +7 Spirit",
-    "gain": "+25 Armor, +7 Agility, +70 HP, +7 Spirit",
-    "tip": "Supreme balanced physical leveling legs craftable through Leatherworking."
+    "gain": "+7 Agi, +70 HP, +7 Spirit, +87 Armor",
+    "tip": "Crafted alternative with balanced stats."
+  },
+  {
+    "slot": "Legs",
+    "slotKey": "legs",
+    "category": "chest-legs",
+    "minLevel": 52,
+    "maxLevel": 60,
+    "upgradeName": "Warbear Woolies",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 285) / AH",
+    "stats": "142 Armor, +28 Strength (+56 AP), +12 Stamina (+120 HP)",
+    "gain": "+56 AP in Bear & Cat, +120 HP, +142 Armor",
+    "tip": "Crafted leather pants with massive Strength."
   },
   {
     "slot": "Legs",
@@ -5538,11 +5562,11 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 60,
     "upgradeName": "Devilsaur Leggings",
     "quality": "rare",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 300) or Buy on AH",
-    "stats": "148 Armor, +12 Stamina (+120 HP), +46 Attack Power, +1% Critical Strike",
-    "gain": "+46 AP in Bear & Cat, +1% Crit, +120 HP (+2% Hit with 2-piece set)",
-    "tip": "🏆 Pre-Raid BiS set piece. Complete game changer for feral melee DPS."
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 300) / AH",
+    "stats": "148 Armor, +12 Stamina (+120 HP), Equip: +46 Attack Power, Equip: +1% Critical Strike",
+    "gain": "+46 Attack Power, +1% Melee Crit, +120 HP. Set bonus gives +2% Hit!",
+    "tip": "Pre-Raid BiS Cat DPS legs. Essential for raid hit cap."
   },
   {
     "slot": "Feet",
@@ -5553,38 +5577,38 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "upgradeName": "Nomad Sandals",
     "quality": "common",
     "sourceType": "ah",
-    "sourceDesc": "Vendor / Drop",
+    "sourceDesc": "Starter Vendor / World Drop",
     "stats": "40 Armor",
-    "gain": "Basic white leather boots.",
-    "tip": "⭐ Currently equipped on Chongo! Solid starter armor."
+    "gain": "Basic leather footwear armor. Currently equipped on Chongo!",
+    "tip": "Common footwear providing basic armor."
   },
   {
     "slot": "Feet",
     "slotKey": "feet",
     "category": "accessories",
     "minLevel": 15,
-    "maxLevel": 20,
+    "maxLevel": 22,
     "upgradeName": "Bandit Boots of the Bear",
     "quality": "uncommon",
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "53 Armor, +3 Strength (+6 AP), +3 Stamina (+30 HP)",
-    "gain": "+13 Armor (+36 Bear Armor), +6 Feral AP, +30 HP",
-    "tip": "First green boots with real combat stats."
+    "gain": "+6 Feral AP, +30 HP, +53 Armor",
+    "tip": "Sturdy green leather boots with Strength and Stamina."
   },
   {
     "slot": "Feet",
     "slotKey": "feet",
     "category": "accessories",
     "minLevel": 15,
-    "maxLevel": 24,
+    "maxLevel": 22,
     "upgradeName": "Dark Leather Boots",
-    "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 100) or Buy on AH",
-    "stats": "51 Armor, +5 Agility (+5 Cat AP / +0.25% Crit)",
-    "gain": "+11 Armor (+31 Bear Armor), +5 Agility",
-    "tip": "Crafted boots giving high agility and armor."
+    "quality": "common",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 100) / AH",
+    "stats": "51 Armor",
+    "gain": "+11 Armor over Nomad Sandals",
+    "tip": "Crafted leather boots with 51 raw armor."
   },
   {
     "slot": "Feet",
@@ -5597,36 +5621,64 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "63 Armor, +8 Agility (+8 Cat AP / +0.4% Crit), +3 Strength (+6 AP)",
-    "gain": "+23 Armor (+64 Bear Armor), +8 Agility, +6 AP",
-    "tip": "🔥 Renowned as the single best low-level physical boots in Classic WoW."
+    "gain": "+8 Agility (+8 AP / +0.4% Crit), +3 Strength (+6 AP)",
+    "tip": "⭐ Best low-level feral boots in the game. Buy on AH if affordable!"
   },
   {
-    "slot": "Hands",
-    "slotKey": "hands",
+    "slot": "Feet",
+    "slotKey": "feet",
     "category": "accessories",
-    "minLevel": 12,
-    "maxLevel": 20,
-    "upgradeName": "Evergreen Gloves",
+    "minLevel": 36,
+    "maxLevel": 53,
+    "upgradeName": "Albino Crocscale Boots",
     "quality": "uncommon",
     "sourceType": "quest",
-    "sourceDesc": "Solo Quest: Tharnariun's Hope (Darkshore)",
-    "stats": "20 Armor, +3 Intellect (+45 Mana), +2 Spirit",
-    "gain": "+45 Mana, +2 Spirit",
-    "tip": "⭐ Currently equipped on Chongo! Guaranteed solo quest reward in Darkshore."
+    "sourceDesc": "Solo Quest: Bloodscalp Ears / Excelsior (STV)",
+    "stats": "98 Armor, +15 Agility (+15 Cat AP / +0.75% Crit), +5 Stamina (+50 HP)",
+    "gain": "+15 Agility, +50 HP, +98 Armor",
+    "tip": "Great solo quest reward in STV with heavy Agility."
+  },
+  {
+    "slot": "Feet",
+    "slotKey": "feet",
+    "category": "accessories",
+    "minLevel": 54,
+    "maxLevel": 60,
+    "upgradeName": "Swiftwalker Boots",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Princess Moira Bronzebeard (BRD)",
+    "stats": "115 Armor, +21 Agility, +7 Stamina, +4 Strength",
+    "gain": "+21 Agility, +8 AP, +70 HP, +115 Armor",
+    "tip": "Pre-Raid BiS feral boots with +21 Agility."
   },
   {
     "slot": "Hands",
     "slotKey": "hands",
     "category": "accessories",
     "minLevel": 12,
-    "maxLevel": 20,
+    "maxLevel": 21,
     "upgradeName": "Shucking Gloves",
     "quality": "uncommon",
     "sourceType": "quest",
     "sourceDesc": "Solo Quest: Fruit of the Sea (Darkshore)",
     "stats": "45 Armor, +2 Stamina (+20 HP), +2 Intellect (+30 Mana)",
-    "gain": "+25 Armor (+70 Bear Armor), +20 HP",
-    "tip": "Alternative Darkshore solo quest reward from gathering crab chunks."
+    "gain": "+20 HP, +30 Mana. Currently equipped on Chongo!",
+    "tip": "Guaranteed solo quest reward from Darkshore."
+  },
+  {
+    "slot": "Hands",
+    "slotKey": "hands",
+    "category": "accessories",
+    "minLevel": 14,
+    "maxLevel": 22,
+    "upgradeName": "Prospector's Mitts of the Bear",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "47 Armor, +3 Strength (+6 AP), +3 Stamina (+30 HP)",
+    "gain": "+6 Feral AP, +30 HP, +47 Armor",
+    "tip": "Feral leveling gloves with Strength and Stamina."
   },
   {
     "slot": "Hands",
@@ -5639,8 +5691,8 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "61 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +6 Stamina (+60 HP), +5 Strength (+10 AP)",
-    "gain": "+41 Armor, +16 AP in Cat, +60 HP",
-    "tip": "Fantastic multi-stat physical leather gloves."
+    "gain": "+10 AP (+16 in Cat), +60 HP, +0.3% Crit",
+    "tip": "Trifecta feral gloves packed with Strength, Agility, and Stamina."
   },
   {
     "slot": "Hands",
@@ -5653,8 +5705,22 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "62 Armor, +8 Strength (+16 AP), +7 Stamina (+70 HP)",
-    "gain": "+42 Armor (+117 Bear Armor), +16 AP, +70 HP",
-    "tip": "Outstanding early physical DPS and tanking gloves."
+    "gain": "+16 Feral AP in Bear & Cat, +70 HP",
+    "tip": "High Strength and Stamina for Bear and Cat leveling."
+  },
+  {
+    "slot": "Hands",
+    "slotKey": "hands",
+    "category": "accessories",
+    "minLevel": 36,
+    "maxLevel": 52,
+    "upgradeName": "Nightscape Gloves",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 205) / AH",
+    "stats": "69 Armor, +14 Agility (+14 Cat AP / +0.7% Crit)",
+    "gain": "+14 Agility, +69 Armor",
+    "tip": "Crafted gloves with pure Agility for Cat Form."
   },
   {
     "slot": "Hands",
@@ -5664,11 +5730,25 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 60,
     "upgradeName": "Devilsaur Gauntlets",
     "quality": "rare",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 290) or Buy on AH",
-    "stats": "103 Armor, +9 Stamina (+90 HP), +28 Attack Power, +1% Critical Strike",
-    "gain": "+28 Attack Power, +1% Crit, +90 HP (+2% Hit total set bonus)",
-    "tip": "🏆 Set bonus (+2% Hit total) makes this irreplaceable pre-raid gear."
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 290) / AH",
+    "stats": "103 Armor, +9 Stamina (+90 HP), Equip: +28 Attack Power, Equip: +1% Critical Strike",
+    "gain": "+28 Attack Power, +1% Melee Crit, +90 HP",
+    "tip": "Pre-Raid BiS gloves. Combines with Devilsaur Leggings for +2% Hit!"
+  },
+  {
+    "slot": "Waist",
+    "slotKey": "waist",
+    "category": "accessories",
+    "minLevel": 10,
+    "maxLevel": 18,
+    "upgradeName": "Bard's Belt of the Tiger",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "39 Armor, +2 Strength (+4 AP), +2 Agility (+2 Cat AP / +0.1% Crit)",
+    "gain": "+4 Feral AP (+6 in Cat), +0.1% Crit. Currently equipped on Chongo!",
+    "tip": "⭐ Excellent leveling belt with Strength and Agility."
   },
   {
     "slot": "Waist",
@@ -5681,22 +5761,22 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "42 Armor, +3 Stamina (+30 HP), +2 Spirit",
-    "gain": "+42 Armor, +30 HP",
-    "tip": "⭐ Currently equipped on Chongo! Solid green belt."
+    "gain": "+30 HP, +2 Spirit, +42 Armor",
+    "tip": "Defensive green leather belt."
   },
   {
     "slot": "Waist",
     "slotKey": "waist",
     "category": "accessories",
     "minLevel": 18,
-    "maxLevel": 28,
+    "maxLevel": 34,
     "upgradeName": "Deviate Scale Belt",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 115) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 115) / AH",
     "stats": "51 Armor, +6 Stamina (+60 HP), +5 Agility (+0.25% Crit), +3 Spirit",
-    "gain": "+9 Armor (+25 Bear Armor), +5 Agility, +30 HP",
-    "tip": "Can buy the scales directly on the Auction House to craft without entering Wailing Caverns!"
+    "gain": "+60 HP, +5 Agi, +3 Spirit, +51 Armor",
+    "tip": "⭐ Best crafted leveling belt for Druids. Highly recommended!"
   },
   {
     "slot": "Waist",
@@ -5706,25 +5786,39 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 32,
     "upgradeName": "Hillman's Belt",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 95) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 120) / AH",
     "stats": "48 Armor, +4 Stamina (+40 HP), +4 Spirit",
-    "gain": "+6 Armor, +40 HP, +4 Spirit",
-    "tip": "Crafted belt providing survivability and regeneration."
+    "gain": "+40 HP, +4 Spirit, +48 Armor",
+    "tip": "Defensive crafted belt."
   },
   {
     "slot": "Waist",
     "slotKey": "waist",
     "category": "accessories",
     "minLevel": 35,
-    "maxLevel": 48,
+    "maxLevel": 54,
     "upgradeName": "Barbaric Belt",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 200) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 190) / AH",
     "stats": "62 Armor, +11 Strength (+22 AP), Use: Increases Rage by 30",
-    "gain": "+20 Armor, +22 AP, instant +30 Rage on use",
-    "tip": "High strength crafted belt with emergency rage generator for Bear."
+    "gain": "+22 Feral AP, +30 Rage burst on demand",
+    "tip": "⭐ Instant 30 Rage on use makes this incredible for Bear tanking!"
+  },
+  {
+    "slot": "Waist",
+    "slotKey": "waist",
+    "category": "accessories",
+    "minLevel": 55,
+    "maxLevel": 60,
+    "upgradeName": "Cloudrunner Girdle",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Quartermaster Zigris (LBRS) / AH",
+    "stats": "185 Armor, +15 Agility, +14 Strength (+28 AP)",
+    "gain": "+28 AP (+43 in Cat), +15 Agi, +185 Armor",
+    "tip": "Pre-Raid BiS belt with huge armor and stats."
   },
   {
     "slot": "Wrists",
@@ -5734,11 +5828,11 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 18,
     "upgradeName": "Ridgeback Bracers",
     "quality": "uncommon",
-    "sourceType": "quest",
-    "sourceDesc": "Solo Quest: WANTED: Murkdeep! (Darkshore)",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "33 Armor, +2 Stamina (+20 HP), +2 Spirit",
-    "gain": "+20 HP, +2 Spirit",
-    "tip": "⭐ Currently equipped on Chongo! Guaranteed solo quest reward in Darkshore."
+    "gain": "+20 HP, +2 Spirit. Currently equipped on Chongo!",
+    "tip": "Early leveling bracers with Stamina."
   },
   {
     "slot": "Wrists",
@@ -5751,8 +5845,8 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "32 Armor, +2 Agility (+2 Cat AP), +1 Stamina (+10 HP)",
-    "gain": "+2 Agility (+2 Cat AP / +0.1% Crit)",
-    "tip": "BoE leather bracers with agility."
+    "gain": "+2 Agility, +10 HP, +32 Armor",
+    "tip": "Agility and Stamina bracers."
   },
   {
     "slot": "Wrists",
@@ -5765,8 +5859,8 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "33 Armor, +2 Strength (+4 AP), +2 Stamina (+20 HP)",
-    "gain": "+4 Bear & Cat AP, +20 HP",
-    "tip": "First green bracers with strength and health."
+    "gain": "+4 Feral AP, +20 HP, +33 Armor",
+    "tip": "Strength and Stamina bracers for Bear leveling."
   },
   {
     "slot": "Wrists",
@@ -5776,25 +5870,53 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 38,
     "upgradeName": "Barbaric Bracers",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 155) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 155) / AH",
     "stats": "47 Armor, +6 Stamina (+60 HP), +4 Agility, +4 Spirit",
-    "gain": "+14 Armor (+39 Bear Armor), +4 Agi, +40 HP",
-    "tip": "Crafted feral bracers with well-rounded stats."
+    "gain": "+60 HP, +4 Agi, +4 Spirit, +47 Armor",
+    "tip": "Crafted leather bracers with high Stamina."
+  },
+  {
+    "slot": "Wrists",
+    "slotKey": "wrists",
+    "category": "accessories",
+    "minLevel": 42,
+    "maxLevel": 56,
+    "upgradeName": "Wicked Leather Bracers",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 240) / AH",
+    "stats": "61 Armor, +11 Agility, +5 Stamina (+50 HP)",
+    "gain": "+11 Agility, +50 HP, +61 Armor",
+    "tip": "High Agility crafted bracers."
+  },
+  {
+    "slot": "Wrists",
+    "slotKey": "wrists",
+    "category": "accessories",
+    "minLevel": 57,
+    "maxLevel": 60,
+    "upgradeName": "Bracers of the Eclipse",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Prince Tortheldrin (Dire Maul West)",
+    "stats": "76 Armor, +10 Agility, +9 Stamina (+90 HP), Equip: +24 Attack Power",
+    "gain": "+24 Attack Power, +10 Agi, +90 HP",
+    "tip": "Pre-Raid BiS feral bracers with bonus Attack Power."
   },
   {
     "slot": "Back",
     "slotKey": "back",
     "category": "accessories",
     "minLevel": 10,
-    "maxLevel": 18,
+    "maxLevel": 19,
     "upgradeName": "War Paint Cloak",
     "quality": "uncommon",
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "15 Armor, +1 Strength (+2 AP), +1 Agility (+1 Cat AP), +1 Stamina (+10 HP)",
-    "gain": "+2 AP, +1 Agi, +10 HP",
-    "tip": "⭐ Currently equipped on Chongo! Solid trifecta cloak."
+    "gain": "+2 AP, +10 HP, trifecta stats. Currently equipped on Chongo!",
+    "tip": "Great early leveling cloak with balanced stats."
   },
   {
     "slot": "Back",
@@ -5804,11 +5926,25 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 32,
     "upgradeName": "Cape of the Brotherhood",
     "quality": "rare",
-    "sourceType": "ah",
-    "sourceDesc": "Edwin VanCleef (The Deadmines)",
+    "sourceType": "quest",
+    "sourceDesc": "Boss Drop: Edwin VanCleef (Deadmines)",
     "stats": "21 Armor, +6 Agility (+6 Cat AP / +0.3% Crit), +3 Stamina (+30 HP)",
-    "gain": "+6 Armor, +5 Agility, +20 HP",
-    "tip": "Premier early physical cloak with high agility."
+    "gain": "+6 Agility (+6 AP / +0.3% Crit), +30 HP",
+    "tip": "⭐ Outstanding dungeon cloak with high Agility."
+  },
+  {
+    "slot": "Back",
+    "slotKey": "back",
+    "category": "accessories",
+    "minLevel": 20,
+    "maxLevel": 30,
+    "upgradeName": "Sentry Cloak",
+    "quality": "rare",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "21 Armor, +4 Agility, +5 Stamina (+50 HP)",
+    "gain": "+4 Agility, +50 HP, +21 Armor",
+    "tip": "Rare BoE cloak with strong Stamina and Agility."
   },
   {
     "slot": "Back",
@@ -5821,64 +5957,50 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "25 Armor, +8 Agility (+8 Cat AP / +0.4% Crit), +7 Stamina (+70 HP)",
-    "gain": "+10 Armor, +7 Agility, +60 HP",
-    "tip": "Outstanding mid-game agility and stamina cloak."
+    "gain": "+8 Agility, +70 HP, +25 Armor",
+    "tip": "Rare world drop cloak packed with Agility and Stamina."
+  },
+  {
+    "slot": "Back",
+    "slotKey": "back",
+    "category": "accessories",
+    "minLevel": 58,
+    "maxLevel": 60,
+    "upgradeName": "Cape of the Black Baron",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Baron Rivendare (Stratholme)",
+    "stats": "45 Armor, +15 Agility, Equip: +20 Attack Power",
+    "gain": "+20 Attack Power, +15 Agility (+0.75% Crit)",
+    "tip": "Pre-Raid BiS cloak for Cat DPS."
   },
   {
     "slot": "Head",
     "slotKey": "head",
-    "category": "chest-legs",
+    "category": "accessories",
     "minLevel": 25,
-    "maxLevel": 38,
+    "maxLevel": 39,
     "upgradeName": "Humbert's Helm",
     "quality": "uncommon",
     "sourceType": "ah",
-    "sourceDesc": "BoE Drop from Dun Garok Riflemen (Hillsbrad) / Buy on AH",
+    "sourceDesc": "Dun Garok Riflemen (Hillsbrad) / AH",
     "stats": "76 Armor, +7 Agility (+7 Cat AP / +0.35% Crit), +8 Stamina (+80 HP)",
-    "gain": "Fills empty Head slot! +76 Armor (+212 Bear Armor), +7 Agility, +80 HP",
-    "tip": "First non-engineering helmet in Classic WoW! There are no head items below level 24."
+    "gain": "+7 Agi, +80 HP, +76 Armor",
+    "tip": "First accessible non-engineering leather helm in Vanilla WoW!"
   },
   {
     "slot": "Head",
     "slotKey": "head",
-    "category": "chest-legs",
+    "category": "accessories",
     "minLevel": 40,
     "maxLevel": 60,
     "upgradeName": "Wolfshead Helm",
     "quality": "rare",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 225) or Buy on AH",
-    "stats": "109 Armor, +10 Spirit, Equip: 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
-    "gain": "⚡ UNLIMITED POWERSHIFTING ENERGY! +20 Energy every time you shift into Cat Form!",
-    "tip": "👑 THE SINGLE MOST IMPORTANT FERAL DRUID ITEM IN THE GAME. Non-dungeon, craftable at 40!"
-  },
-  {
-    "slot": "Finger",
-    "slotKey": "ring1",
-    "category": "accessories",
-    "minLevel": 18,
-    "maxLevel": 28,
-    "upgradeName": "Protector's Band",
-    "quality": "rare",
-    "sourceType": "quest",
-    "sourceDesc": "Warsong Gulch Alliance Vendor (Silverwing Grove, Ashenvale)",
-    "stats": "+4 Strength (+8 AP), +4 Agility (+4 Cat AP / +0.2% Crit), +2 Stamina (+20 HP)",
-    "gain": "Fills empty Ring slot! +8 Bear AP, +12 Cat AP, +0.2% Crit, +20 HP",
-    "tip": "Purchased for ~1.5 gold from the WSG PvP vendor once Honored. Zero dungeon runs!"
-  },
-  {
-    "slot": "Finger",
-    "slotKey": "ring2",
-    "category": "accessories",
-    "minLevel": 20,
-    "maxLevel": 30,
-    "upgradeName": "Prairie Ring of the Tiger",
-    "quality": "uncommon",
     "sourceType": "ah",
-    "sourceDesc": "Auction House (BoE World Drop)",
-    "stats": "+3 Strength (+6 AP), +3 Agility (+3 Cat AP / +0.15% Crit)",
-    "gain": "Fills empty Ring slot! +6 Bear AP, +9 Cat AP, +0.15% Crit",
-    "tip": "BoE world drop ring. First random enchantment rings start at level 20."
+    "sourceDesc": "Crafted via Leatherworking (Skill 225) / AH",
+    "stats": "109 Armor, +10 Spirit, Equip: 'On Cat shapeshift gain 20 Energy; on Bear gain 5 Rage.'",
+    "gain": "Permanent +20 Energy every shapeshift into Cat Form. BiS for entire game!",
+    "tip": "🏆 THE SINGLE MOST IMPORTANT DRUID ITEM IN VANILLA WOW. Enables Powershifting."
   },
   {
     "slot": "Shoulders",
@@ -5891,8 +6013,8 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "64 Armor, +4 Stamina (+40 HP), +4 Spirit",
-    "gain": "+64 Armor (+179 Bear Armor), +40 HP, +4 Spirit",
-    "tip": "⭐ Earliest equipable leather shoulders at level 20! Replaces empty shoulder slot."
+    "gain": "+40 HP, +4 Spirit, +64 Armor",
+    "tip": "First available leather shoulder armor in Classic WoW!"
   },
   {
     "slot": "Shoulders",
@@ -5902,11 +6024,11 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 30,
     "upgradeName": "Hillman's Shoulders",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 130) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 130) / AH",
     "stats": "65 Armor, +5 Stamina (+50 HP), +4 Spirit",
-    "gain": "+65 Armor (+182 Bear Armor), +50 HP, +4 Spirit",
-    "tip": "Crafted leather shoulders providing great survivability."
+    "gain": "+50 HP, +4 Spirit, +65 Armor",
+    "tip": "Crafted leather shoulders with solid Stamina."
   },
   {
     "slot": "Shoulders",
@@ -5919,8 +6041,8 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "sourceType": "ah",
     "sourceDesc": "Auction House (BoE World Drop)",
     "stats": "78 Armor, +11 Agility (+11 Cat AP / +0.55% Crit), +5 Strength (+10 AP)",
-    "gain": "+78 Armor, +10 Bear AP, +21 Cat AP, +0.55% Crit",
-    "tip": "🔥 Top-tier rare physical leather shoulders for mid-level Feral leveling."
+    "gain": "+11 Agility, +10 AP (+21 AP in Cat), +78 Armor",
+    "tip": "Massive shoulder upgrade with +11 Agility and +5 Strength."
   },
   {
     "slot": "Shoulders",
@@ -5930,13 +6052,98 @@ const FERAL_NON_DUNGEON_UPGRADES = [
     "maxLevel": 42,
     "upgradeName": "Barbaric Shoulders",
     "quality": "uncommon",
-    "sourceType": "lw",
-    "sourceDesc": "Crafted via Leatherworking (Skill 175) or Buy on AH",
+    "sourceType": "ah",
+    "sourceDesc": "Crafted via Leatherworking (Skill 175) / AH",
     "stats": "76 Armor, +6 Stamina (+60 HP), +5 Agility, +5 Spirit",
-    "gain": "+76 Armor, +5 Agility, +60 HP",
-    "tip": "Crafted via Leatherworking with Heavy Leather."
+    "gain": "+60 HP, +5 Agi, +5 Spirit, +76 Armor",
+    "tip": "Crafted leather shoulders with balanced feral stats."
+  },
+  {
+    "slot": "Shoulders",
+    "slotKey": "shoulders",
+    "category": "accessories",
+    "minLevel": 56,
+    "maxLevel": 60,
+    "upgradeName": "Truestrike Shoulders",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Pyroguard Emberseer (UBRS)",
+    "stats": "129 Armor, Equip: +24 Attack Power, Equip: +2% Hit Chance",
+    "gain": "+24 Attack Power, +2% Melee Hit Chance",
+    "tip": "Pre-Raid BiS shoulders for physical DPS classes."
+  },
+  {
+    "slot": "Finger",
+    "slotKey": "ring1",
+    "category": "accessories",
+    "minLevel": 18,
+    "maxLevel": 28,
+    "upgradeName": "Protector's Band",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Warsong Gulch Reputation Vendor (Friendly)",
+    "stats": "+4 Strength (+8 AP), +4 Agility (+4 Cat AP / +0.2% Crit), +2 Stamina (+20 HP)",
+    "gain": "+8 AP (+12 in Cat), +20 HP, +0.2% Crit",
+    "tip": "⭐ Superb PvP reputation ring obtainable at level 18!"
+  },
+  {
+    "slot": "Finger",
+    "slotKey": "ring1",
+    "category": "accessories",
+    "minLevel": 20,
+    "maxLevel": 30,
+    "upgradeName": "Prairie Ring of the Tiger",
+    "quality": "uncommon",
+    "sourceType": "ah",
+    "sourceDesc": "Auction House (BoE World Drop)",
+    "stats": "+3 Strength (+6 AP), +3 Agility (+3 Cat AP / +0.15% Crit)",
+    "gain": "+6 AP (+9 in Cat), +0.15% Crit",
+    "tip": "Green BoE leveling ring with Strength and Agility."
+  },
+  {
+    "slot": "Finger",
+    "slotKey": "ring1",
+    "category": "accessories",
+    "minLevel": 21,
+    "maxLevel": 35,
+    "upgradeName": "Silverlaine's Family Seal",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Baron Silverlaine (Shadowfang Keep)",
+    "stats": "+7 Strength (+14 AP), +3 Stamina (+30 HP)",
+    "gain": "+14 Feral AP, +30 HP",
+    "tip": "Rare dungeon ring offering heavy Strength."
+  },
+  {
+    "slot": "Finger",
+    "slotKey": "ring1",
+    "category": "accessories",
+    "minLevel": 49,
+    "maxLevel": 60,
+    "upgradeName": "Blackstone Ring",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Princess Theradras (Maraudon)",
+    "stats": "+6 Stamina (+60 HP), Equip: +20 Attack Power, Equip: +1% Hit Chance",
+    "gain": "+20 Attack Power, +1% Melee Hit, +60 HP",
+    "tip": "Essential Pre-Raid BiS ring for physical melee."
+  },
+  {
+    "slot": "Finger",
+    "slotKey": "ring1",
+    "category": "accessories",
+    "minLevel": 56,
+    "maxLevel": 60,
+    "upgradeName": "Tarnished Elven Ring",
+    "quality": "rare",
+    "sourceType": "quest",
+    "sourceDesc": "Dungeon Drop: Tribute Run (Dire Maul North)",
+    "stats": "+15 Agility, Equip: +1% Hit Chance",
+    "gain": "+15 Agility (+0.75% Crit), +1% Melee Hit",
+    "tip": "Pre-Raid BiS ring from Dire Maul Tribute."
   }
 ];
+
 
 function initUpgradeAdvisor() {
   const filterBtns = document.querySelectorAll(".btn-adv-filter");
