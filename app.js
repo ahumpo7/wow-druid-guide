@@ -45,7 +45,7 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   10: {
-    title: "Bear Form Unlocked! 'Strength and Mercy' Class Quest",
+    title: "BEAR FORM UNLOCKED & FEROCITY (Rank 1/5)",
     zone: "Zephras Isle -> Alliance Capital (Stormwind City)",
     zoneRange: "10-12",
     hubs: "High Order Enclave -> Stormwind City / Westfall",
@@ -54,8 +54,8 @@ const DRUID_LEVEL_DATA = {
       name: "Ferocity (Rank 1/5)",
       tree: "Feral Combat",
       rank: "1/5",
-      effect: "Reduces the Rage cost of Maul and Swipe by 1, and the Energy cost of Claw and Rake by 1.",
-      why: "Ferocity is the single best early leveling talent. It directly increases how often you can cast Maul in Bear Form, drastically increasing rage efficiency."
+      effect: "Reduces the Rage cost of your Maul and Swipe abilities by 1, and the Energy cost of your Claw and Rake abilities by 1.",
+      why: "The single most important leveling talent. Resource cost reduction on your main builders ensures maximum combat uptime and zero resource starvation."
     },
     trainerTrain: ["Bear Form (Class Quest)", "Maul (Rank 1)", "Demoralizing Roar (Rank 1)", "Growl (Rank 1)"],
     trainerSkip: ["Teleport: Moonglade (You get this free from quest, don't pay extra)"],
@@ -71,7 +71,7 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   11: {
-    title: "Stepping into Westfall or Loch Modan",
+    title: "Ferocity Rank 2 & Westfall Farmsteads",
     zone: "Westfall (Sentinel Hill) or Loch Modan (Thelsamar)",
     zoneRange: "10-14",
     hubs: "Sentinel Hill (Westfall) / Thelsamar (Loch Modan)",
@@ -80,8 +80,8 @@ const DRUID_LEVEL_DATA = {
       name: "Ferocity (Rank 2/5)",
       tree: "Feral Combat",
       rank: "2/5",
-      effect: "Reduces the Rage cost of Maul and Swipe by 2.",
-      why: "Lowers Maul cost down to 13 Rage. You will now be able to Maul almost every single swing."
+      effect: "Reduces the Rage cost of Maul and Swipe by 2, and the Energy cost of Claw and Rake by 2.",
+      why: "Lower costs allow you to cycle Maul every 2.5 second auto-attack swing with continuous rage generation."
     },
     trainerTrain: ["No trainer spells at 11 (Save your silver!)"],
     trainerSkip: [],
@@ -93,7 +93,7 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   12: {
-    title: "Enrage & Bash: Mastering Crowd Control",
+    title: "Ferocity Rank 3 & Moonbrook Scouting",
     zone: "Westfall (The Jansen / Saldean Farms) or Loch Modan",
     zoneRange: "11-15",
     hubs: "Sentinel Hill, Saldean's Farm",
@@ -102,8 +102,8 @@ const DRUID_LEVEL_DATA = {
       name: "Ferocity (Rank 3/5)",
       tree: "Feral Combat",
       rank: "3/5",
-      effect: "Reduces the Rage cost of Maul and Swipe by 3.",
-      why: "Maul cost is now down to 12 Rage. Rage starvation is practically eliminated on standard pulls."
+      effect: "Reduces the Rage cost of Maul and Swipe by 3, and the Energy cost of Claw and Rake by 3.",
+      why: "Continuous resource efficiency allows seamless pulling mob to mob without pause."
     },
     trainerTrain: ["Bash (Rank 1 - Crucial 2-sec stun interrupt!)", "Enrage (Generate free rage out of combat)", "Healing Touch (Rank 3)"],
     trainerSkip: ["Regrowth (Rank 1 - High mana cost, stick to Rejuv/HT)"],
@@ -116,7 +116,7 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   13: {
-    title: "Pushing through Westfall / Loch Modan",
+    title: "Ferocity Rank 4 & The Defias Threat",
     zone: "Westfall (Moonbrook outskirts) / Loch Modan (Valley of Kings)",
     zoneRange: "12-16",
     hubs: "Sentinel Hill / Thelsamar",
@@ -125,8 +125,8 @@ const DRUID_LEVEL_DATA = {
       name: "Ferocity (Rank 4/5)",
       tree: "Feral Combat",
       rank: "4/5",
-      effect: "Reduces the Rage cost of Maul and Swipe by 4.",
-      why: "Takes Maul cost down to 11 Rage. Nearly uninterrupted heavy hits."
+      effect: "Reduces the Rage cost of Maul and Swipe by 4, and the Energy cost of Claw and Rake by 4.",
+      why: "Your Maul now costs only 11 Rage, making it nearly free on every single bear swing."
     },
     trainerTrain: ["No spells at 13."],
     trainerSkip: [],
@@ -138,7 +138,7 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   14: {
-    title: "Ferocity Capped & Demoralizing Roar Upgrade",
+    title: "MAX FEROCITY & DEMORALIZING ROAR 2",
     zone: "Westfall (Moonbrook & Sentinel Tower) or Darkshore",
     zoneRange: "13-17",
     hubs: "Sentinel Hill / Auberdine",
@@ -147,8 +147,8 @@ const DRUID_LEVEL_DATA = {
       name: "Ferocity (Rank 5/5)",
       tree: "Feral Combat",
       rank: "5/5",
-      effect: "Reduces the Rage cost of Maul/Swipe by 5, and Claw/Rake by 5.",
-      why: "MAXED FEROCITY! Maul now costs only 10 Rage (down from 15). At level 20, your Cat Form Claw will cost 40 instead of 45 Energy, allowing an immediate extra strike."
+      effect: "Reduces the Rage cost of Maul and Swipe by 5, and the Energy cost of Claw and Rake by 5.",
+      why: "MAXED FEROCITY! Maul now costs only 10 Rage (down from 15). At level 20, Cat Form Claw will cost 40 instead of 45 Energy, allowing an immediate extra strike."
     },
     trainerTrain: ["Demoralizing Roar (Rank 2)", "Healing Touch (Rank 4)"],
     trainerSkip: ["Thorns (Rank 2 - Skip to conserve silver)"],
@@ -209,10 +209,10 @@ const DRUID_LEVEL_DATA = {
     hubs: "Sentinel Hill (Westfall) / Lakeshire (Redridge)",
     zoneInstructions: "SOLO LEVELING ROUTE:\n1. Complete Captain Sanders' Hidden Treasure chain off the Westfall coast (free 8-slot bag and huge solo XP).\n2. Finish the Moonbrook Defias outdoor quests (Defias Trappers and Smugglers outside the portal).\n3. Travel east to Lakeshire in Redridge Mountains. Grab the flight path and start the Lakeside gnoll and murloc bounties. In Bear Form with Thick Hide, you can easily face-tank 2-3 mobs at once.",
     talent: {
-      name: "Thick Hide (Rank 1/3)",
+      name: "Thick Hide (Rank 1/5)",
       tree: "Feral Combat",
-      rank: "1/3",
-      effect: "Increases your Armor contribution from items by 3.3% (compounded by Bear Form's +180% Armor multiplier).",
+      rank: "1/5",
+      effect: "Increases your Armor contribution from items by 2% (compounded by Bear Form's +180% Armor multiplier).",
       why: "BEST SOLO CHOICE: In solo play, you take 100% of all incoming physical damage. Threat talents provide zero benefit when fighting alone, but Thick Hide amplifies your armor against every mob, significantly reducing physical damage taken and downtime."
     },
     trainerTrain: ["No spells at 17."],
@@ -234,10 +234,10 @@ const DRUID_LEVEL_DATA = {
     hubs: "Thelsamar / Lakeshire",
     zoneInstructions: "SOLO ROUTE: Redridge Mountains offers high-density solo kill quests around Lake Everstill (Murlocs, Hilary's Necklace) and the gnolls along the road. Skip the elite castle quests (Stonewatch Keep) for now—stick to yellow-level outdoor beasts and humanoids where your Bear armor minimizes food/drink downtime.",
     talent: {
-      name: "Thick Hide (Rank 2/3)",
+      name: "Thick Hide (Rank 2/5)",
       tree: "Feral Combat",
-      rank: "2/3",
-      effect: "Increases your Armor contribution from items by 6.6% (compounded by Bear Form's +180% Armor multiplier).",
+      rank: "2/5",
+      effect: "Increases your Armor contribution from items by 4% (compounded by Bear Form's +180% Armor multiplier).",
       why: "Doubles your armor bonus from gear. You take noticeably less physical damage from multiple gnolls and beasts in Redridge and Westfall."
     },
     trainerTrain: ["Faerie Fire (Rank 1 - Reduces enemy armor by 175 and prevents stealth!)", "Rejuvenation (Rank 4)"],
@@ -255,11 +255,11 @@ const DRUID_LEVEL_DATA = {
     hubs: "Lakeshire",
     zoneInstructions: "Complete 'Free at Last' and the bellygrub boar quest in Redridge. You are 1 level away from unlocking Cat Form, the biggest speed spike in the entire leveling process!",
     talent: {
-      name: "Thick Hide (Rank 3/3)",
+      name: "Thick Hide (Rank 3/5)",
       tree: "Feral Combat",
-      rank: "3/3",
-      effect: "Increases your Armor contribution from items by 10% (MAX RANK).",
-      why: "Reaches the 10-point threshold in Feral Combat! You are now maximally resilient and ready to unlock Tier 3 (Feline Swiftness +30% movement speed) the exact second you hit Level 20."
+      rank: "3/5",
+      effect: "Increases your Armor contribution from items by 6% (compounded by Bear Form's +180% Armor multiplier).",
+      why: "Reaches the 10-point threshold in Feral Combat! You are now maximally resilient and ready to unlock Tier 3 (Feral Swiftness +30% movement speed) the exact second you hit Level 20."
     },
     trainerTrain: ["No spells at 19."],
     trainerSkip: [],
@@ -270,17 +270,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   20: {
-    title: "CAT FORM UNLOCKED! Welcome to Stealth DPS",
+    title: "CAT FORM UNLOCKED! Welcome to Stealth DPS & Feral Swiftness",
     zone: "Darnassus / Stormwind -> Redridge Mountains & Ashenvale",
     zoneRange: "20-24",
     hubs: "Lakeshire (Redridge) / Astranaar (Ashenvale)",
     zoneInstructions: "MAJOR MILESTONE: Visit any Druid trainer to learn Cat Form, Prowl, Claw, Rip, and Tiger's Fury! Your gameplay now transforms from slow and tanky to rapid-fire rogue-like stealth bursts with zero downtime.",
     talent: {
-      name: "Feline Swiftness (Rank 1/2)",
+      name: "Feral Swiftness (Rank 1/2)",
       tree: "Feral Combat",
       rank: "1/2",
-      effect: "Increases your movement speed by 15% while in Cat Form outdoors.",
-      why: "15% constant run speed outdoors! This drastically cuts travel time between quest mobs and objectives."
+      effect: "Increases your movement speed by 15% outdoors while in Cat Form and increases your chance to dodge while in Cat Form, Bear Form, and Dire Bear Form by 2%.",
+      why: "15% constant run speed outdoors PLUS 2% dodge in all forms! This drastically cuts travel time between quest mobs and boosts physical mitigation."
     },
     trainerTrain: ["Cat Form", "Claw (Rank 1)", "Prowl (Rank 1)", "Rip (Rank 1)", "Tiger's Fury (Rank 1)"],
     trainerSkip: ["Starfire (Rank 1 - Pure balance spell, never cast this while feral)"],
@@ -297,17 +297,17 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   21: {
-    title: "30% Permanent Cat Speed (Feline Swiftness 2/2)",
+    title: "30% Permanent Cat Speed (Feral Swiftness 2/2)",
     zone: "Redridge Mountains (Render's Camp) / Ashenvale (Astranaar)",
     zoneRange: "20-25",
     hubs: "Astranaar / Lakeshire",
     zoneInstructions: "Pick up the Astranaar flight path in Ashenvale. With 30% outdoor movement speed, you outrun nearly all other players and non-mounted mobs!",
     talent: {
-      name: "Feline Swiftness (Rank 2/2)",
+      name: "Feral Swiftness (Rank 2/2)",
       tree: "Feral Combat",
       rank: "2/2",
-      effect: "Increases your movement speed by 30% while in Cat Form outdoors.",
-      why: "30% permanent bonus speed! You now have a mini-mount 20 levels before anyone else gets their first mount at 40."
+      effect: "Increases your movement speed by 30% outdoors while in Cat Form and increases your chance to dodge in all forms by 4%.",
+      why: "30% permanent bonus speed and +4% dodge! You now have a mini-mount 20 levels before anyone else gets their first mount at 40."
     },
     trainerTrain: ["No spells at 21."],
     trainerSkip: [],
@@ -329,7 +329,7 @@ const DRUID_LEVEL_DATA = {
       tree: "Feral Combat",
       rank: "1/3",
       effect: "Increases your critical strike chance in Bear, Dire Bear, and Cat form by 2%.",
-      why: "Crit chance accelerates kill speeds and sets up future rage/energy generating talents like Primal Fury."
+      why: "Crit chance accelerates kill speeds and sets up future rage/combo point generating talents like Primal Fury."
     },
     trainerTrain: ["Rake (Rank 1 - Direct bleed opener!)", "Healing Touch (Rank 5)"],
     trainerSkip: ["Soothe Animal (Very niche, save money)"],
@@ -406,7 +406,7 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   26: {
-    title: "Primal Fury / Savage Fury: Building Pure Burst",
+    title: "Predatory Strikes: Building Automatic Attack Power Scaling",
     zone: "Wetlands (Dun Modr) or Duskwood (Hermit of Duskwood)",
     zoneRange: "25-30",
     hubs: "Menethil Harbor / Darkshire",
@@ -416,7 +416,7 @@ const DRUID_LEVEL_DATA = {
       tree: "Feral Combat",
       rank: "1/3",
       effect: "Increases your melee attack power in Cat, Bear, and Dire Bear forms by 50% of your level.",
-      why: "Provides flat attack power that scales automatically every time you level up."
+      why: "Provides flat attack power that scales automatically every single time you level up."
     },
     trainerTrain: ["No spells at 26."],
     trainerSkip: [],
@@ -472,17 +472,17 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   29: {
-    title: "Blood Frenzy: Generating Extra Combo Points",
+    title: "Primal Fury: Guaranteed Rage & Extra Combo Points on Crit",
     zone: "Hillsbrad Foothills (Southshore) / Ashenvale finale",
     zoneRange: "28-33",
     hubs: "Southshore (Hillsbrad)",
     zoneInstructions: "Grab the Southshore flight path in Hillsbrad Foothills. Clear the syndicate camps and river murlocs. Watch out for Horde players roaming the road.",
     talent: {
-      name: "Blood Frenzy (Rank 1/2)",
+      name: "Primal Fury (Rank 1/2)",
       tree: "Feral Combat",
       rank: "1/2",
-      effect: "Your critical strikes from Claw, Rake, Shred, and Ravage add an additional combo point.",
-      why: "Whenever your Claw or Rake crits, you instantly gain 2 combo points instead of 1, allowing lightning-fast 5-point finishers!"
+      effect: "Gives you a 50% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear or Dire Bear form, and critical strikes from Cat Form abilities add an additional combo point.",
+      why: "Whenever your Claw, Rake, or Shred crits, you have a 50% chance to immediately gain 2 combo points instead of 1, accelerating your finishers!"
     },
     trainerTrain: ["No spells at 29."],
     trainerSkip: [],
@@ -493,17 +493,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   30: {
-    title: "TRAVEL FORM & LEADER OF THE PACK AURA!",
+    title: "TRAVEL FORM UNLOCKED & PRIMAL FURY CAPPED!",
     zone: "Hillsbrad Foothills (Southshore) -> Stranglethorn Vale (Rebel Camp)",
     zoneRange: "30-34",
     hubs: "Southshore / Rebel Camp (STV)",
     zoneInstructions: "HUGE DOUBLE MILESTONE: Visit your trainer to unlock Travel Form (40% outdoor run speed for zero mount cost!) and talent Leader of the Pack (+3% permanent crit aura). Head south to Stranglethorn Vale!",
     talent: {
-      name: "Leader of the Pack (Rank 1/1)",
+      name: "Primal Fury (Rank 2/2)",
       tree: "Feral Combat",
-      rank: "1/1",
-      effect: "Increases ranged and melee critical chance of all party members within 45 yards by 3% while in Cat, Bear, or Dire Bear form.",
-      why: "ICONIC FERAL TALENT. You permanently gain +3% critical strike chance, and every dungeon party will fight to have you in their group for this aura!"
+      rank: "2/2",
+      effect: "Gives you a 100% chance to gain an additional 5 Rage on Bear crits, and Cat critical strikes ALWAYS add an additional combo point.",
+      why: "100% GUARANTEED extra combo point on every Cat crit and +5 Rage on every Bear crit! Combined with Travel Form (+40% run speed), your leveling velocity doubles."
     },
     trainerTrain: ["Travel Form (40% run speed!)", "Bite / Ferocious Bite (Rank 1 - First instant burst finisher!)", "Regrowth (Rank 3)"],
     trainerSkip: ["Tree Form / Tranquility if tight on silver"],
@@ -514,7 +514,7 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   31: {
-    title: "Savage Fury: Boosting Claw & Rake Damage",
+    title: "Savage Fury: Boosting Claw, Rake, Maul & Swipe",
     zone: "Stranglethorn Vale (Rebel Camp & Kurzen's Compound)",
     zoneRange: "30-35",
     hubs: "Rebel Camp (Northern STV)",
@@ -535,7 +535,7 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   32: {
-    title: "Savage Fury Rank 2 (20% More Damage!)",
+    title: "Savage Fury Rank 2 (20% Flat Builder Damage!)",
     zone: "Stranglethorn Vale / Arathi Highlands (Refuge Pointe)",
     zoneRange: "31-36",
     hubs: "Refuge Pointe (Arathi) / Rebel Camp",
@@ -556,17 +556,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   33: {
-    title: "Blood Frenzy Rank 2",
+    title: "Faerie Fire (Feral): Instant Zero-Mana Pull & Debuff in Form",
     zone: "Arathi Highlands (Witherbark Village) / Desolace (Nijel's Point)",
     zoneRange: "32-37",
     hubs: "Nijel's Point (Desolace) / Refuge Pointe",
     zoneInstructions: "Nijel's Point in Desolace has a cluster of uninterrupted Alliance quests: centaur reputation, kodo hunting, and satyrs.",
     talent: {
-      name: "Blood Frenzy (Rank 2/2)",
+      name: "Faerie Fire (Feral) (Rank 1/1)",
       tree: "Feral Combat",
-      rank: "2/2",
-      effect: "Your critical strikes from Claw, Rake, Shred, and Ravage add an additional combo point 100% of the time.",
-      why: "Guaranteed 2 combo points every time you crit. Fast-tracks your 5-point Ferocious Bites."
+      rank: "1/1",
+      effect: "Increases the armor reduction of Faerie Fire and allows it to be cast while in Cat, Bear, or Dire Bear Form at 30 yard range for 0 Mana!",
+      why: "THE PREMIER FERAL PULL & UTILITY SPELL. Cast directly in Cat or Bear form from 30 yards to pull mobs, strip armor, and prevent humanoid runners from stealthing, with ZERO mana cost!"
     },
     trainerTrain: ["No spells at 33."],
     trainerSkip: [],
@@ -684,17 +684,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   39: {
-    title: "The Eve of Level 40: Dire Bear Prep",
+    title: "Feral Aggression & The Eve of Leader of the Pack",
     zone: "Badlands (Dustbelcher Grotto) & Northern Stranglethorn",
     zoneRange: "38-43",
     hubs: "Thelsamar / Lakeshire (Rest & bank prep)",
     zoneInstructions: "SOLO ROUTE: Badlands offers clustered solo beast and humanoid grinding (Coyotes, Rock Elementals, Buzzards). Sell gathered leather, herbs, and BoE green drops on the Auction House. Ensure you reach 90+ gold for your level 40 mount purchase!",
     talent: {
-      name: "Primal Fury (Rank 1/2)",
+      name: "Feral Aggression (Rank 1/5)",
       tree: "Feral Combat",
-      rank: "1/2",
-      effect: "Gives you a 50% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear and Dire Bear form.",
-      why: "Makes Bear crits self-funding for infinite Maul and Swipe loops."
+      rank: "1/5",
+      effect: "Increases the Attack Power reduction of your Demoralizing Roar by 8% and the damage of your Ferocious Bite by 3%.",
+      why: "Provides the 30th point in Feral Combat required to unlock the Level 40 Capstone: Leader of the Pack!"
     },
     trainerTrain: ["No spells at 39."],
     trainerSkip: [],
@@ -705,17 +705,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   40: {
-    title: "LEVEL 40 MILESTONE: DIRE BEAR FORM & MOUNT!",
+    title: "LEVEL 40 CAPSTONE: LEADER OF THE PACK, DIRE BEAR & MOUNT!",
     zone: "Stormwind / Darnassus -> Tanaris (Gadgetzan) & Dustwallow Marsh",
     zoneRange: "40-44",
     hubs: "Gadgetzan (Tanaris) / Theramore (Dustwallow)",
     zoneInstructions: "SOLO MILESTONE ACHIEVED!\n1. Mount Up: Purchase your 60% Mount and Riding Skill in Elwynn Forest / Darnassus.\n2. Train Spells: Learn Dire Bear Form (+360% armor bonus!), Ferocious Bite Rank 3, and Innervate.\n3. Head to Tanaris: Fly or ride to Gadgetzan to unlock the flight path and start the Wastewander Bandit bounty quests. Your outdoor travel time is now cut in half!",
     talent: {
-      name: "Berserk / Primal Fury (Rank 2/2)",
+      name: "Leader of the Pack (Rank 1/1)",
       tree: "Feral Combat",
-      rank: "2/2",
-      effect: "In WoW Forever, unlocks deep burst potential and guarantees 5 Rage on every Bear critical strike.",
-      why: "Dire Bear form combined with maxed Primal Fury transforms you into an indestructible solo tank. You can round up 3-4 yellow mobs at once and cleave them down with zero risk of dying."
+      rank: "1/1",
+      effect: "While in Cat, Bear, or Dire Bear Form, Leader of the Pack increases ranged and melee critical strike chance of all party members within 45 yards by 3%.",
+      why: "THE 31-POINT FERAL CAPSTONE! Unlocked at Level 40. You permanently gain +3% critical strike chance in forms, and every dungeon or raid group in Classic will seek you out for this aura!"
     },
     trainerTrain: ["Dire Bear Form (Massive armor multiplier!)", "Ferocious Bite (Rank 3)", "Innervate (Crucial mana battery!)"],
     trainerSkip: ["Hurricane (Rank 1 - Huge mana drain, totally skip)"],
@@ -729,7 +729,7 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   41: {
-    title: "Tanaris Wastewander Nomads & Feralas Entry",
+    title: "Branching to Restoration: Furor & Tanaris Nomads",
     zone: "Tanaris (Gadgetzan) & Feralas (Feathermoon Stronghold)",
     zoneRange: "41-46",
     hubs: "Gadgetzan / Feathermoon Stronghold (Feralas)",
@@ -827,7 +827,7 @@ const DRUID_LEVEL_DATA = {
       tree: "Restoration",
       rank: "5/5",
       effect: "Gives you a 100% chance to gain 10 Rage when shifting into Bear, or 40 Energy when shifting into Cat Form.",
-      why: "MILESTONE TALENT. Every time you shift into Cat Form, you instantly get 40 Energy—meaning an IMMEDIATE Claw or Rake the exact millisecond you shift! Every Bear shift gives 10 instant rage for an immediate Bash or Feral Charge."
+      why: "MILESTONE TALENT. Every single time you shift into Cat Form, you instantly get 40 Energy—meaning an IMMEDIATE Claw or Rake the exact millisecond you shift! Combined with Wolfshead Helm, you shift with 60 Energy instantly!"
     },
     trainerTrain: ["No spells at 45."],
     trainerSkip: [],
@@ -847,7 +847,7 @@ const DRUID_LEVEL_DATA = {
       name: "Nature's Grasp (Rank 1/1 - Balance Tree)",
       tree: "Balance",
       rank: "1/1",
-      effect: "When activated, any enemy striking you has a 35% chance to be afflicted by Entangling Roots.",
+      effect: "When activated, any enemy striking the caster has a 35% chance to be afflicted by Entangling Roots (Rank 1). Only useable outdoors. 1 charge. Lasts 45 sec.",
       why: "First step toward Omen of Clarity. Provides an instant defensive peel when you get ambushed by melee mobs or rogue gankers."
     },
     trainerTrain: ["Ferocious Bite (Rank 4)", "Healing Touch (Rank 10)"],
@@ -868,7 +868,7 @@ const DRUID_LEVEL_DATA = {
       name: "Improved Nature's Grasp (Rank 1/4)",
       tree: "Balance",
       rank: "1/4",
-      effect: "Increases the chance for Nature's Grasp to root attackers by 15% (up to 50% total).",
+      effect: "Increases the chance for Nature's Grasp to entangle the target by 15% (50% total).",
       why: "Paths toward Natural Weapons and Omen of Clarity in the Balance tree."
     },
     trainerTrain: ["No spells at 47."],
@@ -889,7 +889,7 @@ const DRUID_LEVEL_DATA = {
       name: "Improved Nature's Grasp (Rank 2/4)",
       tree: "Balance",
       rank: "2/4",
-      effect: "Increases Nature's Grasp root chance by another 15% (65% total).",
+      effect: "Increases the chance for Nature's Grasp to entangle the target by another 15% (65% total).",
       why: "Stepping stone to unlock Tier 2 of the Balance tree."
     },
     trainerTrain: ["Demoralizing Roar (Rank 4)"],
@@ -903,17 +903,17 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   49: {
-    title: "Natural Weapons: Increasing All Physical Damage",
+    title: "Improved Nature's Grasp Rank 3 & Un'Goro Crater Entry",
     zone: "Un'Goro Crater (Marshal's Refuge) entry",
     zoneRange: "48-53",
     hubs: "Marshal's Refuge (Un'Goro Crater)",
     zoneInstructions: "Descend into Un'Goro Crater from southern Tanaris. Un'Goro is dinosaur paradise: raptors, pterodactyls, stegodons, and devilsaurs!",
     talent: {
-      name: "Natural Weapons (Rank 1/3)",
+      name: "Improved Nature's Grasp (Rank 3/4)",
       tree: "Balance",
-      rank: "1/3",
-      effect: "Increases the physical damage you deal in all forms by 3%.",
-      why: "A direct percentage damage multiplier to every single claw, maul, bite, and auto-attack you perform."
+      rank: "3/4",
+      effect: "Increases the chance for Nature's Grasp to entangle the target by another 15% (80% total).",
+      why: "Near-guaranteed roots on incoming physical strikes to control multi-mob pulls and world PvP."
     },
     trainerTrain: ["No spells at 49."],
     trainerSkip: [],
@@ -924,17 +924,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   50: {
-    title: "LEVEL 50: UN'GORO POWER LEVELING & NATURAL WEAPONS 2",
+    title: "LEVEL 50: MAX IMPROVED NATURE'S GRASP (95% ROOT CHANCE!)",
     zone: "Un'Goro Crater (Marshal's Refuge & Fire Plume Ridge)",
     zoneRange: "50-55",
     hubs: "Marshal's Refuge",
     zoneInstructions: "Collect Un'Goro Soil, Power Crystals (Red, Blue, Green, Yellow), and hunt Tar Lords and Gorillas. Un'Goro gives some of the fastest solo XP in the entire game.",
     talent: {
-      name: "Natural Weapons (Rank 2/3)",
+      name: "Improved Nature's Grasp (Rank 4/4)",
       tree: "Balance",
-      rank: "2/3",
-      effect: "Increases physical damage in all forms by 6%.",
-      why: "6% flat damage buff to your entire toolkit."
+      rank: "4/4",
+      effect: "Increases the chance for Nature's Grasp to entangle the target by 60% (95% total).",
+      why: "95% chance to instantly root attackers! Fully satisfies the 5-point Tier 1 Balance requirement to unlock Tier 2 Natural Weapons."
     },
     trainerTrain: ["Rejuvenation (Rank 8)"],
     trainerSkip: ["Thorns (Rank 6 - Skip)"],
@@ -945,17 +945,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   51: {
-    title: "Natural Weapons Capped (10% Damage Boost!)",
+    title: "Natural Weapons: Increasing All Physical Damage",
     zone: "Un'Goro Crater (Golakka Hot Springs) / Felwood entry",
     zoneRange: "50-55",
     hubs: "Emerald Sanctuary (Felwood) / Marshal's Refuge",
     zoneInstructions: "Finish Un'Goro dinosaur quests. Grab flight path at Emerald Sanctuary in Felwood. Cleanse corrupted plants for Songflower buffs.",
     talent: {
-      name: "Natural Weapons (Rank 3/3)",
+      name: "Natural Weapons (Rank 1/3)",
       tree: "Balance",
-      rank: "3/3",
-      effect: "Increases physical damage you deal in all forms by 10%.",
-      why: "A massive 10% multiplier to all auto-attacks, Claws, Mauls, and Bites. Unlocks Omen of Clarity access!"
+      rank: "1/3",
+      effect: "Increases the physical damage you deal in all forms by 3%.",
+      why: "A direct percentage damage multiplier to every single claw, maul, bite, and auto-attack you perform."
     },
     trainerTrain: ["No spells at 51."],
     trainerSkip: [],
@@ -966,17 +966,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   52: {
-    title: "OMEN OF CLARITY: Free Resource Procs!",
+    title: "Natural Weapons Rank 2 & Felwood Power Grinding",
     zone: "Felwood (Bloodvenom Post / Jaedenar) or Burning Steppes",
     zoneRange: "51-56",
     hubs: "Emerald Sanctuary / Morgan's Vigil (Burning Steppes)",
     zoneInstructions: "Clear the demonic camps in Jaedenar or head to Burning Steppes to hunt Blackrock Orcs near Morgan's Vigil.",
     talent: {
-      name: "Omen of Clarity (Rank 1/1 - Balance Capstone)",
+      name: "Natural Weapons (Rank 2/3)",
       tree: "Balance",
-      rank: "1/1",
-      effect: "Each of your melee attacks has a chance of causing you to enter a Clearcasting state. Your next offensive or healing spell/ability costs 0 Rage, Energy, or Mana!",
-      why: "THE HOLY GRAIL OF FERAL SUSTAIN. Gives free Shreds, free Ferocious Bites, free Mauls, or free Healing Touches when dropping form. Procs constantly in Cat form due to fast 1.0 attack speed!"
+      rank: "2/3",
+      effect: "Increases physical damage in all forms by 6%.",
+      why: "6% flat damage buff to your entire toolkit."
     },
     trainerTrain: ["Ferocious Bite (Rank 5)", "Healing Touch (Rank 11)"],
     trainerSkip: ["Starfire (Rank 5 - Skip)"],
@@ -987,17 +987,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   53: {
-    title: "Felwood Furbolg Solo Power Grind & Jaedenar Perimeter",
+    title: "Natural Weapons Capped (10% Damage Boost!)",
     zone: "Felwood (Emerald Sanctuary / Timbermaw Gate) & Burning Steppes",
     zoneRange: "52-57",
     hubs: "Nethergarde Keep / Emerald Sanctuary",
     zoneInstructions: "SOLO ROUTE: Bypass the confusing corridors and group wipes of Sunken Temple. Felwood is a goldmine for solo Druids. Hunt Deadwood Furbolgs in southern and northern Felwood to build Timbermaw Hold reputation early. Cleanse Corrupted Whipper Root and Night Dragon plants with Cenarion Plant Salves to get free instant-cast combat healing and mana consumables!",
     talent: {
-      name: "Naturalist (Rank 1/5 - Restoration) or Thick Hide",
-      tree: "Restoration",
-      rank: "1/5",
-      effect: "Reduces cast time of Healing Touch by 0.1 sec and increases physical damage by 2%.",
-      why: "Further amplifies physical throughput and speeds up emergency healing."
+      name: "Natural Weapons (Rank 3/3)",
+      tree: "Balance",
+      rank: "3/3",
+      effect: "Increases physical damage you deal in all forms by 10%.",
+      why: "A massive 10% multiplier to all auto-attacks, Claws, Mauls, and Bites. Directly unlocks Omen of Clarity!"
     },
     trainerTrain: ["No spells at 53."],
     trainerSkip: [],
@@ -1011,17 +1011,17 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   54: {
-    title: "Western Plaguelands: Sorrow Hill & The Cauldron",
+    title: "OMEN OF CLARITY: Free Resource Procs!",
     zone: "Western Plaguelands (Chillwind Camp)",
     zoneRange: "53-58",
     hubs: "Chillwind Camp (WPL)",
     zoneInstructions: "Pick up the Chillwind Camp flight path. Start the four Plague Cauldron quests (Felstone Field, Dalson's Tears, Writhing Haunt, Gahrron's Withering). Each cauldron gives enormous turn-in XP!",
     talent: {
-      name: "Naturalist (Rank 2/5)",
-      tree: "Restoration",
-      rank: "2/5",
-      effect: "Reduces Healing Touch cast time by 0.2s and boosts physical damage by 4%.",
-      why: "Scaling your damage higher while shaving cast time off your big heals."
+      name: "Omen of Clarity (Rank 1/1 - Balance Capstone)",
+      tree: "Balance",
+      rank: "1/1",
+      effect: "Each of your melee attacks has a chance of causing you to enter a Clearcasting state. Your next offensive or healing spell/ability costs 0 Rage, Energy, or Mana!",
+      why: "THE HOLY GRAIL OF FERAL SUSTAIN. Gives free Shreds, free Ferocious Bites, free Mauls, or free Healing Touches when dropping form. Procs constantly in Cat form due to fast 1.0 attack speed!"
     },
     trainerTrain: ["Moonfire (Rank 8)"],
     trainerSkip: ["Entangling Roots (Rank 5 - Skip)"],
@@ -1032,17 +1032,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   55: {
-    title: "Winterspring: Frostsaber Hunting & Starfall Village",
+    title: "Winterspring: Frostsaber Hunting & Thick Hide Rank 4",
     zone: "Winterspring (Everlook)",
     zoneRange: "55-60",
     hubs: "Everlook (Winterspring)",
     zoneInstructions: "Travel through Timbermaw Hold to reach snowy Winterspring. Grab the Everlook flight path. Hunt Frostsaber cats and Yetis for high-level Rugged Leather.",
     talent: {
-      name: "Naturalist (Rank 3/5)",
-      tree: "Restoration",
-      rank: "3/5",
-      effect: "Reduces Healing Touch cast time by 0.3s and boosts physical damage by 6%.",
-      why: "Faster emergency healing when soloing high level elite quests."
+      name: "Thick Hide (Rank 4/5)",
+      tree: "Feral Combat",
+      rank: "4/5",
+      effect: "Increases your Armor contribution from items by 8% (compounded by Dire Bear Form's +360% Armor multiplier).",
+      why: "Returning to Feral to maximize endgame survivability. Shaves huge amounts of incoming physical damage in Dire Bear."
     },
     trainerTrain: ["No spells at 55."],
     trainerSkip: [],
@@ -1053,17 +1053,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   56: {
-    title: "Western Plaguelands: The Four Plague Cauldron Solo Chains",
+    title: "MAX THICK HIDE (10% Item Armor) & Plague Cauldron Solo Chains",
     zone: "Western Plaguelands (Felstone Field, Dalson's Tears & Sorrow Hill)",
     zoneRange: "54-59",
     hubs: "Chillwind Camp (WPL)",
     zoneInstructions: "SOLO ROUTE: Skip Blackrock Depths group runs! Western Plaguelands offers the four famous Plague Cauldron solo quest chains (Felstone Field, Dalson's Tears, Writhing Haunt, Gahrron's Withering). Each cauldron field quest rewards 4,000–6,000 turn-in XP! In Dire Bear Form, you can easily solo the undead guards and Cauldron Lords with zero danger.",
     talent: {
-      name: "Naturalist (Rank 4/5)",
-      tree: "Restoration",
-      rank: "4/5",
-      effect: "Reduces Healing Touch cast time by 0.4s and boosts physical damage by 8%.",
-      why: "Takes Healing Touch down to a rapid cast while maximizing auto-attack power."
+      name: "Thick Hide (Rank 5/5)",
+      tree: "Feral Combat",
+      rank: "5/5",
+      effect: "Increases your Armor contribution from items by 10% (MAX RANK).",
+      why: "Full 10% bonus item armor, giving you impenetrable armor values in Dire Bear Form for endgame dungeons and pre-raid tanking."
     },
     trainerTrain: ["Healing Touch (Rank 12)"],
     trainerSkip: ["Thorns (Rank 7 - Skip)"],
@@ -1076,17 +1076,17 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   57: {
-    title: "Eastern Plaguelands: Lights Hope Chapel",
+    title: "Eastern Plaguelands: Light's Hope Chapel & Feral Aggression 2",
     zone: "Eastern Plaguelands (Light's Hope Chapel)",
     zoneRange: "55-60",
     hubs: "Light's Hope Chapel (EPL)",
     zoneInstructions: "Pick up the Light's Hope Chapel flight path. Start the Tyr's Hand and Corin's Crossing Scourge cleanup quests. Great argent dawn rewards.",
     talent: {
-      name: "Naturalist (Rank 5/5)",
-      tree: "Restoration",
-      rank: "5/5",
-      effect: "Reduces Healing Touch cast time by 0.5s and increases all physical damage you deal by a full 10%.",
-      why: "Maxed Naturalist gives you 0.5-second faster healing and another 10% flat damage multiplier in Cat and Bear forms!"
+      name: "Feral Aggression (Rank 2/5)",
+      tree: "Feral Combat",
+      rank: "2/5",
+      effect: "Increases Demoralizing Roar attack power reduction by 16% and Ferocious Bite damage by 6%.",
+      why: "Pumps your primary Cat execution finisher (Ferocious Bite) and reduces incoming boss attack power."
     },
     trainerTrain: ["No spells at 57."],
     trainerSkip: [],
@@ -1097,17 +1097,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   58: {
-    title: "Eastern Plaguelands: Light's Hope Chapel Solo Blitz",
+    title: "Eastern Plaguelands Solo Blitz & Feral Aggression 3",
     zone: "Eastern Plaguelands (Light's Hope Chapel & Corin's Crossing)",
     zoneRange: "56-60",
     hubs: "Chillwind Camp / Light's Hope",
     zoneInstructions: "SOLO ROUTE: Skip Stratholme and Scholomance dungeon groups. Eastern Plaguelands has dozens of open-world solo Scourge quests centered around Light's Hope Chapel. Farm Corin's Crossing, Browman Mill, and Blackwood Lake. Collect Scourge Scraps and Bone Fragments for Argent Dawn reputation tokens. Use Prowl to bypass heavy trash packs and assassinate named quest targets.",
     talent: {
-      name: "Subtlety or Nurturing Instinct (Rank 1/2)",
-      tree: "Restoration",
-      rank: "1/2",
-      effect: "Reduces threat generated by healing spells or increases healing by Agility.",
-      why: "Fine-tuning your hybrid endurance and threat moderation."
+      name: "Feral Aggression (Rank 3/5)",
+      tree: "Feral Combat",
+      rank: "3/5",
+      effect: "Increases Demoralizing Roar attack power reduction by 24% and Ferocious Bite damage by 9%.",
+      why: "Further amplifies your burst finishing damage in solo and dungeon play."
     },
     trainerTrain: ["Rejuvenation (Rank 9)"],
     trainerSkip: ["Starfire (Rank 6 - Skip)"],
@@ -1120,17 +1120,17 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   59: {
-    title: "Final Push: 99% to Level 60",
+    title: "Final Push to 60: Feral Aggression 4",
     zone: "Winterspring (Timbermaw Hold) or Eastern Plaguelands",
     zoneRange: "57-60",
     hubs: "Everlook / Light's Hope",
     zoneInstructions: "Farm Timbermaw Hold reputation in northern Felwood/Winterspring or finish Western Plaguelands Cauldron finale quests. You are just bars away from max level 60!",
     talent: {
-      name: "Subtlety / Nurturing Instinct (Rank 2/2)",
-      tree: "Restoration",
-      rank: "2/2",
-      effect: "Increases your healing spells by an amount equal to 100% of your Agility in Cat form.",
-      why: "Gives your Cat form enormous self-healing power when you shift out to heal."
+      name: "Feral Aggression (Rank 4/5)",
+      tree: "Feral Combat",
+      rank: "4/5",
+      effect: "Increases Demoralizing Roar attack power reduction by 32% and Ferocious Bite damage by 12%.",
+      why: "Bite damage reaches near maximum execution thresholds."
     },
     trainerTrain: ["No spells at 59."],
     trainerSkip: [],
@@ -1141,17 +1141,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   60: {
-    title: "LEVEL 60 MAXIMUM LEVEL: SOLO MASTER & PRE-RAID WORLD ASCENSION!",
+    title: "LEVEL 60 MAXIMUM LEVEL: MASTER FERAL HYBRID (36/10/5) COMPLETED!",
     zone: "Winterspring / Eastern Plaguelands / Silithus (Cenarion Hold)",
     zoneRange: "60 (Max)",
     hubs: "Everlook / Light's Hope Chapel / Cenarion Hold",
     zoneInstructions: "SOLO MASTERY ACHIEVED: You have reached Level 60 entirely solo! As an Alliance Feral Druid, you are the ultimate open-world solo powerhouse: stealth-farm high-tier herb/ore nodes in Silithus and EPL, solo farm Timbermaw Hold reputation for BiS agility enchant recipes, grind Devilsaur leather in Un'Goro Crater with zero downtime, and complete world epic questlines at your own pace.",
     talent: {
-      name: "Master Feral Hybrid (14/32/5 or 0/46/5)",
-      tree: "Mastery",
-      rank: "51/51",
-      effect: "Full leveling tree unlocked. Combine 14 Balance (Natural Weapons + Omen of Clarity), 32 Feral Combat (Leader of the Pack + Heart of the Wild), and 5 Restoration (Furor).",
-      why: "The optimal world-renowned hybrid build: elite Cat DPS, unkillable Bear Tanking, and limitless solo utility."
+      name: "Feral Aggression (Rank 5/5)",
+      tree: "Feral Combat",
+      rank: "5/5",
+      effect: "Increases Demoralizing Roar attack power reduction by 40% and Ferocious Bite damage by 15% (MAX RANK).",
+      why: "FULL 51 TALENT POINTS COMPLETED: 36 Feral Combat, 10 Balance, 5 Restoration. The undisputed best solo leveling and pre-raid hybrid spec in Classic WoW!"
     },
     trainerTrain: ["Ferocious Bite (Rank 6)", "Healing Touch (Rank 13)", "Mark of the Wild (Rank 7)"],
     trainerSkip: [],
@@ -1194,55 +1194,205 @@ for (let lvl = 2; lvl <= 8; lvl++) {
 
 // Interactive Talent Configuration & Level-by-Level Order
 const DRUID_TALENTS_CONFIG = [
-  // Feral Combat
-  { id: "ferocity", name: "Ferocity", max: 5, tree: "feral", icon: "🐾", desc: "Reduces Rage cost of Maul/Swipe and Energy of Claw/Rake by 1 per rank." },
-  { id: "feral_aggression", name: "Feral Aggression", max: 5, tree: "feral", icon: "🐯", desc: "Increases Demoralizing Roar attack power reduction by 8%-40% and Ferocious Bite damage by 3%-15%." },
-  { id: "thick_hide", name: "Thick Hide", max: 3, tree: "feral", icon: "🛡️", desc: "Increases your Armor contribution from items by 3.3% / 6.6% / 10% (massively multiplied in Bear Form)." },
-  { id: "brutal_impact", name: "Brutal Impact", max: 2, tree: "feral", icon: "💥", desc: "Increases stun duration of Bash and Pounce by 0.5s per rank." },
-  { id: "feral_instinct", name: "Feral Instinct", max: 1, tree: "feral", icon: "👁️", desc: "Increases threat in Bear Form and reduces chance of detection in Prowl." },
-  { id: "feline_swiftness", name: "Feline Swiftness", max: 2, tree: "feral", icon: "🐆", desc: "Increases movement speed by 15% / 30% outdoors in Cat Form." },
-  { id: "sharpened_claws", name: "Sharpened Claws", max: 3, tree: "feral", icon: "⚔️", desc: "Increases critical strike chance in forms by 2% per rank." },
-  { id: "feral_charge", name: "Feral Charge", max: 1, tree: "feral", icon: "🛡️", desc: "Bear gap closer that roots for 4s and interrupts spellcasts." },
-  { id: "predatory_strikes", name: "Predatory Strikes", max: 3, tree: "feral", icon: "⚡", desc: "Increases attack power in forms by 50%/100%/150% of your level." },
-  { id: "blood_frenzy", name: "Blood Frenzy", max: 2, tree: "feral", icon: "🩸", desc: "Critical strikes from Claw, Rake, Shred add an extra combo point." },
-  { id: "savage_fury", name: "Savage Fury", max: 2, tree: "feral", icon: "🔥", desc: "Increases damage of Claw, Rake, Maul, Swipe by 10% / 20%." },
-  { id: "leader_of_the_pack", name: "Leader of the Pack", max: 1, tree: "feral", icon: "🐺", desc: "Grants +3% permanent party melee/ranged critical strike aura." },
-  { id: "heart_of_the_wild", name: "Heart of the Wild", max: 5, tree: "feral", icon: "❤️", desc: "Increases Int by 20%, Bear Stamina by 20%, Cat Strength by 20%." },
-  { id: "primal_fury", name: "Primal Fury / Berserk", max: 2, tree: "feral", icon: "⚡", desc: "Critical strikes in Bear Form generate 5 extra Rage." },
-
-  // Balance
-  { id: "natures_grasp", name: "Nature's Grasp", max: 1, tree: "balance", icon: "🌿", desc: "When struck, 35% chance to entangle enemy in roots." },
-  { id: "imp_natures_grasp", name: "Imp. Nature's Grasp", max: 4, tree: "balance", icon: "🌱", desc: "Increases root chance by 15% per rank." },
-  { id: "natural_weapons", name: "Natural Weapons", max: 3, tree: "balance", icon: "🗡️", desc: "Increases physical damage in all forms by 3% / 6% / 10%." },
-  { id: "omen_of_clarity", name: "Omen of Clarity", max: 1, tree: "balance", icon: "✨", desc: "Melee attacks have a chance to make next ability cost 0 resources!" },
-
-  // Restoration
-  { id: "furor", name: "Furor", max: 5, tree: "resto", icon: "⚡", desc: "100% chance to gain 10 Rage in Bear, or 40 Energy in Cat Form on shift." },
-  { id: "naturalist", name: "Naturalist", max: 5, tree: "resto", icon: "🍃", desc: "Reduces Healing Touch cast time by 0.5s and boosts physical damage by 10%." }
+  {
+    "id": "ferocity",
+    "name": "Ferocity",
+    "max": 5,
+    "tree": "feral",
+    "icon": "🐾",
+    "desc": "Reduces Rage cost of Maul/Swipe and Energy cost of Claw/Rake by 1 per rank."
+  },
+  {
+    "id": "feral_aggression",
+    "name": "Feral Aggression",
+    "max": 5,
+    "tree": "feral",
+    "icon": "🐯",
+    "desc": "Increases Demoralizing Roar attack power reduction by 8%-40% and Ferocious Bite damage by 3%-15%."
+  },
+  {
+    "id": "thick_hide",
+    "name": "Thick Hide",
+    "max": 5,
+    "tree": "feral",
+    "icon": "🛡️",
+    "desc": "Increases your Armor contribution from items by 2% / 4% / 6% / 8% / 10% (massively multiplied in Bear and Dire Bear Form)."
+  },
+  {
+    "id": "brutal_impact",
+    "name": "Brutal Impact",
+    "max": 2,
+    "tree": "feral",
+    "icon": "💥",
+    "desc": "Increases stun duration of Bash and Pounce by 0.5s per rank."
+  },
+  {
+    "id": "feral_swiftness",
+    "name": "Feral Swiftness",
+    "max": 2,
+    "tree": "feral",
+    "icon": "🐆",
+    "desc": "Increases movement speed by 15% / 30% outdoors in Cat Form and dodge chance in all forms by 2% / 4%."
+  },
+  {
+    "id": "sharpened_claws",
+    "name": "Sharpened Claws",
+    "max": 3,
+    "tree": "feral",
+    "icon": "⚔️",
+    "desc": "Increases critical strike chance in forms by 2% per rank."
+  },
+  {
+    "id": "feral_charge",
+    "name": "Feral Charge",
+    "max": 1,
+    "tree": "feral",
+    "icon": "🛡️",
+    "desc": "Bear gap closer that roots for 4s and interrupts spellcasts."
+  },
+  {
+    "id": "predatory_strikes",
+    "name": "Predatory Strikes",
+    "max": 3,
+    "tree": "feral",
+    "icon": "⚡",
+    "desc": "Increases attack power in forms by 50%/100%/150% of your level."
+  },
+  {
+    "id": "primal_fury",
+    "name": "Primal Fury",
+    "max": 2,
+    "tree": "feral",
+    "icon": "🩸",
+    "desc": "Bear critical strikes generate 5 extra Rage; Cat critical strikes add an extra combo point (50% / 100% chance)."
+  },
+  {
+    "id": "savage_fury",
+    "name": "Savage Fury",
+    "max": 2,
+    "tree": "feral",
+    "icon": "🔥",
+    "desc": "Increases damage of Claw, Rake, Maul, Swipe by 10% / 20%."
+  },
+  {
+    "id": "faerie_fire_feral",
+    "name": "Faerie Fire (Feral)",
+    "max": 1,
+    "tree": "feral",
+    "icon": "✨",
+    "desc": "Allows Faerie Fire to be cast in Cat/Bear form from 30 yards for 0 mana, reducing armor and preventing stealth."
+  },
+  {
+    "id": "heart_of_the_wild",
+    "name": "Heart of the Wild",
+    "max": 5,
+    "tree": "feral",
+    "icon": "❤️",
+    "desc": "Increases Intellect by 20%, Bear Stamina by 20%, Cat Strength by 20%."
+  },
+  {
+    "id": "leader_of_the_pack",
+    "name": "Leader of the Pack",
+    "max": 1,
+    "tree": "feral",
+    "icon": "🐺",
+    "desc": "31-Point Feral Capstone: Grants +3% permanent party melee/ranged critical strike aura in Cat and Bear forms."
+  },
+  {
+    "id": "natures_grasp",
+    "name": "Nature's Grasp",
+    "max": 1,
+    "tree": "balance",
+    "icon": "🌿",
+    "desc": "When struck, 35% chance to entangle enemy in roots."
+  },
+  {
+    "id": "imp_natures_grasp",
+    "name": "Imp. Nature's Grasp",
+    "max": 4,
+    "tree": "balance",
+    "icon": "🌱",
+    "desc": "Increases root chance by 15% per rank (up to 95% total)."
+  },
+  {
+    "id": "natural_weapons",
+    "name": "Natural Weapons",
+    "max": 3,
+    "tree": "balance",
+    "icon": "🗡️",
+    "desc": "Increases physical damage in all forms by 3% / 6% / 10%."
+  },
+  {
+    "id": "omen_of_clarity",
+    "name": "Omen of Clarity",
+    "max": 1,
+    "tree": "balance",
+    "icon": "✨",
+    "desc": "Melee attacks have a chance to enter Clearcasting: next offensive or healing ability costs 0 resources!"
+  },
+  {
+    "id": "furor",
+    "name": "Furor",
+    "max": 5,
+    "tree": "resto",
+    "icon": "⚡",
+    "desc": "100% chance to gain 10 Rage in Bear, or 40 Energy in Cat Form on shift."
+  }
 ];
 
 // Optimal Leveling Allocation Order for Levels 10 through 60 (51 points total)
 const TALENT_LEVEL_ORDER = [
-  "ferocity", "ferocity", "ferocity", "ferocity", "ferocity", // 10-14 (Rage & Energy conservation)
-  "brutal_impact", "brutal_impact", // 15-16 (3.0s stun enables full Healing Touch)
-  "thick_hide", "thick_hide", "thick_hide", // 17-19 (Best Solo Play: +10% armor from items, multiplied by Bear)
-  "feline_swiftness", "feline_swiftness", // 20-21 (+30% move speed outdoors in Cat Form)
-  "sharpened_claws", "sharpened_claws", "sharpened_claws", // 22-24 (+6% crit)
-  "feral_charge", // 25 (Bear root + spell interrupt)
-  "predatory_strikes", "predatory_strikes", "predatory_strikes", // 26-28 (+150% level as Attack Power)
-  "blood_frenzy", // 29 (Extra combo points on crit)
-  "leader_of_the_pack", // 30 (+3% physical crit aura)
-  "savage_fury", "savage_fury", // 31-32 (+20% Claw, Rake, Maul, Swipe damage)
-  "blood_frenzy", // 33 (Max Blood Frenzy)
-  "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", "heart_of_the_wild", // 34-38 (+20% Stam in Bear, +20% Str in Cat)
-  "primal_fury", "primal_fury", // 39-40 (5 Rage on Bear crits)
-  "furor", "furor", "furor", "furor", "furor", // 41-45 (Instant 10 Rage on Bear shift / 40 Energy on Cat shift)
-  "natures_grasp", "imp_natures_grasp", "imp_natures_grasp", "imp_natures_grasp", // 46-49 (Instant root defensive utility)
-  "natural_weapons", "natural_weapons", "natural_weapons", // 50-52 (+10% physical damage in all forms)
-  "omen_of_clarity", // 53 (Clearcasting proc for 0 mana/rage/energy abilities)
-  "naturalist", "naturalist", "naturalist", "naturalist", "naturalist", // 54-58 (+10% melee damage & faster heals)
-  "feral_instinct", // 59 (WoW Forever 1-point cap: extra threat & stealth level)
-  "feral_aggression" // 60 (Increased Demoralizing Roar AP reduction / Bite damage)
+  "ferocity",
+  "ferocity",
+  "ferocity",
+  "ferocity",
+  "ferocity",
+  "brutal_impact",
+  "brutal_impact",
+  "thick_hide",
+  "thick_hide",
+  "thick_hide",
+  "feral_swiftness",
+  "feral_swiftness",
+  "sharpened_claws",
+  "sharpened_claws",
+  "sharpened_claws",
+  "feral_charge",
+  "predatory_strikes",
+  "predatory_strikes",
+  "predatory_strikes",
+  "primal_fury",
+  "primal_fury",
+  "savage_fury",
+  "savage_fury",
+  "faerie_fire_feral",
+  "heart_of_the_wild",
+  "heart_of_the_wild",
+  "heart_of_the_wild",
+  "heart_of_the_wild",
+  "heart_of_the_wild",
+  "feral_aggression",
+  "leader_of_the_pack",
+  "furor",
+  "furor",
+  "furor",
+  "furor",
+  "furor",
+  "natures_grasp",
+  "imp_natures_grasp",
+  "imp_natures_grasp",
+  "imp_natures_grasp",
+  "imp_natures_grasp",
+  "natural_weapons",
+  "natural_weapons",
+  "natural_weapons",
+  "omen_of_clarity",
+  "thick_hide",
+  "thick_hide",
+  "feral_aggression",
+  "feral_aggression",
+  "feral_aggression",
+  "feral_aggression"
 ];
 
 // Safe LocalStorage Helper Functions (Immune to corrupted values or disabled storage)
@@ -1681,7 +1831,7 @@ function renderLevel(lvl) {
       questCallout.innerHTML = `
         <div class="quest-callout-icon">🐆</div>
         <div class="quest-callout-text">
-          <strong>CLASS MILESTONE: Travel Form & Leader of the Pack!</strong> Learn 40% Travel Form at your trainer and talent into Leader of the Pack (+3% permanent party crit aura).
+          <strong>CLASS MILESTONE: Travel Form & Primal Fury Capped!</strong> Learn 40% Travel Form at your trainer (+40% run speed) and max Primal Fury for guaranteed extra combo points on Cat crits and Rage on Bear crits!
         </div>
       `;
     } else if (lvl === 40) {
@@ -1689,7 +1839,7 @@ function renderLevel(lvl) {
       questCallout.innerHTML = `
         <div class="quest-callout-icon">🐎</div>
         <div class="quest-callout-text">
-          <strong>LEVEL 40 MILESTONE: Dire Bear Form & 60% Mount!</strong> Buy your racial mount for ~90 gold, learn Dire Bear Form (+360% armor bonus!), and pick up Innervate at your trainer.
+          <strong>LEVEL 40 CAPSTONE MILESTONE: Leader of the Pack, Dire Bear & 60% Mount!</strong> Unlock Leader of the Pack (+3% party crit aura!), learn Dire Bear Form (+360% armor bonus!), buy your 60% Mount, and pick up Innervate!
         </div>
       `;
     } else {
@@ -1878,14 +2028,14 @@ const CHECKLIST_ITEMS = [
   { id: "c4", text: "Complete 5/5 Ferocity talent (reduces Maul/Claw/Swipe cost by 5)" },
   { id: "c5", text: "Run Deadmines and obtain Smite's Mighty Hammer or Tunic of Westfall" },
   { id: "c6", text: "Complete Level 16 Aquatic Form quest ('Trial of the Sea Lion')" },
-  { id: "c7", text: "Reach Level 20: Train Cat Form, Prowl, and Feline Swiftness (30% run speed!)" },
+  { id: "c7", text: "Reach Level 20: Train Cat Form, Prowl, and Feral Swiftness (30% outdoor run speed & +4% dodge!)" },
   { id: "c8", text: "Obtain Triprunner Dungarees (+18 Agi, +4 Str) from Gnomeregan quest" },
-  { id: "c9", text: "Reach Level 30: Train Travel Form (40% run speed) & talent Leader of the Pack" },
+  { id: "c9", text: "Reach Level 30: Train Travel Form (40% run speed) & max Primal Fury for guaranteed crit combo points" },
   { id: "c10", text: "Craft or purchase Wolfshead Helm (BiS powershifting energy helm)" },
-  { id: "c11", text: "Reach Level 40: Purchase 60% Mount & train Dire Bear Form" },
+  { id: "c11", text: "Reach Level 40: Unlock Leader of the Pack (31-pt capstone), buy 60% Mount & train Dire Bear Form" },
   { id: "c12", text: "Run Maraudon: Farm Blackstone Ring from Princess Theradras" },
   { id: "c13", text: "Farm Devilsaurs in Un'Goro Crater for Devilsaur Leather set" },
-  { id: "c14", text: "Talent into Omen of Clarity at Level 52 for free Clearcasting procs" },
+  { id: "c14", text: "Talent into Omen of Clarity at Level 54 for free Clearcasting procs" },
   { id: "c15", text: "Reach Level 60 and complete Onyxia & Molten Core attunements!" }
 ];
 

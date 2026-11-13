@@ -7,15 +7,15 @@ window.WOW_SYNCED_DATA = {
   "realm": "Darkwind (WoW Forever)",
   "class": "Druid",
   "race": "Alliance Skyborne",
-  "level": 18,
-  "money": 13554,
+  "level": 20,
+  "money": 10633,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 18)",
+      "source": "Not yet equipped (Level 20)",
       "armor": "0 Armor",
       "stats": [
         "No head armor available until lvl 14+"
@@ -105,25 +105,23 @@ window.WOW_SYNCED_DATA = {
       "name": "Item #6558",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "50 Armor",
+      "armor": "56 Armor",
       "stats": [
         "+4 Feral Combat Stats"
       ],
-      "req": "Item Level 18"
+      "req": "Item Level 20"
     },
     "legs": {
       "slot": "Legs",
       "type": "Leather",
-      "name": "Hunting Pants",
+      "name": "Smith's Trousers",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "62 Armor",
+      "armor": "80 Armor",
       "stats": [
-        "+3 Agility (+3 Cat AP / +0.15% Crit)",
-        "+2 Spirit"
+        "+4 Feral Combat Stats"
       ],
-      "req": "Requires Level 11",
-      "tip": "⭐ Currently equipped on Chongo! BoE green leather pants."
+      "req": "Item Level 20"
     },
     "feet": {
       "slot": "Feet",
@@ -238,7 +236,7 @@ window.WOW_SYNCED_DATA = {
     },
     "cooking": {
       "name": "Cooking",
-      "level": 90,
+      "level": 94,
       "rank": "Journeyman",
       "max": 150,
       "icon": "🍖"
@@ -258,5 +256,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🎣"
     }
   },
-  "syncedAt": "2026-11-12T14:50:37.465Z"
+  "syncedAt": "2026-11-13T01:03:07.225Z"
 };
