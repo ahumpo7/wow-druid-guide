@@ -325,11 +325,11 @@ const DRUID_LEVEL_DATA = {
     hubs: "Astranaar / Darkshire",
     zoneInstructions: "Darkshire in Duskwood opens up with the Night Watch questline. Duskwood has high-density beast quests (wolves, spiders) perfect for Skinning.",
     talent: {
-      name: "Sharpened Claws (Rank 1/3)",
+      name: "Sharpened Claws (Rank 1/2)",
       tree: "Feral Combat",
-      rank: "1/3",
-      effect: "Increases your critical strike chance in Bear, Dire Bear, and Cat form by 2%.",
-      why: "Crit chance accelerates kill speeds and sets up future rage/combo point generating talents like Primal Fury."
+      rank: "1/2",
+      effect: "Increases your critical strike chance in Bear, Dire Bear, and Cat form by 3%.",
+      why: "Crit chance accelerates kill speeds and sets up future rage/combo point generating talents like Primal Fury. WoW Forever condenses Sharpened Claws into 2 ranks of +3% crit each!"
     },
     trainerTrain: ["Rake (Rank 1 - Direct bleed opener!)", "Healing Touch (Rank 5)"],
     trainerSkip: ["Soothe Animal (Very niche, save money)"],
@@ -341,17 +341,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   23: {
-    title: "Sharpened Claws Rank 2 & Darkshire Night Watch",
+    title: "Sharpened Claws Capped (6% Crit) & Darkshire Night Watch",
     zone: "Duskwood (Darkshire - The Night Watch)",
     zoneRange: "22-27",
     hubs: "Darkshire",
     zoneInstructions: "Grind the skeletal fiends and ghouls around the cemetery, and hunt duskbats and wolves in the woods. Beware of Stitches walking along the road!",
     talent: {
-      name: "Sharpened Claws (Rank 2/3)",
+      name: "Sharpened Claws (Rank 2/2)",
       tree: "Feral Combat",
-      rank: "2/3",
-      effect: "Increases your critical strike chance in forms by 4%.",
-      why: "More frequent yellow crits mean faster kills and less incoming damage."
+      rank: "2/2",
+      effect: "Increases your critical strike chance in forms by 6%.",
+      why: "A flat 6% crit chance bonus across all forms capped at only 2 talent points! Huge burst and faster kills."
     },
     trainerTrain: ["No spells at 23."],
     trainerSkip: [],
@@ -362,33 +362,11 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   24: {
-    title: "Sharpened Claws Capped (6% Crit) & Shred Unlocked",
+    title: "Feral Charge: Signature Bear Gap-Closer & Shred Unlocked",
     zone: "Duskwood (Raven Hill cemetery) / Wetlands (Menethil Harbor)",
     zoneRange: "23-28",
     hubs: "Darkshire / Menethil Harbor",
     zoneInstructions: "SOLO ROUTE: Pick up the flight path in Menethil Harbor (Wetlands). Wetlands and Duskwood have incredible solo leveling density. Hunt crocolisks, spiders, and raptors along the road. Shred is unlocked—open from Prowl behind mobs for huge burst damage!",
-    talent: {
-      name: "Sharpened Claws (Rank 3/3)",
-      tree: "Feral Combat",
-      rank: "3/3",
-      effect: "Increases your critical strike chance in forms by 6%.",
-      why: "A flat 6% crit chance bonus across all forms is gigantic for level 24."
-    },
-    trainerTrain: ["Shred (Rank 1 - Huge damage attack from behind target!)", "Demoralizing Roar (Rank 3)", "Moonfire (Rank 4)"],
-    trainerSkip: ["Entangling Roots (Rank 3 - Skip)"],
-    rotation: [
-      "Solo Cat: Open with Prowl -> Rake -> Claw -> Rip.",
-      "Solo Shred: When Bash or roots are active, circle behind the mob and hit Shred for massive critical burst damage!"
-    ],
-    gearTip: "Look for 'Wolfshead Helm' crafting plans or save heavy leather for it later.",
-    dungeonGear: []
-  },
-  25: {
-    title: "Feral Charge: Your Signature Bear Gap-Closer",
-    zone: "Wetlands (Excavation Site / Mosshide Fens)",
-    zoneRange: "24-29",
-    hubs: "Menethil Harbor / Greenwarden's Grove",
-    zoneInstructions: "Tackle the Mosshide Gnolls in Wetlands. You now have Feral Charge, making caster mobs and runners completely trivial!",
     talent: {
       name: "Feral Charge (Rank 1/1)",
       tree: "Feral Combat",
@@ -396,27 +374,49 @@ const DRUID_LEVEL_DATA = {
       effect: "Causes you to charge an enemy, immobilizing them for 4 sec and interrupting any spell being cast. (8-25 yd range, Bear Form).",
       why: "GAME CHANGER. Instantly closes distance, stops fleeing humanoid mobs from pulling extra packs, and interrupts dangerous spellcasts from range."
     },
-    trainerTrain: ["No spells at 25."],
-    trainerSkip: [],
+    trainerTrain: ["Shred (Rank 1 - Huge damage attack from behind target!)", "Demoralizing Roar (Rank 3)", "Moonfire (Rank 4)"],
+    trainerSkip: ["Entangling Roots (Rank 3 - Skip)"],
     rotation: [
       "Bear Pull: Enrage -> Feral Charge from 25 yards -> Target is rooted and silenced -> Maul -> Bash if needed.",
-      "In Cat: If mob runs away at 15% HP, shift to Bear -> Feral Charge to root them before they pull friends!"
+      "Solo Cat: Open with Prowl -> Rake -> Claw -> Rip.",
+      "Solo Shred: When Bash or roots are active, circle behind the mob and hit Shred for massive critical burst damage!"
     ],
-    gearTip: "Check for 'Staff of the Blessed Seer' or high-Agi 2H maces.",
+    gearTip: "Look for 'Wolfshead Helm' crafting plans or save heavy leather for it later.",
     dungeonGear: []
   },
-  26: {
-    title: "Predatory Strikes: Building Automatic Attack Power Scaling",
-    zone: "Wetlands (Dun Modr) or Duskwood (Hermit of Duskwood)",
-    zoneRange: "25-30",
-    hubs: "Menethil Harbor / Darkshire",
-    zoneInstructions: "Finish Morbent Fel questline in Raven Hill or clear Dark Iron Dwarves in northern Wetlands. You are closing in on level 30!",
+  25: {
+    title: "Predatory Strikes: Automatic Attack Power Scaling",
+    zone: "Wetlands (Excavation Site / Mosshide Fens)",
+    zoneRange: "24-29",
+    hubs: "Menethil Harbor / Greenwarden's Grove",
+    zoneInstructions: "Tackle the Mosshide Gnolls in Wetlands. You have Feral Charge, making caster mobs and runners completely trivial!",
     talent: {
       name: "Predatory Strikes (Rank 1/3)",
       tree: "Feral Combat",
       rank: "1/3",
       effect: "Increases your melee attack power in Cat, Bear, and Dire Bear forms by 50% of your level.",
       why: "Provides flat attack power that scales automatically every single time you level up."
+    },
+    trainerTrain: ["No spells at 25."],
+    trainerSkip: [],
+    rotation: [
+      "Rake opener -> Claw -> Rip finisher. Pop Tiger's Fury right before building combo points for bonus flat damage on every hit."
+    ],
+    gearTip: "Check for 'Staff of the Blessed Seer' or high-Agi 2H maces.",
+    dungeonGear: []
+  },
+  26: {
+    title: "Predatory Strikes Rank 2",
+    zone: "Wetlands (Dun Modr) or Duskwood (Hermit of Duskwood)",
+    zoneRange: "25-30",
+    hubs: "Menethil Harbor / Darkshire",
+    zoneInstructions: "Finish Morbent Fel questline in Raven Hill or clear Dark Iron Dwarves in northern Wetlands. You are closing in on level 30!",
+    talent: {
+      name: "Predatory Strikes (Rank 2/3)",
+      tree: "Feral Combat",
+      rank: "2/3",
+      effect: "Increases melee attack power in forms by 100% of your level.",
+      why: "At level 26, this grants +26 free Attack Power in all forms."
     },
     trainerTrain: ["No spells at 26."],
     trainerSkip: [],
@@ -427,17 +427,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   27: {
-    title: "Predatory Strikes Rank 2",
+    title: "Capping Predatory Strikes & Duskwood Solo Power Grinding",
     zone: "Ashenvale (Forest Song) / Redridge (Stonewatch Keep)",
     zoneRange: "26-31",
     hubs: "Astranaar / Lakeshire",
     zoneInstructions: "SOLO ROUTE: Skip the Stonewatch Keep elite castle quests in Redridge. Head to Forest Song in eastern Ashenvale or clear the Hermit of Duskwood quests. Stick to yellow humanoid and beast camps where you can skin every kill for steady leather income.",
     talent: {
-      name: "Predatory Strikes (Rank 2/3)",
+      name: "Predatory Strikes (Rank 3/3)",
       tree: "Feral Combat",
-      rank: "2/3",
-      effect: "Increases melee attack power in forms by 100% of your level.",
-      why: "At level 27, this grants +27 free Attack Power in all forms."
+      rank: "3/3",
+      effect: "Increases melee attack power in forms by 150% of your level.",
+      why: "Massive scaling. At level 27, you gain +40.5 Attack Power, scaling all the way to +90 AP at level 60!"
     },
     trainerTrain: ["No spells at 27."],
     trainerSkip: [],
@@ -448,22 +448,22 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   28: {
-    title: "Capping Predatory Strikes & Duskwood Solo Power Grinding",
+    title: "Primal Fury: Extra Combo Points on Crit & Faerie Fire",
     zone: "Duskwood (Rotting Orchard & Raven Hill) & Ashenvale (Forest Song)",
     zoneRange: "26-30",
     hubs: "Darkshire / Astranaar",
-    zoneInstructions: "SOLO ROUTE: Skip the Stockade dungeon entirely! Duskwood has the premier solo quest hubs in Vanilla. Clear The Night Watch Part 3 (ghouls and skeletons in Raven Hill cemetery) and the Rotting Orchard spiders. With maxed Predatory Strikes, your Cat Form attack power spikes enormously, letting you drop mobs in 4-5 seconds flat from Prowl + Ravage.",
+    zoneInstructions: "SOLO ROUTE: Skip the Stockade dungeon entirely! Duskwood has the premier solo quest hubs in Vanilla. Clear The Night Watch Part 3 (ghouls and skeletons in Raven Hill cemetery) and the Rotting Orchard spiders.",
     talent: {
-      name: "Predatory Strikes (Rank 3/3)",
+      name: "Primal Fury (Rank 1/2)",
       tree: "Feral Combat",
-      rank: "3/3",
-      effect: "Increases melee attack power in forms by 150% of your level.",
-      why: "Massive scaling. At level 28, you gain +42 Attack Power, and this grows automatically all the way to +90 AP at level 60!"
+      rank: "1/2",
+      effect: "Gives you a 50% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear or Dire Bear form, and critical strikes from Cat Form abilities add an additional combo point.",
+      why: "Whenever your Claw, Rake, or Shred crits, you have a 50% chance to immediately gain 2 combo points instead of 1, accelerating your finishers!"
     },
     trainerTrain: ["Faerie Fire (Feral) (Rank 1 - Castable in Bear/Cat form!)", "Healing Touch (Rank 6)"],
     trainerSkip: ["Starfire (Rank 2 - Skip)"],
     rotation: [
-      "REVOLUTIONARY SPELL: Faerie Fire (Feral) can be cast directly while in Cat or Bear form for ZERO mana! Cast it on every single mob immediately on pull to strip 250+ armor!",
+      "Faerie Fire (Feral) can be cast directly while in Cat or Bear form for ZERO mana! Cast it on every single mob immediately on pull to strip 250+ armor!",
       "Solo Cat Prowl: Prowl behind target -> Ravage (or Claw) -> Faerie Fire (Feral) -> Rake -> Claw to 5 Combo Points -> Rip -> Shift Bear if fighting multiple adds."
     ],
     gearTip: "Hunt for 'Manual Crowd Pumper' in Gnomeregan soon (gives insane attack speed active).",
@@ -472,17 +472,17 @@ const DRUID_LEVEL_DATA = {
     ]
   },
   29: {
-    title: "Primal Fury: Guaranteed Rage & Extra Combo Points on Crit",
+    title: "Primal Fury Capped: 100% Guaranteed Rage & Combo Points",
     zone: "Hillsbrad Foothills (Southshore) / Ashenvale finale",
     zoneRange: "28-33",
     hubs: "Southshore (Hillsbrad)",
     zoneInstructions: "Grab the Southshore flight path in Hillsbrad Foothills. Clear the syndicate camps and river murlocs. Watch out for Horde players roaming the road.",
     talent: {
-      name: "Primal Fury (Rank 1/2)",
+      name: "Primal Fury (Rank 2/2)",
       tree: "Feral Combat",
-      rank: "1/2",
-      effect: "Gives you a 50% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear or Dire Bear form, and critical strikes from Cat Form abilities add an additional combo point.",
-      why: "Whenever your Claw, Rake, or Shred crits, you have a 50% chance to immediately gain 2 combo points instead of 1, accelerating your finishers!"
+      rank: "2/2",
+      effect: "Gives you a 100% chance to gain an additional 5 Rage on Bear crits, and Cat critical strikes ALWAYS add an additional combo point.",
+      why: "100% GUARANTEED extra combo point on every Cat crit and +5 Rage on every Bear crit! Generates insane finisher momentum."
     },
     trainerTrain: ["No spells at 29."],
     trainerSkip: [],
@@ -493,17 +493,17 @@ const DRUID_LEVEL_DATA = {
     dungeonGear: []
   },
   30: {
-    title: "TRAVEL FORM UNLOCKED & PRIMAL FURY CAPPED!",
+    title: "TRAVEL FORM UNLOCKED & SAVAGE FURY!",
     zone: "Hillsbrad Foothills (Southshore) -> Stranglethorn Vale (Rebel Camp)",
     zoneRange: "30-34",
     hubs: "Southshore / Rebel Camp (STV)",
-    zoneInstructions: "HUGE DOUBLE MILESTONE: Visit your trainer to unlock Travel Form (40% outdoor run speed for zero mount cost!) and talent Leader of the Pack (+3% permanent crit aura). Head south to Stranglethorn Vale!",
+    zoneInstructions: "HUGE DOUBLE MILESTONE: Visit your trainer to unlock Travel Form (40% outdoor run speed for zero mount cost!) and talent Savage Fury (+10% builder damage). Head south to Stranglethorn Vale!",
     talent: {
-      name: "Primal Fury (Rank 2/2)",
+      name: "Savage Fury (Rank 1/2)",
       tree: "Feral Combat",
-      rank: "2/2",
-      effect: "Gives you a 100% chance to gain an additional 5 Rage on Bear crits, and Cat critical strikes ALWAYS add an additional combo point.",
-      why: "100% GUARANTEED extra combo point on every Cat crit and +5 Rage on every Bear crit! Combined with Travel Form (+40% run speed), your leveling velocity doubles."
+      rank: "1/2",
+      effect: "Increases the damage caused by your Claw, Rake, Maul, and Swipe abilities by 10%.",
+      why: "Direct 10% flat damage multiplier to all your primary builders in both Cat and Bear form."
     },
     trainerTrain: ["Travel Form (40% run speed!)", "Bite / Ferocious Bite (Rank 1 - First instant burst finisher!)", "Regrowth (Rank 3)"],
     trainerSkip: ["Tree Form / Tranquility if tight on silver"],
@@ -1237,10 +1237,10 @@ const DRUID_TALENTS_CONFIG = [
   {
     "id": "sharpened_claws",
     "name": "Sharpened Claws",
-    "max": 3,
+    "max": 2,
     "tree": "feral",
     "icon": "⚔️",
-    "desc": "Increases critical strike chance in forms by 2% per rank."
+    "desc": "Increases your critical strike chance in Bear, Dire Bear, and Cat Form by 3% / 6%."
   },
   {
     "id": "feral_charge",
@@ -1356,7 +1356,6 @@ const TALENT_LEVEL_ORDER = [
   "feral_swiftness",
   "sharpened_claws",
   "sharpened_claws",
-  "sharpened_claws",
   "feral_charge",
   "predatory_strikes",
   "predatory_strikes",
@@ -1389,6 +1388,7 @@ const TALENT_LEVEL_ORDER = [
   "omen_of_clarity",
   "thick_hide",
   "thick_hide",
+  "feral_aggression",
   "feral_aggression",
   "feral_aggression",
   "feral_aggression",

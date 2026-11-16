@@ -3,15 +3,15 @@
   "realm": "Darkwind (WoW Forever)",
   "class": "Druid",
   "race": "Alliance Skyborne",
-  "level": 21,
-  "money": 13395,
+  "level": 22,
+  "money": 39758,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 20)",
+      "source": "Not yet equipped (Level 22)",
       "armor": "0 Armor",
       "stats": [
         "No head armor available until lvl 14+"
@@ -57,15 +57,14 @@
     "chest": {
       "slot": "Chest",
       "type": "Leather",
-      "name": "Handstitched Leather Vest",
-      "quality": "common",
+      "name": "Dark Leather Tunic",
+      "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "45 Armor",
+      "armor": "90 Armor",
       "stats": [
-        "45 Armor (Pure Armor)"
+        "+4 Feral Combat Stats"
       ],
-      "req": "Requires Level 3",
-      "tip": "⭐ Crafted Leatherworking chestpiece equipped on Chongo."
+      "req": "Item Level 20"
     },
     "wrists": {
       "slot": "Wrists",
@@ -238,7 +237,7 @@
     },
     "cooking": {
       "name": "Cooking",
-      "level": 100,
+      "level": 105,
       "rank": "Journeyman",
       "max": 150,
       "icon": "🍖"
@@ -258,5 +257,5 @@
       "icon": "🎣"
     }
   },
-  "syncedAt": "2026-11-13T16:37:12.041Z"
+  "syncedAt": "2026-11-16T00:36:50.095Z"
 }

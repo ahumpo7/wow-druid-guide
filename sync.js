@@ -318,6 +318,27 @@ function extractProfessions(consolePath, generalLogPath) {
     2941: 'blacksmithing'
   };
 
+  // Read existing synced_character.json to preserve established profession levels when logs rotate
+  let existingProfessions = {};
+  const syncedJsonPath = path.join(__dirname, 'synced_character.json');
+  if (fs.existsSync(syncedJsonPath)) {
+    try {
+      const prevData = JSON.parse(fs.readFileSync(syncedJsonPath, 'utf8'));
+      if (prevData && prevData.professions) {
+        existingProfessions = prevData.professions;
+      }
+    } catch (_) {}
+  }
+
+  // Known fallback levels established for Chongo if logs rotated
+  const KNOWN_FALLBACKS = {
+    leatherworking: 75,
+    skinning: 126,
+    cooking: 105,
+    firstAid: 0,
+    fishing: 0
+  };
+
   const detected = {
     leatherworking: 0,
     skinning: 0,
@@ -353,6 +374,14 @@ function extractProfessions(consolePath, generalLogPath) {
     try {
       parseText(fs.readFileSync(generalLogPath, 'utf8'));
     } catch (_) {}
+  }
+
+  // Preserve existing profession level if detected is 0 or lower due to rotated logs
+  for (const profKey of Object.keys(detected)) {
+    const existingVal = (existingProfessions[profKey] && existingProfessions[profKey].level) || KNOWN_FALLBACKS[profKey] || 0;
+    if (detected[profKey] < existingVal) {
+      detected[profKey] = existingVal;
+    }
   }
 
   function getRankAndMax(level) {
