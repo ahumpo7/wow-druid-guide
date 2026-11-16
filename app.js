@@ -2263,6 +2263,23 @@ function openSyncModal() {
     const directLvlInput = document.getElementById("directSyncLevelInput");
     if (directNameInput && userProfileState.name) directNameInput.value = userProfileState.name;
     if (directLvlInput) directLvlInput.value = currentLevel;
+
+    // Refresh detected live client display inside modal
+    const syncedData = (typeof window !== "undefined" && window.WOW_SYNCED_DATA) ? window.WOW_SYNCED_DATA : null;
+    const modalNameEl = document.getElementById("modalCharName");
+    const modalLvlEl = document.getElementById("modalCharLvl");
+    const btnReloadCached = document.getElementById("btnReloadCached");
+    const detName = (syncedData && syncedData.name) || userProfileState.name || "Chongo";
+    const detLvl = (syncedData && syncedData.level) || currentLevel;
+
+    if (modalNameEl) modalNameEl.textContent = detName;
+    if (modalLvlEl) modalLvlEl.textContent = detLvl;
+    if (btnReloadCached) btnReloadCached.textContent = `↻ Reload Cached: ${detName} (Lvl ${detLvl})`;
+
+    if (syncedData && syncedData.professions) {
+      updateSyncedProfessionsUI(syncedData.professions);
+    }
+
     const feedbackEl = document.getElementById("syncFeedbackMsg");
     if (feedbackEl) feedbackEl.style.display = "none";
   }

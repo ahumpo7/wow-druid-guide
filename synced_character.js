@@ -7,15 +7,15 @@ window.WOW_SYNCED_DATA = {
   "realm": "Darkwind (WoW Forever)",
   "class": "Druid",
   "race": "Alliance Skyborne",
-  "level": 22,
-  "money": 39758,
+  "level": 23,
+  "money": 40434,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 22)",
+      "source": "Not yet equipped (Level 23)",
       "armor": "0 Armor",
       "stats": [
         "No head armor available until lvl 14+"
@@ -129,15 +129,14 @@ window.WOW_SYNCED_DATA = {
     "feet": {
       "slot": "Feet",
       "type": "Leather",
-      "name": "Nomad Sandals",
-      "quality": "common",
+      "name": "Greenweave Sandals of Spirit",
+      "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "40 Armor",
+      "armor": "64 Armor",
       "stats": [
-        "Pure Armor (Starter Footwear)"
+        "+5 Feral Combat Stats"
       ],
-      "req": "Requires Level 8",
-      "tip": "⭐ Currently equipped on Chongo! White leather boots."
+      "req": "Item Level 23"
     },
     "ring1": {
       "slot": "Finger",
@@ -234,14 +233,14 @@ window.WOW_SYNCED_DATA = {
     },
     "skinning": {
       "name": "Skinning",
-      "level": 126,
+      "level": 140,
       "rank": "Journeyman",
       "max": 150,
       "icon": "🗡️"
     },
     "cooking": {
       "name": "Cooking",
-      "level": 105,
+      "level": 111,
       "rank": "Journeyman",
       "max": 150,
       "icon": "🍖"
@@ -261,5 +260,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🎣"
     }
   },
-  "syncedAt": "2026-11-16T00:36:50.095Z"
+  "syncedAt": "2026-11-16T13:22:41.589Z"
 };
