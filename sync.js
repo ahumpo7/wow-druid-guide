@@ -23,8 +23,10 @@ const ITEM_DB = {
   5611: { name: "Tear of Grief", slot: "Off-Hand", type: "Held In Off-hand", quality: "uncommon", armor: null, stats: ["+3 Intellect", "+2 Spirit"], req: "Requires Level 12", tip: "Quest reward held in off-hand." },
 
   // Chestpieces
+  3431: { name: "Bone-studded Leather", slot: "Chest", type: "Leather", quality: "uncommon", armor: "86 Armor", stats: ["+6 Strength (+12 AP)", "+5 Stamina (+50 HP)", "+1 Agility (+1 Cat AP)"], req: "Requires Level 20", tip: "⭐ Reward from Missing In Action in Redridge Mountains." },
   6266: { name: "Disciple's Vest of the Owl", slot: "Chest", type: "Cloth", quality: "uncommon", armor: "25 Armor", stats: ["+2 Intellect (+30 Mana)", "+2 Spirit"], req: "Requires Level 8", tip: "⭐ BoE cloth chest with intellect and spirit." },
   5957: { name: "Handstitched Leather Vest", slot: "Chest", type: "Leather", quality: "common", armor: "45 Armor", stats: ["45 Armor (Pure Armor)"], req: "Requires Level 3", tip: "⭐ Crafted Leatherworking chestpiece equipped on Chongo." },
+  2317: { name: "Dark Leather Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "78 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)"], req: "Requires Level 16", tip: "⭐ Crafted Leatherworking tunic equipped on Chongo." },
   2041: { name: "Tunic of Westfall", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Stamina (+50 HP)"], req: "Requires Level 19", tip: "🔥 Premier solo quest chest from The Defias Brotherhood in Westfall!" },
   10399: { name: "Blackened Defias Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Stamina (+110 HP)", "+4 Strength (+8 AP)", "+3 Agility"], req: "Requires Level 19", tip: "Dropped by Edwin VanCleef in The Deadmines." },
   2314: { name: "Dark Leather Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "78 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)"], req: "Requires Level 15", tip: "Crafted via Leatherworking (Skill 75)." },
@@ -88,7 +90,15 @@ const ITEM_DB = {
   14561: { name: "Prospector's Pads", slot: "Shoulders", type: "Leather", quality: "uncommon", armor: "64 Armor", stats: ["+4 Stamina (+40 HP)", "+4 Spirit"], req: "Requires Level 20", tip: "BoE world drop leather shoulders." },
   3202: { name: "Forest Tracker Epaulets", slot: "Shoulders", type: "Leather", quality: "rare", armor: "78 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Strength (+10 AP)"], req: "Requires Level 26", tip: "BoE rare leather shoulders." },
 
+  // Boots / Feet
+  6582: { name: "Scouting Boots of the Wolf", slot: "Feet", type: "Leather", quality: "uncommon", armor: "56 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+3 Spirit"], req: "Requires Level 17", tip: "BoE world drop leather boots equipped on Chongo." },
+
+  // Waist / Belts
+  6558: { name: "Bard's Belt of the Falcon", slot: "Waist", type: "Leather", quality: "uncommon", armor: "39 Armor", stats: ["+2 Agility (+2 Cat AP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 10", tip: "BoE world drop leather belt equipped on Chongo." },
+
   // Rings
+  1319: { name: "Ring of Iron Will", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+4 Stamina (+40 HP)", "+2 Spirit"], req: "Requires Level 20", tip: "⭐ Guaranteed quest reward: Howling in the Hills." },
+  264908: { name: "Ancient Heirloom", slot: "Finger", type: "Ring", quality: "common", armor: null, stats: ["Heirloom ring with Kaldorei patterns"], req: "Requires Level 1", tip: "Coming of Age quest on Zephras Isle." },
   20439: { name: "Protector's Band", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Agility (+4 Cat AP / +0.2% Crit)", "+2 Stamina (+20 HP)"], req: "Requires Level 18", tip: "Warsong Gulch PvP vendor (Honored rep, 0 dungeon runs)." },
   12015: { name: "Prairie Ring of the Tiger", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+3 Strength (+6 AP)", "+3 Agility (+3 Cat AP / +0.15% Crit)"], req: "Requires Level 20", tip: "BoE world drop ring." },
   17713: { name: "Blackstone Ring", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+6 Stamina (+60 HP)", "Equip: +20 Attack Power", "Equip: +1% Hit Chance"], req: "Requires Level 49", tip: "Princess Theradras in Maraudon." },
@@ -579,8 +589,8 @@ function runSync() {
       const itemId = bagBrotherEquip[slotNum];
       // Slot 4 is shirt - keep it separate from chest (Slot 5)
       if (parseInt(slotNum, 10) === 4) continue;
-      // Filter out empty or internal server aura / cosmetic tokens (> 100000) except known items like 263411
-      if (!itemId || (itemId > 100000 && itemId !== 263411)) continue;
+      // Filter out empty or internal server aura / cosmetic tokens (> 100000) except known custom items like Idol (263411) and Ancient Heirloom (264908)
+      if (!itemId || (itemId > 100000 && itemId !== 263411 && itemId !== 264908)) continue;
       const key = slotMap[slotNum];
       if (!key) continue;
 

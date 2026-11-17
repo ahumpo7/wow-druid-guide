@@ -3,15 +3,15 @@
   "realm": "Darkwind (WoW Forever)",
   "class": "Druid",
   "race": "Alliance Skyborne",
-  "level": 23,
-  "money": 40434,
+  "level": 24,
+  "money": 49332,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 23)",
+      "source": "Not yet equipped (Level 24)",
       "armor": "0 Armor",
       "stats": [
         "No head armor available until lvl 14+"
@@ -57,14 +57,17 @@
     "chest": {
       "slot": "Chest",
       "type": "Leather",
-      "name": "Dark Leather Tunic",
+      "name": "Bone-studded Leather",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "90 Armor",
+      "armor": "86 Armor",
       "stats": [
-        "+4 Feral Combat Stats"
+        "+6 Strength (+12 AP)",
+        "+5 Stamina (+50 HP)",
+        "+1 Agility (+1 Cat AP)"
       ],
-      "req": "Item Level 20"
+      "req": "Requires Level 20",
+      "tip": "⭐ Reward from Missing In Action in Redridge Mountains."
     },
     "wrists": {
       "slot": "Wrists",
@@ -97,16 +100,16 @@
     "waist": {
       "slot": "Waist",
       "type": "Leather",
-      "name": "Bard's Belt of the Tiger",
+      "name": "Bard's Belt of the Falcon",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
       "armor": "39 Armor",
       "stats": [
-        "+2 Strength (+4 AP)",
-        "+2 Agility (+2 Cat AP / +0.1% Crit)"
+        "+2 Agility (+2 Cat AP)",
+        "+2 Intellect (+30 Mana)"
       ],
       "req": "Requires Level 10",
-      "tip": "⭐ BoE leather belt equipped on Chongo."
+      "tip": "BoE world drop leather belt equipped on Chongo."
     },
     "legs": {
       "slot": "Legs",
@@ -125,36 +128,43 @@
     "feet": {
       "slot": "Feet",
       "type": "Leather",
-      "name": "Greenweave Sandals of Spirit",
+      "name": "Scouting Boots of the Wolf",
       "quality": "uncommon",
       "source": "Currently Equipped on Chongo",
-      "armor": "64 Armor",
+      "armor": "56 Armor",
       "stats": [
-        "+5 Feral Combat Stats"
+        "+3 Agility (+3 Cat AP / +0.15% Crit)",
+        "+3 Spirit"
       ],
-      "req": "Item Level 23"
+      "req": "Requires Level 17",
+      "tip": "BoE world drop leather boots equipped on Chongo."
     },
     "ring1": {
       "slot": "Finger",
-      "type": "Empty",
-      "name": "None Equipped",
+      "type": "Ring",
+      "name": "Ancient Heirloom",
       "quality": "common",
-      "source": "Not yet equipped",
+      "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "Rings start around lvl 14-16"
-      ]
+        "Heirloom ring with Kaldorei patterns"
+      ],
+      "req": "Requires Level 1",
+      "tip": "Coming of Age quest on Zephras Isle."
     },
     "ring2": {
       "slot": "Finger",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
+      "type": "Ring",
+      "name": "Ring of Iron Will",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Chongo",
       "armor": null,
       "stats": [
-        "Rings start around lvl 14-16"
-      ]
+        "+4 Stamina (+40 HP)",
+        "+2 Spirit"
+      ],
+      "req": "Requires Level 20",
+      "tip": "⭐ Guaranteed quest reward: Howling in the Hills."
     },
     "trinket1": {
       "slot": "Trinket",
@@ -222,21 +232,21 @@
   "professions": {
     "leatherworking": {
       "name": "Leatherworking",
-      "level": 75,
+      "level": 92,
       "rank": "Journeyman",
       "max": 150,
       "icon": "✂️"
     },
     "skinning": {
       "name": "Skinning",
-      "level": 140,
-      "rank": "Journeyman",
-      "max": 150,
+      "level": 150,
+      "rank": "Expert",
+      "max": 225,
       "icon": "🗡️"
     },
     "cooking": {
       "name": "Cooking",
-      "level": 111,
+      "level": 120,
       "rank": "Journeyman",
       "max": 150,
       "icon": "🍖"
@@ -256,5 +266,5 @@
       "icon": "🎣"
     }
   },
-  "syncedAt": "2026-11-16T13:22:41.589Z"
+  "syncedAt": "2026-11-17T11:57:58.136Z"
 }

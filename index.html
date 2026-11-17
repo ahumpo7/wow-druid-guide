@@ -33,9 +33,9 @@
           <span class="sync-status-dot" title="Status: Synced & Saved"></span>
           <span class="sync-char-name" id="headerCharName">Chongo</span>
           <span class="sync-char-sep">•</span>
-          <span class="sync-char-level">Lvl <strong id="headerCharLvl">23</strong></span>
-          <span class="header-prof-pill" id="headerProfLw" title="Leatherworking: 75/150">✂️ 75</span>
-          <span class="header-prof-pill" id="headerProfSkin" title="Skinning: 140/150">🗡️ 140</span>
+          <span class="sync-char-level">Lvl <strong id="headerCharLvl">24</strong></span>
+          <span class="header-prof-pill" id="headerProfLw" title="Leatherworking: 92/150">✂️ 92</span>
+          <span class="header-prof-pill" id="headerProfSkin" title="Skinning: 150/225">🗡️ 150</span>
         </div>
         <div class="header-quick-step">
           <button type="button" class="btn-header-step" onclick="quickStepLevel(-1)" title="Previous Level (Step Down)">-</button>
@@ -1119,27 +1119,27 @@
                 <span class="prof-sync-rank" id="profRankLw">Journeyman</span>
               </div>
               <div class="prof-sync-val">
-                <span id="profValLw">75</span> <span class="prof-sync-max" id="profMaxLw">/ 150</span>
+                <span id="profValLw">92</span> <span class="prof-sync-max" id="profMaxLw">/ 150</span>
               </div>
               <div class="prof-sync-bar-bg">
-                <div class="prof-sync-bar-fill" id="profBarLw" style="width: 50%; background: #4ade80;"></div>
+                <div class="prof-sync-bar-fill" id="profBarLw" style="width: 61%; background: #4ade80;"></div>
               </div>
-              <div class="prof-sync-status" id="profNoteLw">⚠️ Apprentice cap (75) reached! Train Journeyman in Darnassus or Teldrassil.</div>
+              <div class="prof-sync-status" id="profNoteLw">Active crafting step highlighted below in the 1–300 blueprint!</div>
             </div>
 
             <!-- Skinning Card -->
             <div class="prof-sync-card" id="profCardSkinning">
               <div class="prof-sync-card-top">
                 <span class="prof-sync-name">🗡️ Skinning</span>
-                <span class="prof-sync-rank" id="profRankSkinning">Journeyman</span>
+                <span class="prof-sync-rank" id="profRankSkinning">Expert</span>
               </div>
               <div class="prof-sync-val">
-                <span id="profValSkinning">140</span> <span class="prof-sync-max" id="profMaxSkinning">/ 150</span>
+                <span id="profValSkinning">150</span> <span class="prof-sync-max" id="profMaxSkinning">/ 225</span>
               </div>
               <div class="prof-sync-bar-bg">
-                <div class="prof-sync-bar-fill" id="profBarSkinning" style="width: 93%; background: #38bdf8;"></div>
+                <div class="prof-sync-bar-fill" id="profBarSkinning" style="width: 67%; background: #38bdf8;"></div>
               </div>
-              <div class="prof-sync-status" id="profNoteSkinning">Skinning up to lvl 38 beasts cleanly in Duskwood, Wetlands & Ashenvale.</div>
+              <div class="prof-sync-status" id="profNoteSkinning">Skinning up to lvl 40 beasts cleanly across Duskwood, Wetlands & Ashenvale.</div>
             </div>
 
             <!-- Cooking Card -->
@@ -1149,10 +1149,10 @@
                 <span class="prof-sync-rank" id="profRankCooking">Journeyman</span>
               </div>
               <div class="prof-sync-val">
-                <span id="profValCooking">111</span> <span class="prof-sync-max" id="profMaxCooking">/ 150</span>
+                <span id="profValCooking">120</span> <span class="prof-sync-max" id="profMaxCooking">/ 150</span>
               </div>
               <div class="prof-sync-bar-bg">
-                <div class="prof-sync-bar-fill" id="profBarCooking" style="width: 74%; background: #fb923c;"></div>
+                <div class="prof-sync-bar-fill" id="profBarCooking" style="width: 80%; background: #fb923c;"></div>
               </div>
               <div class="prof-sync-status" id="profNoteCooking">Craft Strider Stew & Boar Ribs for constant +Stamina Well Fed buffs.</div>
             </div>
@@ -1783,12 +1783,12 @@
           <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 10px;">
             <div style="font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
               <span class="sync-status-dot"></span>
-              <span>Detected Live Client: <strong style="color: var(--skyborne-blue);" id="modalCharName">Chongo</strong> • Level <span id="modalCharLvl">23</span> (Darkwind Realm)</span>
+              <span>Detected Live Client: <strong style="color: var(--skyborne-blue);" id="modalCharName">Chongo</strong> • Level <span id="modalCharLvl">24</span> (Darkwind Realm)</span>
             </div>
             <div id="modalProfessionsBadges" style="margin: 6px 0 10px 0; font-size: 0.82rem; color: #cbd5e1; display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 4px; color: #4ade80;">✂️ LW: 75/150</span>
-              <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px; color: #38bdf8;">🗡️ Skinning: 140/150</span>
-              <span style="background: rgba(251, 146, 60, 0.15); border: 1px solid rgba(251, 146, 60, 0.3); padding: 2px 8px; border-radius: 4px; color: #fb923c;">🍖 Cooking: 111/150</span>
+              <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 4px; color: #4ade80;">✂️ LW: 92/150</span>
+              <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px; color: #38bdf8;">🗡️ Skinning: 150/225</span>
+              <span style="background: rgba(251, 146, 60, 0.15); border: 1px solid rgba(251, 146, 60, 0.3); padding: 2px 8px; border-radius: 4px; color: #fb923c;">🍖 Cooking: 120/150</span>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; word-break: break-all;">
               Found in: <code>C:\Program Files (x86)\World of Warcraft\_forever_\WTF\SavedVariables\Blizzard_Console.lua</code>
@@ -1798,7 +1798,7 @@
                 ⚡ Run Live Sync (.bat / Server)
               </button>
               <button type="button" class="sync-btn" onclick="loadDetectedClientCharacter()" style="font-size: 0.85rem; padding: 7px 16px;" id="btnReloadCached">
-                ↻ Reload Cached: Chongo (Lvl 23)
+                ↻ Reload Cached: Chongo (Lvl 24)
               </button>
               <button type="button" class="btn-ctrl" onclick="document.getElementById('wtfFileInput').click()" style="font-size: 0.85rem; padding: 7px 16px; cursor: pointer;">
                 📂 Select Local WoW File (.lua)
