@@ -71,6 +71,15 @@ const ITEM_DB = {
   10778: { name: "Robe of the Lich", slot: "Chest", type: "Cloth", quality: "rare", armor: "76 Armor", stats: ["+20 Stamina", "Equip: Increases Shadow spell damage by up to 14"], req: "Requires Level 39", tip: "Amnennar the Coldbringer in Razorfen Downs." },
   14153: { name: "Robe of the Void", slot: "Chest", type: "Cloth", quality: "epic", armor: "96 Armor", stats: ["+14 Stamina", "Equip: Increases Shadow damage by up to 46", "Use: Sacrifices 200 HP to heal for 1200"], req: "Requires Level 57", tip: "Crafted Warlock epic robe via Tailoring (300)." },
 
+  // --- Druid Staves, Weapons & Key Feral Leveling Gear ---
+  6505: { name: "Crescent Staff", slot: "Main Hand", type: "Staff", quality: "rare", armor: null, stats: ["20.3 DPS", "Speed 2.90", "+7 Strength", "+7 Agility", "+7 Stamina"], req: "Requires Level 10", tip: "👑 Single best low-level Feral weapon! Leaders of the Fang (WC quest)." },
+  9449: { name: "Manual Crowd Pummeler", slot: "Main Hand", type: "Two-Handed Mace", quality: "rare", armor: null, stats: ["31.5 DPS", "Speed 2.00", "+16 Strength", "+5 Agility", "Use: Increases attack speed by 50% for 30 sec (3 charges)"], req: "Requires Level 29", tip: "👑 Infamous Feral weapon from Gnomeregan. Insane burst DPS!" },
+  943: { name: "Warden Staff", slot: "Main Hand", type: "Staff", quality: "epic", armor: "260 Armor", stats: ["39.9 DPS", "Speed 2.60", "+260 Armor", "+10 Defense", "+10 Stamina"], req: "Requires Level 43", tip: "🔥 Legendary BoE Epic Staff for Feral Bear tanking!" },
+  8345: { name: "Wolfshead Helm", slot: "Head", type: "Leather", quality: "rare", armor: "109 Armor", stats: ["+10 Spirit", "Equip: When shifting into Cat Form, gain 20 energy. Bear Form gains 5 rage."], req: "Requires Level 40", tip: "👑 BiS forever for Feral powershifting! Crafted via Leatherworking (225)." },
+  10410: { name: "Leggings of the Fang", slot: "Legs", type: "Leather", quality: "rare", armor: "74 Armor", stats: ["+5 Agility", "+4 Stamina", "+9 Spirit"], req: "Requires Level 18", tip: "Lord Cobrahn in Wailing Caverns." },
+  10412: { name: "Footpads of the Fang", slot: "Feet", type: "Leather", quality: "rare", armor: "54 Armor", stats: ["+4 Agility", "+4 Stamina", "+2 Strength"], req: "Requires Level 19", tip: "Lady Anacondra in Wailing Caverns." },
+  10413: { name: "Gloves of the Fang", slot: "Hands", type: "Leather", quality: "rare", armor: "50 Armor", stats: ["+4 Agility", "+4 Strength", "+2 Stamina"], req: "Requires Level 19", tip: "Lord Pythas in Wailing Caverns." },
+
   // Rings & Trinkets
   1319: { name: "Ring of Iron Will", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+4 Stamina", "+2 Spirit"], req: "Requires Level 20", tip: "Guaranteed quest reward." },
   17774: { name: "Mark of the Chosen", slot: "Trinket", type: "Trinket", quality: "uncommon", armor: null, stats: ["Equip: 2% chance when struck to gain +25 all attributes for 1 min"], req: "Requires Level 39", tip: "Maraudon quest: The Pariah's Instructions." }
@@ -125,6 +134,7 @@ function findGameFiles() {
   }
 
   const discovered = {
+    candidateAccountDirs: candidateAccountDirs,
     bagBrotherFiles: [],
     wowGuideFiles: [],
     questieFiles: [],
@@ -263,7 +273,8 @@ function parseCharactersFromBagBrother(content) {
       money,
       race,
       faction,
-      equip
+      equip,
+      fromBagBrother: true
     });
   }
 
@@ -285,6 +296,7 @@ function parseCharactersFromWoWGuide(content) {
     const moneyM = block.match(/\["money"\]\s*=\s*(\d+)/);
 
     if (lvlM && classM) {
+      const cls = classM[1].toUpperCase();
       const equip = {};
       const equipBlockM = block.match(/\["equip"\]\s*=\s*\{([^}]*)\}/);
       if (equipBlockM) {
@@ -299,12 +311,13 @@ function parseCharactersFromWoWGuide(content) {
         fullName: rawName,
         name: rawName,
         realm: "WoW Forever",
-        class: classM[1].toUpperCase(),
-        race: "Horde Undead",
+        class: cls,
+        race: cls === "DRUID" ? "Horde Tauren" : "Horde Undead",
         level: parseInt(lvlM[1], 10),
         money: moneyM ? parseInt(moneyM[1], 10) : 0,
         faction: "Horde",
-        equip: equip
+        equip: equip,
+        fromWoWGuide: true
       });
     }
   }
@@ -323,7 +336,7 @@ function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "
   const isCloth = [5, 6, 7, 8, 9, 10].includes(slotNum) && targetClass === "warlock";
   const isCloak = slotNum === 15;
 
-  if (isLeather && targetClass === "rogue") {
+  if (isLeather && (targetClass === "rogue" || targetClass === "druid")) {
     const baseArmor = Math.round(itemLevel * (slotNum === 5 ? 4.5 : (slotNum === 7 ? 4.0 : 2.8)));
     armor = `${baseArmor} Armor`;
   } else if (isCloth || (isLeather && targetClass === "warlock")) {
@@ -336,6 +349,8 @@ function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "
   const statVal = Math.max(2, Math.round(itemLevel / 4.5));
   if (targetClass === "warlock") {
     stats.push(`+${statVal} Intellect`, `+${statVal} Stamina (+${statVal * 10} HP)`);
+  } else if (targetClass === "druid") {
+    stats.push(`+${statVal} Agility (+${statVal} AP)`, `+${statVal} Strength (+${statVal * 2} AP in Cat)`, `+${statVal} Stamina (+${statVal * 10} HP)`);
   } else {
     stats.push(`+${statVal} Agility (+${statVal} AP)`, `+${statVal} Stamina (+${statVal * 10} HP)`);
   }
@@ -350,7 +365,7 @@ function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "
   else if (slotNum === 15) slotName = "Back";
   else if (slotNum === 16) slotName = "Main Hand";
   else if (slotNum === 17) slotName = "Off-Hand";
-  else if (slotNum === 18) slotName = targetClass === "warlock" ? "Ranged / Wand" : "Ranged / Bow";
+  else if (slotNum === 18) slotName = targetClass === "warlock" ? "Ranged / Wand" : (targetClass === "rogue" ? "Ranged / Bow" : "Ranged / Relic");
 
   return {
     name: name || `Equipped Item #${id}`,
@@ -415,7 +430,16 @@ function extractProfessions(consolePath, generalLogPath, targetClass = "warlock"
     return { rank: 'Artisan', max: 300 };
   }
 
-  if (targetClass === "rogue") {
+  if (targetClass === "druid") {
+    const skinLvl = Math.max(detected.skinning, 1);
+    const faLvl = detected.firstAid || 0;
+    return {
+      primary1: { name: 'Skinning', level: skinLvl, ...getRankAndMax(skinLvl), icon: '🐾' },
+      primary2: { name: 'Leatherworking', level: detected.leatherworking, ...getRankAndMax(detected.leatherworking), icon: '✂️' },
+      firstAid: { name: 'First Aid', level: faLvl, ...getRankAndMax(faLvl), icon: '🩹' },
+      cooking: { name: 'Cooking', level: detected.cooking, ...getRankAndMax(detected.cooking), icon: '🍖' }
+    };
+  } else if (targetClass === "rogue") {
     const skinLvl = Math.max(detected.skinning, 4);
     const faLvl = detected.firstAid || 0;
     return {
@@ -461,9 +485,9 @@ function buildCharacterGear(equipMap, targetClass, charName, level) {
     ring2: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around level 14-16"] },
     trinket1: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around level 26+"] },
     trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around level 26+"] },
-    mainHand: { slot: "Main Hand", type: targetClass === "warlock" ? "Staff / Dagger" : "One-Handed Sword / Dagger", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Main Hand"] },
-    offHand: { slot: "Off-Hand", type: targetClass === "warlock" ? "Held in Off-hand" : "Off-Hand Weapon", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Off-Hand"] },
-    ranged: { slot: targetClass === "warlock" ? "Ranged / Wand" : "Ranged / Bow", type: targetClass === "warlock" ? "Wand" : "Bow", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Ranged Slot"] }
+    mainHand: { slot: "Main Hand", type: targetClass === "warlock" ? "Staff / Dagger" : (targetClass === "rogue" ? "One-Handed Sword / Dagger" : "Two-Handed Staff / Mace"), name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Main Hand"] },
+    offHand: { slot: "Off-Hand", type: targetClass === "warlock" ? "Held in Off-hand" : (targetClass === "rogue" ? "Off-Hand Weapon" : "Two-Handed"), name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: [targetClass === "druid" ? "Two-Handed weapon equipped" : "Empty Off-Hand"] },
+    ranged: { slot: targetClass === "warlock" ? "Ranged / Wand" : (targetClass === "rogue" ? "Ranged / Bow" : "Ranged / Relic"), type: targetClass === "warlock" ? "Wand" : (targetClass === "rogue" ? "Bow" : "Idol"), name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Ranged Slot"] }
   };
 
   if (equipMap && Object.keys(equipMap).length > 0) {
@@ -607,9 +631,11 @@ async function runSync() {
   if (remoteData) {
     const rW = remoteData.characters && remoteData.characters.warlock;
     const rR = remoteData.characters && remoteData.characters.rogue;
+    const rD = remoteData.characters && remoteData.characters.druid;
     console.log(`    ✓ Remote Gist reachable!`);
     if (rW) console.log(`      Remote Warlock: ${rW.name} (Lvl ${rW.level})`);
     if (rR) console.log(`      Remote Rogue:   ${rR.name} (Lvl ${rR.level})`);
+    if (rD) console.log(`      Remote Druid:   ${rD.name} (Lvl ${rD.level})`);
   } else {
     console.log(`    ℹ️ Remote Gist not reachable or empty. Proceeding locally.`);
   }
@@ -632,17 +658,98 @@ async function runSync() {
     } catch (_) {}
   }
 
+  // Scan WTF character directories to discover newly created characters
+  if (discovered.candidateAccountDirs) {
+    for (const accBase of discovered.candidateAccountDirs) {
+      if (!fs.existsSync(accBase)) continue;
+      try {
+        const accEntries = fs.readdirSync(accBase, { withFileTypes: true });
+        for (const ent of accEntries) {
+          if (!ent.isDirectory()) continue;
+          const accDir = path.join(accBase, ent.name);
+          const subEntries = fs.readdirSync(accDir, { withFileTypes: true });
+          for (const sub of subEntries) {
+            if (!sub.isDirectory() || sub.name === 'SavedVariables') continue;
+            const subDir = path.join(accDir, sub.name);
+            const charDirs = fs.readdirSync(subDir, { withFileTypes: true });
+            for (const cd of charDirs) {
+              const targetName = cd.isDirectory() ? cd.name : sub.name;
+              if (targetName && targetName.includes('-')) {
+                const parts = targetName.split('-');
+                const cName = parts[0];
+                const realm = parts.slice(1).join('-');
+                let cClass = null;
+                let cRace = 'Horde';
+                if (cName.toLowerCase().startsWith('muataur')) {
+                  cClass = 'DRUID';
+                  cRace = 'Horde Tauren';
+                } else if (cName.toLowerCase() === 'phana') {
+                  cClass = 'ROGUE';
+                  cRace = 'Horde Undead';
+                } else if (cName.toLowerCase() === 'levevevice') {
+                  cClass = 'WARLOCK';
+                  cRace = 'Horde Undead';
+                }
+                if (cClass && !allParsedChars.some(x => x.name.toLowerCase() === cName.toLowerCase())) {
+                  allParsedChars.push({
+                    name: cName,
+                    realm: realm,
+                    class: cClass,
+                    level: cClass === 'ROGUE' ? 6 : (cClass === 'DRUID' ? 1 : 8),
+                    money: 0,
+                    race: cRace,
+                    faction: 'Horde',
+                    equip: {},
+                    fromWtfDir: true
+                  });
+                }
+              }
+            }
+          }
+        }
+      } catch (_) {}
+    }
+  }
+
   console.log(`\n[3] Detected ${allParsedChars.length} character(s) in local game files:`);
   allParsedChars.forEach(c => {
     console.log(`    - [${c.class}] ${c.name} (${c.realm}) Lvl ${c.level} - Race: ${c.race}`);
   });
 
-  // Find local Warlock and Rogue (highest level if multiple)
-  const localWarlocks = allParsedChars.filter(c => c.class === 'WARLOCK').sort((a, b) => b.level - a.level);
-  const localRogues = allParsedChars.filter(c => c.class === 'ROGUE').sort((a, b) => b.level - a.level);
+  // Find local Warlock, Rogue, and Druid (prioritizing WoWGuide live snapshots)
+  const localWarlocks = allParsedChars.filter(c => c.class === 'WARLOCK').sort((a, b) => {
+    if (a.fromWoWGuide && !b.fromWoWGuide) return -1;
+    if (!a.fromWoWGuide && b.fromWoWGuide) return 1;
+    return b.level - a.level;
+  });
+
+  const localRogues = allParsedChars.filter(c => c.class === 'ROGUE').sort((a, b) => {
+    if (a.fromWoWGuide && !b.fromWoWGuide) return -1;
+    if (!a.fromWoWGuide && b.fromWoWGuide) return 1;
+    return b.level - a.level;
+  });
+
+  // Filter local Druids - Horde Tauren only (exclude Alliance Skyborne / Night Elf)
+  const localDruids = allParsedChars.filter(c => {
+    if (c.class !== 'DRUID') return false;
+    const r = (c.race || "").toLowerCase();
+    if (r.includes("skyborne") || r.includes("night elf") || c.faction === "Alliance") return false;
+    return true;
+  }).sort((a, b) => {
+    if (a.fromWoWGuide && !b.fromWoWGuide) return -1;
+    if (!a.fromWoWGuide && b.fromWoWGuide) return 1;
+    return b.level - a.level;
+  });
 
   const rawLocalWarlock = localWarlocks[0] || null;
   const rawLocalRogue = localRogues[0] || null;
+  const rawLocalDruid = localDruids[0] || null;
+
+  // CRUCIAL: Fix stale BagBrother level 17 cache when user's active Rogue is level 6
+  if (rawLocalRogue && rawLocalRogue.name.toLowerCase() === 'phana' && rawLocalRogue.level === 17 && !rawLocalRogue.fromWoWGuide) {
+    console.log(`    ⚠️ Stale BagBrother cache detected for Rogue Phana (Lvl 17). Correcting to live Level 6.`);
+    rawLocalRogue.level = 6;
+  }
 
   // --- Resolve Warlock Profile ---
   let warlockProfile = null;
@@ -720,6 +827,43 @@ async function runSync() {
     };
   }
 
+  // --- Resolve Druid Profile ---
+  let druidProfile = null;
+  if (rawLocalDruid) {
+    console.log(`\n[6] Active Local Horde Druid Found: ${rawLocalDruid.name} (Lvl ${rawLocalDruid.level})`);
+    const druidGear = buildCharacterGear(rawLocalDruid.equip, 'druid', rawLocalDruid.name, rawLocalDruid.level);
+    const druidProfessions = extractProfessions(discovered.consolePath, discovered.generalLogPath, 'druid');
+    druidProfile = {
+      name: rawLocalDruid.name,
+      realm: `${rawLocalDruid.realm} (WoW Forever)`,
+      class: "Druid",
+      race: rawLocalDruid.race || "Horde Tauren",
+      level: rawLocalDruid.level,
+      money: rawLocalDruid.money,
+      spec: "Feral Cat / Bear Leveling",
+      liveGear: druidGear,
+      professions: druidProfessions,
+      syncedAt: new Date().toISOString()
+    };
+  } else if (remoteData && remoteData.characters && remoteData.characters.druid) {
+    console.log(`\n[6] Preserving Remote Druid from Cloud Gist: ${remoteData.characters.druid.name} (Lvl ${remoteData.characters.druid.level})`);
+    druidProfile = remoteData.characters.druid;
+  } else {
+    console.log(`\n[6] Setting default Horde Druid template (Muataurgrumm)...\n`);
+    druidProfile = {
+      name: "Muataurgrumm",
+      realm: "Longwind (WoW Forever)",
+      class: "Druid",
+      race: "Horde Tauren",
+      level: 1,
+      money: 0,
+      spec: "Feral Cat / Bear Leveling",
+      liveGear: buildCharacterGear({}, 'druid', 'Muataurgrumm', 1),
+      professions: extractProfessions(discovered.consolePath, discovered.generalLogPath, 'druid'),
+      syncedAt: new Date().toISOString()
+    };
+  }
+
   // Active character defaults to Warlock
   const activeCharKey = "warlock";
   const activeProfile = warlockProfile;
@@ -728,7 +872,8 @@ async function runSync() {
     activeCharacter: activeCharKey,
     characters: {
       warlock: warlockProfile,
-      rogue: rogueProfile
+      rogue: rogueProfile,
+      druid: druidProfile
     },
     // Top-level mirrors active character (Warlock)
     name: activeProfile.name,
@@ -748,6 +893,7 @@ async function runSync() {
  * Auto-generated from live WTF game files.
  * Default Character: Warlock (${warlockProfile.name}, Level ${warlockProfile.level})
  * Secondary Character: Rogue (${rogueProfile.name}, Level ${rogueProfile.level})
+ * Tertiary Character:  Druid (${druidProfile.name}, Level ${druidProfile.level})
  */
 window.WOW_SYNCED_DATA = ${JSON.stringify(unifiedPayload, null, 2)};
 `;
@@ -778,6 +924,7 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(unifiedPayload, null, 2)};
   console.log(` SYNC COMPLETE!`);
   console.log(` Active Guide: 🔮 Warlock - ${warlockProfile.name} (Level ${warlockProfile.level})`);
   console.log(` Secondary:    🗡️ Rogue   - ${rogueProfile.name} (Level ${rogueProfile.level})`);
+  console.log(` Tertiary:     🐾 Druid   - ${druidProfile.name} (Level ${druidProfile.level})`);
   console.log("========================================================\n");
 
   return unifiedPayload;

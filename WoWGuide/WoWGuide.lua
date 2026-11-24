@@ -32,7 +32,9 @@ end
 local function DetectPlayerClass()
   local locClass, engClass = UnitClass("player")
   local str = string.upper(engClass or locClass or "")
-  if str:find("ROGUE") then
+  if str:find("DRUID") then
+    return "DRUID"
+  elseif str:find("ROGUE") then
     return "ROGUE"
   end
   return "WARLOCK"
@@ -42,6 +44,8 @@ local function GetClassGuideData(cls)
   local c = cls or selectedClass or DetectPlayerClass()
   if c == "ROGUE" then
     return addonTable.Rogue or _G["WoWGuide_Rogue"] or WoWGuide_Rogue
+  elseif c == "DRUID" then
+    return addonTable.Druid or _G["WoWGuide_Druid"] or WoWGuide_Druid
   else
     return addonTable.Warlock or _G["WoWGuide_Warlock"] or WoWGuide_Warlock
   end
@@ -50,6 +54,7 @@ end
 local function GetClassColorHex(cls)
   local c = cls or selectedClass or DetectPlayerClass()
   if c == "ROGUE" then return "FFF569" end
+  if c == "DRUID" then return "FF7D0A" end
   return "9482C9"
 end
 
@@ -153,11 +158,11 @@ local function CreateMainGuideWindow()
 
   -- Class Switcher Toggle Buttons (Top Center)
   local classSwitcherFrame = CreateFrame("Frame", nil, header)
-  classSwitcherFrame:SetSize(170, 32)
-  classSwitcherFrame:SetPoint("RIGHT", header, "RIGHT", -230, 0)
+  classSwitcherFrame:SetSize(225, 32)
+  classSwitcherFrame:SetPoint("RIGHT", header, "RIGHT", -235, 0)
 
   local lockBtn = CreateFrame("Button", nil, classSwitcherFrame, "UIPanelButtonTemplate")
-  lockBtn:SetSize(82, 28)
+  lockBtn:SetSize(72, 28)
   lockBtn:SetPoint("LEFT", classSwitcherFrame, "LEFT", 0, 0)
   lockBtn:SetText("Warlock")
   lockBtn:SetScript("OnClick", function()
@@ -166,13 +171,22 @@ local function CreateMainGuideWindow()
   f.lockBtn = lockBtn
 
   local rogueBtn = CreateFrame("Button", nil, classSwitcherFrame, "UIPanelButtonTemplate")
-  rogueBtn:SetSize(82, 28)
+  rogueBtn:SetSize(72, 28)
   rogueBtn:SetPoint("LEFT", lockBtn, "RIGHT", 4, 0)
   rogueBtn:SetText("Rogue")
   rogueBtn:SetScript("OnClick", function()
     WoWGuide:SetSelectedClass("ROGUE")
   end)
   f.rogueBtn = rogueBtn
+
+  local druidBtn = CreateFrame("Button", nil, classSwitcherFrame, "UIPanelButtonTemplate")
+  druidBtn:SetSize(72, 28)
+  druidBtn:SetPoint("LEFT", rogueBtn, "RIGHT", 4, 0)
+  druidBtn:SetText("Druid")
+  druidBtn:SetScript("OnClick", function()
+    WoWGuide:SetSelectedClass("DRUID")
+  end)
+  f.druidBtn = druidBtn
 
   -- Level Stepper Frame (Top Right)
   local stepperFrame = CreateFrame("Frame", nil, header, backdropTemplate)
@@ -586,6 +600,8 @@ end
 function WoWGuide:SetSelectedClass(cls)
   if cls == "ROGUE" then
     selectedClass = "ROGUE"
+  elseif cls == "DRUID" then
+    selectedClass = "DRUID"
   else
     selectedClass = "WARLOCK"
   end
@@ -621,10 +637,17 @@ function WoWGuide:RefreshView()
       mainFrame.classIcon:SetTexture("Interface\\Icons\\Spell_Nature_Drowsy")
       if mainFrame.lockBtn then mainFrame.lockBtn:SetText(ColorText("[Warlock]", "FCD34D")) end
       if mainFrame.rogueBtn then mainFrame.rogueBtn:SetText(ColorText("Rogue", "64748B")) end
+      if mainFrame.druidBtn then mainFrame.druidBtn:SetText(ColorText("Druid", "64748B")) end
     elseif selectedClass == "ROGUE" then
       mainFrame.classIcon:SetTexture("Interface\\Icons\\Ability_Stealth")
       if mainFrame.lockBtn then mainFrame.lockBtn:SetText(ColorText("Warlock", "64748B")) end
       if mainFrame.rogueBtn then mainFrame.rogueBtn:SetText(ColorText("[Rogue]", "FCD34D")) end
+      if mainFrame.druidBtn then mainFrame.druidBtn:SetText(ColorText("Druid", "64748B")) end
+    elseif selectedClass == "DRUID" then
+      mainFrame.classIcon:SetTexture("Interface\\Icons\\Ability_Druid_CatForm")
+      if mainFrame.lockBtn then mainFrame.lockBtn:SetText(ColorText("Warlock", "64748B")) end
+      if mainFrame.rogueBtn then mainFrame.rogueBtn:SetText(ColorText("Rogue", "64748B")) end
+      if mainFrame.druidBtn then mainFrame.druidBtn:SetText(ColorText("[Druid]", "FCD34D")) end
     else
       mainFrame.classIcon:SetTexture("Interface\\Icons\\INV_Misc_Book_09")
     end
@@ -697,6 +720,8 @@ function WoWGuide:RefreshView()
       local statInfo = ""
       if selectedClass == "WARLOCK" then
         statInfo = ColorText("Warlock Primary Stats:\n", "38BDF8") .. "Stamina (Health & Life Tap fuel)\nIntellect (Mana Pool & Spell Crit)\nSpirit (Health/Mana regen between pulls)\n\n"
+      elseif selectedClass == "DRUID" then
+        statInfo = ColorText("Horde Druid Primary Stats:\n", "FF7D0A") .. "Agility (Attack Power, Crit %, Dodge %)\nStrength (2 AP per point in Cat Form!)\nStamina (Bear/Cat health pool)\n\n"
       else
         statInfo = ColorText("Rogue Primary Stats:\n", "FFF569") .. "Agility (Attack Power, Crit %, Dodge %)\nStrength (Attack Power)\nStamina (Health Pool)\n\n"
       end
@@ -804,6 +829,11 @@ function WoWGuide:RefreshView()
         table.insert(rotLines, "")
         table.insert(rotLines, ColorText("Infinite Mana / Zero Downtime Rule:", "4ADE80"))
         table.insert(rotLines, "• Never drink water! Kill mob -> Drain Soul for 100% mana regen -> Life Tap -> First Aid Bandage / Cannibalize!")
+      elseif selectedClass == "DRUID" then
+        table.insert(rotLines, ColorText("Horde Feral Druid Solo Strategy:", "FF7D0A"))
+        table.insert(rotLines, "• Level 1-9: Wrath pull -> Moonfire -> Melee. Cast Rejuvenation to keep healing.")
+        table.insert(rotLines, "• Level 10-19: Bear Form! Enrage for instant rage -> Demoralizing Roar -> Maul spam. Bash + Regrowth for healing.")
+        table.insert(rotLines, "• Level 20+: Cat Form! Prowl opener -> Rake DoT -> Claw to 4-5 CP -> Ferocious Bite! Zero mana downtime!")
       else
         table.insert(rotLines, ColorText("Combat Rogue Solo Leveling Strategy:", "FFF569"))
         table.insert(rotLines, "• Opener: Sinister Strike (or Garrote if opening from stealth).")
@@ -1055,6 +1085,9 @@ SlashCmdList["WOWGUIDE"] = function(msg)
       if not (mainFrame and mainFrame:IsShown()) then WoWGuide:Toggle() end
     elseif arg == "rogue" then
       WoWGuide:SetSelectedClass("ROGUE")
+      if not (mainFrame and mainFrame:IsShown()) then WoWGuide:Toggle() end
+    elseif arg == "druid" then
+      WoWGuide:SetSelectedClass("DRUID")
       if not (mainFrame and mainFrame:IsShown()) then WoWGuide:Toggle() end
     else
       WoWGuide:Toggle()

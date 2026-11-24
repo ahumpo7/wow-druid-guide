@@ -2911,6 +2911,11 @@ body.theme-rogue {
   --class-glow: rgba(245, 158, 11, 0.35);
 }
 
+body.theme-druid {
+  --class-color: #ff7d0a;
+  --class-glow: rgba(255, 125, 10, 0.35);
+}
+
 .warlock-text {
   color: #c084fc !important;
   text-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
@@ -2919,6 +2924,11 @@ body.theme-rogue {
 .rogue-text {
   color: #fbbf24 !important;
   text-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.druid-text {
+  color: #ff7d0a !important;
+  text-shadow: 0 0 12px rgba(255, 125, 10, 0.5);
 }
 
 .badge-horde {

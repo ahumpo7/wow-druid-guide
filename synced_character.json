@@ -2,11 +2,11 @@
   "activeCharacter": "warlock",
   "characters": {
     "warlock": {
-      "name": "Warlock",
-      "realm": "Belfall (WoW Forever)",
+      "name": "Levevevice",
+      "realm": "Stonebrow (WoW Forever)",
       "class": "Warlock",
       "race": "Horde Undead",
-      "level": 1,
+      "level": 8,
       "money": 0,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
@@ -15,7 +15,7 @@
           "type": "Empty",
           "name": "None Equipped",
           "quality": "common",
-          "source": "Not yet equipped (Level 1)",
+          "source": "Not yet equipped (Level 8)",
           "armor": "0 Armor",
           "stats": [
             "Head armor unlocks around level 20+"
@@ -228,14 +228,14 @@
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T16:25:51.120Z"
+      "syncedAt": "2026-11-24T16:59:47.767Z"
     },
     "rogue": {
       "name": "Phana",
       "realm": "Belfall (WoW Forever)",
       "class": "Rogue",
       "race": "Horde Undead",
-      "level": 17,
+      "level": 6,
       "money": 32,
       "spec": "Combat Swords / Daggers",
       "liveGear": {
@@ -244,7 +244,7 @@
           "type": "Empty",
           "name": "None Equipped",
           "quality": "common",
-          "source": "Not yet equipped (Level 17)",
+          "source": "Not yet equipped (Level 6)",
           "armor": "0 Armor",
           "stats": [
             "Head armor unlocks around level 20+"
@@ -482,14 +482,243 @@
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T16:25:51.122Z"
+      "syncedAt": "2026-11-24T16:59:47.770Z"
+    },
+    "druid": {
+      "name": "Muataurgrumm",
+      "realm": "Longwind (WoW Forever)",
+      "class": "Druid",
+      "race": "Horde Tauren",
+      "level": 1,
+      "money": 0,
+      "spec": "Feral Cat / Bear Leveling",
+      "liveGear": {
+        "head": {
+          "slot": "Head",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped (Level 1)",
+          "armor": "0 Armor",
+          "stats": [
+            "Head armor unlocks around level 20+"
+          ]
+        },
+        "neck": {
+          "slot": "Neck",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Neck items start at level 18+"
+          ]
+        },
+        "shoulders": {
+          "slot": "Shoulders",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Shoulders start dropping around level 17-20"
+          ]
+        },
+        "back": {
+          "slot": "Back",
+          "type": "Cloth",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Cloak slot empty"
+          ]
+        },
+        "chest": {
+          "slot": "Chest",
+          "type": "Leather",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Chest slot empty"
+          ]
+        },
+        "wrists": {
+          "slot": "Wrists",
+          "type": "Leather",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Wrists slot empty"
+          ]
+        },
+        "hands": {
+          "slot": "Hands",
+          "type": "Leather",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Hands slot empty"
+          ]
+        },
+        "waist": {
+          "slot": "Waist",
+          "type": "Leather",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Waist slot empty"
+          ]
+        },
+        "legs": {
+          "slot": "Legs",
+          "type": "Leather",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Legs slot empty"
+          ]
+        },
+        "feet": {
+          "slot": "Feet",
+          "type": "Leather",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Feet slot empty"
+          ]
+        },
+        "ring1": {
+          "slot": "Finger",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Rings start around level 14-16"
+          ]
+        },
+        "ring2": {
+          "slot": "Finger",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Rings start around level 14-16"
+          ]
+        },
+        "trinket1": {
+          "slot": "Trinket",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Trinkets start around level 26+"
+          ]
+        },
+        "trinket2": {
+          "slot": "Trinket",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Trinkets start around level 26+"
+          ]
+        },
+        "mainHand": {
+          "slot": "Main Hand",
+          "type": "Two-Handed Staff / Mace",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Empty Main Hand"
+          ]
+        },
+        "offHand": {
+          "slot": "Off-Hand",
+          "type": "Two-Handed",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Two-Handed weapon equipped"
+          ]
+        },
+        "ranged": {
+          "slot": "Ranged / Relic",
+          "type": "Idol",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Empty Ranged Slot"
+          ]
+        }
+      },
+      "professions": {
+        "primary1": {
+          "name": "Skinning",
+          "level": 4,
+          "rank": "Apprentice",
+          "max": 75,
+          "icon": "🐾"
+        },
+        "primary2": {
+          "name": "Leatherworking",
+          "level": 0,
+          "rank": "Untrained",
+          "max": 75,
+          "icon": "✂️"
+        },
+        "firstAid": {
+          "name": "First Aid",
+          "level": 0,
+          "rank": "Untrained",
+          "max": 75,
+          "icon": "🩹"
+        },
+        "cooking": {
+          "name": "Cooking",
+          "level": 21,
+          "rank": "Apprentice",
+          "max": 75,
+          "icon": "🍖"
+        }
+      },
+      "syncedAt": "2026-11-24T16:59:47.771Z"
     }
   },
-  "name": "Warlock",
-  "realm": "Belfall (WoW Forever)",
+  "name": "Levevevice",
+  "realm": "Stonebrow (WoW Forever)",
   "class": "Warlock",
   "race": "Horde Undead",
-  "level": 1,
+  "level": 8,
   "money": 0,
   "liveGear": {
     "head": {
@@ -497,7 +726,7 @@
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 1)",
+      "source": "Not yet equipped (Level 8)",
       "armor": "0 Armor",
       "stats": [
         "Head armor unlocks around level 20+"
@@ -710,5 +939,5 @@
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-24T16:25:51.122Z"
+  "syncedAt": "2026-11-24T16:59:47.771Z"
 }

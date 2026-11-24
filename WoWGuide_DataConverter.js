@@ -3,10 +3,10 @@ const path = require('path');
 
 const wData = require('./warlock_data.js');
 const rData = require('./rogue_data.js');
+const dData = require('./horde_druid_data.js');
 
 function stripEmojis(str) {
   if (!str) return "";
-  // Strip all emojis and non-standard symbols that render as square boxes in WoW
   return String(str)
     .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E0}-\u{1F1FF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}]/gu, '')
     .replace(/[⭐★📜📍🏰💡🔮🗡️🌲⚔️⚡🔥🐾🩸✓👉⏱️❤️💚🧠🛡️🏹💀☣️]/g, '')
@@ -181,6 +181,81 @@ function generateRogueLua() {
   return out;
 }
 
+function generateDruidLua() {
+  let out = `-- WoW Forever: Complete Horde Druid Leveling Codex (Levels 1-60)\n`;
+  out += `local addonName, addonTable = ...\n`;
+  out += `WoWGuide_Druid = WoWGuide_Druid or {}\n`;
+  out += `if addonTable then addonTable.Druid = WoWGuide_Druid end\n`;
+  out += `_G["WoWGuide_Druid"] = WoWGuide_Druid\n\n`;
+  out += `WoWGuide_Druid.className = "DRUID"\n`;
+  out += `WoWGuide_Druid.classColor = "FF7D0A"\n`;
+  out += `WoWGuide_Druid.title = "Feral Cat & Bear Leveling"\n`;
+  out += `WoWGuide_Druid.specSummary = "14 Balance / 32 Feral / 5 Restoration"\n`;
+  out += `WoWGuide_Druid.levels = {\n`;
+
+  for (let lvl = 1; lvl <= 60; lvl++) {
+    const d = dData.DRUID_LEVEL_DATA[lvl] || {};
+    out += `  [${lvl}] = {\n`;
+    out += `    title = ${escapeLuaString(d.title || `Level ${lvl}`)},\n`;
+    out += `    zone = ${escapeLuaString(d.zone || "")},\n`;
+    out += `    zoneRange = ${escapeLuaString(d.zoneRange || "")},\n`;
+    out += `    hubs = ${escapeLuaString(d.hubs || "")},\n`;
+    out += `    zoneInstructions = ${escapeLuaString(d.zoneInstructions || "")},\n`;
+    out += `    talent = ${formatTalentTable(d.talent)},\n`;
+    out += `    talentNote = ${escapeLuaString(d.talentNote || "")},\n`;
+    out += `    gearTip = ${escapeLuaString(d.gearTip || "Prioritize Agility > Strength > Stamina.")},\n`;
+    
+    out += `    trainerTrain = {`;
+    if (d.trainerTrain && d.trainerTrain.length > 0) {
+      out += d.trainerTrain.map(s => escapeLuaString(s)).join(", ");
+    }
+    out += `},\n`;
+
+    out += `    rotation = {`;
+    if (d.rotation && d.rotation.length > 0) {
+      out += d.rotation.map(s => escapeLuaString(s)).join(", ");
+    }
+    out += `},\n`;
+
+    out += `    dungeonGear = {\n`;
+    if (d.dungeonGear && d.dungeonGear.length > 0) {
+      for (const dg of d.dungeonGear) {
+        out += `      { name = ${escapeLuaString(dg.name)}, quality = ${escapeLuaString(dg.quality)}, source = ${escapeLuaString(dg.source)}, stats = ${escapeLuaString(dg.stats)}, tip = ${escapeLuaString(dg.tip || "")} },\n`;
+      }
+    }
+    out += `    }\n`;
+    out += `  },\n`;
+  }
+  out += `}\n\n`;
+
+  out += `WoWGuide_Druid.talentOrder = {\n`;
+  for (let i = 0; i < dData.DRUID_TALENT_ORDER.length; i++) {
+    const talentKey = dData.DRUID_TALENT_ORDER[i];
+    const cfg = dData.DRUID_TALENTS_CONFIG.find(t => t.id === talentKey) || { name: talentKey, desc: "", tree: "feral" };
+    out += `  [${i + 10}] = { id = ${escapeLuaString(talentKey)}, name = ${escapeLuaString(cfg.name)}, desc = ${escapeLuaString(cfg.desc)}, tree = ${escapeLuaString(cfg.tree || "feral")} },\n`;
+  }
+  out += `}\n\n`;
+
+  out += `WoWGuide_Druid.classQuests = {\n`;
+  out += `  { lvl = 10, title = "Body and Heart (Bear Form Unlock)", zone = "Thunder Bluff / Moonglade / Mulgore", npc = "Turak Runetotem", desc = "Teleport to Moonglade to commune with the Great Bear Spirit, then summon Lunaclaw in Mulgore to learn Bear Form, Maul, and Demoralizing Roar!" },\n`;
+  out += `  { lvl = 16, title = "Trial of the Sea Lion (Aquatic Form)", zone = "Moonglade / Silverpine / Barrens", npc = "Dendrite Starblaze", desc = "Retrieve the two halves of the Sea Lion Pendant from the depths of Silverpine and the Barrens coast to unlock Aquatic Form for +50% swim speed and infinite underwater breath!" },\n`;
+  out += `  { lvl = 20, title = "Cat Form & Predator Mastery", zone = "Thunder Bluff / Camp Taurajo", npc = "Druid Trainers", desc = "Learn Cat Form, Claw, Rake, and Prowl! Pair with Feral Swiftness talents for permanent +30% movement speed outdoors!" },\n`;
+  out += `  { lvl = 30, title = "Travel Form (40% Speed!)", zone = "Moonglade / Thunder Bluff", npc = "Loganaar", desc = "Learn Travel Form for instant-cast +40% speed outdoors. Huge questing speedup before your 40 mount!" },\n`;
+  out += `  { lvl = 40, title = "Dire Bear Form & Kodo Riding", zone = "Thunder Bluff / Bloodhoof Village", npc = "Turak Runetotem", desc = "Unlock Dire Bear Form with massive armor and health multipliers. Train Riding in Bloodhoof Village for your Kodo mount." }\n`;
+  out += `}\n\n`;
+
+  out += `WoWGuide_Druid.macros = {\n`;
+  out += `  { title = "Power Shift (Cat Form Reset)", code = "#showtooltip Cat Form\\n/cast !Cat Form", desc = "Instantly clears slows and roots while granting immediate Energy from Furor!" },\n`;
+  out += `  { title = "Smart Travel / Aquatic Form", code = "/cast [swimming] Aquatic Form; [outdoors] Travel Form; Cat Form", desc = "Automatically shifts into Aquatic Form in water, Travel Form outdoors, or Cat Form indoors!" },\n`;
+  out += `  { title = "Faerie Fire (Feral & Caster)", code = "#showtooltip Faerie Fire (Feral)\\n/cast [form:1/3] Faerie Fire (Feral); Faerie Fire", desc = "Casts Feral Faerie Fire in Bear or Cat form, and normal Faerie Fire in caster form." },\n`;
+  out += `  { title = "Emergency Bash + Regrowth", code = "#showtooltip Bash\\n/cast Bash\\n/cast Regrowth", desc = "Stuns enemy in Bear Form, then immediately casts Regrowth heal." },\n`;
+  out += `  { title = "Prowl + Ravage Opener", code = "#showtooltip Ravage\\n/cast [nostealth] Prowl\\n/cast [stealth] Ravage", desc = "Enters stealth if out of combat, or executes Ravage if stealthed behind enemy." }\n`;
+  out += `}\n`;
+
+  return out;
+}
+
 fs.writeFileSync(path.join(__dirname, 'WoWGuide', 'WarlockData.lua'), generateWarlockLua(), 'utf8');
 fs.writeFileSync(path.join(__dirname, 'WoWGuide', 'RogueData.lua'), generateRogueLua(), 'utf8');
-console.log('✓ Successfully regenerated clean, 100% valid WarlockData.lua and RogueData.lua without JSON syntax or emojis!');
+fs.writeFileSync(path.join(__dirname, 'WoWGuide', 'DruidData.lua'), generateDruidLua(), 'utf8');
+console.log('✓ Successfully generated WarlockData.lua, RogueData.lua, and DruidData.lua!');

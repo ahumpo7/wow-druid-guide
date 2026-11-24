@@ -27,20 +27,27 @@
         </div>
       </div>
 
-      <!-- Character Switcher: Seamless toggle between Warlock & Rogue -->
+      <!-- Character Switcher: Seamless toggle between Warlock, Rogue & Druid -->
       <div class="character-switcher-container">
         <button type="button" class="char-switch-btn active" id="btnSwitchWarlock" onclick="switchActiveCharacter('warlock')" title="Switch to Warlock (Default Character)">
           <span class="char-switch-icon">🔮</span>
           <span class="char-switch-meta">
             <span class="char-switch-title">Warlock</span>
-            <span class="char-switch-sub" id="warlockSwitchSub">Lvl 14 • Affliction</span>
+            <span class="char-switch-sub" id="warlockSwitchSub">Lvl 8 • Affliction</span>
           </span>
         </button>
         <button type="button" class="char-switch-btn" id="btnSwitchRogue" onclick="switchActiveCharacter('rogue')" title="Switch to Rogue (Phana)">
           <span class="char-switch-icon">🗡️</span>
           <span class="char-switch-meta">
             <span class="char-switch-title">Phana (Rogue)</span>
-            <span class="char-switch-sub" id="rogueSwitchSub">Lvl 17 • Combat</span>
+            <span class="char-switch-sub" id="rogueSwitchSub">Lvl 6 • Combat</span>
+          </span>
+        </button>
+        <button type="button" class="char-switch-btn" id="btnSwitchDruid" onclick="switchActiveCharacter('druid')" title="Switch to Druid (Muataurgrumm)">
+          <span class="char-switch-icon">🐾</span>
+          <span class="char-switch-meta">
+            <span class="char-switch-title">Horde Druid</span>
+            <span class="char-switch-sub" id="druidSwitchSub">Lvl 1 • Feral</span>
           </span>
         </button>
       </div>
@@ -895,6 +902,7 @@
   <script src="synced_character.js?v=1.1.0"></script>
   <script src="warlock_data.js?v=1.1.0"></script>
   <script src="rogue_data.js?v=1.1.0"></script>
+  <script src="horde_druid_data.js?v=1.1.0"></script>
   <script src="app.js?v=1.1.0"></script>
 </body>
 </html>

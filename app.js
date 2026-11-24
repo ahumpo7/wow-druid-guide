@@ -217,7 +217,7 @@ const ROGUE_GEAR_PRESETS = {
 
 // Character Switcher Controller
 function switchActiveCharacter(targetClass) {
-  if (targetClass !== "warlock" && targetClass !== "rogue") {
+  if (targetClass !== "warlock" && targetClass !== "rogue" && targetClass !== "druid") {
     targetClass = "warlock";
   }
   activeClass = targetClass;
@@ -228,11 +228,13 @@ function switchActiveCharacter(targetClass) {
   // Update switcher button active state
   const btnW = document.getElementById("btnSwitchWarlock");
   const btnR = document.getElementById("btnSwitchRogue");
+  const btnD = document.getElementById("btnSwitchDruid");
   if (btnW) btnW.classList.toggle("active", activeClass === "warlock");
   if (btnR) btnR.classList.toggle("active", activeClass === "rogue");
+  if (btnD) btnD.classList.toggle("active", activeClass === "druid");
 
   // Apply theme class to body
-  document.body.classList.remove("theme-warlock", "theme-rogue");
+  document.body.classList.remove("theme-warlock", "theme-rogue", "theme-druid");
   document.body.classList.add(`theme-${activeClass}`);
 
   // Point active references
@@ -240,10 +242,14 @@ function switchActiveCharacter(targetClass) {
     ACTIVE_LEVEL_DATA = (typeof WARLOCK_LEVEL_DATA !== "undefined") ? WARLOCK_LEVEL_DATA : {};
     ACTIVE_TALENTS_CONFIG = (typeof WARLOCK_TALENTS_CONFIG !== "undefined") ? WARLOCK_TALENTS_CONFIG : [];
     ACTIVE_TALENT_ORDER = (typeof WARLOCK_TALENT_ORDER !== "undefined") ? WARLOCK_TALENT_ORDER : [];
-  } else {
+  } else if (activeClass === "rogue") {
     ACTIVE_LEVEL_DATA = (typeof ROGUE_LEVEL_DATA !== "undefined") ? ROGUE_LEVEL_DATA : {};
     ACTIVE_TALENTS_CONFIG = (typeof ROGUE_TALENTS_CONFIG !== "undefined") ? ROGUE_TALENTS_CONFIG : [];
     ACTIVE_TALENT_ORDER = (typeof ROGUE_TALENT_ORDER !== "undefined") ? ROGUE_TALENT_ORDER : [];
+  } else if (activeClass === "druid") {
+    ACTIVE_LEVEL_DATA = (typeof DRUID_LEVEL_DATA !== "undefined") ? DRUID_LEVEL_DATA : {};
+    ACTIVE_TALENTS_CONFIG = (typeof DRUID_TALENTS_CONFIG !== "undefined") ? DRUID_TALENTS_CONFIG : [];
+    ACTIVE_TALENT_ORDER = (typeof DRUID_TALENT_ORDER !== "undefined") ? DRUID_TALENT_ORDER : [];
   }
 
   // Retrieve synced data for target class
@@ -251,22 +257,24 @@ function switchActiveCharacter(targetClass) {
   let charProfile = null;
   if (syncedData && syncedData.characters && syncedData.characters[activeClass]) {
     charProfile = syncedData.characters[activeClass];
-  } else if (syncedData && (!syncedData.characters || syncedData.class.toLowerCase() === activeClass)) {
+  } else if (syncedData && (!syncedData.characters || (syncedData.class && syncedData.class.toLowerCase() === activeClass))) {
     charProfile = syncedData;
   }
 
   if (charProfile) {
-    currentLevel = charProfile.level || (activeClass === "warlock" ? 14 : 17);
+    currentLevel = charProfile.level || (activeClass === "warlock" ? 8 : (activeClass === "rogue" ? 6 : 1));
     // Align paperdoll live_gear
     if (charProfile.liveGear) {
       if (activeClass === "warlock") {
         WARLOCK_GEAR_PRESETS.live_gear.items = charProfile.liveGear;
-      } else {
+      } else if (activeClass === "rogue") {
         ROGUE_GEAR_PRESETS.live_gear.items = charProfile.liveGear;
+      } else if (activeClass === "druid" && typeof DRUID_GEAR_PRESETS !== "undefined") {
+        DRUID_GEAR_PRESETS.live_gear.items = charProfile.liveGear;
       }
     }
   } else {
-    currentLevel = (activeClass === "warlock") ? 14 : 17;
+    currentLevel = (activeClass === "warlock") ? 8 : (activeClass === "rogue" ? 6 : 1);
   }
 
   // Update branding titles
@@ -300,20 +308,39 @@ function switchActiveCharacter(targetClass) {
 window.switchActiveCharacter = switchActiveCharacter;
 
 function updateHeaderBranding(charProfile) {
-  const isWarlock = activeClass === "warlock";
-  const name = charProfile ? charProfile.name : (isWarlock ? "Malakor" : "Phana");
-  const lvl = charProfile ? charProfile.level : (isWarlock ? 14 : 17);
+  let defaultName = "Malakor";
+  let defaultLvl = 8;
+  let classTitle = "Affliction Warlock";
+  let classCss = "class-text warlock-text";
+  let raceText = "Horde Undead (Forsaken)";
+
+  if (activeClass === "rogue") {
+    defaultName = "Phana";
+    defaultLvl = 6;
+    classTitle = "Combat Rogue";
+    classCss = "class-text rogue-text";
+    raceText = "Horde Undead (Forsaken)";
+  } else if (activeClass === "druid") {
+    defaultName = "Muataurgrumm";
+    defaultLvl = 1;
+    classTitle = "Feral Druid";
+    classCss = "class-text druid-text";
+    raceText = "Horde Tauren (Mulgore)";
+  }
+
+  const name = charProfile ? charProfile.name : defaultName;
+  const lvl = charProfile ? charProfile.level : defaultLvl;
 
   // Main Heading
   const classSpan = document.getElementById("codexClassSpan");
   if (classSpan) {
-    classSpan.textContent = isWarlock ? "Affliction Warlock" : "Combat Rogue";
-    classSpan.className = isWarlock ? "class-text warlock-text" : "class-text rogue-text";
+    classSpan.textContent = classTitle;
+    classSpan.className = classCss;
   }
 
   const raceSpan = document.getElementById("codexRaceSpan");
   if (raceSpan) {
-    raceSpan.textContent = "Horde Undead (Forsaken)";
+    raceSpan.textContent = raceText;
   }
 
   // Header Pill
@@ -331,6 +358,10 @@ function updateHeaderBranding(charProfile) {
   const rSub = document.getElementById("rogueSwitchSub");
   if (rSub && typeof window !== "undefined" && window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters.rogue) {
     rSub.textContent = `Lvl ${window.WOW_SYNCED_DATA.characters.rogue.level} • Combat`;
+  }
+  const dSub = document.getElementById("druidSwitchSub");
+  if (dSub && typeof window !== "undefined" && window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters.druid) {
+    dSub.textContent = `Lvl ${window.WOW_SYNCED_DATA.characters.druid.level} • Feral`;
   }
 }
 
@@ -580,8 +611,12 @@ function renderTalentTreeSummary() {
   if (lvlBadge) lvlBadge.textContent = `Level ${currentLevel}`;
 
   // Trees Breakdown
-  const trees = activeClass === "warlock" ? ["affliction", "demonology", "destruction"] : ["assassination", "combat", "subtlety"];
-  const treeNames = activeClass === "warlock" ? ["Affliction", "Demonology", "Destruction"] : ["Assassination", "Combat", "Subtlety"];
+  const trees = activeClass === "warlock"
+    ? ["affliction", "demonology", "destruction"]
+    : (activeClass === "rogue" ? ["assassination", "combat", "subtlety"] : ["balance", "feral", "restoration"]);
+  const treeNames = activeClass === "warlock"
+    ? ["Affliction", "Demonology", "Destruction"]
+    : (activeClass === "rogue" ? ["Assassination", "Combat", "Subtlety"] : ["Balance", "Feral Combat", "Restoration"]);
 
   trees.forEach((tKey, idx) => {
     let tSpent = 0;
@@ -597,7 +632,9 @@ function renderTalentTreeSummary() {
 }
 
 function renderTreeNodes() {
-  const trees = activeClass === "warlock" ? ["affliction", "demonology", "destruction"] : ["assassination", "combat", "subtlety"];
+  const trees = activeClass === "warlock"
+    ? ["affliction", "demonology", "destruction"]
+    : (activeClass === "rogue" ? ["assassination", "combat", "subtlety"] : ["balance", "feral", "restoration"]);
 
   trees.forEach((tKey, idx) => {
     const listEl = document.getElementById(`tree${idx + 1}List`);
@@ -632,7 +669,7 @@ function renderTreeNodes() {
 // Interactive Paperdoll (Armor Mockup)
 function renderPaperdoll(presetKey = currentPresetKey) {
   currentPresetKey = presetKey;
-  const presets = activeClass === "warlock" ? WARLOCK_GEAR_PRESETS : ROGUE_GEAR_PRESETS;
+  const presets = activeClass === "warlock" ? WARLOCK_GEAR_PRESETS : (activeClass === "rogue" ? ROGUE_GEAR_PRESETS : (typeof DRUID_GEAR_PRESETS !== "undefined" ? DRUID_GEAR_PRESETS : { live_gear: { items: {} } }));
   const data = presets[presetKey] || presets.live_gear;
   const items = data.items || {};
 
@@ -670,45 +707,44 @@ function renderPaperdoll(presetKey = currentPresetKey) {
   renderSlot("slotRelic", items.ranged || items.relic, true);
 
   // Center Hero Card & Stats Sheet
-  const isWarlock = activeClass === "warlock";
   const crestEl = document.getElementById("paperdollCrest");
-  if (crestEl) crestEl.textContent = isWarlock ? "🔮" : "🗡️";
+  if (crestEl) crestEl.textContent = activeClass === "warlock" ? "🔮" : (activeClass === "rogue" ? "🗡️" : "🐾");
 
   const heroNameEl = document.getElementById("paperdollHeroName");
-  if (heroNameEl) heroNameEl.textContent = isWarlock ? "Affliction Warlock" : "Combat Rogue";
+  if (heroNameEl) heroNameEl.textContent = activeClass === "warlock" ? "Affliction Warlock" : (activeClass === "rogue" ? "Combat Rogue" : "Feral Druid");
 
   const specBadgeEl = document.getElementById("paperdollSpecBadge");
   if (specBadgeEl) {
-    specBadgeEl.textContent = isWarlock ? "Affliction Drain Tank" : "Combat Swords / Daggers";
-    specBadgeEl.style.color = isWarlock ? "#c084fc" : "#fbbf24";
-    specBadgeEl.style.borderColor = isWarlock ? "#c084fc" : "#fbbf24";
+    specBadgeEl.textContent = activeClass === "warlock" ? "Affliction Drain Tank" : (activeClass === "rogue" ? "Combat Swords / Daggers" : "Feral Cat / Bear Leveling");
+    specBadgeEl.style.color = activeClass === "warlock" ? "#c084fc" : (activeClass === "rogue" ? "#fbbf24" : "#ff7d0a");
+    specBadgeEl.style.borderColor = activeClass === "warlock" ? "#c084fc" : (activeClass === "rogue" ? "#fbbf24" : "#ff7d0a");
   }
 
   // Update Stats Sheet
   const hpEl = document.getElementById("statHp");
-  if (hpEl) hpEl.textContent = isWarlock ? (380 + currentLevel * 26) : (410 + currentLevel * 32);
+  if (hpEl) hpEl.textContent = activeClass === "warlock" ? (380 + currentLevel * 26) : (activeClass === "rogue" ? (410 + currentLevel * 32) : (440 + currentLevel * 36));
 
   const resLbl = document.getElementById("statResourceLbl");
-  if (resLbl) resLbl.textContent = isWarlock ? "Mana (MP):" : "Energy:";
+  if (resLbl) resLbl.textContent = activeClass === "warlock" ? "Mana (MP):" : (activeClass === "rogue" ? "Energy:" : "Energy / Rage / Mana:");
 
   const mpEl = document.getElementById("statMp");
-  if (mpEl) mpEl.textContent = isWarlock ? (420 + currentLevel * 28) : "100";
+  if (mpEl) mpEl.textContent = activeClass === "warlock" ? (420 + currentLevel * 28) : (activeClass === "rogue" ? "100" : "100 Energy / 100 Rage");
 
   const pwrLbl = document.getElementById("statPowerLbl");
-  if (pwrLbl) pwrLbl.textContent = isWarlock ? "Shadow Spell Power:" : "Attack Power (AP):";
+  if (pwrLbl) pwrLbl.textContent = activeClass === "warlock" ? "Shadow Spell Power:" : "Attack Power (AP):";
 
   const pwrVal = document.getElementById("statPowerVal");
   if (pwrVal) {
-    pwrVal.textContent = isWarlock
+    pwrVal.textContent = activeClass === "warlock"
       ? `+${Math.max(0, (currentLevel - 10) * 4)} Shadow`
       : `${Math.floor(currentLevel * 14 + 40)} AP`;
   }
 
   const armorVal = document.getElementById("statArmorVal");
   if (armorVal) {
-    armorVal.textContent = isWarlock
+    armorVal.textContent = activeClass === "warlock"
       ? `${currentLevel * 12 + 60} (~14%)`
-      : `${currentLevel * 35 + 120} (~28%)`;
+      : (activeClass === "rogue" ? `${currentLevel * 35 + 120} (~28%)` : `${currentLevel * 55 + 240} (~45% in Bear)`);
   }
 
   const critLbl = document.getElementById("statCritLbl");
@@ -773,24 +809,24 @@ function renderSlot(elementId, itemData, isWeaponRow = false) {
   }
 
   if (labelEl && elementId === "slotRelic") {
-    labelEl.textContent = isWarlock ? "Ranged / Wand" : "Ranged / Bow";
+    labelEl.textContent = activeClass === "warlock" ? "Ranged / Wand" : (activeClass === "rogue" ? "Ranged / Bow" : "Relic / Idol");
   }
 
   if (badgeEl && isWeaponRow) {
     if (elementId === "slotMainHand") {
       badgeEl.className = "weapon-slot-badge badge-2h";
-      badgeEl.textContent = isWarlock ? "Main Hand / Staff" : "Main Hand (Slow)";
+      badgeEl.textContent = activeClass === "warlock" ? "Main Hand / Staff" : (activeClass === "rogue" ? "Main Hand (Slow)" : "2H Staff / Mace");
     } else if (elementId === "slotOffHand") {
-      if (item.quality === "disabled") {
+      if (item.quality === "disabled" || activeClass === "druid") {
         badgeEl.className = "weapon-slot-badge badge-no-shield";
-        badgeEl.textContent = "Empty";
+        badgeEl.textContent = activeClass === "druid" ? "Two-Handed" : "Empty";
       } else {
         badgeEl.className = "weapon-slot-badge badge-offhand";
-        badgeEl.textContent = isWarlock ? "Off-Hand / Tome" : "Off-Hand (Fast)";
+        badgeEl.textContent = activeClass === "warlock" ? "Off-Hand / Tome" : "Off-Hand (Fast)";
       }
     } else if (elementId === "slotRelic") {
       badgeEl.className = "weapon-slot-badge badge-relic";
-      badgeEl.textContent = isWarlock ? "Wand / Ranged" : "Bow / Gun";
+      badgeEl.textContent = activeClass === "warlock" ? "Wand / Ranged" : (activeClass === "rogue" ? "Bow / Gun" : "Idol / Relic");
     }
   }
 }
@@ -809,9 +845,9 @@ function getSlotEmoji(slot) {
   if (s.includes("feet") || s.includes("boot")) return "👢";
   if (s.includes("ring") || s.includes("finger")) return "💍";
   if (s.includes("trinket")) return "🔮";
-  if (s.includes("main") || s.includes("two-hand") || s.includes("sword") || s.includes("dagger")) return "⚔️";
-  if (s.includes("off-hand")) return activeClass === "warlock" ? "📖" : "🗡️";
-  if (s.includes("relic") || s.includes("ranged") || s.includes("wand")) return activeClass === "warlock" ? "✨" : "🏹";
+  if (s.includes("main") || s.includes("two-hand") || s.includes("sword") || s.includes("dagger") || s.includes("staff")) return activeClass === "druid" ? "🪄" : "⚔️";
+  if (s.includes("off-hand")) return activeClass === "warlock" ? "📖" : (activeClass === "rogue" ? "🗡️" : "📖");
+  if (s.includes("relic") || s.includes("ranged") || s.includes("wand") || s.includes("idol")) return activeClass === "warlock" ? "✨" : (activeClass === "rogue" ? "🏹" : "🐾");
   return "📦";
 }
 
@@ -896,7 +932,7 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
     { lvl: 42, name: "Nether Force Wand", slot: "Ranged / Wand", source: "Tanaris Quest", stats: "40.5 DPS, Shadow Damage", why: "High DPS shadow wand" },
     { lvl: 45, name: "Zum'rah's Vexing Cane", slot: "Main Hand", source: "Witch Doctor Zum'rah (ZF)", stats: "+21 Shadow Damage", why: "Top tier caster staff" },
     { lvl: 57, name: "Robe of the Void", slot: "Chest", source: "Tailoring (300)", stats: "+46 Shadow Damage, Heal 1200", why: "Legendary Classic Warlock chestpiece" }
-  ] : [
+  ] : (activeClass === "rogue" ? [
     { lvl: 13, name: "Beholder's Eye", slot: "Main Hand", source: "Wandering Eye of Kilrogg", stats: "11.1 DPS, +2 Agi, +1 Stam", why: "⭐ Currently equipped on Phana!" },
     { lvl: 15, name: "Grizzly Jerkin", slot: "Chest", source: "World Drop (Barrens)", stats: "88 Armor, +6 Str, +5 Stam", why: "⭐ Currently equipped on Phana!" },
     { lvl: 17, name: "Thief's Blade", slot: "Main Hand", source: "World Drop / AH", stats: "16.5 DPS, +3 Agi, +2 Str", why: "Superb Combat sword upgrade" },
@@ -906,7 +942,15 @@ function renderUpgradeAdvisor(lvl, filter = currentAdvisorFilter) {
     { lvl: 40, name: "Vanquisher's Sword", slot: "Main Hand", source: "Bring the Light (RFD quest)", stats: "30.6 DPS, +28 Attack Power", why: "Guaranteed sword upgrade at 40" },
     { lvl: 45, name: "Thrash Blade", slot: "Main Hand", source: "Corruption of Earth and Seed (Maraudon)", stats: "39.4 DPS, Extra Attack Proc", why: "👑 Undisputed #1 leveling sword in Classic WoW!" },
     { lvl: 57, name: "Mirah's Song", slot: "Off-Hand", source: "Kirtonos the Herald (Scholomance)", stats: "+9 Agi, +9 Str, 39.4 DPS", why: "👑 Premier off-hand sword for Combat Rogues" }
-  ];
+  ] : [
+    { lvl: 10, name: "Crescent Staff", slot: "Main Hand", source: "Leaders of the Fang (Wailing Caverns quest)", stats: "20.3 DPS, +7 Str, +7 Agi, +7 Stam", why: "👑 Single greatest early Feral leveling weapon!" },
+    { lvl: 18, name: "Leggings of the Fang", slot: "Legs", source: "Lord Cobrahn (Wailing Caverns)", stats: "74 Armor, +5 Agi, +4 Stam, +9 Spirit", why: "Superb dungeon agility leather pants" },
+    { lvl: 19, name: "Feet of the Lynx", slot: "Feet", source: "World Drop / AH", stats: "63 Armor, +8 Agi, +3 Str", why: "Premier early physical leather boots" },
+    { lvl: 25, name: "Triprunner Dungarees", slot: "Legs", source: "Rig Wars (Gnomeregan quest)", stats: "+18 Agility, +6 Stamina", why: "👑 God-tier agility pants for Cat Form" },
+    { lvl: 29, name: "Manual Crowd Pummeler", slot: "Main Hand", source: "Crowd Pummeler 9-60 (Gnomeregan)", stats: "+16 Str, +5 Agi, +50% Attack Speed (30s)", why: "👑 Legendary Feral weapon! Stockpile for high DPS bursts!" },
+    { lvl: 40, name: "Wolfshead Helm", slot: "Head", source: "Leatherworking (225)", stats: "+20 Energy on Cat Shift, +5 Rage on Bear Shift", why: "👑 BiS forever for Feral powershifting!" },
+    { lvl: 43, name: "Warden Staff", slot: "Main Hand", source: "World Drop / AH", stats: "+260 Armor, +10 Defense, +10 Stamina", why: "🔥 Legendary BoE Epic Staff for Feral Bear tanking!" }
+  ]);
 
   container.innerHTML = upgrades.map(u => `
     <div class="upgrade-card ${u.lvl <= lvl ? 'available-now' : 'upcoming'}">
@@ -936,13 +980,20 @@ function renderClassQuests() {
     { lvl: 40, title: "Summon Felsteed (FREE 60% Mount!)", zone: "Undercity / Orgrimmar Caster Trainers", npc: "Warlock Trainers", desc: "Visit your Warlock trainer to receive your Level 40 Felsteed mount directly—completely free with zero gold cost!" },
     { lvl: 50, title: "Infernal Minion & Niby the Almighty", zone: "Felwood (Jaedenar)", npc: "Niby the Almighty", desc: "Complete the infernal core retrieval in Jaedenar to learn how to call down a blazing Infernal from the sky!" },
     { lvl: 60, title: "Dreadsteed of Xoroth (Epic 100% Mount)", zone: "Burning Steppes / Dire Maul / Scholomance", npc: "Mor'zul Bloodbringer", desc: "Epic multi-dungeon quest line to summon and defeat the Dreadsteed of Xoroth for your 100% speed fiery epic mount." }
-  ] : [
+  ] : (activeClass === "rogue" ? [
     { lvl: 10, title: "Dual Wielding Training", zone: "Brill / Undercity", npc: "Marion Call", desc: "Train Dual Wielding at level 10 to equip an off-hand dagger or sword, doubling your auto-attack output!" },
     { lvl: 16, title: "Lockpicking Mastery & Pirate Footlockers", zone: "Ratchet (Pirate Ships)", npc: "Wrenix the Wrench", desc: "Acquire your Thieves' Tools and practice picking the Buccaneer's Footlockers aboard the Southsea pirate vessel off Ratchet." },
     { lvl: 20, title: "The Shattered Hand & Sludge Fen Poisons", zone: "The Barrens (Sludge Fen Tower)", npc: "Shenthul (Orgrimmar)", desc: "CRUCIAL QUEST! Infiltrate the Venture Co. tower, pickpocket the Gallywix Key, crack the chest, craft antitoxin, and learn Instant Poison, Deadly Poison, and Thistle Tea!" },
     { lvl: 24, title: "Detect Traps & Disarm", zone: "Undercity (Rogues' Quarter)", npc: "Rogue Trainers", desc: "Learn to detect stealth traps and disarm enemy defenses." },
     { lvl: 34, title: "Blind & Blinding Powder", zone: "Undercity / Orgrimmar", npc: "Rogue Trainers", desc: "Learn Blind to disorient targets for 10 seconds. Always carry Fadeleaf to craft Blinding Powder." }
-  ];
+  ] : [
+    { lvl: 10, title: "Heeding the Call & Bear Form", zone: "Mulgore / Moonglade", npc: "Gart Mistrunner (Bloodhoof)", desc: "Travel to Moonglade via Teleport: Moonglade. Commune with the Great Bear Spirit in Moonglade, then travel to the Ancestral Grounds in Mulgore, use the Beast Fire, defeat Lunaclaw, and learn Bear Form & Enrage!" },
+    { lvl: 14, title: "Lessons Anew & Cure Poison", zone: "Mulgore / Moonglade", npc: "Turak Runetotem (Thunder Bluff)", desc: "Undertake the Trial of the Lake in Moonglade to retrieve Earthroot and water samples to brew Curative Animal Salve and master Cure Poison." },
+    { lvl: 16, title: "Trial of the Sea Lion (Aquatic Form)", zone: "Moonglade / Silverpine / The Barrens", npc: "Dendrite Starblaze (Moonglade)", desc: "Retrieve the Half Pendant of Aquatic Agility from Silverpine's sunken shipwreck and the Half Pendant of Aquatic Endurance from the Sludge Fen fissure in the Barrens to forge the Sea Lion Pendant and unlock Aquatic Form!" },
+    { lvl: 20, title: "Cat Form Mastery", zone: "Thunder Bluff / Camp Taurajo", npc: "Druid Trainers", desc: "Visit your trainer at level 20 to learn Cat Form, Prowl (stealth), Claw, and Rake. Your primary leveling speed begins here!" },
+    { lvl: 30, title: "Travel Form Mastery", zone: "Thunder Bluff / Orgrimmar", npc: "Druid Trainers", desc: "Train Travel Form directly at level 30 for 40% increased outdoor movement speed without consuming mana to mount!" },
+    { lvl: 40, title: "Dire Bear Form", zone: "Thunder Bluff / Orgrimmar", npc: "Druid Trainers", desc: "Train Dire Bear Form at level 40, boosting your armor contribution by 360% and stamina by 20%!" }
+  ]);
 
   container.innerHTML = quests.map(q => `
     <div class="quest-codex-card ${q.lvl <= currentLevel ? 'completed-card' : ''}">
@@ -979,7 +1030,7 @@ function renderRotations() {
         </ol>
       </div>
     `;
-  } else {
+  } else if (activeClass === "rogue") {
     container.innerHTML = `
       <div class="guide-card">
         <h3>🗡️ Master Combat Swords Rotation (Level 10–60)</h3>
@@ -995,6 +1046,22 @@ function renderRotations() {
         </ol>
       </div>
     `;
+  } else {
+    container.innerHTML = `
+      <div class="guide-card">
+        <h3>🐾 Master Feral Cat & Bear Rotation (Level 1–60)</h3>
+        <p style="color: var(--text-muted); margin-bottom: 12px;">Maximum kill velocity, zero downtime, and instant powershifting:</p>
+        <ol style="padding-left: 20px; line-height: 1.8;">
+          <li><strong>Levels 1–9 (Caster Phase):</strong> Cast Wrath at range -> Apply Moonfire DoT -> Melee with 2H staff while spirit mana ticks. Heal with Healing Touch after combat.</li>
+          <li><strong>Levels 10–19 (Bear Form):</strong> Open with Enrage (10 free rage) -> Demoralizing Roar -> Maul on every melee swing. In emergency: Bash (stun) -> Shift out -> Cast Rejuvenation & Regrowth -> Shift back into Bear!</li>
+          <li><strong>Levels 20–60 (Cat Form Opener):</strong> Prowl into melee range. Open with Ravage (from behind) or Tiger's Fury + Claw.</li>
+          <li><strong>Combo Points:</strong> Apply Rake DoT -> Claw to 4–5 Combo Points.</li>
+          <li><strong>Finisher:</strong> Spend Combo Points on Ferocious Bite (instant burst damage) or Rip (if the mob has high armor or high HP).</li>
+          <li><strong>Faerie Fire (Feral):</strong> Always keep Faerie Fire (Feral) active on the mob to reduce target armor by hundreds!</li>
+          <li><strong>Powershifting (With Furor & Wolfshead):</strong> Shifting out and immediately back into Cat Form instantly gives 40-60 Energy! Macro powershifting to never miss a swing.</li>
+        </ol>
+      </div>
+    `;
   }
 }
 
@@ -1003,7 +1070,7 @@ function renderChecklist() {
   const container = document.getElementById("checklistItemsContainer");
   if (!container) return;
 
-  const list = activeClass === "warlock" ? WARLOCK_CHECKLIST : ROGUE_CHECKLIST;
+  const list = activeClass === "warlock" ? WARLOCK_CHECKLIST : (activeClass === "rogue" ? ROGUE_CHECKLIST : (typeof DRUID_CHECKLIST !== "undefined" ? DRUID_CHECKLIST : []));
   userChecklistState = safeGetJSON(`wow_${activeClass}_checklist`, {});
 
   container.innerHTML = list.map(item => {
@@ -1031,6 +1098,7 @@ function renderProfessions() {
   if (!container) return;
 
   const isWarlock = activeClass === "warlock";
+  const isRogue = activeClass === "rogue";
   const syncedData = (typeof window !== "undefined" && window.WOW_SYNCED_DATA) ? window.WOW_SYNCED_DATA : null;
   const char = (syncedData && syncedData.characters && syncedData.characters[activeClass]) || syncedData || {};
   const profs = char.professions || {};
@@ -1043,7 +1111,7 @@ function renderProfessions() {
       <div class="card-header-with-badge" style="margin-bottom: 8px;">
         <h3 class="card-title" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
           <svg viewBox="0 0 24 24"><path d="M20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
-          ${isWarlock ? "Tailoring & Enchanting 1–300 Speed Guide" : "Skinning, Leatherworking & Poisons 1–300 Guide"}
+          ${isWarlock ? "Tailoring & Enchanting 1–300 Speed Guide" : (isRogue ? "Skinning, Leatherworking & Poisons 1–300 Guide" : "Skinning & Leatherworking 1–300 Feral Guide")}
         </h3>
         <span class="tag-badge" style="background: rgba(220, 38, 38, 0.2); color: #f87171;">Horde 1-300 Blueprint</span>
       </div>
@@ -1053,7 +1121,7 @@ function renderProfessions() {
         <div class="prof-sync-header">
           <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
             <span class="sync-status-dot"></span>
-            <span class="prof-sync-title">Live Client Professions (${char.name || (isWarlock ? "Malakor" : "Phana")})</span>
+            <span class="prof-sync-title">Live Client Professions (${char.name || (isWarlock ? "Malakor" : (isRogue ? "Phana" : "Muataurgrumm"))})</span>
           </div>
           <button type="button" class="btn-prof-sync" onclick="directSyncHeaderClick()">⚡ Re-Sync</button>
         </div>
@@ -1065,7 +1133,7 @@ function renderProfessions() {
             </div>
             <div class="prof-sync-val">${p1.level} <span class="prof-sync-max">/ ${p1.max}</span></div>
             <div class="prof-sync-bar-bg">
-              <div class="prof-sync-bar-fill" style="width: ${Math.min(100, Math.round((p1.level / p1.max) * 100))}%; background: #4ade80;"></div>
+              <div class="prof-sync-bar-fill" style="width: ${Math.min(100, Math.round((p1.level / Math.max(1, p1.max)) * 100))}%; background: #4ade80;"></div>
             </div>
           </div>
           <div class="prof-sync-card">
@@ -1107,7 +1175,7 @@ function renderProfessions() {
         </div>
       </div>
     `;
-  } else {
+  } else if (isRogue) {
     html += `
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
         <div style="background: rgba(245, 158, 11, 0.08); padding: 18px; border-radius: var(--radius-md); border: 1px solid rgba(245, 158, 11, 0.3);">
@@ -1131,11 +1199,34 @@ function renderProfessions() {
         </div>
       </div>
     `;
+  } else {
+    html += `
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+        <div style="background: rgba(255, 125, 10, 0.08); padding: 18px; border-radius: var(--radius-md); border: 1px solid rgba(255, 125, 10, 0.3);">
+          <h4 style="color: #ff7d0a; margin-bottom: 8px;">🐾 Skinning Progression (Beasts of Mulgore & Barrens)</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1;">
+            • <strong>1–75:</strong> Light Leather from Mulgore Plainstriders, wolves, and cougars.<br>
+            • <strong>75–150:</strong> Medium Leather & Deviate Scales in Wailing Caverns & The Barrens.<br>
+            • <strong>150–225:</strong> Heavy Leather in Thousand Needles and Desolace.<br>
+            • <strong>225–300:</strong> Thick & Rugged Leather in Feralas and Un'Goro Crater!
+          </p>
+        </div>
+        <div style="background: rgba(251, 191, 36, 0.08); padding: 18px; border-radius: var(--radius-md); border: 1px solid rgba(251, 191, 36, 0.3);">
+          <h4 style="color: #fbbf24; margin-bottom: 8px;">👑 Leatherworking (Wolfshead Helm & Pre-Raid BiS)</h4>
+          <p style="font-size: 0.88rem; line-height: 1.6; color: #cbd5e1;">
+            • <strong>Skill 115 (Lvl 18):</strong> Craft Deviate Scale Belt (+5 Stam, +4 Agi).<br>
+            • <strong>Skill 205 (Lvl 40):</strong> Craft Nightscape Headband, Tunic, and Pants.<br>
+            • <strong>Skill 225 (Lvl 40+): Wolfshead Helm:</strong> The #1 BiS item for Feral Cat DPS in Classic WoW! Gives +20 Energy every time you shift into Cat Form.<br>
+            • <strong>Skill 290–300: Devilsaur Set:</strong> Devilsaur Gauntlets & Leggings (+2% Hit, +74 AP).
+          </p>
+        </div>
+      </div>
+    `;
   }
 
   html += `
     <div style="margin-top: 18px; background: rgba(0,0,0,0.25); padding: 14px; border-radius: var(--radius-md); border-left: 3px solid #10b981;">
-      <strong>🩹 Mandatory Secondary: First Aid:</strong> Never spend mana or energy healing! Heavy Wool, Silk, and Mageweave Bandages let you bandage immediately after crowd control (Gouge for Rogue, Fear for Warlock).
+      <strong>🩹 Mandatory Secondary: First Aid:</strong> Never spend mana or energy healing! Heavy Wool, Silk, and Mageweave Bandages let you bandage immediately after crowd control (War Stomp / Bash for Druid, Gouge for Rogue, Fear for Warlock).
     </div>
   </div>`;
 
@@ -1148,6 +1239,7 @@ function renderHordeMacros() {
   if (!container) return;
 
   const isWarlock = activeClass === "warlock";
+  const isRogue = activeClass === "rogue";
 
   let html = `
     <div class="guide-card">
@@ -1156,16 +1248,23 @@ function renderHordeMacros() {
         Horde Champions Master Guide & 1-Click Essential Macros
       </h3>
       <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
-        Pair your Undead Forsaken racials with these essential ${isWarlock ? "Warlock" : "Rogue"} macros for optimal combat speed and zero-target loss!
+        Pair your Horde racials with these essential ${isWarlock ? "Warlock" : (isRogue ? "Rogue" : "Druid")} macros for optimal combat speed and zero-target loss!
       </p>
 
       <div class="sidebar-widget" style="margin-bottom: 20px;">
-        <h4 style="color: #f87171; margin-bottom: 8px;">💀 Undead (Forsaken) Racial Synergies</h4>
+        <h4 style="color: #f87171; margin-bottom: 8px;">${isWarlock || isRogue ? "💀 Undead (Forsaken) Racial Synergies" : "🐂 Tauren Racial Synergies"}</h4>
         <div style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.6;">
-          • <strong>Will of the Forsaken:</strong> Active. Breaks Charm, Fear, and Sleep and grants 5-second immunity. The king of Classic PvP and PvE!<br>
-          • <strong>Cannibalize:</strong> Active. Restores 35% health over 10s by eating humanoid corpses. Perfect synergy with Life Tap or between stealth pulls!<br>
-          • <strong>Underwater Breathing:</strong> Passive. 300% lung capacity for underwater questing.<br>
-          • <strong>Shadow Resistance:</strong> +10 passive Shadow Resistance.
+          ${isWarlock || isRogue ? `
+            • <strong>Will of the Forsaken:</strong> Active. Breaks Charm, Fear, and Sleep and grants 5-second immunity. The king of Classic PvP and PvE!<br>
+            • <strong>Cannibalize:</strong> Active. Restores 35% health over 10s by eating humanoid corpses. Perfect synergy with Life Tap or between stealth pulls!<br>
+            • <strong>Underwater Breathing:</strong> Passive. 300% lung capacity for underwater questing.<br>
+            • <strong>Shadow Resistance:</strong> +10 passive Shadow Resistance.
+          ` : `
+            • <strong>War Stomp:</strong> Active. 0.5s cast, stuns up to 5 nearby enemies for 2 seconds (2 min cooldown). The ultimate spellcasting reset: War Stomp -> Regrowth + Rejuvenation -> Shift back to Cat/Bear Form!<br>
+            • <strong>Endurance:</strong> Passive. +5% Total Maximum Health. Multiplies directly with Bear Form armor and Heart of the Wild!<br>
+            • <strong>Cultivation:</strong> Passive. +15 bonus Herbalism skill.<br>
+            • <strong>Nature Resistance:</strong> +10 passive Nature Resistance.
+          `}
         </div>
       </div>
   `;
@@ -1227,7 +1326,7 @@ function renderHordeMacros() {
         <div class="macro-explain">If your demon pet is alive, siphons mana from your pet. If your pet is dead, automatically casts Life Tap instead!</div>
       </div>
     `;
-  } else {
+  } else if (isRogue) {
     html += `
       <div class="macro-box">
         <div class="macro-top">
@@ -1281,6 +1380,63 @@ function renderHordeMacros() {
 /cast Blade Flurry
 /cast Adrenaline Rush</div>
         <div class="macro-explain">Pops both cooldowns simultaneously to shred packs of 2-3 mobs with 100% increased energy regeneration and 20% attack speed cleave!</div>
+      </div>
+    `;
+  } else {
+    html += `
+      <div class="macro-box">
+        <div class="macro-top">
+          <span class="macro-title">1. Smart Shapeshift / Travel Form Toggle</span>
+          <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+        </div>
+        <div class="macro-code">#showtooltip [swimming] Aquatic Form; [outdoors] Travel Form; Cat Form
+/cancelform [nostance:0]
+/cast [swimming] Aquatic Form; [outdoors] Travel Form; Cat Form</div>
+        <div class="macro-explain">One button for all movement: automatically enters Aquatic Form if underwater, Travel Form if outdoors, or Cat Form if indoors!</div>
+      </div>
+
+      <div class="macro-box">
+        <div class="macro-top">
+          <span class="macro-title">2. Bash & Immediate Healing Touch</span>
+          <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+        </div>
+        <div class="macro-code">#showtooltip Bash
+/cast [stance:1] Bash
+/cancelform
+/cast Healing Touch</div>
+        <div class="macro-explain">Stuns enemy with Bear Form Bash, immediately drops form, and begins casting Healing Touch while the target is incapacitated!</div>
+      </div>
+
+      <div class="macro-box">
+        <div class="macro-top">
+          <span class="macro-title">3. Cat Form Powershift (Instant 40-60 Energy Reset)</span>
+          <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+        </div>
+        <div class="macro-code">#showtooltip Cat Form
+/cancelform
+/cast !Cat Form</div>
+        <div class="macro-explain">Powershifting: with Furor and Wolfshead Helm, shifting out and back in instantly awards 40-60 energy without waiting for ticks!</div>
+      </div>
+
+      <div class="macro-box">
+        <div class="macro-top">
+          <span class="macro-title">4. Bear Form Powershift (Instant 10 Rage via Furor)</span>
+          <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+        </div>
+        <div class="macro-code">#showtooltip Bear Form
+/cancelform
+/cast !Bear Form</div>
+        <div class="macro-explain">Instantly grants 10 free rage upon entering Bear Form with Furor talent, allowing immediate Enrage or Demoralizing Roar!</div>
+      </div>
+
+      <div class="macro-box">
+        <div class="macro-top">
+          <span class="macro-title">5. Smart Faerie Fire (Feral or Caster)</span>
+          <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
+        </div>
+        <div class="macro-code">#showtooltip [stance:1/3] Faerie Fire (Feral); Faerie Fire
+/cast [stance:1/3] Faerie Fire (Feral); Faerie Fire</div>
+        <div class="macro-explain">Casts Faerie Fire (Feral) when in Cat or Bear Form, and regular caster Faerie Fire when in Tauren caster form!</div>
       </div>
     `;
   }
@@ -1500,7 +1656,8 @@ function handleDirectLevelSync() {
   const levelInput = document.getElementById("directSyncLevelInput");
   const feedbackEl = document.getElementById("syncFeedbackMsg");
 
-  const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : (activeClass === "warlock" ? "Warlock" : "Phana");
+  const defaultName = activeClass === "warlock" ? "Warlock" : (activeClass === "rogue" ? "Phana" : "Muataurgrumm");
+  const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : defaultName;
   const lvl = levelInput ? Math.max(1, Math.min(60, parseInt(levelInput.value, 10) || 1)) : currentLevel;
 
   if (!window.WOW_SYNCED_DATA) {
@@ -1513,9 +1670,9 @@ function handleDirectLevelSync() {
     window.WOW_SYNCED_DATA.characters[activeClass] = {
       name,
       level: lvl,
-      class: activeClass === "warlock" ? "Warlock" : "Rogue",
-      race: "Horde Undead",
-      spec: activeClass === "warlock" ? "Affliction Drain Tank / Wand Spec" : "Combat Swords / Daggers",
+      class: activeClass === "warlock" ? "Warlock" : (activeClass === "rogue" ? "Rogue" : "Druid"),
+      race: activeClass === "druid" ? "Horde Tauren" : "Horde Undead",
+      spec: activeClass === "warlock" ? "Affliction Drain Tank / Wand Spec" : (activeClass === "rogue" ? "Combat Swords / Daggers" : "Feral Cat / Bear Leveling"),
       liveGear: {},
       professions: {}
     };
@@ -1569,10 +1726,10 @@ function handleInGameSyncString() {
     if (!window.WOW_SYNCED_DATA.characters) window.WOW_SYNCED_DATA.characters = {};
     if (!window.WOW_SYNCED_DATA.characters[activeClass]) {
       window.WOW_SYNCED_DATA.characters[activeClass] = {
-        name: parsedName || (activeClass === "warlock" ? "Warlock" : "Phana"),
+        name: parsedName || (activeClass === "warlock" ? "Warlock" : (activeClass === "rogue" ? "Phana" : "Muataurgrumm")),
         level: parsedLevel,
-        class: activeClass === "warlock" ? "Warlock" : "Rogue",
-        race: "Horde Undead",
+        class: activeClass === "warlock" ? "Warlock" : (activeClass === "rogue" ? "Rogue" : "Druid"),
+        race: activeClass === "druid" ? "Horde Tauren" : "Horde Undead",
         liveGear: {},
         professions: {}
       };
@@ -1627,7 +1784,12 @@ function handleWtfFileUpload(event) {
     if (nameMatch) foundName = nameMatch[1];
 
     if (foundLevel) {
-      const targetChar = (foundClass && (foundClass.includes("warlock") || foundClass.includes("rogue"))) ? (foundClass.includes("warlock") ? "warlock" : "rogue") : activeClass;
+      let targetChar = activeClass;
+      if (foundClass) {
+        if (foundClass.includes("warlock")) targetChar = "warlock";
+        else if (foundClass.includes("rogue")) targetChar = "rogue";
+        else if (foundClass.includes("druid")) targetChar = "druid";
+      }
       if (!window.WOW_SYNCED_DATA) window.WOW_SYNCED_DATA = { activeCharacter: targetChar, characters: {} };
       if (!window.WOW_SYNCED_DATA.characters) window.WOW_SYNCED_DATA.characters = {};
       if (!window.WOW_SYNCED_DATA.characters[targetChar]) {
@@ -1684,7 +1846,7 @@ function initApp() {
         if (!window.WOW_SYNCED_DATA.characters) window.WOW_SYNCED_DATA.characters = {};
         const tgt = (charParam ? charParam.toLowerCase() : null) || (window.WOW_SYNCED_DATA.activeCharacter || "warlock");
         if (!window.WOW_SYNCED_DATA.characters[tgt]) {
-          window.WOW_SYNCED_DATA.characters[tgt] = { name: parsedName, level: parsedLvl, class: tgt === "warlock" ? "Warlock" : "Rogue", liveGear: {} };
+          window.WOW_SYNCED_DATA.characters[tgt] = { name: parsedName, level: parsedLvl, class: tgt === "warlock" ? "Warlock" : (tgt === "rogue" ? "Rogue" : "Druid"), liveGear: {} };
         }
         window.WOW_SYNCED_DATA.characters[tgt].name = parsedName;
         window.WOW_SYNCED_DATA.characters[tgt].level = parsedLvl;
