@@ -347,7 +347,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Precision", rank = "5/5", tree = "combat", why = "+5% MELEE HIT CHANCE! Special attacks (yellow damage) can no longer miss same-level mobs! Huge DPS stability!" },
     talentNote = "Yellow attacks are hit-capped for leveling.",
     gearTip = "Check Tarren Mill vendors for Silk Bandages.",
-    trainerTrain = {"Eviscerate (Rank 4)", "Mind-numbing Poison (Rank 1)", "Pick Pocket (Rank 2)"},
+    trainerTrain = {"Shank (Rank 1)", "Eviscerate (Rank 4)", "Mind-numbing Poison (Rank 1)", "Pick Pocket (Rank 2)"},
     rotation = {"Apply Instant Poison II -> Sinister Strike -> Slice and Dice -> Riposte."},
     dungeonGear = {
     }
@@ -545,7 +545,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Aggression", rank = "1/3", tree = "combat", why = "Increases the damage of your Sinister Strike and Eviscerate abilities by 2%." },
     talentNote = "Direct damage multiplier to your primary spenders.",
     gearTip = "Save gold for Level 40 mount (approx 90g with honored reputation).",
-    trainerTrain = {"Deadly Poison (Rank 2)", "Ambush (Rank 3)", "Backstab (Rank 3)"},
+    trainerTrain = {"Shank (Rank 2)", "Deadly Poison (Rank 2)", "Ambush (Rank 3)", "Backstab (Rank 3)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -744,7 +744,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Murder", rank = "2/2", tree = "assassination", why = "Increases all damage dealt by 2% against Humanoids, Giants, Beasts, and Dragonkin." },
     talentNote = "2% flat damage boost.",
     gearTip = "Whipper Root Tubers in Felwood restore 700-900 HP instantly without sharing potion cooldown!",
-    trainerTrain = {"Sinister Strike (Rank 8)", "Instant Poison (Rank 5)"},
+    trainerTrain = {"Shank (Rank 3)", "Sinister Strike (Rank 8)", "Instant Poison (Rank 5)"},
     rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."},
     dungeonGear = {
     }

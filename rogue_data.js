@@ -482,7 +482,7 @@ const ROGUE_LEVEL_DATA = {
           "why": "+5% MELEE HIT CHANCE! Special attacks (yellow damage) can no longer miss same-level mobs! Huge DPS stability!"
     },
     talentNote: "Yellow attacks are hit-capped for leveling.",
-    trainerTrain: ["Eviscerate (Rank 4)","Mind-numbing Poison (Rank 1)","Pick Pocket (Rank 2)"],
+    trainerTrain: ["Shank (Rank 1)","Eviscerate (Rank 4)","Mind-numbing Poison (Rank 1)","Pick Pocket (Rank 2)"],
     trainerSkip: [],
     rotation: ["Apply Instant Poison II -> Sinister Strike -> Slice and Dice -> Riposte."],
     gearTip: "Check Tarren Mill vendors for Silk Bandages.",
@@ -778,7 +778,7 @@ const ROGUE_LEVEL_DATA = {
           "why": "Increases the damage of your Sinister Strike and Eviscerate abilities by 2%."
     },
     talentNote: "Direct damage multiplier to your primary spenders.",
-    trainerTrain: ["Deadly Poison (Rank 2)","Ambush (Rank 3)","Backstab (Rank 3)"],
+    trainerTrain: ["Shank (Rank 2)","Deadly Poison (Rank 2)","Ambush (Rank 3)","Backstab (Rank 3)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Save gold for Level 40 mount (approx 90g with honored reputation).",
@@ -1082,7 +1082,7 @@ const ROGUE_LEVEL_DATA = {
           "why": "Increases all damage dealt by 2% against Humanoids, Giants, Beasts, and Dragonkin."
     },
     talentNote: "2% flat damage boost.",
-    trainerTrain: ["Sinister Strike (Rank 8)","Instant Poison (Rank 5)"],
+    trainerTrain: ["Shank (Rank 3)","Sinister Strike (Rank 8)","Instant Poison (Rank 5)"],
     trainerSkip: [],
     rotation: ["Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."],
     gearTip: "Whipper Root Tubers in Felwood restore 700-900 HP instantly without sharing potion cooldown!",

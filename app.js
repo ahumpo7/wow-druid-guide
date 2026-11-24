@@ -1023,7 +1023,7 @@ function renderRotations() {
           <li><strong>Send Pet:</strong> Set Succubus or Voidwalker to attack.</li>
           <li><strong>Instant Corruption:</strong> Cast while walking into 30yd range.</li>
           <li><strong>Siphon Life:</strong> Apply 30-second heal-over-time.</li>
-          <li><strong>Curse of Agony:</strong> Apply scaling shadow DoT.</li>
+          <li><strong>Bane of Agony:</strong> Apply scaling shadow DoT (stacks with Curses in WoW Forever!).</li>
           <li><strong>Face-Tank with Drain Life:</strong> Channel Drain Life (70% pushback resistant via Fel Concentration). It heals you for all damage taken!</li>
           <li><strong>Nightfall Procs:</strong> Fire INSTANT Shadow Bolt immediately when Shadow Trance procs!</li>
           <li><strong>Dark Pact Recovery:</strong> Tap Dark Pact 2-3 times to drain pet mana directly into your mana bar. Pull next mob immediately!</li>
