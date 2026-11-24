@@ -1665,9 +1665,55 @@ function initApp() {
   initPresetButtons();
   initTooltipEvents();
 
-  // Load active character preference (defaulting to Warlock)
-  const savedChar = localStorage.getItem("wow_active_character") || (window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.activeCharacter) || "warlock";
-  switchActiveCharacter(savedChar);
+  // Check URL query parameters (e.g. ?sync=CharacterName:16 or ?level=16&char=warlock)
+  const urlParams = new URLSearchParams(window.location.search);
+  const syncParam = urlParams.get("sync");
+  const levelParam = urlParams.get("level") || urlParams.get("lvl");
+  const charParam = urlParams.get("char") || urlParams.get("class");
+  const nameParam = urlParams.get("name");
+
+  if (syncParam) {
+    const colonMatch = syncParam.match(/([a-zA-Z]+)\s*[:=\-\s]\s*(\d+)/);
+    if (colonMatch) {
+      const parsedName = colonMatch[1];
+      const parsedLvl = parseInt(colonMatch[2], 10);
+      if (parsedLvl >= 1 && parsedLvl <= 60) {
+        if (!window.WOW_SYNCED_DATA) window.WOW_SYNCED_DATA = { activeCharacter: "warlock", characters: {} };
+        if (!window.WOW_SYNCED_DATA.characters) window.WOW_SYNCED_DATA.characters = {};
+        const tgt = (charParam ? charParam.toLowerCase() : null) || (window.WOW_SYNCED_DATA.activeCharacter || "warlock");
+        if (!window.WOW_SYNCED_DATA.characters[tgt]) {
+          window.WOW_SYNCED_DATA.characters[tgt] = { name: parsedName, level: parsedLvl, class: tgt === "warlock" ? "Warlock" : "Rogue", liveGear: {} };
+        }
+        window.WOW_SYNCED_DATA.characters[tgt].name = parsedName;
+        window.WOW_SYNCED_DATA.characters[tgt].level = parsedLvl;
+        window.WOW_SYNCED_DATA.name = parsedName;
+        window.WOW_SYNCED_DATA.level = parsedLvl;
+        localStorage.setItem(`wow_${tgt}_custom_name`, parsedName);
+        localStorage.setItem(`wow_${tgt}_custom_level`, parsedLvl);
+        localStorage.setItem("wow_active_character", tgt);
+        setLevel(parsedLvl);
+        switchActiveCharacter(tgt);
+      }
+    }
+  } else if (levelParam) {
+    const lvl = parseInt(levelParam, 10);
+    if (lvl >= 1 && lvl <= 60) {
+      const tgt = (charParam ? charParam.toLowerCase() : null) || "warlock";
+      localStorage.setItem("wow_active_character", tgt);
+      if (nameParam) {
+        localStorage.setItem(`wow_${tgt}_custom_name`, nameParam);
+        if (window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[tgt]) {
+          window.WOW_SYNCED_DATA.characters[tgt].name = nameParam;
+        }
+      }
+      setLevel(lvl);
+      switchActiveCharacter(tgt);
+    }
+  } else {
+    // Load active character preference (defaulting to Warlock)
+    const savedChar = localStorage.getItem("wow_active_character") || (window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.activeCharacter) || "warlock";
+    switchActiveCharacter(savedChar);
+  }
 
   // Background check for Cloud Gist updates
   setTimeout(() => {

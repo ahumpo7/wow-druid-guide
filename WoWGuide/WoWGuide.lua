@@ -214,6 +214,7 @@ end
 
 -- Export / Sync Popup Window with Copyable EditBox
 function WoWGuide:ShowSyncPopup()
+  WoWGuide:SaveCharacterSnapshot()
   local backdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
   if not syncPopupFrame then
     local p = CreateFrame("Frame", "WoWGuideSyncPopup", UIParent, backdropTemplate)
@@ -260,6 +261,10 @@ function WoWGuide:ShowSyncPopup()
   local lvl = UnitLevel("player")
   local name = UnitName("player")
   local code = string.format("%s:%d", name, lvl)
+
+  if DEFAULT_CHAT_FRAME then
+    DEFAULT_CHAT_FRAME:AddMessage(string.format("|cFFFF7D0A[WoWGuide]|r Character snapshot saved! Sync code: |cFF4ADE80%s|r", code))
+  end
 
   syncPopupFrame.editBox:SetText(code)
   syncPopupFrame.editBox:HighlightText()
