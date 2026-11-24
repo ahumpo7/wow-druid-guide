@@ -270,6 +270,48 @@ function parseCharactersFromBagBrother(content) {
   return characters;
 }
 
+function parseCharactersFromWoWGuide(content) {
+  const characters = [];
+  if (!content) return characters;
+
+  // Pattern: ["Name"] = { ["name"] = "Name", ["level"] = 12, ["class"] = "WARLOCK", ... }
+  const entryRegex = /\["([^"\]]+)"\]\s*=\s*\{([^}]+(?:\{[^}]*\}[^}]*)*)\}/g;
+  let match;
+  while ((match = entryRegex.exec(content)) !== null) {
+    const rawName = match[1];
+    const block = match[2];
+    const lvlM = block.match(/\["level"\]\s*=\s*(\d+)/);
+    const classM = block.match(/\["class"\]\s*=\s*"([^"]+)"/);
+    const moneyM = block.match(/\["money"\]\s*=\s*(\d+)/);
+
+    if (lvlM && classM) {
+      const equip = {};
+      const equipBlockM = block.match(/\["equip"\]\s*=\s*\{([^}]*)\}/);
+      if (equipBlockM) {
+        const slotRegex = /\[(\d+)\]\s*=\s*(\d+)/g;
+        let sM;
+        while ((sM = slotRegex.exec(equipBlockM[1])) !== null) {
+          equip[parseInt(sM[1], 10)] = parseInt(sM[2], 10);
+        }
+      }
+
+      characters.push({
+        fullName: rawName,
+        name: rawName,
+        realm: "WoW Forever",
+        class: classM[1].toUpperCase(),
+        race: "Horde Undead",
+        level: parseInt(lvlM[1], 10),
+        money: moneyM ? parseInt(moneyM[1], 10) : 0,
+        faction: "Horde",
+        equip: equip
+      });
+    }
+  }
+
+  return characters;
+}
+
 function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "warlock") {
   if (ITEM_DB[id]) {
     return { ...ITEM_DB[id] };
@@ -585,7 +627,7 @@ async function runSync() {
   for (const wgf of discovered.wowGuideFiles) {
     try {
       const content = fs.readFileSync(wgf, 'utf8');
-      const chars = parseCharactersFromBagBrother(content);
+      const chars = parseCharactersFromWoWGuide(content);
       allParsedChars.push(...chars);
     } catch (_) {}
   }

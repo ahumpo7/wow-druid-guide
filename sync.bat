@@ -25,6 +25,17 @@ if %errorlevel% neq 0 (
     powershell -ExecutionPolicy Bypass -File "%~dp0sync.ps1"
 )
 
+where git >nul 2>nul
+if %errorlevel% equ 0 (
+    echo [*] Pushing live character data to GitHub Pages...
+    git add synced_character.js synced_character.json 2>nul
+    git commit -m "Live character sync from game" 2>nul
+    git push origin main --quiet 2>nul
+    if %errorlevel% equ 0 (
+        echo [✓] Pushed directly to GitHub Pages!
+    )
+)
+
 echo.
 echo ========================================================
 echo Sync finished. You can now refresh or click Sync on:

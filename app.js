@@ -217,7 +217,9 @@ const ROGUE_GEAR_PRESETS = {
 
 // Character Switcher Controller
 function switchActiveCharacter(targetClass) {
-  if (targetClass !== "warlock" && targetClass !== "rogue") return;
+  if (targetClass !== "warlock" && targetClass !== "rogue") {
+    targetClass = "warlock";
+  }
   activeClass = targetClass;
   try {
     localStorage.setItem("wow_active_character", targetClass);
