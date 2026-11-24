@@ -9,7 +9,12 @@ function stripEmojis(str) {
   if (!str) return "";
   return String(str)
     .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E0}-\u{1F1FF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}]/gu, '')
-    .replace(/[⭐★📜📍🏰💡🔮🗡️🌲⚔️⚡🔥🐾🩸✓👉⏱️❤️💚🧠🛡️🏹💀☣️]/g, '')
+    .replace(/[⭐★📜📍🏰💡🔮🗡️🌲⚔️⚡🔥🐾🩸✓👉⏱️❤️💚🧠🛡️🏹💀☣️•]/g, '')
+    .replace(/[\u2014\u2015]/g, ' - ')
+    .replace(/[\u2013]/g, '-')
+    .replace(/[\u2022]/g, '-')
+    .replace(/[\u2018\u2019]/g, "'")
+    .replace(/[\u201C\u201D]/g, '"')
     .trim();
 }
 
