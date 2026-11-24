@@ -1,4 +1,4 @@
-## Interface: 16001
+## Interface: 16001, 11509, 120105, 120100, 50504, 30404, 20506, 11200
 ## Title: |cFFFF7D0AWoW Forever|r Leveling Guide & Live Sync
 ## Notes: In-game 1-60 leveling guide, talent progression, spell trainer alerts, and live web sync exporter for Warlock & Rogue.
 ## Author: DeepMind & Andrew

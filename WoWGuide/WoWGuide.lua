@@ -3,7 +3,10 @@
 -- Automatic Leveling Steps, Talents, Spells & 1-Click Sync
 -- ========================================================
 
-local addonName = "WoWGuide"
+local addonName, addonTable = ...
+WoWGuide = addonTable or {}
+_G["WoWGuide"] = WoWGuide
+
 WoWGuide_SavedData = WoWGuide_SavedData or {}
 
 local playerClass = nil
@@ -15,10 +18,17 @@ local function ColorText(text, hexColor)
   return string.format("|cFF%s%s|r", hexColor or "FFFFFF", text or "")
 end
 
--- Slash Commands
-SLASH_WOWGUIDE1 = "/guide"
-SLASH_WOWGUIDE2 = "/wowguide"
-SLASH_WOWGUIDE3 = "/sync"
+local function FormatMoney(copper)
+  if not copper or copper == 0 then return "0c" end
+  local g = math.floor(copper / 10000)
+  local s = math.floor((copper % 10000) / 100)
+  local c = copper % 100
+  local parts = {}
+  if g > 0 then table.insert(parts, string.format("%d|cFFFFD700g|r", g)) end
+  if s > 0 then table.insert(parts, string.format("%d|cFFC0C0C0s|r", s)) end
+  if c > 0 or #parts == 0 then table.insert(parts, string.format("%d|cFFB87333c|r", c)) end
+  return table.concat(parts, " ")
+end
 
 -- Main UI Frame
 local mainFrame = nil
@@ -37,8 +47,9 @@ end
 local function CreateGuideWindow()
   if mainFrame then return mainFrame end
 
-  -- Backdrop template compatible with modern Classic / Forever client
-  local frame = CreateFrame("Frame", "WoWGuideMainFrame", UIParent, "BackdropTemplate")
+  -- Safe Backdrop template check across client versions
+  local backdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
+  local frame = CreateFrame("Frame", "WoWGuideMainFrame", UIParent, backdropTemplate)
   frame:SetSize(460, 480)
   frame:SetPoint("CENTER", UIParent, "CENTER", 100, 50)
   frame:SetMovable(true)
@@ -80,7 +91,7 @@ local function CreateGuideWindow()
   frame.levelBadge = levelBadge
 
   -- Section 1: Current Leveling Zone & Objectives
-  local zoneBox = CreateFrame("Frame", nil, frame, "BackdropTemplate")
+  local zoneBox = CreateFrame("Frame", nil, frame, backdropTemplate)
   zoneBox:SetSize(424, 90)
   zoneBox:SetPoint("TOPLEFT", 18, -60)
   if zoneBox.SetBackdrop then
@@ -110,7 +121,7 @@ local function CreateGuideWindow()
   frame.zoneTip = zoneTip
 
   -- Section 2: Next Talent Recommendation
-  local talentBox = CreateFrame("Frame", nil, frame, "BackdropTemplate")
+  local talentBox = CreateFrame("Frame", nil, frame, backdropTemplate)
   talentBox:SetSize(424, 85)
   talentBox:SetPoint("TOPLEFT", zoneBox, "BOTTOMLEFT", 0, -10)
   if talentBox.SetBackdrop then
@@ -140,7 +151,7 @@ local function CreateGuideWindow()
   frame.talentTip = talentTip
 
   -- Section 3: Class Trainer Spells at Current Level
-  local trainerBox = CreateFrame("Frame", nil, frame, "BackdropTemplate")
+  local trainerBox = CreateFrame("Frame", nil, frame, backdropTemplate)
   trainerBox:SetSize(424, 75)
   trainerBox:SetPoint("TOPLEFT", talentBox, "BOTTOMLEFT", 0, -10)
   if trainerBox.SetBackdrop then
@@ -203,8 +214,9 @@ end
 
 -- Export / Sync Popup Window with Copyable EditBox
 function WoWGuide:ShowSyncPopup()
+  local backdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
   if not syncPopupFrame then
-    local p = CreateFrame("Frame", "WoWGuideSyncPopup", UIParent, "BackdropTemplate")
+    local p = CreateFrame("Frame", "WoWGuideSyncPopup", UIParent, backdropTemplate)
     p:SetSize(420, 200)
     p:SetPoint("CENTER", UIParent, "CENTER", 0, 80)
     p:SetFrameStrata("DIALOG")
@@ -334,7 +346,7 @@ function WoWGuide:UpdateUI()
       equippedCount = equippedCount + 1
     end
   end
-  mainFrame.gearSummary:SetText(string.format("Equipped: %s items | Current Money: %s", ColorText(tostring(equippedCount), "38BDF8"), ColorText(GetCoinTextureString(GetMoney()), "FFFFFF")))
+  mainFrame.gearSummary:SetText(string.format("Equipped: %s items | Current Money: %s", ColorText(tostring(equippedCount), "38BDF8"), ColorText(FormatMoney(GetMoney()), "FFFFFF")))
 end
 
 -- Save Character snapshot to SavedVariables on logout/reload
@@ -392,7 +404,9 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
   end
 end)
 
--- Slash Command Handler
+-- Slash Command Handler for /guide and /wowguide
+SLASH_WOWGUIDE1 = "/guide"
+SLASH_WOWGUIDE2 = "/wowguide"
 SlashCmdList["WOWGUIDE"] = function(msg)
   local arg = string.lower(strtrim(msg or ""))
   if arg == "sync" or arg == "export" then
@@ -406,4 +420,11 @@ SlashCmdList["WOWGUIDE"] = function(msg)
       win:Show()
     end
   end
+end
+
+-- Direct Slash Command Handler for /sync
+SLASH_WOWSYNC1 = "/sync"
+SLASH_WOWSYNC2 = "/wowsync"
+SlashCmdList["WOWSYNC"] = function(msg)
+  WoWGuide:ShowSyncPopup()
 end
