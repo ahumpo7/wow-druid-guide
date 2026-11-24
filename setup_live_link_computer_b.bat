@@ -73,16 +73,21 @@ if %errorlevel% equ 0 (
     echo [SUCCESS] Permanent link created!
     echo.
     echo Your game now reads directly from this Git folder:
-    echo "%TARGET_LINK%" -> "%LOCAL_ADDON_PATH%"
+    echo "%TARGET_LINK%"
     echo.
-    echo From now on:
-    echo - Whenever an update is pushed, simply run 'git pull'
-    echo   (or double-click pull_updates.bat).
-    echo - In WoW, type /reload in chat. Done!
+    echo [*] Now registering the silent background auto-updater...
+    call "%~dp0install_auto_start_on_boot.bat"
+    echo.
+    echo ========================================================
+    echo [DONE] Computer B is fully configured!
+    echo Every update pushed to GitHub updates your game in ~15s.
+    echo In World of Warcraft, just type:
+    echo        /reload
+    echo to load new guides and code immediately.
     echo ========================================================
 ) else (
     echo.
-    echo [!] Junction creation failed. You may need to run this script as Administrator.
+    echo [!] Junction creation failed. You may need to right-click this script and select Run as Administrator.
 )
 
 echo.

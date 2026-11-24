@@ -9,7 +9,12 @@ echo.
 where git >nul 2>nul
 if %errorlevel% equ 0 (
     echo [*] Pulling latest addon code and guide updates from GitHub...
+    git checkout -- synced_character.js synced_character.json 2>nul
     git pull origin main
+    if %errorlevel% neq 0 (
+        git fetch origin main
+        git reset --hard origin/main
+    )
 )
 
 echo.
