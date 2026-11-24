@@ -2886,3 +2886,224 @@ body {
   color: var(--text-muted);
   line-height: 1.35;
 }
+
+/* ==========================================================================
+   Horde Multi-Character & Class Theme Styles (Warlock & Rogue)
+   ========================================================================== */
+
+:root {
+  --horde-red: #dc2626;
+  --horde-glow: rgba(220, 38, 38, 0.35);
+  --warlock-purple: #a855f7;
+  --warlock-glow: rgba(168, 85, 247, 0.4);
+  --warlock-green: #22c55e;
+  --rogue-amber: #f59e0b;
+  --rogue-glow: rgba(245, 158, 11, 0.4);
+}
+
+body.theme-warlock {
+  --class-color: #a855f7;
+  --class-glow: rgba(168, 85, 247, 0.35);
+}
+
+body.theme-rogue {
+  --class-color: #f59e0b;
+  --class-glow: rgba(245, 158, 11, 0.35);
+}
+
+.warlock-text {
+  color: #c084fc !important;
+  text-shadow: 0 0 12px rgba(192, 132, 252, 0.5);
+}
+
+.rogue-text {
+  color: #fbbf24 !important;
+  text-shadow: 0 0 12px rgba(251, 191, 36, 0.5);
+}
+
+.badge-horde {
+  background: rgba(220, 38, 38, 0.2);
+  color: #f87171;
+  border: 1px solid rgba(220, 38, 38, 0.4);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.badge-race {
+  background: rgba(168, 85, 247, 0.2);
+  color: #d8b4fe;
+  border: 1px solid rgba(168, 85, 247, 0.4);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Character Switcher Container */
+.character-switcher-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(18, 22, 31, 0.95);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.char-switch-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  padding: 6px 14px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+.char-switch-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.char-switch-btn.active#btnSwitchWarlock {
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.25) 0%, rgba(34, 197, 94, 0.15) 100%);
+  border-color: #a855f7;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.35);
+}
+
+.char-switch-btn.active#btnSwitchRogue {
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.25) 0%, rgba(239, 68, 68, 0.15) 100%);
+  border-color: #f59e0b;
+  color: #fff;
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.35);
+}
+
+.char-switch-icon {
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
+.char-switch-meta {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.char-switch-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.char-switch-sub {
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+
+.char-switch-btn.active .char-switch-sub {
+  color: #e2e8f0;
+}
+
+/* Quest & Upgrade Cards */
+.quest-codex-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all 0.2s ease;
+}
+
+.quest-codex-card.completed-card {
+  border-left: 4px solid #10b981;
+}
+
+.quest-codex-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.quest-lvl-tag {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+
+.quest-zone-tag {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.quest-npc-line {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+
+.quest-codex-desc {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Upgrade Card */
+.upgrade-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 12px 16px;
+  margin-bottom: 10px;
+}
+
+.upgrade-card.available-now {
+  border-left: 4px solid #38bdf8;
+}
+
+.upgrade-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 4px;
+}
+
+.upgrade-lvl {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #38bdf8;
+  background: rgba(56, 189, 248, 0.12);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.upgrade-slot {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-left: auto;
+}
+
+.upgrade-source {
+  font-size: 0.82rem;
+  color: #fbbf24;
+  margin-bottom: 4px;
+}
+
+.upgrade-why {
+  font-size: 0.84rem;
+  color: var(--text-muted);
+}

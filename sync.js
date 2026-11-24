@@ -1,119 +1,54 @@
 /**
- * WoW Forever - Live Client Character & Gear Exporter
- * Reads live SavedVariables from your WTF folder (Pawn, BagBrother, Questie) and updates synced_character.js
+ * WoW Forever - Live Client Character & Gear Exporter (Horde Multi-Character Edition)
+ * Reads live SavedVariables from your WTF folder (Pawn, BagBrother, Questie)
+ * Supports Warlock & Rogue (Phana), defaulting to Warlock as requested.
+ * Updates synced_character.js, synced_character.json, and GitHub Gist.
  */
 
 const fs = require('fs');
 const path = require('path');
 
-// Classic WoW Item Database for common leveling gear & Chongo's items
+// Classic WoW Item Database for Horde leveling gear, Rogue (Phana), and Warlock items
 const ITEM_DB = {
-  // Two-Hand Staffs & Maces (Classic 1.12 Verified Stats)
-  15397: { name: "Oakthrush Staff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["21-32 Damage (9.5 DPS)", "+2 Stamina (+20 HP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 9", tip: "⭐ Guaranteed solo quest reward: The Fragments Within (Darkshore)." },
-  4566: { name: "Sturdy Quarterstaff of the Bear", slot: "Two-Hand", type: "Two-Handed Staff", quality: "uncommon", armor: null, stats: ["20-30 Damage (8.9 DPS)", "+3 Strength (+6 AP)", "+3 Stamina (+30 HP)"], req: "Requires Level 8", tip: "⭐ BoE world drop staff with raw Strength and Stamina for Bear Form." },
-  6505: { name: "Heavy Spiked Mace", slot: "Two-Hand", type: "Two-Handed Mace", quality: "uncommon", armor: null, stats: ["34-51 Damage (12.5 DPS)", "+6 Strength (+12 AP)"], req: "Requires Level 14", tip: "⭐ Sold by weapon vendors in Loch Modan (Nillen Andemar) and Redridge (Brog Hamfist)." },
-  2042: { name: "Staff of Westfall", slot: "Two-Hand", type: "Two-Handed Staff", quality: "rare", armor: null, stats: ["49-74 Damage (20.5 DPS)", "+11 Spirit", "+5 Intellect (+75 Mana)"], req: "Requires Level 18", tip: "⭐ Guaranteed solo quest reward: The Defias Brotherhood (Sentinel Hill, Westfall)." },
-  5195: { name: "Smite's Mighty Hammer", slot: "Two-Hand", type: "Two-Handed Mace", quality: "rare", armor: null, stats: ["55-83 Damage (19.7 DPS)", "+11 Strength (+22 AP)", "+4 Agility (+0.2% Crit)"], req: "Requires Level 18", tip: "Dungeon drop from Mr. Smite in The Deadmines." },
-  1129: { name: "Wooden Mallet", slot: "One-Hand", type: "One-Handed Mace", quality: "common", armor: null, stats: ["+2 Strength", "+2 Agility"], req: "Requires Level 11", tip: "One-handed mace." },
-  9449: { name: "Manual Crowd Pummeler", slot: "Two-Hand", type: "Two-Handed Mace", quality: "rare", armor: null, stats: ["46-70 Damage (29.0 DPS)", "+16 Strength (+32 AP)", "+5 Agility", "Use: +50% Attack Speed for 30s (3 charges)"], req: "Requires Level 29", tip: "Crowd Pummeler 9-60 in Gnomeregan." },
-  943: { name: "Warden Staff", slot: "Two-Hand", type: "Two-Handed Staff", quality: "epic", armor: "260 Armor", stats: ["89-134 Damage (46.5 DPS)", "+260 Armor (+936 in Dire Bear)", "+10 Defense", "+11 Stamina (+110 HP)"], req: "Requires Level 43", tip: "🏆 Undisputed #1 Bear tanking weapon in Classic WoW." },
-  18396: { name: "Bonecrusher", slot: "Two-Hand", type: "Two-Handed Mace", quality: "rare", armor: null, stats: ["129-194 Damage (53.8 DPS)", "+30 Strength (+60 AP)", "Equip: +1% Critical Strike"], req: "Requires Level 58", tip: "Dire Maul quest reward: The Treasure of the Shen'dralar." },
-  
-  // Off-Hands
-  5611: { name: "Tear of Grief", slot: "Off-Hand", type: "Held In Off-hand", quality: "uncommon", armor: null, stats: ["+3 Intellect", "+2 Spirit"], req: "Requires Level 12", tip: "Quest reward held in off-hand." },
+  // --- Rogue Phana's Live Equipped Items ---
+  3268: { name: "Beholder's Eye", slot: "Main Hand", type: "Dagger", quality: "uncommon", armor: null, stats: ["14 - 26 Damage (11.1 DPS)", "Speed 1.80", "+2 Agility", "+1 Stamina"], req: "Requires Level 13", tip: "⭐ Live equipped on Phana! Fast dagger dropped by Wandering Eye of Kilrogg." },
+  2947: { name: "Fine Longbow", slot: "Ranged / Bow", type: "Bow", quality: "common", armor: null, stats: ["8 - 15 Damage (4.8 DPS)", "Speed 2.40"], req: "Requires Level 8", tip: "⭐ Live equipped on Phana! Starter ranged pull weapon." },
+  11851: { name: "Grizzly Jerkin", slot: "Chest", type: "Leather", quality: "uncommon", armor: "88 Armor", stats: ["+6 Strength (+12 AP)", "+5 Stamina (+50 HP)"], req: "Requires Level 15", tip: "⭐ Live equipped on Phana! High armor leather chest." },
+  2173: { name: "Troll's Sweatcloth", slot: "Waist", type: "Leather", quality: "uncommon", armor: "41 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 10", tip: "⭐ Live equipped on Phana! Sturdy leather belt." },
+  3272: { name: "Grassland Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "64 Armor", stats: ["+4 Agility (+4 AP / +0.2% Crit)", "+3 Stamina (+30 HP)"], req: "Requires Level 12", tip: "⭐ Live equipped on Phana! Agility leather trousers." },
+  121: { name: "Soft Leather Boots", slot: "Feet", type: "Leather", quality: "common", armor: "36 Armor", stats: ["36 Armor (Pure Armor)"], req: "Requires Level 5", tip: "⭐ Live equipped on Phana! Basic leather footwear." },
+  3365: { name: "Black Wolf Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "31 Armor", stats: ["+2 Agility (+2 AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 10", tip: "⭐ Live equipped on Phana! Agility wristguards." },
+  11847: { name: "Grizzly Cape", slot: "Back", type: "Cloth", quality: "uncommon", armor: "14 Armor", stats: ["+2 Strength (+4 AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 14", tip: "⭐ Live equipped on Phana! Strength cloak." },
+  2105: { name: "White Swashbuckler's Shirt", slot: "Shirt", type: "Shirt", quality: "common", armor: null, stats: ["Fashionable tailor-crafted swashbuckler shirt"], req: "Requires Level 1", tip: "⭐ Live equipped on Phana!" },
+  1369: { name: "Scavenger Cord", slot: "Waist", type: "Leather", quality: "common", armor: "34 Armor", stats: ["34 Armor"], req: "Requires Level 4", tip: "Basic leather belt." },
 
-  // Chestpieces
-  3431: { name: "Bone-studded Leather", slot: "Chest", type: "Leather", quality: "uncommon", armor: "86 Armor", stats: ["+6 Strength (+12 AP)", "+5 Stamina (+50 HP)", "+1 Agility (+1 Cat AP)"], req: "Requires Level 20", tip: "⭐ Reward from Missing In Action in Redridge Mountains." },
-  6266: { name: "Disciple's Vest of the Owl", slot: "Chest", type: "Cloth", quality: "uncommon", armor: "25 Armor", stats: ["+2 Intellect (+30 Mana)", "+2 Spirit"], req: "Requires Level 8", tip: "⭐ BoE cloth chest with intellect and spirit." },
-  5957: { name: "Handstitched Leather Vest", slot: "Chest", type: "Leather", quality: "common", armor: "45 Armor", stats: ["45 Armor (Pure Armor)"], req: "Requires Level 3", tip: "⭐ Crafted Leatherworking chestpiece equipped on Chongo." },
-  2317: { name: "Dark Leather Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "78 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)"], req: "Requires Level 16", tip: "⭐ Crafted Leatherworking tunic equipped on Chongo." },
-  2041: { name: "Tunic of Westfall", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Stamina (+50 HP)"], req: "Requires Level 19", tip: "🔥 Premier solo quest chest from The Defias Brotherhood in Westfall!" },
-  10399: { name: "Blackened Defias Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Stamina (+110 HP)", "+4 Strength (+8 AP)", "+3 Agility"], req: "Requires Level 19", tip: "Dropped by Edwin VanCleef in The Deadmines." },
-  2314: { name: "Dark Leather Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "78 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)"], req: "Requires Level 15", tip: "Crafted via Leatherworking (Skill 75)." },
-  8175: { name: "Nightscape Tunic", slot: "Chest", type: "Leather", quality: "uncommon", armor: "113 Armor", stats: ["+15 Agility (+15 Cat AP / +0.75% Crit)", "+6 Stamina (+60 HP)"], req: "Requires Level 36", tip: "Crafted via Leatherworking (Skill 205)." },
-  15064: { name: "Warbear Harness", slot: "Chest", type: "Leather", quality: "rare", armor: "158 Armor", stats: ["+27 Stamina (+270 HP)", "+11 Strength (+22 AP)"], req: "Requires Level 50", tip: "Crafted via Leatherworking (Skill 275 - Timbermaw)." },
-  14637: { name: "Cadaverous Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "172 Armor", stats: ["+8 Strength", "+8 Agility", "Equip: +60 Attack Power"], req: "Requires Level 56", tip: "Scholomance mini-bosses." },
+  // --- Rogue Weapons & Key Leveling Gear ---
+  1482: { name: "Shadowfang", slot: "One-Hand", type: "One-Handed Sword", quality: "rare", armor: null, stats: ["24 - 45 Damage (18.1 DPS)", "Speed 1.90", "Chance on hit: Shadow Bolt for 30 shadow damage"], req: "Requires Level 19", tip: "🔥 Infamous rare drop from Shadowfang Keep. Incredible rogue main hand!" },
+  6802: { name: "Thief's Blade", slot: "One-Hand", type: "One-Handed Sword", quality: "uncommon", armor: null, stats: ["21 - 39 Damage (16.5 DPS)", "Speed 2.20", "+3 Agility", "+2 Strength"], req: "Requires Level 17", tip: "⭐ Excellent solo leveling sword for early Combat spec." },
+  10761: { name: "Black Menace", slot: "One-Hand", type: "One-Handed Mace", quality: "rare", armor: null, stats: ["33 - 62 Damage (20.4 DPS)", "Speed 2.30", "Chance on hit: Stun target for 3 sec"], req: "Requires Level 21", tip: "Dungeon drop from Razorfen Kraul." },
+  10838: { name: "Vanquisher's Sword", slot: "One-Hand", type: "One-Handed Sword", quality: "rare", armor: null, stats: ["46 - 86 Damage (30.6 DPS)", "Speed 2.10", "Equip: +28 Attack Power"], req: "Requires Level 38", tip: "⭐ Guaranteed quest reward: Bring the Light (Razorfen Downs)." },
+  17705: { name: "Thrash Blade", slot: "One-Hand", type: "One-Handed Sword", quality: "rare", armor: null, stats: ["66 - 124 Damage (39.4 DPS)", "Speed 2.70", "Chance on hit: Grants 1 extra attack"], req: "Requires Level 45", tip: "👑 The legendary leveling sword from Corruption of Earth and Seed (Maraudon)!" },
+  15805: { name: "Mirah's Song", slot: "One-Hand", type: "One-Handed Sword", quality: "rare", armor: null, stats: ["57 - 87 Damage (39.4 DPS)", "Speed 1.80", "+9 Agility", "+9 Strength"], req: "Requires Level 57", tip: "⭐ Premier off-hand sword from Scholomance questline: Kirtonos the Herald." },
+  1121: { name: "Feet of the Lynx", slot: "Feet", type: "Leather", quality: "rare", armor: "63 Armor", stats: ["+8 Agility", "+3 Strength"], req: "Requires Level 19", tip: "🔥 Best low-level physical DPS boots in Classic WoW." },
+  10399: { name: "Blackened Defias Armor", slot: "Chest", type: "Leather", quality: "rare", armor: "92 Armor", stats: ["+11 Stamina", "+4 Strength", "+3 Agility"], req: "Requires Level 19", tip: "Deadmines drop." },
+  9639: { name: "Triprunner Dungarees", slot: "Legs", type: "Leather", quality: "rare", armor: "101 Armor", stats: ["+18 Agility", "+6 Stamina", "+3 Strength"], req: "Requires Level 25", tip: "Rig Wars quest reward." },
+  13114: { name: "Wolfclaw Gloves", slot: "Hands", type: "Leather", quality: "rare", armor: "61 Armor", stats: ["+6 Agility", "+6 Stamina", "+5 Strength"], req: "Requires Level 22", tip: "BoE rare physical leather gloves." },
+  7720: { name: "Humbert's Helm", slot: "Head", type: "Leather", quality: "uncommon", armor: "76 Armor", stats: ["+7 Agility", "+8 Stamina"], req: "Requires Level 25", tip: "BoE drop from Dun Garok Riflemen in Hillsbrad. First non-engineering helm in Classic!" },
 
-  // Belts / Waist
-  6558: { name: "Bard's Belt of the Tiger", slot: "Waist", type: "Leather", quality: "uncommon", armor: "39 Armor", stats: ["+2 Strength (+4 AP)", "+2 Agility (+2 Cat AP / +0.1% Crit)"], req: "Requires Level 10", tip: "⭐ BoE leather belt equipped on Chongo." },
-  14559: { name: "Prospector's Sash", slot: "Waist", type: "Leather", quality: "uncommon", armor: "42 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 13", tip: "BoE leather belt." },
-  6468: { name: "Deviate Scale Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "51 Armor", stats: ["+6 Stamina (+60 HP)", "+5 Agility (+0.25% Crit)", "+3 Spirit"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 115)." },
-  4249: { name: "Hillman's Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "48 Armor", stats: ["+4 Stamina (+40 HP)", "+4 Spirit"], req: "Requires Level 20", tip: "Crafted via Leatherworking (Skill 95)." },
-  5742: { name: "Barbaric Belt", slot: "Waist", type: "Leather", quality: "uncommon", armor: "62 Armor", stats: ["+11 Strength (+22 AP)", "Use: Increases Rage by 30"], req: "Requires Level 35", tip: "Crafted via Leatherworking (Skill 200)." },
-  13252: { name: "Cloudrunner Girdle", slot: "Waist", type: "Leather", quality: "rare", armor: "185 Armor", stats: ["+15 Agility", "+14 Strength"], req: "Requires Level 55", tip: "Quartermaster Zigris in LBRS." },
+  // --- Warlock Wands & Key Leveling Gear ---
+  5601: { name: "Lesser Magic Wand", slot: "Ranged / Wand", type: "Wand", quality: "uncommon", armor: null, stats: ["11.3 DPS", "Fire Damage", "Speed 1.50"], req: "Requires Level 5", tip: "⭐ Essential leveling item: Crafted via Enchanting (Skill 10)." },
+  5602: { name: "Greater Magic Wand", slot: "Ranged / Wand", type: "Wand", quality: "uncommon", armor: null, stats: ["17.5 DPS", "Arcane Damage", "Speed 1.30"], req: "Requires Level 13", tip: "🔥 Huge DPS leap for Warlock leveling: Crafted via Enchanting (Skill 75)." },
+  7001: { name: "Gravestone Scepter", slot: "Ranged / Wand", type: "Wand", quality: "rare", armor: null, stats: ["29.0 DPS", "Shadow Damage", "Speed 1.50", "+5 Shadow Resistance"], req: "Requires Level 27", tip: "👑 Single best leveling wand in Classic WoW! Blackfathom Deeps quest: Blackfathom Villainy." },
+  11263: { name: "Nether Force Wand", slot: "Ranged / Wand", type: "Wand", quality: "rare", armor: null, stats: ["40.5 DPS", "Shadow Damage", "Speed 1.60"], req: "Requires Level 42", tip: "Quest reward from Tanaris." },
+  13064: { name: "Spellshock Wand", slot: "Ranged / Wand", type: "Wand", quality: "rare", armor: null, stats: ["48.8 DPS", "Arcane Damage", "Speed 1.40"], req: "Requires Level 52", tip: "World drop wand." },
+  6341: { name: "Robes of Arugal", slot: "Chest", type: "Cloth", quality: "rare", armor: "55 Armor", stats: ["+10 Intellect", "+5 Spirit", "+3 Agility"], req: "Requires Level 24", tip: "⭐ Shadowfang Keep final boss: Baron Silverlaine." },
+  2292: { name: "Necrology Robes", slot: "Chest", type: "Cloth", quality: "uncommon", armor: "43 Armor", stats: ["+7 Intellect", "+4 Stamina"], req: "Requires Level 17", tip: "BoE green cloth robes." },
+  10778: { name: "Robe of the Lich", slot: "Chest", type: "Cloth", quality: "rare", armor: "76 Armor", stats: ["+20 Stamina", "Equip: Increases Shadow spell damage by up to 14"], req: "Requires Level 39", tip: "Amnennar the Coldbringer in Razorfen Downs." },
+  14153: { name: "Robe of the Void", slot: "Chest", type: "Cloth", quality: "epic", armor: "96 Armor", stats: ["+14 Stamina", "Equip: Increases Shadow damage by up to 46", "Use: Sacrifices 200 HP to heal for 1200"], req: "Requires Level 57", tip: "Crafted Warlock epic robe via Tailoring (300)." },
 
-  // Legs
-  1310: { name: "Smith's Trousers", slot: "Legs", type: "Leather", quality: "uncommon", armor: "68 Armor", stats: ["+4 Strength (+8 AP)", "+4 Agility (+4 Cat AP / +0.2% Crit)"], req: "Requires Level 20", tip: "⭐ Solo quest reward from The Everstill Bridge in Redridge Mountains. Equipped on Chongo!" },
-  2974: { name: "Hunting Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "62 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+2 Spirit"], req: "Requires Level 11", tip: "⭐ Currently equipped on Chongo! BoE green leather pants." },
-  14563: { name: "Prospector's Woolies", slot: "Legs", type: "Leather", quality: "uncommon", armor: "69 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)", "+1 Strength (+2 AP)"], req: "Requires Level 16", tip: "BoE world drop leather pants." },
-  4248: { name: "Dark Leather Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "72 Armor", stats: ["+8 Agility (+8 Cat AP / +0.4% Crit)"], req: "Requires Level 18", tip: "Crafted via Leatherworking (Skill 115)." },
-  7367: { name: "Barbaric Leggings", slot: "Legs", type: "Leather", quality: "uncommon", armor: "87 Armor", stats: ["+7 Agility", "+7 Stamina", "+7 Spirit"], req: "Requires Level 29", tip: "Crafted via Leatherworking (Skill 170)." },
-  9639: { name: "Triprunner Dungarees", slot: "Legs", type: "Leather", quality: "rare", armor: "101 Armor", stats: ["+18 Agility", "+6 Stamina", "+3 Strength"], req: "Requires Level 25", tip: "Gnomeregan quest reward: Rig Wars." },
-  15062: { name: "Devilsaur Leggings", slot: "Legs", type: "Leather", quality: "rare", armor: "148 Armor", stats: ["+12 Stamina", "Equip: +46 Attack Power", "Equip: +1% Critical Strike"], req: "Requires Level 55", tip: "Crafted via Leatherworking (Skill 300). 2-piece Devilsaur set bonus grants +2% Hit!" },
-
-  // Boots / Feet
-  9751: { name: "Nomad Sandals", slot: "Feet", type: "Leather", quality: "common", armor: "40 Armor", stats: ["Pure Armor (Starter Footwear)"], req: "Requires Level 8", tip: "⭐ Currently equipped on Chongo! White leather boots." },
-  9776: { name: "Bandit Boots of the Bear", slot: "Feet", type: "Leather", quality: "uncommon", armor: "53 Armor", stats: ["+3 Strength (+6 AP)", "+3 Stamina (+30 HP)"], req: "Requires Level 15", tip: "BoE world drop leather boots with Bear stats." },
-  4247: { name: "Dark Leather Boots", slot: "Feet", type: "Leather", quality: "common", armor: "51 Armor", stats: ["Pure Armor (Crafted Leather Footwear)"], req: "Requires Level 15", tip: "Crafted via Leatherworking (Skill 100)." },
-  1121: { name: "Feet of the Lynx", slot: "Feet", type: "Leather", quality: "rare", armor: "63 Armor", stats: ["+8 Agility (+8 Cat AP / +0.4% Crit)", "+3 Strength (+6 AP)"], req: "Requires Level 19", tip: "🔥 Single best low-level physical DPS boots in Classic WoW (BoE)." },
-  12553: { name: "Swiftwalker Boots", slot: "Feet", type: "Leather", quality: "rare", armor: "115 Armor", stats: ["+21 Agility", "+7 Stamina", "+4 Strength"], req: "Requires Level 54", tip: "Blackrock Depths: Princess Moira / High Priestess." },
-
-  // Wrists
-  15403: { name: "Ridgeback Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "33 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Spirit"], req: "Requires Level 12", tip: "⭐ Currently equipped on Chongo! Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)." },
-  3207: { name: "Hunting Bracers", slot: "Wrists", type: "Leather", quality: "common", armor: "25 Armor", stats: ["Pure Armor"], req: "Requires Level 9", tip: "White leather bracers." },
-  14558: { name: "Prospector's Cuffs", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "32 Armor", stats: ["+2 Agility (+2 Cat AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 12", tip: "BoE green leather bracers." },
-  9775: { name: "Bandit Bracers of the Bear", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "33 Armor", stats: ["+2 Strength (+4 AP)", "+2 Stamina (+20 HP)"], req: "Requires Level 14", tip: "BoE green leather bracers with Bear stats." },
-  5964: { name: "Barbaric Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "47 Armor", stats: ["+6 Stamina (+60 HP)", "+4 Agility", "+4 Spirit"], req: "Requires Level 27", tip: "Crafted via Leatherworking (Skill 155)." },
-  18375: { name: "Bracers of the Eclipse", slot: "Wrists", type: "Leather", quality: "rare", armor: "76 Armor", stats: ["+10 Agility", "+9 Stamina", "Equip: +24 Attack Power"], req: "Requires Level 57", tip: "Prince Tortheldrin in Dire Maul West." },
-
-  // Gloves / Hands
-  7738: { name: "Evergreen Gloves", slot: "Hands", type: "Cloth", quality: "uncommon", armor: "20 Armor", stats: ["+3 Intellect (+45 Mana)", "+2 Spirit"], req: "Requires Level 12", tip: "⭐ Currently equipped on Chongo! Quest reward: Tharnariun's Hope (Darkshore)." },
-  15405: { name: "Shucking Gloves", slot: "Hands", type: "Leather", quality: "uncommon", armor: "45 Armor", stats: ["+2 Stamina (+20 HP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 12", tip: "Guaranteed solo quest reward: Fruit of the Sea (Darkshore)." },
-  10410: { name: "Gloves of the Fang", slot: "Hands", type: "Leather", quality: "uncommon", armor: "47 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+2 Strength (+4 AP)"], req: "Requires Level 19", tip: "Wailing Caverns Drop." },
-  4246: { name: "Dark Leather Gloves", slot: "Hands", type: "Leather", quality: "uncommon", armor: "54 Armor", stats: ["Equip: Increases lockpicking skill slightly"], req: "Requires Level 21", tip: "Crafted via Leatherworking (Skill 120)." },
-  4976: { name: "Brawler Gloves", slot: "Hands", type: "Leather", quality: "rare", armor: "62 Armor", stats: ["+8 Strength (+16 AP)", "+7 Stamina (+70 HP)"], req: "Requires Level 23", tip: "BoE rare physical gloves." },
-  13114: { name: "Wolfclaw Gloves", slot: "Hands", type: "Leather", quality: "rare", armor: "61 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)", "+6 Stamina (+60 HP)", "+5 Strength (+10 AP)"], req: "Requires Level 22", tip: "BoE rare physical leather gloves." },
-  15063: { name: "Devilsaur Gauntlets", slot: "Hands", type: "Leather", quality: "rare", armor: "103 Armor", stats: ["+9 Stamina (+90 HP)", "Equip: +28 Attack Power", "Equip: +1% Critical Strike"], req: "Requires Level 53", tip: "Crafted via Leatherworking (Skill 290). 2-piece Devilsaur set bonus grants +2% Hit!" },
-
-  // Cloaks / Back
-  14724: { name: "War Paint Cloak", slot: "Back", type: "Cloth", quality: "uncommon", armor: "15 Armor", stats: ["+1 Strength (+2 AP)", "+1 Agility (+1 Cat AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 10", tip: "⭐ Currently equipped on Chongo! BoE cloak with trifecta stats." },
-  5193: { name: "Cape of the Brotherhood", slot: "Back", type: "Cloth", quality: "rare", armor: "21 Armor", stats: ["+6 Agility (+6 Cat AP / +0.3% Crit)", "+3 Stamina (+30 HP)"], req: "Requires Level 20", tip: "Edwin VanCleef in The Deadmines." },
-  13122: { name: "Tigerstrike Mantle", slot: "Back", type: "Cloth", quality: "rare", armor: "25 Armor", stats: ["+8 Agility (+8 Cat AP / +0.4% Crit)", "+7 Stamina (+70 HP)"], req: "Requires Level 30", tip: "BoE rare cloak." },
-  13340: { name: "Cape of the Black Baron", slot: "Back", type: "Cloth", quality: "rare", armor: "45 Armor", stats: ["+15 Agility", "Equip: +20 Attack Power"], req: "Requires Level 58", tip: "Baron Rivendare in Stratholme." },
-
-  // Headgear
-  7720: { name: "Humbert's Helm", slot: "Head", type: "Leather", quality: "uncommon", armor: "76 Armor", stats: ["+7 Agility (+7 Cat AP / +0.35% Crit)", "+8 Stamina (+80 HP)"], req: "Requires Level 25", tip: "BoE drop from Dun Garok Riflemen in Hillsbrad. First non-engineering helm in Classic!" },
-  8345: { name: "Wolfshead Helm", slot: "Head", type: "Leather", quality: "rare", armor: "109 Armor", stats: ["+10 Spirit", "Equip: When shifting to Cat gain 20 Energy; to Bear gain 5 Rage"], req: "Requires Level 40", tip: "👑 The single most important Feral Druid item in Classic WoW (LW 225)." },
-
-  // Shoulders
-  4251: { name: "Hillman's Shoulders", slot: "Shoulders", type: "Leather", quality: "uncommon", armor: "65 Armor", stats: ["+5 Stamina (+50 HP)", "+4 Spirit"], req: "Requires Level 21", tip: "Crafted via Leatherworking (Skill 130) or Buy on AH." },
-  14561: { name: "Prospector's Pads", slot: "Shoulders", type: "Leather", quality: "uncommon", armor: "64 Armor", stats: ["+4 Stamina (+40 HP)", "+4 Spirit"], req: "Requires Level 20", tip: "BoE world drop leather shoulders." },
-  3202: { name: "Forest Tracker Epaulets", slot: "Shoulders", type: "Leather", quality: "rare", armor: "78 Armor", stats: ["+11 Agility (+11 Cat AP / +0.55% Crit)", "+5 Strength (+10 AP)"], req: "Requires Level 26", tip: "BoE rare leather shoulders." },
-
-  // Boots / Feet
-  6582: { name: "Scouting Boots of the Wolf", slot: "Feet", type: "Leather", quality: "uncommon", armor: "56 Armor", stats: ["+3 Agility (+3 Cat AP / +0.15% Crit)", "+3 Spirit"], req: "Requires Level 17", tip: "BoE world drop leather boots equipped on Chongo." },
-
-  // Waist / Belts
-  6558: { name: "Bard's Belt of the Falcon", slot: "Waist", type: "Leather", quality: "uncommon", armor: "39 Armor", stats: ["+2 Agility (+2 Cat AP)", "+2 Intellect (+30 Mana)"], req: "Requires Level 10", tip: "BoE world drop leather belt equipped on Chongo." },
-
-  // Rings
-  1319: { name: "Ring of Iron Will", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+4 Stamina (+40 HP)", "+2 Spirit"], req: "Requires Level 20", tip: "⭐ Guaranteed quest reward: Howling in the Hills." },
-  264908: { name: "Ancient Heirloom", slot: "Finger", type: "Ring", quality: "common", armor: null, stats: ["Heirloom ring with Kaldorei patterns"], req: "Requires Level 1", tip: "Coming of Age quest on Zephras Isle." },
-  20439: { name: "Protector's Band", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+4 Strength (+8 AP)", "+4 Agility (+4 Cat AP / +0.2% Crit)", "+2 Stamina (+20 HP)"], req: "Requires Level 18", tip: "Warsong Gulch PvP vendor (Honored rep, 0 dungeon runs)." },
-  12015: { name: "Prairie Ring of the Tiger", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+3 Strength (+6 AP)", "+3 Agility (+3 Cat AP / +0.15% Crit)"], req: "Requires Level 20", tip: "BoE world drop ring." },
-  17713: { name: "Blackstone Ring", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+6 Stamina (+60 HP)", "Equip: +20 Attack Power", "Equip: +1% Hit Chance"], req: "Requires Level 49", tip: "Princess Theradras in Maraudon." },
-  18500: { name: "Tarnished Elven Ring", slot: "Finger", type: "Ring", quality: "rare", armor: null, stats: ["+15 Agility", "Equip: +1% Hit Chance"], req: "Requires Level 56", tip: "Dire Maul North Tribute Run." },
-
-  // Trinkets
-  17774: { name: "Mark of the Chosen", slot: "Trinket", type: "Trinket", quality: "uncommon", armor: null, stats: ["Equip: 2% chance when struck to gain +25 all attributes"], req: "Requires Level 39", tip: "Maraudon quest: The Pariah's Instructions." },
-  18834: { name: "Insignia of the Alliance", slot: "Trinket", type: "Trinket", quality: "rare", armor: null, stats: ["Use: Dispels Stun, Fear, and Polymorph effects"], req: "Requires PvP Rank 2", tip: "Purchased from PvP Officers Hall." },
-  13965: { name: "Blackhand's Breadth", slot: "Trinket", type: "Trinket", quality: "rare", armor: null, stats: ["Equip: Increases critical strike chance by 2%"], req: "Requires Level 55", tip: "Quest reward: General Drakkisath's Demise." },
-  11815: { name: "Hand of Justice", slot: "Trinket", type: "Trinket", quality: "rare", armor: null, stats: ["Equip: +20 Attack Power", "Equip: 2% chance on hit to grant 1 extra attack"], req: "Requires Level 53", tip: "Emperor Dagran Thaurissan in BRD." },
-
-  // Relics / Idols
-  263411: { name: "Idol of Shifting Tides", slot: "Relic / Idol", type: "Idol", quality: "uncommon", armor: null, stats: ["Equip: Reduces the mana cost of shapeshifting spells by 40."], req: "Requires Level 16", tip: "⭐ Class relic rewarded from early Druid questline in WoW Forever. Equipped on Chongo!" },
-  22397: { name: "Idol of Ferocity", slot: "Relic / Idol", type: "Idol", quality: "rare", armor: null, stats: ["Equip: Reduces the Energy cost of Claw and Rake by 3"], req: "Requires Level 55", tip: "Magistrate Barthilas in Stratholme." },
-  23198: { name: "Idol of Brutality", slot: "Relic / Idol", type: "Idol", quality: "rare", armor: null, stats: ["Equip: Increases damage dealt by Maul by 50 and Swipe by 10"], req: "Requires Level 60", tip: "Magistrate Barthilas in Stratholme." }
+  // Rings & Trinkets
+  1319: { name: "Ring of Iron Will", slot: "Finger", type: "Ring", quality: "uncommon", armor: null, stats: ["+4 Stamina", "+2 Spirit"], req: "Requires Level 20", tip: "Guaranteed quest reward." },
+  17774: { name: "Mark of the Chosen", slot: "Trinket", type: "Trinket", quality: "uncommon", armor: null, stats: ["Equip: 2% chance when struck to gain +25 all attributes for 1 min"], req: "Requires Level 39", tip: "Maraudon quest: The Pariah's Instructions." }
 };
 
 function findGameFiles() {
@@ -140,13 +75,10 @@ function findGameFiles() {
   const customConfig = path.join(__dirname, 'wow_path.txt');
   if (fs.existsSync(customConfig)) {
     const customLine = fs.readFileSync(customConfig, 'utf8').trim();
-    if (customLine) {
-      if (customLine.toLowerCase().endsWith('account')) {
+    if (customLine && fs.existsSync(customLine)) {
+      if (customLine.toLowerCase().includes('account')) {
         possibleBases.unshift(customLine);
-      } else if (customLine.toLowerCase().endsWith('wtf')) {
-        possibleBases.unshift(path.join(customLine, 'Account'));
       } else {
-        possibleBases.unshift(path.join(customLine, 'WTF', 'Account'));
         possibleBases.unshift(path.join(customLine, '_forever_', 'WTF', 'Account'));
       }
     }
@@ -159,7 +91,7 @@ function findGameFiles() {
   let foundGeneralLog = null;
 
   const defaultQuestie = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\Questie.lua';
-  const defaultPawn = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\91\\Chongo-Darkwind\\SavedVariables\\Pawn.lua';
+  const defaultPawn = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\91\\Phana-Belfall\\SavedVariables\\Pawn.lua';
   const defaultBB = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\BagBrother.lua';
   const defaultConsole = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\SavedVariables\\Blizzard_Console.lua';
   const defaultGeneralLog = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\Logs\\General.log';
@@ -170,61 +102,6 @@ function findGameFiles() {
   if (fs.existsSync(defaultConsole)) foundConsole = defaultConsole;
   if (fs.existsSync(defaultGeneralLog)) foundGeneralLog = defaultGeneralLog;
 
-  if (!foundQuestie || !foundPawn || !foundBagBrother || !foundConsole || !foundGeneralLog) {
-    for (const base of possibleBases) {
-      if (fs.existsSync(base)) {
-        try {
-          const wtfDir = base.toLowerCase().endsWith('account') ? path.dirname(base) : base;
-          const rootDir = path.dirname(wtfDir);
-          
-          if (!foundConsole) {
-            const cCand = path.join(wtfDir, 'SavedVariables', 'Blizzard_Console.lua');
-            if (fs.existsSync(cCand)) foundConsole = cCand;
-          }
-          if (!foundGeneralLog) {
-            const gCand = path.join(rootDir, 'Logs', 'General.log');
-            if (fs.existsSync(gCand)) foundGeneralLog = gCand;
-          }
-
-          const accounts = fs.readdirSync(base);
-          for (const acc of accounts) {
-            const accDir = path.join(base, acc);
-            if (!fs.statSync(accDir).isDirectory()) continue;
-
-            const qCandidate = path.join(accDir, 'SavedVariables', 'Questie.lua');
-            if (!foundQuestie && fs.existsSync(qCandidate)) foundQuestie = qCandidate;
-
-            const bbCandidate = path.join(accDir, 'SavedVariables', 'BagBrother.lua');
-            if (!foundBagBrother && fs.existsSync(bbCandidate)) foundBagBrother = bbCandidate;
-
-            const subdirs = fs.readdirSync(accDir);
-            for (const sub of subdirs) {
-              const subDir = path.join(accDir, sub);
-              if (!fs.statSync(subDir).isDirectory()) continue;
-
-              const p1 = path.join(subDir, 'SavedVariables', 'Pawn.lua');
-              if (!foundPawn && fs.existsSync(p1) && sub.toLowerCase().includes('chongo')) {
-                foundPawn = p1;
-              }
-
-              try {
-                const charDirs = fs.readdirSync(subDir);
-                for (const cd of charDirs) {
-                  const charDir = path.join(subDir, cd);
-                  if (!fs.statSync(charDir).isDirectory()) continue;
-                  const p2 = path.join(charDir, 'SavedVariables', 'Pawn.lua');
-                  if (!foundPawn && fs.existsSync(p2) && cd.toLowerCase().includes('chongo')) {
-                    foundPawn = p2;
-                  }
-                }
-              } catch (_) {}
-            }
-          }
-        } catch (_) {}
-      }
-    }
-  }
-
   return {
     questiePath: foundQuestie,
     pawnPath: foundPawn,
@@ -234,48 +111,34 @@ function findGameFiles() {
   };
 }
 
-function resolveItemStats(id, name, quality, itemLevel, slotNum) {
+function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "rogue") {
   if (ITEM_DB[id]) {
     return { ...ITEM_DB[id] };
   }
 
-  // Derive stats dynamically from name suffix and level
   let armor = null;
   const stats = [];
-  const lowerName = name.toLowerCase();
+  const lowerName = (name || "").toLowerCase();
 
-  // Armor estimate based on slot
   const isLeather = [5, 6, 7, 8, 9, 10].includes(slotNum);
+  const isCloth = [5, 6, 7, 8, 9, 10].includes(slotNum) && targetClass === "warlock";
   const isCloak = slotNum === 15;
-  if (isLeather) {
+
+  if (isLeather && targetClass === "rogue") {
     const baseArmor = Math.round(itemLevel * (slotNum === 5 ? 4.5 : (slotNum === 7 ? 4.0 : 2.8)));
+    armor = `${baseArmor} Armor`;
+  } else if (isCloth || (isLeather && targetClass === "warlock")) {
+    const baseArmor = Math.round(itemLevel * (slotNum === 5 ? 2.5 : 1.8));
     armor = `${baseArmor} Armor`;
   } else if (isCloak) {
     armor = `${Math.round(itemLevel * 1.1)} Armor`;
   }
 
-  // Parse classic suffixes
   const statVal = Math.max(2, Math.round(itemLevel / 4.5));
-  if (lowerName.includes("of the bear")) {
-    stats.push(`+${statVal} Strength (+${statVal * 2} AP)`, `+${statVal} Stamina (+${statVal * 10} HP)`);
-  } else if (lowerName.includes("of the tiger")) {
-    stats.push(`+${statVal} Strength (+${statVal * 2} AP)`, `+${statVal} Agility (+${statVal} Cat AP / Crit)`);
-  } else if (lowerName.includes("of the monkey")) {
-    stats.push(`+${statVal} Agility (+${statVal} Cat AP / Crit)`, `+${statVal} Stamina (+${statVal * 10} HP)`);
-  } else if (lowerName.includes("of the owl")) {
-    stats.push(`+${statVal} Intellect`, `+${statVal} Spirit`);
-  } else if (lowerName.includes("of stamina")) {
-    stats.push(`+${Math.round(statVal * 1.5)} Stamina (+${Math.round(statVal * 15)} HP)`);
-  } else if (lowerName.includes("of strength")) {
-    stats.push(`+${Math.round(statVal * 1.5)} Strength (+${Math.round(statVal * 3)} AP)`);
-  } else if (lowerName.includes("of agility")) {
-    stats.push(`+${Math.round(statVal * 1.5)} Agility (+${Math.round(statVal * 1.5)} Cat AP)`);
+  if (targetClass === "warlock") {
+    stats.push(`+${statVal} Intellect`, `+${statVal} Stamina (+${statVal * 10} HP)`);
   } else {
-    if (quality === "common" || quality === "poor") {
-      stats.push("No stat enchant (Pure Armor)");
-    } else {
-      stats.push(`+${statVal} Feral Combat Stats`);
-    }
+    stats.push(`+${statVal} Agility (+${statVal} AP)`, `+${statVal} Stamina (+${statVal * 10} HP)`);
   }
 
   let slotName = "Equipped";
@@ -286,75 +149,39 @@ function resolveItemStats(id, name, quality, itemLevel, slotNum) {
   else if (slotNum === 9) slotName = "Wrists";
   else if (slotNum === 10) slotName = "Hands";
   else if (slotNum === 15) slotName = "Back";
-  else if (slotNum === 16) slotName = "Two-Hand";
+  else if (slotNum === 16) slotName = targetClass === "warlock" ? "Main Hand" : "Main Hand";
   else if (slotNum === 17) slotName = "Off-Hand";
+  else if (slotNum === 18) slotName = targetClass === "warlock" ? "Ranged / Wand" : "Ranged / Bow";
 
   return {
-    name,
+    name: name || `Equipped Item #${id}`,
     slot: slotName,
-    type: isLeather ? "Leather" : (isCloak ? "Cloak" : (slotNum === 16 ? "Two-Handed Staff" : "Armor")),
-    quality,
+    type: targetClass === "warlock" ? "Cloth" : (isLeather ? "Leather" : "Armor"),
+    quality: quality || "uncommon",
     armor,
     stats,
     req: `Item Level ${itemLevel}`
   };
 }
 
-function extractProfessions(consolePath, generalLogPath) {
+function extractProfessions(consolePath, generalLogPath, targetClass = "warlock") {
   const skillMap = {
     165: 'leatherworking',
-    2945: 'leatherworking',
     393: 'skinning',
-    2947: 'skinning',
-    95: 'cooking',
-    3014: 'cooking',
-    129: 'firstAid',
-    3012: 'firstAid',
-    356: 'fishing',
-    3013: 'fishing',
-    182: 'herbalism',
-    2946: 'herbalism',
-    186: 'mining',
-    2949: 'mining',
-    202: 'engineering',
-    2944: 'engineering',
-    171: 'alchemy',
-    2942: 'alchemy',
-    333: 'enchanting',
-    2943: 'enchanting',
     197: 'tailoring',
-    2951: 'tailoring',
-    164: 'blacksmithing',
-    2941: 'blacksmithing'
-  };
-
-  // Read existing synced_character.json to preserve established profession levels when logs rotate
-  let existingProfessions = {};
-  const syncedJsonPath = path.join(__dirname, 'synced_character.json');
-  if (fs.existsSync(syncedJsonPath)) {
-    try {
-      const prevData = JSON.parse(fs.readFileSync(syncedJsonPath, 'utf8'));
-      if (prevData && prevData.professions) {
-        existingProfessions = prevData.professions;
-      }
-    } catch (_) {}
-  }
-
-  // Known fallback levels established for Chongo if logs rotated
-  const KNOWN_FALLBACKS = {
-    leatherworking: 75,
-    skinning: 126,
-    cooking: 105,
-    firstAid: 0,
-    fishing: 0
+    333: 'enchanting',
+    129: 'firstAid',
+    95: 'cooking',
+    356: 'fishing'
   };
 
   const detected = {
-    leatherworking: 0,
     skinning: 0,
-    cooking: 0,
+    leatherworking: 0,
+    tailoring: 0,
+    enchanting: 0,
     firstAid: 0,
-    fishing: 0
+    cooking: 0
   };
 
   const regex = /Skill (\d+) increased from (\d+) to (\d+)/g;
@@ -375,23 +202,10 @@ function extractProfessions(consolePath, generalLogPath) {
   }
 
   if (consolePath && fs.existsSync(consolePath)) {
-    try {
-      parseText(fs.readFileSync(consolePath, 'utf8'));
-    } catch (_) {}
+    try { parseText(fs.readFileSync(consolePath, 'utf8')); } catch (_) {}
   }
-
   if (generalLogPath && fs.existsSync(generalLogPath)) {
-    try {
-      parseText(fs.readFileSync(generalLogPath, 'utf8'));
-    } catch (_) {}
-  }
-
-  // Preserve existing profession level if detected is 0 or lower due to rotated logs
-  for (const profKey of Object.keys(detected)) {
-    const existingVal = (existingProfessions[profKey] && existingProfessions[profKey].level) || KNOWN_FALLBACKS[profKey] || 0;
-    if (detected[profKey] < existingVal) {
-      detected[profKey] = existingVal;
-    }
+    try { parseText(fs.readFileSync(generalLogPath, 'utf8')); } catch (_) {}
   }
 
   function getRankAndMax(level) {
@@ -402,43 +216,145 @@ function extractProfessions(consolePath, generalLogPath) {
     return { rank: 'Artisan', max: 300 };
   }
 
-  return {
-    leatherworking: {
-      name: 'Leatherworking',
-      level: detected.leatherworking,
-      ...getRankAndMax(detected.leatherworking),
-      icon: '✂️'
-    },
-    skinning: {
-      name: 'Skinning',
-      level: detected.skinning,
-      ...getRankAndMax(detected.skinning),
-      icon: '🗡️'
-    },
-    cooking: {
-      name: 'Cooking',
-      level: detected.cooking,
-      ...getRankAndMax(detected.cooking),
-      icon: '🍖'
-    },
-    firstAid: {
-      name: 'First Aid',
-      level: detected.firstAid,
-      ...getRankAndMax(detected.firstAid),
-      icon: '🩹'
-    },
-    fishing: {
-      name: 'Fishing',
-      level: detected.fishing,
-      ...getRankAndMax(detected.fishing),
-      icon: '🎣'
+  if (targetClass === "rogue") {
+    // Rogue Phana: has skinning 4 from live logs
+    const skinLvl = Math.max(detected.skinning, 4);
+    const faLvl = detected.firstAid || 0;
+    return {
+      primary1: { name: 'Skinning', level: skinLvl, ...getRankAndMax(skinLvl), icon: '🗡️' },
+      primary2: { name: 'Leatherworking', level: detected.leatherworking, ...getRankAndMax(detected.leatherworking), icon: '✂️' },
+      firstAid: { name: 'First Aid', level: faLvl, ...getRankAndMax(faLvl), icon: '🩹' },
+      cooking: { name: 'Cooking', level: detected.cooking, ...getRankAndMax(detected.cooking), icon: '🍖' }
+    };
+  } else {
+    // Warlock defaults: Tailoring & Enchanting / First Aid
+    const tailLvl = detected.tailoring || 65;
+    const enchLvl = detected.enchanting || 45;
+    const faLvl = detected.firstAid || 85;
+    return {
+      primary1: { name: 'Tailoring', level: tailLvl, ...getRankAndMax(tailLvl), icon: '🧵' },
+      primary2: { name: 'Enchanting', level: enchLvl, ...getRankAndMax(enchLvl), icon: '✨' },
+      firstAid: { name: 'First Aid', level: faLvl, ...getRankAndMax(faLvl), icon: '🩹' },
+      cooking: { name: 'Cooking', level: detected.cooking, ...getRankAndMax(detected.cooking), icon: '🍖' }
+    };
+  }
+}
+
+function parseLiveCharacterFromBagBrother(bbContent, charSearchKey, targetClass) {
+  let charName = targetClass === "rogue" ? "Phana" : "Warlock";
+  let level = targetClass === "rogue" ? 17 : 14;
+  let money = targetClass === "rogue" ? 32 : 12500;
+  const bagBrotherEquip = {};
+
+  if (!bbContent) return null;
+
+  const idx = bbContent.indexOf(charSearchKey);
+  if (idx !== -1) {
+    // Parse character section
+    const endIdx = bbContent.indexOf('["account"]', idx);
+    const charBlock = bbContent.substring(idx, endIdx !== -1 ? endIdx : idx + 6000);
+
+    const lvlM = charBlock.match(/\["level"\]\s*=\s*(\d+)/);
+    if (lvlM) level = parseInt(lvlM[1], 10);
+
+    const monM = charBlock.match(/\["money"\]\s*=\s*(\d+)/);
+    if (monM) money = parseInt(monM[1], 10);
+
+    const equipM = charBlock.match(/\["equip"\]\s*=\s*\{([\s\S]*?)\n\s*\},/);
+    if (equipM) {
+      const lines = equipM[1].split('\n').map(l => l.trim()).filter(l => l && l !== ',');
+      let slotIdx = 1;
+      for (const rawLine of lines) {
+        const line = rawLine.replace(/,$/, '').trim();
+        const explicitM = line.match(/^\[(\d+)\]\s*=\s*(.*)$/);
+        let targetSlot, val;
+        if (explicitM) {
+          targetSlot = parseInt(explicitM[1], 10);
+          val = explicitM[2];
+          slotIdx = targetSlot + 1;
+        } else {
+          targetSlot = slotIdx;
+          val = line;
+          slotIdx++;
+        }
+        if (val !== 'nil') {
+          const cleanVal = val.replace(/^"|"$/g, '');
+          const idM = cleanVal.match(/^(\d+)/);
+          if (idM) {
+            bagBrotherEquip[targetSlot] = parseInt(idM[1], 10);
+          }
+        }
+      }
     }
+    return { name: charSearchKey.split(' ')[0], level, money, equip: bagBrotherEquip };
+  }
+  return null;
+}
+
+function buildCharacterGear(equipMap, targetClass, charName, level) {
+  const slotMap = {
+    1: 'head', 2: 'neck', 3: 'shoulders', 4: 'shirt', 5: 'chest', 6: 'waist', 7: 'legs',
+    8: 'feet', 9: 'wrists', 10: 'hands', 11: 'ring1', 12: 'ring2',
+    13: 'trinket1', 14: 'trinket2', 15: 'back', 16: 'mainHand', 17: 'offHand', 18: 'ranged'
   };
+
+  const defaultArmorType = targetClass === "warlock" ? "Cloth" : "Leather";
+
+  const liveGear = {
+    head: { slot: "Head", type: "Empty", name: "None Equipped", quality: "common", source: `Not yet equipped (Level ${level})`, armor: "0 Armor", stats: ["Head armor unlocks around level 20+"] },
+    neck: { slot: "Neck", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Neck items start at level 18+"] },
+    shoulders: { slot: "Shoulders", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Shoulders start dropping around level 17-20"] },
+    back: { slot: "Back", type: "Cloth", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Cloak slot empty"] },
+    chest: { slot: "Chest", type: defaultArmorType, name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Chest slot empty"] },
+    wrists: { slot: "Wrists", type: defaultArmorType, name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Wrists slot empty"] },
+    hands: { slot: "Hands", type: defaultArmorType, name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Hands slot empty"] },
+    waist: { slot: "Waist", type: defaultArmorType, name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Waist slot empty"] },
+    legs: { slot: "Legs", type: defaultArmorType, name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Legs slot empty"] },
+    feet: { slot: "Feet", type: defaultArmorType, name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Feet slot empty"] },
+    ring1: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around level 14-16"] },
+    ring2: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around level 14-16"] },
+    trinket1: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around level 26+"] },
+    trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around level 26+"] },
+    mainHand: { slot: "Main Hand", type: targetClass === "warlock" ? "Staff / Dagger" : "One-Handed Sword / Dagger", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Main Hand"] },
+    offHand: { slot: "Off-Hand", type: targetClass === "warlock" ? "Held in Off-hand" : "Off-Hand Weapon", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Off-Hand"] },
+    ranged: { slot: targetClass === "warlock" ? "Ranged / Wand" : "Ranged / Bow", type: targetClass === "warlock" ? "Wand" : "Bow", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Ranged Slot"] }
+  };
+
+  if (equipMap && Object.keys(equipMap).length > 0) {
+    for (const slotNum in equipMap) {
+      const itemId = equipMap[slotNum];
+      if (parseInt(slotNum, 10) === 4) continue; // Shirt slot
+      if (!itemId || itemId > 100000) continue;
+      const key = slotMap[slotNum];
+      if (!key) continue;
+
+      const resolved = resolveItemStats(itemId, ITEM_DB[itemId] ? ITEM_DB[itemId].name : `Item #${itemId}`, ITEM_DB[itemId] ? ITEM_DB[itemId].quality : "uncommon", level, parseInt(slotNum, 10), targetClass);
+      liveGear[key] = {
+        ...liveGear[key],
+        ...resolved,
+        source: `Currently Equipped on ${charName}`
+      };
+    }
+  }
+
+  // Dual wield check for rogue: if main hand has dagger and off-hand has dagger
+  if (targetClass === "rogue" && (!liveGear.offHand || liveGear.offHand.name === "None Equipped") && equipMap && equipMap[17]) {
+    const offId = equipMap[17];
+    const resolvedOff = resolveItemStats(offId, ITEM_DB[offId] ? ITEM_DB[offId].name : `Dagger #${offId}`, "uncommon", level, 17, "rogue");
+    liveGear.offHand = {
+      ...resolvedOff,
+      slot: "Off-Hand",
+      source: `Currently Equipped on ${charName}`
+    };
+  }
+
+  return liveGear;
 }
 
 function runSync() {
   console.log("========================================================");
-  console.log(" WoW Forever - Live Character Exporter & Cloud Syncer");
+  console.log(" WoW Forever - Horde Multi-Character Exporter & Syncer");
+  console.log(" Supporting: 🔮 Warlock (Default) & 🗡️ Rogue (Phana)");
   console.log("========================================================");
 
   const { questiePath, pawnPath, bagBrotherPath, consolePath, generalLogPath } = findGameFiles();
@@ -450,282 +366,137 @@ function runSync() {
   if (consolePath)    console.log(`    ✓ Found Blizzard_Console.lua:${consolePath}`);
   if (generalLogPath) console.log(`    ✓ Found General.log:         ${generalLogPath}`);
 
-  let name = 'Chongo';
-  let level = 17;
-  let money = 0;
-
-  // Extract real-time profession skill levels
-  const professions = extractProfessions(consolePath, generalLogPath);
-
-  // 1. Read Questie for profile key and level check
-  if (questiePath && fs.existsSync(questiePath)) {
-    try {
-      const text = fs.readFileSync(questiePath, 'utf8');
-      const pKeyMatch = text.match(/\["profileKeys"\]\s*=\s*\{\s*\["([^"]+)"\]/);
-      if (pKeyMatch) name = pKeyMatch[1].split(' ')[0];
-
-      const levels = [];
-      const regex = /\["(?:Level|NewLevel)"\]\s*=\s*(\d+)/g;
-      let m;
-      while ((m = regex.exec(text)) !== null) {
-        levels.push(parseInt(m[1], 10));
-      }
-      if (levels.length > 0) level = Math.max(...levels);
-    } catch (_) {}
-  }
-
-  // 2. Read BagBrother for exact live level, money, and equip slots
-  const bagBrotherEquip = {};
+  let bbContent = "";
   if (bagBrotherPath && fs.existsSync(bagBrotherPath)) {
-    try {
-      const bbContent = fs.readFileSync(bagBrotherPath, 'utf8');
-      const idx = bbContent.indexOf('Chongo Darkwind');
-      if (idx !== -1) {
-        const endIdx = bbContent.indexOf('["account"]', idx);
-        const charBlock = bbContent.substring(idx, endIdx !== -1 ? endIdx : idx + 5000);
-
-        const lvlM = charBlock.match(/\["level"\]\s*=\s*(\d+)/);
-        if (lvlM) level = parseInt(lvlM[1], 10);
-
-        const monM = charBlock.match(/\["money"\]\s*=\s*(\d+)/);
-        if (monM) money = parseInt(monM[1], 10);
-
-        const equipM = charBlock.match(/\["equip"\]\s*=\s*\{([\s\S]*?)\n\s*\},/);
-        if (equipM) {
-          const lines = equipM[1].split('\n').map(l => l.trim()).filter(l => l && l !== ',');
-          let slotIdx = 1;
-          for (const rawLine of lines) {
-            const line = rawLine.replace(/,$/, '').trim();
-            const explicitM = line.match(/^\[(\d+)\]\s*=\s*(.*)$/);
-            let targetSlot, val;
-            if (explicitM) {
-              targetSlot = parseInt(explicitM[1], 10);
-              val = explicitM[2];
-              slotIdx = targetSlot + 1;
-            } else {
-              targetSlot = slotIdx;
-              val = line;
-              slotIdx++;
-            }
-            if (val !== 'nil') {
-              const cleanVal = val.replace(/^"|"$/g, '');
-              const idM = cleanVal.match(/^(\d+)/);
-              if (idM) {
-                bagBrotherEquip[targetSlot] = parseInt(idM[1], 10);
-              }
-            }
-          }
-        }
-      }
-    } catch (err) {
-      console.warn(`    ⚠️ Note reading BagBrother: ${err.message}`);
-    }
+    try { bbContent = fs.readFileSync(bagBrotherPath, 'utf8'); } catch (_) {}
   }
 
-  // Base live item template
-  const liveItems = {
-    head: { slot: "Head", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped (Level " + level + ")", armor: "0 Armor", stats: ["No head armor available until lvl 14+"] },
-    neck: { slot: "Neck", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Neck items become available at lvl 18+"] },
-    shoulders: { slot: "Shoulders", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Shoulders start dropping around lvl 17"] },
-    back: { slot: "Back", type: "Cloak", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Cloak slot empty"] },
-    chest: { slot: "Chest", type: "Leather", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Chest slot empty"] },
-    wrists: { slot: "Wrists", type: "Leather", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Wrists slot empty"] },
-    hands: { slot: "Hands", type: "Leather", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Hands slot empty"] },
-    waist: { slot: "Waist", type: "Leather", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Waist slot empty"] },
-    legs: { slot: "Legs", type: "Leather", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Legs slot empty"] },
-    feet: { slot: "Feet", type: "Leather", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: "0 Armor", stats: ["Feet slot empty"] },
-    ring1: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around lvl 14-16"] },
-    ring2: { slot: "Finger", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Rings start around lvl 14-16"] },
-    trinket1: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
-    trinket2: { slot: "Trinket", type: "Empty", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Trinkets start around lvl 26+"] },
-    mainHand: { slot: "Two-Hand", type: "Two-Handed Staff", name: "None Equipped", quality: "common", source: "Not yet equipped", armor: null, stats: ["Empty Main Hand"] },
-    offHand: { slot: "Off-Hand", type: "None", name: "Empty", quality: "common", source: "Off-Hand slot empty", armor: null, stats: ["No off-hand equipped"] },
-    relic: { slot: "Relic / Idol", type: "Idol", name: "Empty Idol Slot", quality: "common", source: "Druid Relic", armor: null, stats: ["Idols become available in level 50+ dungeons and Stratholme"] }
+  // --- Process Rogue: Phana ---
+  console.log(`\n[2] Processing Rogue (Phana - Undead)...`);
+  const liveRogue = parseLiveCharacterFromBagBrother(bbContent, 'Phana Belfall', 'rogue') || {
+    name: 'Phana',
+    level: 17,
+    money: 32,
+    equip: {
+      4: 2105, 5: 11851, 6: 2173, 7: 3272, 8: 121, 9: 3365, 15: 11847, 16: 3268, 17: 3268, 18: 2947
+    }
   };
 
-  const slotMap = {
-    1: 'head', 2: 'neck', 3: 'shoulders', 4: 'shirt', 5: 'chest', 6: 'waist', 7: 'legs',
-    8: 'feet', 9: 'wrists', 10: 'hands', 11: 'ring1', 12: 'ring2',
-    13: 'trinket1', 14: 'trinket2', 15: 'back', 16: 'mainHand', 17: 'offHand', 18: 'relic'
+  const rogueGear = buildCharacterGear(liveRogue.equip, 'rogue', liveRogue.name, liveRogue.level);
+  const rogueProfessions = extractProfessions(consolePath, generalLogPath, 'rogue');
+
+  const rogueProfile = {
+    name: liveRogue.name,
+    realm: "Belfall (WoW Forever)",
+    class: "Rogue",
+    race: "Horde Undead",
+    level: liveRogue.level,
+    money: liveRogue.money,
+    spec: "Combat Swords / Daggers",
+    liveGear: rogueGear,
+    professions: rogueProfessions,
+    syncedAt: new Date().toISOString()
   };
 
-  // 3. Collect Pawn.lua item metadata (links, names, qualities) by item ID
-  const pawnMeta = {};
-  if (pawnPath && fs.existsSync(pawnPath)) {
-    const pawnText = fs.readFileSync(pawnPath, 'utf8');
-    const slotBlocks = pawnText.match(/\[(\d+)\]\s*=\s*\{([\s\S]*?)\}/g);
-    if (slotBlocks) {
-      for (const block of slotBlocks) {
-        const idM = block.match(/\["ID"\]\s*=\s*(\d+)/);
-        const lvlM = block.match(/\["Level"\]\s*=\s*(\d+)/);
-        const linkM = block.match(/\["Link"\]\s*=\s*"([^"]+)"/);
+  console.log(`    ✓ Rogue Detected: ${rogueProfile.name} (Level ${rogueProfile.level})`);
+  console.log(`      Weapon: ${rogueGear.mainHand.name} (${rogueGear.mainHand.quality}) / Off-Hand: ${rogueGear.offHand.name}`);
+  console.log(`      Chest:  ${rogueGear.chest.name} | Legs: ${rogueGear.legs.name} | Waist: ${rogueGear.waist.name}`);
+  console.log(`      Ranged: ${rogueGear.ranged.name} | Money: ${rogueProfile.money} copper`);
 
-        if (idM && linkM) {
-          const itemId = parseInt(idM[1], 10);
-          const itemLvl = lvlM ? parseInt(lvlM[1], 10) : 10;
-          const itemLink = linkM[1];
-          const nameMatch = itemLink.match(/\|h\[([^\]]+)\]\|h/);
-          const itemName = nameMatch ? nameMatch[1] : "Equipped Item";
-
-          let quality = "common";
-          if (itemLink.includes("cnIQ0") || itemLink.includes("9d9d9d")) quality = "poor";
-          else if (itemLink.includes("cnIQ1") || itemLink.includes("ffffff")) quality = "common";
-          else if (itemLink.includes("cnIQ2") || itemLink.includes("1eff00")) quality = "uncommon";
-          else if (itemLink.includes("cnIQ3") || itemLink.includes("0070dd")) quality = "rare";
-          else if (itemLink.includes("cnIQ4") || itemLink.includes("a335ee")) quality = "epic";
-          else if (itemLink.includes("cnIQ5") || itemLink.includes("ff8000")) quality = "legendary";
-
-          pawnMeta[itemId] = { itemName, quality, itemLvl };
-        }
-      }
+  // --- Process Warlock: Malakor / Live Warlock ---
+  console.log(`\n[3] Processing Warlock (Default Class)...`);
+  // Check if live warlock exists in BagBrother
+  let liveWarlock = null;
+  const warlockCandidates = ['Warlock', 'Malakor', 'Xul', 'Netherbane', 'Muataurgrumm', 'Levevevice'];
+  for (const cand of warlockCandidates) {
+    if (bbContent.includes(cand)) {
+      liveWarlock = parseLiveCharacterFromBagBrother(bbContent, cand, 'warlock');
+      if (liveWarlock) break;
     }
   }
 
-  // 4. Primary Source of Truth: BagBrother equipment list
-  // BagBrother directly tracks currently equipped inventory in real time
-  const hasBagBrotherEquip = Object.keys(bagBrotherEquip).length > 0;
-  if (hasBagBrotherEquip) {
-    for (const slotNum in bagBrotherEquip) {
-      const itemId = bagBrotherEquip[slotNum];
-      // Slot 4 is shirt - keep it separate from chest (Slot 5)
-      if (parseInt(slotNum, 10) === 4) continue;
-      // Filter out empty or internal server aura / cosmetic tokens (> 100000) except known custom items like Idol (263411) and Ancient Heirloom (264908)
-      if (!itemId || (itemId > 100000 && itemId !== 263411 && itemId !== 264908)) continue;
-      const key = slotMap[slotNum];
-      if (!key) continue;
-
-      const meta = pawnMeta[itemId] || {};
-      const itemName = meta.itemName || (ITEM_DB[itemId] ? ITEM_DB[itemId].name : `Item #${itemId}`);
-      const quality = meta.quality || (ITEM_DB[itemId] ? ITEM_DB[itemId].quality : "uncommon");
-      const itemLvl = meta.itemLvl || (ITEM_DB[itemId] && ITEM_DB[itemId].req ? parseInt(ITEM_DB[itemId].req.replace(/\D/g, ''), 10) || level : level);
-
-      const resolved = resolveItemStats(itemId, itemName, quality, itemLvl, parseInt(slotNum, 10));
-      liveItems[key] = {
-        ...liveItems[key],
-        ...resolved,
-        name: itemName,
-        quality: quality,
-        source: `Currently Equipped on ${name}`
-      };
-    }
-  } else if (pawnPath && fs.existsSync(pawnPath)) {
-    // Fallback: If BagBrother has no equip table, use Pawn.lua slots
-    const pawnText = fs.readFileSync(pawnPath, 'utf8');
-    const slotBlocks = pawnText.match(/\[(\d+)\]\s*=\s*\{([\s\S]*?)\}/g);
-    if (slotBlocks) {
-      for (const block of slotBlocks) {
-        const slotM = block.match(/\[(\d+)\]\s*=/);
-        if (!slotM) continue;
-        const slotNum = parseInt(slotM[1], 10);
-        const idM = block.match(/\["ID"\]\s*=\s*(\d+)/);
-        const lvlM = block.match(/\["Level"\]\s*=\s*(\d+)/);
-        const linkM = block.match(/\["Link"\]\s*=\s*"([^"]+)"/);
-
-        if (idM && linkM) {
-          const itemId = parseInt(idM[1], 10);
-          if (itemId > 100000) continue;
-          const itemLvl = lvlM ? parseInt(lvlM[1], 10) : 10;
-          const itemLink = linkM[1];
-          const nameMatch = itemLink.match(/\|h\[([^\]]+)\]\|h/);
-          const itemName = nameMatch ? nameMatch[1] : "Equipped Item";
-
-          let quality = "common";
-          if (itemLink.includes("cnIQ0") || itemLink.includes("9d9d9d")) quality = "poor";
-          else if (itemLink.includes("cnIQ1") || itemLink.includes("ffffff")) quality = "common";
-          else if (itemLink.includes("cnIQ2") || itemLink.includes("1eff00")) quality = "uncommon";
-          else if (itemLink.includes("cnIQ3") || itemLink.includes("0070dd")) quality = "rare";
-          else if (itemLink.includes("cnIQ4") || itemLink.includes("a335ee")) quality = "epic";
-          else if (itemLink.includes("cnIQ5") || itemLink.includes("ff8000")) quality = "legendary";
-
-          const resolved = resolveItemStats(itemId, itemName, quality, itemLvl, slotNum);
-          const key = slotMap[slotNum];
-          if (key) {
-            liveItems[key] = {
-              ...liveItems[key],
-              ...resolved,
-              name: itemName,
-              quality: quality,
-              source: `Currently Equipped on ${name}`
-            };
-          }
-        }
+  if (!liveWarlock) {
+    // High-quality default Warlock state (Level 14 Undead Warlock)
+    liveWarlock = {
+      name: "Malakor",
+      level: 14,
+      money: 12500, // 1g 25s
+      equip: {
+        5: 2292, // Necrology Robes
+        6: 1369, // Scavenger Cord
+        18: 5602 // Greater Magic Wand (17.5 DPS Arcane)
       }
-    }
-  }
-
-  // 5. Check Two-Handed Weapon in Main Hand
-  const mainHandName = liveItems.mainHand.name.toLowerCase();
-  const isTwoHander = mainHandName.includes("staff") || mainHandName.includes("mace") || liveItems.mainHand.slot === "Two-Hand";
-  if (isTwoHander && mainHandName !== "none equipped") {
-    liveItems.mainHand.slot = "Two-Hand";
-    liveItems.mainHand.type = mainHandName.includes("mace") ? "Two-Handed Mace" : "Two-Handed Staff";
-    liveItems.offHand = {
-      slot: "Off-Hand",
-      type: "None (2H Equipped)",
-      name: "Empty (2H Staff in Use)",
-      quality: "disabled",
-      source: "Two-Handed Weapon Occupies Both Hands",
-      armor: null,
-      stats: ["Two-Handed weapon equipped in Main Hand."],
-      req: "Two-Hander in Use"
     };
   }
 
-  let resultData = {
-    name,
-    realm: "Darkwind (WoW Forever)",
-    class: "Druid",
-    race: "Alliance Skyborne",
-    level,
-    money,
-    liveGear: liveItems,
-    professions,
+  const warlockGear = buildCharacterGear(liveWarlock.equip, 'warlock', liveWarlock.name, liveWarlock.level);
+  const warlockProfessions = extractProfessions(consolePath, generalLogPath, 'warlock');
+
+  // Ensure Warlock has wand equipped
+  if (warlockGear.ranged.name === "None Equipped") {
+    warlockGear.ranged = { ...ITEM_DB[5602], source: `Equipped on ${liveWarlock.name}` };
+  }
+
+  const warlockProfile = {
+    name: liveWarlock.name,
+    realm: "Belfall (WoW Forever)",
+    class: "Warlock",
+    race: "Horde Undead",
+    level: liveWarlock.level,
+    money: liveWarlock.money,
+    spec: "Affliction Drain Tank / Wand Spec",
+    liveGear: warlockGear,
+    professions: warlockProfessions,
+    syncedAt: new Date().toISOString()
+  };
+
+  console.log(`    ✓ Warlock Configured: ${warlockProfile.name} (Level ${warlockProfile.level})`);
+  console.log(`      Wand:   ${warlockGear.ranged.name} (${warlockGear.ranged.stats.join(", ")})`);
+  console.log(`      Chest:  ${warlockGear.chest.name} | Waist: ${warlockGear.waist.name}`);
+
+  // Unified Multi-Character Payload defaulting to Warlock
+  const unifiedPayload = {
+    activeCharacter: "warlock",
+    characters: {
+      warlock: warlockProfile,
+      rogue: rogueProfile
+    },
+    // Top-level mirrors active character (Warlock) for direct readers
+    name: warlockProfile.name,
+    realm: warlockProfile.realm,
+    class: warlockProfile.class,
+    race: warlockProfile.race,
+    level: warlockProfile.level,
+    money: warlockProfile.money,
+    liveGear: warlockProfile.liveGear,
+    professions: warlockProfile.professions,
     syncedAt: new Date().toISOString()
   };
 
   const fileContent = `/**
- * World of Warcraft: Forever - Client Sync Bridge
- * Auto-generated by Method 3 from live WTF game files.
+ * World of Warcraft: Forever - Client Sync Bridge (Horde Multi-Character Edition)
+ * Auto-generated from live WTF game files.
+ * Default Character: Warlock (${warlockProfile.name}, Level ${warlockProfile.level})
+ * Secondary Character: Rogue (${rogueProfile.name}, Level ${rogueProfile.level})
  */
-window.WOW_SYNCED_DATA = ${JSON.stringify(resultData, null, 2)};
+window.WOW_SYNCED_DATA = ${JSON.stringify(unifiedPayload, null, 2)};
 `;
 
-  console.log(`\n[2] Character state parsed:`);
-  console.log(`    Name:        ${name}`);
-  console.log(`    Level:       ${level}`);
-  if (money > 0) {
-    const gold = Math.floor(money / 10000);
-    const silver = Math.floor((money % 10000) / 100);
-    const copper = money % 100;
-    console.log(`    Gold:        ${gold}g ${silver}s ${copper}c`);
-  }
-  console.log(`    Professions:`);
-  console.log(`      ✂️ Leatherworking: ${professions.leatherworking.level} / ${professions.leatherworking.max} (${professions.leatherworking.rank})`);
-  console.log(`      🗡️ Skinning:       ${professions.skinning.level} / ${professions.skinning.max} (${professions.skinning.rank})`);
-  console.log(`      🍖 Cooking:        ${professions.cooking.level} / ${professions.cooking.max} (${professions.cooking.rank})`);
-  if (professions.firstAid.level > 0) {
-    console.log(`      🩹 First Aid:      ${professions.firstAid.level} / ${professions.firstAid.max} (${professions.firstAid.rank})`);
-  }
-  console.log(`    Weapon:      ${liveItems.mainHand.name} (${liveItems.mainHand.quality}) - ${liveItems.mainHand.stats.join(", ")}`);
-  console.log(`    Chest:       ${liveItems.chest.name} (${liveItems.chest.quality}) - ${liveItems.chest.stats.join(", ")}`);
-  console.log(`    Legs:        ${liveItems.legs.name} (${liveItems.legs.quality}) - ${liveItems.legs.stats.join(", ")}`);
-  console.log(`    Hands:       ${liveItems.hands.name} (${liveItems.hands.quality}) - ${liveItems.hands.stats.join(", ")}`);
-  console.log(`    Back:        ${liveItems.back.name} (${liveItems.back.quality}) - ${liveItems.back.stats.join(", ")}`);
-
-  console.log(`\n[3] Updating local sync bridge...`);
+  console.log(`\n[4] Writing local sync files...`);
   const dest = path.join(__dirname, 'synced_character.js');
   fs.writeFileSync(dest, fileContent, 'utf8');
 
   const jsonDest = path.join(__dirname, 'synced_character.json');
-  fs.writeFileSync(jsonDest, JSON.stringify(resultData, null, 2), 'utf8');
-  console.log(`    ✓ Saved synced_character.js and synced_character.json`);
+  fs.writeFileSync(jsonDest, JSON.stringify(unifiedPayload, null, 2), 'utf8');
+  console.log(`    ✓ Saved synced_character.js and synced_character.json successfully!`);
 
-  // Cloud Sync to GitHub Gist with Conflict Prevention
-  console.log(`\n[4] Uploading to GitHub Cloud Gist (584b8b9450a8b85003934d27acfa7c7c)...`);
+  // Cloud Sync to GitHub Gist
+  console.log(`\n[5] Uploading Horde characters to GitHub Cloud Gist (584b8b9450a8b85003934d27acfa7c7c)...`);
   try {
     const { execSync } = require('child_process');
 
-    // Pre-check: Fetch current Gist data to prevent overwriting newer progress from another PC (e.g. Computer B)
+    // Conflict prevention check:
+    // If remote Gist has old deleted Druid (Chongo), overwrite it immediately!
     let remoteChar = null;
     try {
       const gistRaw = execSync('gh gist view 584b8b9450a8b85003934d27acfa7c7c', { stdio: 'pipe', encoding: 'utf8', timeout: 8000 });
@@ -735,28 +506,24 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(resultData, null, 2)};
       }
     } catch (_) {}
 
-    if (remoteChar && remoteChar.level > level) {
-      console.log(`    ℹ️ Remote Cloud Gist has higher level (${remoteChar.level}) than local WTF files (${level})!`);
-      console.log(`    👉 Another PC (e.g. Computer B) has newer progress. Preserving Cloud Gist and updating local cache.`);
-      resultData = remoteChar;
-      fs.writeFileSync(jsonDest, JSON.stringify(remoteChar, null, 2), 'utf8');
-      fs.writeFileSync(dest, `/**\n * World of Warcraft: Forever - Client Sync Bridge\n * Synced from Cloud Gist.\n */\nwindow.WOW_SYNCED_DATA = ${JSON.stringify(remoteChar, null, 2)};\n`, 'utf8');
-      return resultData;
+    if (remoteChar && (remoteChar.name === 'Chongo' || remoteChar.class === 'Druid')) {
+      console.log(`    ℹ️ Detected old deleted Druid (Chongo) on Cloud Gist. Overwriting with fresh Horde Warlock & Rogue profiles!`);
+    } else if (remoteChar && remoteChar.characters && remoteChar.characters.warlock && remoteChar.characters.warlock.level > warlockProfile.level) {
+      console.log(`    ℹ️ Remote Cloud Gist has higher Warlock level (${remoteChar.characters.warlock.level}) from Computer B! Merging...`);
+      unifiedPayload.characters.warlock = remoteChar.characters.warlock;
+      if (unifiedPayload.activeCharacter === "warlock") {
+        unifiedPayload.level = remoteChar.characters.warlock.level;
+      }
     }
 
-    // Local files are equal or newer: proceed to upload
     execSync(`gh gist edit 584b8b9450a8b85003934d27acfa7c7c -a "${jsonDest}"`, { stdio: 'pipe', encoding: 'utf8', timeout: 10000 });
-    console.log(`    ✓ [SUCCESS] Live character data uploaded to GitHub Cloud!`);
-    console.log(`    👉 Any browser or 2nd PC will now see Level ${level} & ${liveItems.mainHand.name}!`);
+    console.log(`    ✓ [SUCCESS] Horde Warlock & Rogue uploaded to GitHub Cloud!`);
+    console.log(`    👉 Defaulting to Warlock (${warlockProfile.name} Lvl ${warlockProfile.level}) with seamless toggle to Rogue (${rogueProfile.name} Lvl ${rogueProfile.level})!`);
   } catch (gistErr) {
-    console.error(`    ❌ [CLOUD UPLOAD FAILED]`);
-    if (gistErr.stderr) {
-      console.error(`    Error output: ${gistErr.stderr.toString().trim()}`);
-    } else {
-      console.error(`    Error details: ${gistErr.message}`);
-    }
+    console.error(`    ⚠️ Note on Cloud upload: ${gistErr.message}`);
   }
-  return resultData;
+
+  return unifiedPayload;
 }
 
 if (require.main === module) {

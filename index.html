@@ -3,39 +3,57 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WoW Forever: Alliance Skyborne Feral Druid Leveling Codex (9-60)</title>
+  <title>WoW Forever: Horde Leveling Codex (Warlock & Rogue)</title>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="theme-warlock">
 
   <!-- Sticky Top Header -->
   <header class="header-banner">
     <div class="header-container">
       <div class="brand-section">
-        <div class="class-icon-wrapper" title="Feral Druid - WoW Forever">
+        <div class="class-icon-wrapper" title="Horde Champions - WoW Forever">
           <svg viewBox="0 0 24 24">
             <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
           </svg>
         </div>
         <div class="brand-titles">
-          <h1><span class="druid-text">Feral Druid</span> Leveling Codex</h1>
+          <h1 id="codexMainHeading"><span class="class-text warlock-text" id="codexClassSpan">Affliction Warlock</span> Leveling Codex</h1>
           <div class="brand-sub">
-            <span class="badge-skyborne">Skyborne Race</span>
-            <span class="badge-alliance">Alliance High Order</span>
+            <span class="badge-horde">Horde Champions</span>
+            <span class="badge-race" id="codexRaceSpan">Undead (Forsaken)</span>
             <span>• World of Warcraft: Forever</span>
           </div>
         </div>
+      </div>
+
+      <!-- Character Switcher: Seamless toggle between Warlock & Rogue -->
+      <div class="character-switcher-container">
+        <button type="button" class="char-switch-btn active" id="btnSwitchWarlock" onclick="switchActiveCharacter('warlock')" title="Switch to Warlock (Default Character)">
+          <span class="char-switch-icon">🔮</span>
+          <span class="char-switch-meta">
+            <span class="char-switch-title">Warlock</span>
+            <span class="char-switch-sub" id="warlockSwitchSub">Lvl 14 • Affliction</span>
+          </span>
+        </button>
+        <button type="button" class="char-switch-btn" id="btnSwitchRogue" onclick="switchActiveCharacter('rogue')" title="Switch to Rogue (Phana)">
+          <span class="char-switch-icon">🗡️</span>
+          <span class="char-switch-meta">
+            <span class="char-switch-title">Phana (Rogue)</span>
+            <span class="char-switch-sub" id="rogueSwitchSub">Lvl 17 • Combat</span>
+          </span>
+        </button>
       </div>
 
       <!-- Live Interactive Character Sync Widget -->
       <div class="header-sync-widget">
         <div class="header-sync-pill" onclick="openSyncModal()" title="Click to view Character & Level Sync settings">
           <span class="sync-status-dot" title="Status: Synced & Saved"></span>
-          <span class="sync-char-name" id="headerCharName">Chongo</span>
+          <span class="sync-char-name" id="headerCharName">Malakor</span>
           <span class="sync-char-sep">•</span>
-          <span class="sync-char-level">Lvl <strong id="headerCharLvl">24</strong></span>
-          <span class="header-prof-pill" id="headerProfLw" title="Leatherworking: 92/150">✂️ 92</span>
-          <span class="header-prof-pill" id="headerProfSkin" title="Skinning: 150/225">🗡️ 150</span>
+          <span class="sync-char-level">Lvl <strong id="headerCharLvl">14</strong></span>
+          <span class="header-prof-pill" id="headerProf1" title="Primary Profession 1">🧵 65</span>
+          <span class="header-prof-pill" id="headerProf2" title="Primary Profession 2">✨ 45</span>
         </div>
         <div class="header-quick-step">
           <button type="button" class="btn-header-step" onclick="quickStepLevel(-1)" title="Previous Level (Step Down)">-</button>
@@ -50,10 +68,10 @@
         <button class="nav-tab-btn active" data-tab="tab-codex">📖 Level Codex</button>
         <button class="nav-tab-btn" data-tab="tab-classquests">📜 Class Quests</button>
         <button class="nav-tab-btn" data-tab="tab-armor-mockup">🛡️ Armor Mockup (Maxroll)</button>
-        <button class="nav-tab-btn" data-tab="tab-stats">⚔️ Weapons & Stats</button>
+        <button class="nav-tab-btn" data-tab="tab-stats">⚔️ Weapons & Rotations</button>
         <button class="nav-tab-btn" data-tab="tab-talents">🌲 Talent Build</button>
-        <button class="nav-tab-btn" data-tab="tab-professions">✂️ Skinning & LW</button>
-        <button class="nav-tab-btn" data-tab="tab-skyborne">✨ Skyborne & Macros</button>
+        <button class="nav-tab-btn" data-tab="tab-professions">🧵 Professions & Reagents</button>
+        <button class="nav-tab-btn" data-tab="tab-skyborne">🔥 Horde & Macros</button>
         <button class="nav-tab-btn" data-tab="tab-tracker">☑️ Progress Tracker</button>
       </nav>
     </div>
@@ -289,27 +307,27 @@
             </p>
           </div>
 
-          <!-- Skyborne Alliance Racial Synergies -->
+          <!-- Horde Undead Racial Synergies -->
           <div class="sidebar-widget">
             <h4 class="widget-title">
-              <svg viewBox="0 0 24 24" width="18" height="18" fill="#38bdf8"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-              Alliance Skyborne Synergies
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="#ef4444"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              Horde Undead Racials
             </h4>
             <div class="racial-box">
-              <div class="racial-box-header">🕊️ Walk on Air (Active Glide)</div>
-              <div class="racial-box-desc">Jump off any mountain, bluff, or cliff and glide downward safely. Prevents fall deaths and bypasses long zone routes!</div>
+              <div class="racial-box-header">💀 Will of the Forsaken (Active)</div>
+              <div class="racial-box-desc">Breaks and provides immunity to <strong>Charm, Fear, and Sleep</strong> for 5 seconds. The undisputed best racial in Classic WoW for both PvP and PvE!</div>
             </div>
             <div class="racial-box">
-              <div class="racial-box-header">⚡ Wind Blessed (Passive)</div>
-              <div class="racial-box-desc">Grants a permanent <strong>+2% attack and casting speed</strong>. Faster auto-attacks mean more Omen of Clarity procs!</div>
+              <div class="racial-box-header">🍖 Cannibalize (Active)</div>
+              <div class="racial-box-desc">Regenerates <strong>7% of total health every 2 sec</strong> for 10 sec (35% total) by feasting on humanoid/undead corpses. Life Tap down, feast, and keep moving with zero downtime!</div>
             </div>
             <div class="racial-box">
-              <div class="racial-box-header">🌀 Read Ley Line (Alliance Active)</div>
-              <div class="racial-box-desc">Multiplies Spirit-based mana regeneration. Cast after combat or with Innervate at level 40+ to fill your entire mana bar in 3 seconds!</div>
+              <div class="racial-box-header">🌊 Underwater Breathing (Passive)</div>
+              <div class="racial-box-desc">Grants <strong>+300% underwater breath capacity</strong>. Never worry about drowning during underwater questing (Silverpine, Zoram Strand, STV)!</div>
             </div>
             <div class="racial-box">
-              <div class="racial-box-header">🔥 Elemental Insight (Passive)</div>
-              <div class="racial-box-desc">Deals <strong>+5% extra damage</strong> against Elementals (Badlands, Searing Gorge, Un'Goro, Silithus).</div>
+              <div class="racial-box-header">🛡️ Shadow Resistance (Passive)</div>
+              <div class="racial-box-desc">Permanent <strong>+10 Shadow Resistance</strong> reducing incoming shadow damage and warlock curse vulnerability.</div>
             </div>
           </div>
 
@@ -319,166 +337,23 @@
 
     </div>
 
-    <!-- TAB: DRUID CLASS QUESTS MASTER DIRECTORY -->
+    <!-- TAB: CLASS QUESTS MASTER DIRECTORY -->
     <div id="tab-classquests" class="view-panel">
-      
-      <!-- Level 10 Bear Form Walkthrough (Top Highlight) -->
       <div class="guide-card highlight-card">
         <div class="card-header-with-badge">
           <h3 class="card-title">
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            Level 10: Bear Form — "Strength and Mercy" (Skyborne Walkthrough)
+            Essential Class Quests & Progression
           </h3>
-          <span class="tag-badge" style="background: rgba(255, 125, 10, 0.2); color: var(--druid-color); border: 1px solid var(--druid-color);">Critical Class Quest</span>
+          <span class="tag-badge" style="background: rgba(220, 38, 38, 0.2); color: #f87171;">Horde Progression</span>
         </div>
-
-        <div style="background: rgba(255, 125, 10, 0.08); border-left: 4px solid var(--druid-color); padding: 16px; border-radius: var(--radius-md); margin-bottom: 20px;">
-          <h4 style="color: var(--druid-color); font-size: 1.05rem; margin-bottom: 6px;">📍 Urs'endris Exact Location & Cave Pathing Clarification:</h4>
-          <p style="font-size: 0.92rem; color: #e2e8f0; line-height: 1.7;">
-            Many players get confused by the coordinates on Zephras Isle! <strong>Urs'endris is NOT in the cave.</strong> Urs'endris is the quest giver standing outside at the <strong>East Pylon Watchtower (69.8, 61.7)</strong>.<br>
-            The coordinates <strong>(53.7, 65.0)</strong> are for the <strong>cave where Ur'endra lives</strong>, which you must approach strictly from the <strong>northern side</strong>.
-          </p>
-        </div>
-
-        <div class="rotation-steps">
-          
-          <div class="rot-step">
-            <div class="rot-num">1</div>
-            <div class="rot-desc">
-              <strong>Hit Level 10 & Talk to Trainer:</strong> In the town hub / High Order Enclave on Zephras Isle, speak with Druid Trainer <strong>Lotheluum Starbreeze</strong>. Pick up the opening prerequisite quest: <em>"The Great Ursera Spirit"</em>.
-            </div>
-          </div>
-
-          <div class="rot-step">
-            <div class="rot-num">2</div>
-            <div class="rot-desc">
-              <strong>Find Urs'endris at East Pylon Watchtower (Coords: 69.8, 61.7):</strong><br>
-              Head eastward toward the coast, northeast of Valanaar and near the waterfall below the Shrine of Akir. Speak to <strong>Urs'endris</strong> at coordinates <strong>(69.8, 61.7)</strong>. Turn in the prerequisite quest and accept <strong>"Strength and Mercy"</strong>. Urs'endris asks you to put down his mad mate, Ur'endra.
-            </div>
-          </div>
-
-          <div class="rot-step">
-            <div class="rot-num">3</div>
-            <div class="rot-desc">
-              <strong>Locate the Overlook Standing Stones Cave (Coords: 53.7, 65.0):</strong><br>
-              Travel west into the bluffs between the Shen'dar Highlands and the Gustberry Lowlands toward coordinates <strong>(53.7, 65.0)</strong>.
-            </div>
-          </div>
-
-          <div class="rot-step">
-            <div class="rot-num">4</div>
-            <div class="rot-desc">
-              <strong>⚠️ CRITICAL PATHING WARNING — Approach from the NORTH:</strong><br>
-              The southern face of the bluff has sheer vertical rock walls that cannot be climbed. <strong>Circle around to the NORTHERN side of the mountain ridge</strong> to find the open dirt ramp leading up into the cave entrance!
-            </div>
-          </div>
-
-          <div class="rot-step">
-            <div class="rot-num">5</div>
-            <div class="rot-desc">
-              <strong>Defeat Ur'endra:</strong><br>
-              Enter the northern cave entrance. Pull Ur'endra with <em>Wrath</em> from max range, apply <em>Moonfire</em>, keep <em>Rejuvenation</em> on yourself, and finish her with melee swings.
-            </div>
-          </div>
-
-          <div class="rot-step">
-            <div class="rot-num">6</div>
-            <div class="rot-desc">
-              <strong>Turn In & Unlock Bear Form!</strong><br>
-              Return to <strong>Urs'endris at the East Pylon Watchtower (69.8, 61.7)</strong>. Turn in <em>"Strength and Mercy"</em> to instantly unlock <strong>Bear Form</strong>, plus <em>Maul (Rank 1)</em>, <em>Growl (Rank 1)</em>, and <em>Demoralizing Roar (Rank 1)</em>!<br>
-              Once complete, take the High Order portal to <strong>Stormwind City</strong> to start mainland questing!
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- Level 16: Aquatic Form Walkthrough -->
-      <div class="guide-card">
-        <div class="card-header-with-badge">
-          <h3 class="card-title">
-            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-            Level 16: Aquatic Form — "Trial of the Sea Lion"
-          </h3>
-          <span class="tag-badge" style="background: rgba(56, 189, 248, 0.2); color: var(--skyborne-blue);">50% Swim Speed + Infinite Breath</span>
-        </div>
-
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px;">
-          Unlocks Aquatic Form (50% increased swim speed and underwater breathing). You must retrieve two halves of the Sea Lion Pendant from opposite sides of the world.
+        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px;">
+          Complete these critical class quests to unlock core pets, abilities, and weapons for your active character.
         </p>
-
-        <div class="rotation-steps">
-          <div class="rot-step">
-            <div class="rot-num">1</div>
-            <div class="rot-desc">
-              <strong>Teleport to Moonglade:</strong> Use your <em>Teleport: Moonglade</em> spell. Speak with <strong>Dendrite Starblaze</strong> in the village of Nighthaven to accept <em>"Trial of the Sea Lion"</em>.
-            </div>
-          </div>
-          <div class="rot-step">
-            <div class="rot-num">2</div>
-            <div class="rot-desc">
-              <strong>Darkshore Half (Pendant of the Sea Lion):</strong><br>
-              Fly to Auberdine in Darkshore. Swim north along the coast to Cliffspring River falls at coordinates <strong>(56.0, 8.0)</strong>. Dive deep underwater to find the Strange Lockbox and loot the half pendant.
-            </div>
-          </div>
-          <div class="rot-step">
-            <div class="rot-num">3</div>
-            <div class="rot-desc">
-              <strong>Westfall Half (Pendant of Agility):</strong><br>
-              Take the boat/flight to Westfall. Head to the coast southwest of the lighthouse near coordinates <strong>(28.0, 33.0)</strong>. Dive underwater near the submerged ruins to loot the half pendant from the lockbox.
-            </div>
-          </div>
-          <div class="rot-step">
-            <div class="rot-num">4</div>
-            <div class="rot-desc">
-              <strong>Forge the Pendant in Moonglade:</strong><br>
-              Teleport back to Moonglade. Bring both halves to the Shrine of Remulos to forge the complete <strong>Sea Lion Pendant</strong>. Turn it in to learn <strong>Aquatic Form</strong>!
-            </div>
-          </div>
+        <div id="classQuestsContainer">
+          <!-- Dynamically populated via JavaScript based on active character (Warlock vs Rogue) -->
         </div>
       </div>
-
-      <!-- Other Major Forms Summary Grid -->
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
-        
-        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <h4 style="color: var(--gold-light); font-size: 1rem; margin-bottom: 6px;">🐾 Level 20: Cat Form & Prowl</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            • <strong>How to unlock:</strong> No long quest chain needed! Simply visit any Druid Trainer (Stormwind Park or Darnassus) at Level 20.<br>
-            • <strong>What unlocks:</strong> Cat Form, Prowl (stealth), Claw, Rip, and Tiger's Fury.<br>
-            • <strong>Speed Spike:</strong> Combine with 2/2 <em>Feral Swiftness</em> for +30% permanent outdoor movement speed and +4% dodge!
-          </p>
-        </div>
-
-        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <h4 style="color: var(--skyborne-blue); font-size: 1rem; margin-bottom: 6px;">🐆 Level 30: Travel Form</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            • <strong>How to unlock:</strong> Train directly at your Druid Trainer at Level 30.<br>
-            • <strong>Speed:</strong> Increases your outdoor movement speed by <strong>+40%</strong> instantly.<br>
-            • <strong>Tactical Power:</strong> Shifting into Travel Form instantly dispels all active roots and movement slows!
-          </p>
-        </div>
-
-        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <h4 style="color: var(--gold-accent); font-size: 1rem; margin-bottom: 6px;">🐻 Level 40: Dire Bear Form</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            • <strong>How to unlock:</strong> Trained at any Druid Trainer at Level 40.<br>
-            • <strong>Armor Multiplier:</strong> Replaces normal Bear Form and multiplies armor from items by <strong>+360%</strong> (up from +180%)!<br>
-            • <strong>Tanking:</strong> Massive health pool scaling from <em>Heart of the Wild</em>.
-          </p>
-        </div>
-
-        <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-          <h4 style="color: #c084fc; font-size: 1rem; margin-bottom: 6px;">🐲 Level 52+: Sunken Temple Class Quest</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.6;">
-            • <strong>Quest:</strong> <em>"Blood of Morphaz"</em> (starts in Felwood / Moonglade).<br>
-            • <strong>Dungeon:</strong> Defeat dragon boss Morphaz inside Sunken Temple (Temple of Atal'Hakkar).<br>
-            • <strong>Reward:</strong> <strong>Grizzled Pelt</strong> (+15 Stamina, +337 Armor in Dire Bear) — the premier tanking cloak in Vanilla!
-          </p>
-        </div>
-
-      </div>
-
     </div>
 
     <!-- TAB 2: MAXROLL-STYLE ARMOR & EQUIPMENT MOCKUP -->
@@ -491,12 +366,12 @@
             <div class="preset-label-group">
               <span class="preset-label-title">⚙️ Gear Tier Preset:</span>
             </div>
-            <div class="preset-buttons">
-              <button class="btn-preset active" data-preset="chongo_live" style="background: rgba(56, 189, 248, 0.2); border-color: var(--skyborne-blue); color: #fff;">👤 Chongo's Live Gear (Synced)</button>
-              <button class="btn-preset" data-preset="lvl10_20">Lvl 10–20 (Deadmines Era)</button>
-              <button class="btn-preset" data-preset="lvl20_35">Lvl 20–35 (Cat Sprint Era)</button>
-              <button class="btn-preset" data-preset="lvl35_50">Lvl 35–50 (Dire Bear & Mount)</button>
-              <button class="btn-preset" data-preset="lvl60_bis">Lvl 60 Pre-Raid BiS (God Tier)</button>
+            <div class="preset-buttons" id="paperdollPresetButtons">
+              <button class="btn-preset active" data-preset="live_gear">👤 Live Gear (Synced)</button>
+              <button class="btn-preset" data-preset="lvl20">Lvl 20 Milestone</button>
+              <button class="btn-preset" data-preset="lvl30">Lvl 30 Milestone</button>
+              <button class="btn-preset" data-preset="lvl40">Lvl 40 Milestone</button>
+              <button class="btn-preset" data-preset="lvl60">Lvl 60 Pre-Raid BiS</button>
             </div>
           </div>
           <button type="button" class="btn-site-run-sync" onclick="executeGameSyncFromSite()" title="Directly executes game sync script from live WoW WTF files">
@@ -505,8 +380,8 @@
         </div>
 
         <div style="margin-bottom: 20px;">
-          <h2 id="mockupPresetTitle" style="color: #fff; font-size: 1.4rem; font-weight: 800;">Level 10–20 (Deadmines Era)</h2>
-          <p id="mockupPresetSub" style="color: var(--text-muted); font-size: 0.9rem;">Early Bear Tanking & Questing Setup</p>
+          <h2 id="mockupPresetTitle" style="color: #fff; font-size: 1.4rem; font-weight: 800;">⭐ Currently Equipped (Live Sync)</h2>
+          <p id="mockupPresetSub" style="color: var(--text-muted); font-size: 0.9rem;">Live gear extracted directly from game client WTF SavedVariables.</p>
         </div>
 
         <!-- 3-Column Paperdoll Grid -->
@@ -581,48 +456,48 @@
           <div class="paperdoll-center">
             
             <div class="character-hero-card">
-              <div class="character-druid-crest">🐾</div>
-              <h3 class="character-hero-name">Skyborne Feral Druid</h3>
-              <div class="character-hero-badges">
-                <span class="badge-skyborne">High Order</span>
-                <span class="badge-alliance">Alliance</span>
-                <span style="background: rgba(255, 125, 10, 0.2); color: var(--druid-color); border: 1px solid var(--druid-color); padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700;">36 / 10 / 5 Feral Hybrid</span>
+              <div class="character-druid-crest" id="paperdollCrest">🔮</div>
+              <h3 class="character-hero-name" id="paperdollHeroName">Affliction Warlock</h3>
+              <div class="character-hero-badges" id="paperdollHeroBadges">
+                <span class="badge-horde">Horde</span>
+                <span class="badge-race">Undead (Forsaken)</span>
+                <span id="paperdollSpecBadge" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border: 1px solid #c084fc; padding: 2px 8px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700;">Affliction Drain Tank</span>
               </div>
 
               <!-- Live Stats Sheet -->
               <div class="character-stats-sheet">
                 <div class="stat-entry">
                   <span class="stat-entry-lbl">Health (HP):</span>
-                  <span class="stat-entry-val" id="statHp">840</span>
+                  <span class="stat-entry-val" id="statHp">520</span>
                 </div>
                 <div class="stat-entry">
-                  <span class="stat-entry-lbl">Mana (MP):</span>
-                  <span class="stat-entry-val" id="statMp">760</span>
+                  <span class="stat-entry-lbl" id="statResourceLbl">Mana (MP):</span>
+                  <span class="stat-entry-val" id="statMp">680</span>
                 </div>
                 <div class="stat-entry">
-                  <span class="stat-entry-lbl">Cat Attack Power:</span>
-                  <span class="stat-entry-val highlight" id="statCatAp">242 AP</span>
+                  <span class="stat-entry-lbl" id="statPowerLbl">Spell Power:</span>
+                  <span class="stat-entry-val highlight" id="statPowerVal">+0 Shadow</span>
                 </div>
                 <div class="stat-entry">
-                  <span class="stat-entry-lbl">Bear Form Armor:</span>
-                  <span class="stat-entry-val highlight" id="statBearArmor">1,620 (61% Reduc)</span>
+                  <span class="stat-entry-lbl">Armor (Reduction):</span>
+                  <span class="stat-entry-val highlight" id="statArmorVal">145 (12%)</span>
                 </div>
                 <div class="stat-entry">
-                  <span class="stat-entry-lbl">Melee Crit Chance:</span>
-                  <span class="stat-entry-val" id="statCrit">11.2%</span>
+                  <span class="stat-entry-lbl" id="statCritLbl">Spell Crit:</span>
+                  <span class="stat-entry-val" id="statCrit">5.2%</span>
                 </div>
                 <div class="stat-entry">
-                  <span class="stat-entry-lbl">Dodge Chance:</span>
-                  <span class="stat-entry-val" id="statDodge">9.5%</span>
+                  <span class="stat-entry-lbl" id="statSubLbl">Drain Life Tick:</span>
+                  <span class="stat-entry-val" id="statSubVal">41 / sec</span>
                 </div>
                 <div class="stat-entry" style="grid-column: span 2;">
-                  <span class="stat-entry-lbl">Hit Chance (PvE Cap 9%):</span>
+                  <span class="stat-entry-lbl">Hit Chance (PvE Cap):</span>
                   <span class="stat-entry-val" id="statHit">0%</span>
                 </div>
               </div>
 
-              <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.3); border-radius: var(--radius-md); padding: 10px; margin-top: 14px; text-align: left; font-size: 0.82rem; color: #cbd5e1;">
-                💡 <strong>Maxroll Pro Tip:</strong> Hover or click on any piece of gear to reveal its authentic WoW tooltip with full stats, drop source, and special feral modifiers!
+              <div style="background: rgba(168, 85, 247, 0.08); border: 1px solid rgba(168, 85, 247, 0.3); border-radius: var(--radius-md); padding: 10px; margin-top: 14px; text-align: left; font-size: 0.82rem; color: #cbd5e1;">
+                💡 <strong>Paperdoll Pro Tip:</strong> Hover over or click any equipped gear slot to reveal its authentic WoW tooltip with item stats, set bonuses, and drop locations!
               </div>
             </div>
 
@@ -720,34 +595,34 @@
           
           <!-- Main Hand Weapon -->
           <div class="weapon-slot-card" id="slotMainHand">
-            <div class="slot-icon-box rarity-uncommon">🔨</div>
+            <div class="slot-icon-box rarity-uncommon">⚔️</div>
             <div class="slot-details">
-              <span class="slot-label-text">Main Hand / Two-Hand</span>
-              <span class="slot-item-name uncommon">Sturdy Quarterstaff of the Bear</span>
-              <span class="slot-source-text">Currently Equipped on Chongo</span>
-              <div><span class="weapon-slot-badge badge-2h">Two-Handed (Recommended)</span></div>
+              <span class="slot-label-text">Main Hand</span>
+              <span class="slot-item-name uncommon">Apprentice's Staff</span>
+              <span class="slot-source-text">Equipped Weapon</span>
+              <div><span class="weapon-slot-badge badge-2h">Main Hand</span></div>
             </div>
           </div>
 
           <!-- Off-Hand Slot -->
           <div class="weapon-slot-card" id="slotOffHand">
-            <div class="slot-icon-box rarity-disabled">🚫</div>
+            <div class="slot-icon-box rarity-common">🗡️</div>
             <div class="slot-details">
               <span class="slot-label-text">Off-Hand</span>
-              <span class="slot-item-name disabled">Empty (2H Equipped)</span>
-              <span class="slot-source-text">Shields Prohibited for Druids</span>
-              <div><span class="weapon-slot-badge badge-no-shield">Shields Prohibited</span></div>
+              <span class="slot-item-name common">None Equipped</span>
+              <span class="slot-source-text">Off-hand / Tome</span>
+              <div><span class="weapon-slot-badge badge-offhand">Off-Hand</span></div>
             </div>
           </div>
 
-          <!-- Relic / Idol Slot -->
+          <!-- Relic / Ranged Slot -->
           <div class="weapon-slot-card" id="slotRelic">
-            <div class="slot-icon-box rarity-uncommon">🗿</div>
+            <div class="slot-icon-box rarity-uncommon">✨</div>
             <div class="slot-details">
-              <span class="slot-label-text">Relic (Ranged Slot)</span>
-              <span class="slot-item-name uncommon">Idol of Shifting Tides</span>
-              <span class="slot-source-text">Currently Equipped on Chongo</span>
-              <div><span class="weapon-slot-badge badge-relic">Relic / Idol</span></div>
+              <span class="slot-label-text">Ranged / Wand</span>
+              <span class="slot-item-name uncommon">Greater Magic Wand</span>
+              <span class="slot-source-text">Currently Equipped</span>
+              <div><span class="weapon-slot-badge badge-relic">Wand / Ranged</span></div>
             </div>
           </div>
 
@@ -786,235 +661,40 @@
       </div>
     </div>
 
-    <!-- TAB 3: WEAPONS, OFF-HANDS & STATS -->
+    <!-- TAB 3: WEAPONS, ROTATIONS & STATS -->
     <div id="tab-stats" class="view-panel">
-      <div class="guide-card">
+      <!-- Rotations Codex Container (Dynamically rendered based on active class) -->
+      <div id="rotationsCodexContainer"></div>
+
+      <div class="guide-card" style="margin-top: 20px;">
         <h3 class="card-title" style="margin-bottom: 16px;">
           <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-          The Golden Rule of Feral Weapons (Critical Knowledge!)
+          Stat Priority & Combat Mechanics
         </h3>
-        
-        <div style="background: rgba(255, 125, 10, 0.1); border-left: 4px solid var(--druid-color); padding: 16px; border-radius: var(--radius-md); margin-bottom: 20px;">
-          <h4 style="color: var(--druid-color); font-size: 1.1rem; margin-bottom: 8px;">⚠️ Weapons are STAT STICKS in Classic / Vanilla / WoW Forever</h4>
-          <p style="font-size: 0.95rem; color: #e2e8f0; line-height: 1.7;">
-            When you shift into Cat Form or Bear Form, <strong>your weapon's DPS, swing speed, and weapon damage range do NOT affect your paw auto-attacks!</strong><br>
-            • <strong>Cat Form</strong> attacks at a fixed <strong>1.0-second weapon speed</strong>.<br>
-            • <strong>Bear Form</strong> attacks at a fixed <strong>2.5-second weapon speed</strong>.<br>
-            • <strong>What actually determines your damage?</strong> The <em>stats</em> on the weapon (+Strength, +Agility, +Attack Power) and Feral Attack Power! A slow 50 DPS mace with zero stats is completely useless compared to a fast green staff with +15 Agility!
-          </p>
-        </div>
 
-        <h3 class="card-title" style="margin-bottom: 12px;">Feral Stat Hierarchy</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; margin-bottom: 24px;">
-          
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <div style="color: var(--druid-color); font-weight: 700; font-size: 1rem; margin-bottom: 6px;">1. Agility (Agi) — Supreme for Cat</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-              • <strong>1 Agility = 1 Attack Power (AP)</strong> in Cat Form.<br>
-              • <strong>20 Agility = 1% Critical Strike chance</strong>.<br>
-              • Also provides valuable Dodge chance and raw Armor for Bear tanking.
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <!-- Warlock Stats Card -->
+          <div style="background: rgba(168, 85, 247, 0.08); padding: 18px; border-radius: var(--radius-md); border: 1px solid rgba(168, 85, 247, 0.3);">
+            <h4 style="color: #c084fc; font-size: 1.1rem; margin-bottom: 10px;">🔮 Warlock Stat Priority</h4>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.7;">
+              <strong>1. Shadow Spell Damage / Spell Power:</strong> The supreme leveling stat. Directly increases damage and healing of Corruption, Drain Life, Siphon Life, and Agony!<br>
+              <strong>2. Stamina:</strong> Vital health pool. In Classic, Stamina = Mana because <em>Life Tap</em> converts health directly into spell resources!<br>
+              <strong>3. Intellect:</strong> Expands starting mana pool and increases spell critical strike chance.<br>
+              <strong>4. Spirit:</strong> Improves health and mana regeneration outside of combat.
             </p>
           </div>
 
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <div style="color: var(--gold-light); font-weight: 700; font-size: 1rem; margin-bottom: 6px;">2. Strength (Str) — Supreme for Bear & Cat</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-              • <strong>1 Strength = 2 Attack Power (AP)</strong> in both Bear and Cat forms!<br>
-              • Multiplied further by the <em>Heart of the Wild</em> talent (+20% Strength in Cat form).
+          <!-- Rogue Stats Card -->
+          <div style="background: rgba(245, 158, 11, 0.08); padding: 18px; border-radius: var(--radius-md); border: 1px solid rgba(245, 158, 11, 0.3);">
+            <h4 style="color: #fbbf24; font-size: 1.1rem; margin-bottom: 10px;">🗡️ Rogue Stat Priority & Weapon Speeds</h4>
+            <p style="font-size: 0.88rem; color: #cbd5e1; line-height: 1.7;">
+              <strong>1. Agility:</strong> 1 Agility = 1 Attack Power, +Armor, +Dodge, and 29 Agility = 1% Critical Strike chance.<br>
+              <strong>2. Strength:</strong> 1 Strength = 1 Attack Power. Directly scales white melee and ability strikes.<br>
+              <strong>3. Weapon Speed Golden Rule:</strong><br>
+              • <strong>Main Hand: SLOW (2.6 – 2.8 speed):</strong> Sinister Strike damage is calculated from top-end weapon damage, so slow weapons hit significantly harder!<br>
+              • <strong>Off-Hand: FAST (1.3 – 1.6 speed):</strong> Maximizes auto-attack swing frequency for continuous Instant Poison applications and Combat talent procs!
             </p>
           </div>
-
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <div style="color: #38bdf8; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">3. Stamina (Stam) — Health Pool</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-              • 1 Stamina = 10 Hit Points.<br>
-              • In Bear Form, multiplied by the +20% Stamina bonus from <em>Heart of the Wild</em>. Essential for surviving dungeon boss cleaves.
-            </p>
-          </div>
-
-          <div style="background: var(--bg-card); padding: 16px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <div style="color: #94a3b8; font-weight: 700; font-size: 1rem; margin-bottom: 6px;">4. Spirit (Spi) — Regeneration</div>
-            <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">
-              • Restores Health and Mana out of combat.<br>
-              • Synergizes directly with your Alliance Skyborne racial <strong>Read Ley Line</strong> to instantly recover mana between shifts without drinking.
-            </p>
-          </div>
-
-        </div>
-
-        <h3 class="card-title" style="margin-bottom: 12px;">Legendary Feral Leveling Weapons You Must Seek</h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
-          <div class="gear-item-card">
-            <div class="gear-item-top">
-              <span class="gear-name rare">Smite's Mighty Hammer (Level 18)</span>
-              <span class="gear-source">Mr. Smite (Deadmines)</span>
-            </div>
-            <div class="gear-stats">+11 Strength, +4 Agility</div>
-            <div class="gear-tip">+26 total Attack Power! Lasts until level 28+.</div>
-          </div>
-
-          <div class="gear-item-card">
-            <div class="gear-item-top">
-              <span class="gear-name rare">Manual Crowd Pumper (Level 29)</span>
-              <span class="gear-source">Crowd Pumper 9-60 (Gnomeregan)</span>
-            </div>
-            <div class="gear-stats">+16 Strength, +5 Agility, Use: +50% Attack Speed for 30s</div>
-            <div class="gear-tip">The +50% attack speed active turns your Cat Form into an absolute buzzsaw on elite bosses!</div>
-          </div>
-
-          <div class="gear-item-card">
-            <div class="gear-item-top">
-              <span class="gear-name epic">Warden Staff (Level 43)</span>
-              <span class="gear-source">World Drop / Auction House</span>
-            </div>
-            <div class="gear-stats">+260 Armor, +10 Defense, +11 Stamina</div>
-            <div class="gear-tip">Armor on weapons multiplies by your Dire Bear form, granting nearly 1,000 extra armor! BiS Bear tank weapon.</div>
-          </div>
-
-          <div class="gear-item-card">
-            <div class="gear-item-top">
-              <span class="gear-name rare">Ironbark Staff (Level 54)</span>
-              <span class="gear-source">Western Plaguelands Quest</span>
-            </div>
-            <div class="gear-stats">+10 Strength, +10 Agility, +10 Stamina</div>
-            <div class="gear-tip">Balanced hybrid staff for late-50s questing.</div>
-          </div>
-        </div>
-
-        <!-- WEAPON TYPES, OFF-HANDS & IDOLS DEEP DIVE -->
-        <div style="margin-top: 32px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 24px;">
-          <h3 class="card-title" style="margin-bottom: 8px;">
-            <svg viewBox="0 0 24 24"><path d="M14.5 13.5l2.5-2.5-4-4L10.5 9.5l4 4zM2 19.5l4 4L17.5 12l-4-4L2 19.5zM22 6.5l-4.5-4.5-2 2 4.5 4.5 2-2z"/></svg>
-            Complete Feral Weapon & Off-Hand Arsenal Matrix
-          </h3>
-          <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 16px;">
-            Druids have unique weapon restrictions. Knowing what you can wield, what weapon trainers teach them, and why shields are prohibited is vital for your journey.
-          </p>
-
-          <div class="weapon-matrix-grid">
-            
-            <!-- Staves -->
-            <div class="weapon-type-card allowed">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Two-Handed Staves (2H)</span>
-                <span class="weapon-status-tag yes">✓ Baseline Allowed</span>
-              </div>
-              <div class="weapon-card-desc">
-                <strong>Best leveling category!</strong> Druids learn Staves automatically at Level 1. Staves carry enormous stat bundles (+Strength, +Agility, +Stamina) and late-game armor (e.g. <em>Warden Staff</em> +260 Armor).
-              </div>
-            </div>
-
-            <!-- Two-Handed Maces -->
-            <div class="weapon-type-card allowed">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Two-Handed Maces (2H)</span>
-                <span class="weapon-status-tag yes">✓ Trainable (Ironforge)</span>
-              </div>
-              <div class="weapon-card-desc">
-                <strong>The heavy hitter!</strong> Must be trained by Weapon Master Bixi Wobblestaff in the Military Ward of Ironforge (cost: 10 silver). Unlocks <em>Smite's Mighty Hammer</em> (+11 Str, +4 Agi) and <em>Manual Crowd Pumper</em>.
-              </div>
-            </div>
-
-            <!-- One-Handed Maces -->
-            <div class="weapon-type-card allowed">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">One-Handed Maces (1H)</span>
-                <span class="weapon-status-tag yes">✓ Baseline Allowed</span>
-              </div>
-              <div class="weapon-card-desc">
-                Allowed by default. Can be paired with an <strong>Off-Hand item</strong> ("Held in Off-hand"). Good if you find a very high Agility 1H mace and a strong off-hand like the Furbolg Medicine Pouch.
-              </div>
-            </div>
-
-            <!-- Daggers -->
-            <div class="weapon-type-card allowed">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Daggers (1H)</span>
-                <span class="weapon-status-tag yes">✓ Trainable (Darnassus/SW)</span>
-              </div>
-              <div class="weapon-card-desc">
-                Can be learned from Weapon Master Ilyenia Moonfire in Darnassus or Woo Ping in Stormwind. High Agility daggers are usable with an Off-hand, but 2H staves/maces usually offer higher total stats.
-              </div>
-            </div>
-
-            <!-- Off-Hand ("Held in Off-hand") -->
-            <div class="weapon-type-card allowed">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Off-Hand Items ("Held in Off-hand")</span>
-                <span class="weapon-status-tag yes">✓ Allowed with 1H</span>
-              </div>
-              <div class="weapon-card-desc">
-                You can equip tomes, lanterns, and relics in your off-hand <strong>only when using a 1-Handed Mace or Dagger</strong>. (e.g. <em>Furbolg Medicine Pouch</em> with +10 Stamina and self-heal ward).
-              </div>
-            </div>
-
-            <!-- Relics / Idols -->
-            <div class="weapon-type-card allowed">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Idols (Relic / Ranged Slot)</span>
-                <span class="weapon-status-tag yes">✓ Druid Exclusive!</span>
-              </div>
-              <div class="weapon-card-desc">
-                Goes into your character's ranged paperdoll slot! Idols provide direct passive bonuses to shapeshift abilities: <strong>Idol of Ferocity</strong> (-3 Energy on Claw/Rake) and <strong>Idol of Brutality</strong> (-3 Rage on Maul/Swipe).
-              </div>
-            </div>
-
-            <!-- Shields -->
-            <div class="weapon-type-card prohibited">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Shields</span>
-                <span class="weapon-status-tag no">✕ PROHIBITED</span>
-              </div>
-              <div class="weapon-card-desc">
-                <strong>Druids can NEVER equip shields!</strong> Do not buy or roll on shields. Your Bear Form (+180% to +360% Armor multiplier) naturally provides more physical damage reduction than shield-wearing warriors!
-              </div>
-            </div>
-
-            <!-- Swords & Axes -->
-            <div class="weapon-type-card prohibited">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Swords & Axes (1H and 2H)</span>
-                <span class="weapon-status-tag no">✕ PROHIBITED</span>
-              </div>
-              <div class="weapon-card-desc">
-                Druids cannot learn or equip swords or axes of any kind. Never bid on swords, daggers are your only bladed option.
-              </div>
-            </div>
-
-            <!-- Bows, Guns, Crossbows, Wands -->
-            <div class="weapon-type-card prohibited">
-              <div class="weapon-card-header">
-                <span class="weapon-card-title">Bows, Guns, Crossbows, Wands</span>
-                <span class="weapon-status-tag no">✕ PROHIBITED</span>
-              </div>
-              <div class="weapon-card-desc">
-                Druids cannot shoot ranged weapons. Your ranged equipment slot is reserved exclusively for <strong>Druid Idols (Relics)</strong>!
-              </div>
-            </div>
-
-          </div>
-
-          <!-- 2H vs 1H + Off-Hand Tactical Guide -->
-          <div style="background: rgba(0, 0, 0, 0.35); border: 1px solid var(--border-color); border-radius: var(--radius-md); padding: 18px; margin-top: 20px;">
-            <h4 style="color: var(--gold-light); font-size: 1.05rem; margin-bottom: 8px;">⚔️ When Should You Use 2H vs 1H + Off-Hand?</h4>
-            <div style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.7;">
-              • <strong>95% of Leveling: ALWAYS use a Two-Handed Staff or 2H Mace!</strong><br>
-              In Classic and WoW Forever, early two-handed weapons carry massive stat combinations like +11 Strength and +4 Agility on Smite's Mighty Hammer (equivalent to +26 Attack Power and crit). Early 1-handed weapons and off-hands have split, diluted stats.<br><br>
-              • <strong>When is 1H + Off-Hand worth considering?</strong><br>
-              Only if you obtain a top-tier Agility dagger or mace paired with a specialized utility off-hand such as the <strong>Furbolg Medicine Pouch</strong> (Timbermaw reputation, grants +10 Stamina and plants a healing totem that ticks 100 HP every 3 seconds) or high +Intellect/+Spirit off-hands when queuing as a dungeon healer!
-            </div>
-          </div>
-
-          <!-- Alliance Weapon Master Locations -->
-          <div style="background: rgba(37, 99, 235, 0.1); border: 1px solid rgba(37, 99, 235, 0.3); border-radius: var(--radius-md); padding: 16px; margin-top: 14px;">
-            <h4 style="color: #60a5fa; font-size: 1rem; margin-bottom: 6px;">🏛️ Alliance Weapon Master Directory (Train for 10 Silver each):</h4>
-            <ul style="font-size: 0.88rem; color: #cbd5e1; list-style: none; display: flex; flex-direction: column; gap: 6px;">
-              <li>• <strong>Ironforge (Military Ward):</strong> Weapon Master Bixi Wobblestaff teaches <strong>Two-Handed Maces</strong>. <em>(Visit him as soon as you reach level 18 for Smite's Mighty Hammer!)</em></li>
-              <li>• <strong>Darnassus (Warrior's Terrace):</strong> Weapon Master Ilyenia Moonfire teaches <strong>Daggers</strong> and <strong>Fist Weapons</strong>.</li>
-              <li>• <strong>Stormwind (Old Town):</strong> Weapon Master Woo Ping teaches <strong>One-Handed Swords</strong> (not for druids) and <strong>Daggers</strong>.</li>
-            </ul>
-          </div>
-
         </div>
       </div>
     </div>
@@ -1053,30 +733,30 @@
           
           <div class="tree-card active-tree">
             <div class="tree-name-header">
-              <span>🐾 Feral Combat Tree</span>
-              <span class="tree-points-count" id="feralTreePoints">0 / 36</span>
+              <span id="tree1Header">Tree 1</span>
+              <span class="tree-points-count" id="tree1Points">0 Pts</span>
             </div>
-            <div class="talent-list-simple" id="feralTalentsList">
+            <div class="talent-list-simple" id="tree1List">
               <!-- Loaded via JavaScript -->
             </div>
           </div>
 
           <div class="tree-card active-tree">
             <div class="tree-name-header">
-              <span>🌙 Balance Tree</span>
-              <span class="tree-points-count" id="balanceTreePoints">0 / 10</span>
+              <span id="tree2Header">Tree 2</span>
+              <span class="tree-points-count" id="tree2Points">0 Pts</span>
             </div>
-            <div class="talent-list-simple" id="balanceTalentsList">
+            <div class="talent-list-simple" id="tree2List">
               <!-- Loaded via JavaScript -->
             </div>
           </div>
 
           <div class="tree-card active-tree">
             <div class="tree-name-header">
-              <span>🌿 Restoration Tree</span>
-              <span class="tree-points-count" id="restoTreePoints">0 / 5</span>
+              <span id="tree3Header">Tree 3</span>
+              <span class="tree-points-count" id="tree3Points">0 Pts</span>
             </div>
-            <div class="talent-list-simple" id="restoTalentsList">
+            <div class="talent-list-simple" id="tree3List">
               <!-- Loaded via JavaScript -->
             </div>
           </div>
@@ -1086,616 +766,17 @@
       </div>
     </div>
 
-    <!-- TAB 4: PROFESSIONS ROAD -->
+    <!-- TAB: PROFESSIONS & REAGENTS -->
     <div id="tab-professions" class="view-panel">
-      <div class="guide-card">
-        <div class="card-header-with-badge" style="margin-bottom: 8px;">
-          <h3 class="card-title" style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-            <svg viewBox="0 0 24 24"><path d="M20.71 5.63l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83c.39-.39.39-1.02 0-1.41zM3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25z"/></svg>
-            Optimal Leatherworking 1–300 Speed & Feral Mastery Guide
-            <span style="font-size: 0.72rem; padding: 2px 8px; border-radius: 999px; background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.3); font-weight: 600; text-transform: uppercase;">Minimal Mats • 100% Solo</span>
-          </h3>
-          <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.3);">Alliance 1-300 Blueprint</span>
-        </div>
-        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 18px; line-height: 1.5;">
-          Skinning & Leatherworking is the supreme profession combination for Feral Druids. You skin hundreds of beasts while solo questing, craft your own high-agility armor, and unlock the legendary <strong>Wolfshead Helm</strong> (infinite Cat powershifting) and <strong>Devilsaur Armor</strong> (Pre-Raid BiS forever). Follow this mathematically optimal, lowest-material route from 1 to 300!
-        </p>
-
-        <!-- Live In-Game Synced Professions Status Dashboard -->
-        <div class="prof-sync-banner" id="liveProfessionsBanner">
-          <div class="prof-sync-header">
-            <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
-              <span class="sync-status-dot"></span>
-              <span class="prof-sync-title">Live In-Game Professions (<strong style="color: var(--skyborne-blue);" id="profCharName">Chongo</strong>)</span>
-              <span class="tag-badge" style="background: rgba(56, 189, 248, 0.15); color: var(--skyborne-blue); border: 1px solid rgba(56, 189, 248, 0.3);">Real-Time WoW Sync</span>
-            </div>
-            <button type="button" class="btn-prof-sync" onclick="directSyncHeaderClick()" title="Sync live professions from game client">⚡ Re-Sync</button>
-          </div>
-          <div class="prof-sync-grid">
-            <!-- Leatherworking Card -->
-            <div class="prof-sync-card" id="profCardLw">
-              <div class="prof-sync-card-top">
-                <span class="prof-sync-name">✂️ Leatherworking</span>
-                <span class="prof-sync-rank" id="profRankLw">Journeyman</span>
-              </div>
-              <div class="prof-sync-val">
-                <span id="profValLw">92</span> <span class="prof-sync-max" id="profMaxLw">/ 150</span>
-              </div>
-              <div class="prof-sync-bar-bg">
-                <div class="prof-sync-bar-fill" id="profBarLw" style="width: 61%; background: #4ade80;"></div>
-              </div>
-              <div class="prof-sync-status" id="profNoteLw">Active crafting step highlighted below in the 1–300 blueprint!</div>
-            </div>
-
-            <!-- Skinning Card -->
-            <div class="prof-sync-card" id="profCardSkinning">
-              <div class="prof-sync-card-top">
-                <span class="prof-sync-name">🗡️ Skinning</span>
-                <span class="prof-sync-rank" id="profRankSkinning">Expert</span>
-              </div>
-              <div class="prof-sync-val">
-                <span id="profValSkinning">150</span> <span class="prof-sync-max" id="profMaxSkinning">/ 225</span>
-              </div>
-              <div class="prof-sync-bar-bg">
-                <div class="prof-sync-bar-fill" id="profBarSkinning" style="width: 67%; background: #38bdf8;"></div>
-              </div>
-              <div class="prof-sync-status" id="profNoteSkinning">Skinning up to lvl 40 beasts cleanly across Duskwood, Wetlands & Ashenvale.</div>
-            </div>
-
-            <!-- Cooking Card -->
-            <div class="prof-sync-card" id="profCardCooking">
-              <div class="prof-sync-card-top">
-                <span class="prof-sync-name">🍖 Cooking</span>
-                <span class="prof-sync-rank" id="profRankCooking">Journeyman</span>
-              </div>
-              <div class="prof-sync-val">
-                <span id="profValCooking">120</span> <span class="prof-sync-max" id="profMaxCooking">/ 150</span>
-              </div>
-              <div class="prof-sync-bar-bg">
-                <div class="prof-sync-bar-fill" id="profBarCooking" style="width: 80%; background: #fb923c;"></div>
-              </div>
-              <div class="prof-sync-status" id="profNoteCooking">Craft Strider Stew & Boar Ribs for constant +Stamina Well Fed buffs.</div>
-            </div>
-
-            <!-- First Aid Card -->
-            <div class="prof-sync-card" id="profCardFirstAid">
-              <div class="prof-sync-card-top">
-                <span class="prof-sync-name">🩹 First Aid</span>
-                <span class="prof-sync-rank" id="profRankFirstAid">Untrained</span>
-              </div>
-              <div class="prof-sync-val">
-                <span id="profValFirstAid">0</span> <span class="prof-sync-max" id="profMaxFirstAid">/ 75</span>
-              </div>
-              <div class="prof-sync-bar-bg">
-                <div class="prof-sync-bar-fill" id="profBarFirstAid" style="width: 0%; background: #a78bfa;"></div>
-              </div>
-              <div class="prof-sync-status" id="profNoteFirstAid">Learn from Byancie (Dolanaar) or Dannelor (Darnassus).</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Interactive Skill Tracker Bar -->
-        <div class="lw-header-bar">
-          <div class="lw-tracker-box">
-            <span style="font-size: 0.88rem; font-weight: 700; color: #fff;">Your Current LW Skill:</span>
-            <div class="lw-skill-input-wrap">
-              <button class="lw-btn-step" onclick="adjustLwSkill(-5)" title="Down 5">-5</button>
-              <button class="lw-btn-step" onclick="adjustLwSkill(-1)" title="Down 1">-1</button>
-              <input type="number" id="lwSkillInput" class="lw-skill-input" min="1" max="300" value="1" onchange="setLwSkill(this.value)">
-              <button class="lw-btn-step" onclick="adjustLwSkill(1)" title="Up 1">+1</button>
-              <button class="lw-btn-step" onclick="adjustLwSkill(5)" title="Up 5">+5</button>
-            </div>
-          </div>
-
-          <div class="lw-progress-container">
-            <div style="display:flex; justify-content:space-between; font-size:0.82rem; font-weight:700;">
-              <span id="lwSkillLabel" style="color: #fff;">Skill: 1 / 300</span>
-              <span id="lwPhaseLabel" style="color: var(--gold-accent);">Apprentice</span>
-            </div>
-            <div class="lw-progress-bar-bg">
-              <div id="lwProgressBar" class="lw-progress-bar-fill" style="width: 1%;"></div>
-            </div>
-          </div>
-
-          <div id="lwActiveCallout" style="width: 100%; font-size: 0.84rem; color: #cbd5e1; background: rgba(0,0,0,0.3); padding: 8px 12px; border-radius: 4px; border-left: 3px solid #10b981;">
-            👉 <strong>Current Optimal Craft:</strong> Light Armor Kit (Skill 1–45) • Requires 1x Light Leather per craft.
-          </div>
-        </div>
-
-        <!-- Feral Druid Crafting Trinity Showcase -->
-        <h3 class="card-title" style="margin-bottom: 12px; font-size: 1.05rem;">
-          🏆 The Feral Druid Crafting Trinity (Why We Level LW)
-        </h3>
-        <div class="lw-trinity-grid">
-          <div class="lw-trinity-card">
-            <div class="lw-trinity-header">
-              <span class="lw-trinity-name">Wolfshead Helm</span>
-              <span class="lw-trinity-badge">Skill 225 • Lvl 40</span>
-            </div>
-            <div class="lw-trinity-effect">⚡ Cat Shift: +20 Energy • Bear Shift: +5 Rage</div>
-            <div class="lw-trinity-desc">
-              THE GREATEST DRUID ITEM IN CLASSIC. Paired with <strong>Furor (5/5)</strong>, you start in Cat Form with <strong>60 Energy immediately</strong>! Enables unlimited powershifting burst. Equipped all the way through Naxxramas!
-            </div>
-            <div class="lw-trinity-mats">
-              <strong>Recipe:</strong> Vendor Jannamin (Darnassus Craftsmen's Terrace 64.6, 21.6) or AH.<br>
-              <strong>Reagents:</strong> 18x Thick Leather, 2x Cured Thick Hide, 2x Thick Wolfhide, 1x Swiftthistle.
-            </div>
-          </div>
-
-          <div class="lw-trinity-card">
-            <div class="lw-trinity-header">
-              <span class="lw-trinity-name">Devilsaur Gauntlets & Leggings</span>
-              <span class="lw-trinity-badge">Skill 290–300 • Lvl 53+</span>
-            </div>
-            <div class="lw-trinity-effect">🔥 2-Set Bonus: +2% Hit Chance, +28 Attack Power, +46 Agility</div>
-            <div class="lw-trinity-desc">
-              The undisputed Pre-Raid BiS set for Feral Cat DPS. Solo farm Devilsaurs in Un'Goro Crater using Prowl and Bear Form to craft this without spending hundreds of gold on the AH!
-            </div>
-            <div class="lw-trinity-mats">
-              <strong>Recipe:</strong> Pattern sold by Nergal in Un'Goro Crater (Lakkari Tar Pits) or AH.<br>
-              <strong>Reagents:</strong> 30x Devilsaur Leather, 40x Rugged Leather, 2x Rune Thread.
-            </div>
-          </div>
-
-          <div class="lw-trinity-card">
-            <div class="lw-trinity-header">
-              <span class="lw-trinity-name">Warbear Harness & Woolies</span>
-              <span class="lw-trinity-badge">Skill 275 • Lvl 50+</span>
-            </div>
-            <div class="lw-trinity-effect">🛡️ Dire Bear Fortress: +27 Stamina, +11 Agility</div>
-            <div class="lw-trinity-desc">
-              The premier defensive Dire Bear tanking pieces for dungeon boss soloing and high-tier raids. Provides massive raw health and armor.
-            </div>
-            <div class="lw-trinity-mats">
-              <strong>Recipe:</strong> Meilosh (Timbermaw Hold Vendor - Friendly rep).<br>
-              <strong>Reagents:</strong> 28x Rugged Leather, 12x Warbear Leather, 2x Rune Thread.
-            </div>
-          </div>
-
-          <div class="lw-trinity-card">
-            <div class="lw-trinity-header">
-              <span class="lw-trinity-name">Deviate Scale Belt</span>
-              <span class="lw-trinity-badge">Skill 115 • Lvl 18</span>
-            </div>
-            <div class="lw-trinity-effect">🌱 Early Leveling Godsend: +5 Agility, +6 Stamina, +5 Spirit</div>
-            <div class="lw-trinity-desc">
-              Unmatched early leveling stats for your upcoming Level 20 Cat Form! Eliminates the need for any dungeon waist drops until your mid-30s.
-            </div>
-            <div class="lw-trinity-mats">
-              <strong>Recipe:</strong> BoE World Drop (WC / Barrens / AH).<br>
-              <strong>Reagents:</strong> 6x Medium Leather, 4x Deviate Scale, 1x Fine Thread.
-            </div>
-          </div>
-        </div>
-
-        <!-- Phase Navigation Filters -->
-        <div class="lw-filter-nav">
-          <button class="lw-filter-btn active" onclick="filterLwPhase('all')">📋 All Phases (1–300)</button>
-          <button class="lw-filter-btn" onclick="filterLwPhase('apprentice')">1–75 (Apprentice)</button>
-          <button class="lw-filter-btn" onclick="filterLwPhase('journeyman')">75–150 (Journeyman)</button>
-          <button class="lw-filter-btn" onclick="filterLwPhase('expert')">150–225 (Expert)</button>
-          <button class="lw-filter-btn" onclick="filterLwPhase('artisan')">225–300 (Artisan)</button>
-          <button class="lw-filter-btn" onclick="filterLwPhase('tribal')">👑 Tribal Specialization</button>
-          <button class="lw-filter-btn" onclick="filterLwPhase('shopping')">🎒 Materials & Farming Hotspots</button>
-        </div>
-
-        <!-- Dynamic Step Containers -->
-        <div id="lwPhasesContainer">
-          <!-- Populated dynamically via JavaScript -->
-        </div>
-
-        <!-- Tribal Specialization Deep-Dive Card -->
-        <div id="lwTribalCard" class="lw-phase-card" style="border-left: 4px solid #f59e0b; margin-top: 20px;">
-          <div class="lw-phase-header">
-            <div class="lw-phase-title">
-              <span>👑 The Feral Mandate: Tribal Leatherworking Specialization</span>
-            </div>
-            <span class="tag-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24;">Req: Level 40 + Skill 225</span>
-          </div>
-
-          <div class="lw-trainer-callout">
-            <strong>Why Tribal Specialization is Non-Negotiable for Druids:</strong><br>
-            • <strong>Elemental LW</strong> is for Rogues (agility/resist).<br>
-            • <strong>Dragonscale LW</strong> is Mail armor for Hunters/Enhancement Shamans.<br>
-            • <strong>Tribal LW</strong> is the ONLY specialization that crafts the <strong>Wolfshead Helm</strong> (BiS through Naxxramas) and the <strong>Devilsaur Armor Set</strong> (+2% Hit)!
-          </div>
-
-          <h4 style="color: #fff; font-size: 0.95rem; margin-bottom: 8px;">Alliance Specialization Quest Walkthrough</h4>
-          <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 12px;">
-            Travel to <strong>Feathermoon Stronghold</strong> in Feralas and speak to <strong>Pratt McGrubben</strong> (coordinates 30.6, 42.6). Before leaving the mainland, pre-craft and bring the following 6 Wild Leather pieces in your bags so you can complete the entire chain in 1 minute:
-          </p>
-
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px; margin-bottom: 14px;">
-            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
-              <span style="color:#4ade80;">✔ 6x</span> <strong>Wild Leather Shoulders</strong><br>
-              <span style="color:var(--text-muted); font-size:0.75rem;">(36 Thick Leather, 6 Cured Thick Hide)</span>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
-              <span style="color:#4ade80;">✔ 1x</span> <strong>Wild Leather Vest</strong><br>
-              <span style="color:var(--text-muted); font-size:0.75rem;">(12 Thick Leather, 2 Cured Thick Hide)</span>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
-              <span style="color:#4ade80;">✔ 1x</span> <strong>Wild Leather Helmet</strong><br>
-              <span style="color:var(--text-muted); font-size:0.75rem;">(10 Thick Leather, 1 Cured Thick Hide)</span>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
-              <span style="color:#4ade80;">✔ 2x</span> <strong>Wild Leather Boots</strong><br>
-              <span style="color:var(--text-muted); font-size:0.75rem;">(20 Thick Leather, 2 Cured Thick Hide)</span>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
-              <span style="color:#4ade80;">✔ 2x</span> <strong>Wild Leather Leggings</strong><br>
-              <span style="color:var(--text-muted); font-size:0.75rem;">(24 Thick Leather, 2 Cured Thick Hide)</span>
-            </div>
-            <div style="background: rgba(255,255,255,0.03); padding: 8px 12px; border-radius: 4px; font-size: 0.82rem;">
-              <span style="color:#4ade80;">✔ 2x</span> <strong>Wild Leather Cloak</strong><br>
-              <span style="color:var(--text-muted); font-size:0.75rem;">(16 Thick Leather, 2 Cured Thick Hide)</span>
-            </div>
-          </div>
-
-          <div style="font-size: 0.82rem; color: #cbd5e1; background: rgba(0,0,0,0.3); padding: 10px 14px; border-radius: 4px;">
-            <strong>Final Turn-in:</strong> Hand in <strong>1x Thick Wolfhide</strong> (skinned from lvl 43-50 wolves in Hinterlands/Feralas) and <strong>1x Wildvine</strong> (dropped from Hinterlands/STV Trolls or AH). Pratt McGrubben will certify you as a Master Tribal Leatherworker!
-          </div>
-        </div>
-
-        <!-- Total Materials & Farming Hotspots Card -->
-        <div id="lwShoppingCard" class="lw-phase-card" style="margin-top: 20px;">
-          <div class="lw-phase-header">
-            <div class="lw-phase-title">
-              <span>🎒 Total 1–300 Materials Shopping & Skinning Hotspots</span>
-            </div>
-            <span class="tag-badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8;">Optimal Estimates</span>
-          </div>
-
-          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px;">
-            Skin beasts during your solo leveling journey to naturally collect all required hides. Here is the estimated total inventory needed to reach 300:
-          </p>
-
-          <div class="lw-mats-grid">
-            <div class="lw-mat-card">
-              <div class="lw-mat-card-header">
-                <span>Light Leather</span>
-                <span class="lw-mat-qty">~260 – 280x</span>
-              </div>
-              <div class="lw-mat-source">
-                <strong>Skinning Hotspots:</strong> Westfall (coyotes, boars, vultures), Loch Modan (bears, crocolisks), Darkshore.
-              </div>
-            </div>
-
-            <div class="lw-mat-card">
-              <div class="lw-mat-card-header">
-                <span>Medium Leather & Hides</span>
-                <span class="lw-mat-qty">~150x Leather • ~15x Hides</span>
-              </div>
-              <div class="lw-mat-source">
-                <strong>Skinning Hotspots:</strong> Redridge Mountains (gnolls, murlocs), Ashenvale (wolves, bears), Wetlands (crocs). Keep all Medium Hides!
-              </div>
-            </div>
-
-            <div class="lw-mat-card">
-              <div class="lw-mat-card-header">
-                <span>Heavy Leather & Hides</span>
-                <span class="lw-mat-qty">~300x Leather • ~15x Hides</span>
-              </div>
-              <div class="lw-mat-source">
-                <strong>Skinning Hotspots:</strong> Duskwood (starving wolves, spiders), Wetlands (raptors), Northern STV (Nesingwary tigers). Keep all Heavy Hides!
-              </div>
-            </div>
-
-            <div class="lw-mat-card">
-              <div class="lw-mat-card-header">
-                <span>Thick Leather & Hides</span>
-                <span class="lw-mat-qty">~420x Leather • ~15x Hides</span>
-              </div>
-              <div class="lw-mat-source">
-                <strong>Skinning Hotspots:</strong> Feralas (Rage Scar Yetis in inland caves have dense, non-elite 100% skinning rate!), STV (Nesingwary raptors & panthers).
-              </div>
-            </div>
-
-            <div class="lw-mat-card">
-              <div class="lw-mat-card-header">
-                <span>Rugged Leather</span>
-                <span class="lw-mat-qty">~380 – 420x</span>
-              </div>
-              <div class="lw-mat-source">
-                <strong>Skinning Hotspots:</strong> Winterspring (Frostsaber cats & yetis), Un'Goro Crater (pterodactyls, stegodons), Western Plaguelands.
-              </div>
-            </div>
-
-            <div class="lw-mat-card">
-              <div class="lw-mat-card-header">
-                <span>Vendor Reagents</span>
-                <span class="lw-mat-qty">Cheap Trade Vendor</span>
-              </div>
-              <div class="lw-mat-source">
-                • <strong>Threads:</strong> 70x Coarse, 75x Fine, 90x Silken, 20x Heavy Silken, 40x Rune Thread.<br>
-                • <strong>Dyes & Salt:</strong> 30x Gray Dye, 40x Black Dye, 60x Salt.
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Secondary Survival Professions -->
-        <h3 class="card-title" style="margin-top: 24px; margin-bottom: 12px; font-size: 1.05rem;">
-          Secondary Survival Professions
-        </h3>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px;">
-          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <h4 style="color: #4ade80; font-size: 0.95rem; margin-bottom: 4px;">🩹 First Aid (MANDATORY FOR FERAL)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
-              Never spend your valuable mana healing after combat! Bandage yourself with Heavy Wool, Silk, and Mageweave Bandages to keep 100% mana ready for instant shapeshifting. Combine with <strong>Bash (3.0s stun)</strong> for uninterrupted in-combat bandaging.
-            </p>
-          </div>
-          <div style="background: var(--bg-card); padding: 14px; border-radius: var(--radius-md); border: 1px solid var(--border-color);">
-            <h4 style="color: #fb923c; font-size: 0.95rem; margin-bottom: 4px;">🍖 Cooking (Free "Well Fed" Stat Buffs)</h4>
-            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.45;">
-              Cook the meats you loot from your skinning targets (Coyote meat, Wolf flank, Tiger meat, Raptor eggs). Grants persistent +Stamina and +Spirit "Well Fed" buffs for zero coin cost.
-            </p>
-          </div>
-        </div>
-
+      <div id="professionsContainer">
+        <!-- Rendered dynamically by renderProfessions() in app.js based on active character (Warlock vs Rogue) -->
       </div>
     </div>
 
-    <!-- TAB 5: SKYBORNE RACIALS & MACROS -->
+    <!-- TAB: HORDE RACIALS & MACROS -->
     <div id="tab-skyborne" class="view-panel">
-      <div class="guide-card">
-        <h3 class="card-title">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-          Alliance Skyborne Master Guide & 1-Click Essential Macros
-        </h3>
-        <p style="font-size: 0.92rem; color: var(--text-muted); margin-bottom: 16px;">
-          As an Alliance Skyborne, your unique racials offer extraordinary advantages. Pair them with these essential Druid macros to play like a seasoned veteran!
-        </p>
-
-        <h4 style="color: var(--skyborne-blue); font-size: 1.1rem; margin-bottom: 12px;">Essential Quality-of-Life & Combat Macros</h4>
-
-        <!-- ============================================== -->
-        <!-- CATEGORY 1: ACTIVE LEVEL 10-19 BEAR TANKING   -->
-        <!-- ============================================== -->
-        <div style="margin: 16px 0 10px 0;">
-          <span style="background: rgba(34, 197, 94, 0.15); color: #4ade80; border: 1px solid rgba(34, 197, 94, 0.4); padding: 3px 10px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">🐾 Active Now (Level 10–19 Bear Era)</span>
-        </div>
-
-        <!-- Macro 1: Bear Powershift -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">1. Bear Form Powershift (Break Roots & Slows Instantly)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Bear Form
-/cancelform [noform:1]
-/cast !Bear Form</div>
-          <div class="macro-explain">⚡ Essential leveling tool! Instantly breaks Frost Novas, slow effects, and roots in one press. The exclamation point prevents accidentally leaving Bear form if you spam the button!</div>
-        </div>
-
-        <!-- Macro 2: Emergency Self-Heal -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">2. Emergency Self-Heal (Drop Form & Heal Self)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Healing Touch
-/cancelform
-/cast [@player] Healing Touch</div>
-          <div class="macro-explain">In Bear Form, you cannot cast spells. This macro drops Bear form in 0.0 seconds and immediately casts Healing Touch on yourself without deselecting the mob you are fighting!</div>
-        </div>
-
-        <!-- Macro 3: Auto-Attack & Maul -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">3. Auto-Attack & Maul (Never Get Stuck With 0 Rage)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Maul
-/startattack
-/cast Maul</div>
-          <div class="macro-explain">In classic WoW, if you don't have enough Rage for Maul, your character stops auto-attacking! Adding /startattack ensures your Bear paws keep swinging and generating rage even when you have 0 Rage.</div>
-        </div>
-
-        <!-- Macro 4: Emergency Bash from Caster -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">4. Emergency Stun & Bash</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Bash
-/cast [noform:1] Bear Form
-/cast Bash</div>
-          <div class="macro-explain">If you get caught in humanoid/caster form, pressing this immediately shifts you into Bear Form and queues your Bash stun on the target.</div>
-        </div>
-
-        <!-- Macro 5: Mouseover Growl (Taunt) -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">5. Mouseover Growl / Taunt (Save Your Healer Without Dropping Target)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Growl
-/cast [noform:1] Bear Form
-/cast [@mouseover,harm,nodead][harm,nodead] Growl
-/startattack</div>
-          <div class="macro-explain">Taunts an enemy attacking your healer simply by hovering your mouse cursor over them! Keeps your primary target locked while protecting teammates.</div>
-        </div>
-
-        <!-- Macro 6: Swipe & Auto-Attack (Level 16+) -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">6. Swipe AoE Aggro & Auto-Attack (Level 16+)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Swipe
-/startattack
-/cast Swipe</div>
-          <div class="macro-explain">Unlocked at Level 16! Essential for dungeon tanking multiple targets (Deadmines, Wailing Caverns) without losing melee auto-swings.</div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- CATEGORY 2: CAT FORM DPS & STEALTH (LEVEL 20+) -->
-        <!-- ============================================== -->
-        <div style="margin: 24px 0 10px 0;">
-          <span style="background: rgba(245, 158, 11, 0.15); color: var(--gold-light); border: 1px solid rgba(245, 158, 11, 0.4); padding: 3px 10px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">🐆 Cat Form DPS & Stealth Era (Level 20+)</span>
-        </div>
-
-        <!-- Macro 7: Cat Powershift -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">7. Cat Form Powershift (Cleanses Slows & Grants 40–60 Energy)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Cat Form
-/cancelform [noform:3]
-/cast !Cat Form</div>
-          <div class="macro-explain">⚠️ Requires Level 20 Cat Form. Breaks slows and roots instantly. When paired with the Furor talent (and Wolfshead Helm at 40), instantly yields 40–60 Energy in a single click!</div>
-        </div>
-
-        <!-- Macro 8: Spam-Safe Prowl -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">8. Spam-Safe Prowl / Stealth</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Prowl
-/cast [nostealth] Prowl</div>
-          <div class="macro-explain">⚠️ Requires Level 20. Spamming the standard Prowl ability accidentally cancels stealth if clicked twice. This macro ensures you only enter stealth and never accidentally break it!</div>
-        </div>
-
-        <!-- Macro 9: Smart Stealth Opener -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">9. Smart Stealth Opener (Ravage in Stealth / Claw in Combat)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip
-/cast [stealth] Ravage; Claw
-/startattack</div>
-          <div class="macro-explain">⚠️ Requires Level 20 (Claw) / Level 32 (Ravage). Saves an entire action bar slot! When in stealth, hits with huge Ravage burst; once in combat, seamlessly switches to Claw.</div>
-        </div>
-
-        <!-- Macro 10: Pounce Opener -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">10. Pounce Stun & Bleed Opener (Level 36+)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip
-/cast [stealth] Pounce; Rake
-/startattack</div>
-          <div class="macro-explain">Stuns from stealth with Pounce; once unstealthed, casts Rake to keep a persistent bleed on the target while keeping auto-attacks running.</div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- CATEGORY 3: UNIVERSAL UTILITY & SURVIVAL       -->
-        <!-- ============================================== -->
-        <div style="margin: 24px 0 10px 0;">
-          <span style="background: rgba(56, 189, 248, 0.15); color: var(--skyborne-blue); border: 1px solid rgba(56, 189, 248, 0.4); padding: 3px 10px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">✨ Universal Utility, Cleansing & Travel (All Levels)</span>
-        </div>
-
-        <!-- Macro 11: 1-Button Travel & Shape Master -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">11. 1-Button Master Shapeshifter & Mount</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip
-/cancelform [mounted]
-/dismount [mounted]
-/cast [swimming] Aquatic Form; [outdoors] Travel Form; Cat Form</div>
-          <div class="macro-explain">🏆 Replaces 3 separate buttons! Casts Aquatic Form when swimming in water, Travel Form when outdoors, or Cat Form when indoors. Automatically dismounts if mounted.</div>
-        </div>
-
-        <!-- Macro 12: Mouseover Cure Poison & Decurse -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">12. Mouseover Poison & Curse Cleanser (Zero Target Loss)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip
-/cancelform
-/cast [@mouseover,help,nodead][@player] Cure Poison</div>
-          <div class="macro-explain">Dispels dangerous poisons without needing to drop your target. Hover over your own character frame or a party member and press to cure instantly! (Change "Cure Poison" to "Remove Curse" at Level 28).</div>
-        </div>
-
-        <!-- Macro 13: Emergency Mouseover Rebirth (Combat Res) -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">13. Combat Resurrect (Rebirth) with Party Chat Alert (Level 20+)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Rebirth
-/cancelform
-/cast [@mouseover,help,dead][help,dead] Rebirth
-/party >>> Combat Resurrecting %t! Stand back! <<<</div>
-          <div class="macro-explain">⚠️ Requires Level 20. Instantly brings a fallen tank or teammate back to life during boss fights and broadcasts who you are resurrecting so other healers don't waste mana!</div>
-        </div>
-
-        <!-- Macro 14: Emergency Roots Peeler -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">14. Emergency Entangling Roots Peeler</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Entangling Roots
-/cancelform
-/cast [@mouseover,harm,nodead][harm,nodead] Entangling Roots</div>
-          <div class="macro-explain">Drops form in 0.0 seconds and roots a pursuing mob to the ground so you or your party can step back and heal safely.</div>
-        </div>
-
-        <!-- ============================================== -->
-        <!-- CATEGORY 4: ADVANCED COOLDOWNS & SKYBORNE      -->
-        <!-- ============================================== -->
-        <div style="margin: 24px 0 10px 0;">
-          <span style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.4); padding: 3px 10px; border-radius: var(--radius-full); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">🌀 High-Level Cooldowns & Skyborne Synergy (Levels 30–60)</span>
-        </div>
-
-        <!-- Macro 15: Smart Faerie Fire -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">15. Smart Faerie Fire (Feral or Normal)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip
-/cast [form:1/3] Faerie Fire (Feral); Faerie Fire</div>
-          <div class="macro-explain">⚠️ Requires Level 30 Feral Talent. Automatically casts Faerie Fire (Feral) if you are in Bear or Cat form, or standard Faerie Fire if in humanoid caster form!</div>
-        </div>
-
-        <!-- Macro 16: Skyborne Super-Mana Battery -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">16. Skyborne Super-Mana Battery (Level 40+)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Innervate
-/cast Read Ley Line
-/cast [@player] Innervate</div>
-          <div class="macro-explain">⚠️ Requires Level 40 Innervate. Combines the Alliance Skyborne active spirit multiplier with Innervate to instantly skyrocket your mana regen to hundreds of mana per tick!</div>
-        </div>
-
-        <!-- Macro 17: Frenzied Regeneration Panic Recovery -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">17. Enrage + Frenzied Regeneration (Panic Tank Recovery) (Level 36+)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Frenzied Regeneration
-/cast [noform:1] Bear Form
-/cast Enrage
-/cast Frenzied Regeneration</div>
-          <div class="macro-explain">⚠️ Requires Level 36. Enrage instantly generates Bear Rage, which Frenzied Regeneration immediately converts into thousands of health over 10 seconds!</div>
-        </div>
-
-        <!-- Macro 18: Barkskin + Pushback-Immune Tranquility -->
-        <div class="macro-box">
-          <div class="macro-top">
-            <span class="macro-title">18. Pushback-Immune Barkskin Tranquility (Level 44+)</span>
-            <button class="btn-copy" onclick="copyMacro(this)">Copy Macro</button>
-          </div>
-          <div class="macro-code">#showtooltip Tranquility
-/cancelform
-/cast Barkskin
-/cast Tranquility</div>
-          <div class="macro-explain">⚠️ Requires Level 44. Barkskin prevents damage pushback on channeled spells. Casting Barkskin before Tranquility ensures your full party healing channel is never shortened by enemy boss hits!</div>
-        </div>
-
+      <div id="hordeMacrosContainer">
+        <!-- Rendered dynamically by renderHordeMacros() in app.js based on active character (Warlock vs Rogue) -->
       </div>
     </div>
 
@@ -1780,25 +861,24 @@
           <div class="sync-section-title">
             <span>📁 Method 3: Auto-Detect via Local WoW Client File</span>
           </div>
-          <div style="background: rgba(56, 189, 248, 0.08); border: 1px solid rgba(56, 189, 248, 0.25); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 10px;">
+          <div style="background: rgba(220, 38, 38, 0.08); border: 1px solid rgba(220, 38, 38, 0.25); border-radius: var(--radius-sm); padding: 12px; margin-bottom: 10px;">
             <div style="font-size: 0.92rem; font-weight: 700; color: #fff; margin-bottom: 4px; display: flex; align-items: center; gap: 8px;">
               <span class="sync-status-dot"></span>
-              <span>Detected Live Client: <strong style="color: var(--skyborne-blue);" id="modalCharName">Chongo</strong> • Level <span id="modalCharLvl">24</span> (Darkwind Realm)</span>
+              <span>Detected Live Client: <strong style="color: #f87171;" id="modalCharName">Malakor</strong> • Level <span id="modalCharLvl">14</span> (Belfall Realm)</span>
             </div>
             <div id="modalProfessionsBadges" style="margin: 6px 0 10px 0; font-size: 0.82rem; color: #cbd5e1; display: flex; gap: 8px; flex-wrap: wrap;">
-              <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); padding: 2px 8px; border-radius: 4px; color: #4ade80;">✂️ LW: 92/150</span>
-              <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px; color: #38bdf8;">🗡️ Skinning: 150/225</span>
-              <span style="background: rgba(251, 146, 60, 0.15); border: 1px solid rgba(251, 146, 60, 0.3); padding: 2px 8px; border-radius: 4px; color: #fb923c;">🍖 Cooking: 120/150</span>
+              <span style="background: rgba(168, 85, 247, 0.15); border: 1px solid rgba(168, 85, 247, 0.3); padding: 2px 8px; border-radius: 4px; color: #c084fc;">🧵 Tailoring: 65/75</span>
+              <span style="background: rgba(56, 189, 248, 0.15); border: 1px solid rgba(56, 189, 248, 0.3); padding: 2px 8px; border-radius: 4px; color: #38bdf8;">✨ Enchanting: 45/75</span>
             </div>
             <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 10px; word-break: break-all;">
-              Found in: <code>C:\Program Files (x86)\World of Warcraft\_forever_\WTF\SavedVariables\Blizzard_Console.lua</code>
+              Found in: <code>WTF\SavedVariables\BagBrother.lua</code> &amp; <code>Pawn.lua</code> (Phana-Belfall / Malakor-Belfall)
             </p>
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
               <button type="button" class="btn-site-run-sync" onclick="executeGameSyncFromSite()" style="font-size: 0.85rem; padding: 7px 16px;">
                 ⚡ Run Live Sync (.bat / Server)
               </button>
-              <button type="button" class="sync-btn" onclick="loadDetectedClientCharacter()" style="font-size: 0.85rem; padding: 7px 16px;" id="btnReloadCached">
-                ↻ Reload Cached: Chongo (Lvl 24)
+              <button type="button" class="sync-btn" onclick="executeGameSyncFromSite()" style="font-size: 0.85rem; padding: 7px 16px;" id="btnReloadCached">
+                ↻ Reload Cached Character
               </button>
               <button type="button" class="btn-ctrl" onclick="document.getElementById('wtfFileInput').click()" style="font-size: 0.85rem; padding: 7px 16px; cursor: pointer;">
                 📂 Select Local WoW File (.lua)
@@ -1815,6 +895,8 @@
   </main>
 
   <script src="synced_character.js"></script>
+  <script src="warlock_data.js"></script>
+  <script src="rogue_data.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

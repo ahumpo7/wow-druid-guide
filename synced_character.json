@@ -1,20 +1,515 @@
 {
-  "name": "Chongo",
-  "realm": "Darkwind (WoW Forever)",
-  "class": "Druid",
-  "race": "Alliance Skyborne",
-  "level": 24,
-  "money": 49332,
+  "activeCharacter": "warlock",
+  "characters": {
+    "warlock": {
+      "name": "Malakor",
+      "realm": "Belfall (WoW Forever)",
+      "class": "Warlock",
+      "race": "Horde Undead",
+      "level": 14,
+      "money": 12500,
+      "spec": "Affliction Drain Tank / Wand Spec",
+      "liveGear": {
+        "head": {
+          "slot": "Head",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped (Level 14)",
+          "armor": "0 Armor",
+          "stats": [
+            "Head armor unlocks around level 20+"
+          ]
+        },
+        "neck": {
+          "slot": "Neck",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Neck items start at level 18+"
+          ]
+        },
+        "shoulders": {
+          "slot": "Shoulders",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Shoulders start dropping around level 17-20"
+          ]
+        },
+        "back": {
+          "slot": "Back",
+          "type": "Cloth",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Cloak slot empty"
+          ]
+        },
+        "chest": {
+          "slot": "Chest",
+          "type": "Cloth",
+          "name": "Necrology Robes",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Malakor",
+          "armor": "43 Armor",
+          "stats": [
+            "+7 Intellect",
+            "+4 Stamina"
+          ],
+          "req": "Requires Level 17",
+          "tip": "BoE green cloth robes."
+        },
+        "wrists": {
+          "slot": "Wrists",
+          "type": "Cloth",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Wrists slot empty"
+          ]
+        },
+        "hands": {
+          "slot": "Hands",
+          "type": "Cloth",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Hands slot empty"
+          ]
+        },
+        "waist": {
+          "slot": "Waist",
+          "type": "Leather",
+          "name": "Scavenger Cord",
+          "quality": "common",
+          "source": "Currently Equipped on Malakor",
+          "armor": "34 Armor",
+          "stats": [
+            "34 Armor"
+          ],
+          "req": "Requires Level 4",
+          "tip": "Basic leather belt."
+        },
+        "legs": {
+          "slot": "Legs",
+          "type": "Cloth",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Legs slot empty"
+          ]
+        },
+        "feet": {
+          "slot": "Feet",
+          "type": "Cloth",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Feet slot empty"
+          ]
+        },
+        "ring1": {
+          "slot": "Finger",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Rings start around level 14-16"
+          ]
+        },
+        "ring2": {
+          "slot": "Finger",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Rings start around level 14-16"
+          ]
+        },
+        "trinket1": {
+          "slot": "Trinket",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Trinkets start around level 26+"
+          ]
+        },
+        "trinket2": {
+          "slot": "Trinket",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Trinkets start around level 26+"
+          ]
+        },
+        "mainHand": {
+          "slot": "Main Hand",
+          "type": "Staff / Dagger",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Empty Main Hand"
+          ]
+        },
+        "offHand": {
+          "slot": "Off-Hand",
+          "type": "Held in Off-hand",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Empty Off-Hand"
+          ]
+        },
+        "ranged": {
+          "slot": "Ranged / Wand",
+          "type": "Wand",
+          "name": "Greater Magic Wand",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Malakor",
+          "armor": null,
+          "stats": [
+            "17.5 DPS",
+            "Arcane Damage",
+            "Speed 1.30"
+          ],
+          "req": "Requires Level 13",
+          "tip": "🔥 Huge DPS leap for Warlock leveling: Crafted via Enchanting (Skill 75)."
+        }
+      },
+      "professions": {
+        "primary1": {
+          "name": "Tailoring",
+          "level": 65,
+          "rank": "Apprentice",
+          "max": 75,
+          "icon": "🧵"
+        },
+        "primary2": {
+          "name": "Enchanting",
+          "level": 45,
+          "rank": "Apprentice",
+          "max": 75,
+          "icon": "✨"
+        },
+        "firstAid": {
+          "name": "First Aid",
+          "level": 85,
+          "rank": "Journeyman",
+          "max": 150,
+          "icon": "🩹"
+        },
+        "cooking": {
+          "name": "Cooking",
+          "level": 21,
+          "rank": "Apprentice",
+          "max": 75,
+          "icon": "🍖"
+        }
+      },
+      "syncedAt": "2026-11-24T12:12:55.658Z"
+    },
+    "rogue": {
+      "name": "Phana",
+      "realm": "Belfall (WoW Forever)",
+      "class": "Rogue",
+      "race": "Horde Undead",
+      "level": 17,
+      "money": 32,
+      "spec": "Combat Swords / Daggers",
+      "liveGear": {
+        "head": {
+          "slot": "Head",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped (Level 17)",
+          "armor": "0 Armor",
+          "stats": [
+            "Head armor unlocks around level 20+"
+          ]
+        },
+        "neck": {
+          "slot": "Neck",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Neck items start at level 18+"
+          ]
+        },
+        "shoulders": {
+          "slot": "Shoulders",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Shoulders start dropping around level 17-20"
+          ]
+        },
+        "back": {
+          "slot": "Back",
+          "type": "Cloth",
+          "name": "Grizzly Cape",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Phana",
+          "armor": "14 Armor",
+          "stats": [
+            "+2 Strength (+4 AP)",
+            "+1 Stamina (+10 HP)"
+          ],
+          "req": "Requires Level 14",
+          "tip": "⭐ Live equipped on Phana! Strength cloak."
+        },
+        "chest": {
+          "slot": "Chest",
+          "type": "Leather",
+          "name": "Grizzly Jerkin",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Phana",
+          "armor": "88 Armor",
+          "stats": [
+            "+6 Strength (+12 AP)",
+            "+5 Stamina (+50 HP)"
+          ],
+          "req": "Requires Level 15",
+          "tip": "⭐ Live equipped on Phana! High armor leather chest."
+        },
+        "wrists": {
+          "slot": "Wrists",
+          "type": "Leather",
+          "name": "Black Wolf Bracers",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Phana",
+          "armor": "31 Armor",
+          "stats": [
+            "+2 Agility (+2 AP)",
+            "+1 Stamina (+10 HP)"
+          ],
+          "req": "Requires Level 10",
+          "tip": "⭐ Live equipped on Phana! Agility wristguards."
+        },
+        "hands": {
+          "slot": "Hands",
+          "type": "Leather",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
+          "stats": [
+            "Hands slot empty"
+          ]
+        },
+        "waist": {
+          "slot": "Waist",
+          "type": "Leather",
+          "name": "Troll's Sweatcloth",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Phana",
+          "armor": "41 Armor",
+          "stats": [
+            "+3 Stamina (+30 HP)",
+            "+2 Spirit"
+          ],
+          "req": "Requires Level 10",
+          "tip": "⭐ Live equipped on Phana! Sturdy leather belt."
+        },
+        "legs": {
+          "slot": "Legs",
+          "type": "Leather",
+          "name": "Grassland Pants",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Phana",
+          "armor": "64 Armor",
+          "stats": [
+            "+4 Agility (+4 AP / +0.2% Crit)",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Requires Level 12",
+          "tip": "⭐ Live equipped on Phana! Agility leather trousers."
+        },
+        "feet": {
+          "slot": "Feet",
+          "type": "Leather",
+          "name": "Soft Leather Boots",
+          "quality": "common",
+          "source": "Currently Equipped on Phana",
+          "armor": "36 Armor",
+          "stats": [
+            "36 Armor (Pure Armor)"
+          ],
+          "req": "Requires Level 5",
+          "tip": "⭐ Live equipped on Phana! Basic leather footwear."
+        },
+        "ring1": {
+          "slot": "Finger",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Rings start around level 14-16"
+          ]
+        },
+        "ring2": {
+          "slot": "Finger",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Rings start around level 14-16"
+          ]
+        },
+        "trinket1": {
+          "slot": "Trinket",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Trinkets start around level 26+"
+          ]
+        },
+        "trinket2": {
+          "slot": "Trinket",
+          "type": "Empty",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Trinkets start around level 26+"
+          ]
+        },
+        "mainHand": {
+          "slot": "Main Hand",
+          "type": "Dagger",
+          "name": "Beholder's Eye",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Phana",
+          "armor": null,
+          "stats": [
+            "14 - 26 Damage (11.1 DPS)",
+            "Speed 1.80",
+            "+2 Agility",
+            "+1 Stamina"
+          ],
+          "req": "Requires Level 13",
+          "tip": "⭐ Live equipped on Phana! Fast dagger dropped by Wandering Eye of Kilrogg."
+        },
+        "offHand": {
+          "slot": "Off-Hand",
+          "type": "Off-Hand Weapon",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": null,
+          "stats": [
+            "Empty Off-Hand"
+          ]
+        },
+        "ranged": {
+          "slot": "Ranged / Bow",
+          "type": "Bow",
+          "name": "Fine Longbow",
+          "quality": "common",
+          "source": "Currently Equipped on Phana",
+          "armor": null,
+          "stats": [
+            "8 - 15 Damage (4.8 DPS)",
+            "Speed 2.40"
+          ],
+          "req": "Requires Level 8",
+          "tip": "⭐ Live equipped on Phana! Starter ranged pull weapon."
+        }
+      },
+      "professions": {
+        "primary1": {
+          "name": "Skinning",
+          "level": 4,
+          "rank": "Apprentice",
+          "max": 75,
+          "icon": "🗡️"
+        },
+        "primary2": {
+          "name": "Leatherworking",
+          "level": 0,
+          "rank": "Untrained",
+          "max": 75,
+          "icon": "✂️"
+        },
+        "firstAid": {
+          "name": "First Aid",
+          "level": 0,
+          "rank": "Untrained",
+          "max": 75,
+          "icon": "🩹"
+        },
+        "cooking": {
+          "name": "Cooking",
+          "level": 21,
+          "rank": "Apprentice",
+          "max": 75,
+          "icon": "🍖"
+        }
+      },
+      "syncedAt": "2026-11-24T12:12:55.656Z"
+    }
+  },
+  "name": "Malakor",
+  "realm": "Belfall (WoW Forever)",
+  "class": "Warlock",
+  "race": "Horde Undead",
+  "level": 14,
+  "money": 12500,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 24)",
+      "source": "Not yet equipped (Level 14)",
       "armor": "0 Armor",
       "stats": [
-        "No head armor available until lvl 14+"
+        "Head armor unlocks around level 20+"
       ]
     },
     "neck": {
@@ -25,7 +520,7 @@
       "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "Neck items become available at lvl 18+"
+        "Neck items start at level 18+"
       ]
     },
     "shoulders": {
@@ -36,135 +531,112 @@
       "source": "Not yet equipped",
       "armor": "0 Armor",
       "stats": [
-        "Shoulders start dropping around lvl 17"
+        "Shoulders start dropping around level 17-20"
       ]
     },
     "back": {
       "slot": "Back",
       "type": "Cloth",
-      "name": "War Paint Cloak",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
-      "armor": "15 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+1 Strength (+2 AP)",
-        "+1 Agility (+1 Cat AP)",
-        "+1 Stamina (+10 HP)"
-      ],
-      "req": "Requires Level 10",
-      "tip": "⭐ Currently equipped on Chongo! BoE cloak with trifecta stats."
+        "Cloak slot empty"
+      ]
     },
     "chest": {
       "slot": "Chest",
-      "type": "Leather",
-      "name": "Bone-studded Leather",
+      "type": "Cloth",
+      "name": "Necrology Robes",
       "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
-      "armor": "86 Armor",
+      "source": "Currently Equipped on Malakor",
+      "armor": "43 Armor",
       "stats": [
-        "+6 Strength (+12 AP)",
-        "+5 Stamina (+50 HP)",
-        "+1 Agility (+1 Cat AP)"
+        "+7 Intellect",
+        "+4 Stamina"
       ],
-      "req": "Requires Level 20",
-      "tip": "⭐ Reward from Missing In Action in Redridge Mountains."
+      "req": "Requires Level 17",
+      "tip": "BoE green cloth robes."
     },
     "wrists": {
       "slot": "Wrists",
-      "type": "Leather",
-      "name": "Ridgeback Bracers",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
-      "armor": "33 Armor",
+      "type": "Cloth",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+2 Stamina (+20 HP)",
-        "+2 Spirit"
-      ],
-      "req": "Requires Level 12",
-      "tip": "⭐ Currently equipped on Chongo! Guaranteed quest reward: WANTED: Murkdeep! (Darkshore)."
+        "Wrists slot empty"
+      ]
     },
     "hands": {
       "slot": "Hands",
-      "type": "Leather",
-      "name": "Shucking Gloves",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
-      "armor": "45 Armor",
+      "type": "Cloth",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+2 Stamina (+20 HP)",
-        "+2 Intellect (+30 Mana)"
-      ],
-      "req": "Requires Level 12",
-      "tip": "Guaranteed solo quest reward: Fruit of the Sea (Darkshore)."
+        "Hands slot empty"
+      ]
     },
     "waist": {
       "slot": "Waist",
       "type": "Leather",
-      "name": "Bard's Belt of the Falcon",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
-      "armor": "39 Armor",
+      "name": "Scavenger Cord",
+      "quality": "common",
+      "source": "Currently Equipped on Malakor",
+      "armor": "34 Armor",
       "stats": [
-        "+2 Agility (+2 Cat AP)",
-        "+2 Intellect (+30 Mana)"
+        "34 Armor"
       ],
-      "req": "Requires Level 10",
-      "tip": "BoE world drop leather belt equipped on Chongo."
+      "req": "Requires Level 4",
+      "tip": "Basic leather belt."
     },
     "legs": {
       "slot": "Legs",
-      "type": "Leather",
-      "name": "Smith's Trousers",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
-      "armor": "68 Armor",
+      "type": "Cloth",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+4 Strength (+8 AP)",
-        "+4 Agility (+4 Cat AP / +0.2% Crit)"
-      ],
-      "req": "Requires Level 20",
-      "tip": "⭐ Solo quest reward from The Everstill Bridge in Redridge Mountains. Equipped on Chongo!"
+        "Legs slot empty"
+      ]
     },
     "feet": {
       "slot": "Feet",
-      "type": "Leather",
-      "name": "Scouting Boots of the Wolf",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
-      "armor": "56 Armor",
+      "type": "Cloth",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+3 Agility (+3 Cat AP / +0.15% Crit)",
-        "+3 Spirit"
-      ],
-      "req": "Requires Level 17",
-      "tip": "BoE world drop leather boots equipped on Chongo."
+        "Feet slot empty"
+      ]
     },
     "ring1": {
       "slot": "Finger",
-      "type": "Ring",
-      "name": "Ancient Heirloom",
+      "type": "Empty",
+      "name": "None Equipped",
       "quality": "common",
-      "source": "Currently Equipped on Chongo",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "Heirloom ring with Kaldorei patterns"
-      ],
-      "req": "Requires Level 1",
-      "tip": "Coming of Age quest on Zephras Isle."
+        "Rings start around level 14-16"
+      ]
     },
     "ring2": {
       "slot": "Finger",
-      "type": "Ring",
-      "name": "Ring of Iron Will",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
+      "type": "Empty",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "+4 Stamina (+40 HP)",
-        "+2 Spirit"
-      ],
-      "req": "Requires Level 20",
-      "tip": "⭐ Guaranteed quest reward: Howling in the Hills."
+        "Rings start around level 14-16"
+      ]
     },
     "trinket1": {
       "slot": "Trinket",
@@ -174,7 +646,7 @@
       "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "Trinkets start around lvl 26+"
+        "Trinkets start around level 26+"
       ]
     },
     "trinket2": {
@@ -185,86 +657,76 @@
       "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "Trinkets start around lvl 26+"
+        "Trinkets start around level 26+"
       ]
     },
     "mainHand": {
-      "slot": "Two-Hand",
-      "type": "Two-Handed Staff",
-      "name": "Sturdy Quarterstaff of the Bear",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
+      "slot": "Main Hand",
+      "type": "Staff / Dagger",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "20-30 Damage (8.9 DPS)",
-        "+3 Strength (+6 AP)",
-        "+3 Stamina (+30 HP)"
-      ],
-      "req": "Requires Level 8",
-      "tip": "⭐ BoE world drop staff with raw Strength and Stamina for Bear Form."
+        "Empty Main Hand"
+      ]
     },
     "offHand": {
       "slot": "Off-Hand",
-      "type": "None (2H Equipped)",
-      "name": "Empty (2H Staff in Use)",
-      "quality": "disabled",
-      "source": "Two-Handed Weapon Occupies Both Hands",
+      "type": "Held in Off-hand",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "Two-Handed weapon equipped in Main Hand."
-      ],
-      "req": "Two-Hander in Use"
+        "Empty Off-Hand"
+      ]
     },
-    "relic": {
-      "slot": "Relic / Idol",
-      "type": "Idol",
-      "name": "Idol of Shifting Tides",
+    "ranged": {
+      "slot": "Ranged / Wand",
+      "type": "Wand",
+      "name": "Greater Magic Wand",
       "quality": "uncommon",
-      "source": "Currently Equipped on Chongo",
+      "source": "Currently Equipped on Malakor",
       "armor": null,
       "stats": [
-        "Equip: Reduces the mana cost of shapeshifting spells by 40."
+        "17.5 DPS",
+        "Arcane Damage",
+        "Speed 1.30"
       ],
-      "req": "Requires Level 16",
-      "tip": "⭐ Class relic rewarded from early Druid questline in WoW Forever. Equipped on Chongo!"
+      "req": "Requires Level 13",
+      "tip": "🔥 Huge DPS leap for Warlock leveling: Crafted via Enchanting (Skill 75)."
     }
   },
   "professions": {
-    "leatherworking": {
-      "name": "Leatherworking",
-      "level": 92,
-      "rank": "Journeyman",
-      "max": 150,
-      "icon": "✂️"
+    "primary1": {
+      "name": "Tailoring",
+      "level": 65,
+      "rank": "Apprentice",
+      "max": 75,
+      "icon": "🧵"
     },
-    "skinning": {
-      "name": "Skinning",
-      "level": 150,
-      "rank": "Expert",
-      "max": 225,
-      "icon": "🗡️"
-    },
-    "cooking": {
-      "name": "Cooking",
-      "level": 120,
-      "rank": "Journeyman",
-      "max": 150,
-      "icon": "🍖"
+    "primary2": {
+      "name": "Enchanting",
+      "level": 45,
+      "rank": "Apprentice",
+      "max": 75,
+      "icon": "✨"
     },
     "firstAid": {
       "name": "First Aid",
-      "level": 0,
-      "rank": "Untrained",
-      "max": 75,
+      "level": 85,
+      "rank": "Journeyman",
+      "max": 150,
       "icon": "🩹"
     },
-    "fishing": {
-      "name": "Fishing",
-      "level": 0,
-      "rank": "Untrained",
+    "cooking": {
+      "name": "Cooking",
+      "level": 21,
+      "rank": "Apprentice",
       "max": 75,
-      "icon": "🎣"
+      "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-17T11:57:58.136Z"
+  "syncedAt": "2026-11-24T12:12:55.658Z"
 }
