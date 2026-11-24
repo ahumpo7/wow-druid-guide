@@ -22,7 +22,7 @@ const MIME_TYPES = {
   '.ico': 'image/x-icon'
 };
 
-const server = http.createServer((req, res) => {
+const server = http.createServer(async (req, res) => {
   // Enable full CORS for local browser access (both file:/// and http://localhost)
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
@@ -40,7 +40,7 @@ const server = http.createServer((req, res) => {
   if (url.pathname === '/api/sync') {
     try {
       console.log(`[${new Date().toLocaleTimeString()}] Sync requested via site API...`);
-      const syncResult = runSync();
+      const syncResult = await runSync();
       res.writeHead(200, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({
         success: true,

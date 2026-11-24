@@ -1,19 +1,19 @@
 /**
  * World of Warcraft: Forever - Client Sync Bridge (Horde Multi-Character Edition)
  * Auto-generated from live WTF game files.
- * Default Character: Warlock (Malakor, Level 14)
+ * Default Character: Warlock (Warlock, Level 1)
  * Secondary Character: Rogue (Phana, Level 17)
  */
 window.WOW_SYNCED_DATA = {
   "activeCharacter": "warlock",
   "characters": {
     "warlock": {
-      "name": "Malakor",
+      "name": "Warlock",
       "realm": "Belfall (WoW Forever)",
       "class": "Warlock",
       "race": "Horde Undead",
-      "level": 14,
-      "money": 12500,
+      "level": 1,
+      "money": 0,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -21,7 +21,7 @@ window.WOW_SYNCED_DATA = {
           "type": "Empty",
           "name": "None Equipped",
           "quality": "common",
-          "source": "Not yet equipped (Level 14)",
+          "source": "Not yet equipped (Level 1)",
           "armor": "0 Armor",
           "stats": [
             "Head armor unlocks around level 20+"
@@ -63,16 +63,13 @@ window.WOW_SYNCED_DATA = {
         "chest": {
           "slot": "Chest",
           "type": "Cloth",
-          "name": "Necrology Robes",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Malakor",
-          "armor": "43 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+7 Intellect",
-            "+4 Stamina"
-          ],
-          "req": "Requires Level 17",
-          "tip": "BoE green cloth robes."
+            "Chest slot empty"
+          ]
         },
         "wrists": {
           "slot": "Wrists",
@@ -98,16 +95,14 @@ window.WOW_SYNCED_DATA = {
         },
         "waist": {
           "slot": "Waist",
-          "type": "Leather",
-          "name": "Scavenger Cord",
+          "type": "Cloth",
+          "name": "None Equipped",
           "quality": "common",
-          "source": "Currently Equipped on Malakor",
-          "armor": "34 Armor",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "34 Armor"
-          ],
-          "req": "Requires Level 4",
-          "tip": "Basic leather belt."
+            "Waist slot empty"
+          ]
         },
         "legs": {
           "slot": "Legs",
@@ -200,39 +195,35 @@ window.WOW_SYNCED_DATA = {
         "ranged": {
           "slot": "Ranged / Wand",
           "type": "Wand",
-          "name": "Greater Magic Wand",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Malakor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
           "armor": null,
           "stats": [
-            "17.5 DPS",
-            "Arcane Damage",
-            "Speed 1.30"
-          ],
-          "req": "Requires Level 13",
-          "tip": "🔥 Huge DPS leap for Warlock leveling: Crafted via Enchanting (Skill 75)."
+            "Empty Ranged Slot"
+          ]
         }
       },
       "professions": {
         "primary1": {
           "name": "Tailoring",
-          "level": 65,
-          "rank": "Apprentice",
+          "level": 0,
+          "rank": "Untrained",
           "max": 75,
           "icon": "🧵"
         },
         "primary2": {
           "name": "Enchanting",
-          "level": 45,
-          "rank": "Apprentice",
+          "level": 0,
+          "rank": "Untrained",
           "max": 75,
           "icon": "✨"
         },
         "firstAid": {
           "name": "First Aid",
-          "level": 85,
-          "rank": "Journeyman",
-          "max": 150,
+          "level": 0,
+          "rank": "Untrained",
+          "max": 75,
           "icon": "🩹"
         },
         "cooking": {
@@ -243,7 +234,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T12:12:55.658Z"
+      "syncedAt": "2026-11-24T12:33:37.657Z"
     },
     "rogue": {
       "name": "Phana",
@@ -299,7 +290,7 @@ window.WOW_SYNCED_DATA = {
             "+1 Stamina (+10 HP)"
           ],
           "req": "Requires Level 14",
-          "tip": "⭐ Live equipped on Phana! Strength cloak."
+          "tip": "⭐ Live equipped! Strength cloak."
         },
         "chest": {
           "slot": "Chest",
@@ -313,7 +304,7 @@ window.WOW_SYNCED_DATA = {
             "+5 Stamina (+50 HP)"
           ],
           "req": "Requires Level 15",
-          "tip": "⭐ Live equipped on Phana! High armor leather chest."
+          "tip": "⭐ Live equipped! High armor leather chest."
         },
         "wrists": {
           "slot": "Wrists",
@@ -327,7 +318,7 @@ window.WOW_SYNCED_DATA = {
             "+1 Stamina (+10 HP)"
           ],
           "req": "Requires Level 10",
-          "tip": "⭐ Live equipped on Phana! Agility wristguards."
+          "tip": "⭐ Live equipped! Agility wristguards."
         },
         "hands": {
           "slot": "Hands",
@@ -352,7 +343,7 @@ window.WOW_SYNCED_DATA = {
             "+2 Spirit"
           ],
           "req": "Requires Level 10",
-          "tip": "⭐ Live equipped on Phana! Sturdy leather belt."
+          "tip": "⭐ Live equipped! Sturdy leather belt."
         },
         "legs": {
           "slot": "Legs",
@@ -366,7 +357,7 @@ window.WOW_SYNCED_DATA = {
             "+3 Stamina (+30 HP)"
           ],
           "req": "Requires Level 12",
-          "tip": "⭐ Live equipped on Phana! Agility leather trousers."
+          "tip": "⭐ Live equipped! Agility leather trousers."
         },
         "feet": {
           "slot": "Feet",
@@ -379,7 +370,7 @@ window.WOW_SYNCED_DATA = {
             "36 Armor (Pure Armor)"
           ],
           "req": "Requires Level 5",
-          "tip": "⭐ Live equipped on Phana! Basic leather footwear."
+          "tip": "⭐ Live equipped! Basic leather footwear."
         },
         "ring1": {
           "slot": "Finger",
@@ -439,7 +430,7 @@ window.WOW_SYNCED_DATA = {
             "+1 Stamina"
           ],
           "req": "Requires Level 13",
-          "tip": "⭐ Live equipped on Phana! Fast dagger dropped by Wandering Eye of Kilrogg."
+          "tip": "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
         },
         "offHand": {
           "slot": "Off-Hand",
@@ -464,7 +455,7 @@ window.WOW_SYNCED_DATA = {
             "Speed 2.40"
           ],
           "req": "Requires Level 8",
-          "tip": "⭐ Live equipped on Phana! Starter ranged pull weapon."
+          "tip": "⭐ Live equipped! Starter ranged pull weapon."
         }
       },
       "professions": {
@@ -497,22 +488,22 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T12:12:55.656Z"
+      "syncedAt": "2026-11-24T12:35:29.780Z"
     }
   },
-  "name": "Malakor",
+  "name": "Warlock",
   "realm": "Belfall (WoW Forever)",
   "class": "Warlock",
   "race": "Horde Undead",
-  "level": 14,
-  "money": 12500,
+  "level": 1,
+  "money": 0,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 14)",
+      "source": "Not yet equipped (Level 1)",
       "armor": "0 Armor",
       "stats": [
         "Head armor unlocks around level 20+"
@@ -554,16 +545,13 @@ window.WOW_SYNCED_DATA = {
     "chest": {
       "slot": "Chest",
       "type": "Cloth",
-      "name": "Necrology Robes",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Malakor",
-      "armor": "43 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+7 Intellect",
-        "+4 Stamina"
-      ],
-      "req": "Requires Level 17",
-      "tip": "BoE green cloth robes."
+        "Chest slot empty"
+      ]
     },
     "wrists": {
       "slot": "Wrists",
@@ -589,16 +577,14 @@ window.WOW_SYNCED_DATA = {
     },
     "waist": {
       "slot": "Waist",
-      "type": "Leather",
-      "name": "Scavenger Cord",
+      "type": "Cloth",
+      "name": "None Equipped",
       "quality": "common",
-      "source": "Currently Equipped on Malakor",
-      "armor": "34 Armor",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "34 Armor"
-      ],
-      "req": "Requires Level 4",
-      "tip": "Basic leather belt."
+        "Waist slot empty"
+      ]
     },
     "legs": {
       "slot": "Legs",
@@ -691,39 +677,35 @@ window.WOW_SYNCED_DATA = {
     "ranged": {
       "slot": "Ranged / Wand",
       "type": "Wand",
-      "name": "Greater Magic Wand",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Malakor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "17.5 DPS",
-        "Arcane Damage",
-        "Speed 1.30"
-      ],
-      "req": "Requires Level 13",
-      "tip": "🔥 Huge DPS leap for Warlock leveling: Crafted via Enchanting (Skill 75)."
+        "Empty Ranged Slot"
+      ]
     }
   },
   "professions": {
     "primary1": {
       "name": "Tailoring",
-      "level": 65,
-      "rank": "Apprentice",
+      "level": 0,
+      "rank": "Untrained",
       "max": 75,
       "icon": "🧵"
     },
     "primary2": {
       "name": "Enchanting",
-      "level": 45,
-      "rank": "Apprentice",
+      "level": 0,
+      "rank": "Untrained",
       "max": 75,
       "icon": "✨"
     },
     "firstAid": {
       "name": "First Aid",
-      "level": 85,
-      "rank": "Journeyman",
-      "max": 150,
+      "level": 0,
+      "rank": "Untrained",
+      "max": 75,
       "icon": "🩹"
     },
     "cooking": {
@@ -734,5 +716,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-24T12:12:55.658Z"
+  "syncedAt": "2026-11-24T12:35:29.780Z"
 };

@@ -1,25 +1,50 @@
 /**
- * WoW Forever - Live Client Character & Gear Exporter (Horde Multi-Character Edition)
- * Reads live SavedVariables from your WTF folder (Pawn, BagBrother, Questie)
- * Supports Warlock & Rogue (Phana), defaulting to Warlock as requested.
- * Updates synced_character.js, synced_character.json, and GitHub Gist.
+ * WoW Forever - Live Client Character & Gear Exporter (Dynamic Horde Multi-Character Edition)
+ * Automatically discovers WoW installation and WTF account data on any machine.
+ * Dynamically detects Warlock and Rogue from live SavedVariables (BagBrother, Questie, Pawn).
+ * Merges multi-machine data via GitHub Gist without overwriting characters from other machines.
+ * Default Character: Warlock (with seamless Rogue toggle).
  */
 
 const fs = require('fs');
 const path = require('path');
+const https = require('https');
+const { execSync } = require('child_process');
 
-// Classic WoW Item Database for Horde leveling gear, Rogue (Phana), and Warlock items
+const GIST_ID = '584b8b9450a8b85003934d27acfa7c7c';
+
+function getGitHubToken() {
+  if (process.env.GITHUB_TOKEN) return process.env.GITHUB_TOKEN.trim();
+  if (process.env.GH_TOKEN) return process.env.GH_TOKEN.trim();
+
+  const tokenFile = path.join(__dirname, 'github_token.txt');
+  if (fs.existsSync(tokenFile)) {
+    try {
+      const t = fs.readFileSync(tokenFile, 'utf8').trim();
+      if (t) return t;
+    } catch (_) {}
+  }
+
+  try {
+    const t = execSync('gh auth token', { stdio: 'pipe', encoding: 'utf8' }).trim();
+    if (t) return t;
+  } catch (_) {}
+
+  return null;
+}
+
+// Classic WoW Item Database for Horde leveling gear, Rogue, and Warlock items
 const ITEM_DB = {
   // --- Rogue Phana's Live Equipped Items ---
-  3268: { name: "Beholder's Eye", slot: "Main Hand", type: "Dagger", quality: "uncommon", armor: null, stats: ["14 - 26 Damage (11.1 DPS)", "Speed 1.80", "+2 Agility", "+1 Stamina"], req: "Requires Level 13", tip: "⭐ Live equipped on Phana! Fast dagger dropped by Wandering Eye of Kilrogg." },
-  2947: { name: "Fine Longbow", slot: "Ranged / Bow", type: "Bow", quality: "common", armor: null, stats: ["8 - 15 Damage (4.8 DPS)", "Speed 2.40"], req: "Requires Level 8", tip: "⭐ Live equipped on Phana! Starter ranged pull weapon." },
-  11851: { name: "Grizzly Jerkin", slot: "Chest", type: "Leather", quality: "uncommon", armor: "88 Armor", stats: ["+6 Strength (+12 AP)", "+5 Stamina (+50 HP)"], req: "Requires Level 15", tip: "⭐ Live equipped on Phana! High armor leather chest." },
-  2173: { name: "Troll's Sweatcloth", slot: "Waist", type: "Leather", quality: "uncommon", armor: "41 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 10", tip: "⭐ Live equipped on Phana! Sturdy leather belt." },
-  3272: { name: "Grassland Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "64 Armor", stats: ["+4 Agility (+4 AP / +0.2% Crit)", "+3 Stamina (+30 HP)"], req: "Requires Level 12", tip: "⭐ Live equipped on Phana! Agility leather trousers." },
-  121: { name: "Soft Leather Boots", slot: "Feet", type: "Leather", quality: "common", armor: "36 Armor", stats: ["36 Armor (Pure Armor)"], req: "Requires Level 5", tip: "⭐ Live equipped on Phana! Basic leather footwear." },
-  3365: { name: "Black Wolf Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "31 Armor", stats: ["+2 Agility (+2 AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 10", tip: "⭐ Live equipped on Phana! Agility wristguards." },
-  11847: { name: "Grizzly Cape", slot: "Back", type: "Cloth", quality: "uncommon", armor: "14 Armor", stats: ["+2 Strength (+4 AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 14", tip: "⭐ Live equipped on Phana! Strength cloak." },
-  2105: { name: "White Swashbuckler's Shirt", slot: "Shirt", type: "Shirt", quality: "common", armor: null, stats: ["Fashionable tailor-crafted swashbuckler shirt"], req: "Requires Level 1", tip: "⭐ Live equipped on Phana!" },
+  3268: { name: "Beholder's Eye", slot: "Main Hand", type: "Dagger", quality: "uncommon", armor: null, stats: ["14 - 26 Damage (11.1 DPS)", "Speed 1.80", "+2 Agility", "+1 Stamina"], req: "Requires Level 13", tip: "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg." },
+  2947: { name: "Fine Longbow", slot: "Ranged / Bow", type: "Bow", quality: "common", armor: null, stats: ["8 - 15 Damage (4.8 DPS)", "Speed 2.40"], req: "Requires Level 8", tip: "⭐ Live equipped! Starter ranged pull weapon." },
+  11851: { name: "Grizzly Jerkin", slot: "Chest", type: "Leather", quality: "uncommon", armor: "88 Armor", stats: ["+6 Strength (+12 AP)", "+5 Stamina (+50 HP)"], req: "Requires Level 15", tip: "⭐ Live equipped! High armor leather chest." },
+  2173: { name: "Troll's Sweatcloth", slot: "Waist", type: "Leather", quality: "uncommon", armor: "41 Armor", stats: ["+3 Stamina (+30 HP)", "+2 Spirit"], req: "Requires Level 10", tip: "⭐ Live equipped! Sturdy leather belt." },
+  3272: { name: "Grassland Pants", slot: "Legs", type: "Leather", quality: "uncommon", armor: "64 Armor", stats: ["+4 Agility (+4 AP / +0.2% Crit)", "+3 Stamina (+30 HP)"], req: "Requires Level 12", tip: "⭐ Live equipped! Agility leather trousers." },
+  121: { name: "Soft Leather Boots", slot: "Feet", type: "Leather", quality: "common", armor: "36 Armor", stats: ["36 Armor (Pure Armor)"], req: "Requires Level 5", tip: "⭐ Live equipped! Basic leather footwear." },
+  3365: { name: "Black Wolf Bracers", slot: "Wrists", type: "Leather", quality: "uncommon", armor: "31 Armor", stats: ["+2 Agility (+2 AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 10", tip: "⭐ Live equipped! Agility wristguards." },
+  11847: { name: "Grizzly Cape", slot: "Back", type: "Cloth", quality: "uncommon", armor: "14 Armor", stats: ["+2 Strength (+4 AP)", "+1 Stamina (+10 HP)"], req: "Requires Level 14", tip: "⭐ Live equipped! Strength cloak." },
+  2105: { name: "White Swashbuckler's Shirt", slot: "Shirt", type: "Shirt", quality: "common", armor: null, stats: ["Fashionable tailor-crafted swashbuckler shirt"], req: "Requires Level 1", tip: "⭐ Live equipped!" },
   1369: { name: "Scavenger Cord", slot: "Waist", type: "Leather", quality: "common", armor: "34 Armor", stats: ["34 Armor"], req: "Requires Level 4", tip: "Basic leather belt." },
 
   // --- Rogue Weapons & Key Leveling Gear ---
@@ -51,22 +76,36 @@ const ITEM_DB = {
   17774: { name: "Mark of the Chosen", slot: "Trinket", type: "Trinket", quality: "uncommon", armor: null, stats: ["Equip: 2% chance when struck to gain +25 all attributes for 1 min"], req: "Requires Level 39", tip: "Maraudon quest: The Pariah's Instructions." }
 };
 
+/**
+ * Searches drives and directories for WoW WTF files.
+ */
 function findGameFiles() {
-  const possibleBases = [
-    'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account',
-    'C:\\World of Warcraft\\_forever_\\WTF\\Account',
-    'D:\\World of Warcraft\\_forever_\\WTF\\Account',
-    'C:\\Games\\World of Warcraft\\_forever_\\WTF\\Account',
-    'D:\\Games\\World of Warcraft\\_forever_\\WTF\\Account',
-    'E:\\World of Warcraft\\_forever_\\WTF\\Account',
-    'C:\\World of Warcraft\\WTF\\Account',
-    'D:\\World of Warcraft\\WTF\\Account',
-    'C:\\Program Files (x86)\\World of Warcraft\\WTF\\Account',
+  const candidateAccountDirs = [];
+  const driveRoots = ['C:', 'D:', 'E:', 'F:'];
+  const userHome = process.env.USERPROFILE || process.env.HOME || '';
+
+  const subPaths = [
+    'Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account',
+    'Program Files\\World of Warcraft\\_forever_\\WTF\\Account',
+    'World of Warcraft\\_forever_\\WTF\\Account',
+    'Games\\World of Warcraft\\_forever_\\WTF\\Account',
+    'Program Files (x86)\\World of Warcraft\\WTF\\Account',
+    'Program Files\\World of Warcraft\\WTF\\Account',
+    'World of Warcraft\\WTF\\Account',
+    'Games\\World of Warcraft\\WTF\\Account'
   ];
 
-  const userHome = process.env.USERPROFILE || process.env.HOME;
+  for (const drive of driveRoots) {
+    for (const sp of subPaths) {
+      const full = path.join(drive, '\\', sp);
+      if (fs.existsSync(full)) {
+        candidateAccountDirs.push(full);
+      }
+    }
+  }
+
   if (userHome) {
-    possibleBases.push(
+    candidateAccountDirs.push(
       path.join(userHome, 'Desktop', 'World of Warcraft', '_forever_', 'WTF', 'Account'),
       path.join(userHome, 'Downloads', 'World of Warcraft', '_forever_', 'WTF', 'Account')
     );
@@ -77,49 +116,162 @@ function findGameFiles() {
     const customLine = fs.readFileSync(customConfig, 'utf8').trim();
     if (customLine && fs.existsSync(customLine)) {
       if (customLine.toLowerCase().includes('account')) {
-        possibleBases.unshift(customLine);
+        candidateAccountDirs.unshift(customLine);
       } else {
-        possibleBases.unshift(path.join(customLine, '_forever_', 'WTF', 'Account'));
+        candidateAccountDirs.unshift(path.join(customLine, '_forever_', 'WTF', 'Account'));
+        candidateAccountDirs.unshift(path.join(customLine, 'WTF', 'Account'));
       }
     }
   }
 
-  let foundQuestie = null;
-  let foundPawn = null;
-  let foundBagBrother = null;
-  let foundConsole = null;
-  let foundGeneralLog = null;
-
-  const defaultQuestie = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\Questie.lua';
-  const defaultPawn = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\91\\Phana-Belfall\\SavedVariables\\Pawn.lua';
-  const defaultBB = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\Account\\1714350#2\\SavedVariables\\BagBrother.lua';
-  const defaultConsole = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\WTF\\SavedVariables\\Blizzard_Console.lua';
-  const defaultGeneralLog = 'C:\\Program Files (x86)\\World of Warcraft\\_forever_\\Logs\\General.log';
-
-  if (fs.existsSync(defaultQuestie)) foundQuestie = defaultQuestie;
-  if (fs.existsSync(defaultPawn)) foundPawn = defaultPawn;
-  if (fs.existsSync(defaultBB)) foundBagBrother = defaultBB;
-  if (fs.existsSync(defaultConsole)) foundConsole = defaultConsole;
-  if (fs.existsSync(defaultGeneralLog)) foundGeneralLog = defaultGeneralLog;
-
-  return {
-    questiePath: foundQuestie,
-    pawnPath: foundPawn,
-    bagBrotherPath: foundBagBrother,
-    consolePath: foundConsole,
-    generalLogPath: foundGeneralLog
+  const discovered = {
+    bagBrotherFiles: [],
+    questieFiles: [],
+    pawnFiles: [],
+    consolePath: null,
+    generalLogPath: null
   };
+
+  for (const accBase of candidateAccountDirs) {
+    if (!fs.existsSync(accBase)) continue;
+    try {
+      const entries = fs.readdirSync(accBase, { withFileTypes: true });
+      for (const ent of entries) {
+        if (!ent.isDirectory()) continue;
+        const accountPath = path.join(accBase, ent.name);
+        const bb = path.join(accountPath, 'SavedVariables', 'BagBrother.lua');
+        if (fs.existsSync(bb) && !discovered.bagBrotherFiles.includes(bb)) {
+          discovered.bagBrotherFiles.push(bb);
+        }
+        const q = path.join(accountPath, 'SavedVariables', 'Questie.lua');
+        if (fs.existsSync(q) && !discovered.questieFiles.includes(q)) {
+          discovered.questieFiles.push(q);
+        }
+
+        // Search realm subdirectories for Pawn.lua
+        try {
+          const realmEntries = fs.readdirSync(accountPath, { withFileTypes: true });
+          for (const rent of realmEntries) {
+            if (!rent.isDirectory() || rent.name === 'SavedVariables') continue;
+            const realmDir = path.join(accountPath, rent.name);
+            const charEntries = fs.readdirSync(realmDir, { withFileTypes: true });
+            for (const cent of charEntries) {
+              if (!cent.isDirectory()) continue;
+              const p = path.join(realmDir, cent.name, 'SavedVariables', 'Pawn.lua');
+              if (fs.existsSync(p) && !discovered.pawnFiles.includes(p)) {
+                discovered.pawnFiles.push(p);
+              }
+            }
+          }
+        } catch (_) {}
+      }
+    } catch (_) {}
+
+    // Console and Logs
+    const wowRoot = path.dirname(path.dirname(accBase));
+    const cPath = path.join(wowRoot, 'WTF', 'SavedVariables', 'Blizzard_Console.lua');
+    if (fs.existsSync(cPath) && !discovered.consolePath) discovered.consolePath = cPath;
+    const lPath = path.join(wowRoot, 'Logs', 'General.log');
+    if (fs.existsSync(lPath) && !discovered.generalLogPath) discovered.generalLogPath = lPath;
+  }
+
+  return discovered;
 }
 
-function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "rogue") {
+/**
+ * Parses all characters present in a BagBrother.lua file.
+ */
+function parseCharactersFromBagBrother(content) {
+  const characters = [];
+  if (!content) return characters;
+
+  const charHeaderRegex = /\["([^"\]]+?)\s+([^"\]]+?)"\]\s*=\s*\{/g;
+  let match;
+  const indices = [];
+
+  while ((match = charHeaderRegex.exec(content)) !== null) {
+    indices.push({
+      fullName: match[1] + ' ' + match[2],
+      name: match[1],
+      realm: match[2],
+      startIndex: match.index
+    });
+  }
+
+  for (let i = 0; i < indices.length; i++) {
+    const cur = indices[i];
+    const nextStart = (i + 1 < indices.length) ? indices[i + 1].startIndex : content.length;
+    const block = content.substring(cur.startIndex, nextStart);
+
+    const classM = block.match(/\["class"\]\s*=\s*"([^"]+)"/);
+    if (!classM) continue; // Not a character block
+
+    const charClass = classM[1].toUpperCase();
+
+    const lvlM = block.match(/\["level"\]\s*=\s*(\d+)/);
+    const level = lvlM ? parseInt(lvlM[1], 10) : 1;
+
+    const moneyM = block.match(/\["money"\]\s*=\s*(\d+)/);
+    const money = moneyM ? parseInt(moneyM[1], 10) : 0;
+
+    const raceM = block.match(/\["race"\]\s*=\s*"([^"]+)"/);
+    let race = raceM ? raceM[1] : "Undead";
+    if (race.toLowerCase() === "scourge") race = "Horde Undead";
+    if (race.toLowerCase() === "skyborne") race = "Alliance Skyborne";
+
+    const factionM = block.match(/\["faction"\]\s*=\s*(true|false)/);
+    const faction = factionM ? (factionM[1] === 'false' ? 'Horde' : 'Alliance') : 'Horde';
+
+    const equip = {};
+    const equipM = block.match(/\["equip"\]\s*=\s*\{([\s\S]*?)\n\s*\},/);
+    if (equipM) {
+      const lines = equipM[1].split('\n').map(l => l.trim()).filter(l => l && l !== ',');
+      let slotIdx = 1;
+      for (const rawLine of lines) {
+        const line = rawLine.replace(/,$/, '').trim();
+        const explicitM = line.match(/^\[(\d+)\]\s*=\s*(.*)$/);
+        let targetSlot, val;
+        if (explicitM) {
+          targetSlot = parseInt(explicitM[1], 10);
+          val = explicitM[2];
+          slotIdx = targetSlot + 1;
+        } else {
+          targetSlot = slotIdx;
+          val = line;
+          slotIdx++;
+        }
+        if (val && val !== 'nil') {
+          const cleanVal = val.replace(/^"|"$/g, '');
+          const idM = cleanVal.match(/^(\d+)/);
+          if (idM) {
+            equip[targetSlot] = parseInt(idM[1], 10);
+          }
+        }
+      }
+    }
+
+    characters.push({
+      name: cur.name,
+      realm: cur.realm,
+      class: charClass,
+      level,
+      money,
+      race,
+      faction,
+      equip
+    });
+  }
+
+  return characters;
+}
+
+function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "warlock") {
   if (ITEM_DB[id]) {
     return { ...ITEM_DB[id] };
   }
 
   let armor = null;
   const stats = [];
-  const lowerName = (name || "").toLowerCase();
-
   const isLeather = [5, 6, 7, 8, 9, 10].includes(slotNum);
   const isCloth = [5, 6, 7, 8, 9, 10].includes(slotNum) && targetClass === "warlock";
   const isCloak = slotNum === 15;
@@ -149,7 +301,7 @@ function resolveItemStats(id, name, quality, itemLevel, slotNum, targetClass = "
   else if (slotNum === 9) slotName = "Wrists";
   else if (slotNum === 10) slotName = "Hands";
   else if (slotNum === 15) slotName = "Back";
-  else if (slotNum === 16) slotName = targetClass === "warlock" ? "Main Hand" : "Main Hand";
+  else if (slotNum === 16) slotName = "Main Hand";
   else if (slotNum === 17) slotName = "Off-Hand";
   else if (slotNum === 18) slotName = targetClass === "warlock" ? "Ranged / Wand" : "Ranged / Bow";
 
@@ -208,16 +360,15 @@ function extractProfessions(consolePath, generalLogPath, targetClass = "warlock"
     try { parseText(fs.readFileSync(generalLogPath, 'utf8')); } catch (_) {}
   }
 
-  function getRankAndMax(level) {
-    if (level <= 0) return { rank: 'Untrained', max: 75 };
-    if (level < 75) return { rank: 'Apprentice', max: 75 };
-    if (level < 150) return { rank: 'Journeyman', max: 150 };
-    if (level < 225) return { rank: 'Expert', max: 225 };
+  function getRankAndMax(lvl) {
+    if (lvl <= 0) return { rank: 'Untrained', max: 75 };
+    if (lvl < 75) return { rank: 'Apprentice', max: 75 };
+    if (lvl < 150) return { rank: 'Journeyman', max: 150 };
+    if (lvl < 225) return { rank: 'Expert', max: 225 };
     return { rank: 'Artisan', max: 300 };
   }
 
   if (targetClass === "rogue") {
-    // Rogue Phana: has skinning 4 from live logs
     const skinLvl = Math.max(detected.skinning, 4);
     const faLvl = detected.firstAid || 0;
     return {
@@ -227,10 +378,9 @@ function extractProfessions(consolePath, generalLogPath, targetClass = "warlock"
       cooking: { name: 'Cooking', level: detected.cooking, ...getRankAndMax(detected.cooking), icon: '🍖' }
     };
   } else {
-    // Warlock defaults: Tailoring & Enchanting / First Aid
-    const tailLvl = detected.tailoring || 65;
-    const enchLvl = detected.enchanting || 45;
-    const faLvl = detected.firstAid || 85;
+    const tailLvl = detected.tailoring || 0;
+    const enchLvl = detected.enchanting || 0;
+    const faLvl = detected.firstAid || 0;
     return {
       primary1: { name: 'Tailoring', level: tailLvl, ...getRankAndMax(tailLvl), icon: '🧵' },
       primary2: { name: 'Enchanting', level: enchLvl, ...getRankAndMax(enchLvl), icon: '✨' },
@@ -238,57 +388,6 @@ function extractProfessions(consolePath, generalLogPath, targetClass = "warlock"
       cooking: { name: 'Cooking', level: detected.cooking, ...getRankAndMax(detected.cooking), icon: '🍖' }
     };
   }
-}
-
-function parseLiveCharacterFromBagBrother(bbContent, charSearchKey, targetClass) {
-  let charName = targetClass === "rogue" ? "Phana" : "Warlock";
-  let level = targetClass === "rogue" ? 17 : 14;
-  let money = targetClass === "rogue" ? 32 : 12500;
-  const bagBrotherEquip = {};
-
-  if (!bbContent) return null;
-
-  const idx = bbContent.indexOf(charSearchKey);
-  if (idx !== -1) {
-    // Parse character section
-    const endIdx = bbContent.indexOf('["account"]', idx);
-    const charBlock = bbContent.substring(idx, endIdx !== -1 ? endIdx : idx + 6000);
-
-    const lvlM = charBlock.match(/\["level"\]\s*=\s*(\d+)/);
-    if (lvlM) level = parseInt(lvlM[1], 10);
-
-    const monM = charBlock.match(/\["money"\]\s*=\s*(\d+)/);
-    if (monM) money = parseInt(monM[1], 10);
-
-    const equipM = charBlock.match(/\["equip"\]\s*=\s*\{([\s\S]*?)\n\s*\},/);
-    if (equipM) {
-      const lines = equipM[1].split('\n').map(l => l.trim()).filter(l => l && l !== ',');
-      let slotIdx = 1;
-      for (const rawLine of lines) {
-        const line = rawLine.replace(/,$/, '').trim();
-        const explicitM = line.match(/^\[(\d+)\]\s*=\s*(.*)$/);
-        let targetSlot, val;
-        if (explicitM) {
-          targetSlot = parseInt(explicitM[1], 10);
-          val = explicitM[2];
-          slotIdx = targetSlot + 1;
-        } else {
-          targetSlot = slotIdx;
-          val = line;
-          slotIdx++;
-        }
-        if (val !== 'nil') {
-          const cleanVal = val.replace(/^"|"$/g, '');
-          const idM = cleanVal.match(/^(\d+)/);
-          if (idM) {
-            bagBrotherEquip[targetSlot] = parseInt(idM[1], 10);
-          }
-        }
-      }
-    }
-    return { name: charSearchKey.split(' ')[0], level, money, equip: bagBrotherEquip };
-  }
-  return null;
 }
 
 function buildCharacterGear(equipMap, targetClass, charName, level) {
@@ -323,7 +422,7 @@ function buildCharacterGear(equipMap, targetClass, charName, level) {
   if (equipMap && Object.keys(equipMap).length > 0) {
     for (const slotNum in equipMap) {
       const itemId = equipMap[slotNum];
-      if (parseInt(slotNum, 10) === 4) continue; // Shirt slot
+      if (parseInt(slotNum, 10) === 4) continue; // Skip shirt
       if (!itemId || itemId > 100000) continue;
       const key = slotMap[slotNum];
       if (!key) continue;
@@ -337,7 +436,7 @@ function buildCharacterGear(equipMap, targetClass, charName, level) {
     }
   }
 
-  // Dual wield check for rogue: if main hand has dagger and off-hand has dagger
+  // Dual wield check for rogue
   if (targetClass === "rogue" && (!liveGear.offHand || liveGear.offHand.name === "None Equipped") && equipMap && equipMap[17]) {
     const offId = equipMap[17];
     const resolvedOff = resolveItemStats(offId, ITEM_DB[offId] ? ITEM_DB[offId].name : `Dagger #${offId}`, "uncommon", level, 17, "rogue");
@@ -351,128 +450,244 @@ function buildCharacterGear(equipMap, targetClass, charName, level) {
   return liveGear;
 }
 
-function runSync() {
+/**
+ * Direct HTTPS GitHub Gist fetcher.
+ */
+function fetchRemoteGist() {
+  return new Promise((resolve) => {
+    const options = {
+      hostname: 'api.github.com',
+      port: 443,
+      path: `/gists/${GIST_ID}`,
+      method: 'GET',
+      headers: {
+        'User-Agent': 'WoW-Sync-Tool',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      timeout: 6000
+    };
+
+    const req = https.get(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          try {
+            const parsed = JSON.parse(data);
+            if (parsed.files && parsed.files['synced_character.json']) {
+              resolve(JSON.parse(parsed.files['synced_character.json'].content));
+              return;
+            }
+          } catch (_) {}
+        }
+        resolve(null);
+      });
+    });
+
+    req.on('error', () => resolve(null));
+    req.on('timeout', () => { req.destroy(); resolve(null); });
+  });
+}
+
+/**
+ * Direct HTTPS GitHub Gist updater.
+ */
+function updateRemoteGist(contentObj) {
+  const token = getGitHubToken();
+  if (!token) {
+    return Promise.reject(new Error("No GitHub token found. To enable remote Gist sync on this machine, add token to github_token.txt or login with gh."));
+  }
+
+  return new Promise((resolve, reject) => {
+    const payload = JSON.stringify({
+      description: "WoW Forever Live Character Sync (Horde Warlock & Rogue)",
+      files: {
+        "synced_character.json": {
+          content: JSON.stringify(contentObj, null, 2)
+        }
+      }
+    });
+
+    const options = {
+      hostname: 'api.github.com',
+      port: 443,
+      path: `/gists/${GIST_ID}`,
+      method: 'PATCH',
+      headers: {
+        'User-Agent': 'WoW-Sync-Tool',
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json',
+        'Content-Length': Buffer.byteLength(payload)
+      },
+      timeout: 8000
+    };
+
+    const req = https.request(options, (res) => {
+      let data = '';
+      res.on('data', chunk => data += chunk);
+      res.on('end', () => {
+        if (res.statusCode >= 200 && res.statusCode < 300) {
+          resolve(true);
+        } else {
+          reject(new Error(`GitHub API returned HTTP ${res.statusCode}: ${data}`));
+        }
+      });
+    });
+
+    req.on('error', reject);
+    req.on('timeout', () => { req.destroy(); reject(new Error('GitHub API request timed out')); });
+    req.write(payload);
+    req.end();
+  });
+}
+
+async function runSync() {
   console.log("========================================================");
   console.log(" WoW Forever - Horde Multi-Character Exporter & Syncer");
-  console.log(" Supporting: 🔮 Warlock (Default) & 🗡️ Rogue (Phana)");
+  console.log(" Dynamic Discovery: 🔮 Warlock (Default) & 🗡️ Rogue");
   console.log("========================================================");
 
-  const { questiePath, pawnPath, bagBrotherPath, consolePath, generalLogPath } = findGameFiles();
+  const discovered = findGameFiles();
 
-  console.log(`\n[1] Searching for WoW SavedVariables & Game Logs on this PC...`);
-  if (questiePath)    console.log(`    ✓ Found Questie.lua:         ${questiePath}`);
-  if (pawnPath)       console.log(`    ✓ Found Pawn.lua:            ${pawnPath}`);
-  if (bagBrotherPath) console.log(`    ✓ Found BagBrother.lua:      ${bagBrotherPath}`);
-  if (consolePath)    console.log(`    ✓ Found Blizzard_Console.lua:${consolePath}`);
-  if (generalLogPath) console.log(`    ✓ Found General.log:         ${generalLogPath}`);
+  console.log(`\n[1] Scanning local WoW directories...`);
+  console.log(`    Found ${discovered.bagBrotherFiles.length} BagBrother file(s).`);
+  console.log(`    Found ${discovered.questieFiles.length} Questie file(s).`);
+  if (discovered.consolePath) console.log(`    Found Blizzard_Console: ${discovered.consolePath}`);
 
-  let bbContent = "";
-  if (bagBrotherPath && fs.existsSync(bagBrotherPath)) {
-    try { bbContent = fs.readFileSync(bagBrotherPath, 'utf8'); } catch (_) {}
+  // Fetch remote Gist for multi-machine merging
+  console.log(`\n[2] Fetching Cloud Gist for multi-machine synchronization...`);
+  const remoteData = await fetchRemoteGist();
+  if (remoteData) {
+    const rW = remoteData.characters && remoteData.characters.warlock;
+    const rR = remoteData.characters && remoteData.characters.rogue;
+    console.log(`    ✓ Remote Gist reachable!`);
+    if (rW) console.log(`      Remote Warlock: ${rW.name} (Lvl ${rW.level})`);
+    if (rR) console.log(`      Remote Rogue:   ${rR.name} (Lvl ${rR.level})`);
+  } else {
+    console.log(`    ℹ️ Remote Gist not reachable or empty. Proceeding locally.`);
   }
 
-  // --- Process Rogue: Phana ---
-  console.log(`\n[2] Processing Rogue (Phana - Undead)...`);
-  const liveRogue = parseLiveCharacterFromBagBrother(bbContent, 'Phana Belfall', 'rogue') || {
-    name: 'Phana',
-    level: 17,
-    money: 32,
-    equip: {
-      4: 2105, 5: 11851, 6: 2173, 7: 3272, 8: 121, 9: 3365, 15: 11847, 16: 3268, 17: 3268, 18: 2947
-    }
-  };
-
-  const rogueGear = buildCharacterGear(liveRogue.equip, 'rogue', liveRogue.name, liveRogue.level);
-  const rogueProfessions = extractProfessions(consolePath, generalLogPath, 'rogue');
-
-  const rogueProfile = {
-    name: liveRogue.name,
-    realm: "Belfall (WoW Forever)",
-    class: "Rogue",
-    race: "Horde Undead",
-    level: liveRogue.level,
-    money: liveRogue.money,
-    spec: "Combat Swords / Daggers",
-    liveGear: rogueGear,
-    professions: rogueProfessions,
-    syncedAt: new Date().toISOString()
-  };
-
-  console.log(`    ✓ Rogue Detected: ${rogueProfile.name} (Level ${rogueProfile.level})`);
-  console.log(`      Weapon: ${rogueGear.mainHand.name} (${rogueGear.mainHand.quality}) / Off-Hand: ${rogueGear.offHand.name}`);
-  console.log(`      Chest:  ${rogueGear.chest.name} | Legs: ${rogueGear.legs.name} | Waist: ${rogueGear.waist.name}`);
-  console.log(`      Ranged: ${rogueGear.ranged.name} | Money: ${rogueProfile.money} copper`);
-
-  // --- Process Warlock: Malakor / Live Warlock ---
-  console.log(`\n[3] Processing Warlock (Default Class)...`);
-  // Check if live warlock exists in BagBrother
-  let liveWarlock = null;
-  const warlockCandidates = ['Warlock', 'Malakor', 'Xul', 'Netherbane', 'Muataurgrumm', 'Levevevice'];
-  for (const cand of warlockCandidates) {
-    if (bbContent.includes(cand)) {
-      liveWarlock = parseLiveCharacterFromBagBrother(bbContent, cand, 'warlock');
-      if (liveWarlock) break;
-    }
+  // Parse all characters across discovered BagBrother files
+  const allParsedChars = [];
+  for (const bbf of discovered.bagBrotherFiles) {
+    try {
+      const content = fs.readFileSync(bbf, 'utf8');
+      const chars = parseCharactersFromBagBrother(content);
+      allParsedChars.push(...chars);
+    } catch (_) {}
   }
 
-  if (!liveWarlock) {
-    // High-quality default Warlock state (Level 14 Undead Warlock)
-    liveWarlock = {
-      name: "Malakor",
-      level: 14,
-      money: 12500, // 1g 25s
-      equip: {
-        5: 2292, // Necrology Robes
-        6: 1369, // Scavenger Cord
-        18: 5602 // Greater Magic Wand (17.5 DPS Arcane)
-      }
+  console.log(`\n[3] Detected ${allParsedChars.length} character(s) in local game files:`);
+  allParsedChars.forEach(c => {
+    console.log(`    - [${c.class}] ${c.name} (${c.realm}) Lvl ${c.level} - Race: ${c.race}`);
+  });
+
+  // Find local Warlock and Rogue (highest level if multiple)
+  const localWarlocks = allParsedChars.filter(c => c.class === 'WARLOCK').sort((a, b) => b.level - a.level);
+  const localRogues = allParsedChars.filter(c => c.class === 'ROGUE').sort((a, b) => b.level - a.level);
+
+  const rawLocalWarlock = localWarlocks[0] || null;
+  const rawLocalRogue = localRogues[0] || null;
+
+  // --- Resolve Warlock Profile ---
+  let warlockProfile = null;
+  if (rawLocalWarlock) {
+    console.log(`\n[4] Active Local Warlock Found: ${rawLocalWarlock.name} (Lvl ${rawLocalWarlock.level})`);
+    const warlockGear = buildCharacterGear(rawLocalWarlock.equip, 'warlock', rawLocalWarlock.name, rawLocalWarlock.level);
+    const warlockProfessions = extractProfessions(discovered.consolePath, discovered.generalLogPath, 'warlock');
+    warlockProfile = {
+      name: rawLocalWarlock.name,
+      realm: `${rawLocalWarlock.realm} (WoW Forever)`,
+      class: "Warlock",
+      race: rawLocalWarlock.race || "Horde Undead",
+      level: rawLocalWarlock.level,
+      money: rawLocalWarlock.money,
+      spec: "Affliction Drain Tank / Wand Spec",
+      liveGear: warlockGear,
+      professions: warlockProfessions,
+      syncedAt: new Date().toISOString()
+    };
+  } else if (remoteData && remoteData.characters && remoteData.characters.warlock && remoteData.characters.warlock.name !== 'Malakor') {
+    // Preserve remote Warlock synced from Computer B!
+    console.log(`\n[4] Preserving Remote Warlock from Computer B: ${remoteData.characters.warlock.name} (Lvl ${remoteData.characters.warlock.level})`);
+    warlockProfile = remoteData.characters.warlock;
+  } else {
+    // Awaiting character sync
+    console.log(`\n[4] No Warlock detected locally yet. Initializing clean Warlock profile awaiting sync from game...`);
+    warlockProfile = {
+      name: "Warlock",
+      realm: "Belfall (WoW Forever)",
+      class: "Warlock",
+      race: "Horde Undead",
+      level: 1,
+      money: 0,
+      spec: "Affliction Drain Tank / Wand Spec",
+      liveGear: buildCharacterGear({}, 'warlock', 'Warlock', 1),
+      professions: extractProfessions(discovered.consolePath, discovered.generalLogPath, 'warlock'),
+      syncedAt: new Date().toISOString()
     };
   }
 
-  const warlockGear = buildCharacterGear(liveWarlock.equip, 'warlock', liveWarlock.name, liveWarlock.level);
-  const warlockProfessions = extractProfessions(consolePath, generalLogPath, 'warlock');
-
-  // Ensure Warlock has wand equipped
-  if (warlockGear.ranged.name === "None Equipped") {
-    warlockGear.ranged = { ...ITEM_DB[5602], source: `Equipped on ${liveWarlock.name}` };
+  // --- Resolve Rogue Profile ---
+  let rogueProfile = null;
+  if (rawLocalRogue) {
+    console.log(`\n[5] Active Local Rogue Found: ${rawLocalRogue.name} (Lvl ${rawLocalRogue.level})`);
+    const rogueGear = buildCharacterGear(rawLocalRogue.equip, 'rogue', rawLocalRogue.name, rawLocalRogue.level);
+    const rogueProfessions = extractProfessions(discovered.consolePath, discovered.generalLogPath, 'rogue');
+    rogueProfile = {
+      name: rawLocalRogue.name,
+      realm: `${rawLocalRogue.realm} (WoW Forever)`,
+      class: "Rogue",
+      race: rawLocalRogue.race || "Horde Undead",
+      level: rawLocalRogue.level,
+      money: rawLocalRogue.money,
+      spec: "Combat Swords / Daggers",
+      liveGear: rogueGear,
+      professions: rogueProfessions,
+      syncedAt: new Date().toISOString()
+    };
+  } else if (remoteData && remoteData.characters && remoteData.characters.rogue) {
+    console.log(`\n[5] Preserving Remote Rogue from Cloud Gist: ${remoteData.characters.rogue.name} (Lvl ${remoteData.characters.rogue.level})`);
+    rogueProfile = remoteData.characters.rogue;
+  } else {
+    console.log(`\n[5] Setting default Rogue template...`);
+    rogueProfile = {
+      name: "Rogue",
+      realm: "Belfall (WoW Forever)",
+      class: "Rogue",
+      race: "Horde Undead",
+      level: 1,
+      money: 0,
+      spec: "Combat Swords / Daggers",
+      liveGear: buildCharacterGear({}, 'rogue', 'Rogue', 1),
+      professions: extractProfessions(discovered.consolePath, discovered.generalLogPath, 'rogue'),
+      syncedAt: new Date().toISOString()
+    };
   }
 
-  const warlockProfile = {
-    name: liveWarlock.name,
-    realm: "Belfall (WoW Forever)",
-    class: "Warlock",
-    race: "Horde Undead",
-    level: liveWarlock.level,
-    money: liveWarlock.money,
-    spec: "Affliction Drain Tank / Wand Spec",
-    liveGear: warlockGear,
-    professions: warlockProfessions,
-    syncedAt: new Date().toISOString()
-  };
+  // Active character defaults to Warlock
+  const activeCharKey = "warlock";
+  const activeProfile = warlockProfile;
 
-  console.log(`    ✓ Warlock Configured: ${warlockProfile.name} (Level ${warlockProfile.level})`);
-  console.log(`      Wand:   ${warlockGear.ranged.name} (${warlockGear.ranged.stats.join(", ")})`);
-  console.log(`      Chest:  ${warlockGear.chest.name} | Waist: ${warlockGear.waist.name}`);
-
-  // Unified Multi-Character Payload defaulting to Warlock
   const unifiedPayload = {
-    activeCharacter: "warlock",
+    activeCharacter: activeCharKey,
     characters: {
       warlock: warlockProfile,
       rogue: rogueProfile
     },
-    // Top-level mirrors active character (Warlock) for direct readers
-    name: warlockProfile.name,
-    realm: warlockProfile.realm,
-    class: warlockProfile.class,
-    race: warlockProfile.race,
-    level: warlockProfile.level,
-    money: warlockProfile.money,
-    liveGear: warlockProfile.liveGear,
-    professions: warlockProfile.professions,
+    // Top-level mirrors active character (Warlock)
+    name: activeProfile.name,
+    realm: activeProfile.realm,
+    class: activeProfile.class,
+    race: activeProfile.race,
+    level: activeProfile.level,
+    money: activeProfile.money,
+    liveGear: activeProfile.liveGear,
+    professions: activeProfile.professions,
     syncedAt: new Date().toISOString()
   };
 
+  console.log(`\n[6] Writing local sync files...`);
   const fileContent = `/**
  * World of Warcraft: Forever - Client Sync Bridge (Horde Multi-Character Edition)
  * Auto-generated from live WTF game files.
@@ -482,7 +697,6 @@ function runSync() {
 window.WOW_SYNCED_DATA = ${JSON.stringify(unifiedPayload, null, 2)};
 `;
 
-  console.log(`\n[4] Writing local sync files...`);
   const dest = path.join(__dirname, 'synced_character.js');
   fs.writeFileSync(dest, fileContent, 'utf8');
 
@@ -490,44 +704,35 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(unifiedPayload, null, 2)};
   fs.writeFileSync(jsonDest, JSON.stringify(unifiedPayload, null, 2), 'utf8');
   console.log(`    ✓ Saved synced_character.js and synced_character.json successfully!`);
 
-  // Cloud Sync to GitHub Gist
-  console.log(`\n[5] Uploading Horde characters to GitHub Cloud Gist (584b8b9450a8b85003934d27acfa7c7c)...`);
+  // Upload to Cloud Gist
+  console.log(`\n[7] Updating GitHub Cloud Gist (${GIST_ID})...`);
   try {
-    const { execSync } = require('child_process');
-
-    // Conflict prevention check:
-    // If remote Gist has old deleted Druid (Chongo), overwrite it immediately!
-    let remoteChar = null;
+    await updateRemoteGist(unifiedPayload);
+    console.log(`    ✓ [SUCCESS] Cloud Gist updated directly via GitHub REST API!`);
+  } catch (apiErr) {
+    console.log(`    ⚠️ REST API upload error: ${apiErr.message}. Attempting gh CLI fallback...`);
     try {
-      const gistRaw = execSync('gh gist view 584b8b9450a8b85003934d27acfa7c7c', { stdio: 'pipe', encoding: 'utf8', timeout: 8000 });
-      const jsonStart = gistRaw.indexOf('{');
-      if (jsonStart !== -1) {
-        remoteChar = JSON.parse(gistRaw.slice(jsonStart));
-      }
-    } catch (_) {}
-
-    if (remoteChar && (remoteChar.name === 'Chongo' || remoteChar.class === 'Druid')) {
-      console.log(`    ℹ️ Detected old deleted Druid (Chongo) on Cloud Gist. Overwriting with fresh Horde Warlock & Rogue profiles!`);
-    } else if (remoteChar && remoteChar.characters && remoteChar.characters.warlock && remoteChar.characters.warlock.level > warlockProfile.level) {
-      console.log(`    ℹ️ Remote Cloud Gist has higher Warlock level (${remoteChar.characters.warlock.level}) from Computer B! Merging...`);
-      unifiedPayload.characters.warlock = remoteChar.characters.warlock;
-      if (unifiedPayload.activeCharacter === "warlock") {
-        unifiedPayload.level = remoteChar.characters.warlock.level;
-      }
+      execSync(`gh gist edit ${GIST_ID} -a "${jsonDest}"`, { stdio: 'pipe', encoding: 'utf8', timeout: 10000 });
+      console.log(`    ✓ [SUCCESS] Cloud Gist updated via gh CLI!`);
+    } catch (ghErr) {
+      console.log(`    ⚠️ Note: Could not update remote Gist from this machine: ${ghErr.message}`);
     }
-
-    execSync(`gh gist edit 584b8b9450a8b85003934d27acfa7c7c -a "${jsonDest}"`, { stdio: 'pipe', encoding: 'utf8', timeout: 10000 });
-    console.log(`    ✓ [SUCCESS] Horde Warlock & Rogue uploaded to GitHub Cloud!`);
-    console.log(`    👉 Defaulting to Warlock (${warlockProfile.name} Lvl ${warlockProfile.level}) with seamless toggle to Rogue (${rogueProfile.name} Lvl ${rogueProfile.level})!`);
-  } catch (gistErr) {
-    console.error(`    ⚠️ Note on Cloud upload: ${gistErr.message}`);
   }
+
+  console.log("\n========================================================");
+  console.log(` SYNC COMPLETE!`);
+  console.log(` Active Guide: 🔮 Warlock - ${warlockProfile.name} (Level ${warlockProfile.level})`);
+  console.log(` Secondary:    🗡️ Rogue   - ${rogueProfile.name} (Level ${rogueProfile.level})`);
+  console.log("========================================================\n");
 
   return unifiedPayload;
 }
 
 if (require.main === module) {
-  runSync();
+  runSync().catch(err => {
+    console.error("Fatal sync error:", err);
+    process.exit(1);
+  });
 }
 
 module.exports = { runSync };

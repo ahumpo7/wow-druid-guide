@@ -1483,6 +1483,181 @@ function capitalize(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
+// Modal Stepper & Sync Controls
+function stepModalLevel(delta) {
+  const input = document.getElementById("directSyncLevelInput");
+  if (!input) return;
+  let val = parseInt(input.value, 10) || 1;
+  val = Math.max(1, Math.min(60, val + delta));
+  input.value = val;
+}
+window.stepModalLevel = stepModalLevel;
+
+function handleDirectLevelSync() {
+  const nameInput = document.getElementById("directSyncNameInput");
+  const levelInput = document.getElementById("directSyncLevelInput");
+  const feedbackEl = document.getElementById("syncFeedbackMsg");
+
+  const name = nameInput && nameInput.value.trim() ? nameInput.value.trim() : (activeClass === "warlock" ? "Warlock" : "Phana");
+  const lvl = levelInput ? Math.max(1, Math.min(60, parseInt(levelInput.value, 10) || 1)) : currentLevel;
+
+  if (!window.WOW_SYNCED_DATA) {
+    window.WOW_SYNCED_DATA = { activeCharacter: activeClass, characters: {} };
+  }
+  if (!window.WOW_SYNCED_DATA.characters) {
+    window.WOW_SYNCED_DATA.characters = {};
+  }
+  if (!window.WOW_SYNCED_DATA.characters[activeClass]) {
+    window.WOW_SYNCED_DATA.characters[activeClass] = {
+      name,
+      level: lvl,
+      class: activeClass === "warlock" ? "Warlock" : "Rogue",
+      race: "Horde Undead",
+      spec: activeClass === "warlock" ? "Affliction Drain Tank / Wand Spec" : "Combat Swords / Daggers",
+      liveGear: {},
+      professions: {}
+    };
+  }
+
+  window.WOW_SYNCED_DATA.characters[activeClass].name = name;
+  window.WOW_SYNCED_DATA.characters[activeClass].level = lvl;
+  window.WOW_SYNCED_DATA.name = name;
+  window.WOW_SYNCED_DATA.level = lvl;
+
+  localStorage.setItem(`wow_${activeClass}_custom_name`, name);
+  localStorage.setItem(`wow_${activeClass}_custom_level`, lvl);
+
+  setLevel(lvl);
+  switchActiveCharacter(activeClass);
+
+  if (feedbackEl) {
+    feedbackEl.style.display = "block";
+    feedbackEl.style.color = "#4ade80";
+    feedbackEl.textContent = `✓ Set ${name} to Level ${lvl}! Guide updated.`;
+    setTimeout(() => {
+      feedbackEl.style.display = "none";
+      closeSyncModal();
+    }, 1500);
+  }
+}
+window.handleDirectLevelSync = handleDirectLevelSync;
+
+function handleInGameSyncString() {
+  const input = document.getElementById("inGameSyncInput");
+  const feedbackEl = document.getElementById("syncFeedbackMsg");
+  if (!input || !input.value.trim()) return;
+
+  const raw = input.value.trim();
+  let parsedName = null;
+  let parsedLevel = null;
+
+  const colonMatch = raw.match(/([a-zA-Z]+)\s*[:=\-\s]\s*(\d+)/);
+  if (colonMatch) {
+    parsedName = colonMatch[1];
+    parsedLevel = parseInt(colonMatch[2], 10);
+  } else {
+    const numMatch = raw.match(/(\d+)/);
+    if (numMatch) {
+      parsedLevel = parseInt(numMatch[1], 10);
+    }
+  }
+
+  if (parsedLevel && parsedLevel >= 1 && parsedLevel <= 60) {
+    if (!window.WOW_SYNCED_DATA) window.WOW_SYNCED_DATA = { activeCharacter: activeClass, characters: {} };
+    if (!window.WOW_SYNCED_DATA.characters) window.WOW_SYNCED_DATA.characters = {};
+    if (!window.WOW_SYNCED_DATA.characters[activeClass]) {
+      window.WOW_SYNCED_DATA.characters[activeClass] = {
+        name: parsedName || (activeClass === "warlock" ? "Warlock" : "Phana"),
+        level: parsedLevel,
+        class: activeClass === "warlock" ? "Warlock" : "Rogue",
+        race: "Horde Undead",
+        liveGear: {},
+        professions: {}
+      };
+    }
+
+    if (parsedName) window.WOW_SYNCED_DATA.characters[activeClass].name = parsedName;
+    window.WOW_SYNCED_DATA.characters[activeClass].level = parsedLevel;
+    window.WOW_SYNCED_DATA.level = parsedLevel;
+    if (parsedName) window.WOW_SYNCED_DATA.name = parsedName;
+
+    setLevel(parsedLevel);
+    switchActiveCharacter(activeClass);
+
+    if (feedbackEl) {
+      feedbackEl.style.display = "block";
+      feedbackEl.style.color = "#4ade80";
+      feedbackEl.textContent = `✓ In-game string applied: ${parsedName || activeClass} (Level ${parsedLevel})!`;
+      setTimeout(() => {
+        feedbackEl.style.display = "none";
+        closeSyncModal();
+      }, 1500);
+    }
+  } else {
+    if (feedbackEl) {
+      feedbackEl.style.display = "block";
+      feedbackEl.style.color = "#f87171";
+      feedbackEl.textContent = "⚠️ Could not parse level from input. Please use format Name:Level (e.g. Warlock:14 or 14)";
+    }
+  }
+}
+window.handleInGameSyncString = handleInGameSyncString;
+
+function handleWtfFileUpload(event) {
+  const file = event.target.files && event.target.files[0];
+  const feedbackEl = document.getElementById("syncFeedbackMsg");
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = function(e) {
+    const text = e.target.result;
+    let foundName = null;
+    let foundLevel = null;
+    let foundClass = null;
+
+    const classMatch = text.match(/\["class"\]\s*=\s*"([^"]+)"/i);
+    if (classMatch) foundClass = classMatch[1].toLowerCase();
+
+    const lvlMatch = text.match(/\["level"\]\s*=\s*(\d+)/);
+    if (lvlMatch) foundLevel = parseInt(lvlMatch[1], 10);
+
+    const nameMatch = text.match(/\["([A-Za-z]+)\s+[^"\]]+"\]\s*=\s*\{/);
+    if (nameMatch) foundName = nameMatch[1];
+
+    if (foundLevel) {
+      const targetChar = (foundClass && (foundClass.includes("warlock") || foundClass.includes("rogue"))) ? (foundClass.includes("warlock") ? "warlock" : "rogue") : activeClass;
+      if (!window.WOW_SYNCED_DATA) window.WOW_SYNCED_DATA = { activeCharacter: targetChar, characters: {} };
+      if (!window.WOW_SYNCED_DATA.characters) window.WOW_SYNCED_DATA.characters = {};
+      if (!window.WOW_SYNCED_DATA.characters[targetChar]) {
+        window.WOW_SYNCED_DATA.characters[targetChar] = { name: foundName || targetChar, level: foundLevel, class: targetChar, liveGear: {} };
+      }
+      if (foundName) window.WOW_SYNCED_DATA.characters[targetChar].name = foundName;
+      window.WOW_SYNCED_DATA.characters[targetChar].level = foundLevel;
+
+      setLevel(foundLevel);
+      switchActiveCharacter(targetChar);
+
+      if (feedbackEl) {
+        feedbackEl.style.display = "block";
+        feedbackEl.style.color = "#4ade80";
+        feedbackEl.textContent = `✓ Uploaded file parsed: ${foundName || targetChar} (Level ${foundLevel})!`;
+        setTimeout(() => {
+          feedbackEl.style.display = "none";
+          closeSyncModal();
+        }, 1500);
+      }
+    } else {
+      if (feedbackEl) {
+        feedbackEl.style.display = "block";
+        feedbackEl.style.color = "#f87171";
+        feedbackEl.textContent = "⚠️ Could not find character data in uploaded file.";
+      }
+    }
+  };
+  reader.readAsText(file);
+}
+window.handleWtfFileUpload = handleWtfFileUpload;
+
 // App Initialization
 function initApp() {
   initNavigation();
