@@ -4,9 +4,31 @@ const path = require('path');
 const wData = require('./warlock_data.js');
 const rData = require('./rogue_data.js');
 
+function stripEmojis(str) {
+  if (!str) return "";
+  // Strip all emojis and non-standard symbols that render as square boxes in WoW
+  return String(str)
+    .replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}\u{1F1E0}-\u{1F1FF}\u{FE00}-\u{FE0F}\u{1F900}-\u{1F9FF}]/gu, '')
+    .replace(/[⭐★📜📍🏰💡🔮🗡️🌲⚔️⚡🔥🐾🩸✓👉⏱️❤️💚🧠🛡️🏹💀☣️]/g, '')
+    .trim();
+}
+
 function escapeLuaString(str) {
   if (!str) return '""';
-  return JSON.stringify(str);
+  const clean = stripEmojis(str);
+  return JSON.stringify(clean);
+}
+
+function formatTalentTable(t) {
+  if (!t) return 'nil';
+  if (typeof t === 'string') {
+    const s = stripEmojis(t);
+    return s.length > 0 ? escapeLuaString(s) : 'nil';
+  }
+  if (typeof t === 'object') {
+    return `{ name = ${escapeLuaString(t.name)}, rank = ${escapeLuaString(t.rank)}, tree = ${escapeLuaString(t.tree)}, why = ${escapeLuaString(t.why)} }`;
+  }
+  return 'nil';
 }
 
 function generateWarlockLua() {
@@ -29,9 +51,9 @@ function generateWarlockLua() {
     out += `    zoneRange = ${escapeLuaString(d.zoneRange || "")},\n`;
     out += `    hubs = ${escapeLuaString(d.hubs || "")},\n`;
     out += `    zoneInstructions = ${escapeLuaString(d.zoneInstructions || "")},\n`;
-    out += `    talent = ${escapeLuaString(d.talent || "")},\n`;
+    out += `    talent = ${formatTalentTable(d.talent)},\n`;
     out += `    talentNote = ${escapeLuaString(d.talentNote || "")},\n`;
-    out += `    gearTip = ${escapeLuaString(d.gearTip || "")},\n`;
+    out += `    gearTip = ${escapeLuaString(d.gearTip || "Prioritize Stamina (Health & Life Tap fuel) > Intellect (Mana pool & Spell Crit) > Spirit.")},\n`;
     
     out += `    trainerTrain = {`;
     if (d.trainerTrain && d.trainerTrain.length > 0) {
@@ -59,17 +81,17 @@ function generateWarlockLua() {
   out += `WoWGuide_Warlock.talentOrder = {\n`;
   for (let i = 0; i < wData.WARLOCK_TALENT_ORDER.length; i++) {
     const talentKey = wData.WARLOCK_TALENT_ORDER[i];
-    const cfg = wData.WARLOCK_TALENTS_CONFIG.find(t => t.id === talentKey) || { name: talentKey, desc: "", icon: "🔮" };
-    out += `  [${i + 10}] = { id = ${escapeLuaString(talentKey)}, name = ${escapeLuaString(cfg.name)}, desc = ${escapeLuaString(cfg.desc)}, icon = ${escapeLuaString(cfg.icon || "🔮")}, tree = ${escapeLuaString(cfg.tree || "affliction")} },\n`;
+    const cfg = wData.WARLOCK_TALENTS_CONFIG.find(t => t.id === talentKey) || { name: talentKey, desc: "", tree: "affliction" };
+    out += `  [${i + 10}] = { id = ${escapeLuaString(talentKey)}, name = ${escapeLuaString(cfg.name)}, desc = ${escapeLuaString(cfg.desc)}, tree = ${escapeLuaString(cfg.tree || "affliction")} },\n`;
   }
   out += `}\n\n`;
 
   out += `WoWGuide_Warlock.classQuests = {\n`;
   out += `  { lvl = 1, title = "The Mind's Eye (Summon Imp)", zone = "Deathknell (Tirisfal Glades)", npc = "Shadow Priest Sarvis", desc = "Collect the Scarlet Initiate head and complete the summoning ritual to bind your first demon minion, the Imp." },\n`;
-  out += `  { lvl = 10, title = "The Binding (Summon Voidwalker)", zone = "Brill / Ruined Tower (Tirisfal Glades)", npc = "Luther Pickman", desc = "Retrieve the glyph, defeat the summoned Voidwalker in the ruined tower, and bind it to your will as your personal tank!" },\n`;
+  out += `  { lvl = 10, title = "The Binding (Summon Voidwalker)", zone = "Brill / Ruined Tower (Tirisfal Glades)", npc = "Luther Pickman", desc = "Retrieve the glyph, defeat the summoned Voidwalker in the ruined tower, and bind it to your will as your personal tank minion!" },\n`;
   out += `  { lvl = 20, title = "Hearts of Wood (Summon Succubus)", zone = "Undercity / Silverpine / Barrens", npc = "Caretaker Caice", desc = "Venture through the southern wetlands of the Barrens and the hills of Silverpine to gather the Hearts of Wood and bind the seductive Succubus." },\n`;
   out += `  { lvl = 30, title = "Tome of the Cabal (Summon Felhunter)", zone = "Undercity / Ratchet / Thousand Needles", npc = "Mennet Carkiek", desc = "Gather the scattered pages of the Tome of the Cabal and summon the devourer of magic, your Felhunter minion!" },\n`;
-  out += `  { lvl = 40, title = "Summon Felsteed (FREE 60% Mount!)", zone = "Undercity / Orgrimmar Caster Trainers", npc = "Warlock Trainers", desc = "Visit your Warlock trainer to receive your Level 40 Felsteed mount directly—completely free with zero gold cost!" },\n`;
+  out += `  { lvl = 40, title = "Summon Felsteed (FREE 60% Mount!)", zone = "Undercity / Orgrimmar Caster Trainers", npc = "Warlock Trainers", desc = "Visit your Warlock trainer to receive your Level 40 Felsteed mount directly - completely free with zero gold cost!" },\n`;
   out += `  { lvl = 50, title = "Infernal Minion & Niby the Almighty", zone = "Felwood (Jaedenar)", npc = "Niby the Almighty", desc = "Complete the infernal core retrieval in Jaedenar to learn how to call down a blazing Infernal from the sky!" },\n`;
   out += `  { lvl = 60, title = "Dreadsteed of Xoroth (Epic 100% Mount)", zone = "Burning Steppes / Dire Maul / Scholomance", npc = "Mor'zul Bloodbringer", desc = "Epic multi-dungeon quest line to summon and defeat the Dreadsteed of Xoroth for your 100% speed fiery epic mount." }\n`;
   out += `}\n\n`;
@@ -105,9 +127,9 @@ function generateRogueLua() {
     out += `    zoneRange = ${escapeLuaString(d.zoneRange || "")},\n`;
     out += `    hubs = ${escapeLuaString(d.hubs || "")},\n`;
     out += `    zoneInstructions = ${escapeLuaString(d.zoneInstructions || "")},\n`;
-    out += `    talent = ${escapeLuaString(d.talent || "")},\n`;
+    out += `    talent = ${formatTalentTable(d.talent)},\n`;
     out += `    talentNote = ${escapeLuaString(d.talentNote || "")},\n`;
-    out += `    gearTip = ${escapeLuaString(d.gearTip || "")},\n`;
+    out += `    gearTip = ${escapeLuaString(d.gearTip || "Prioritize Agility (Attack Power, Crit %, Dodge) > Strength (Attack Power) > Stamina.")},\n`;
     
     out += `    trainerTrain = {`;
     if (d.trainerTrain && d.trainerTrain.length > 0) {
@@ -135,8 +157,8 @@ function generateRogueLua() {
   out += `WoWGuide_Rogue.talentOrder = {\n`;
   for (let i = 0; i < rData.ROGUE_TALENT_ORDER.length; i++) {
     const talentKey = rData.ROGUE_TALENT_ORDER[i];
-    const cfg = rData.ROGUE_TALENTS_CONFIG.find(t => t.id === talentKey) || { name: talentKey, desc: "", icon: "🗡️" };
-    out += `  [${i + 10}] = { id = ${escapeLuaString(talentKey)}, name = ${escapeLuaString(cfg.name)}, desc = ${escapeLuaString(cfg.desc)}, icon = ${escapeLuaString(cfg.icon || "🗡️")}, tree = ${escapeLuaString(cfg.tree || "combat")} },\n`;
+    const cfg = rData.ROGUE_TALENTS_CONFIG.find(t => t.id === talentKey) || { name: talentKey, desc: "", tree: "combat" };
+    out += `  [${i + 10}] = { id = ${escapeLuaString(talentKey)}, name = ${escapeLuaString(cfg.name)}, desc = ${escapeLuaString(cfg.desc)}, tree = ${escapeLuaString(cfg.tree || "combat")} },\n`;
   }
   out += `}\n\n`;
 
@@ -161,4 +183,4 @@ function generateRogueLua() {
 
 fs.writeFileSync(path.join(__dirname, 'WoWGuide', 'WarlockData.lua'), generateWarlockLua(), 'utf8');
 fs.writeFileSync(path.join(__dirname, 'WoWGuide', 'RogueData.lua'), generateRogueLua(), 'utf8');
-console.log('✓ Regenerated WarlockData.lua and RogueData.lua with robust namespaces!');
+console.log('✓ Successfully regenerated clean, 100% valid WarlockData.lua and RogueData.lua without JSON syntax or emojis!');

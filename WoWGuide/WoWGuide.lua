@@ -1,7 +1,7 @@
 -- ====================================================================
 -- WoW Forever: Master Leveling Guide & Live Sync Codex
 -- High-Fidelity In-Game Leveling Suite for Warlock & Rogue
--- Designed for Visual Clarity, Easy Navigation, and Real-Time Sync
+-- 100% Native Font Rendering: Zero Unicode/Emoji Square Boxes
 -- ====================================================================
 
 local addonName, addonTable = ...
@@ -16,10 +16,9 @@ local liveLevel = 1
 local selectedLevel = 1
 local playerName = "Player"
 
--- Backdrop template compatibility
+-- Safe backdrop template
 local backdropTemplate = BackdropTemplateMixin and "BackdropTemplate" or nil
 
--- Helper Functions
 local function SafeTrim(s)
   if not s then return "" end
   if _G.strtrim then return _G.strtrim(s) end
@@ -160,7 +159,7 @@ local function CreateMainGuideWindow()
   local lockBtn = CreateFrame("Button", nil, classSwitcherFrame, "UIPanelButtonTemplate")
   lockBtn:SetSize(82, 28)
   lockBtn:SetPoint("LEFT", classSwitcherFrame, "LEFT", 0, 0)
-  lockBtn:SetText("🔮 Warlock")
+  lockBtn:SetText("Warlock")
   lockBtn:SetScript("OnClick", function()
     WoWGuide:SetSelectedClass("WARLOCK")
   end)
@@ -169,7 +168,7 @@ local function CreateMainGuideWindow()
   local rogueBtn = CreateFrame("Button", nil, classSwitcherFrame, "UIPanelButtonTemplate")
   rogueBtn:SetSize(82, 28)
   rogueBtn:SetPoint("LEFT", lockBtn, "RIGHT", 4, 0)
-  rogueBtn:SetText("🗡️ Rogue")
+  rogueBtn:SetText("Rogue")
   rogueBtn:SetScript("OnClick", function()
     WoWGuide:SetSelectedClass("ROGUE")
   end)
@@ -177,14 +176,14 @@ local function CreateMainGuideWindow()
 
   -- Level Stepper Frame (Top Right)
   local stepperFrame = CreateFrame("Frame", nil, header, backdropTemplate)
-  stepperFrame:SetSize(185, 34)
+  stepperFrame:SetSize(195, 34)
   stepperFrame:SetPoint("RIGHT", header, "RIGHT", -36, 0)
   ApplyCardBackdrop(stepperFrame, 0.05, 0.06, 0.10, 0.9, 0.3, 0.4, 0.5, 0.6)
 
   local prevBtn = CreateFrame("Button", nil, stepperFrame, "UIPanelButtonTemplate")
-  prevBtn:SetSize(28, 26)
+  prevBtn:SetSize(30, 26)
   prevBtn:SetPoint("LEFT", stepperFrame, "LEFT", 4, 0)
-  prevBtn:SetText("◀")
+  prevBtn:SetText("<")
   prevBtn:SetScript("OnClick", function()
     if selectedLevel > 1 then
       WoWGuide:SetSelectedLevel(selectedLevel - 1)
@@ -198,9 +197,9 @@ local function CreateMainGuideWindow()
   f.levelText = levelText
 
   local nextBtn = CreateFrame("Button", nil, stepperFrame, "UIPanelButtonTemplate")
-  nextBtn:SetSize(28, 26)
+  nextBtn:SetSize(30, 26)
   nextBtn:SetPoint("LEFT", levelText, "RIGHT", 4, 0)
-  nextBtn:SetText("▶")
+  nextBtn:SetText(">")
   nextBtn:SetScript("OnClick", function()
     if selectedLevel < 60 then
       WoWGuide:SetSelectedLevel(selectedLevel + 1)
@@ -208,9 +207,9 @@ local function CreateMainGuideWindow()
   end)
 
   local liveSnapBtn = CreateFrame("Button", nil, stepperFrame, "UIPanelButtonTemplate")
-  liveSnapBtn:SetSize(24, 26)
-  liveSnapBtn:SetPoint("LEFT", nextBtn, "RIGHT", 2, 0)
-  liveSnapBtn:SetText("⚡")
+  liveSnapBtn:SetSize(30, 26)
+  liveSnapBtn:SetPoint("LEFT", nextBtn, "RIGHT", 4, 0)
+  liveSnapBtn:SetText("Live")
   liveSnapBtn:SetScript("OnClick", function()
     WoWGuide:SetSelectedLevel(liveLevel or 1)
   end)
@@ -239,20 +238,20 @@ local function CreateMainGuideWindow()
   mLabel:SetText(ColorText("Quick Milestones:", "FCD34D"))
 
   local milestones = {
-    { lvl = 1, label = "Lvl 1 (Start)" },
+    { lvl = 1, label = "Lvl 1" },
     { lvl = 10, label = "Lvl 10 (Talents)" },
-    { lvl = 20, label = "Lvl 20 (Rank 2)" },
-    { lvl = 30, label = "Lvl 30 (Elite)" },
-    { lvl = 40, label = "Lvl 40 (Mount!)" },
-    { lvl = 50, label = "Lvl 50 (Un'Goro)" },
+    { lvl = 20, label = "Lvl 20" },
+    { lvl = 30, label = "Lvl 30" },
+    { lvl = 40, label = "Lvl 40 (Mount)" },
+    { lvl = 50, label = "Lvl 50" },
     { lvl = 60, label = "Lvl 60 (Raid)" }
   }
 
   local startX = 115
   for i, m in ipairs(milestones) do
     local mBtn = CreateFrame("Button", nil, milestoneBar, "UIPanelButtonTemplate")
-    mBtn:SetSize(86, 22)
-    mBtn:SetPoint("LEFT", milestoneBar, "LEFT", startX + (i - 1) * 90, 0)
+    mBtn:SetSize(88, 22)
+    mBtn:SetPoint("LEFT", milestoneBar, "LEFT", startX + (i - 1) * 91, 0)
     mBtn:SetText(m.label)
     mBtn:SetScript("OnClick", function()
       WoWGuide:SetSelectedLevel(m.lvl)
@@ -264,12 +263,12 @@ local function CreateMainGuideWindow()
   -- 3. NAVIGATION TAB BUTTONS
   -- ==========================================
   local tabDefs = {
-    { id = 1, name = "Roadmap", icon = "🗺️" },
-    { id = 2, name = "Talents", icon = "🌲" },
-    { id = 3, name = "Gear Upgrades", icon = "⚔️" },
-    { id = 4, name = "Rotation & Pets", icon = "⚡" },
-    { id = 5, name = "Class Quests", icon = "📜" },
-    { id = 6, name = "Macros & Sync", icon = "🔥" }
+    { id = 1, name = "Roadmap" },
+    { id = 2, name = "Talents" },
+    { id = 3, name = "Gear Upgrades" },
+    { id = 4, name = "Rotation & Tactics" },
+    { id = 5, name = "Class Quests" },
+    { id = 6, name = "Macros & Sync" }
   }
 
   local tabWidth = 124
@@ -277,9 +276,8 @@ local function CreateMainGuideWindow()
     local tabBtn = CreateFrame("Button", nil, f, "UIPanelButtonTemplate")
     tabBtn:SetSize(tabWidth, 28)
     tabBtn:SetPoint("TOPLEFT", f, "TOPLEFT", 10 + (i - 1) * (tabWidth + 4), -106)
-    tabBtn:SetText(string.format("%s %s", t.icon, t.name))
+    tabBtn:SetText(t.name)
     tabBtn.tabName = t.name
-    tabBtn.icon = t.icon
     tabBtn:SetScript("OnClick", function()
       WoWGuide:SwitchTab(t.id)
     end)
@@ -294,7 +292,7 @@ local function CreateMainGuideWindow()
   end
 
   -- ==========================================
-  -- TAB 1: ROADMAP (Modern Visual Cards)
+  -- TAB 1: ROADMAP (Zone, Quests, Spells, Stats)
   -- ==========================================
   local p1 = tabPanels[1]
 
@@ -335,7 +333,7 @@ local function CreateMainGuideWindow()
   p1.questText:SetJustifyH("LEFT")
   p1.questText:SetJustifyV("TOP")
 
-  -- Bottom Split Row: Trainer Card (Left) & Pro Tip Card (Right)
+  -- Bottom Split Row: Trainer Card (Left) & Stat Priority Card (Right)
   local trainerCard = CreateFrame("Frame", nil, p1, backdropTemplate)
   trainerCard:SetSize(366, 130)
   trainerCard:SetPoint("TOPLEFT", questCard, "BOTTOMLEFT", 0, -8)
@@ -348,7 +346,7 @@ local function CreateMainGuideWindow()
 
   local tHeader = tHeaderBar:CreateFontString(nil, "OVERLAY", "GameFontNormal")
   tHeader:SetPoint("LEFT", tHeaderBar, "LEFT", 10, 0)
-  tHeader:SetText(ColorText("🎓 Class Trainer Spells", "4ADE80"))
+  tHeader:SetText(ColorText("[Class Trainer Spells]", "4ADE80"))
 
   p1.trainerText = trainerCard:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
   p1.trainerText:SetPoint("TOPLEFT", trainerCard, "TOPLEFT", 12, -34)
@@ -368,7 +366,7 @@ local function CreateMainGuideWindow()
 
   local tipHeader = tipHeaderBar:CreateFontString(nil, "OVERLAY", "GameFontNormal")
   tipHeader:SetPoint("LEFT", tipHeaderBar, "LEFT", 10, 0)
-  tipHeader:SetText(ColorText("💡 Leveling Pro Tip & Stat Priority", "FCD34D"))
+  tipHeader:SetText(ColorText("[Class Stat Priority & Pro Tip]", "FCD34D"))
 
   p1.tipText = tipCard:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
   p1.tipText:SetPoint("TOPLEFT", tipCard, "TOPLEFT", 12, -34)
@@ -407,7 +405,7 @@ local function CreateMainGuideWindow()
 
   local tProgTitle = tProgBar:CreateFontString(nil, "OVERLAY", "GameFontNormal")
   tProgTitle:SetPoint("LEFT", tProgBar, "LEFT", 10, 0)
-  tProgTitle:SetText(ColorText("🌲 51-Point Talent Roadmap (Levels 10–60)", "38BDF8"))
+  tProgTitle:SetText(ColorText("51-Point Talent Roadmap (Levels 10-60)", "38BDF8"))
 
   p2.talentListText = talentListCard:CreateFontString(nil, "OVERLAY", "GameFontHighlightSmall")
   p2.talentListText:SetPoint("TOPLEFT", talentListCard, "TOPLEFT", 14, -36)
@@ -446,7 +444,7 @@ local function CreateMainGuideWindow()
   p3.gearItemsText:SetJustifyV("TOP")
 
   -- ==========================================
-  -- TAB 4: ROTATION & PETS
+  -- TAB 4: ROTATION & TACTICS
   -- ==========================================
   local p4 = tabPanels[4]
 
@@ -462,7 +460,7 @@ local function CreateMainGuideWindow()
 
   local rHeader = rHeaderBar:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
   rHeader:SetPoint("LEFT", rHeaderBar, "LEFT", 10, 0)
-  rHeader:SetText(ColorText("⚡ Combat Pull Sequence & Demon / Stealth Strategy", "38BDF8"))
+  rHeader:SetText(ColorText("Step-by-Step Combat Pull Sequence & Demon / Solo Tactics", "38BDF8"))
 
   p4.rotationText = rotCard:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
   p4.rotationText:SetPoint("TOPLEFT", rotCard, "TOPLEFT", 14, -40)
@@ -487,7 +485,7 @@ local function CreateMainGuideWindow()
 
   local cqHeader = cqHeaderBar:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
   cqHeader:SetPoint("LEFT", cqHeaderBar, "LEFT", 10, 0)
-  cqHeader:SetText(ColorText("📜 Essential Horde Class Quests & Mount Unlocks", "FCD34D"))
+  cqHeader:SetText(ColorText("Essential Horde Class Quests & Mount Unlocks", "FCD34D"))
 
   p5.questsText = cqCard:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
   p5.questsText:SetPoint("TOPLEFT", cqCard, "TOPLEFT", 14, -40)
@@ -500,7 +498,6 @@ local function CreateMainGuideWindow()
   -- ==========================================
   local p6 = tabPanels[6]
 
-  -- Split into 2 Rows: Top = 1-Click Sync, Bottom = Macros
   local syncBox = CreateFrame("Frame", nil, p6, backdropTemplate)
   syncBox:SetSize(740, 140)
   syncBox:SetPoint("TOPLEFT", p6, "TOPLEFT", 10, -10)
@@ -508,22 +505,22 @@ local function CreateMainGuideWindow()
 
   local syncHeader = syncBox:CreateFontString(nil, "OVERLAY", "GameFontHighlightLarge")
   syncHeader:SetPoint("TOPLEFT", syncBox, "TOPLEFT", 14, -10)
-  syncHeader:SetText(ColorText("🔗 Live Multi-Computer Web Sync", "38BDF8"))
+  syncHeader:SetText(ColorText("Live Multi-Computer Web Sync", "38BDF8"))
 
   local syncExpl = syncBox:CreateFontString(nil, "OVERLAY", "GameFontNormal")
   syncExpl:SetPoint("TOPLEFT", syncBox, "TOPLEFT", 14, -36)
   syncExpl:SetWidth(500)
   syncExpl:SetJustifyH("LEFT")
   syncExpl:SetText(
-    "• " .. ColorText("Live Sync:", "4ADE80") .. " Double-click " .. ColorText("start_live_sync.bat", "FCD34D") .. " on Computer B to auto-sync.\n" ..
-    "• " .. ColorText("1-Click Code:", "38BDF8") .. " Click button below to copy your character string into the site.\n" ..
-    "• " .. ColorText("Slash Command:", "FFFFFF") .. " Type " .. ColorText("/sync", "4ADE80") .. " anytime in chat to export your level & gear."
+    "1. " .. ColorText("Auto-Sync:", "4ADE80") .. " Double-click " .. ColorText("start_live_sync.bat", "FCD34D") .. " on Computer B to auto-sync.\n" ..
+    "2. " .. ColorText("1-Click Code:", "38BDF8") .. " Click the button below to copy your character string into the site.\n" ..
+    "3. " .. ColorText("Slash Command:", "FFFFFF") .. " Type " .. ColorText("/sync", "4ADE80") .. " anytime in chat to export your level & gear."
   )
 
   local syncTriggerBtn = CreateFrame("Button", nil, syncBox, "UIPanelButtonTemplate")
-  syncTriggerBtn:SetSize(190, 38)
+  syncTriggerBtn:SetSize(200, 38)
   syncTriggerBtn:SetPoint("RIGHT", syncBox, "RIGHT", -20, 0)
-  syncTriggerBtn:SetText("⚡ Open 1-Click Sync Code")
+  syncTriggerBtn:SetText("Open 1-Click Sync Code")
   syncTriggerBtn:SetScript("OnClick", function()
     WoWGuide:ShowSyncPopup()
   end)
@@ -540,7 +537,7 @@ local function CreateMainGuideWindow()
 
   local mHeadTitle = mHeaderBar:CreateFontString(nil, "OVERLAY", "GameFontNormal")
   mHeadTitle:SetPoint("LEFT", mHeaderBar, "LEFT", 10, 0)
-  mHeadTitle:SetText(ColorText("🔥 Essential Horde Leveling Macros", "FF7D0A"))
+  mHeadTitle:SetText(ColorText("Essential Horde Leveling Macros", "FF7D0A"))
 
   p6.macroText = macroCard:CreateFontString(nil, "OVERLAY", "GameFontHighlight")
   p6.macroText:SetPoint("TOPLEFT", macroCard, "TOPLEFT", 14, -34)
@@ -571,12 +568,12 @@ function WoWGuide:SwitchTab(tabId)
     if id == tabId then
       panel:Show()
       if tabButtons[id] then
-        tabButtons[id]:SetText(ColorText(string.format("%s %s", tabButtons[id].icon, tabButtons[id].tabName), "FCD34D"))
+        tabButtons[id]:SetText(ColorText("[" .. tabButtons[id].tabName .. "]", "FCD34D"))
       end
     else
       panel:Hide()
       if tabButtons[id] then
-        tabButtons[id]:SetText(ColorText(string.format("%s %s", tabButtons[id].icon, tabButtons[id].tabName), "94A3B8"))
+        tabButtons[id]:SetText(ColorText(tabButtons[id].tabName, "94A3B8"))
       end
     end
   end
@@ -619,21 +616,21 @@ function WoWGuide:RefreshView()
     local classData = GetClassGuideData(selectedClass)
     local classHex = GetClassColorHex(selectedClass)
 
-    -- Header Icons & Colors
+    -- Header Icons & Buttons
     if selectedClass == "WARLOCK" then
       mainFrame.classIcon:SetTexture("Interface\\Icons\\Spell_Nature_Drowsy")
-      if mainFrame.lockBtn then mainFrame.lockBtn:SetText(ColorText("▶ 🔮 Warlock", "FCD34D")) end
-      if mainFrame.rogueBtn then mainFrame.rogueBtn:SetText(ColorText("🗡️ Rogue", "64748B")) end
+      if mainFrame.lockBtn then mainFrame.lockBtn:SetText(ColorText("[Warlock]", "FCD34D")) end
+      if mainFrame.rogueBtn then mainFrame.rogueBtn:SetText(ColorText("Rogue", "64748B")) end
     elseif selectedClass == "ROGUE" then
       mainFrame.classIcon:SetTexture("Interface\\Icons\\Ability_Stealth")
-      if mainFrame.lockBtn then mainFrame.lockBtn:SetText(ColorText("🔮 Warlock", "64748B")) end
-      if mainFrame.rogueBtn then mainFrame.rogueBtn:SetText(ColorText("▶ 🗡️ Rogue", "FCD34D")) end
+      if mainFrame.lockBtn then mainFrame.lockBtn:SetText(ColorText("Warlock", "64748B")) end
+      if mainFrame.rogueBtn then mainFrame.rogueBtn:SetText(ColorText("[Rogue]", "FCD34D")) end
     else
       mainFrame.classIcon:SetTexture("Interface\\Icons\\INV_Misc_Book_09")
     end
 
     -- Title Section
-    mainFrame.title:SetText(string.format("%s • %s Codex", ColorText(playerName, classHex), ColorText(selectedClass, "FFFFFF")))
+    mainFrame.title:SetText(string.format("%s - %s Codex", ColorText(playerName, classHex), ColorText(selectedClass, "FFFFFF")))
     if classData then
       mainFrame.subTitle:SetText(ColorText(classData.title or "Leveling Guide", "38BDF8") .. "  |  " .. ColorText(classData.specSummary or "", "A0A0B0"))
     end
@@ -645,7 +642,7 @@ function WoWGuide:RefreshView()
     -- Highlight Active Milestone Button
     for mLvl, mBtn in pairs(milestoneButtons) do
       if selectedLevel >= mLvl and (selectedLevel < (mLvl == 1 and 10 or mLvl + 10)) then
-        mBtn:SetText(ColorText("★ " .. mLvl, "FCD34D"))
+        mBtn:SetText(ColorText("*" .. mLvl .. "*", "FCD34D"))
       else
         mBtn:SetText(ColorText("Lvl " .. mLvl, "94A3B8"))
       end
@@ -656,7 +653,7 @@ function WoWGuide:RefreshView()
     for slot = 1, 19 do
       if GetInventoryItemID("player", slot) then equippedCount = equippedCount + 1 end
     end
-    mainFrame.statusBar:SetText(string.format("Character: %s (Lvl %d %s) • Gear: %s items • Gold: %s • Type %s for instant web export", ColorText(playerName, classHex), liveLevel, playerClass, ColorText(tostring(equippedCount), "38BDF8"), ColorText(FormatMoney(GetMoney()), "FFFFFF"), ColorText("/sync", "4ADE80")))
+    mainFrame.statusBar:SetText(string.format("Character: %s (Lvl %d %s) - Gear: %s items - Gold: %s - Type %s for instant web export", ColorText(playerName, classHex), liveLevel, playerClass, ColorText(tostring(equippedCount), "38BDF8"), ColorText(FormatMoney(GetMoney()), "FFFFFF"), ColorText("/sync", "4ADE80")))
 
     local lvlData = classData and classData.levels and classData.levels[selectedLevel] or {}
 
@@ -665,37 +662,45 @@ function WoWGuide:RefreshView()
     -- ==========================================
     local p1 = tabPanels[1]
     if activeTab == 1 and p1 then
-      p1.zoneTitle:SetText(ColorText("📍 " .. (lvlData.zone or "Azeroth Leveling"), "38BDF8"))
+      p1.zoneTitle:SetText(ColorText("[Zone] ", "38BDF8") .. ColorText(lvlData.zone or "Azeroth Leveling", "FFFFFF"))
       p1.zoneHubs:SetText(ColorText("Quest Hubs: ", "A0A0B0") .. ColorText(lvlData.hubs or "General Quests", "FFFFFF"))
       p1.zoneRange:SetText(ColorText("Level Bracket: ", "A0A0B0") .. ColorText(lvlData.zoneRange or "1-60", "FCD34D"))
 
-      p1.questHeader:SetText(ColorText("📜 Level " .. selectedLevel .. " Directives: " .. (lvlData.title or "Leveling Objectives"), "FCD34D"))
+      p1.questHeader:SetText(ColorText("[Level " .. selectedLevel .. " Objectives]: " .. (lvlData.title or "Leveling Walkthrough"), "FCD34D"))
 
-      -- Format walkthrough into clean bulleted directives
+      -- Format walkthrough into clean numbered directives
       local rawInstr = lvlData.zoneInstructions or "Explore the zone and complete local quest chains."
       local sentences = {}
+      local stepNum = 1
       for s in string.gmatch(rawInstr, "([^%.]+)%.?") do
         local trimmed = SafeTrim(s)
         if #trimmed > 2 then
-          table.insert(sentences, "• " .. trimmed .. ".")
+          table.insert(sentences, string.format("%s %s.", ColorText("[" .. stepNum .. "]", "38BDF8"), trimmed))
+          stepNum = stepNum + 1
         end
       end
-      if #sentences == 0 then table.insert(sentences, "• " .. rawInstr) end
+      if #sentences == 0 then table.insert(sentences, "[1] " .. rawInstr) end
       p1.questText:SetText(table.concat(sentences, "\n\n"))
 
       -- Trainer Spells
       if lvlData.trainerTrain and #lvlData.trainerTrain > 0 then
         local spLines = {}
         for _, sp in ipairs(lvlData.trainerTrain) do
-          table.insert(spLines, "⭐ " .. ColorText(sp, "4ADE80"))
+          table.insert(spLines, ColorText("  [Learn] ", "4ADE80") .. ColorText(sp, "FFFFFF"))
         end
-        p1.trainerText:SetText(ColorText("Visit Class Trainer now:\n", "FFFFFF") .. table.concat(spLines, "\n"))
+        p1.trainerText:SetText(ColorText("Visit Class Trainer at Level " .. selectedLevel .. ":\n", "FCD34D") .. table.concat(spLines, "\n"))
       else
-        p1.trainerText:SetText(ColorText("No new spells at Level " .. selectedLevel .. ".\n\n", "9CA3AF") .. ColorText("Save your silver and gold for future ability ranks & Level 40 Riding Mount!", "FCD34D"))
+        p1.trainerText:SetText(ColorText("No new spells to learn at Level " .. selectedLevel .. ".\n\n", "9CA3AF") .. ColorText("Save your gold and silver for future ability ranks and Level 40 Riding Mount!", "FCD34D"))
       end
 
-      -- Pro Tip
-      p1.tipText:SetText(ColorText(lvlData.gearTip or "Prioritize primary class stats.", "FFFFFF"))
+      -- Pro Tip & Primary Stats
+      local statInfo = ""
+      if selectedClass == "WARLOCK" then
+        statInfo = ColorText("Warlock Primary Stats:\n", "38BDF8") .. "Stamina (Health & Life Tap fuel)\nIntellect (Mana Pool & Spell Crit)\nSpirit (Health/Mana regen between pulls)\n\n"
+      else
+        statInfo = ColorText("Rogue Primary Stats:\n", "FFF569") .. "Agility (Attack Power, Crit %, Dodge %)\nStrength (Attack Power)\nStamina (Health Pool)\n\n"
+      end
+      p1.tipText:SetText(statInfo .. ColorText("Level Tip: ", "FCD34D") .. (lvlData.gearTip or "Prioritize gear with your primary stats."))
     end
 
     -- ==========================================
@@ -705,14 +710,14 @@ function WoWGuide:RefreshView()
     if activeTab == 2 and p2 then
       local currentTalent = classData and classData.talentOrder and classData.talentOrder[selectedLevel]
       if selectedLevel < 10 then
-        p2.talentHeader:SetText(ColorText("🔒 Talents Unlock at Level 10", "9CA3AF"))
+        p2.talentHeader:SetText(ColorText("Talents Unlock at Level 10", "9CA3AF"))
         p2.talentDesc:SetText("You earn your first talent point upon reaching Level 10, earning +1 point each level through Level 60 (51 total points).\n\n" ..
           ColorText("Recommended Starting Tree: ", "38BDF8") .. (selectedClass == "WARLOCK" and ColorText("Affliction (Improved Corruption)", "C084FC") or ColorText("Assassination (Remorseless Attacks)", "FFF569")))
       elseif currentTalent then
-        p2.talentHeader:SetText(ColorText("⭐ Level " .. selectedLevel .. " Point: " .. currentTalent.name, "4ADE80"))
+        p2.talentHeader:SetText(ColorText("Level " .. selectedLevel .. " Point: " .. currentTalent.name, "4ADE80"))
         p2.talentDesc:SetText(ColorText("Tree: " .. currentTalent.tree:upper(), "C084FC") .. "  |  " .. ColorText("Strategy: ", "FCD34D") .. currentTalent.desc)
       else
-        p2.talentHeader:SetText(ColorText("★ Talents Fully Maxed (Level 60)", "C084FC"))
+        p2.talentHeader:SetText(ColorText("Talents Fully Maxed (Level 60)", "C084FC"))
         p2.talentDesc:SetText("All 51 talent points are completely allocated across your leveling build. You are raid-ready!")
       end
 
@@ -723,9 +728,9 @@ function WoWGuide:RefreshView()
         for l = startLvl, endLvl do
           local t = classData.talentOrder[l]
           if t then
-            local badge = (l < liveLevel and ColorText("[✓ LEARNED]", "4ADE80")) or
-                          (l == liveLevel and ColorText("[👉 CURRENT NEXT]", "FCD34D")) or
-                          ColorText("[UPCOMING]", "64748B")
+            local badge = (l < liveLevel and ColorText("[Done]", "4ADE80")) or
+                          (l == liveLevel and ColorText("[NEXT]", "FCD34D")) or
+                          ColorText("[Upcoming]", "64748B")
             table.insert(lines, string.format("%s  %s  %s  %s", badge, ColorText("Level " .. l .. ":", "FFFFFF"), ColorText(t.name, l <= liveLevel and "FFFFFF" or "94A3B8"), ColorText("(" .. t.tree .. ")", "38BDF8")))
           end
         end
@@ -738,8 +743,8 @@ function WoWGuide:RefreshView()
     -- ==========================================
     local p3 = tabPanels[3]
     if activeTab == 3 and p3 then
-      p3.gearHeader:SetText(ColorText("⚔ Level " .. selectedLevel .. " Recommended Weapons & Upgrades", "38BDF8"))
-      p3.gearTip:SetText(ColorText("Stat Priority: ", "FCD34D") .. (lvlData.gearTip or "Look for upgrades with your primary class stats."))
+      p3.gearHeader:SetText(ColorText("Level " .. selectedLevel .. " Recommended Weapons & Upgrades", "38BDF8"))
+      p3.gearTip:SetText(ColorText("Stat Focus: ", "FCD34D") .. (lvlData.gearTip or "Look for upgrades with your primary class stats."))
 
       local lines = {}
       local dGear = lvlData.dungeonGear or {}
@@ -747,24 +752,24 @@ function WoWGuide:RefreshView()
         for i, g in ipairs(dGear) do
           local qColor = g.quality == "rare" and "0070DD" or "1EFF00"
           table.insert(lines, string.format("%d. %s - %s", i, ColorText(g.name, qColor), ColorText(g.stats or "", "FFFFFF")))
-          table.insert(lines, string.format("   📍 Source: %s", ColorText(g.source or "", "A0A0B0")))
+          table.insert(lines, string.format("   Source: %s", ColorText(g.source or "", "A0A0B0")))
           if g.tip and g.tip ~= "" then
-            table.insert(lines, string.format("   💡 %s", ColorText(g.tip, "FCD34D")))
+            table.insert(lines, string.format("   Tip: %s", ColorText(g.tip, "FCD34D")))
           end
           table.insert(lines, "")
         end
       else
         table.insert(lines, ColorText("No major weapon milestones at Level " .. selectedLevel .. ".", "9CA3AF"))
-        table.insert(lines, "Check ahead using the ▶ arrow or milestone buttons to preview future dungeon weapons.")
+        table.insert(lines, "Check ahead using the < and > buttons at the top to preview future weapon upgrades.")
         table.insert(lines, "")
         if selectedClass == "WARLOCK" then
-          table.insert(lines, ColorText("⭐ Core Warlock Wand Progression Milestones:", "FCD34D"))
+          table.insert(lines, ColorText("Core Warlock Wand Progression Milestones:", "FCD34D"))
           table.insert(lines, "• Level 5:  " .. ColorText("Lesser Magic Wand", "1EFF00") .. " (11.3 DPS) - Enchanting craft / AH")
           table.insert(lines, "• Level 13: " .. ColorText("Greater Magic Wand", "1EFF00") .. " (17.5 DPS) - Enchanting craft / AH")
           table.insert(lines, "• Level 27: " .. ColorText("Gravestone Scepter", "0070DD") .. " (29.0 DPS) - Blackfathom Deeps Quest (Must Have!)")
           table.insert(lines, "• Level 42: " .. ColorText("Nether Force Wand", "1EFF00") .. " (40.5 DPS) - Gadgetzan Quest")
         else
-          table.insert(lines, ColorText("⭐ Core Rogue Weapon Progression Milestones:", "FCD34D"))
+          table.insert(lines, ColorText("Core Rogue Weapon Progression Milestones:", "FCD34D"))
           table.insert(lines, "• Level 17: " .. ColorText("Thief's Blade", "1EFF00") .. " (16.5 DPS Sword) - World drop")
           table.insert(lines, "• Level 19: " .. ColorText("Shadowfang", "0070DD") .. " (18.1 DPS Sword) - SFK Rare drop")
           table.insert(lines, "• Level 38: " .. ColorText("Vanquisher's Sword", "0070DD") .. " (30.6 DPS Sword) - RFD Dungeon Quest")
@@ -775,32 +780,32 @@ function WoWGuide:RefreshView()
     end
 
     -- ==========================================
-    -- TAB 4: ROTATION & PETS REFRESH
+    -- TAB 4: ROTATION & TACTICS REFRESH
     -- ==========================================
     local p4 = tabPanels[4]
     if activeTab == 4 and p4 then
       local rot = lvlData.rotation or {}
       local rotLines = {}
-      table.insert(rotLines, ColorText("🎯 Step-by-Step Combat Pull Sequence (Level " .. selectedLevel .. "):", "FCD34D"))
+      table.insert(rotLines, ColorText("Step-by-Step Combat Pull Sequence (Level " .. selectedLevel .. "):", "FCD34D"))
       table.insert(rotLines, "")
       for i, step in ipairs(rot) do
         table.insert(rotLines, string.format("  %s %s", ColorText("Step " .. i .. ":", "38BDF8"), step))
       end
 
       table.insert(rotLines, "")
-      table.insert(rotLines, ColorText("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━", "334155"))
+      table.insert(rotLines, ColorText("-----------------------------------------------------------------", "334155"))
       table.insert(rotLines, "")
 
       if selectedClass == "WARLOCK" then
-        table.insert(rotLines, ColorText("🐾 Demon Pet Mastery & Rotation Guide:", "C084FC"))
-        table.insert(rotLines, "• Level 1–9 (Imp): Firebolt burst + Blood Pact stamina aura. Keep on Defensive.")
-        table.insert(rotLines, "• Level 10–19 (Voidwalker): Your solo tank. VW Torment first, then cast DoTs.")
+        table.insert(rotLines, ColorText("Demon Pet Mastery & Rotation Guide:", "C084FC"))
+        table.insert(rotLines, "• Level 1-9 (Imp): Firebolt burst + Blood Pact stamina aura. Keep on Defensive.")
+        table.insert(rotLines, "• Level 10-19 (Voidwalker): Your solo tank. VW Torment first, then cast DoTs.")
         table.insert(rotLines, "• Level 20+ (Succubus): Highest solo DPS! Pair with Drain Life for zero downtime.")
         table.insert(rotLines, "")
-        table.insert(rotLines, ColorText("🩸 Infinite Mana / Zero Downtime Rule:", "4ADE80"))
+        table.insert(rotLines, ColorText("Infinite Mana / Zero Downtime Rule:", "4ADE80"))
         table.insert(rotLines, "• Never drink water! Kill mob -> Drain Soul for 100% mana regen -> Life Tap -> First Aid Bandage / Cannibalize!")
       else
-        table.insert(rotLines, ColorText("🗡️ Combat Rogue Solo Leveling Strategy:", "FFF569"))
+        table.insert(rotLines, ColorText("Combat Rogue Solo Leveling Strategy:", "FFF569"))
         table.insert(rotLines, "• Opener: Sinister Strike (or Garrote if opening from stealth).")
         table.insert(rotLines, "• Finisher: Slice and Dice priority! Keep +30% attack speed buff active at all times.")
         table.insert(rotLines, "• Emergency Reset: Gouge mob (4s incapacitate) -> step back 5 yards -> use First Aid Bandage!")
@@ -817,8 +822,8 @@ function WoWGuide:RefreshView()
       local lines = {}
       for i, q in ipairs(classData.classQuests) do
         local isDone = liveLevel >= q.lvl
-        local status = isDone and ColorText("[COMPLETED ✓]", "4ADE80") or ColorText("[AVAILABLE NOW]", "FCD34D")
-        table.insert(lines, string.format("%s  %s  %s", status, ColorText("Level " .. q.lvl .. ": " .. q.title, isDone and "E2E8F0" or "FCD34D"), ColorText("📍 " .. q.zone, "38BDF8")))
+        local status = isDone and ColorText("[Completed]", "4ADE80") or ColorText("[Available Now]", "FCD34D")
+        table.insert(lines, string.format("%s  %s  %s", status, ColorText("Level " .. q.lvl .. ": " .. q.title, isDone and "E2E8F0" or "FCD34D"), ColorText("Location: " .. q.zone, "38BDF8")))
         table.insert(lines, string.format("   NPC: %s", ColorText(q.npc or "", "A0A0B0")))
         table.insert(lines, string.format("   %s", q.desc or ""))
         table.insert(lines, "")
@@ -835,7 +840,7 @@ function WoWGuide:RefreshView()
       for i, m in ipairs(classData.macros) do
         table.insert(lines, string.format("%d. %s", i, ColorText(m.title, "38BDF8")))
         table.insert(lines, string.format("   Command: %s", ColorText(m.code:gsub("\n", "  |  "), "FCD34D")))
-        table.insert(lines, string.format("   💡 %s", ColorText(m.desc or "", "94A3B8")))
+        table.insert(lines, string.format("   Tip: %s", ColorText(m.desc or "", "94A3B8")))
         table.insert(lines, "")
       end
       p6.macroText:SetText(table.concat(lines, "\n"))
@@ -916,7 +921,7 @@ function WoWGuide:ShowSyncPopup()
 
       local title = p:CreateFontString(nil, "OVERLAY", "GameFontHighlightLarge")
       title:SetPoint("TOP", p, "TOP", 0, -14)
-      title:SetText(ColorText("🔗 1-Click Web Sync Code", "FF7D0A"))
+      title:SetText(ColorText("1-Click Web Sync Code", "FF7D0A"))
 
       local desc = p:CreateFontString(nil, "OVERLAY", "GameFontNormal")
       desc:SetPoint("TOP", p, "TOP", 0, -42)
