@@ -126,6 +126,7 @@ function findGameFiles() {
 
   const discovered = {
     bagBrotherFiles: [],
+    wowGuideFiles: [],
     questieFiles: [],
     pawnFiles: [],
     consolePath: null,
@@ -142,6 +143,10 @@ function findGameFiles() {
         const bb = path.join(accountPath, 'SavedVariables', 'BagBrother.lua');
         if (fs.existsSync(bb) && !discovered.bagBrotherFiles.includes(bb)) {
           discovered.bagBrotherFiles.push(bb);
+        }
+        const wg = path.join(accountPath, 'SavedVariables', 'WoWGuide.lua');
+        if (fs.existsSync(wg) && !discovered.wowGuideFiles.includes(wg)) {
+          discovered.wowGuideFiles.push(wg);
         }
         const q = path.join(accountPath, 'SavedVariables', 'Questie.lua');
         if (fs.existsSync(q) && !discovered.questieFiles.includes(q)) {
@@ -572,6 +577,14 @@ async function runSync() {
   for (const bbf of discovered.bagBrotherFiles) {
     try {
       const content = fs.readFileSync(bbf, 'utf8');
+      const chars = parseCharactersFromBagBrother(content);
+      allParsedChars.push(...chars);
+    } catch (_) {}
+  }
+
+  for (const wgf of discovered.wowGuideFiles) {
+    try {
+      const content = fs.readFileSync(wgf, 'utf8');
       const chars = parseCharactersFromBagBrother(content);
       allParsedChars.push(...chars);
     } catch (_) {}

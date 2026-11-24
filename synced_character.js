@@ -234,7 +234,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T12:33:37.657Z"
+      "syncedAt": "2026-11-24T12:45:38.754Z"
     },
     "rogue": {
       "name": "Phana",
@@ -488,7 +488,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T12:35:29.780Z"
+      "syncedAt": "2026-11-24T12:45:38.756Z"
     }
   },
   "name": "Warlock",
@@ -716,5 +716,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-24T12:35:29.780Z"
+  "syncedAt": "2026-11-24T12:45:38.756Z"
 };

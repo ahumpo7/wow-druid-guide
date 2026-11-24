@@ -1,0 +1,11 @@
+## Interface: 16001
+## Title: |cFFFF7D0AWoW Forever|r Leveling Guide & Live Sync
+## Notes: In-game 1-60 leveling guide, talent progression, spell trainer alerts, and live web sync exporter for Warlock & Rogue.
+## Author: DeepMind & Andrew
+## Version: 1.0.0
+## SavedVariables: WoWGuide_SavedData
+## SavedVariablesPerCharacter: WoWGuide_CharData
+
+WarlockData.lua
+RogueData.lua
+WoWGuide.lua
