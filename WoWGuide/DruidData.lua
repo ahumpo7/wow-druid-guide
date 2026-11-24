@@ -32,7 +32,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Talents unlock at Level 10. Prepare for Ferocity in the Feral tree.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Moonfire (Rank 1)"},
+    trainerTrain = {},
     rotation = {"Wrath -> Moonfire -> Melee until dead"},
     dungeonGear = {
     }
@@ -60,7 +60,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Talents unlock at Level 10. Prepare for Ferocity in the Feral tree.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Rejuvenation (Rank 1)"},
+    trainerTrain = {"Moonfire (Rank 1)", "Rejuvenation (Rank 1)"},
     rotation = {"Wrath -> Moonfire -> Cast Rejuvenation on yourself -> Melee"},
     dungeonGear = {
     }
@@ -88,7 +88,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Talents unlock at Level 10. Prepare for Ferocity in the Feral tree.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Thorns (Rank 1)", "Moonfire (Rank 2)"},
+    trainerTrain = {"Thorns (Rank 1)", "Wrath (Rank 2)"},
     rotation = {"Keep Thorns and Mark of the Wild active", "Wrath -> Moonfire -> Melee down"},
     dungeonGear = {
     }
@@ -116,7 +116,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Talents unlock at Level 10. Prepare for Ferocity in the Feral tree.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Wrath (Rank 2)", "Entangling Roots (Rank 1)"},
+    trainerTrain = {"Entangling Roots (Rank 1)", "Healing Touch (Rank 2)"},
     rotation = {"Entangling Roots to freeze mob -> Cast 2x Wrath safely -> Moonfire -> Melee"},
     dungeonGear = {
     }
@@ -144,7 +144,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Ferocity", rank = "1/5", tree = "feral", why = "Reduces the Rage cost of Maul and Swipe by 1-5, and the Energy cost of Claw and Rake by 1-5." },
     talentNote = "Invest talent into Ferocity.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Bear Form", "Maul (Rank 1)", "Demoralizing Roar (Rank 1)", "Teleport: Moonglade"},
+    trainerTrain = {"Bear Form (Quest)", "Maul (Rank 1)", "Demoralizing Roar (Rank 1)", "Growl (Rank 1)", "Teleport: Moonglade", "Moonfire (Rank 2)", "Rejuvenation (Rank 2)"},
     rotation = {"Shift into Bear Form", "Enrage for instant Rage", "Demoralizing Roar to reduce mob damage", "Spam Maul to shred armor"},
     dungeonGear = {
     }
@@ -172,7 +172,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Ferocity", rank = "1/5", tree = "feral", why = "Reduces the Rage cost of Maul and Swipe by 1-5, and the Energy cost of Claw and Rake by 1-5." },
     talentNote = "Invest talent into Ferocity.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Bash (Rank 1)", "Regrowth (Rank 1)", "Maul (Rank 2)"},
+    trainerTrain = {"Regrowth (Rank 1)", "Enrage (Rank 1)", "Healing Touch (Rank 3)"},
     rotation = {"Bear Form -> Maul -> When HP drops, Bash to stun mob -> Shift out -> Regrowth -> Shift back to Bear!"},
     dungeonGear = {
     }
@@ -200,7 +200,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Ferocity", rank = "1/5", tree = "feral", why = "Reduces the Rage cost of Maul and Swipe by 1-5, and the Energy cost of Claw and Rake by 1-5." },
     talentNote = "Invest talent into Ferocity.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Demoralizing Roar (Rank 2)"},
+    trainerTrain = {"Bash (Rank 1)", "Cure Poison (Quest)", "Demoralizing Roar (Rank 2)", "Wrath (Rank 3)"},
     rotation = {"Bear Form -> Enrage -> Demoralizing Roar -> Maul"},
     dungeonGear = {
     }
@@ -228,7 +228,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Feral Aggression", rank = "1/5", tree = "feral", why = "Increases attack power reduction of Demoralizing Roar by 8%-40% and damage of Ferocious Bite by 3%-15%." },
     talentNote = "Invest talent into Feral Aggression.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Aquatic Form", "Healing Touch (Rank 4)", "Moonfire (Rank 4)"},
+    trainerTrain = {"Aquatic Form (Quest)", "Hibernate (Rank 1)", "Swipe (Rank 1)", "Moonfire (Rank 3)", "Rejuvenation (Rank 3)"},
     rotation = {"Bear Form -> Demoralizing Roar -> Maul. Aquatic form for all water quests!"},
     dungeonGear = {
     }
@@ -258,7 +258,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Feral Aggression", rank = "1/5", tree = "feral", why = "Increases attack power reduction of Demoralizing Roar by 8%-40% and damage of Ferocious Bite by 3%-15%." },
     talentNote = "Invest talent into Feral Aggression.",
     gearTip = "Prioritize Stamina and Strength for Bear Form survival and melee damage.",
-    trainerTrain = {"Faerie Fire (Rank 1)"},
+    trainerTrain = {"Faerie Fire (Rank 1)", "Maul (Rank 2)", "Regrowth (Rank 2)", "Healing Touch (Rank 4)"},
     rotation = {"Cast Faerie Fire at 30 yards -> Shift to Bear Form -> Demoralizing Roar -> Maul"},
     dungeonGear = {
     }
@@ -286,7 +286,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Feral Swiftness", rank = "1/2", tree = "feral", why = "Increases your movement speed by 15%/30% while in Cat Form outdoors. HUGE LEVELING MOBILITY!" },
     talentNote = "Invest talent into Feral Swiftness.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Cat Form", "Claw (Rank 1)", "Prowl (Rank 1)", "Rake (Rank 1)"},
+    trainerTrain = {"Cat Form (Quest)", "Claw (Rank 1)", "Prowl (Rank 1)", "Rebirth (Rank 1)", "Rip (Rank 1)", "Mark of the Wild (Rank 2)", "Wrath (Rank 4)"},
     rotation = {"Enter Prowl (Stealth) -> Open with Claw -> Apply Rake DoT -> Claw to build Combo Points -> Rip finisher!"},
     dungeonGear = {
     }
@@ -314,7 +314,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Sharpened Claws", rank = "1/3", tree = "feral", why = "Increases your critical strike chance while in Bear, Dire Bear, or Cat Form by 2%/4%/6%." },
     talentNote = "Invest talent into Sharpened Claws.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Rip (Rank 1)"},
+    trainerTrain = {"Rake (Rank 1)", "Moonfire (Rank 4)", "Rejuvenation (Rank 4)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -342,7 +342,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Sharpened Claws", rank = "1/3", tree = "feral", why = "Increases your critical strike chance while in Bear, Dire Bear, or Cat Form by 2%/4%/6%." },
     talentNote = "Invest talent into Sharpened Claws.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Rake (Rank 2)", "Tiger's Fury (Rank 1)"},
+    trainerTrain = {"Tiger's Fury (Rank 1)", "Bash (Rank 2)", "Demoralizing Roar (Rank 3)", "Swipe (Rank 2)", "Regrowth (Rank 3)", "Healing Touch (Rank 5)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -370,7 +370,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Predatory Strikes", rank = "1/3", tree = "feral", why = "Increases your melee attack power in Cat, Bear, and Dire Bear Forms by 50%/100%/150% of your level." },
     talentNote = "Invest talent into Predatory Strikes.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Abolish Poison", "Maul (Rank 3)"},
+    trainerTrain = {"Abolish Poison", "Maul (Rank 3)", "Rip (Rank 2)", "Hibernate (Rank 2)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -398,7 +398,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Blood Frenzy", rank = "1/2", tree = "feral", why = "Your critical strikes from Cat Form abilities that add combo points have a 50%/100% chance to add an additional combo point." },
     talentNote = "Invest talent into Blood Frenzy.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Claw (Rank 2)"},
+    trainerTrain = {"Claw (Rank 2)", "Cower (Rank 1)", "Rake (Rank 2)", "Moonfire (Rank 5)", "Rejuvenation (Rank 5)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -427,7 +427,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Faerie Fire (Feral)", rank = "1/1", tree = "feral", why = "Allows casting Faerie Fire in Cat and Bear Form! Reduces enemy armor and prevents stealth with ZERO mana cost!" },
     talentNote = "Invest talent into Faerie Fire (Feral).",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Travel Form (40% Speed!)", "Ferocious Bite (Rank 1)"},
+    trainerTrain = {"Travel Form (40% Speed!)", "Shred (Rank 1)", "Faerie Fire (Rank 2)", "Mark of the Wild (Rank 3)", "Healing Touch (Rank 6)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -455,7 +455,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Heart of the Wild", rank = "1/5", tree = "feral", why = "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!" },
     talentNote = "Invest talent into Heart of the Wild.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Rake (Rank 3)", "Ferocious Bite (Rank 2)"},
+    trainerTrain = {"Ferocious Bite (Rank 1)", "Swipe (Rank 3)", "Regrowth (Rank 4)", "Wrath (Rank 5)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -483,7 +483,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Heart of the Wild", rank = "1/5", tree = "feral", why = "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!" },
     talentNote = "Invest talent into Heart of the Wild.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Ravage (Rank 1)"},
+    trainerTrain = {"Ravage (Rank 1)", "Maul (Rank 4)", "Demoralizing Roar (Rank 4)", "Rip (Rank 3)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -511,7 +511,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Leader of the Pack", rank = "1/1", tree = "feral", why = "While in Cat or Bear Form, gives you and all party members within 45 yards a 3% increased physical critical strike chance!" },
     talentNote = "Invest talent into Leader of the Pack.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Pounce (Rank 1)"},
+    trainerTrain = {"Pounce (Rank 1)", "Rake (Rank 3)", "Cower (Rank 2)", "Moonfire (Rank 6)", "Rejuvenation (Rank 6)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -539,7 +539,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Furor", rank = "1/5", tree = "restoration", why = "Gives you a 20%-100% chance to gain 10 Rage when shifting into Bear Form, or 40 Energy when shifting into Cat Form!" },
     talentNote = "Invest talent into Furor.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Claw (Rank 3)"},
+    trainerTrain = {"Claw (Rank 3)", "Tiger's Fury (Rank 2)", "Bash (Rank 3)", "Healing Touch (Rank 7)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -567,7 +567,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Furor", rank = "1/5", tree = "restoration", why = "Gives you a 20%-100% chance to gain 10 Rage when shifting into Bear Form, or 40 Energy when shifting into Cat Form!" },
     talentNote = "Invest talent into Furor.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Dire Bear Form", "Ferocious Bite (Rank 3)"},
+    trainerTrain = {"Dire Bear Form", "Ferocious Bite (Rank 2)", "Regrowth (Rank 5)", "Rebirth (Rank 2)", "Mount Riding"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -595,7 +595,7 @@ WoWGuide_Druid.levels = {
     talent = { name = "Nature's Grasp", rank = "1/1", tree = "balance", why = "While active, any enemy striking you has a 35% chance to be afflicted by Entangling Roots. Emergency peel tool!" },
     talentNote = "Invest talent into Nature's Grasp.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Rake (Rank 4)"},
+    trainerTrain = {"Maul (Rank 5)", "Shred (Rank 2)", "Rip (Rank 4)", "Moonfire (Rank 7)", "Rejuvenation (Rank 7)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -623,7 +623,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Rip (Rank 3)"},
+    trainerTrain = {"Barkskin", "Rake (Rank 4)", "Swipe (Rank 4)", "Demoralizing Roar (Rank 5)", "Healing Touch (Rank 8)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -652,7 +652,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Tiger's Fury (Rank 3)"},
+    trainerTrain = {"Ravage (Rank 2)", "Cower (Rank 3)", "Regrowth (Rank 6)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -680,7 +680,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Claw (Rank 4)", "Ferocious Bite (Rank 4)"},
+    trainerTrain = {"Claw (Rank 4)", "Ferocious Bite (Rank 3)", "Tiger's Fury (Rank 3)", "Moonfire (Rank 8)", "Rejuvenation (Rank 8)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -708,7 +708,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Ravage (Rank 3)", "Maul (Rank 5)"},
+    trainerTrain = {"Maul (Rank 6)", "Shred (Rank 3)", "Rip (Rank 5)", "Healing Touch (Rank 9)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -736,7 +736,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Rake (Rank 5)"},
+    trainerTrain = {"Rake (Rank 5)", "Bash (Rank 4)", "Regrowth (Rank 7)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -764,7 +764,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Rip (Rank 4)"},
+    trainerTrain = {"Demoralizing Roar (Rank 6)", "Swipe (Rank 5)", "Moonfire (Rank 9)", "Rejuvenation (Rank 9)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -792,7 +792,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Ferocious Bite (Rank 5)"},
+    trainerTrain = {"Ferocious Bite (Rank 4)", "Ravage (Rank 3)", "Cower (Rank 4)", "Healing Touch (Rank 10)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -820,7 +820,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Claw (Rank 5)"},
+    trainerTrain = {"Claw (Rank 5)", "Shred (Rank 4)", "Maul (Rank 7)", "Rip (Rank 6)", "Regrowth (Rank 8)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }
@@ -848,7 +848,7 @@ WoWGuide_Druid.levels = {
     talent = nil,
     talentNote = "Invest talent into Feral tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
-    trainerTrain = {"Leader of the Pack Rank 2 / Max Ability Ranks"},
+    trainerTrain = {"Ferocious Bite (Rank 5)", "Rake (Rank 6)", "Rebirth (Rank 3)", "Mark of the Wild (Rank 7)", "Moonfire (Rank 10)", "Rejuvenation (Rank 10)", "Healing Touch (Rank 11)"},
     rotation = {"Prowl (Stealth) -> Open with Ravage or Claw -> Apply Rake DoT -> Claw to 4-5 Combo Points -> Ferocious Bite finisher! Shift out to heal with Rejuvenation between pulls."},
     dungeonGear = {
     }

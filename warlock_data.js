@@ -13,14 +13,9 @@ const WARLOCK_LEVEL_DATA = {
     zoneInstructions: "Rise from the crypt and speak to Undertaker Mordo and Shadow Priest Sarvis. Complete 'Rude Awakening' and 'The Mind's Eye'. Accept your first Warlock class quest to summon and bind the Imp. Learn to cast Immolate, then Shadow Bolt, and finish with melee/wand attacks.",
     talent: null,
     talentNote: "First talent point unlocks at Level 10. Prepare for Affliction (Improved Corruption).",
-    trainerTrain: ["Shadow Bolt (Rank 1)", "Demon Skin (Rank 1)", "Immolate (Rank 1)"],
+    trainerTrain: ["Shadow Bolt (Rank 1)","Demon Skin (Rank 1)","Immolate (Rank 1)","Summon Imp (Quest)"],
     trainerSkip: [],
-    rotation: [
-      "Send Imp in to attack (set Imp on Defensive)",
-      "Cast Immolate at 30 yards range",
-      "Cast Shadow Bolt to burst initial health",
-      "Melee with dagger/staff or wand to conserve mana"
-    ],
+    rotation: ["Send Imp in to attack (set Imp on Defensive)","Cast Immolate at 30 yards range","Cast Shadow Bolt to burst initial health","Melee with dagger/staff or wand to conserve mana"],
     gearTip: "Prioritize any gear with Intellect and Stamina. Spirit helps health/mana regeneration between pulls.",
     dungeonGear: []
   },
@@ -60,14 +55,9 @@ const WARLOCK_LEVEL_DATA = {
     zoneInstructions: "Return to Maximillion (Warlock Trainer) in Deathknell. Learn Corruption (Rank 1) and Curse of Weakness. You are now a true damage-over-time caster! Pick up 'The Damned' and 'Marla's Last Wish'.",
     talent: null,
     talentNote: "Talents unlock at Level 10.",
-    trainerTrain: ["Corruption (Rank 1)", "Curse of Weakness (Rank 1)"],
+    trainerTrain: ["Corruption (Rank 1)","Curse of Weakness (Rank 1)"],
     trainerSkip: ["Curse of Weakness (skip if low on copper)"],
-    rotation: [
-      "Send Imp to attack with Firebolt",
-      "Cast Immolate (2.0s cast)",
-      "Cast Corruption (DoT begins ticking)",
-      "Cast Shadow Bolt or melee auto-attack"
-    ],
+    rotation: ["Send Imp to attack with Firebolt","Cast Immolate (2.0s cast)","Cast Corruption (DoT begins ticking)","Cast Shadow Bolt or melee auto-attack"],
     gearTip: "Visit general goods vendor to sell trash grays and buy 6-slot bags if available.",
     dungeonGear: []
   },
@@ -84,7 +74,13 @@ const WARLOCK_LEVEL_DATA = {
     rotation: ["Immolate -> Corruption -> Shoot Lesser Magic Wand until mob is dead! Zero mana wasted."],
     gearTip: "⭐ CRAFT OR BUY: Lesser Magic Wand (11.3 DPS). Outdamages your spells with ZERO mana cost!",
     dungeonGear: [
-      { name: "Lesser Magic Wand", quality: "uncommon", source: "Enchanting (Skill 10)", stats: "11.3 DPS, Fire Damage, Speed 1.50", tip: "🔥 Crucial Warlock leveling milestone!" }
+          {
+                "name": "Lesser Magic Wand",
+                "quality": "uncommon",
+                "source": "Enchanting (Skill 10)",
+                "stats": "11.3 DPS, Fire Damage, Speed 1.50",
+                "tip": "🔥 Crucial Warlock leveling milestone!"
+          }
     ]
   },
   6: {
@@ -95,14 +91,9 @@ const WARLOCK_LEVEL_DATA = {
     zoneInstructions: "Set your Hearthstone at the Gallows End Tavern in Brill. Speak to Apprentice Aleister and Deathguard Simmer. Learn Life Tap (Rank 1)—your engine of infinite mana. Pick up 'A New Plague', 'A Putrid Task', and 'The Chill Web Spider'.",
     talent: null,
     talentNote: "Talents unlock at Level 10.",
-    trainerTrain: ["Life Tap (Rank 1)", "Demon Armor (Rank 1)"],
+    trainerTrain: ["Life Tap (Rank 1)","Shadow Bolt (Rank 2)"],
     trainerSkip: [],
-    rotation: [
-      "Send Imp to attack",
-      "Immolate -> Corruption -> Shoot Wand",
-      "Tap Life Tap once per mob to convert health to mana",
-      "Bandage or eat between combat to stay topped"
-    ],
+    rotation: ["Send Imp to attack","Immolate -> Corruption -> Shoot Wand","Tap Life Tap once per mob to convert health to mana","Bandage or eat between combat to stay topped"],
     gearTip: "Look for 'Of the Eagle' (Int + Stam) or 'Of the Owl' (Int + Spirit) cloth pieces.",
     dungeonGear: []
   },
@@ -128,14 +119,10 @@ const WARLOCK_LEVEL_DATA = {
     zoneInstructions: "Visit Luther Pickman (Warlock Trainer) in Brill. Train Curse of Agony (Rank 1) and Fear (Rank 1)—your ultimate crowd control tool. Pick up 'The Haunted Mills' and 'At War with the Scarlet Crusade'.",
     talent: null,
     talentNote: "Talents unlock at Level 10.",
-    trainerTrain: ["Curse of Agony (Rank 1)", "Fear (Rank 1)", "Healthstone (Minor)"],
+    trainerTrain: ["Curse of Agony (Rank 1)","Fear (Rank 1)","Demon Skin (Rank 2)"],
     trainerSkip: [],
-    rotation: [
-      "Immolate -> Curse of Agony -> Corruption",
-      "Cast Fear if mob reaches melee range or if you pull two mobs",
-      "Wand down the feared target safely!"
-    ],
-    gearTip: "Create Minor Healthstone before every combat run for an instant emergency heal.",
+    rotation: ["Immolate -> Curse of Agony -> Corruption","Cast Fear if mob reaches melee range or if you pull two mobs","Wand down the feared target safely!"],
+    gearTip: "Keep your Wand equipped and stay topped on Food/Water before venturing into Agamand Mills.",
     dungeonGear: []
   },
   9: {
@@ -159,24 +146,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Brill, Undercity",
     zoneInstructions: "MAJOR MILESTONE! Visit Luther Pickman in Brill to accept 'The Binding' (Voidwalker Class Quest). Travel to the ruined tower in northern Tirisfal, defeat the summoned Voidwalker, and bind it to your will! Now you have a personal tank minion with Taunt (Torment) and Sacrifice shield!",
     talent: {
-      name: "Improved Corruption",
-      rank: "1/5",
-      tree: "affliction",
-      icon: "☣️",
-      why: "Reduces cast time of Corruption by 0.4s. Working toward making Corruption 100% INSTANT CAST at 5/5!"
+          "name": "Improved Corruption",
+          "rank": "1/5",
+          "tree": "affliction",
+          "icon": "☣️",
+          "why": "Reduces cast time of Corruption by 0.4s. Working toward making Corruption 100% INSTANT CAST at 5/5!"
     },
     talentNote: "Start of Affliction Mastery. Instant Corruption is the foundation of Warlock leveling.",
-    trainerTrain: ["Drain Soul (Rank 1)", "Summon Voidwalker", "Create Soulstone (Minor)"],
+    trainerTrain: ["Create Healthstone (Minor)","Summon Voidwalker (Quest)","Drain Soul (Rank 1)","Health Funnel (Rank 1)","Immolate (Rank 2)"],
     trainerSkip: [],
-    rotation: [
-      "Order Voidwalker to attack (Torment grabs aggro)",
-      "Curse of Agony -> Corruption -> Immolate",
-      "Shoot Wand while Voidwalker tanks",
-      "Cast Drain Soul when mob reaches 10% HP to harvest a Soul Shard!"
-    ],
-    gearTip: "Always carry 4-8 Soul Shards in your bags for Healthstones, Soulstones, and pet summons.",
+    rotation: ["Order Voidwalker to attack (Torment grabs aggro)","Curse of Agony -> Corruption -> Immolate","Shoot Wand while Voidwalker tanks","Cast Drain Soul when mob reaches 10% HP to harvest a Soul Shard!"],
+    gearTip: "Create Minor Healthstone before every combat run for an instant emergency heal. Keep 4-8 Soul Shards ready for pet summons.",
     dungeonGear: [
-      { name: "Staff of the Blessed", quality: "uncommon", source: "Tirisfal Glades Quest", stats: "+4 Intellect, +2 Spirit", tip: "Solid starter caster staff." }
+          {
+                "name": "Staff of the Blessed",
+                "quality": "uncommon",
+                "source": "Tirisfal Glades Quest",
+                "stats": "+4 Intellect, +2 Spirit",
+                "tip": "Solid starter caster staff."
+          }
     ]
   },
   11: {
@@ -186,11 +174,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Sepulcher (Flight Master Karos, Innkeeper)",
     zoneInstructions: "Head south into Silverpine Forest and reach The Sepulcher. Grab the flight path! Pick up 'Proudfang / Moonrage Whitescalp' quests. Watch out for wandering Arugal's pets.",
     talent: {
-      name: "Improved Corruption",
-      rank: "2/5",
-      tree: "affliction",
-      icon: "☣️",
-      why: "Reduces Corruption cast time by 0.8s (from 2.0s to 1.2s)."
+          "name": "Improved Corruption",
+          "rank": "2/5",
+          "tree": "affliction",
+          "icon": "☣️",
+          "why": "Reduces Corruption cast time by 0.8s (from 2.0s to 1.2s)."
     },
     talentNote: "Corruption cast is noticeably faster.",
     trainerTrain: [],
@@ -206,14 +194,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Sepulcher",
     zoneInstructions: "Travel to Pyrewood Village border and kill Moonrage Worgen. Train Life Tap (Rank 2) and Corruption (Rank 2) at the Warlock Trainer in Undercity (Magic Quarter).",
     talent: {
-      name: "Improved Corruption",
-      rank: "3/5",
-      tree: "affliction",
-      icon: "☣️",
-      why: "Reduces Corruption cast time by 1.2s (only 0.8s cast remaining!)."
+          "name": "Improved Corruption",
+          "rank": "3/5",
+          "tree": "affliction",
+          "icon": "☣️",
+          "why": "Reduces Corruption cast time by 1.2s (only 0.8s cast remaining!)."
     },
     talentNote: "Corruption is almost instant.",
-    trainerTrain: ["Corruption (Rank 2)", "Life Tap (Rank 2)", "Curse of Agony (Rank 2)"],
+    trainerTrain: ["Curse of Weakness (Rank 2)","Shadow Bolt (Rank 3)","Corruption (Rank 2)"],
     trainerSkip: [],
     rotation: ["Voidwalker attacks -> Agony -> Corruption -> Wand -> Life Tap -> First Aid bandage."],
     gearTip: "Check weapon vendors in Undercity for off-hand books with intellect.",
@@ -226,22 +214,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Crossroads (The Barrens)",
     zoneInstructions: "Take the Zeppelin from Brill to Durotar, then walk west to The Crossroads in The Barrens! CRUCIAL: Acquire a Greater Magic Wand (req lvl 13, 17.5 DPS). This wand single-handedly obliterates mobs in seconds without spending any mana!",
     talent: {
-      name: "Improved Corruption",
-      rank: "4/5",
-      tree: "affliction",
-      icon: "☣️",
-      why: "Reduces Corruption cast time by 1.6s (down to 0.4s)."
+          "name": "Improved Corruption",
+          "rank": "4/5",
+          "tree": "affliction",
+          "icon": "☣️",
+          "why": "Reduces Corruption cast time by 1.6s (down to 0.4s)."
     },
     talentNote: "One more point until full instant-cast Corruption!",
-    trainerTrain: ["Drain Life (Rank 1)"],
+    trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "Voidwalker Torment -> Agony -> Corruption -> Drain Life or Shoot Greater Magic Wand!",
-      "Greater Magic Wand deals 17.5 DPS for 0 mana!"
-    ],
+    rotation: ["Voidwalker Torment -> Agony -> Corruption -> Drain Life or Shoot Greater Magic Wand!","Greater Magic Wand deals 17.5 DPS for 0 mana!"],
     gearTip: "🔥 GREATER MAGIC WAND: 17.5 Arcane DPS. Craft via Enchanting (75) or purchase on AH.",
     dungeonGear: [
-      { name: "Greater Magic Wand", quality: "uncommon", source: "Enchanting (75) / AH", stats: "17.5 DPS, Arcane, Speed 1.30", tip: "Huge DPS leap for Warlock leveling!" }
+          {
+                "name": "Greater Magic Wand",
+                "quality": "uncommon",
+                "source": "Enchanting (75) / AH",
+                "stats": "17.5 DPS, Arcane, Speed 1.30",
+                "tip": "Huge DPS leap for Warlock leveling!"
+          }
     ]
   },
   14: {
@@ -251,21 +242,16 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Crossroads",
     zoneInstructions: "GAME CHANGER! Improved Corruption reaches 5/5, making Corruption 100% INSTANT CAST! Now you can tag mobs, kite, and cast DoTs on the run without stopping. Pick up 'Disrupt the Attacks', 'The Forgotten Pools', and 'Plainstrider Menace'.",
     talent: {
-      name: "Improved Corruption",
-      rank: "5/5",
-      tree: "affliction",
-      icon: "⚡",
-      why: "CORRUPTION IS NOW INSTANT CAST! Cast on the move, kite effortlessly, and tag mobs instantly!"
+          "name": "Improved Corruption",
+          "rank": "5/5",
+          "tree": "affliction",
+          "icon": "⚡",
+          "why": "CORRUPTION IS NOW INSTANT CAST! Cast on the move, kite effortlessly, and tag mobs instantly!"
     },
     talentNote: "The single biggest quality-of-life milestone for Warlock leveling.",
-    trainerTrain: [],
+    trainerTrain: ["Drain Life (Rank 1)","Curse of Recklessness (Rank 1)"],
     trainerSkip: [],
-    rotation: [
-      "Cast instant Corruption while running toward mob",
-      "Voidwalker charges in and Torments",
-      "Apply Curse of Agony instantly",
-      "Wand with Greater Magic Wand -> Mob dies -> Life Tap -> Keep running!"
-    ],
+    rotation: ["Cast instant Corruption while running toward mob","Voidwalker charges in and Torments","Apply Curse of Agony instantly","Wand with Greater Magic Wand -> Mob dies -> Life Tap -> Keep running!"],
     gearTip: "Look for 'Of the Eagle' cloth robes and pants.",
     dungeonGear: []
   },
@@ -276,11 +262,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Crossroads",
     zoneInstructions: "Investigate The Forgotten Pools and The Lushwater Oasis for Apothecary Helbrim. Kill Oasis Snapjaws and Centaur. Drain Soul right as the mob dies to trigger mana regen.",
     talent: {
-      name: "Improved Drain Soul",
-      rank: "1/2",
-      tree: "affliction",
-      icon: "💀",
-      why: "Provides a 50% increase to mana regeneration for 10 sec after killing a mob that yields experience while draining its soul!"
+          "name": "Improved Drain Soul",
+          "rank": "1/2",
+          "tree": "affliction",
+          "icon": "💀",
+          "why": "Provides a 50% increase to mana regeneration for 10 sec after killing a mob that yields experience while draining its soul!"
     },
     talentNote: "Combines with Life Tap to give zero downtime.",
     trainerTrain: [],
@@ -296,20 +282,16 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Crossroads, Ratchet",
     zoneInstructions: "Improved Drain Soul hits 2/2! Killing an enemy while channeling Drain Soul gives +100% mana regeneration and allows 50% mana regen to continue while casting for 10 seconds! Complete 'The Samophlange' chain at the Venture Co. oil rig in Sludge Fen.",
     talent: {
-      name: "Improved Drain Soul",
-      rank: "2/2",
-      tree: "affliction",
-      icon: "💀",
-      why: "100% INCREASE TO MANA REGEN FOR 10 SECONDS ON KILL! Zero downtime leveling unlocked!"
+          "name": "Improved Drain Soul",
+          "rank": "2/2",
+          "tree": "affliction",
+          "icon": "💀",
+          "why": "100% INCREASE TO MANA REGEN FOR 10 SECONDS ON KILL! Zero downtime leveling unlocked!"
     },
     talentNote: "Always finish mobs with Drain Soul to refill your mana bar automatically.",
-    trainerTrain: ["Life Tap (Rank 3)", "Unending Breath"],
+    trainerTrain: ["Demon Skin (Rank 3)","Life Tap (Rank 2)","Curse of Agony (Rank 2)","Shadow Bolt (Rank 4)","Unending Breath"],
     trainerSkip: [],
-    rotation: [
-      "Instant Corruption -> Curse of Agony",
-      "Wand down to 10% health",
-      "Cast Drain Soul -> Mob dies -> Mana bar surges back to full!"
-    ],
+    rotation: ["Instant Corruption -> Curse of Agony","Wand down to 10% health","Cast Drain Soul -> Mob dies -> Mana bar surges back to full!"],
     gearTip: "Necrology Robes or Burlap Vest of the Eagle.",
     dungeonGear: []
   },
@@ -320,11 +302,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Ratchet (Gazlowe, Flight Master)",
     zoneInstructions: "Head to Ratchet and grab the Flight Path. Complete 'Raptor Horns', 'Southsea Freebooters', and 'The Guns of Northwatch'.",
     talent: {
-      name: "Improved Life Tap",
-      rank: "1/2",
-      tree: "affliction",
-      icon: "🩸",
-      why: "Increases mana gained from Life Tap by 10%."
+          "name": "Improved Life Tap",
+          "rank": "1/2",
+          "tree": "affliction",
+          "icon": "🩸",
+          "why": "Increases mana gained from Life Tap by 10%."
     },
     talentNote: "Makes your health-to-mana conversion much more efficient.",
     trainerTrain: [],
@@ -340,19 +322,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Crossroads, Camp Taurajo",
     zoneInstructions: "Max out Improved Life Tap (+20% mana conversion). Pick up Wailing Caverns quests: 'Leaders of the Fang', 'Deviate Hides', and 'Smart Drinks'. Optionally run Wailing Caverns for Robe of the Moccasin and Deviate Scale Belt.",
     talent: {
-      name: "Improved Life Tap",
-      rank: "2/2",
-      tree: "affliction",
-      icon: "🩸",
-      why: "Increases mana awarded by Life Tap by 20%. You now get maximum mana for minimal health spent."
+          "name": "Improved Life Tap",
+          "rank": "2/2",
+          "tree": "affliction",
+          "icon": "🩸",
+          "why": "Increases mana awarded by Life Tap by 20%. You now get maximum mana for minimal health spent."
     },
     talentNote: "Life Tap is now a supercharged mana battery.",
-    trainerTrain: ["Corruption (Rank 3)", "Searing Pain (Rank 1)"],
+    trainerTrain: ["Create Soulstone (Minor)","Corruption (Rank 3)","Searing Pain (Rank 1)","Drain Soul (Rank 2)"],
     trainerSkip: [],
     rotation: ["Instant Corruption -> Curse of Agony -> Wand -> Drain Soul -> Life Tap."],
     gearTip: "Look for high Stamina pieces—every point of Stamina translates to more mana via Life Tap!",
     dungeonGear: [
-      { name: "Robe of the Moccasin", quality: "uncommon", source: "Lord Cobrahn (Wailing Caverns)", stats: "+6 Spirit, +3 Intellect", tip: "Great caster robe from early dungeon run." }
+          {
+                "name": "Robe of the Moccasin",
+                "quality": "uncommon",
+                "source": "Lord Cobrahn (Wailing Caverns)",
+                "stats": "+6 Spirit, +3 Intellect",
+                "tip": "Great caster robe from early dungeon run."
+          }
     ]
   },
   19: {
@@ -362,11 +350,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Camp Taurajo (Flight Master)",
     zoneInstructions: "Kill Thunderhawks and Bristleback Quilboars around Camp Taurajo. Complete 'Tribal Warfare' and 'Betrayal from Within'. Prepare for your Level 20 Succubus class quest!",
     talent: {
-      name: "Fel Concentration",
-      rank: "1/5",
-      tree: "affliction",
-      icon: "🛡️",
-      why: "Gives a 14% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+          "name": "Fel Concentration",
+          "rank": "1/5",
+          "tree": "affliction",
+          "icon": "🛡️",
+          "why": "Gives a 14% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
     },
     talentNote: "Building toward 70% pushback immunity so you can Drain Tank in melee range.",
     trainerTrain: [],
@@ -382,24 +370,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Brill / Undercity / The Crossroads",
     zoneInstructions: "MAJOR MILESTONE! Pick up 'Devourer of Souls' (Succubus Class Quest) from Caretaker Caice in Undercity or The Crossroads. Travel to the Silverpine hills and the wetlands of the Barrens to collect the Hearts of Wood. Summon and defeat the Succubus to bind her! The Succubus brings high DPS, Seduction CC, and Lash of Pain!",
     talent: {
-      name: "Fel Concentration",
-      rank: "2/5",
-      tree: "affliction",
-      icon: "🛡️",
-      why: "Gives 28% pushback resistance on channeling Drain Life."
+          "name": "Fel Concentration",
+          "rank": "2/5",
+          "tree": "affliction",
+          "icon": "🛡️",
+          "why": "Gives 28% pushback resistance on channeling Drain Life."
     },
     talentNote: "Succubus provides incredible single-target leveling DPS.",
-    trainerTrain: ["Summon Succubus", "Drain Life (Rank 2)", "Healthstone (Lesser)"],
+    trainerTrain: ["Demon Armor (Rank 1)","Summon Succubus (Quest)","Ritual of Summoning","Drain Life (Rank 2)","Health Funnel (Rank 2)","Immolate (Rank 3)","Shadow Bolt (Rank 5)"],
     trainerSkip: [],
-    rotation: [
-      "Send Succubus in with Lash of Pain (huge damage burst)",
-      "Instant Corruption -> Curse of Agony",
-      "Channel Drain Life or Shoot Wand",
-      "Finish with Drain Soul for mana refund"
-    ],
+    rotation: ["Send Succubus in with Lash of Pain (huge damage burst)","Instant Corruption -> Curse of Agony","Channel Drain Life or Shoot Wand","Finish with Drain Soul for mana refund"],
     gearTip: "Greater Magic Wand remains excellent, but keep an eye out for Shadowfang Keep caster drops.",
     dungeonGear: [
-      { name: "Robes of Arugal", quality: "rare", source: "Baron Silverlaine / Arugal (SFK)", stats: "+10 Intellect, +5 Spirit, +3 Agility", tip: "🔥 Best caster robe until your 30s!" }
+          {
+                "name": "Robes of Arugal",
+                "quality": "rare",
+                "source": "Baron Silverlaine / Arugal (SFK)",
+                "stats": "+10 Intellect, +5 Spirit, +3 Agility",
+                "tip": "🔥 Best caster robe until your 30s!"
+          }
     ]
   },
   21: {
@@ -409,11 +398,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Sun Rock Retreat (Flight Master)",
     zoneInstructions: "Travel west from The Barrens into Stonetalon Mountains. Grab the Flight Path at Sun Rock Retreat. Complete 'Avenge My Village' and kill Grimtotem Tauren.",
     talent: {
-      name: "Fel Concentration",
-      rank: "3/5",
-      tree: "affliction",
-      icon: "🛡️",
-      why: "Gives 42% pushback resistance on Drain Life."
+          "name": "Fel Concentration",
+          "rank": "3/5",
+          "tree": "affliction",
+          "icon": "🛡️",
+          "why": "Gives 42% pushback resistance on Drain Life."
     },
     talentNote: "Channeling Drain Life under attack becomes noticeably smoother.",
     trainerTrain: [],
@@ -429,14 +418,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Tarren Mill (Flight Master, Inn)",
     zoneInstructions: "Fly to The Sepulcher and run east into Hillsbrad Foothills! Reach Tarren Mill and secure the Flight Path. Pick up 'The Battle for Hillsbrad' (Town Hall & Farmers) and 'Elixir of Suffering'.",
     talent: {
-      name: "Fel Concentration",
-      rank: "4/5",
-      tree: "affliction",
-      icon: "🛡️",
-      why: "Gives 56% pushback resistance on Drain Life."
+          "name": "Fel Concentration",
+          "rank": "4/5",
+          "tree": "affliction",
+          "icon": "🛡️",
+          "why": "Gives 56% pushback resistance on Drain Life."
     },
     talentNote: "Almost immune to spell pushback.",
-    trainerTrain: ["Curse of Agony (Rank 3)", "Demon Armor (Rank 2)"],
+    trainerTrain: ["Create Healthstone (Lesser)","Curse of Tongues (Rank 1)","Eye of Kilrogg","Curse of Weakness (Rank 3)"],
     trainerSkip: [],
     rotation: ["Instant Corruption -> Agony -> Drain Life directly tanking mobs in face."],
     gearTip: "Check Tarren Mill vendors for high stamina cloth gear.",
@@ -449,21 +438,16 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Tarren Mill",
     zoneInstructions: "MAX FEL CONCENTRATION! You now have a 70% chance to resist pushback while channeling Drain Life. Mobs hitting you in melee will rarely interrupt your heal-drain! You can now face-tank enemies comfortably.",
     talent: {
-      name: "Fel Concentration",
-      rank: "5/5",
-      tree: "affliction",
-      icon: "🛡️",
-      why: "70% CHANCE TO AVOID PUSHBACK ON DRAIN LIFE! The core foundation of the Drain Tank leveling build!"
+          "name": "Fel Concentration",
+          "rank": "5/5",
+          "tree": "affliction",
+          "icon": "🛡️",
+          "why": "70% CHANCE TO AVOID PUSHBACK ON DRAIN LIFE! The core foundation of the Drain Tank leveling build!"
     },
     talentNote: "Drain TANK playstyle is officially online. You heal through mob damage while dealing shadow damage.",
     trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "Instant Corruption -> Curse of Agony",
-      "Face tank the mob while channeling Drain Life",
-      "Drain Life heals you for all damage taken",
-      "Finish with Drain Soul -> Life Tap back to full mana!"
-    ],
+    rotation: ["Instant Corruption -> Curse of Agony","Face tank the mob while channeling Drain Life","Drain Life heals you for all damage taken","Finish with Drain Soul -> Life Tap back to full mana!"],
     gearTip: "Shadow Spell Damage pieces make Drain Life heal for more!",
     dungeonGear: []
   },
@@ -474,14 +458,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Tarren Mill",
     zoneInstructions: "Complete 'The Battle for Hillsbrad' part 1 and 2 at Hillsbrad Fields. Kill Hillsbrad Farmers, Clerics, and Miners. Train Life Tap (Rank 4) and Corruption (Rank 4) in Undercity.",
     talent: {
-      name: "Amplify Curse",
-      rank: "1/1",
-      tree: "affliction",
-      icon: "⚡",
-      why: "Increases the effect of your next Curse of Agony by 50% on a 3 min cooldown. Amazing for elite mobs and quest bosses!"
+          "name": "Amplify Curse",
+          "rank": "1/1",
+          "tree": "affliction",
+          "icon": "⚡",
+          "why": "Increases the effect of your next Curse of Agony by 50% on a 3 min cooldown. Amazing for elite mobs and quest bosses!"
     },
     talentNote: "Use Amplify Curse on tough elites or named quest targets.",
-    trainerTrain: ["Life Tap (Rank 4)", "Corruption (Rank 4)", "Shadow Bolt (Rank 4)"],
+    trainerTrain: ["Drain Mana (Rank 1)","Corruption (Rank 4)","Curse of Agony (Rank 3)","Shadow Bolt (Rank 6)","Life Tap (Rank 3)"],
     trainerSkip: [],
     rotation: ["Amplify Curse + Curse of Agony -> Instant Corruption -> Drain Life -> Wand."],
     gearTip: "Shadowfang Keep drop: Robes of Arugal or Necrology Robes.",
@@ -494,19 +478,16 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Freewind Post (Flight Master, Innkeeper)",
     zoneInstructions: "Head south through The Barrens into Thousand Needles! Climb the elevator and reach Freewind Post on top of the canyon needle. Grab the Flight Path! Pick up 'Alien Egg', 'Wind Rider', and 'A Different Approach'.",
     talent: {
-      name: "Nightfall",
-      rank: "1/2",
-      tree: "affliction",
-      icon: "🌑",
-      why: "Gives your Corruption and Drain Life ticks a 2% chance to enter a Shadow Trance, making your next Shadow Bolt 100% INSTANT CAST!"
+          "name": "Nightfall",
+          "rank": "1/2",
+          "tree": "affliction",
+          "icon": "🌑",
+          "why": "Gives your Corruption and Drain Life ticks a 2% chance to enter a Shadow Trance, making your next Shadow Bolt 100% INSTANT CAST!"
     },
     talentNote: "Free instant Shadow Bolts will start proccing randomly during fights.",
     trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "Instant Corruption -> Curse of Agony -> Drain Life",
-      "Watch for Nightfall 'Shadow Trance' buff -> Immediately fire INSTANT SHADOW BOLT!"
-    ],
+    rotation: ["Instant Corruption -> Curse of Agony -> Drain Life","Watch for Nightfall 'Shadow Trance' buff -> Immediately fire INSTANT SHADOW BOLT!"],
     gearTip: "Freewind Post quests reward solid leather/cloth and green rings.",
     dungeonGear: []
   },
@@ -517,19 +498,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Freewind Post, Splintertree Post",
     zoneInstructions: "Max out Nightfall to 2/2 (4% proc chance per tick). With Corruption and Drain Life ticking simultaneously, Nightfall procs frequently! Pick up 'Blackfathom Villainy' for Blackfathom Deeps—the quest reward is the legendary GRAVESTONE SCEPTER (29.0 DPS Shadow Wand!).",
     talent: {
-      name: "Nightfall",
-      rank: "2/2",
-      tree: "affliction",
-      icon: "🌑",
-      why: "4% CHANCE PER TICK TO GRANT INSTANT SHADOW BOLT! Massive free burst damage during combat!"
+          "name": "Nightfall",
+          "rank": "2/2",
+          "tree": "affliction",
+          "icon": "🌑",
+          "why": "4% CHANCE PER TICK TO GRANT INSTANT SHADOW BOLT! Massive free burst damage during combat!"
     },
     talentNote: "Nightfall procs make combat feel incredibly dynamic and fast.",
-    trainerTrain: ["Curse of Agony (Rank 4)", "Fear (Rank 2)"],
+    trainerTrain: ["Demon Armor (Rank 2)","Drain Life (Rank 3)","Curse of Recklessness (Rank 2)"],
     trainerSkip: [],
     rotation: ["Instant Corruption -> Agony -> Drain Life -> INSTANT Shadow Bolt on proc!"],
     gearTip: "🔥 TARGET ITEM: Gravestone Scepter (BFD quest: Blackfathom Villainy). Best wand in the entire 20-40 bracket!",
     dungeonGear: [
-      { name: "Gravestone Scepter", quality: "rare", source: "Quest: Blackfathom Villainy (BFD)", stats: "29.0 DPS, Shadow Damage, Speed 1.50, +5 Shadow Res", tip: "👑 The legendary leveling wand! Carries you all the way to level 45!" }
+          {
+                "name": "Gravestone Scepter",
+                "quality": "rare",
+                "source": "Quest: Blackfathom Villainy (BFD)",
+                "stats": "29.0 DPS, Shadow Damage, Speed 1.50, +5 Shadow Res",
+                "tip": "👑 The legendary leveling wand! Carries you all the way to level 45!"
+          }
     ]
   },
   27: {
@@ -539,11 +526,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Freewind Post",
     zoneInstructions: "Clear the Galak Centaur camps in the Thousand Needles basin. Complete 'Assault on Freewind Post'. Turn in 'Alien Egg'.",
     talent: {
-      name: "Grim Reach",
-      rank: "1/2",
-      tree: "affliction",
-      icon: "🏹",
-      why: "Increases the range of your Affliction spells by 10% (from 30 yds to 33 yds)."
+          "name": "Grim Reach",
+          "rank": "1/2",
+          "tree": "affliction",
+          "icon": "🏹",
+          "why": "Increases the range of your Affliction spells by 10% (from 30 yds to 33 yds)."
     },
     talentNote: "Extra range gives more time to tag mobs before they reach you.",
     trainerTrain: [],
@@ -559,14 +546,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Tarren Mill",
     zoneInstructions: "Travel back to Hillsbrad Foothills. Clear Durnholde Keep and the Syndicate camps for 'The Battle for Hillsbrad' finale and 'Prison Break in Durnholde'.",
     talent: {
-      name: "Grim Reach",
-      rank: "2/2",
-      tree: "affliction",
-      icon: "🏹",
-      why: "Increases Affliction range by 20% (maximum 36 yards!)."
+          "name": "Grim Reach",
+          "rank": "2/2",
+          "tree": "affliction",
+          "icon": "🏹",
+          "why": "Increases Affliction range by 20% (maximum 36 yards!)."
     },
     talentNote: "36-yard Corruption and Agony range lets you pull from safe distances.",
-    trainerTrain: ["Drain Life (Rank 3)", "Life Tap (Rank 5)"],
+    trainerTrain: ["Banish (Rank 1)","Create Firestone (Lesser)","Create Soulstone (Lesser)","Immolate (Rank 4)","Fear (Rank 2)"],
     trainerSkip: [],
     rotation: ["36yd Corruption -> 36yd Agony -> Drain Life -> Instant Shadow Bolt on Nightfall proc."],
     gearTip: "Silk bandages from First Aid (150) heal for 400 HP over 8 sec.",
@@ -579,11 +566,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Mirage Raceway (Shimmering Flats)",
     zoneInstructions: "Head east into the Shimmering Flats! Grab the quests at the Gnomish and Goblin race track: 'Rocket Car Parts', 'Salt Flat Venom', and 'Hardened Shells'. Prepare for Level 30 Felhunter quest!",
     talent: {
-      name: "Improved Drain Life",
-      rank: "1/5",
-      tree: "affliction",
-      icon: "🩸",
-      why: "Increases the health drained by your Drain Life spell by 2%."
+          "name": "Improved Drain Life",
+          "rank": "1/5",
+          "tree": "affliction",
+          "icon": "🩸",
+          "why": "Increases the health drained by your Drain Life spell by 2%."
     },
     talentNote: "Next level is Siphon Life—the crown jewel of Affliction leveling!",
     trainerTrain: [],
@@ -599,24 +586,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Freewind Post, Mirage Raceway, Undercity",
     zoneInstructions: "MASSIVE MILESTONE! 1) Train SIPHON LIFE—a permanent 30-second heal-over-time that damages the enemy while continually healing you! 2) Accept 'Tome of the Cabal' (Felhunter Class Quest) from Mennet Carkiek in Undercity. Travel to Ratchet, Hillsbrad, and Thousand Needles to gather the pages and summon your Felhunter (magic devourer and caster slayer)!",
     talent: {
-      name: "Siphon Life",
-      rank: "1/1",
-      tree: "affliction",
-      icon: "🩸",
-      why: "SIPHON LIFE UNLOCKED! A 30-second DoT that transfers health from the target directly to you every 3 seconds! You now heal continuously while dealing damage!"
+          "name": "Siphon Life",
+          "rank": "1/1",
+          "tree": "affliction",
+          "icon": "🩸",
+          "why": "SIPHON LIFE UNLOCKED! A 30-second DoT that transfers health from the target directly to you every 3 seconds! You now heal continuously while dealing damage!"
     },
     talentNote: "Your DoT trifecta is now complete: Corruption + Curse of Agony + Siphon Life!",
-    trainerTrain: ["Summon Felhunter", "Siphon Life", "Curse of Agony (Rank 5)"],
+    trainerTrain: ["Summon Felhunter (Quest)","Enslave Demon (Rank 1)","Shadow Bolt (Rank 7)","Drain Soul (Rank 3)","Hellfire (Rank 1)"],
     trainerSkip: [],
-    rotation: [
-      "Instant Corruption -> Siphon Life -> Curse of Agony (all 3 DoTs ticking!)",
-      "Channel Drain Life -> Double healing incoming!",
-      "Health stays near 100% while mob melts",
-      "Life Tap to full mana -> Next mob immediately!"
-    ],
+    rotation: ["Instant Corruption -> Siphon Life -> Curse of Agony (all 3 DoTs ticking!)","Channel Drain Life -> Double healing incoming!","Health stays near 100% while mob melts","Life Tap to full mana -> Next mob immediately!"],
     gearTip: "Shadow Damage gear makes Siphon Life tick for massive healing numbers.",
     dungeonGear: [
-      { name: "Hypnotic Blade", quality: "rare", source: "Scarlet Monastery (Library)", stats: "+8 Intellect, +3 Spirit, +9 Spell Damage", tip: "Incredible caster one-hand dagger." }
+          {
+                "name": "Hypnotic Blade",
+                "quality": "rare",
+                "source": "Scarlet Monastery (Library)",
+                "stats": "+8 Intellect, +3 Spirit, +9 Spell Damage",
+                "tip": "Incredible caster one-hand dagger."
+          }
     ]
   },
   31: {
@@ -626,11 +614,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Mirage Raceway",
     zoneInstructions: "The Shimmering Flats is the single best solo grinding zone in the game! Mobs are densely packed turtles, basilisks, and scorpids with no line of sight obstructions. Dot 2-3 mobs simultaneously and let Siphon Life heal you through everything!",
     talent: {
-      name: "Shadow Mastery",
-      rank: "1/5",
-      tree: "affliction",
-      icon: "🔮",
-      why: "Increases the damage dealt by your Shadow spells or effects by 2%."
+          "name": "Shadow Mastery",
+          "rank": "1/5",
+          "tree": "affliction",
+          "icon": "🔮",
+          "why": "Increases the damage dealt by your Shadow spells or effects by 2%."
     },
     talentNote: "Shadow Mastery increases damage AND healing of all shadow abilities.",
     trainerTrain: [],
@@ -646,14 +634,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Hammerfall (Flight Master, Innkeeper)",
     zoneInstructions: "Travel east from Tarren Mill across the bridge into Arathi Highlands. Secure the Hammerfall Flight Path. Pick up 'Hammerfall', 'Foul Magics', and 'Sigil of Stromgarde'.",
     talent: {
-      name: "Shadow Mastery",
-      rank: "2/5",
-      tree: "affliction",
-      icon: "🔮",
-      why: "Increases Shadow spell damage by 4%."
+          "name": "Shadow Mastery",
+          "rank": "2/5",
+          "tree": "affliction",
+          "icon": "🔮",
+          "why": "Increases Shadow spell damage by 4%."
     },
     talentNote: "Both your damage and healing increase by 4%.",
-    trainerTrain: ["Corruption (Rank 5)", "Life Tap (Rank 6)"],
+    trainerTrain: ["Curse of the Elements (Rank 1)","Shadow Ward (Rank 1)","Corruption (Rank 5)","Curse of Agony (Rank 4)","Life Tap (Rank 4)"],
     trainerSkip: [],
     rotation: ["Corruption -> Siphon Life -> Agony -> Drain Life -> Instant Shadow Bolt on proc."],
     gearTip: "Look for 'Of Shadow Wrath' shoulders and belts.",
@@ -666,11 +654,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Ghost Walker Post, Shadowprey Village",
     zoneInstructions: "Travel west from Stonetalon into Desolace. Grab Ghost Walker Post and Shadowprey Village flight paths. Complete 'Gelkis Alliance' (kill Magram centaur) and 'Bone Collector'.",
     talent: {
-      name: "Shadow Mastery",
-      rank: "3/5",
-      tree: "affliction",
-      icon: "🔮",
-      why: "Increases Shadow spell damage by 6%."
+          "name": "Shadow Mastery",
+          "rank": "3/5",
+          "tree": "affliction",
+          "icon": "🔮",
+          "why": "Increases Shadow spell damage by 6%."
     },
     talentNote: "6% shadow damage bonus active across all abilities.",
     trainerTrain: [],
@@ -686,14 +674,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Grom'gol Base Camp (Zeppelin to Undercity/Orgrimmar)",
     zoneInstructions: "Take the Zeppelin from Undercity directly to Grom'gol Base Camp in Stranglethorn Vale! Grab the Flight Path. Pick up 'Welcome to the Jungle', 'Bloodscalp Ears', and 'Hunt for Yenniku'.",
     talent: {
-      name: "Shadow Mastery",
-      rank: "4/5",
-      tree: "affliction",
-      icon: "🔮",
-      why: "Increases Shadow spell damage by 8%."
+          "name": "Shadow Mastery",
+          "rank": "4/5",
+          "tree": "affliction",
+          "icon": "🔮",
+          "why": "Increases Shadow spell damage by 8%."
     },
     talentNote: "Only 1 point away from full +10% Shadow Mastery!",
-    trainerTrain: ["Drain Life (Rank 4)", "Curse of Agony (Rank 6)"],
+    trainerTrain: ["Create Healthstone (Rank 3)","Drain Life (Rank 4)","Searing Pain (Rank 2)","Rain of Fire (Rank 2)"],
     trainerSkip: [],
     rotation: ["Corruption -> Siphon Life -> Agony -> Drain Life -> Wand."],
     gearTip: "Keep PvP trinket or healthstone ready on Grom'gol's contested roads.",
@@ -706,11 +694,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Grom'gol, Nesingwary's Camp",
     zoneInstructions: "MAX SHADOW MASTERY! All Shadow spells (Corruption, Drain Life, Siphon Life, Agony, Shadow Bolt) deal +10% MORE DAMAGE! Complete the Tiger, Panther, and Raptor mastery hunting quests at Nesingwary's camp.",
     talent: {
-      name: "Shadow Mastery",
-      rank: "5/5",
-      tree: "affliction",
-      icon: "🔮",
-      why: "+10% SHADOW SPELL DAMAGE AND DRAIN HEALING! Every single dot and drain is now boosted by a full 10%!"
+          "name": "Shadow Mastery",
+          "rank": "5/5",
+          "tree": "affliction",
+          "icon": "🔮",
+          "why": "+10% SHADOW SPELL DAMAGE AND DRAIN HEALING! Every single dot and drain is now boosted by a full 10%!"
     },
     talentNote: "Affliction damage scaling reaches peak efficiency.",
     trainerTrain: [],
@@ -718,7 +706,13 @@ const WARLOCK_LEVEL_DATA = {
     rotation: ["Full 10% boosted DoTs: Siphon Life + Corruption + Agony -> Drain Life face tank!"],
     gearTip: "Robes of Arugal or Robe of the Lich (from Razorfen Downs).",
     dungeonGear: [
-      { name: "Robe of the Lich", quality: "rare", source: "Razorfen Downs (Amnennar)", stats: "+20 Stamina, +14 Shadow Spell Damage", tip: "⭐ Incredible leveling robe for Affliction Warlocks!" }
+          {
+                "name": "Robe of the Lich",
+                "quality": "rare",
+                "source": "Razorfen Downs (Amnennar)",
+                "stats": "+20 Stamina, +14 Shadow Spell Damage",
+                "tip": "⭐ Incredible leveling robe for Affliction Warlocks!"
+          }
     ]
   },
   36: {
@@ -728,14 +722,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Kargath (Flight Master, Inn)",
     zoneInstructions: "Take the flight to Hammerfall and run south through Loch Modan into the Badlands! Reach Kargath and claim the Flight Path. Pick up 'Badlands Reagents' and 'Mirages'.",
     talent: {
-      name: "Demonic Embrace",
-      rank: "1/5",
-      tree: "demonology",
-      icon: "💪",
-      why: "Increases your total Stamina by 3% (at the cost of 1% spirit). Stamina directly fuels Life Tap!"
+          "name": "Demonic Embrace",
+          "rank": "1/5",
+          "tree": "demonology",
+          "icon": "💪",
+          "why": "Increases your total Stamina by 3% (at the cost of 1% spirit). Stamina directly fuels Life Tap!"
     },
     talentNote: "Transition into Demonology utility for maximum survivability and Dark Pact synergy.",
-    trainerTrain: ["Corruption (Rank 6)", "Life Tap (Rank 7)"],
+    trainerTrain: ["Demon Armor (Rank 3)","Drain Mana (Rank 2)","Curse of Weakness (Rank 4)","Immolate (Rank 5)","Create Firestone (Rank 2)"],
     trainerSkip: [],
     rotation: ["Siphon Life -> Corruption -> Agony -> Drain Life -> Life Tap."],
     gearTip: "Kargath vendor sells level 35+ food, water, and reagents.",
@@ -748,11 +742,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Kargath",
     zoneInstructions: "Clear Dustbelcher Ogres and Lesser Rock Elementals in the Badlands for Lotwil Veriatus. Farm Solid Stone and Elemental Earth (sells for big gold on AH!).",
     talent: {
-      name: "Demonic Embrace",
-      rank: "2/5",
-      tree: "demonology",
-      icon: "💪",
-      why: "Increases total Stamina by 6%."
+          "name": "Demonic Embrace",
+          "rank": "2/5",
+          "tree": "demonology",
+          "icon": "💪",
+          "why": "Increases total Stamina by 6%."
     },
     talentNote: "Your health pool grows rapidly, giving larger Life Tap pools.",
     trainerTrain: [],
@@ -768,14 +762,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Stonard (Flight Master)",
     zoneInstructions: "Head to Stonard in Swamp of Sorrows. Grab the Flight Path. Complete 'Fall Savage' and kill Swamp Jaguars and Sorrow Spinners.",
     talent: {
-      name: "Demonic Embrace",
-      rank: "3/5",
-      tree: "demonology",
-      icon: "💪",
-      why: "Increases total Stamina by 9%."
+          "name": "Demonic Embrace",
+          "rank": "3/5",
+          "tree": "demonology",
+          "icon": "💪",
+          "why": "Increases total Stamina by 9%."
     },
     talentNote: "+9% total Stamina makes you deceptively tanky against gankers.",
-    trainerTrain: ["Curse of Agony (Rank 7)", "Fear (Rank 3)"],
+    trainerTrain: ["Create Soulstone (Rank 3)","Corruption (Rank 6)","Shadow Bolt (Rank 8)","Curse of Agony (Rank 5)"],
     trainerSkip: [],
     rotation: ["DoT trifecta -> Drain Life -> Nightfall Shadow Bolt procs."],
     gearTip: "Stonard innkeeper and flight path make Swamp of Sorrows easy to traverse.",
@@ -788,11 +782,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Grom'gol Base Camp",
     zoneInstructions: "Return to Grom'gol and finish Bloodscalp Ruins quests. Gather 90 silver (Warlock mount is practically FREE at trainer!). Level 40 is right around the corner!",
     talent: {
-      name: "Demonic Embrace",
-      rank: "4/5",
-      tree: "demonology",
-      icon: "💪",
-      why: "Increases total Stamina by 12%."
+          "name": "Demonic Embrace",
+          "rank": "4/5",
+          "tree": "demonology",
+          "icon": "💪",
+          "why": "Increases total Stamina by 12%."
     },
     talentNote: "Get ready for Level 40: Free Felsteed Mount + Dark Pact capstone!",
     trainerTrain: [],
@@ -808,24 +802,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Undercity, Gadgetzan",
     zoneInstructions: "THE ULTIMATE WARLOCK MILESTONE! 1) Learn 'Summon Felsteed' directly from your Warlock trainer—A FREE 60% MOUNT! No 100 gold cost like other classes! 2) Learn DARK PACT (Affliction 31-point capstone)! Dark Pact instantly drains 150 mana from your summoned demon and transfers it directly to you! Keep your Imp or Succubus out, and you have INFINITE MANA without spending health or drinking water ever again!",
     talent: {
-      name: "Dark Pact",
-      rank: "1/1",
-      tree: "affliction",
-      icon: "🌀",
-      why: "DARK PACT UNLOCKED! Instantly drains mana from your pet and transfers it directly to you on demand! ZERO DOWNTIME PERMANENT LEVELING! NEVER DRINK WATER AGAIN!"
+          "name": "Dark Pact",
+          "rank": "1/1",
+          "tree": "affliction",
+          "icon": "🌀",
+          "why": "DARK PACT UNLOCKED! Instantly drains mana from your pet and transfers it directly to you on demand! ZERO DOWNTIME PERMANENT LEVELING! NEVER DRINK WATER AGAIN!"
     },
     talentNote: "God-mode leveling is active. You literally never have to stop or sit down.",
-    trainerTrain: ["Summon Felsteed (FREE MOUNT!)", "Dark Pact", "Drain Life (Rank 5)"],
+    trainerTrain: ["Howl of Terror (Rank 1)","Summon Felsteed (FREE Mount!)","Drain Life (Rank 5)","Life Tap (Rank 5)"],
     trainerSkip: [],
-    rotation: [
-      "Keep Succubus or Imp on Passive with max mana",
-      "Tag mob with Instant Corruption + Siphon Life + Agony",
-      "Face-tank with Drain Life -> Mob dies",
-      "Tap Dark Pact 2-3 times -> Pet gives you all its mana back -> Immediately pull next mob!"
-    ],
+    rotation: ["Keep Succubus or Imp on Passive with max mana","Tag mob with Instant Corruption + Siphon Life + Agony","Face-tank with Drain Life -> Mob dies","Tap Dark Pact 2-3 times -> Pet gives you all its mana back -> Immediately pull next mob!"],
     gearTip: "Mount increases questing and travel speed by 60%! Head immediately to Tanaris (Gadgetzan).",
     dungeonGear: [
-      { name: "Spellshock Wand", quality: "rare", source: "World Drop / AH", stats: "48.8 DPS, Arcane Damage", tip: "Superb wand upgrade around level 40-45." }
+          {
+                "name": "Spellshock Wand",
+                "quality": "rare",
+                "source": "World Drop / AH",
+                "stats": "48.8 DPS, Arcane Damage",
+                "tip": "Superb wand upgrade around level 40-45."
+          }
     ]
   },
   41: {
@@ -835,11 +830,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Gadgetzan (Flight Master, Neutral City)",
     zoneInstructions: "Ride your fiery Felsteed into Gadgetzan! Pick up 'WANTED: Caliph Scorpidsting', 'Water Pouch Bounty', and 'Wastewander Justice'. Farm Wastewanders in the desert dunes.",
     talent: {
-      name: "Demonic Embrace",
-      rank: "5/5",
-      tree: "demonology",
-      icon: "💪",
-      why: "MAX DEMONIC EMBRACE! Total Stamina increased by 15%! Huge health pool for solo survival."
+          "name": "Demonic Embrace",
+          "rank": "5/5",
+          "tree": "demonology",
+          "icon": "💪",
+          "why": "MAX DEMONIC EMBRACE! Total Stamina increased by 15%! Huge health pool for solo survival."
     },
     talentNote: "15% stamina scaling keeps your survivability at raid-tier levels.",
     trainerTrain: [],
@@ -855,19 +850,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Gadgetzan",
     zoneInstructions: "Complete 'More Wastewander Justice' and farm Dunemaul Ogres. Complete the Tanaris wand quest for the NETHER FORCE WAND (40.5 Shadow DPS!).",
     talent: {
-      name: "Improved Voidwalker",
-      rank: "1/3",
-      tree: "demonology",
-      icon: "🛡️",
-      why: "Increases Voidwalker's Torment, Consume Shadows, and Sacrifice shield by 10%."
+          "name": "Improved Voidwalker",
+          "rank": "1/3",
+          "tree": "demonology",
+          "icon": "🛡️",
+          "why": "Increases Voidwalker's Torment, Consume Shadows, and Sacrifice shield by 10%."
     },
     talentNote: "Sacrifice shield absorbs huge emergency damage if ganked in Tanaris.",
-    trainerTrain: ["Corruption (Rank 7)", "Life Tap (Rank 8)"],
+    trainerTrain: ["Death Coil (Rank 1)","Banish (Rank 2)","Curse of Recklessness (Rank 3)","Fear (Rank 3)"],
     trainerSkip: [],
     rotation: ["DoT -> Drain Life -> Nether Force Wand finishes."],
     gearTip: "Nether Force Wand: 40.5 Shadow DPS!",
     dungeonGear: [
-      { name: "Nether Force Wand", quality: "rare", source: "Tanaris Quest Reward", stats: "40.5 DPS, Shadow Damage", tip: "Massive wand upgrade in Tanaris." }
+          {
+                "name": "Nether Force Wand",
+                "quality": "rare",
+                "source": "Tanaris Quest Reward",
+                "stats": "40.5 DPS, Shadow Damage",
+                "tip": "Massive wand upgrade in Tanaris."
+          }
     ]
   },
   43: {
@@ -877,11 +878,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Camp Mojache (Flight Master, Innkeeper)",
     zoneInstructions: "Travel west through Thousand Needles into Feralas! Reach Camp Mojache and grab the Flight Path. Pick up 'A New Cloak's Sheen', 'Gordunni Cobalt', and 'The Woodpaw Gnolls'.",
     talent: {
-      name: "Improved Voidwalker",
-      rank: "2/3",
-      tree: "demonology",
-      icon: "🛡️",
-      why: "Increases Voidwalker abilities and Sacrifice shield by 20%."
+          "name": "Improved Voidwalker",
+          "rank": "2/3",
+          "tree": "demonology",
+          "icon": "🛡️",
+          "why": "Increases Voidwalker abilities and Sacrifice shield by 20%."
     },
     talentNote: "Emergency Voidwalker Sacrifice shield absorbs ~1,000+ damage.",
     trainerTrain: [],
@@ -897,14 +898,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Revantusk Village (Flight Master on coast)",
     zoneInstructions: "Take the Zeppelin to Undercity, fly to Tarren Mill, and head northeast through the mountain pass into The Hinterlands! Reach Revantusk Village on the eastern coast. Claim the Flight Path.",
     talent: {
-      name: "Improved Voidwalker",
-      rank: "3/3",
-      tree: "demonology",
-      icon: "🛡️",
-      why: "Increases Voidwalker effectiveness and Sacrifice shield by 30%!"
+          "name": "Improved Voidwalker",
+          "rank": "3/3",
+          "tree": "demonology",
+          "icon": "🛡️",
+          "why": "Increases Voidwalker effectiveness and Sacrifice shield by 30%!"
     },
     talentNote: "Sacrifice is now a guaranteed life-saver.",
-    trainerTrain: ["Curse of Agony (Rank 8)", "Shadow Bolt (Rank 7)"],
+    trainerTrain: ["Curse of Shadow (Rank 1)","Corruption (Rank 7)","Shadow Bolt (Rank 9)","Immolate (Rank 6)"],
     trainerSkip: [],
     rotation: ["Full DoTs -> Drain Life -> Dark Pact."],
     gearTip: "Hinterlands quests reward exceptional blue items for casters.",
@@ -917,22 +918,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Revantusk Village, Gadgetzan",
     zoneInstructions: "HUGE DEFENSIVE TOOL! Fel Domination reduces your next pet summon cast time by 5.5 seconds and its mana cost by 50% on a 15-minute cooldown! If your pet dies or you need an instant Voidwalker Sacrifice shield in PvP/danger, pop Fel Domination and summon in 0.5 seconds flat!",
     talent: {
-      name: "Fel Domination",
-      rank: "1/1",
-      tree: "demonology",
-      icon: "⚡",
-      why: "INSTANT PET SUMMON! Reduces summon cast time from 6.0s down to 0.5s! Essential emergency tool!"
+          "name": "Fel Domination",
+          "rank": "1/1",
+          "tree": "demonology",
+          "icon": "⚡",
+          "why": "INSTANT PET SUMMON! Reduces summon cast time from 6.0s down to 0.5s! Essential emergency tool!"
     },
     talentNote: "Macro: /cast Fel Domination /cast Summon Voidwalker for instant emergency shield.",
     trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "DoTs -> Drain Life -> Dark Pact",
-      "If in danger: Pop Fel Domination -> Summon Voidwalker -> Pop Sacrifice for 1200 HP shield!"
-    ],
+    rotation: ["DoTs -> Drain Life -> Dark Pact","If in danger: Pop Fel Domination -> Summon Voidwalker -> Pop Sacrifice for 1200 HP shield!"],
     gearTip: "Zul'Farrak run: Zum'rah's Vexing Cane (+Spell Damage staff).",
     dungeonGear: [
-      { name: "Zum'rah's Vexing Cane", quality: "rare", source: "Witch Doctor Zum'rah (Zul'Farrak)", stats: "+10 Stamina, +21 Shadow Spell Damage", tip: "🔥 Premier Warlock staff from ZF!" }
+          {
+                "name": "Zum'rah's Vexing Cane",
+                "quality": "rare",
+                "source": "Witch Doctor Zum'rah (Zul'Farrak)",
+                "stats": "+10 Stamina, +21 Shadow Spell Damage",
+                "tip": "🔥 Premier Warlock staff from ZF!"
+          }
     ]
   },
   46: {
@@ -942,14 +946,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Thorium Point (Flight Master)",
     zoneInstructions: "Travel to Searing Gorge via the Badlands key gate. Grab Thorium Point flight path. Complete 'STOLEN: Smithing Tuyere and Lookout's Spyglass', 'Incendosaurs? Whatever-osaurs!', and 'The Flawless Flame'.",
     talent: {
-      name: "Fel Intellect",
-      rank: "1/5",
-      tree: "demonology",
-      icon: "🧠",
-      why: "Increases the maximum mana of your summoned demons by 3%. More mana for your Dark Pact!"
+          "name": "Fel Intellect",
+          "rank": "1/5",
+          "tree": "demonology",
+          "icon": "🧠",
+          "why": "Increases the maximum mana of your summoned demons by 3%. More mana for your Dark Pact!"
     },
     talentNote: "Higher demon mana pool = more mana transferred via Dark Pact.",
-    trainerTrain: ["Drain Life (Rank 6)", "Life Tap (Rank 9)"],
+    trainerTrain: ["Create Healthstone (Greater)","Create Soulstone (Greater)","Demon Armor (Rank 4)","Drain Life (Rank 6)","Curse of Agony (Rank 6)","Drain Soul (Rank 4)"],
     trainerSkip: [],
     rotation: ["Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."],
     gearTip: "Thorium Brotherhood reputation starts here.",
@@ -962,11 +966,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Camp Mojache",
     zoneInstructions: "Return to Feralas and finish the high-level quests at the Ruins of Ravenwind (Harpies) and Isildien (Ogres). Turn in Gordok scrolls.",
     talent: {
-      name: "Fel Intellect",
-      rank: "2/5",
-      tree: "demonology",
-      icon: "🧠",
-      why: "Increases demon maximum mana by 6%."
+          "name": "Fel Intellect",
+          "rank": "2/5",
+          "tree": "demonology",
+          "icon": "🧠",
+          "why": "Increases demon maximum mana by 6%."
     },
     talentNote: "Pet mana bar grows steadily.",
     trainerTrain: [],
@@ -982,17 +986,17 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Gadgetzan",
     zoneInstructions: "Head to Thistleshrub Valley in southwest Tanaris. Clear Gnarled Thistleshrubs for 'Tooga's Quest' and pirate camps on the Southbreak Shore for Southsea pirate hats.",
     talent: {
-      name: "Fel Intellect",
-      rank: "3/5",
-      tree: "demonology",
-      icon: "🧠",
-      why: "Increases demon maximum mana by 9%."
+          "name": "Fel Intellect",
+          "rank": "3/5",
+          "tree": "demonology",
+          "icon": "🧠",
+          "why": "Increases demon maximum mana by 9%."
     },
     talentNote: "+9% pet mana pool.",
-    trainerTrain: ["Corruption (Rank 8)", "Healthstone (Major)"],
+    trainerTrain: ["Life Tap (Rank 6)","Soul Fire (Rank 1)","Searing Pain (Rank 3)","Rain of Fire (Rank 3)"],
     trainerSkip: [],
     rotation: ["Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."],
-    gearTip: "Major Healthstone restores 800 HP instantly.",
+    gearTip: "Prepare soul shards and reagents for your level 50 class quest.",
     dungeonGear: []
   },
   49: {
@@ -1002,11 +1006,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Stonard -> Bloodvenom Post",
     zoneInstructions: "Travel south from Swamp of Sorrows into the crimson wastes of Blasted Lands. Speak to Bloodmage Lynnore and Kum'isha the Collector. Complete 'A Boar's Vitality', 'Snickerfang Jowls', and 'The Decisive Strife'.",
     talent: {
-      name: "Fel Intellect",
-      rank: "4/5",
-      tree: "demonology",
-      icon: "🧠",
-      why: "Increases demon maximum mana by 12%."
+          "name": "Fel Intellect",
+          "rank": "4/5",
+          "tree": "demonology",
+          "icon": "🧠",
+          "why": "Increases demon maximum mana by 12%."
     },
     talentNote: "Almost maximum pet mana bonus.",
     trainerTrain: [],
@@ -1022,20 +1026,16 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Marshal's Stand (Un'Goro Crater)",
     zoneInstructions: "THE DINO CRATER SPEEDRUN! Descend from Tanaris into the prehistoric jungle of Un'Goro Crater. Grab all quests: 'It's a Secret to Everybody' (Linken chain), 'Lurking Prowlers', 'Alien Ecology', and 'Chasing A-Me 01'. Dinos give massive XP!",
     talent: {
-      name: "Fel Intellect",
-      rank: "5/5",
-      tree: "demonology",
-      icon: "🧠",
-      why: "MAX FEL INTELLECT! Demon mana increased by 15%! Your pet is now an endless, supercharged mana generator for Dark Pact!"
+          "name": "Fel Intellect",
+          "rank": "5/5",
+          "tree": "demonology",
+          "icon": "🧠",
+          "why": "MAX FEL INTELLECT! Demon mana increased by 15%! Your pet is now an endless, supercharged mana generator for Dark Pact!"
     },
     talentNote: "Un'Goro is one of the fastest leveling zones in Classic for Affliction Warlocks.",
-    trainerTrain: ["Curse of Agony (Rank 9)", "Drain Mana (Rank 1)"],
+    trainerTrain: ["Inferno (Quest)","Drain Mana (Rank 3)","Shadow Bolt (Rank 10)","Immolate (Rank 7)","Curse of Weakness (Rank 5)"],
     trainerSkip: [],
-    rotation: [
-      "Send Succubus -> Corruption -> Siphon Life -> Agony",
-      "Face tank Pterodactyls and Raptors with Drain Life",
-      "Drain pet mana with Dark Pact -> Mob dead -> Pull next dinosaur immediately!"
-    ],
+    rotation: ["Send Succubus -> Corruption -> Siphon Life -> Agony","Face tank Pterodactyls and Raptors with Drain Life","Drain pet mana with Dark Pact -> Mob dead -> Pull next dinosaur immediately!"],
     gearTip: "Un'Goro Soil and Bloodpetal Sprouts are needed for quests.",
     dungeonGear: []
   },
@@ -1046,11 +1046,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Marshal's Stand",
     zoneInstructions: "Kill Stegodons, Pterodactyls, and Tar Beasts around Golakka Hot Springs. Complete 'Super Sticky' and 'Volcanic Activity'.",
     talent: {
-      name: "Master Summoner",
-      rank: "1/2",
-      tree: "demonology",
-      icon: "⏱️",
-      why: "Reduces the casting time of Summon Imp, Voidwalker, Succubus, and Felhunter by 2 sec, and the mana cost by 20%."
+          "name": "Master Summoner",
+          "rank": "1/2",
+          "tree": "demonology",
+          "icon": "⏱️",
+          "why": "Reduces the casting time of Summon Imp, Voidwalker, Succubus, and Felhunter by 2 sec, and the mana cost by 20%."
     },
     talentNote: "Speeds up regular pet summons significantly.",
     trainerTrain: [],
@@ -1066,14 +1066,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Bloodvenom Post (Flight Master)",
     zoneInstructions: "Travel north into the corrupted forests of Felwood. Claim the Bloodvenom Post Flight Path. Pick up 'Forces of Jaedenar', 'Well of Corruption', and 'Cleansing Felwood'.",
     talent: {
-      name: "Master Summoner",
-      rank: "2/2",
-      tree: "demonology",
-      icon: "⏱️",
-      why: "Reduces pet summoning cast time by 4 sec and mana cost by 40%!"
+          "name": "Master Summoner",
+          "rank": "2/2",
+          "tree": "demonology",
+          "icon": "⏱️",
+          "why": "Reduces pet summoning cast time by 4 sec and mana cost by 40%!"
     },
     talentNote: "Pet summons take only 2.0s without Fel Domination.",
-    trainerTrain: ["Corruption (Rank 9)", "Life Tap (Rank 10)"],
+    trainerTrain: ["Corruption (Rank 8)","Drain Life (Rank 7)","Curse of Agony (Rank 7)"],
     trainerSkip: [],
     rotation: ["Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."],
     gearTip: "Corrupted flowers in Felwood provide Whipper Root Tubers (instant heal!).",
@@ -1086,11 +1086,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Bloodvenom Post",
     zoneInstructions: "Descend into Jaedenar and clear Shadow Council Warlocks and Infernals. Complete 'A Husband's Revenge' and collect Corrupted Soul Shards.",
     talent: {
-      name: "Fel Stamina",
-      rank: "1/5",
-      tree: "demonology",
-      icon: "❤️",
-      why: "Increases the maximum health of your summoned demons by 3%."
+          "name": "Fel Stamina",
+          "rank": "1/5",
+          "tree": "demonology",
+          "icon": "❤️",
+          "why": "Increases the maximum health of your summoned demons by 3%."
     },
     talentNote: "Toughens your pet so it never dies to cleaves.",
     trainerTrain: [],
@@ -1106,14 +1106,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "The Bulwark (Tirisfal/WPL border, Flight Master)",
     zoneInstructions: "Fly to Brill and run east through The Bulwark into Western Plaguelands! Pick up the Cauldron quest chain: 'A Plague Upon Thee', 'Target: Felstone Field', and 'Target: Dalson's Tears'. Clear the undead scythemen and ghouls.",
     talent: {
-      name: "Fel Stamina",
-      rank: "2/5",
-      tree: "demonology",
-      icon: "❤️",
-      why: "Increases demon maximum health by 6%."
+          "name": "Fel Stamina",
+          "rank": "2/5",
+          "tree": "demonology",
+          "icon": "❤️",
+          "why": "Increases demon maximum health by 6%."
     },
     talentNote: "Pet survives high-level Undead disease auras.",
-    trainerTrain: ["Curse of Agony (Rank 10)", "Fear (Rank 4)"],
+    trainerTrain: ["Create Soulstone (Major)","Demon Armor (Rank 5)","Life Tap (Rank 7)","Shadow Bolt (Rank 11)","Hellfire (Rank 2)"],
     trainerSkip: [],
     rotation: ["Siphon Life -> Corruption -> Agony -> Drain Life face tank."],
     gearTip: "Cauldron quest turn-ins grant gigantic lump-sum XP payouts!",
@@ -1126,11 +1126,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Everlook (Flight Master, Neutral Goblin Town)",
     zoneInstructions: "Pass through the Timbermaw Tunnel from Felwood into the snowy alpine peaks of Winterspring! Grab the Everlook Flight Path. Pick up 'Winterfall Intruders', 'Frostsaber Provisions', and 'Are We There, Yeti?'.",
     talent: {
-      name: "Fel Stamina",
-      rank: "3/5",
-      tree: "demonology",
-      icon: "❤️",
-      why: "Increases demon maximum health by 9%."
+          "name": "Fel Stamina",
+          "rank": "3/5",
+          "tree": "demonology",
+          "icon": "❤️",
+          "why": "Increases demon maximum health by 9%."
     },
     talentNote: "Level 55+: The final stretch to 60 begins!",
     trainerTrain: [],
@@ -1146,14 +1146,14 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Light's Hope Chapel (Flight Master)",
     zoneInstructions: "Ride east past Sorrow Hill into Eastern Plaguelands! Secure the Light's Hope Chapel Flight Path. Complete 'The Restless Souls', 'Carrion Grub Apocalypse', and 'Zaeldron's Head'.",
     talent: {
-      name: "Fel Stamina",
-      rank: "4/5",
-      tree: "demonology",
-      icon: "❤️",
-      why: "Increases demon maximum health by 12%."
+          "name": "Fel Stamina",
+          "rank": "4/5",
+          "tree": "demonology",
+          "icon": "❤️",
+          "why": "Increases demon maximum health by 12%."
     },
     talentNote: "Pet health pool is rock-solid.",
-    trainerTrain: ["Corruption (Rank 10)", "Drain Life (Rank 7)"],
+    trainerTrain: ["Immolate (Rank 8)","Rain of Fire (Rank 4)","Fear (Rank 4)"],
     trainerSkip: [],
     rotation: ["Siphon Life -> Corruption -> Agony -> Drain Life face-tank."],
     gearTip: "Collect Argent Dawn Valor Tokens from scourge mobs.",
@@ -1166,11 +1166,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Flame Crest (Flight Master)",
     zoneInstructions: "Travel south of Blackrock Mountain into Burning Steppes. Secure Flame Crest flight path. Complete 'Marrow Fiend', 'Broodling Essence', and 'Tablet of the Seven'.",
     talent: {
-      name: "Fel Stamina",
-      rank: "5/5",
-      tree: "demonology",
-      icon: "❤️",
-      why: "Increases demon maximum health by 15%."
+          "name": "Fel Stamina",
+          "rank": "5/5",
+          "tree": "demonology",
+          "icon": "❤️",
+          "why": "Increases demon maximum health by 15%."
     },
     talentNote: "Demon survivability maxed out.",
     trainerTrain: [],
@@ -1186,19 +1186,25 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Flame Crest, Light's Hope Chapel",
     zoneInstructions: "Start running high-level 5-man dungeons! Complete Blackrock Depths (Emperor Dagran Thaurissan), Scholomance, and Stratholme. Complete the Onyxia attunement chain starting in Kargath.",
     talent: {
-      name: "Improved Healthstone",
-      rank: "1/2",
-      tree: "demonology",
-      icon: "💚",
-      why: "Increases the amount of health restored by your Healthstone by 10%."
+          "name": "Improved Healthstone",
+          "rank": "1/2",
+          "tree": "demonology",
+          "icon": "💚",
+          "why": "Increases the amount of health restored by your Healthstone by 10%."
     },
     talentNote: "Healthstone now heals for ~1,320 HP in emergency combat.",
-    trainerTrain: ["Curse of Doom (Rank 1)", "Shadow Bolt (Rank 10)"],
+    trainerTrain: ["Create Healthstone (Major)","Banish (Rank 3)","Corruption (Rank 9)","Drain Life (Rank 8)","Drain Soul (Rank 5)","Shadow Bolt (Rank 12)"],
     trainerSkip: [],
     rotation: ["Curse of Shadows / Elements in dungeons -> Shadow Bolt / Corruption."],
     gearTip: "Scholomance: Necropile Raiment set pieces.",
     dungeonGear: [
-      { name: "Skibi's Pendant", quality: "rare", source: "Scholomance", stats: "+15 Intellect, +5 Spirit, +14 Spell Damage", tip: "Superb neck piece." }
+          {
+                "name": "Skibi's Pendant",
+                "quality": "rare",
+                "source": "Scholomance",
+                "stats": "+15 Intellect, +5 Spirit, +14 Spell Damage",
+                "tip": "Superb neck piece."
+          }
     ]
   },
   59: {
@@ -1208,11 +1214,11 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Light's Hope Chapel, Everlook",
     zoneInstructions: "Final level before 60! Farm Scarlet Spellbinders in Hearthglen for Crusader Enchant formulas, or grind Winterfall Furbolgs in Winterspring. Turn in all completed dungeon and elite quests.",
     talent: {
-      name: "Improved Healthstone",
-      rank: "2/2",
-      tree: "demonology",
-      icon: "💚",
-      why: "Increases Healthstone healing by 20%! Grants an instant 1,440 HP heal on demand!"
+          "name": "Improved Healthstone",
+          "rank": "2/2",
+          "tree": "demonology",
+          "icon": "💚",
+          "why": "Increases Healthstone healing by 20%! Grants an instant 1,440 HP heal on demand!"
     },
     talentNote: "Massive instant heal for raid survival and PvP.",
     trainerTrain: [],
@@ -1228,25 +1234,34 @@ const WARLOCK_LEVEL_DATA = {
     hubs: "Undercity, Orgrimmar",
     zoneInstructions: "CONGRATULATIONS! You have conquered Classic WoW and reached Level 60 as an Affliction Warlock! 1) Train max rank spells: Corruption Rank 10, Drain Life Rank 7, Shadow Bolt Rank 10, Curse of Shadows / Elements. 2) Begin the epic DREADSTEED OF XOROTH quest chain with Mor'zul Bloodbringer in Burning Steppes for your 100% Epic Mount! 3) Collect Pre-Raid BiS from Stratholme, Scholomance, and BRD. 4) Prepare for Molten Core and Onyxia's Lair!",
     talent: {
-      name: "Improved Drain Life",
-      rank: "2/5",
-      tree: "affliction",
-      icon: "🩸",
-      why: "Final leveling talent point invested into Improved Drain Life (+4% healing) or swap to SM/Ruin raid build!"
+          "name": "Improved Drain Life",
+          "rank": "2/5",
+          "tree": "affliction",
+          "icon": "🩸",
+          "why": "Final leveling talent point invested into Improved Drain Life (+4% healing) or swap to SM/Ruin raid build!"
     },
     talentNote: "You are now fully geared, leveled, and raid-ready for the Horde!",
-    trainerTrain: ["Summon Dreadsteed (Epic Mount Quest)", "Infernal (Minion)", "Ritual of Doom"],
+    trainerTrain: ["Curse of Doom (Rank 1)","Ritual of Doom","Summon Dreadsteed (Epic Mount Quest)","Demon Armor (Rank 6)","Curse of Agony (Rank 8)","Life Tap (Rank 8)","Immolate (Rank 9)"],
     trainerSkip: [],
-    rotation: [
-      "Solo Drain Tank: Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact",
-      "Raid Boss: Curse of the Elements / Shadows -> Corruption (if debuff slot allows) -> Shadow Bolt spam"
-    ],
+    rotation: ["Solo Drain Tank: Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact","Raid Boss: Curse of the Elements / Shadows -> Corruption (if debuff slot allows) -> Shadow Bolt spam"],
     gearTip: "Crown of the Ogre King, Robe of the Void (Crafted Tailoring 300), Briarwood Reed, Rod of the Ogre Magi.",
     dungeonGear: [
-      { name: "Robe of the Void", quality: "epic", source: "Tailoring (Skill 300)", stats: "+14 Stamina, +46 Shadow Spell Damage, Use: Heal 1200", tip: "🏆 The ultimate classic Warlock chestpiece!" },
-      { name: "Briarwood Reed", quality: "rare", source: "Jed Runewatcher (UBRS)", stats: "Equip: +29 Spell Damage", tip: "Essential pre-raid BiS trinket!" }
+          {
+                "name": "Robe of the Void",
+                "quality": "epic",
+                "source": "Tailoring (Skill 300)",
+                "stats": "+14 Stamina, +46 Shadow Spell Damage, Use: Heal 1200",
+                "tip": "🏆 The ultimate classic Warlock chestpiece!"
+          },
+          {
+                "name": "Briarwood Reed",
+                "quality": "rare",
+                "source": "Jed Runewatcher (UBRS)",
+                "stats": "Equip: +29 Spell Damage",
+                "tip": "Essential pre-raid BiS trinket!"
+          }
     ]
-  }
+  },
 };
 
 const WARLOCK_TALENTS_CONFIG = [

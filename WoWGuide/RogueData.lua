@@ -18,7 +18,7 @@ WoWGuide_Rogue.levels = {
     talent = nil,
     talentNote = "First talent point unlocks at Level 10. Prepare for Remorseless Attacks in Assassination.",
     gearTip = "Equip any dropped daggers or one-handed swords. Agility increases Attack Power, Crit, and Dodge.",
-    trainerTrain = {"Sinister Strike (Rank 1)", "Eviscerate (Rank 1)"},
+    trainerTrain = {"Sinister Strike (Rank 1)", "Eviscerate (Rank 1)", "Stealth (Rank 1)"},
     rotation = {"Walk up behind target", "Sinister Strike twice to build 2 Combo Points", "Eviscerate to finish mob", "Use Cannibalize (Undead racial) on humanoids/undead corpses to restore 7% max health every 2 sec for 10 sec!"},
     dungeonGear = {
     }
@@ -60,7 +60,7 @@ WoWGuide_Rogue.levels = {
     talent = nil,
     talentNote = "Talents unlock at Level 10.",
     gearTip = "Always Pickpocket humanoids before opening attack for extra money and potions.",
-    trainerTrain = {"Stealth (Rank 1)", "Gouge (Rank 1)", "Pickpocket"},
+    trainerTrain = {"Backstab (Rank 1)", "Pick Pocket (Rank 1)"},
     rotation = {"Enter Stealth -> Creep behind mob", "Pickpocket for free copper and lockboxes before attacking!", "Open with Sinister Strike -> Build combo points", "If health drops: Gouge (4 sec stun) -> Step back -> Apply First Aid bandage -> Re-engage!"},
     dungeonGear = {
     }
@@ -88,7 +88,7 @@ WoWGuide_Rogue.levels = {
     talent = nil,
     talentNote = "Talents unlock at Level 10.",
     gearTip = "Look for leather armor with Agility and Strength.",
-    trainerTrain = {"Sinister Strike (Rank 2)", "Evasion (Rank 1)"},
+    trainerTrain = {"Sinister Strike (Rank 2)", "Gouge (Rank 1)"},
     rotation = {"Stealth -> Pickpocket -> Sinister Strike Rank 2", "Pop Evasion whenever you pull 2+ mobs (+50% dodge keeps you alive!)", "Finish with Eviscerate"},
     dungeonGear = {
     }
@@ -116,7 +116,7 @@ WoWGuide_Rogue.levels = {
     talent = nil,
     talentNote = "Talents unlock at Level 10.",
     gearTip = "Fine Longbow or Thrown weapon for pulling single mobs safely.",
-    trainerTrain = {"Sprint (Rank 1)", "Eviscerate (Rank 2)"},
+    trainerTrain = {"Evasion (Rank 1)", "Eviscerate (Rank 2)"},
     rotation = {"Sinister Strike x3 -> Eviscerate Rank 2. Use Sprint to close distance."},
     dungeonGear = {
     }
@@ -144,7 +144,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Remorseless Attacks", rank = "1/2", tree = "assassination", why = "After killing a target that yields experience, your next Sinister Strike, Backstab, or Ambush has a 20% increased critical strike chance for 20 sec!" },
     talentNote = "Huge chain-pulling burst. Chaining mobs back-to-back yields constant crits.",
     gearTip = "Equip your highest damage weapon in Main Hand (slow is best for Sinister Strike), and fastest weapon in Off-Hand.",
-    trainerTrain = {"Dual Wield", "Slice and Dice (Rank 1)", "Sap (Rank 1)"},
+    trainerTrain = {"Sprint (Rank 1)", "Slice and Dice (Rank 1)", "Sap (Rank 1)", "Dual Wield"},
     rotation = {"Open with Sinister Strike", "Build 1-2 Combo Points -> CAST SLICE AND DICE (+20% Attack Speed!)", "Spam Sinister Strike with fast off-hand attacks shredding mob", "Finish with Eviscerate -> Remorseless Attacks procs for next mob!"},
     dungeonGear = {
       { name = "Forsaken Dagger", quality = "uncommon", source = "Tirisfal Glades Quest", stats = "14-26 Damage, 11.1 DPS, Speed 1.80", tip = "Great early leveling weapon!" },
@@ -187,7 +187,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Improved Sinister Strike", rank = "2/2", tree = "combat", why = "SINISTER STRIKE NOW COSTS 40 ENERGY! You can now cast 2 Sinister Strikes instantly from full 100 energy pool!" },
     talentNote = "The single most important energy reduction talent in the game for leveling.",
     gearTip = "BEHOLDER'S EYE: 14-26 Damage, Speed 1.80, +2 Agi, +1 Stam. Equipped on Phana!",
-    trainerTrain = {"Sinister Strike (Rank 3)"},
+    trainerTrain = {},
     rotation = {"Open with 40-energy Sinister Strike (critting via Remorseless Attacks!)", "Immediate 2nd Sinister Strike", "Slice and Dice -> Spam Sinister Strike -> Eviscerate!"},
     dungeonGear = {
       { name = "Beholder's Eye", quality = "uncommon", source = "Wandering Eye of Kilrogg", stats = "14-26 Dmg, 11.1 DPS, +2 Agi, +1 Stam", tip = "Live equipped on Phana!" },
@@ -202,7 +202,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Deflection", rank = "1/5", tree = "combat", why = "Increases your Parry chance by 1%. Building toward Riposte at Level 19!" },
     talentNote = "Parrying avoids 100% of physical damage and resets swing timer.",
     gearTip = "Troll's Sweatcloth (+3 Stamina, +2 Spirit).",
-    trainerTrain = {"Garrote (Rank 1)"},
+    trainerTrain = {"Sinister Strike (Rank 3)", "Garrote (Rank 1)"},
     rotation = {"Stealth -> Garrote opener on high-armor mobs -> Slice and Dice -> Sinister Strike."},
     dungeonGear = {
     }
@@ -230,7 +230,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Deflection", rank = "3/5", tree = "combat", why = "Increases Parry chance by 3%." },
     talentNote = "Lockpicking lets you open locked strongboxes, footlockers, and dungeon doors.",
     gearTip = "Keep Thieves' Tools in your inventory at all times to pick lockboxes.",
-    trainerTrain = {"Lockpicking", "Eviscerate (Rank 3)", "Feint (Rank 1)"},
+    trainerTrain = {"Feint (Rank 1)", "Eviscerate (Rank 3)", "Pick Lock (Quest/Trainer)"},
     rotation = {"Sinister Strike x2 -> Slice and Dice -> Sinister Strike -> Eviscerate."},
     dungeonGear = {
     }
@@ -259,7 +259,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Deflection", rank = "5/5", tree = "combat", why = "+5% PARRY CHANCE! Complete prerequisite for Riposte! You now parry 1 out of every 10 melee swings!" },
     talentNote = "Riposte unlocks on your next level ding!",
     gearTip = "Leggings of the Fang (+9 Agility, +4 Strength) from Wailing Caverns.",
-    trainerTrain = {"Ambush (Rank 1)", "Sinister Strike (Rank 4)"},
+    trainerTrain = {"Ambush (Rank 1)"},
     rotation = {"Stealth -> Ambush opener with Beholder's Eye dagger (massive chunk damage!)", "Slice and Dice -> Sinister Strike spam -> Eviscerate"},
     dungeonGear = {
       { name = "Leggings of the Fang", quality = "rare", source = "Lord Cobrahn (WC)", stats = "+9 Agility, +4 Strength", tip = "Best leveling legs in the 18-30 bracket!" },
@@ -289,7 +289,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Precision", rank = "1/5", tree = "combat", why = "Increases your chance to hit with melee weapons by 1%." },
     talentNote = "Dual wield hit penalty is reduced. Working toward +5% hit chance.",
     gearTip = "Always carry 1-2 vials of Thistle Tea for emergency 100 energy bursts.",
-    trainerTrain = {"Instant Poison (Rank 1)", "Deadly Poison (Rank 1)", "Crippling Poison (Rank 1)", "Thistle Tea"},
+    trainerTrain = {"Poisons (Quest)", "Instant Poison (Rank 1)", "Crippling Poison (Rank 1)", "Distract", "Stealth (Rank 2)", "Backstab (Rank 2)"},
     rotation = {"ALWAYS KEEP INSTANT POISON APPLIED TO MAIN HAND & OFF HAND!", "Every auto-attack now has a 20% chance to proc 22 bonus nature damage!", "Slice and Dice increases poison application rate by 30%!"},
     dungeonGear = {
       { name = "Feet of the Lynx", quality = "rare", source = "World Drop / AH", stats = "+8 Agility, +3 Strength", tip = "Best boots in Classic at Level 19-20." },
@@ -318,7 +318,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Precision", rank = "3/5", tree = "combat", why = "Increases melee hit chance by 3%." },
     talentNote = "Hit chance continues scaling.",
     gearTip = "Distract stops wandering guards and turns them around for easy stealth openers.",
-    trainerTrain = {"Sinister Strike (Rank 4)", "Distract (Rank 1)"},
+    trainerTrain = {"Vanish (Rank 1)", "Sinister Strike (Rank 4)", "Garrote (Rank 2)"},
     rotation = {"Distract patrols -> Ambush/Sinister Strike -> Slice and Dice -> Riposte."},
     dungeonGear = {
       { name = "Wolfclaw Gloves", quality = "rare", source = "World Drop / AH", stats = "+6 Agility, +6 Stamina, +5 Strength", tip = "Superb rogue physical gloves." },
@@ -347,7 +347,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Precision", rank = "5/5", tree = "combat", why = "+5% MELEE HIT CHANCE! Special attacks (yellow damage) can no longer miss same-level mobs! Huge DPS stability!" },
     talentNote = "Yellow attacks are hit-capped for leveling.",
     gearTip = "Check Tarren Mill vendors for Silk Bandages.",
-    trainerTrain = {"Detect Traps", "Eviscerate (Rank 4)", "Instant Poison (Rank 2)"},
+    trainerTrain = {"Eviscerate (Rank 4)", "Mind-numbing Poison (Rank 1)", "Pick Pocket (Rank 2)"},
     rotation = {"Apply Instant Poison II -> Sinister Strike -> Slice and Dice -> Riposte."},
     dungeonGear = {
     }
@@ -376,7 +376,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Dual Wield Specialization", rank = "2/5", tree = "combat", why = "Increases off-hand weapon damage by 20%." },
     talentNote = "Off-hand auto-attacks hit noticeably harder.",
     gearTip = "Cheap Shot provides 4 seconds of free damage before mob can touch you.",
-    trainerTrain = {"Cheap Shot", "Kick (Rank 2)"},
+    trainerTrain = {"Cheap Shot (Rank 1)", "Rupture (Rank 1)", "Kick (Rank 2)"},
     rotation = {"Open with CHEAP SHOT (4 sec stun + 2 combo points from Stealth!)", "Cast Slice and Dice immediately", "Sinister Strike spam -> Riposte on parry -> Eviscerate"},
     dungeonGear = {
     }
@@ -404,7 +404,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Dual Wield Specialization", rank = "4/5", tree = "combat", why = "Increases off-hand weapon damage by 40%." },
     talentNote = "One point away from full +50% off-hand damage.",
     gearTip = "Syndicate lockboxes level Lockpicking to 125-150.",
-    trainerTrain = {"Sinister Strike (Rank 5)", "Sprint (Rank 2)"},
+    trainerTrain = {"Instant Poison (Rank 2)", "Ambush (Rank 2)", "Sinister Strike (Rank 5)"},
     rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -432,7 +432,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Blade Flurry", rank = "1/1", tree = "combat", why = "BLADE FLURRY UNLOCKED! +20% Attack Speed AND strikes a 2nd target for 100% damage! Melts 2 mobs in the time of 1!" },
     talentNote = "Combine Blade Flurry + Evasion to wipe out double pulls effortlessly.",
     gearTip = "Tigerstrike Mantle (+8 Agility, +7 Stamina) cloak.",
-    trainerTrain = {"Blade Flurry", "Kidney Shot (Rank 1)", "Deadly Poison (Rank 2)"},
+    trainerTrain = {"Kidney Shot (Rank 1)", "Deadly Poison (Rank 1)", "Feint (Rank 2)", "Gouge (Rank 3)"},
     rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% haste + cleave both!)", "Sinister Strike -> Slice and Dice (+30% more haste = +50% total attack speed!)", "Riposte on parry -> Watch both mobs disintegrate!"},
     dungeonGear = {
       { name = "Sword of Omen", quality = "rare", source = "Scarlet Monastery Quest", stats = "22.2 DPS, Speed 2.20, +7 Str, +5 Agi", tip = "Premier quest sword for Combat Rogues!" },
@@ -461,7 +461,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Sword Specialization", rank = "2/5", tree = "combat", why = "2% chance on hit to strike an extra attack." },
     talentNote = "Extra swing procs can trigger poisons and combo points.",
     gearTip = "Hammerfall vendors sell level 35+ gear and poison reagents.",
-    trainerTrain = {"Eviscerate (Rank 5)", "Instant Poison (Rank 3)"},
+    trainerTrain = {"Eviscerate (Rank 5)", "Garrote (Rank 3)", "Wound Poison (Rank 1)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -489,7 +489,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Sword Specialization", rank = "4/5", tree = "combat", why = "4% chance on hit to strike an extra attack." },
     talentNote = "Carry Fadeleaf to craft Blinding Powder.",
     gearTip = "Always keep 10-20 Blinding Powders in your bags.",
-    trainerTrain = {"Blind", "Sinister Strike (Rank 6)"},
+    trainerTrain = {"Blind (Rank 1)", "Sprint (Rank 2)", "Distract (Rank 2)"},
     rotation = {"Blind add if two mobs attack -> Focus down primary target", "Or Blind target -> Step back -> Apply bandage -> Re-open with Cheap Shot!"},
     dungeonGear = {
     }
@@ -517,7 +517,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Weapon Expertise", rank = "1/2", tree = "combat", why = "Increases your skill with Swords, Daggers, and Maces by 3. Reduces chance for target to dodge or parry!" },
     talentNote = "Weapon skill reduces glancing blow penalty against higher-level mobs.",
     gearTip = "Slice and Dice Rank 2 duration increased.",
-    trainerTrain = {"Slice and Dice (Rank 2)", "Instant Poison (Rank 4)"},
+    trainerTrain = {"Sinister Strike (Rank 6)", "Instant Poison (Rank 3)", "Rupture (Rank 2)"},
     rotation = {"Slice and Dice Rank 2 (+30% attack speed!) -> Sinister Strike -> Riposte."},
     dungeonGear = {
     }
@@ -545,7 +545,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Aggression", rank = "1/3", tree = "combat", why = "Increases the damage of your Sinister Strike and Eviscerate abilities by 2%." },
     talentNote = "Direct damage multiplier to your primary spenders.",
     gearTip = "Save gold for Level 40 mount (approx 90g with honored reputation).",
-    trainerTrain = {"Sinister Strike (Rank 7)"},
+    trainerTrain = {"Deadly Poison (Rank 2)", "Ambush (Rank 3)", "Backstab (Rank 3)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -573,7 +573,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Adrenaline Rush", rank = "1/1", tree = "combat", why = "ADRENALINE RUSH UNLOCKED! 100% INCREASED ENERGY REGEN FOR 15 SECONDS! Unlimited Sinister Strike spam on demand!" },
     talentNote = "Macro: /cast Blade Flurry /cast Adrenaline Rush for legendary boss and elite melting!",
     gearTip = "Equip your skeletal warhorse mount. Head immediately to Gadgetzan.",
-    trainerTrain = {"Adrenaline Rush", "Eviscerate (Rank 6)", "Mount Riding"},
+    trainerTrain = {"Safe Fall", "Eviscerate (Rank 6)", "Mount Riding"},
     rotation = {"For elites or pack pulls: Pop Blade Flurry + ADRENALINE RUSH", "Spam Sinister Strike every second -> Slice and Dice -> Riposte", "Watch entire packs of mobs melt in 10 seconds flat!"},
     dungeonGear = {
       { name = "Vanquisher's Sword", quality = "rare", source = "Quest: Bring the Light (RFD)", stats = "30.6 DPS, Speed 2.10, +28 Attack Power", tip = "Guaranteed quest sword upgrade at Level 40-45!" },
@@ -602,7 +602,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Malice", rank = "1/5", tree = "assassination", why = "Increases your critical strike chance by 1%." },
     talentNote = "Stacking passive crit for physical strikes.",
     gearTip = "Camp Mojache vendors sell level 40+ reagents.",
-    trainerTrain = {"Instant Poison (Rank 5)"},
+    trainerTrain = {"Vanish (Rank 2)", "Garrote (Rank 4)", "Kick (Rank 3)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -630,7 +630,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Malice", rank = "3/5", tree = "assassination", why = "Increases critical strike chance by 3%." },
     talentNote = "+3% passive crit active.",
     gearTip = "Revantusk troll quests give incredible XP and blue agility rewards.",
-    trainerTrain = {"Sinister Strike (Rank 8)"},
+    trainerTrain = {"Sinister Strike (Rank 7)", "Instant Poison (Rank 4)", "Mind-numbing Poison (Rank 2)"},
     rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."},
     dungeonGear = {
     }
@@ -659,7 +659,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Malice", rank = "5/5", tree = "assassination", why = "+5% PASSIVE CRIT CHANCE! Huge crit rating increase across all auto-attacks and Sinister Strikes!" },
     talentNote = "Crits trigger Remorseless Attacks and huge burst.",
     gearTip = "Thorium Point quests give great armor upgrades.",
-    trainerTrain = {"Eviscerate (Rank 7)"},
+    trainerTrain = {"Deadly Poison (Rank 3)", "Rupture (Rank 3)", "Feint (Rank 3)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -687,7 +687,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Ruthlessness", rank = "2/3", tree = "assassination", why = "Gives your finishing moves a 40% chance to add a combo point to your target." },
     talentNote = "40% combo point refund on every finisher.",
     gearTip = "Blasted Lands Agility buffs grant +25 Agility (+50 AP / +0.8% crit) for 1 hour!",
-    trainerTrain = {"Instant Poison (Rank 6)"},
+    trainerTrain = {"Eviscerate (Rank 7)", "Ambush (Rank 4)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -716,7 +716,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Relentless Strikes", rank = "1/1", tree = "assassination", why = "100% CHANCE TO REFUND 25 ENERGY ON 5-POINT FINISHERS! Eliminates energy starvation completely!" },
     talentNote = "5-point Slice and Dice or Eviscerate refunds 25 energy + 60% chance for 1 combo point!",
     gearTip = "Un'Goro raptors and gorillas are great for Skinning (thick leather/rugged leather).",
-    trainerTrain = {"Sinister Strike (Rank 9)"},
+    trainerTrain = {"Kidney Shot (Rank 2)", "Crippling Poison (Rank 2)", "Garrote (Rank 5)"},
     rotation = {"Sinister Strike to 5 Combo Points", "Cast Eviscerate -> Instant 25 energy refunded + 1 combo point granted!", "Immediately cast Slice and Dice or Sinister Strike with refunded energy!"},
     dungeonGear = {
     }
@@ -744,7 +744,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Murder", rank = "2/2", tree = "assassination", why = "Increases all damage dealt by 2% against Humanoids, Giants, Beasts, and Dragonkin." },
     talentNote = "2% flat damage boost.",
     gearTip = "Whipper Root Tubers in Felwood restore 700-900 HP instantly without sharing potion cooldown!",
-    trainerTrain = {"Sprint (Rank 3)"},
+    trainerTrain = {"Sinister Strike (Rank 8)", "Instant Poison (Rank 5)"},
     rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."},
     dungeonGear = {
     }
@@ -772,7 +772,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Lethality", rank = "2/5", tree = "assassination", why = "Increases critical strike damage bonus by 12%." },
     talentNote = "Sinister Strike crits hit noticeably harder.",
     gearTip = "Cauldron quest turn-ins grant massive lump-sum XP!",
-    trainerTrain = {},
+    trainerTrain = {"Deadly Poison (Rank 4)", "Wound Poison (Rank 2)", "Rupture (Rank 4)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -800,7 +800,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Lethality", rank = "4/5", tree = "assassination", why = "Increases critical strike damage bonus by 24%." },
     talentNote = "Nearly maxed crit bonus.",
     gearTip = "Collect Argent Dawn Valor Tokens from undead.",
-    trainerTrain = {"Eviscerate (Rank 8)"},
+    trainerTrain = {"Eviscerate (Rank 8)", "Ambush (Rank 5)", "Kick (Rank 4)"},
     rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
     dungeonGear = {
     }
@@ -829,7 +829,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Improved Slice and Dice", rank = "1/3", tree = "assassination", why = "Increases the duration of Slice and Dice by 15%." },
     talentNote = "Less combo points spent refreshing Slice and Dice = more 5-point Eviscerates!",
     gearTip = "Hand of Justice trinket (Emperor Dagran Thaurissan in BRD).",
-    trainerTrain = {},
+    trainerTrain = {"Sprint (Rank 3)", "Instant Poison (Rank 6)", "Garrote (Rank 6)"},
     rotation = {"Slice and Dice now lasts longer -> More energy and combo points spent on Eviscerate."},
     dungeonGear = {
       { name = "Hand of Justice", quality = "rare", source = "Emperor Dagran Thaurissan (BRD)", stats = "+20 Attack Power, 2% Chance on hit to grant extra attack", tip = "BiS melee trinket throughout entire Classic era!" },
@@ -859,7 +859,7 @@ WoWGuide_Rogue.levels = {
     talent = { name = "Improved Slice and Dice", rank = "3/3", tree = "assassination", why = "+45% SLICE AND DICE DURATION! Keeps your attack speed bonus up for almost half a minute per cast!" },
     talentNote = "You are now fully leveled, geared, and raid-ready for Molten Core!",
     gearTip = "Devilsaur Gauntlets & Leggings (2% Hit bonus), Thrash Blade, Mirah's Song, Hand of Justice, Blackhand's Breadth.",
-    trainerTrain = {"Instant Poison (Rank 6)", "Deadly Poison (Rank 4)"},
+    trainerTrain = {"Sinister Strike (Rank 9)", "Eviscerate (Rank 9)", "Deadly Poison (Rank 5)"},
     rotation = {"Keep Slice and Dice up 100% of the fight (5-point Slice and Dice lasts 30.5 seconds!)", "Pop Blade Flurry + Adrenaline Rush during boss burn phases", "Spam Sinister Strike -> Use Riposte on parry -> Eviscerate at 5 Combo Points!"},
     dungeonGear = {
       { name = "Devilsaur Leggings", quality = "rare", source = "Crafted via Leatherworking (300)", stats = "+12 Stamina, +46 AP, +1% Crit, 2pc: +2% Hit", tip = "Mandatory pre-raid physical DPS armor!" },

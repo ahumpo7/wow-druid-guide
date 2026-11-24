@@ -14,14 +14,9 @@ const ROGUE_LEVEL_DATA = {
     zoneInstructions: "Rise from the crypt as an Undead Rogue. Speak to Undertaker Mordo and Shadow Priest Sarvis. Visit David Trias (Rogue Trainer) to learn Sinister Strike (Rank 1). Equip your starter dagger and kill Mindless Zombies.",
     talent: null,
     talentNote: "First talent point unlocks at Level 10. Prepare for Remorseless Attacks in Assassination.",
-    trainerTrain: ["Sinister Strike (Rank 1)", "Eviscerate (Rank 1)"],
+    trainerTrain: ["Sinister Strike (Rank 1)","Eviscerate (Rank 1)","Stealth (Rank 1)"],
     trainerSkip: [],
-    rotation: [
-      "Walk up behind target",
-      "Sinister Strike twice to build 2 Combo Points",
-      "Eviscerate to finish mob",
-      "Use Cannibalize (Undead racial) on humanoids/undead corpses to restore 7% max health every 2 sec for 10 sec!"
-    ],
+    rotation: ["Walk up behind target","Sinister Strike twice to build 2 Combo Points","Eviscerate to finish mob","Use Cannibalize (Undead racial) on humanoids/undead corpses to restore 7% max health every 2 sec for 10 sec!"],
     gearTip: "Equip any dropped daggers or one-handed swords. Agility increases Attack Power, Crit, and Dodge.",
     dungeonGear: []
   },
@@ -61,14 +56,9 @@ const ROGUE_LEVEL_DATA = {
     zoneInstructions: "Visit David Trias in Deathknell. Learn STEALTH (Rank 1) and GOUGE (Rank 1)! Stealth allows you to sneak past unwanted mobs. Gouge incapacitates the target for 4 seconds, allowing you to bandage mid-fight!",
     talent: null,
     talentNote: "Talents unlock at Level 10.",
-    trainerTrain: ["Stealth (Rank 1)", "Gouge (Rank 1)", "Pickpocket"],
+    trainerTrain: ["Backstab (Rank 1)","Pick Pocket (Rank 1)"],
     trainerSkip: [],
-    rotation: [
-      "Enter Stealth -> Creep behind mob",
-      "Pickpocket for free copper and lockboxes before attacking!",
-      "Open with Sinister Strike -> Build combo points",
-      "If health drops: Gouge (4 sec stun) -> Step back -> Apply First Aid bandage -> Re-engage!"
-    ],
+    rotation: ["Enter Stealth -> Creep behind mob","Pickpocket for free copper and lockboxes before attacking!","Open with Sinister Strike -> Build combo points","If health drops: Gouge (4 sec stun) -> Step back -> Apply First Aid bandage -> Re-engage!"],
     gearTip: "Always Pickpocket humanoids before opening attack for extra money and potions.",
     dungeonGear: []
   },
@@ -94,13 +84,9 @@ const ROGUE_LEVEL_DATA = {
     zoneInstructions: "Bind your Hearthstone at Gallows End Tavern in Brill. Speak to Marion Call (Rogue Trainer). Learn Sinister Strike (Rank 2) and Evasion (Rank 1)—increases your dodge chance by 50% for 15 seconds!",
     talent: null,
     talentNote: "Talents unlock at Level 10.",
-    trainerTrain: ["Sinister Strike (Rank 2)", "Evasion (Rank 1)"],
+    trainerTrain: ["Sinister Strike (Rank 2)","Gouge (Rank 1)"],
     trainerSkip: [],
-    rotation: [
-      "Stealth -> Pickpocket -> Sinister Strike Rank 2",
-      "Pop Evasion whenever you pull 2+ mobs (+50% dodge keeps you alive!)",
-      "Finish with Eviscerate"
-    ],
+    rotation: ["Stealth -> Pickpocket -> Sinister Strike Rank 2","Pop Evasion whenever you pull 2+ mobs (+50% dodge keeps you alive!)","Finish with Eviscerate"],
     gearTip: "Look for leather armor with Agility and Strength.",
     dungeonGear: []
   },
@@ -126,7 +112,7 @@ const ROGUE_LEVEL_DATA = {
     zoneInstructions: "Visit Marion Call in Brill. Train SPRINT (Rank 1)—increases run speed by 50% for 15 seconds! Essential for escaping danger or chasing down runners. Train Eviscerate (Rank 2).",
     talent: null,
     talentNote: "Talents unlock at Level 10.",
-    trainerTrain: ["Sprint (Rank 1)", "Eviscerate (Rank 2)"],
+    trainerTrain: ["Evasion (Rank 1)","Eviscerate (Rank 2)"],
     trainerSkip: [],
     rotation: ["Sinister Strike x3 -> Eviscerate Rank 2. Use Sprint to close distance."],
     gearTip: "Fine Longbow or Thrown weapon for pulling single mobs safely.",
@@ -153,24 +139,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Brill, Undercity",
     zoneInstructions: "MAJOR MILESTONE! Visit Marion Call in Brill to train DUAL WIELD! You can now equip an off-hand dagger or sword, doubling your auto-attack frequency! Learn Slice and Dice (Rank 1)—your most important combat finisher.",
     talent: {
-      name: "Remorseless Attacks",
-      rank: "1/2",
-      tree: "assassination",
-      icon: "💀",
-      why: "After killing a target that yields experience, your next Sinister Strike, Backstab, or Ambush has a 20% increased critical strike chance for 20 sec!"
+          "name": "Remorseless Attacks",
+          "rank": "1/2",
+          "tree": "assassination",
+          "icon": "💀",
+          "why": "After killing a target that yields experience, your next Sinister Strike, Backstab, or Ambush has a 20% increased critical strike chance for 20 sec!"
     },
     talentNote: "Huge chain-pulling burst. Chaining mobs back-to-back yields constant crits.",
-    trainerTrain: ["Dual Wield", "Slice and Dice (Rank 1)", "Sap (Rank 1)"],
+    trainerTrain: ["Sprint (Rank 1)","Slice and Dice (Rank 1)","Sap (Rank 1)","Dual Wield"],
     trainerSkip: [],
-    rotation: [
-      "Open with Sinister Strike",
-      "Build 1-2 Combo Points -> CAST SLICE AND DICE (+20% Attack Speed!)",
-      "Spam Sinister Strike with fast off-hand attacks shredding mob",
-      "Finish with Eviscerate -> Remorseless Attacks procs for next mob!"
-    ],
+    rotation: ["Open with Sinister Strike","Build 1-2 Combo Points -> CAST SLICE AND DICE (+20% Attack Speed!)","Spam Sinister Strike with fast off-hand attacks shredding mob","Finish with Eviscerate -> Remorseless Attacks procs for next mob!"],
     gearTip: "Equip your highest damage weapon in Main Hand (slow is best for Sinister Strike), and fastest weapon in Off-Hand.",
     dungeonGear: [
-      { name: "Forsaken Dagger", quality: "uncommon", source: "Tirisfal Glades Quest", stats: "14-26 Damage, 11.1 DPS, Speed 1.80", tip: "Great early leveling weapon!" }
+          {
+                "name": "Forsaken Dagger",
+                "quality": "uncommon",
+                "source": "Tirisfal Glades Quest",
+                "stats": "14-26 Damage, 11.1 DPS, Speed 1.80",
+                "tip": "Great early leveling weapon!"
+          }
     ]
   },
   11: {
@@ -180,19 +167,16 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Sepulcher (Flight Master, Innkeeper)",
     zoneInstructions: "MAX REMORSELESS ATTACKS! After killing any mob that yields XP, your next Sinister Strike has a massive +40% CRITICAL STRIKE CHANCE! Head south into Silverpine Forest and reach The Sepulcher.",
     talent: {
-      name: "Remorseless Attacks",
-      rank: "2/2",
-      tree: "assassination",
-      icon: "💀",
-      why: "40% INCREASED CRIT CHANCE ON NEXT ATTACK! Nearly guaranteed critical strike on every pull!"
+          "name": "Remorseless Attacks",
+          "rank": "2/2",
+          "tree": "assassination",
+          "icon": "💀",
+          "why": "40% INCREASED CRIT CHANCE ON NEXT ATTACK! Nearly guaranteed critical strike on every pull!"
     },
     talentNote: "Chain pulls are insanely fast. Kill mob -> Run to next -> Instant 40% crit!",
     trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "Pull with +40% Crit Sinister Strike opener!",
-      "Slice and Dice at 1-2 CP -> Sinister Strike to death -> Chain next mob!"
-    ],
+    rotation: ["Pull with +40% Crit Sinister Strike opener!","Slice and Dice at 1-2 CP -> Sinister Strike to death -> Chain next mob!"],
     gearTip: "Keep dual weapons updated. Black Wolf Bracers (+2 Agility).",
     dungeonGear: []
   },
@@ -203,14 +187,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Sepulcher",
     zoneInstructions: "Complete 'Proudfang / Moonrage Whitescalp' quests. Train Kick (Rank 1) at the Rogue Trainer in Undercity (Rogues' Quarter)—essential for interrupting enemy spellcasters!",
     talent: {
-      name: "Improved Sinister Strike",
-      rank: "1/2",
-      tree: "combat",
-      icon: "⚔️",
-      why: "Reduces the Energy cost of Sinister Strike by 3 (from 45 to 42 energy)."
+          "name": "Improved Sinister Strike",
+          "rank": "1/2",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "Reduces the Energy cost of Sinister Strike by 3 (from 45 to 42 energy)."
     },
     talentNote: "Transition into the Combat tree for unmatched sustained physical DPS.",
-    trainerTrain: ["Kick (Rank 1)", "Gouge (Rank 2)"],
+    trainerTrain: ["Kick (Rank 1)","Gouge (Rank 2)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Kick enemy spell casts -> Slice and Dice -> Eviscerate."],
     gearTip: "Grassland Pants (+4 Agility, +3 Stamina).",
@@ -223,23 +207,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Crossroads (The Barrens)",
     zoneInstructions: "MAX IMPROVED SINISTER STRIKE! Sinister Strike now costs only 40 ENERGY (down from 45)! You can now pool energy faster and spam Sinister Strike every 4 seconds! Target weapon: Beholder's Eye (11.1 DPS dagger). Take Zeppelin to The Barrens.",
     talent: {
-      name: "Improved Sinister Strike",
-      rank: "2/2",
-      tree: "combat",
-      icon: "⚔️",
-      why: "SINISTER STRIKE NOW COSTS 40 ENERGY! You can now cast 2 Sinister Strikes instantly from full 100 energy pool!"
+          "name": "Improved Sinister Strike",
+          "rank": "2/2",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "SINISTER STRIKE NOW COSTS 40 ENERGY! You can now cast 2 Sinister Strikes instantly from full 100 energy pool!"
     },
     talentNote: "The single most important energy reduction talent in the game for leveling.",
-    trainerTrain: ["Sinister Strike (Rank 3)"],
+    trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "Open with 40-energy Sinister Strike (critting via Remorseless Attacks!)",
-      "Immediate 2nd Sinister Strike",
-      "Slice and Dice -> Spam Sinister Strike -> Eviscerate!"
-    ],
+    rotation: ["Open with 40-energy Sinister Strike (critting via Remorseless Attacks!)","Immediate 2nd Sinister Strike","Slice and Dice -> Spam Sinister Strike -> Eviscerate!"],
     gearTip: "⭐ BEHOLDER'S EYE: 14-26 Damage, Speed 1.80, +2 Agi, +1 Stam. Equipped on Phana!",
     dungeonGear: [
-      { name: "Beholder's Eye", quality: "uncommon", source: "Wandering Eye of Kilrogg", stats: "14-26 Dmg, 11.1 DPS, +2 Agi, +1 Stam", tip: "Live equipped on Phana!" }
+          {
+                "name": "Beholder's Eye",
+                "quality": "uncommon",
+                "source": "Wandering Eye of Kilrogg",
+                "stats": "14-26 Dmg, 11.1 DPS, +2 Agi, +1 Stam",
+                "tip": "Live equipped on Phana!"
+          }
     ]
   },
   14: {
@@ -249,14 +235,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Crossroads (Flight Master)",
     zoneInstructions: "Arrive at The Crossroads. Pick up 'Disrupt the Attacks', 'The Forgotten Pools', and 'Plainstrider Menace'. Hunt Plainstriders and Raptors in the central savannah.",
     talent: {
-      name: "Deflection",
-      rank: "1/5",
-      tree: "combat",
-      icon: "🛡️",
-      why: "Increases your Parry chance by 1%. Building toward Riposte at Level 19!"
+          "name": "Deflection",
+          "rank": "1/5",
+          "tree": "combat",
+          "icon": "🛡️",
+          "why": "Increases your Parry chance by 1%. Building toward Riposte at Level 19!"
     },
     talentNote: "Parrying avoids 100% of physical damage and resets swing timer.",
-    trainerTrain: ["Garrote (Rank 1)"],
+    trainerTrain: ["Sinister Strike (Rank 3)","Garrote (Rank 1)"],
     trainerSkip: [],
     rotation: ["Stealth -> Garrote opener on high-armor mobs -> Slice and Dice -> Sinister Strike."],
     gearTip: "Troll's Sweatcloth (+3 Stamina, +2 Spirit).",
@@ -269,11 +255,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Crossroads",
     zoneInstructions: "Clear Sludge Fen Venture Co. drillers. Equip Grizzly Jerkin (88 Armor, +6 Strength, +5 Stamina) for a massive durability boost against humanoid mobs.",
     talent: {
-      name: "Deflection",
-      rank: "2/5",
-      tree: "combat",
-      icon: "🛡️",
-      why: "Increases Parry chance by 2%."
+          "name": "Deflection",
+          "rank": "2/5",
+          "tree": "combat",
+          "icon": "🛡️",
+          "why": "Increases Parry chance by 2%."
     },
     talentNote: "Every parry prevents incoming damage.",
     trainerTrain: [],
@@ -289,14 +275,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Ratchet (Pirate Ships)",
     zoneInstructions: "MAJOR MILESTONE! Visit the Rogue Trainer to unlock LOCKPICKING! Learn Feint (Rank 1) and Eviscerate (Rank 3). Travel to the Southsea pirate vessel off Ratchet and practice picking the Buccaneer's Footlockers up to skill 75-100!",
     talent: {
-      name: "Deflection",
-      rank: "3/5",
-      tree: "combat",
-      icon: "🛡️",
-      why: "Increases Parry chance by 3%."
+          "name": "Deflection",
+          "rank": "3/5",
+          "tree": "combat",
+          "icon": "🛡️",
+          "why": "Increases Parry chance by 3%."
     },
     talentNote: "Lockpicking lets you open locked strongboxes, footlockers, and dungeon doors.",
-    trainerTrain: ["Lockpicking", "Eviscerate (Rank 3)", "Feint (Rank 1)"],
+    trainerTrain: ["Feint (Rank 1)","Eviscerate (Rank 3)","Pick Lock (Quest/Trainer)"],
     trainerSkip: [],
     rotation: ["Sinister Strike x2 -> Slice and Dice -> Sinister Strike -> Eviscerate."],
     gearTip: "Keep Thieves' Tools in your inventory at all times to pick lockboxes.",
@@ -309,24 +295,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Crossroads, Camp Taurajo",
     zoneInstructions: "YOU ARE HERE! Phana is Level 17 in The Barrens! Clear the Kolkar Centaur around Lushwater Oasis and Stagnant Oasis for 'The Stagnant Oasis' and 'Altered Beings'. Target weapon upgrade: Thief's Blade (16.5 DPS sword) or Shadowfang.",
     talent: {
-      name: "Deflection",
-      rank: "4/5",
-      tree: "combat",
-      icon: "🛡️",
-      why: "Increases Parry chance by 4%. One more point to unlock Riposte!"
+          "name": "Deflection",
+          "rank": "4/5",
+          "tree": "combat",
+          "icon": "🛡️",
+          "why": "Increases Parry chance by 4%. One more point to unlock Riposte!"
     },
     talentNote: "Phana's current progression level. Riposte unlocks at Level 19!",
     trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "Open with Remorseless Attacks (+40% Crit Sinister Strike!)",
-      "Pop Slice and Dice at 1-2 Combo Points",
-      "Keep Slice and Dice active 100% of the time",
-      "Use Gouge + First Aid bandage if health dips below 50%"
-    ],
+    rotation: ["Open with Remorseless Attacks (+40% Crit Sinister Strike!)","Pop Slice and Dice at 1-2 Combo Points","Keep Slice and Dice active 100% of the time","Use Gouge + First Aid bandage if health dips below 50%"],
     gearTip: "Current gear: Beholder's Eye dagger, Fine Longbow, Grizzly Jerkin, Grizzly Cape, Grassland Pants, Black Wolf Bracers, Troll's Sweatcloth.",
     dungeonGear: [
-      { name: "Thief's Blade", quality: "uncommon", source: "World Drop / AH", stats: "21-39 Dmg, 16.5 DPS, Speed 2.20, +3 Agi, +2 Str", tip: "Superb Combat sword upgrade!" }
+          {
+                "name": "Thief's Blade",
+                "quality": "uncommon",
+                "source": "World Drop / AH",
+                "stats": "21-39 Dmg, 16.5 DPS, Speed 2.20, +3 Agi, +2 Str",
+                "tip": "Superb Combat sword upgrade!"
+          }
     ]
   },
   18: {
@@ -336,22 +323,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Camp Taurajo (Flight Master)",
     zoneInstructions: "Max out Deflection (+5% Parry). Train AMBUSH (Rank 1)—devastating stealth dagger opener! Pick up Wailing Caverns quests: 'Leaders of the Fang' and 'Deviate Hides'. Optional Wailing Caverns run for Leggings of the Fang (+9 Agi, +4 Str).",
     talent: {
-      name: "Deflection",
-      rank: "5/5",
-      tree: "combat",
-      icon: "🛡️",
-      why: "+5% PARRY CHANCE! Complete prerequisite for Riposte! You now parry 1 out of every 10 melee swings!"
+          "name": "Deflection",
+          "rank": "5/5",
+          "tree": "combat",
+          "icon": "🛡️",
+          "why": "+5% PARRY CHANCE! Complete prerequisite for Riposte! You now parry 1 out of every 10 melee swings!"
     },
     talentNote: "Riposte unlocks on your next level ding!",
-    trainerTrain: ["Ambush (Rank 1)", "Sinister Strike (Rank 4)"],
+    trainerTrain: ["Ambush (Rank 1)"],
     trainerSkip: [],
-    rotation: [
-      "Stealth -> Ambush opener with Beholder's Eye dagger (massive chunk damage!)",
-      "Slice and Dice -> Sinister Strike spam -> Eviscerate"
-    ],
+    rotation: ["Stealth -> Ambush opener with Beholder's Eye dagger (massive chunk damage!)","Slice and Dice -> Sinister Strike spam -> Eviscerate"],
     gearTip: "Leggings of the Fang (+9 Agility, +4 Strength) from Wailing Caverns.",
     dungeonGear: [
-      { name: "Leggings of the Fang", quality: "rare", source: "Lord Cobrahn (WC)", stats: "+9 Agility, +4 Strength", tip: "🔥 Best leveling legs in the 18-30 bracket!" }
+          {
+                "name": "Leggings of the Fang",
+                "quality": "rare",
+                "source": "Lord Cobrahn (WC)",
+                "stats": "+9 Agility, +4 Strength",
+                "tip": "🔥 Best leveling legs in the 18-30 bracket!"
+          }
     ]
   },
   19: {
@@ -361,24 +351,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Camp Taurajo",
     zoneInstructions: "COMBAT GAME CHANGER! Learn RIPOSTE! Whenever you parry an enemy attack, Riposte lights up: for only 10 ENERGY, it deals 150% WEAPON DAMAGE and DISARMS THE TARGET FOR 6 SECONDS! Mobs cannot use their weapons, taking away 80% of their damage while you shred them!",
     talent: {
-      name: "Riposte",
-      rank: "1/1",
-      tree: "combat",
-      icon: "⚔️",
-      why: "RIPOSTE UNLOCKED! 10 energy counterattack for 150% weapon damage + 6 SEC DISARM on any parry! Insane damage and survivability!"
+          "name": "Riposte",
+          "rank": "1/1",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "RIPOSTE UNLOCKED! 10 energy counterattack for 150% weapon damage + 6 SEC DISARM on any parry! Insane damage and survivability!"
     },
     talentNote: "Bind Riposte to an easily reachable key (e.g. 'F' or 'Q'). Press it immediately whenever you parry!",
     trainerTrain: [],
     trainerSkip: [],
-    rotation: [
-      "Open with Sinister Strike",
-      "Slice and Dice for +20% attack speed",
-      "Watch for Parry -> HIT RIPOSTE IMMEDIATELY (10 energy for 150% dmg + disarm!)",
-      "Finish with Eviscerate"
-    ],
+    rotation: ["Open with Sinister Strike","Slice and Dice for +20% attack speed","Watch for Parry -> HIT RIPOSTE IMMEDIATELY (10 energy for 150% dmg + disarm!)","Finish with Eviscerate"],
     gearTip: "Shadowfang (SFK drop) or Thief's Blade in Main Hand.",
     dungeonGear: [
-      { name: "Shadowfang", quality: "epic", source: "Shadowfang Keep Drop", stats: "18.1 DPS, Speed 1.90, Proc: 30 Shadow Damage", tip: "The legendary rogue one-hander." }
+          {
+                "name": "Shadowfang",
+                "quality": "epic",
+                "source": "Shadowfang Keep Drop",
+                "stats": "18.1 DPS, Speed 1.90, Proc: 30 Shadow Damage",
+                "tip": "The legendary rogue one-hander."
+          }
     ]
   },
   20: {
@@ -388,23 +379,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Crossroads, Orgrimmar",
     zoneInstructions: "CRUCIAL CLASS MILESTONE! Visit Shenthul in Orgrimmar or The Crossroads to accept the Horde Rogue POISON QUEST ('The Shattered Hand'). Head to Sludge Fen, pickpocket the Venture Co. tower boss for the Gallywix Key, lockpick the chest at the top of the tower, and craft your antitoxin! Learn INSTANT POISON, DEADLY POISON, and THISTLE TEA recipe (restores 100 energy instantly!). Apply Instant Poison to BOTH weapons!",
     talent: {
-      name: "Precision",
-      rank: "1/5",
-      tree: "combat",
-      icon: "🎯",
-      why: "Increases your chance to hit with melee weapons by 1%."
+          "name": "Precision",
+          "rank": "1/5",
+          "tree": "combat",
+          "icon": "🎯",
+          "why": "Increases your chance to hit with melee weapons by 1%."
     },
     talentNote: "Dual wield hit penalty is reduced. Working toward +5% hit chance.",
-    trainerTrain: ["Instant Poison (Rank 1)", "Deadly Poison (Rank 1)", "Crippling Poison (Rank 1)", "Thistle Tea"],
+    trainerTrain: ["Poisons (Quest)","Instant Poison (Rank 1)","Crippling Poison (Rank 1)","Distract","Stealth (Rank 2)","Backstab (Rank 2)"],
     trainerSkip: [],
-    rotation: [
-      "ALWAYS KEEP INSTANT POISON APPLIED TO MAIN HAND & OFF HAND!",
-      "Every auto-attack now has a 20% chance to proc 22 bonus nature damage!",
-      "Slice and Dice increases poison application rate by 30%!"
-    ],
+    rotation: ["ALWAYS KEEP INSTANT POISON APPLIED TO MAIN HAND & OFF HAND!","Every auto-attack now has a 20% chance to proc 22 bonus nature damage!","Slice and Dice increases poison application rate by 30%!"],
     gearTip: "Always carry 1-2 vials of Thistle Tea for emergency 100 energy bursts.",
     dungeonGear: [
-      { name: "Feet of the Lynx", quality: "rare", source: "World Drop / AH", stats: "+8 Agility, +3 Strength", tip: "Best boots in Classic at Level 19-20." }
+          {
+                "name": "Feet of the Lynx",
+                "quality": "rare",
+                "source": "World Drop / AH",
+                "stats": "+8 Agility, +3 Strength",
+                "tip": "Best boots in Classic at Level 19-20."
+          }
     ]
   },
   21: {
@@ -414,11 +407,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Sun Rock Retreat (Flight Master)",
     zoneInstructions: "Head west into Stonetalon Mountains. Secure Sun Rock Retreat Flight Path. Complete 'Avenge My Village', 'Kill Grundig Darkcloud', and 'Gerenzo's Orders'.",
     talent: {
-      name: "Precision",
-      rank: "2/5",
-      tree: "combat",
-      icon: "🎯",
-      why: "Increases melee hit chance by 2%."
+          "name": "Precision",
+          "rank": "2/5",
+          "tree": "combat",
+          "icon": "🎯",
+          "why": "Increases melee hit chance by 2%."
     },
     talentNote: "Fewer missed Sinister Strikes and auto-attacks.",
     trainerTrain: [],
@@ -434,19 +427,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Tarren Mill (Flight Master, Innkeeper)",
     zoneInstructions: "Fly to The Sepulcher and run east into Hillsbrad Foothills. Secure Tarren Mill Flight Path. Pick up 'The Battle for Hillsbrad' (Farmers and Clerics). Learn Sinister Strike (Rank 4) in Undercity.",
     talent: {
-      name: "Precision",
-      rank: "3/5",
-      tree: "combat",
-      icon: "🎯",
-      why: "Increases melee hit chance by 3%."
+          "name": "Precision",
+          "rank": "3/5",
+          "tree": "combat",
+          "icon": "🎯",
+          "why": "Increases melee hit chance by 3%."
     },
     talentNote: "Hit chance continues scaling.",
-    trainerTrain: ["Sinister Strike (Rank 4)", "Distract (Rank 1)"],
+    trainerTrain: ["Vanish (Rank 1)","Sinister Strike (Rank 4)","Garrote (Rank 2)"],
     trainerSkip: [],
     rotation: ["Distract patrols -> Ambush/Sinister Strike -> Slice and Dice -> Riposte."],
     gearTip: "Distract stops wandering guards and turns them around for easy stealth openers.",
     dungeonGear: [
-      { name: "Wolfclaw Gloves", quality: "rare", source: "World Drop / AH", stats: "+6 Agility, +6 Stamina, +5 Strength", tip: "Superb rogue physical gloves." }
+          {
+                "name": "Wolfclaw Gloves",
+                "quality": "rare",
+                "source": "World Drop / AH",
+                "stats": "+6 Agility, +6 Stamina, +5 Strength",
+                "tip": "Superb rogue physical gloves."
+          }
     ]
   },
   23: {
@@ -456,11 +455,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Tarren Mill",
     zoneInstructions: "Fight Hillsbrad Councilmen and Blacksmith Veren at the Town Hall. Complete 'Elixir of Pain'.",
     talent: {
-      name: "Precision",
-      rank: "4/5",
-      tree: "combat",
-      icon: "🎯",
-      why: "Increases melee hit chance by 4%."
+          "name": "Precision",
+          "rank": "4/5",
+          "tree": "combat",
+          "icon": "🎯",
+          "why": "Increases melee hit chance by 4%."
     },
     talentNote: "Yellow ability attacks will almost never miss same-level mobs.",
     trainerTrain: [],
@@ -476,14 +475,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Tarren Mill",
     zoneInstructions: "MAX PRECISION! You now have +5% HIT CHANCE! In Classic WoW, +5% hit completely eliminates the miss penalty for all special attacks (Sinister Strike, Riposte, Eviscerate) against same-level mobs! Learn DETECT TRAPS and Eviscerate (Rank 4).",
     talent: {
-      name: "Precision",
-      rank: "5/5",
-      tree: "combat",
-      icon: "🎯",
-      why: "+5% MELEE HIT CHANCE! Special attacks (yellow damage) can no longer miss same-level mobs! Huge DPS stability!"
+          "name": "Precision",
+          "rank": "5/5",
+          "tree": "combat",
+          "icon": "🎯",
+          "why": "+5% MELEE HIT CHANCE! Special attacks (yellow damage) can no longer miss same-level mobs! Huge DPS stability!"
     },
     talentNote: "Yellow attacks are hit-capped for leveling.",
-    trainerTrain: ["Detect Traps", "Eviscerate (Rank 4)", "Instant Poison (Rank 2)"],
+    trainerTrain: ["Eviscerate (Rank 4)","Mind-numbing Poison (Rank 1)","Pick Pocket (Rank 2)"],
     trainerSkip: [],
     rotation: ["Apply Instant Poison II -> Sinister Strike -> Slice and Dice -> Riposte."],
     gearTip: "Check Tarren Mill vendors for Silk Bandages.",
@@ -496,11 +495,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Freewind Post (Flight Master)",
     zoneInstructions: "Ride the Great Lift down into Thousand Needles. Climb the elevator to Freewind Post and grab the Flight Path. Clear Galak Centaur and Harpies.",
     talent: {
-      name: "Dual Wield Specialization",
-      rank: "1/5",
-      tree: "combat",
-      icon: "🗡️",
-      why: "Increases damage dealt by your off-hand weapon by 10% (normally penalized by 50%)."
+          "name": "Dual Wield Specialization",
+          "rank": "1/5",
+          "tree": "combat",
+          "icon": "🗡️",
+          "why": "Increases damage dealt by your off-hand weapon by 10% (normally penalized by 50%)."
     },
     talentNote: "Building toward +50% off-hand damage bonus.",
     trainerTrain: [],
@@ -508,7 +507,13 @@ const ROGUE_LEVEL_DATA = {
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Humbert's Helm (Hillsbrad drop) or Engineering goggles.",
     dungeonGear: [
-      { name: "Triprunner Dungarees", quality: "rare", source: "Quest: Rig Wars (Gnomeregan)", stats: "+18 Agility, +6 Stamina, +3 Strength", tip: "👑 God-tier leather pants for the 25-40 bracket!" }
+          {
+                "name": "Triprunner Dungarees",
+                "quality": "rare",
+                "source": "Quest: Rig Wars (Gnomeregan)",
+                "stats": "+18 Agility, +6 Stamina, +3 Strength",
+                "tip": "👑 God-tier leather pants for the 25-40 bracket!"
+          }
     ]
   },
   26: {
@@ -518,20 +523,16 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Freewind Post",
     zoneInstructions: "Complete 'Alien Egg', 'Wind Rider', and 'A Different Approach'. Clear the canyon cougars and wind serpents.",
     talent: {
-      name: "Dual Wield Specialization",
-      rank: "2/5",
-      tree: "combat",
-      icon: "🗡️",
-      why: "Increases off-hand weapon damage by 20%."
+          "name": "Dual Wield Specialization",
+          "rank": "2/5",
+          "tree": "combat",
+          "icon": "🗡️",
+          "why": "Increases off-hand weapon damage by 20%."
     },
     talentNote: "Off-hand auto-attacks hit noticeably harder.",
-    trainerTrain: ["Cheap Shot", "Kick (Rank 2)"],
+    trainerTrain: ["Cheap Shot (Rank 1)","Rupture (Rank 1)","Kick (Rank 2)"],
     trainerSkip: [],
-    rotation: [
-      "Open with CHEAP SHOT (4 sec stun + 2 combo points from Stealth!)",
-      "Cast Slice and Dice immediately",
-      "Sinister Strike spam -> Riposte on parry -> Eviscerate"
-    ],
+    rotation: ["Open with CHEAP SHOT (4 sec stun + 2 combo points from Stealth!)","Cast Slice and Dice immediately","Sinister Strike spam -> Riposte on parry -> Eviscerate"],
     gearTip: "Cheap Shot provides 4 seconds of free damage before mob can touch you.",
     dungeonGear: []
   },
@@ -542,11 +543,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Splintertree Post (Flight Master)",
     zoneInstructions: "Head north to Splintertree Post in Ashenvale. Complete 'The Befouled Elementals' and 'Warsong Supplies'. Watch out for Alliance gankers near Astranaar.",
     talent: {
-      name: "Dual Wield Specialization",
-      rank: "3/5",
-      tree: "combat",
-      icon: "🗡️",
-      why: "Increases off-hand weapon damage by 30%."
+          "name": "Dual Wield Specialization",
+          "rank": "3/5",
+          "tree": "combat",
+          "icon": "🗡️",
+          "why": "Increases off-hand weapon damage by 30%."
     },
     talentNote: "Off-hand damage scaling rapidly.",
     trainerTrain: [],
@@ -562,14 +563,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Tarren Mill",
     zoneInstructions: "Return to Hillsbrad. Infiltrate Durnholde Keep and clear Syndicate Rogue camps for 'Prison Break in Durnholde'. Pickpocket Syndicate members for lockboxes.",
     talent: {
-      name: "Dual Wield Specialization",
-      rank: "4/5",
-      tree: "combat",
-      icon: "🗡️",
-      why: "Increases off-hand weapon damage by 40%."
+          "name": "Dual Wield Specialization",
+          "rank": "4/5",
+          "tree": "combat",
+          "icon": "🗡️",
+          "why": "Increases off-hand weapon damage by 40%."
     },
     talentNote: "One point away from full +50% off-hand damage.",
-    trainerTrain: ["Sinister Strike (Rank 5)", "Sprint (Rank 2)"],
+    trainerTrain: ["Instant Poison (Rank 2)","Ambush (Rank 2)","Sinister Strike (Rank 5)"],
     trainerSkip: [],
     rotation: ["Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte -> Eviscerate."],
     gearTip: "Syndicate lockboxes level Lockpicking to 125-150.",
@@ -582,11 +583,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Mirage Raceway",
     zoneInstructions: "MAX DUAL WIELD SPECIALIZATION! Your off-hand weapon now deals a full +50% DAMAGE, completely negating the dual-wield damage reduction! Head east into the salt flats of Mirage Raceway. Level 30 Blade Flurry unlocks on next ding!",
     talent: {
-      name: "Dual Wield Specialization",
-      rank: "5/5",
-      tree: "combat",
-      icon: "🗡️",
-      why: "+50% OFF-HAND WEAPON DAMAGE! Off-hand hits now deal full damage, boosting white damage by ~20% overall!"
+          "name": "Dual Wield Specialization",
+          "rank": "5/5",
+          "tree": "combat",
+          "icon": "🗡️",
+          "why": "+50% OFF-HAND WEAPON DAMAGE! Off-hand hits now deal full damage, boosting white damage by ~20% overall!"
     },
     talentNote: "Next level is Blade Flurry—the premier multi-target physical cooldown!",
     trainerTrain: [],
@@ -602,23 +603,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Mirage Raceway",
     zoneInstructions: "COMBAT MASTERSTROKE! Learn BLADE FLURRY! Increases your attack speed by 20% AND causes your attacks to strike an additional nearby enemy for 15 seconds on a 2-minute cooldown! You can now pull 2 mobs at once, pop Blade Flurry + Slice and Dice, and shred both targets simultaneously!",
     talent: {
-      name: "Blade Flurry",
-      rank: "1/1",
-      tree: "combat",
-      icon: "🌀",
-      why: "BLADE FLURRY UNLOCKED! +20% Attack Speed AND strikes a 2nd target for 100% damage! Melts 2 mobs in the time of 1!"
+          "name": "Blade Flurry",
+          "rank": "1/1",
+          "tree": "combat",
+          "icon": "🌀",
+          "why": "BLADE FLURRY UNLOCKED! +20% Attack Speed AND strikes a 2nd target for 100% damage! Melts 2 mobs in the time of 1!"
     },
     talentNote: "Combine Blade Flurry + Evasion to wipe out double pulls effortlessly.",
-    trainerTrain: ["Blade Flurry", "Kidney Shot (Rank 1)", "Deadly Poison (Rank 2)"],
+    trainerTrain: ["Kidney Shot (Rank 1)","Deadly Poison (Rank 1)","Feint (Rank 2)","Gouge (Rank 3)"],
     trainerSkip: [],
-    rotation: [
-      "Pull 2 mobs -> Pop Blade Flurry (+20% haste + cleave both!)",
-      "Sinister Strike -> Slice and Dice (+30% more haste = +50% total attack speed!)",
-      "Riposte on parry -> Watch both mobs disintegrate!"
-    ],
+    rotation: ["Pull 2 mobs -> Pop Blade Flurry (+20% haste + cleave both!)","Sinister Strike -> Slice and Dice (+30% more haste = +50% total attack speed!)","Riposte on parry -> Watch both mobs disintegrate!"],
     gearTip: "Tigerstrike Mantle (+8 Agility, +7 Stamina) cloak.",
     dungeonGear: [
-      { name: "Sword of Omen", quality: "rare", source: "Scarlet Monastery Quest", stats: "22.2 DPS, Speed 2.20, +7 Str, +5 Agi", tip: "🔥 Premier quest sword for Combat Rogues!" }
+          {
+                "name": "Sword of Omen",
+                "quality": "rare",
+                "source": "Scarlet Monastery Quest",
+                "stats": "22.2 DPS, Speed 2.20, +7 Str, +5 Agi",
+                "tip": "🔥 Premier quest sword for Combat Rogues!"
+          }
     ]
   },
   31: {
@@ -628,11 +631,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Mirage Raceway",
     zoneInstructions: "The salt flats are a paradise for Combat Rogues! Dense turtles, scorpids, and basilisks with no obstructions. Pop Blade Flurry every 2 minutes and cleave pairs of mobs.",
     talent: {
-      name: "Sword Specialization",
-      rank: "1/5",
-      tree: "combat",
-      icon: "⚔️",
-      why: "Gives you a 1% chance to get an extra attack on the same target after dealing damage with your sword."
+          "name": "Sword Specialization",
+          "rank": "1/5",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "Gives you a 1% chance to get an extra attack on the same target after dealing damage with your sword."
     },
     talentNote: "Start using swords in Main Hand (e.g. Sword of Omen / Thief's Blade) for extra swing procs.",
     trainerTrain: [],
@@ -648,14 +651,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Hammerfall (Flight Master)",
     zoneInstructions: "Travel east from Hillsbrad into Arathi Highlands. Secure Hammerfall Flight Path. Complete 'Foul Magics', 'The Broken Sigil', and clear Boulderfist Ogres.",
     talent: {
-      name: "Sword Specialization",
-      rank: "2/5",
-      tree: "combat",
-      icon: "⚔️",
-      why: "2% chance on hit to strike an extra attack."
+          "name": "Sword Specialization",
+          "rank": "2/5",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "2% chance on hit to strike an extra attack."
     },
     talentNote: "Extra swing procs can trigger poisons and combo points.",
-    trainerTrain: ["Eviscerate (Rank 5)", "Instant Poison (Rank 3)"],
+    trainerTrain: ["Eviscerate (Rank 5)","Garrote (Rank 3)","Wound Poison (Rank 1)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Hammerfall vendors sell level 35+ gear and poison reagents.",
@@ -668,11 +671,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Shadowprey Village, Ghost Walker Post",
     zoneInstructions: "Travel into Desolace. Secure flight paths. Complete 'Gelkis Alliance' and 'Bone Collector'. Clear Magram centaur camps with Blade Flurry cleave.",
     talent: {
-      name: "Sword Specialization",
-      rank: "3/5",
-      tree: "combat",
-      icon: "⚔️",
-      why: "3% chance on hit to strike an extra attack."
+          "name": "Sword Specialization",
+          "rank": "3/5",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "3% chance on hit to strike an extra attack."
     },
     talentNote: "Extra attacks feel great when critting.",
     trainerTrain: [],
@@ -688,19 +691,16 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Grom'gol Base Camp",
     zoneInstructions: "MAJOR UTILITY MILESTONE! Visit the Rogue Trainer to learn BLIND! Blinds the target for up to 10 seconds (consumes Blinding Powder). Essential for stopping runners, resetting fights, or controlling adds! Take Zeppelin to Grom'gol.",
     talent: {
-      name: "Sword Specialization",
-      rank: "4/5",
-      tree: "combat",
-      icon: "⚔️",
-      why: "4% chance on hit to strike an extra attack."
+          "name": "Sword Specialization",
+          "rank": "4/5",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "4% chance on hit to strike an extra attack."
     },
     talentNote: "Carry Fadeleaf to craft Blinding Powder.",
-    trainerTrain: ["Blind", "Sinister Strike (Rank 6)"],
+    trainerTrain: ["Blind (Rank 1)","Sprint (Rank 2)","Distract (Rank 2)"],
     trainerSkip: [],
-    rotation: [
-      "Blind add if two mobs attack -> Focus down primary target",
-      "Or Blind target -> Step back -> Apply bandage -> Re-open with Cheap Shot!"
-    ],
+    rotation: ["Blind add if two mobs attack -> Focus down primary target","Or Blind target -> Step back -> Apply bandage -> Re-open with Cheap Shot!"],
     gearTip: "Always keep 10-20 Blinding Powders in your bags.",
     dungeonGear: []
   },
@@ -711,11 +711,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Grom'gol, Nesingwary's Camp",
     zoneInstructions: "MAX SWORD SPECIALIZATION! 5% chance on EVERY sword swing to trigger an immediate extra attack! Combined with fast off-hand and Slice and Dice, bonus attacks fly non-stop! Clear Tiger, Panther, and Raptor mastery quests.",
     talent: {
-      name: "Sword Specialization",
-      rank: "5/5",
-      tree: "combat",
-      icon: "⚔️",
-      why: "5% EXTRA SWING CHANCE! Free instant swings trigger extra damage, poison procs, and energy!"
+          "name": "Sword Specialization",
+          "rank": "5/5",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "5% EXTRA SWING CHANCE! Free instant swings trigger extra damage, poison procs, and energy!"
     },
     talentNote: "Swords are now undisputed best-in-slot for leveling.",
     trainerTrain: [],
@@ -731,14 +731,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Kargath (Flight Master)",
     zoneInstructions: "Travel to Kargath in the Badlands. Grab the Flight Path. Pick up 'Badlands Reagents' and 'Mirages'. Kill Coyotes and Lesser Rock Elementals.",
     talent: {
-      name: "Weapon Expertise",
-      rank: "1/2",
-      tree: "combat",
-      icon: "⚔️",
-      why: "Increases your skill with Swords, Daggers, and Maces by 3. Reduces chance for target to dodge or parry!"
+          "name": "Weapon Expertise",
+          "rank": "1/2",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "Increases your skill with Swords, Daggers, and Maces by 3. Reduces chance for target to dodge or parry!"
     },
     talentNote: "Weapon skill reduces glancing blow penalty against higher-level mobs.",
-    trainerTrain: ["Slice and Dice (Rank 2)", "Instant Poison (Rank 4)"],
+    trainerTrain: ["Sinister Strike (Rank 6)","Instant Poison (Rank 3)","Rupture (Rank 2)"],
     trainerSkip: [],
     rotation: ["Slice and Dice Rank 2 (+30% attack speed!) -> Sinister Strike -> Riposte."],
     gearTip: "Slice and Dice Rank 2 duration increased.",
@@ -751,11 +751,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Kargath",
     zoneInstructions: "MAX WEAPON EXPERTISE! +5 Weapon Skill with all weapons! This virtually eliminates glancing blow penalties and reduces mob dodge/parry by 1%. Clear Dustbelcher Ogres.",
     talent: {
-      name: "Weapon Expertise",
-      rank: "2/2",
-      tree: "combat",
-      icon: "⚔️",
-      why: "+5 WEAPON SKILL! Dramatically reduces glancing blows and increases hit chance against higher-level mobs!"
+          "name": "Weapon Expertise",
+          "rank": "2/2",
+          "tree": "combat",
+          "icon": "⚔️",
+          "why": "+5 WEAPON SKILL! Dramatically reduces glancing blows and increases hit chance against higher-level mobs!"
     },
     talentNote: "Massive mathematical DPS increase in Classic WoW.",
     trainerTrain: [],
@@ -771,14 +771,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Stonard (Flight Master)",
     zoneInstructions: "Travel to Stonard in Swamp of Sorrows. Clear Swamp Jaguars and Dragonkin. Prepare for your Level 40 Mount!",
     talent: {
-      name: "Aggression",
-      rank: "1/3",
-      tree: "combat",
-      icon: "💢",
-      why: "Increases the damage of your Sinister Strike and Eviscerate abilities by 2%."
+          "name": "Aggression",
+          "rank": "1/3",
+          "tree": "combat",
+          "icon": "💢",
+          "why": "Increases the damage of your Sinister Strike and Eviscerate abilities by 2%."
     },
     talentNote: "Direct damage multiplier to your primary spenders.",
-    trainerTrain: ["Sinister Strike (Rank 7)"],
+    trainerTrain: ["Deadly Poison (Rank 2)","Ambush (Rank 3)","Backstab (Rank 3)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Save gold for Level 40 mount (approx 90g with honored reputation).",
@@ -791,11 +791,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Grom'gol Base Camp",
     zoneInstructions: "Complete 'Venture Co. Mining' and 'Skullsplitter Tusk' quests in STV. Finish off the Nesingwary big game hunt. Ding 40 incoming!",
     talent: {
-      name: "Aggression",
-      rank: "2/3",
-      tree: "combat",
-      icon: "💢",
-      why: "Increases Sinister Strike and Eviscerate damage by 4%."
+          "name": "Aggression",
+          "rank": "2/3",
+          "tree": "combat",
+          "icon": "💢",
+          "why": "Increases Sinister Strike and Eviscerate damage by 4%."
     },
     talentNote: "Next level is Adrenaline Rush—the ultimate physical burst cooldown!",
     trainerTrain: [],
@@ -811,23 +811,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Undercity, Gadgetzan",
     zoneInstructions: "THE GREATEST ROGUE MILESTONE! 1) Learn ADRENALINE RUSH! Increases your energy regeneration rate by 100% (20 energy every second!) for 15 seconds on a 5-minute cooldown! You can spam Sinister Strike non-stop like a machine gun! 2) Purchase your Level 40 Mount (Undead Skeletal Warhorse) for 60% faster movement! 3) Ride into Tanaris!",
     talent: {
-      name: "Adrenaline Rush",
-      rank: "1/1",
-      tree: "combat",
-      icon: "⚡",
-      why: "ADRENALINE RUSH UNLOCKED! 100% INCREASED ENERGY REGEN FOR 15 SECONDS! Unlimited Sinister Strike spam on demand!"
+          "name": "Adrenaline Rush",
+          "rank": "1/1",
+          "tree": "combat",
+          "icon": "⚡",
+          "why": "ADRENALINE RUSH UNLOCKED! 100% INCREASED ENERGY REGEN FOR 15 SECONDS! Unlimited Sinister Strike spam on demand!"
     },
     talentNote: "Macro: /cast Blade Flurry /cast Adrenaline Rush for legendary boss and elite melting!",
-    trainerTrain: ["Adrenaline Rush", "Eviscerate (Rank 6)", "Mount Riding"],
+    trainerTrain: ["Safe Fall","Eviscerate (Rank 6)","Mount Riding"],
     trainerSkip: [],
-    rotation: [
-      "For elites or pack pulls: Pop Blade Flurry + ADRENALINE RUSH",
-      "Spam Sinister Strike every second -> Slice and Dice -> Riposte",
-      "Watch entire packs of mobs melt in 10 seconds flat!"
-    ],
+    rotation: ["For elites or pack pulls: Pop Blade Flurry + ADRENALINE RUSH","Spam Sinister Strike every second -> Slice and Dice -> Riposte","Watch entire packs of mobs melt in 10 seconds flat!"],
     gearTip: "Equip your skeletal warhorse mount. Head immediately to Gadgetzan.",
     dungeonGear: [
-      { name: "Vanquisher's Sword", quality: "rare", source: "Quest: Bring the Light (RFD)", stats: "30.6 DPS, Speed 2.10, +28 Attack Power", tip: "⭐ Guaranteed quest sword upgrade at Level 40-45!" }
+          {
+                "name": "Vanquisher's Sword",
+                "quality": "rare",
+                "source": "Quest: Bring the Light (RFD)",
+                "stats": "30.6 DPS, Speed 2.10, +28 Attack Power",
+                "tip": "⭐ Guaranteed quest sword upgrade at Level 40-45!"
+          }
     ]
   },
   41: {
@@ -837,11 +839,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Gadgetzan (Flight Master)",
     zoneInstructions: "Ride across the Tanaris desert. Pick up 'WANTED: Caliph Scorpidsting' and 'Water Pouch Bounty'. Clear Wastewander thieves and assassins.",
     talent: {
-      name: "Aggression",
-      rank: "3/3",
-      tree: "combat",
-      icon: "💢",
-      why: "MAX AGGRESSION! Sinister Strike and Eviscerate damage increased by 6%!"
+          "name": "Aggression",
+          "rank": "3/3",
+          "tree": "combat",
+          "icon": "💢",
+          "why": "MAX AGGRESSION! Sinister Strike and Eviscerate damage increased by 6%!"
     },
     talentNote: "Combat tree core complete. Now moving to Assassination for Crit!",
     trainerTrain: [],
@@ -857,14 +859,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Camp Mojache (Flight Master)",
     zoneInstructions: "Travel west to Camp Mojache in Feralas. Pick up 'A New Cloak's Sheen', 'Gordunni Cobalt', and 'The Woodpaw Gnolls'.",
     talent: {
-      name: "Malice",
-      rank: "1/5",
-      tree: "assassination",
-      icon: "🗡️",
-      why: "Increases your critical strike chance by 1%."
+          "name": "Malice",
+          "rank": "1/5",
+          "tree": "assassination",
+          "icon": "🗡️",
+          "why": "Increases your critical strike chance by 1%."
     },
     talentNote: "Stacking passive crit for physical strikes.",
-    trainerTrain: ["Instant Poison (Rank 5)"],
+    trainerTrain: ["Vanish (Rank 2)","Garrote (Rank 4)","Kick (Rank 3)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Camp Mojache vendors sell level 40+ reagents.",
@@ -877,11 +879,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Camp Mojache",
     zoneInstructions: "Clear Woodpaw Gnoll camps in southern Feralas. Pickpocket gnolls for Heavy Lockboxes (skill 175-200).",
     talent: {
-      name: "Malice",
-      rank: "2/5",
-      tree: "assassination",
-      icon: "🗡️",
-      why: "Increases critical strike chance by 2%."
+          "name": "Malice",
+          "rank": "2/5",
+          "tree": "assassination",
+          "icon": "🗡️",
+          "why": "Increases critical strike chance by 2%."
     },
     talentNote: "Crit chance continues climbing.",
     trainerTrain: [],
@@ -897,14 +899,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Revantusk Village (Flight Master)",
     zoneInstructions: "Fly to Tarren Mill and ride into The Hinterlands. Claim Revantusk Village Flight Path. Complete 'Cannibalistic Cousins' and 'Message to the Wildhammer'.",
     talent: {
-      name: "Malice",
-      rank: "3/5",
-      tree: "assassination",
-      icon: "🗡️",
-      why: "Increases critical strike chance by 3%."
+          "name": "Malice",
+          "rank": "3/5",
+          "tree": "assassination",
+          "icon": "🗡️",
+          "why": "Increases critical strike chance by 3%."
     },
     talentNote: "+3% passive crit active.",
-    trainerTrain: ["Sinister Strike (Rank 8)"],
+    trainerTrain: ["Sinister Strike (Rank 7)","Instant Poison (Rank 4)","Mind-numbing Poison (Rank 2)"],
     trainerSkip: [],
     rotation: ["Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."],
     gearTip: "Revantusk troll quests give incredible XP and blue agility rewards.",
@@ -917,11 +919,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Gadgetzan, Shadowprey Village",
     zoneInstructions: "MAJOR WEAPON QUEST ALERT! Pick up 'Corruption of Earth and Seed' in Desolace for Maraudon. The quest reward is the legendary THRASH BLADE (Speed 2.70, chance on hit to grant an EXTRA ATTACK)! Combines with Sword Spec to trigger insane multi-swings!",
     talent: {
-      name: "Malice",
-      rank: "4/5",
-      tree: "assassination",
-      icon: "🗡️",
-      why: "Increases critical strike chance by 4%."
+          "name": "Malice",
+          "rank": "4/5",
+          "tree": "assassination",
+          "icon": "🗡️",
+          "why": "Increases critical strike chance by 4%."
     },
     talentNote: "One point away from full +5% Malice.",
     trainerTrain: [],
@@ -929,7 +931,13 @@ const ROGUE_LEVEL_DATA = {
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "👑 THRASH BLADE: 39.4 DPS, Speed 2.70, Chance on hit: 1 extra attack! The best leveling sword in Vanilla WoW!",
     dungeonGear: [
-      { name: "Thrash Blade", quality: "rare", source: "Quest: Corruption of Earth and Seed (Maraudon)", stats: "66-124 Dmg, 39.4 DPS, Speed 2.70, Extra Attack Proc", tip: "👑 Undisputed #1 leveling sword in Classic WoW!" }
+          {
+                "name": "Thrash Blade",
+                "quality": "rare",
+                "source": "Quest: Corruption of Earth and Seed (Maraudon)",
+                "stats": "66-124 Dmg, 39.4 DPS, Speed 2.70, Extra Attack Proc",
+                "tip": "👑 Undisputed #1 leveling sword in Classic WoW!"
+          }
     ]
   },
   46: {
@@ -939,14 +947,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Thorium Point (Flight Master)",
     zoneInstructions: "MAX MALICE! +5% Critical Strike chance with all attacks and abilities! Travel to Searing Gorge and clear Dark Iron Dwarves and Golems at the Cauldron.",
     talent: {
-      name: "Malice",
-      rank: "5/5",
-      tree: "assassination",
-      icon: "🗡️",
-      why: "+5% PASSIVE CRIT CHANCE! Huge crit rating increase across all auto-attacks and Sinister Strikes!"
+          "name": "Malice",
+          "rank": "5/5",
+          "tree": "assassination",
+          "icon": "🗡️",
+          "why": "+5% PASSIVE CRIT CHANCE! Huge crit rating increase across all auto-attacks and Sinister Strikes!"
     },
     talentNote: "Crits trigger Remorseless Attacks and huge burst.",
-    trainerTrain: ["Eviscerate (Rank 7)"],
+    trainerTrain: ["Deadly Poison (Rank 3)","Rupture (Rank 3)","Feint (Rank 3)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Thorium Point quests give great armor upgrades.",
@@ -959,11 +967,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Gadgetzan",
     zoneInstructions: "Clear south Tanaris. Complete 'Tooga's Quest' and pirate camps. Pickpocket southsea pirates for Mageweave and lockboxes.",
     talent: {
-      name: "Ruthlessness",
-      rank: "1/3",
-      tree: "assassination",
-      icon: "🩸",
-      why: "Gives your finishing moves a 20% chance to add a combo point to your target."
+          "name": "Ruthlessness",
+          "rank": "1/3",
+          "tree": "assassination",
+          "icon": "🩸",
+          "why": "Gives your finishing moves a 20% chance to add a combo point to your target."
     },
     talentNote: "Starts building free combo point resets.",
     trainerTrain: [],
@@ -979,14 +987,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Stonard -> Bloodvenom Post",
     zoneInstructions: "Head to the Blasted Lands. Complete 'A Boar's Vitality', 'Snickerfang Jowls', and 'The Decisive Strife' for permanent +25 Agility stat food buffs!",
     talent: {
-      name: "Ruthlessness",
-      rank: "2/3",
-      tree: "assassination",
-      icon: "🩸",
-      why: "Gives your finishing moves a 40% chance to add a combo point to your target."
+          "name": "Ruthlessness",
+          "rank": "2/3",
+          "tree": "assassination",
+          "icon": "🩸",
+          "why": "Gives your finishing moves a 40% chance to add a combo point to your target."
     },
     talentNote: "40% combo point refund on every finisher.",
-    trainerTrain: ["Instant Poison (Rank 6)"],
+    trainerTrain: ["Eviscerate (Rank 7)","Ambush (Rank 4)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Blasted Lands Agility buffs grant +25 Agility (+50 AP / +0.8% crit) for 1 hour!",
@@ -999,11 +1007,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Marshal's Stand (Un'Goro Crater)",
     zoneInstructions: "Descend into Un'Goro Crater! Grab all quests: 'Lurking Prowlers', 'Alien Ecology', 'Super Sticky', and 'It's a Secret to Everybody'. Dinos give massive XP!",
     talent: {
-      name: "Ruthlessness",
-      rank: "3/3",
-      tree: "assassination",
-      icon: "🩸",
-      why: "60% CHANCE ON FINISHER TO GRANT 1 FREE COMBO POINT! You practically always start the next rotation at 1 Combo Point!"
+          "name": "Ruthlessness",
+          "rank": "3/3",
+          "tree": "assassination",
+          "icon": "🩸",
+          "why": "60% CHANCE ON FINISHER TO GRANT 1 FREE COMBO POINT! You practically always start the next rotation at 1 Combo Point!"
     },
     talentNote: "Combines with Relentless Strikes on next level for infinite energy loops.",
     trainerTrain: [],
@@ -1011,7 +1019,13 @@ const ROGUE_LEVEL_DATA = {
     rotation: ["Cheap Shot -> Slice and Dice -> Sinister Strike -> Eviscerate -> Instant 1 CP refund!"],
     gearTip: "Blackstone Ring (Princess Theradras in Maraudon) provides +20 AP and +1% Hit!",
     dungeonGear: [
-      { name: "Blackstone Ring", quality: "rare", source: "Princess Theradras (Maraudon)", stats: "+6 Stamina, +20 Attack Power, +1% Hit", tip: "BiS leveling ring!" }
+          {
+                "name": "Blackstone Ring",
+                "quality": "rare",
+                "source": "Princess Theradras (Maraudon)",
+                "stats": "+6 Stamina, +20 Attack Power, +1% Hit",
+                "tip": "BiS leveling ring!"
+          }
     ]
   },
   50: {
@@ -1021,20 +1035,16 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Marshal's Stand",
     zoneInstructions: "ROTATIONAL BREAKTHROUGH! Learn RELENTLESS STRIKES! Your finishing moves have a 20% chance per combo point to restore 25 ENERGY! When executing a 5-point Eviscerate or Slice and Dice, you have a 100% GUARANTEED CHANCE TO GET 25 ENERGY BACK INSTANTLY! Combined with Ruthlessness, finishers are practically free!",
     talent: {
-      name: "Relentless Strikes",
-      rank: "1/1",
-      tree: "assassination",
-      icon: "⚡",
-      why: "100% CHANCE TO REFUND 25 ENERGY ON 5-POINT FINISHERS! Eliminates energy starvation completely!"
+          "name": "Relentless Strikes",
+          "rank": "1/1",
+          "tree": "assassination",
+          "icon": "⚡",
+          "why": "100% CHANCE TO REFUND 25 ENERGY ON 5-POINT FINISHERS! Eliminates energy starvation completely!"
     },
     talentNote: "5-point Slice and Dice or Eviscerate refunds 25 energy + 60% chance for 1 combo point!",
-    trainerTrain: ["Sinister Strike (Rank 9)"],
+    trainerTrain: ["Kidney Shot (Rank 2)","Crippling Poison (Rank 2)","Garrote (Rank 5)"],
     trainerSkip: [],
-    rotation: [
-      "Sinister Strike to 5 Combo Points",
-      "Cast Eviscerate -> Instant 25 energy refunded + 1 combo point granted!",
-      "Immediately cast Slice and Dice or Sinister Strike with refunded energy!"
-    ],
+    rotation: ["Sinister Strike to 5 Combo Points","Cast Eviscerate -> Instant 25 energy refunded + 1 combo point granted!","Immediately cast Slice and Dice or Sinister Strike with refunded energy!"],
     gearTip: "Un'Goro raptors and gorillas are great for Skinning (thick leather/rugged leather).",
     dungeonGear: []
   },
@@ -1045,11 +1055,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Marshal's Stand",
     zoneInstructions: "Clear Stegodons, Pterodactyls, and Tar Beasts. Turn in 'Volcanic Activity' and 'Chasing A-Me 01'.",
     talent: {
-      name: "Murder",
-      rank: "1/2",
-      tree: "assassination",
-      icon: "🗡️",
-      why: "Increases all damage dealt by 1% against Humanoids, Giants, Beasts, and Dragonkin."
+          "name": "Murder",
+          "rank": "1/2",
+          "tree": "assassination",
+          "icon": "🗡️",
+          "why": "Increases all damage dealt by 1% against Humanoids, Giants, Beasts, and Dragonkin."
     },
     talentNote: "Universal damage increase against virtually all leveling mobs.",
     trainerTrain: [],
@@ -1065,14 +1075,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Bloodvenom Post (Flight Master)",
     zoneInstructions: "Travel north into the tainted forests of Felwood. Claim Bloodvenom Post Flight Path. Complete 'Forces of Jaedenar' and 'Well of Corruption'.",
     talent: {
-      name: "Murder",
-      rank: "2/2",
-      tree: "assassination",
-      icon: "🗡️",
-      why: "Increases all damage dealt by 2% against Humanoids, Giants, Beasts, and Dragonkin."
+          "name": "Murder",
+          "rank": "2/2",
+          "tree": "assassination",
+          "icon": "🗡️",
+          "why": "Increases all damage dealt by 2% against Humanoids, Giants, Beasts, and Dragonkin."
     },
     talentNote: "2% flat damage boost.",
-    trainerTrain: ["Sprint (Rank 3)"],
+    trainerTrain: ["Sinister Strike (Rank 8)","Instant Poison (Rank 5)"],
     trainerSkip: [],
     rotation: ["Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."],
     gearTip: "Whipper Root Tubers in Felwood restore 700-900 HP instantly without sharing potion cooldown!",
@@ -1085,11 +1095,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Bloodvenom Post",
     zoneInstructions: "Infiltrate Shadow Hold in Jaedenar. Clear Shadow Council warlocks and cultists. Kick demonic summoners.",
     talent: {
-      name: "Lethality",
-      rank: "1/5",
-      tree: "assassination",
-      icon: "💀",
-      why: "Increases the critical strike damage bonus of your Sinister Strike, Gouge, and Riposte by 6%."
+          "name": "Lethality",
+          "rank": "1/5",
+          "tree": "assassination",
+          "icon": "💀",
+          "why": "Increases the critical strike damage bonus of your Sinister Strike, Gouge, and Riposte by 6%."
     },
     talentNote: "Building toward +30% crit damage bonus on Sinister Strike.",
     trainerTrain: [],
@@ -1105,14 +1115,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Bulwark (Tirisfal/WPL border, Flight Master)",
     zoneInstructions: "Fly to Brill and ride east into The Bulwark! Accept Cauldron quests: 'Target: Felstone Field', 'Target: Dalson's Tears', and 'A Plague Upon Thee'. Clear Sorrow Hill and Sorrow Hill crypts.",
     talent: {
-      name: "Lethality",
-      rank: "2/5",
-      tree: "assassination",
-      icon: "💀",
-      why: "Increases critical strike damage bonus by 12%."
+          "name": "Lethality",
+          "rank": "2/5",
+          "tree": "assassination",
+          "icon": "💀",
+          "why": "Increases critical strike damage bonus by 12%."
     },
     talentNote: "Sinister Strike crits hit noticeably harder.",
-    trainerTrain: [],
+    trainerTrain: ["Deadly Poison (Rank 4)","Wound Poison (Rank 2)","Rupture (Rank 4)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Cauldron quest turn-ins grant massive lump-sum XP!",
@@ -1125,11 +1135,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Everlook (Flight Master, Goblin Town)",
     zoneInstructions: "Pass through Timbermaw Tunnel into Winterspring! Secure Everlook Flight Path. Complete 'Winterfall Intruders' and 'Frostsaber Provisions'. Farm Winterfall Ursa and Shaman for Firewater.",
     talent: {
-      name: "Lethality",
-      rank: "3/5",
-      tree: "assassination",
-      icon: "💀",
-      why: "Increases critical strike damage bonus by 18%."
+          "name": "Lethality",
+          "rank": "3/5",
+          "tree": "assassination",
+          "icon": "💀",
+          "why": "Increases critical strike damage bonus by 18%."
     },
     talentNote: "The final stretch to 60 begins!",
     trainerTrain: [],
@@ -1145,14 +1155,14 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Light's Hope Chapel (Flight Master)",
     zoneInstructions: "Ride east into Eastern Plaguelands. Secure Light's Hope Chapel Flight Path. Complete 'The Restless Souls', 'Carrion Grub Apocalypse', and 'Zaeldron's Head'.",
     talent: {
-      name: "Lethality",
-      rank: "4/5",
-      tree: "assassination",
-      icon: "💀",
-      why: "Increases critical strike damage bonus by 24%."
+          "name": "Lethality",
+          "rank": "4/5",
+          "tree": "assassination",
+          "icon": "💀",
+          "why": "Increases critical strike damage bonus by 24%."
     },
     talentNote: "Nearly maxed crit bonus.",
-    trainerTrain: ["Eviscerate (Rank 8)"],
+    trainerTrain: ["Eviscerate (Rank 8)","Ambush (Rank 5)","Kick (Rank 4)"],
     trainerSkip: [],
     rotation: ["Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."],
     gearTip: "Collect Argent Dawn Valor Tokens from undead.",
@@ -1165,11 +1175,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "The Bulwark, Caer Darrow",
     zoneInstructions: "MAX LETHALITY! +30% Critical Strike Damage bonus to Sinister Strike and Riposte! Complete the Caer Darrow quest chain for Scholomance ('Kirtonos the Herald') to receive MIRAH'S SONG (Speed 1.80, +9 Agi, +9 Str)—the premier off-hand sword in Classic WoW!",
     talent: {
-      name: "Lethality",
-      rank: "5/5",
-      tree: "assassination",
-      icon: "💀",
-      why: "+30% CRIT DAMAGE BONUS! Sinister Strike crits deal devastating chunks of damage!"
+          "name": "Lethality",
+          "rank": "5/5",
+          "tree": "assassination",
+          "icon": "💀",
+          "why": "+30% CRIT DAMAGE BONUS! Sinister Strike crits deal devastating chunks of damage!"
     },
     talentNote: "Mirah's Song paired with Thrash Blade forms the iconic Combat Swords leveling duo.",
     trainerTrain: [],
@@ -1177,7 +1187,13 @@ const ROGUE_LEVEL_DATA = {
     rotation: ["Sinister Strike crits shred targets -> Slice and Dice -> Riposte."],
     gearTip: "⭐ MIRAH'S SONG: 39.4 DPS, Speed 1.80, +9 Agi, +9 Str. Best off-hand sword in the game!",
     dungeonGear: [
-      { name: "Mirah's Song", quality: "rare", source: "Quest: Kirtonos the Herald (Scholomance)", stats: "57-87 Dmg, 39.4 DPS, Speed 1.80, +9 Agi, +9 Str", tip: "👑 The ultimate off-hand sword for Combat Rogues!" }
+          {
+                "name": "Mirah's Song",
+                "quality": "rare",
+                "source": "Quest: Kirtonos the Herald (Scholomance)",
+                "stats": "57-87 Dmg, 39.4 DPS, Speed 1.80, +9 Agi, +9 Str",
+                "tip": "👑 The ultimate off-hand sword for Combat Rogues!"
+          }
     ]
   },
   58: {
@@ -1187,19 +1203,25 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Kargath, Flame Crest",
     zoneInstructions: "Start running Blackrock Depths! Clear the Ring of Law, General Angerforge, and Emperor Dagran Thaurissan. Target: Hand of Justice (+20 AP, 2% extra attack chance!). Complete Onyxia attunement chain.",
     talent: {
-      name: "Improved Slice and Dice",
-      rank: "1/3",
-      tree: "assassination",
-      icon: "⚔️",
-      why: "Increases the duration of Slice and Dice by 15%."
+          "name": "Improved Slice and Dice",
+          "rank": "1/3",
+          "tree": "assassination",
+          "icon": "⚔️",
+          "why": "Increases the duration of Slice and Dice by 15%."
     },
     talentNote: "Less combo points spent refreshing Slice and Dice = more 5-point Eviscerates!",
-    trainerTrain: [],
+    trainerTrain: ["Sprint (Rank 3)","Instant Poison (Rank 6)","Garrote (Rank 6)"],
     trainerSkip: [],
     rotation: ["Slice and Dice now lasts longer -> More energy and combo points spent on Eviscerate."],
     gearTip: "Hand of Justice trinket (Emperor Dagran Thaurissan in BRD).",
     dungeonGear: [
-      { name: "Hand of Justice", quality: "rare", source: "Emperor Dagran Thaurissan (BRD)", stats: "+20 Attack Power, 2% Chance on hit to grant extra attack", tip: "🔥 BiS melee trinket throughout entire Classic era!" }
+          {
+                "name": "Hand of Justice",
+                "quality": "rare",
+                "source": "Emperor Dagran Thaurissan (BRD)",
+                "stats": "+20 Attack Power, 2% Chance on hit to grant extra attack",
+                "tip": "🔥 BiS melee trinket throughout entire Classic era!"
+          }
     ]
   },
   59: {
@@ -1209,11 +1231,11 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Light's Hope Chapel",
     zoneInstructions: "Final level before 60! Run Stratholme Live and Undead sides for Cape of the Black Baron (+15 Agi, +20 AP) and Shadowcraft Armor pieces. Turn in all high-level dungeon quests.",
     talent: {
-      name: "Improved Slice and Dice",
-      rank: "2/3",
-      tree: "assassination",
-      icon: "⚔️",
-      why: "Increases Slice and Dice duration by 30%."
+          "name": "Improved Slice and Dice",
+          "rank": "2/3",
+          "tree": "assassination",
+          "icon": "⚔️",
+          "why": "Increases Slice and Dice duration by 30%."
     },
     talentNote: "Slice and Dice lasts up to 27+ seconds.",
     trainerTrain: [],
@@ -1221,7 +1243,13 @@ const ROGUE_LEVEL_DATA = {
     rotation: ["Sinister Strike -> Long Slice and Dice -> Riposte -> 5-CP Eviscerate."],
     gearTip: "Cadaverous Armor (Scholomance) or Devilsaur 2-piece set.",
     dungeonGear: [
-      { name: "Cape of the Black Baron", quality: "rare", source: "Baron Rivendare (Stratholme)", stats: "+15 Agility, +20 Attack Power", tip: "BiS rogue cloak!" }
+          {
+                "name": "Cape of the Black Baron",
+                "quality": "rare",
+                "source": "Baron Rivendare (Stratholme)",
+                "stats": "+15 Agility, +20 Attack Power",
+                "tip": "BiS rogue cloak!"
+          }
     ]
   },
   60: {
@@ -1231,26 +1259,34 @@ const ROGUE_LEVEL_DATA = {
     hubs: "Orgrimmar, Undercity",
     zoneInstructions: "CONGRATULATIONS! You have conquered Classic WoW and reached Level 60 as a Combat Swords Rogue! 1) Train max rank abilities: Sinister Strike Rank 9, Eviscerate Rank 8, Instant Poison VI. 2) Equip the iconic Thrash Blade (Main Hand) and Mirah's Song (Off-Hand). 3) Complete Devilsaur 2-piece set (+2% Hit, +74 AP!). 4) Get attuned for Molten Core and Onyxia's Lair. You are now a top-tier DPS juggernaut for the Horde!",
     talent: {
-      name: "Improved Slice and Dice",
-      rank: "3/3",
-      tree: "assassination",
-      icon: "⚔️",
-      why: "+45% SLICE AND DICE DURATION! Keeps your attack speed bonus up for almost half a minute per cast!"
+          "name": "Improved Slice and Dice",
+          "rank": "3/3",
+          "tree": "assassination",
+          "icon": "⚔️",
+          "why": "+45% SLICE AND DICE DURATION! Keeps your attack speed bonus up for almost half a minute per cast!"
     },
     talentNote: "You are now fully leveled, geared, and raid-ready for Molten Core!",
-    trainerTrain: ["Instant Poison (Rank 6)", "Deadly Poison (Rank 4)"],
+    trainerTrain: ["Sinister Strike (Rank 9)","Eviscerate (Rank 9)","Deadly Poison (Rank 5)"],
     trainerSkip: [],
-    rotation: [
-      "Keep Slice and Dice up 100% of the fight (5-point Slice and Dice lasts 30.5 seconds!)",
-      "Pop Blade Flurry + Adrenaline Rush during boss burn phases",
-      "Spam Sinister Strike -> Use Riposte on parry -> Eviscerate at 5 Combo Points!"
-    ],
+    rotation: ["Keep Slice and Dice up 100% of the fight (5-point Slice and Dice lasts 30.5 seconds!)","Pop Blade Flurry + Adrenaline Rush during boss burn phases","Spam Sinister Strike -> Use Riposte on parry -> Eviscerate at 5 Combo Points!"],
     gearTip: "Devilsaur Gauntlets & Leggings (2% Hit bonus), Thrash Blade, Mirah's Song, Hand of Justice, Blackhand's Breadth.",
     dungeonGear: [
-      { name: "Devilsaur Leggings", quality: "rare", source: "Crafted via Leatherworking (300)", stats: "+12 Stamina, +46 AP, +1% Crit, 2pc: +2% Hit", tip: "👑 Mandatory pre-raid physical DPS armor!" },
-      { name: "Devilsaur Gauntlets", quality: "rare", source: "Crafted via Leatherworking (290)", stats: "+9 Stamina, +28 AP, +1% Crit, 2pc: +2% Hit", tip: "👑 Mandatory pre-raid physical DPS gloves!" }
+          {
+                "name": "Devilsaur Leggings",
+                "quality": "rare",
+                "source": "Crafted via Leatherworking (300)",
+                "stats": "+12 Stamina, +46 AP, +1% Crit, 2pc: +2% Hit",
+                "tip": "👑 Mandatory pre-raid physical DPS armor!"
+          },
+          {
+                "name": "Devilsaur Gauntlets",
+                "quality": "rare",
+                "source": "Crafted via Leatherworking (290)",
+                "stats": "+9 Stamina, +28 AP, +1% Crit, 2pc: +2% Hit",
+                "tip": "👑 Mandatory pre-raid physical DPS gloves!"
+          }
     ]
-  }
+  },
 };
 
 const ROGUE_TALENTS_CONFIG = [
