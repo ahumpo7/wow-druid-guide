@@ -1,7 +1,7 @@
 /**
  * World of Warcraft: Forever - Client Sync Bridge (Horde Multi-Character Edition)
  * Auto-generated from live WTF game files.
- * Default Character: Warlock (Levevevice, Level 15)
+ * Default Character: Warlock (Levevevice, Level 10)
  * Secondary Character: Rogue (Phana, Level 6)
  * Tertiary Character:  Druid (Muataurgrumm, Level 1)
  */
@@ -13,8 +13,8 @@ window.WOW_SYNCED_DATA = {
       "realm": "Stonebrow (WoW Forever)",
       "class": "Warlock",
       "race": "Horde Undead",
-      "level": 15,
-      "money": 2500,
+      "level": 10,
+      "money": 2075,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -22,7 +22,7 @@ window.WOW_SYNCED_DATA = {
           "type": "Empty",
           "name": "None Equipped",
           "quality": "common",
-          "source": "Not yet equipped (Level 15)",
+          "source": "Not yet equipped (Level 10)",
           "armor": "0 Armor",
           "stats": [
             "Head armor unlocks around level 20+"
@@ -56,12 +56,12 @@ window.WOW_SYNCED_DATA = {
           "name": "Item #3833",
           "quality": "uncommon",
           "source": "Currently Equipped on Levevevice",
-          "armor": "17 Armor",
+          "armor": "11 Armor",
           "stats": [
-            "+3 Intellect",
-            "+3 Stamina (+30 HP)"
+            "+2 Intellect",
+            "+2 Stamina (+20 HP)"
           ],
-          "req": "Item Level 15"
+          "req": "Item Level 10"
         },
         "chest": {
           "slot": "Chest",
@@ -69,12 +69,12 @@ window.WOW_SYNCED_DATA = {
           "name": "Item #3270",
           "quality": "uncommon",
           "source": "Currently Equipped on Levevevice",
-          "armor": "38 Armor",
+          "armor": "25 Armor",
           "stats": [
-            "+3 Intellect",
-            "+3 Stamina (+30 HP)"
+            "+2 Intellect",
+            "+2 Stamina (+20 HP)"
           ],
-          "req": "Item Level 15"
+          "req": "Item Level 10"
         },
         "wrists": {
           "slot": "Wrists",
@@ -82,12 +82,12 @@ window.WOW_SYNCED_DATA = {
           "name": "Item #6060",
           "quality": "uncommon",
           "source": "Currently Equipped on Levevevice",
-          "armor": "27 Armor",
+          "armor": "18 Armor",
           "stats": [
-            "+3 Intellect",
-            "+3 Stamina (+30 HP)"
+            "+2 Intellect",
+            "+2 Stamina (+20 HP)"
           ],
-          "req": "Item Level 15"
+          "req": "Item Level 10"
         },
         "hands": {
           "slot": "Hands",
@@ -106,25 +106,23 @@ window.WOW_SYNCED_DATA = {
           "name": "Item #11848",
           "quality": "uncommon",
           "source": "Currently Equipped on Levevevice",
-          "armor": "27 Armor",
+          "armor": "18 Armor",
           "stats": [
-            "+3 Intellect",
-            "+3 Stamina (+30 HP)"
+            "+2 Intellect",
+            "+2 Stamina (+20 HP)"
           ],
-          "req": "Item Level 15"
+          "req": "Item Level 10"
         },
         "legs": {
           "slot": "Legs",
           "type": "Cloth",
-          "name": "Item #3834",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
-          "armor": "27 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+3 Intellect",
-            "+3 Stamina (+30 HP)"
-          ],
-          "req": "Item Level 15"
+            "Legs slot empty"
+          ]
         },
         "feet": {
           "slot": "Feet",
@@ -132,12 +130,12 @@ window.WOW_SYNCED_DATA = {
           "name": "Item #3274",
           "quality": "uncommon",
           "source": "Currently Equipped on Levevevice",
-          "armor": "27 Armor",
+          "armor": "18 Armor",
           "stats": [
-            "+3 Intellect",
-            "+3 Stamina (+30 HP)"
+            "+2 Intellect",
+            "+2 Stamina (+20 HP)"
           ],
-          "req": "Item Level 15"
+          "req": "Item Level 10"
         },
         "ring1": {
           "slot": "Finger",
@@ -218,10 +216,10 @@ window.WOW_SYNCED_DATA = {
           "source": "Currently Equipped on Levevevice",
           "armor": null,
           "stats": [
-            "+3 Intellect",
-            "+3 Stamina (+30 HP)"
+            "+2 Intellect",
+            "+2 Stamina (+20 HP)"
           ],
-          "req": "Item Level 15"
+          "req": "Item Level 10"
         }
       },
       "professions": {
@@ -254,7 +252,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T00:59:55.636Z"
+      "syncedAt": "2026-11-25T01:05:30.924Z"
     },
     "rogue": {
       "name": "Phana",
@@ -508,7 +506,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T00:59:55.637Z"
+      "syncedAt": "2026-11-25T01:05:30.926Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -737,22 +735,22 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T00:59:55.638Z"
+      "syncedAt": "2026-11-25T01:05:30.927Z"
     }
   },
   "name": "Levevevice",
   "realm": "Stonebrow (WoW Forever)",
   "class": "Warlock",
   "race": "Horde Undead",
-  "level": 15,
-  "money": 2500,
+  "level": 10,
+  "money": 2075,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 15)",
+      "source": "Not yet equipped (Level 10)",
       "armor": "0 Armor",
       "stats": [
         "Head armor unlocks around level 20+"
@@ -786,12 +784,12 @@ window.WOW_SYNCED_DATA = {
       "name": "Item #3833",
       "quality": "uncommon",
       "source": "Currently Equipped on Levevevice",
-      "armor": "17 Armor",
+      "armor": "11 Armor",
       "stats": [
-        "+3 Intellect",
-        "+3 Stamina (+30 HP)"
+        "+2 Intellect",
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Item Level 15"
+      "req": "Item Level 10"
     },
     "chest": {
       "slot": "Chest",
@@ -799,12 +797,12 @@ window.WOW_SYNCED_DATA = {
       "name": "Item #3270",
       "quality": "uncommon",
       "source": "Currently Equipped on Levevevice",
-      "armor": "38 Armor",
+      "armor": "25 Armor",
       "stats": [
-        "+3 Intellect",
-        "+3 Stamina (+30 HP)"
+        "+2 Intellect",
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Item Level 15"
+      "req": "Item Level 10"
     },
     "wrists": {
       "slot": "Wrists",
@@ -812,12 +810,12 @@ window.WOW_SYNCED_DATA = {
       "name": "Item #6060",
       "quality": "uncommon",
       "source": "Currently Equipped on Levevevice",
-      "armor": "27 Armor",
+      "armor": "18 Armor",
       "stats": [
-        "+3 Intellect",
-        "+3 Stamina (+30 HP)"
+        "+2 Intellect",
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Item Level 15"
+      "req": "Item Level 10"
     },
     "hands": {
       "slot": "Hands",
@@ -836,25 +834,23 @@ window.WOW_SYNCED_DATA = {
       "name": "Item #11848",
       "quality": "uncommon",
       "source": "Currently Equipped on Levevevice",
-      "armor": "27 Armor",
+      "armor": "18 Armor",
       "stats": [
-        "+3 Intellect",
-        "+3 Stamina (+30 HP)"
+        "+2 Intellect",
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Item Level 15"
+      "req": "Item Level 10"
     },
     "legs": {
       "slot": "Legs",
       "type": "Cloth",
-      "name": "Item #3834",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
-      "armor": "27 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+3 Intellect",
-        "+3 Stamina (+30 HP)"
-      ],
-      "req": "Item Level 15"
+        "Legs slot empty"
+      ]
     },
     "feet": {
       "slot": "Feet",
@@ -862,12 +858,12 @@ window.WOW_SYNCED_DATA = {
       "name": "Item #3274",
       "quality": "uncommon",
       "source": "Currently Equipped on Levevevice",
-      "armor": "27 Armor",
+      "armor": "18 Armor",
       "stats": [
-        "+3 Intellect",
-        "+3 Stamina (+30 HP)"
+        "+2 Intellect",
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Item Level 15"
+      "req": "Item Level 10"
     },
     "ring1": {
       "slot": "Finger",
@@ -948,10 +944,10 @@ window.WOW_SYNCED_DATA = {
       "source": "Currently Equipped on Levevevice",
       "armor": null,
       "stats": [
-        "+3 Intellect",
-        "+3 Stamina (+30 HP)"
+        "+2 Intellect",
+        "+2 Stamina (+20 HP)"
       ],
-      "req": "Item Level 15"
+      "req": "Item Level 10"
     }
   },
   "professions": {
@@ -984,5 +980,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-25T00:59:55.638Z"
+  "syncedAt": "2026-11-25T01:05:30.927Z"
 };

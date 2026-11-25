@@ -139,6 +139,8 @@ const server = http.createServer(async (req, res) => {
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  res.setHeader('Access-Control-Allow-Private-Network', 'true');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate');
 
   if (req.method === 'OPTIONS') {
     res.writeHead(204);
@@ -147,6 +149,22 @@ const server = http.createServer(async (req, res) => {
   }
 
   const url = new URL(req.url, `http://${req.headers.host || 'localhost'}`);
+
+  // Fast Read Endpoint: /api/latest (reads latest synced_character.json without triggering Gist API)
+  if (url.pathname === '/api/latest') {
+    const jsonPath = path.join(__dirname, 'synced_character.json');
+    if (fs.existsSync(jsonPath)) {
+      try {
+        const raw = fs.readFileSync(jsonPath, 'utf8');
+        res.writeHead(200, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ success: true, character: JSON.parse(raw) }));
+        return;
+      } catch (_) {}
+    }
+    res.writeHead(404, { 'Content-Type': 'application/json' });
+    res.end(JSON.stringify({ success: false, error: 'No synced data yet' }));
+    return;
+  }
 
   // SSE Live Stream Endpoint: /api/events
   if (url.pathname === '/api/events') {

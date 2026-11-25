@@ -1486,8 +1486,11 @@ function updateSyncedProfessionsUI(professions) {
 }
 
 // Direct 1-Click Game & Gist Sync Action
+let lastGistFetchTime = 0;
+
 async function executeGameSyncFromSite(silent = false) {
   const btnHeader = document.getElementById("btnHeaderDirectSync");
+  const dot = document.getElementById("autoSyncDot");
   if (btnHeader && !silent) {
     btnHeader.innerHTML = "⏳ Syncing...";
     btnHeader.style.backgroundColor = "#38bdf8";
@@ -1502,27 +1505,34 @@ async function executeGameSyncFromSite(silent = false) {
   }
 
   let syncedResult = null;
+  let fromLocal = false;
 
-  // Step 1: Check local companion server first
+  // Step 1: Check local companion server first (/api/latest for fast silent poll, /api/sync for forced rescan)
   try {
     const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 2000);
-    const res = await fetch("http://127.0.0.1:3888/api/sync", {
-      method: "POST",
+    const endpoint = silent ? "http://127.0.0.1:3888/api/latest" : "http://127.0.0.1:3888/api/sync";
+    const res = await fetch(endpoint, {
+      method: silent ? "GET" : "POST",
       headers: { "Content-Type": "application/json" },
       signal: controller.signal
     });
     clearTimeout(timeoutId);
     if (res.ok) {
       const json = await res.json();
-      if (json && json.character) syncedResult = json.character;
+      if (json && json.character) {
+        syncedResult = json.character;
+        fromLocal = true;
+      }
     }
   } catch (_) {}
 
-  // Step 2: Fallback to GitHub Cloud Gist REST API
-  if (!syncedResult) {
+  // Step 2: Fallback to GitHub Cloud Gist (rate-limited for silent background polls to avoid 60/hr limit)
+  const now = Date.now();
+  if (!syncedResult && (!silent || now - lastGistFetchTime > 45000)) {
+    lastGistFetchTime = now;
     try {
-      const res = await fetch(`${GITHUB_GIST_API_URL}?t=${Date.now()}`, {
+      const res = await fetch(`${GITHUB_GIST_API_URL}?t=${now}`, {
         headers: { "Accept": "application/vnd.github.v3+json" }
       });
       if (res.ok) {
@@ -1532,9 +1542,20 @@ async function executeGameSyncFromSite(silent = false) {
         }
       }
     } catch (_) {}
+
+    // Fallback to unauthenticated Raw Gist if API is rate-limited
+    if (!syncedResult) {
+      try {
+        const res = await fetch(`${GITHUB_GIST_RAW_URL}?t=${now}`);
+        if (res.ok) {
+          syncedResult = await res.json();
+        }
+      } catch (_) {}
+    }
   }
 
   if (syncedResult) {
+    if (dot) dot.style.background = "#22c55e";
     const prevTime = window.WOW_SYNCED_DATA ? window.WOW_SYNCED_DATA.syncedAt : null;
     const prevLevel = window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[activeClass] ? window.WOW_SYNCED_DATA.characters[activeClass].level : null;
     window.WOW_SYNCED_DATA = syncedResult;
@@ -1550,6 +1571,7 @@ async function executeGameSyncFromSite(silent = false) {
       setTimeout(() => { feedbackEl.style.display = "none"; }, 4000);
     }
   } else {
+    if (dot && !fromLocal) dot.style.background = "#f59e0b";
     if (feedbackEl && !silent) {
       feedbackEl.style.color = "#fbbf24";
       feedbackEl.textContent = "⚠️ Could not reach local sync server. Refreshing from local cache.";
@@ -1557,7 +1579,7 @@ async function executeGameSyncFromSite(silent = false) {
   }
 
   if (btnHeader && !silent) {
-    btnHeader.innerHTML = "⚡ Sync";
+    btnHeader.innerHTML = '<span id="autoSyncDot" style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#22c55e; margin-right:4px; box-shadow:0 0 5px #22c55e;" title="Live Real-Time Auto-Sync Active"></span>⚡ Sync';
     btnHeader.style.backgroundColor = "";
     btnHeader.style.color = "";
   }
@@ -1569,36 +1591,35 @@ function directSyncHeaderClick() {
 }
 window.directSyncHeaderClick = directSyncHeaderClick;
 
-// Live Real-Time Auto-Sync Listener (SSE + Fallback Polling)
+// Live Real-Time Auto-Sync Listener (SSE + Fast Local Polling)
 function setupLiveAutoSync() {
-  // Connect to local SSE stream if available
-  try {
-    const es = new EventSource("http://127.0.0.1:3888/api/events");
-    es.onopen = () => {
-      console.log("[Auto-Sync] Connected to live local companion SSE stream.");
-      const dot = document.getElementById("autoSyncDot");
-      if (dot) dot.style.background = "#22c55e";
-    };
-    es.onmessage = (event) => {
-      try {
-        const msg = JSON.parse(event.data);
-        if (msg.type === "sync" && msg.character) {
-          console.log(`[Auto-Sync] Live game update detected (${msg.source})!`);
-          window.WOW_SYNCED_DATA = msg.character;
-          switchActiveCharacter(activeClass);
-        }
-      } catch (_) {}
-    };
-    es.onerror = () => {
-      const dot = document.getElementById("autoSyncDot");
-      if (dot) dot.style.background = "#f59e0b";
-    };
-  } catch (_) {}
+  // Connect to local SSE stream when on http:// or file://
+  if (window.location.protocol !== "https:") {
+    try {
+      const es = new EventSource("http://127.0.0.1:3888/api/events");
+      es.onopen = () => {
+        console.log("[Auto-Sync] Connected to live local companion SSE stream.");
+        const dot = document.getElementById("autoSyncDot");
+        if (dot) dot.style.background = "#22c55e";
+      };
+      es.onmessage = (event) => {
+        try {
+          const msg = JSON.parse(event.data);
+          if (msg.type === "sync" && msg.character) {
+            console.log(`[Auto-Sync] Live game update detected (${msg.source})!`);
+            window.WOW_SYNCED_DATA = msg.character;
+            switchActiveCharacter(activeClass);
+          }
+        } catch (_) {}
+      };
+      es.onerror = () => {};
+    } catch (_) {}
+  }
 
-  // Fallback periodic sync check every 10 seconds
+  // Fast 5-second background sync poll (uses /api/latest locally, throttled Gist fallback)
   setInterval(() => {
     executeGameSyncFromSite(true);
-  }, 10000);
+  }, 5000);
 }
 
 // Modal Controls
