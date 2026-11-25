@@ -1,4 +1,4 @@
-# WoW Forever - Zero-Dependency PowerShell Live Syncer (for PCs without Node.js)
+﻿# WoW Forever - Zero-Dependency PowerShell Live Syncer (for PCs without Node.js)
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $GistId = "584b8b9450a8b85003934d27acfa7c7c"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -212,10 +212,20 @@ try {
     $newState | ConvertTo-Json | Set-Content -Path $StateFile -Encoding UTF8
     Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [OK] Cloud Gist synced from this PC!" -ForegroundColor Cyan
 } catch {
-    $errBody = ""
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] Gist PATCH returned $($_.Exception.Message) — pushing directly via git..." -ForegroundColor Yellow
     try {
-        $sr = New-Object System.IO.StreamReader($_.Exception.Response.GetResponseStream())
-        $errBody = $sr.ReadToEnd()
-    } catch {}
-    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [ERROR] Gist upload failed: $($_.Exception.Message) $errBody" -ForegroundColor Red
+        Push-Location $ScriptDir
+        git add synced_character.json 2>$null
+        git commit -m "Live character sync from Computer B" 2>$null
+        git pull --rebase origin main --quiet 2>$null
+        git push origin main --quiet 2>$null
+        if ($LASTEXITCODE -eq 0) {
+            $newState | ConvertTo-Json | Set-Content -Path $StateFile -Encoding UTF8
+            Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [OK] Synced directly to GitHub Pages via git push!" -ForegroundColor Green
+        } else {
+            Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [ERROR] git push fallback also failed." -ForegroundColor Red
+        }
+    } finally {
+        Pop-Location
+    }
 }

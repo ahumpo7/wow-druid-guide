@@ -1666,7 +1666,7 @@ async function executeGameSyncFromSite(silent = false) {
       }
     } catch (_) {}
 
-    // Fallback to unauthenticated Raw Gist if API is rate-limited
+    // Fallback to unauthenticated Raw Gist or repo synced_character.json if API is rate-limited
     if (!syncedResult) {
       try {
         const res = await fetch(`${GITHUB_GIST_RAW_URL}?t=${now}`);
@@ -1675,16 +1675,28 @@ async function executeGameSyncFromSite(silent = false) {
         }
       } catch (_) {}
     }
+    try {
+      const repoRes = await fetch(`synced_character.json?t=${now}`);
+      if (repoRes.ok) {
+        const repoJson = await repoRes.json();
+        if (!syncedResult || (repoJson.syncedAt && (!syncedResult.syncedAt || repoJson.syncedAt > syncedResult.syncedAt))) {
+          syncedResult = repoJson;
+        }
+      }
+    } catch (_) {}
   }
 
   if (syncedResult) {
     if (dot) dot.style.background = "#22c55e";
     const prevTime = window.WOW_SYNCED_DATA ? window.WOW_SYNCED_DATA.syncedAt : null;
     const prevLevel = window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[activeClass] ? window.WOW_SYNCED_DATA.characters[activeClass].level : null;
-    window.WOW_SYNCED_DATA = syncedResult;
-    const newLevel = syncedResult.characters && syncedResult.characters[activeClass] ? syncedResult.characters[activeClass].level : null;
+    const isNewer = !prevTime || !syncedResult.syncedAt || syncedResult.syncedAt >= prevTime;
+    if (isNewer) {
+      window.WOW_SYNCED_DATA = syncedResult;
+    }
+    const newLevel = window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[activeClass] ? window.WOW_SYNCED_DATA.characters[activeClass].level : null;
 
-    if (!silent || prevTime !== syncedResult.syncedAt || prevLevel !== newLevel) {
+    if (isNewer && (!silent || prevTime !== syncedResult.syncedAt || prevLevel !== newLevel)) {
       switchActiveCharacter(activeClass);
     }
 
