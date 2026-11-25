@@ -212,5 +212,10 @@ try {
     $newState | ConvertTo-Json | Set-Content -Path $StateFile -Encoding UTF8
     Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [OK] Cloud Gist synced from this PC!" -ForegroundColor Cyan
 } catch {
-    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [ERROR] Gist upload failed: $($_.Exception.Message)" -ForegroundColor Red
+    $errBody = ""
+    try {
+        $sr = New-Object System.IO.StreamReader($_.Exception.Response.GetResponseStream())
+        $errBody = $sr.ReadToEnd()
+    } catch {}
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [ERROR] Gist upload failed: $($_.Exception.Message) $errBody" -ForegroundColor Red
 }
