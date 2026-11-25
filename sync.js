@@ -950,18 +950,32 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(unifiedPayload, null, 2)};
   fs.writeFileSync(jsonDest, JSON.stringify(unifiedPayload, null, 2), 'utf8');
   console.log(`    ✓ Saved synced_character.js and synced_character.json successfully!`);
 
-  // Upload to Cloud Gist
-  console.log(`\n[7] Updating GitHub Cloud Gist (${GIST_ID})...`);
-  try {
-    await updateRemoteGist(unifiedPayload);
-    console.log(`    ✓ [SUCCESS] Cloud Gist updated directly via GitHub REST API!`);
-  } catch (apiErr) {
-    console.log(`    ⚠️ REST API upload error: ${apiErr.message}. Attempting gh CLI fallback...`);
+  // Only upload to Cloud Gist if character data actually changed vs remoteData (saves GitHub API quota)
+  function isCharacterSame(a, b) {
+    if (!a || !b) return false;
+    return a.name === b.name && a.level === b.level && a.money === b.money && (a.updatedAt || 0) === (b.updatedAt || 0);
+  }
+  const rChars = remoteData && remoteData.characters ? remoteData.characters : null;
+  const unchanged = rChars &&
+    isCharacterSame(warlockProfile, rChars.warlock) &&
+    isCharacterSame(rogueProfile, rChars.rogue) &&
+    isCharacterSame(druidProfile, rChars.druid);
+
+  if (unchanged) {
+    console.log(`\n[7] Cloud Gist (${GIST_ID}) is already up to date — skipping redundant upload.`);
+  } else {
+    console.log(`\n[7] Updating GitHub Cloud Gist (${GIST_ID})...`);
     try {
-      execSync(`gh gist edit ${GIST_ID} -a "${jsonDest}"`, { stdio: 'pipe', encoding: 'utf8', timeout: 10000 });
-      console.log(`    ✓ [SUCCESS] Cloud Gist updated via gh CLI!`);
-    } catch (ghErr) {
-      console.log(`    ⚠️ Note: Could not update remote Gist from this machine: ${ghErr.message}`);
+      await updateRemoteGist(unifiedPayload);
+      console.log(`    ✓ [SUCCESS] Cloud Gist updated directly via GitHub REST API!`);
+    } catch (apiErr) {
+      console.log(`    ⚠️ REST API upload error: ${apiErr.message}. Attempting gh CLI fallback...`);
+      try {
+        execSync(`gh gist edit ${GIST_ID} -a "${jsonDest}"`, { stdio: 'pipe', encoding: 'utf8', timeout: 10000 });
+        console.log(`    ✓ [SUCCESS] Cloud Gist updated via gh CLI!`);
+      } catch (ghErr) {
+        console.log(`    ⚠️ Note: Could not update remote Gist from this machine: ${ghErr.message}`);
+      }
     }
   }
 

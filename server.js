@@ -118,10 +118,10 @@ console.log(`====================================================`);
 // ---------------------------------------------------------------------------
 // 2. PERIODIC BACKGROUND TASKS
 // ---------------------------------------------------------------------------
-// A) Periodic Sync (every 20s): catches remote changes from Computer B or missed file events
+// A) Periodic Sync (every 120s): catches remote changes from Computer B without wasting API quota
 setInterval(() => {
   executeSync('Periodic Cloud & Game Check').catch(() => {});
-}, 20000);
+}, 120000);
 
 // B) Background Addon Updater (every 60s): pulls latest code from GitHub origin/main
 setInterval(() => {
