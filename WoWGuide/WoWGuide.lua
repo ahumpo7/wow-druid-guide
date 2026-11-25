@@ -1007,7 +1007,14 @@ function WoWGuide:SaveCharacterSnapshot(overrideLvl)
 
   local equip = {}
   for slot = 1, 19 do
-    local id = GetInventoryItemID("player", slot)
+    local id = GetInventoryItemID and GetInventoryItemID("player", slot) or nil
+    if not id and GetInventoryItemLink then
+      local link = GetInventoryItemLink("player", slot)
+      if link then
+        local _, _, idStr = string.find(link, "item:(%d+)")
+        if idStr then id = tonumber(idStr) end
+      end
+    end
     if id then equip[slot] = id end
   end
 

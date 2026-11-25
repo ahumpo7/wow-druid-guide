@@ -1689,15 +1689,19 @@ async function executeGameSyncFromSite(silent = false) {
   if (syncedResult) {
     if (dot) dot.style.background = "#22c55e";
     const prevTime = window.WOW_SYNCED_DATA ? window.WOW_SYNCED_DATA.syncedAt : null;
+    const prevActive = window.WOW_SYNCED_DATA ? window.WOW_SYNCED_DATA.activeCharacter : null;
     const prevLevel = window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[activeClass] ? window.WOW_SYNCED_DATA.characters[activeClass].level : null;
     const isNewer = !prevTime || !syncedResult.syncedAt || syncedResult.syncedAt >= prevTime;
     if (isNewer) {
       window.WOW_SYNCED_DATA = syncedResult;
     }
-    const newLevel = window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[activeClass] ? window.WOW_SYNCED_DATA.characters[activeClass].level : null;
+    const targetCls = (isNewer && syncedResult.activeCharacter && syncedResult.activeCharacter !== prevActive)
+      ? syncedResult.activeCharacter
+      : activeClass;
+    const newLevel = window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[targetCls] ? window.WOW_SYNCED_DATA.characters[targetCls].level : null;
 
-    if (isNewer && (!silent || prevTime !== syncedResult.syncedAt || prevLevel !== newLevel)) {
-      switchActiveCharacter(activeClass);
+    if (isNewer && (!silent || prevTime !== syncedResult.syncedAt || prevLevel !== newLevel || targetCls !== activeClass)) {
+      switchActiveCharacter(targetCls);
     }
 
     if (feedbackEl && !silent) {

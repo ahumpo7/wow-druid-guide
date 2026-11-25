@@ -1,21 +1,21 @@
 /**
  * World of Warcraft: Forever - Client Sync Bridge (Horde Multi-Character Edition)
  * Auto-generated from live WTF game files.
- * Default Character: Warlock (Levevevice, Level 12)
+ * Default Character: Warlock (Levevevice, Level 13)
  * Secondary Character: Rogue (Phana, Level 6)
  * Tertiary Character:  Druid (Muataurgrumm, Level 1)
  */
 window.WOW_SYNCED_DATA = {
-  "activeCharacter": "warlock",
+  "activeCharacter": "rogue",
   "characters": {
     "warlock": {
       "name": "Levevevice",
       "realm": "WoW Forever (WoW Forever)",
       "class": "Warlock",
       "race": "Horde Undead",
-      "level": 12,
-      "money": 0,
-      "updatedAt": 1795609757,
+      "level": 13,
+      "money": 6368,
+      "updatedAt": 1795610804,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -236,16 +236,16 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T12:45:07.9012759Z"
+      "syncedAt": "2026-11-25T12:47:36.3758349Z"
     },
     "rogue": {
       "name": "Phana",
-      "realm": "Belfall (WoW Forever)",
+      "realm": "WoW Forever (WoW Forever)",
       "class": "Rogue",
       "race": "Horde Undead",
       "level": 6,
-      "money": 32,
-      "updatedAt": 0,
+      "money": 0,
+      "updatedAt": 1795638702,
       "spec": "Combat Swords / Daggers",
       "liveGear": {
         "head": {
@@ -284,44 +284,35 @@ window.WOW_SYNCED_DATA = {
         "back": {
           "slot": "Back",
           "type": "Cloth",
-          "name": "Grizzly Cape",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "14 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+2 Strength (+4 AP)",
-            "+1 Stamina (+10 HP)"
-          ],
-          "req": "Requires Level 14",
-          "tip": "⭐ Live equipped! Strength cloak."
+            "Cloak slot empty"
+          ]
         },
         "chest": {
           "slot": "Chest",
           "type": "Leather",
-          "name": "Grizzly Jerkin",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "88 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+6 Strength (+12 AP)",
-            "+5 Stamina (+50 HP)"
-          ],
-          "req": "Requires Level 15",
-          "tip": "⭐ Live equipped! High armor leather chest."
+            "Chest slot empty"
+          ]
         },
         "wrists": {
           "slot": "Wrists",
           "type": "Leather",
-          "name": "Black Wolf Bracers",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "31 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+2 Agility (+2 AP)",
-            "+1 Stamina (+10 HP)"
-          ],
-          "req": "Requires Level 10",
-          "tip": "⭐ Live equipped! Agility wristguards."
+            "Wrists slot empty"
+          ]
         },
         "hands": {
           "slot": "Hands",
@@ -337,43 +328,35 @@ window.WOW_SYNCED_DATA = {
         "waist": {
           "slot": "Waist",
           "type": "Leather",
-          "name": "Troll's Sweatcloth",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "41 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+3 Stamina (+30 HP)",
-            "+2 Spirit"
-          ],
-          "req": "Requires Level 10",
-          "tip": "⭐ Live equipped! Sturdy leather belt."
+            "Waist slot empty"
+          ]
         },
         "legs": {
           "slot": "Legs",
           "type": "Leather",
-          "name": "Grassland Pants",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "64 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+4 Agility (+4 AP / +0.2% Crit)",
-            "+3 Stamina (+30 HP)"
-          ],
-          "req": "Requires Level 12",
-          "tip": "⭐ Live equipped! Agility leather trousers."
+            "Legs slot empty"
+          ]
         },
         "feet": {
           "slot": "Feet",
           "type": "Leather",
-          "name": "Soft Leather Boots",
+          "name": "None Equipped",
           "quality": "common",
-          "source": "Currently Equipped on Phana",
-          "armor": "36 Armor",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "36 Armor (Pure Armor)"
-          ],
-          "req": "Requires Level 5",
-          "tip": "⭐ Live equipped! Basic leather footwear."
+            "Feet slot empty"
+          ]
         },
         "ring1": {
           "slot": "Finger",
@@ -421,19 +404,14 @@ window.WOW_SYNCED_DATA = {
         },
         "mainHand": {
           "slot": "Main Hand",
-          "type": "Dagger",
-          "name": "Beholder's Eye",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
+          "type": "One-Handed Sword / Dagger",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
           "armor": null,
           "stats": [
-            "14 - 26 Damage (11.1 DPS)",
-            "Speed 1.80",
-            "+2 Agility",
-            "+1 Stamina"
-          ],
-          "req": "Requires Level 13",
-          "tip": "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
+            "Empty Main Hand"
+          ]
         },
         "offHand": {
           "slot": "Off-Hand",
@@ -449,16 +427,13 @@ window.WOW_SYNCED_DATA = {
         "ranged": {
           "slot": "Ranged / Bow",
           "type": "Bow",
-          "name": "Fine Longbow",
+          "name": "None Equipped",
           "quality": "common",
-          "source": "Currently Equipped on Phana",
+          "source": "Not yet equipped",
           "armor": null,
           "stats": [
-            "8 - 15 Damage (4.8 DPS)",
-            "Speed 2.40"
-          ],
-          "req": "Requires Level 8",
-          "tip": "⭐ Live equipped! Starter ranged pull weapon."
+            "Empty Ranged Slot"
+          ]
         }
       },
       "professions": {
@@ -491,7 +466,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T12:47:03.756Z"
+      "syncedAt": "2026-11-25T20:33:02.073Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -721,14 +696,14 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T12:47:03.759Z"
+      "syncedAt": "2026-11-25T20:33:02.076Z"
     }
   },
-  "name": "Levevevice",
+  "name": "Phana",
   "realm": "WoW Forever (WoW Forever)",
-  "class": "Warlock",
+  "class": "Rogue",
   "race": "Horde Undead",
-  "level": 12,
+  "level": 6,
   "money": 0,
   "liveGear": {
     "head": {
@@ -736,7 +711,7 @@ window.WOW_SYNCED_DATA = {
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 10)",
+      "source": "Not yet equipped (Level 6)",
       "armor": "0 Armor",
       "stats": [
         "Head armor unlocks around level 20+"
@@ -777,7 +752,7 @@ window.WOW_SYNCED_DATA = {
     },
     "chest": {
       "slot": "Chest",
-      "type": "Cloth",
+      "type": "Leather",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -788,7 +763,7 @@ window.WOW_SYNCED_DATA = {
     },
     "wrists": {
       "slot": "Wrists",
-      "type": "Cloth",
+      "type": "Leather",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -799,7 +774,7 @@ window.WOW_SYNCED_DATA = {
     },
     "hands": {
       "slot": "Hands",
-      "type": "Cloth",
+      "type": "Leather",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -810,7 +785,7 @@ window.WOW_SYNCED_DATA = {
     },
     "waist": {
       "slot": "Waist",
-      "type": "Cloth",
+      "type": "Leather",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -821,7 +796,7 @@ window.WOW_SYNCED_DATA = {
     },
     "legs": {
       "slot": "Legs",
-      "type": "Cloth",
+      "type": "Leather",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -832,7 +807,7 @@ window.WOW_SYNCED_DATA = {
     },
     "feet": {
       "slot": "Feet",
-      "type": "Cloth",
+      "type": "Leather",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -887,7 +862,7 @@ window.WOW_SYNCED_DATA = {
     },
     "mainHand": {
       "slot": "Main Hand",
-      "type": "Staff / Dagger",
+      "type": "One-Handed Sword / Dagger",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -898,7 +873,7 @@ window.WOW_SYNCED_DATA = {
     },
     "offHand": {
       "slot": "Off-Hand",
-      "type": "Held in Off-hand",
+      "type": "Off-Hand Weapon",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -908,8 +883,8 @@ window.WOW_SYNCED_DATA = {
       ]
     },
     "ranged": {
-      "slot": "Ranged / Wand",
-      "type": "Wand",
+      "slot": "Ranged / Bow",
+      "type": "Bow",
       "name": "None Equipped",
       "quality": "common",
       "source": "Not yet equipped",
@@ -921,18 +896,18 @@ window.WOW_SYNCED_DATA = {
   },
   "professions": {
     "primary1": {
-      "name": "Tailoring",
-      "level": 43,
+      "name": "Skinning",
+      "level": 4,
       "rank": "Apprentice",
       "max": 75,
-      "icon": "🧵"
+      "icon": "🗡️"
     },
     "primary2": {
-      "name": "Enchanting",
+      "name": "Leatherworking",
       "level": 0,
       "rank": "Untrained",
       "max": 75,
-      "icon": "✨"
+      "icon": "✂️"
     },
     "firstAid": {
       "name": "First Aid",
@@ -949,5 +924,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-25T12:47:03.759Z"
+  "syncedAt": "2026-11-25T20:33:02.076Z"
 };

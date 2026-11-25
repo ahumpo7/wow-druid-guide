@@ -929,9 +929,15 @@ async function runSync() {
     };
   }
 
-  // Active character defaults to Warlock
-  const activeCharKey = "warlock";
-  const activeProfile = warlockProfile;
+  // Dynamically select whichever character was most recently reloaded/updated in-game
+  const candidates = [
+    { key: "warlock", prof: warlockProfile },
+    { key: "rogue", prof: rogueProfile },
+    { key: "druid", prof: druidProfile }
+  ];
+  candidates.sort((a, b) => (b.prof.updatedAt || 0) - (a.prof.updatedAt || 0));
+  const activeCharKey = (candidates[0].prof.updatedAt || 0) > 0 ? candidates[0].key : "warlock";
+  const activeProfile = candidates[0].prof.updatedAt > 0 ? candidates[0].prof : warlockProfile;
 
   const unifiedPayload = {
     activeCharacter: activeCharKey,
