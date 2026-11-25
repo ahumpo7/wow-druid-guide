@@ -30,6 +30,17 @@ function getGitHubToken() {
     if (t) return t;
   } catch (_) {}
 
+  try {
+    const out = execSync('git credential fill', {
+      input: 'protocol=https\nhost=github.com\n\n',
+      stdio: ['pipe', 'pipe', 'pipe'],
+      encoding: 'utf8',
+      timeout: 3000
+    });
+    const passM = out.match(/^password=(.+)$/m);
+    if (passM && passM[1]) return passM[1].trim();
+  } catch (_) {}
+
   return null;
 }
 
@@ -306,6 +317,7 @@ function parseCharactersFromWoWGuide(content) {
     const lvlM = block.match(/\["level"\]\s*=\s*(\d+)/);
     const classM = block.match(/\["class"\]\s*=\s*"([^"]+)"/);
     const moneyM = block.match(/\["money"\]\s*=\s*(\d+)/);
+    const updM = block.match(/\["updatedAt"\]\s*=\s*(\d+)/);
 
     if (lvlM && classM) {
       const cls = classM[1].toUpperCase();
@@ -327,6 +339,7 @@ function parseCharactersFromWoWGuide(content) {
         race: cls === "DRUID" ? "Horde Tauren" : "Horde Undead",
         level: parseInt(lvlM[1], 10),
         money: moneyM ? parseInt(moneyM[1], 10) : 0,
+        updatedAt: updM ? parseInt(updM[1], 10) : 0,
         faction: "Horde",
         equip: equip,
         fromWoWGuide: true
@@ -764,9 +777,22 @@ async function runSync() {
     rawLocalRogue.level = 6;
   }
 
+  function shouldPreferRemote(rawLocal, remoteChar) {
+    if (!remoteChar || !remoteChar.name || remoteChar.name === 'Malakor') return false;
+    if (!rawLocal) return true;
+    const localUpd = rawLocal.updatedAt || 0;
+    const remoteUpd = remoteChar.updatedAt || 0;
+    // Prefer remote if same character (or local is not from WoWGuide) and remote has a newer in-game timestamp
+    if (remoteUpd > localUpd && remoteChar.name.toLowerCase() === rawLocal.name.toLowerCase()) {
+      return true;
+    }
+    return false;
+  }
+
   // --- Resolve Warlock Profile ---
   let warlockProfile = null;
-  if (rawLocalWarlock) {
+  const remoteWarlock = remoteData && remoteData.characters ? remoteData.characters.warlock : null;
+  if (rawLocalWarlock && !shouldPreferRemote(rawLocalWarlock, remoteWarlock)) {
     console.log(`\n[4] Active Local Warlock Found: ${rawLocalWarlock.name} (Lvl ${rawLocalWarlock.level})`);
     const warlockGear = buildCharacterGear(rawLocalWarlock.equip, 'warlock', rawLocalWarlock.name, rawLocalWarlock.level);
     const warlockProfessions = extractProfessions(discovered.consolePath, discovered.generalLogPath, 'warlock');
@@ -777,17 +803,16 @@ async function runSync() {
       race: rawLocalWarlock.race || "Horde Undead",
       level: rawLocalWarlock.level,
       money: rawLocalWarlock.money,
+      updatedAt: rawLocalWarlock.updatedAt || 0,
       spec: "Affliction Drain Tank / Wand Spec",
       liveGear: warlockGear,
       professions: warlockProfessions,
       syncedAt: new Date().toISOString()
     };
-  } else if (remoteData && remoteData.characters && remoteData.characters.warlock && remoteData.characters.warlock.name !== 'Malakor') {
-    // Preserve remote Warlock synced from Computer B!
-    console.log(`\n[4] Preserving Remote Warlock from Computer B: ${remoteData.characters.warlock.name} (Lvl ${remoteData.characters.warlock.level})`);
-    warlockProfile = remoteData.characters.warlock;
+  } else if (remoteWarlock && remoteWarlock.name !== 'Malakor') {
+    console.log(`\n[4] Preserving Newer Remote Warlock: ${remoteWarlock.name} (Lvl ${remoteWarlock.level})`);
+    warlockProfile = remoteWarlock;
   } else {
-    // Awaiting character sync
     console.log(`\n[4] No Warlock detected locally yet. Initializing clean Warlock profile awaiting sync from game...`);
     warlockProfile = {
       name: "Warlock",
@@ -796,6 +821,7 @@ async function runSync() {
       race: "Horde Undead",
       level: 1,
       money: 0,
+      updatedAt: 0,
       spec: "Affliction Drain Tank / Wand Spec",
       liveGear: buildCharacterGear({}, 'warlock', 'Warlock', 1),
       professions: extractProfessions(discovered.consolePath, discovered.generalLogPath, 'warlock'),
@@ -805,7 +831,8 @@ async function runSync() {
 
   // --- Resolve Rogue Profile ---
   let rogueProfile = null;
-  if (rawLocalRogue) {
+  const remoteRogue = remoteData && remoteData.characters ? remoteData.characters.rogue : null;
+  if (rawLocalRogue && !shouldPreferRemote(rawLocalRogue, remoteRogue)) {
     console.log(`\n[5] Active Local Rogue Found: ${rawLocalRogue.name} (Lvl ${rawLocalRogue.level})`);
     const rogueGear = buildCharacterGear(rawLocalRogue.equip, 'rogue', rawLocalRogue.name, rawLocalRogue.level);
     const rogueProfessions = extractProfessions(discovered.consolePath, discovered.generalLogPath, 'rogue');
@@ -816,14 +843,15 @@ async function runSync() {
       race: rawLocalRogue.race || "Horde Undead",
       level: rawLocalRogue.level,
       money: rawLocalRogue.money,
+      updatedAt: rawLocalRogue.updatedAt || 0,
       spec: "Combat Swords / Daggers",
       liveGear: rogueGear,
       professions: rogueProfessions,
       syncedAt: new Date().toISOString()
     };
-  } else if (remoteData && remoteData.characters && remoteData.characters.rogue) {
-    console.log(`\n[5] Preserving Remote Rogue from Cloud Gist: ${remoteData.characters.rogue.name} (Lvl ${remoteData.characters.rogue.level})`);
-    rogueProfile = remoteData.characters.rogue;
+  } else if (remoteRogue) {
+    console.log(`\n[5] Preserving Newer Remote Rogue from Cloud Gist: ${remoteRogue.name} (Lvl ${remoteRogue.level})`);
+    rogueProfile = remoteRogue;
   } else {
     console.log(`\n[5] Setting default Rogue template...`);
     rogueProfile = {
@@ -833,6 +861,7 @@ async function runSync() {
       race: "Horde Undead",
       level: 1,
       money: 0,
+      updatedAt: 0,
       spec: "Combat Swords / Daggers",
       liveGear: buildCharacterGear({}, 'rogue', 'Rogue', 1),
       professions: extractProfessions(discovered.consolePath, discovered.generalLogPath, 'rogue'),
@@ -842,7 +871,8 @@ async function runSync() {
 
   // --- Resolve Druid Profile ---
   let druidProfile = null;
-  if (rawLocalDruid) {
+  const remoteDruid = remoteData && remoteData.characters ? remoteData.characters.druid : null;
+  if (rawLocalDruid && !shouldPreferRemote(rawLocalDruid, remoteDruid)) {
     console.log(`\n[6] Active Local Horde Druid Found: ${rawLocalDruid.name} (Lvl ${rawLocalDruid.level})`);
     const druidGear = buildCharacterGear(rawLocalDruid.equip, 'druid', rawLocalDruid.name, rawLocalDruid.level);
     const druidProfessions = extractProfessions(discovered.consolePath, discovered.generalLogPath, 'druid');
@@ -853,14 +883,15 @@ async function runSync() {
       race: rawLocalDruid.race || "Horde Tauren",
       level: rawLocalDruid.level,
       money: rawLocalDruid.money,
+      updatedAt: rawLocalDruid.updatedAt || 0,
       spec: "Feral Cat / Bear Leveling",
       liveGear: druidGear,
       professions: druidProfessions,
       syncedAt: new Date().toISOString()
     };
-  } else if (remoteData && remoteData.characters && remoteData.characters.druid) {
-    console.log(`\n[6] Preserving Remote Druid from Cloud Gist: ${remoteData.characters.druid.name} (Lvl ${remoteData.characters.druid.level})`);
-    druidProfile = remoteData.characters.druid;
+  } else if (remoteDruid) {
+    console.log(`\n[6] Preserving Newer Remote Druid from Cloud Gist: ${remoteDruid.name} (Lvl ${remoteDruid.level})`);
+    druidProfile = remoteDruid;
   } else {
     console.log(`\n[6] Setting default Horde Druid template (Muataurgrumm)...\n`);
     druidProfile = {
@@ -870,6 +901,7 @@ async function runSync() {
       race: "Horde Tauren",
       level: 1,
       money: 0,
+      updatedAt: 0,
       spec: "Feral Cat / Bear Leveling",
       liveGear: buildCharacterGear({}, 'druid', 'Muataurgrumm', 1),
       professions: extractProfessions(discovered.consolePath, discovered.generalLogPath, 'druid'),

@@ -1,5 +1,5 @@
 @echo off
-title WoW Forever - Auto-Updater Background Companion
+title WoW Forever - Auto-Updater & Live Sync Launcher
 cd /d "%~dp0"
 
 :loop
@@ -9,5 +9,14 @@ if %errorlevel% neq 0 (
     git fetch origin main --quiet 2>nul
     git reset --hard origin/main --quiet 2>nul
 )
+
+netstat -ano | findstr ":3888 " | findstr "LISTENING" >nul 2>&1
+if %errorlevel% neq 0 (
+    where node >nul 2>nul
+    if %errorlevel% equ 0 (
+        start "" /b node "%~dp0server.js"
+    )
+)
+
 timeout /t 15 /nobreak >nul
 goto loop

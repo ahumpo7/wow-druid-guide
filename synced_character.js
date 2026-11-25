@@ -15,6 +15,7 @@ window.WOW_SYNCED_DATA = {
       "race": "Horde Undead",
       "level": 10,
       "money": 0,
+      "updatedAt": 1795576782,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -235,7 +236,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T11:59:05.758Z"
+      "syncedAt": "2026-11-25T12:01:25.827Z"
     },
     "rogue": {
       "name": "Phana",
@@ -244,6 +245,7 @@ window.WOW_SYNCED_DATA = {
       "race": "Horde Undead",
       "level": 6,
       "money": 32,
+      "updatedAt": 0,
       "spec": "Combat Swords / Daggers",
       "liveGear": {
         "head": {
@@ -489,7 +491,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T11:59:05.760Z"
+      "syncedAt": "2026-11-25T12:01:25.829Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -498,6 +500,7 @@ window.WOW_SYNCED_DATA = {
       "race": "Horde Tauren",
       "level": 1,
       "money": 0,
+      "updatedAt": 0,
       "spec": "Feral Cat / Bear Leveling",
       "liveGear": {
         "head": {
@@ -718,7 +721,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T11:59:05.762Z"
+      "syncedAt": "2026-11-25T12:01:25.831Z"
     }
   },
   "name": "Levevevice",
@@ -946,5 +949,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-25T11:59:05.762Z"
+  "syncedAt": "2026-11-25T12:01:25.831Z"
 };

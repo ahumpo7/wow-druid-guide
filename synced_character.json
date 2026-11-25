@@ -8,6 +8,7 @@
       "race": "Horde Undead",
       "level": 10,
       "money": 0,
+      "updatedAt": 1795576782,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -228,7 +229,7 @@
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T11:59:05.758Z"
+      "syncedAt": "2026-11-25T12:01:25.827Z"
     },
     "rogue": {
       "name": "Phana",
@@ -237,6 +238,7 @@
       "race": "Horde Undead",
       "level": 6,
       "money": 32,
+      "updatedAt": 0,
       "spec": "Combat Swords / Daggers",
       "liveGear": {
         "head": {
@@ -482,7 +484,7 @@
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T11:59:05.760Z"
+      "syncedAt": "2026-11-25T12:01:25.829Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -491,6 +493,7 @@
       "race": "Horde Tauren",
       "level": 1,
       "money": 0,
+      "updatedAt": 0,
       "spec": "Feral Cat / Bear Leveling",
       "liveGear": {
         "head": {
@@ -711,7 +714,7 @@
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T11:59:05.762Z"
+      "syncedAt": "2026-11-25T12:01:25.831Z"
     }
   },
   "name": "Levevevice",
@@ -939,5 +942,5 @@
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-25T11:59:05.762Z"
+  "syncedAt": "2026-11-25T12:01:25.831Z"
 }
