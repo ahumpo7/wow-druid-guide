@@ -10,11 +10,11 @@ window.WOW_SYNCED_DATA = {
   "characters": {
     "warlock": {
       "name": "Levevevice",
-      "realm": "Stonebrow (WoW Forever)",
+      "realm": "WoW Forever (WoW Forever)",
       "class": "Warlock",
       "race": "Horde Undead",
       "level": 10,
-      "money": 2075,
+      "money": 0,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -53,41 +53,35 @@ window.WOW_SYNCED_DATA = {
         "back": {
           "slot": "Back",
           "type": "Cloth",
-          "name": "Item #3833",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
-          "armor": "11 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+2 Intellect",
-            "+2 Stamina (+20 HP)"
-          ],
-          "req": "Item Level 10"
+            "Cloak slot empty"
+          ]
         },
         "chest": {
           "slot": "Chest",
           "type": "Cloth",
-          "name": "Item #3270",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
-          "armor": "25 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+2 Intellect",
-            "+2 Stamina (+20 HP)"
-          ],
-          "req": "Item Level 10"
+            "Chest slot empty"
+          ]
         },
         "wrists": {
           "slot": "Wrists",
           "type": "Cloth",
-          "name": "Item #6060",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
-          "armor": "18 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+2 Intellect",
-            "+2 Stamina (+20 HP)"
-          ],
-          "req": "Item Level 10"
+            "Wrists slot empty"
+          ]
         },
         "hands": {
           "slot": "Hands",
@@ -103,15 +97,13 @@ window.WOW_SYNCED_DATA = {
         "waist": {
           "slot": "Waist",
           "type": "Cloth",
-          "name": "Item #11848",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
-          "armor": "18 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+2 Intellect",
-            "+2 Stamina (+20 HP)"
-          ],
-          "req": "Item Level 10"
+            "Waist slot empty"
+          ]
         },
         "legs": {
           "slot": "Legs",
@@ -127,15 +119,13 @@ window.WOW_SYNCED_DATA = {
         "feet": {
           "slot": "Feet",
           "type": "Cloth",
-          "name": "Item #3274",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
-          "armor": "18 Armor",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
+          "armor": "0 Armor",
           "stats": [
-            "+2 Intellect",
-            "+2 Stamina (+20 HP)"
-          ],
-          "req": "Item Level 10"
+            "Feet slot empty"
+          ]
         },
         "ring1": {
           "slot": "Finger",
@@ -183,19 +173,14 @@ window.WOW_SYNCED_DATA = {
         },
         "mainHand": {
           "slot": "Main Hand",
-          "type": "Dagger",
-          "name": "Beholder's Eye",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
+          "type": "Staff / Dagger",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
           "armor": null,
           "stats": [
-            "14 - 26 Damage (11.1 DPS)",
-            "Speed 1.80",
-            "+2 Agility",
-            "+1 Stamina"
-          ],
-          "req": "Requires Level 13",
-          "tip": "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
+            "Empty Main Hand"
+          ]
         },
         "offHand": {
           "slot": "Off-Hand",
@@ -210,23 +195,21 @@ window.WOW_SYNCED_DATA = {
         },
         "ranged": {
           "slot": "Ranged / Wand",
-          "type": "Cloth",
-          "name": "Item #11287",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Levevevice",
+          "type": "Wand",
+          "name": "None Equipped",
+          "quality": "common",
+          "source": "Not yet equipped",
           "armor": null,
           "stats": [
-            "+2 Intellect",
-            "+2 Stamina (+20 HP)"
-          ],
-          "req": "Item Level 10"
+            "Empty Ranged Slot"
+          ]
         }
       },
       "professions": {
         "primary1": {
           "name": "Tailoring",
-          "level": 0,
-          "rank": "Untrained",
+          "level": 43,
+          "rank": "Apprentice",
           "max": 75,
           "icon": "🧵"
         },
@@ -246,13 +229,13 @@ window.WOW_SYNCED_DATA = {
         },
         "cooking": {
           "name": "Cooking",
-          "level": 43,
+          "level": 53,
           "rank": "Apprentice",
           "max": 75,
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T01:11:11.194Z"
+      "syncedAt": "2026-11-25T11:59:05.758Z"
     },
     "rogue": {
       "name": "Phana",
@@ -500,13 +483,13 @@ window.WOW_SYNCED_DATA = {
         },
         "cooking": {
           "name": "Cooking",
-          "level": 43,
+          "level": 53,
           "rank": "Apprentice",
           "max": 75,
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T01:11:11.195Z"
+      "syncedAt": "2026-11-25T11:59:05.760Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -708,7 +691,7 @@ window.WOW_SYNCED_DATA = {
       "professions": {
         "primary1": {
           "name": "Skinning",
-          "level": 4,
+          "level": 1,
           "rank": "Apprentice",
           "max": 75,
           "icon": "🐾"
@@ -729,21 +712,21 @@ window.WOW_SYNCED_DATA = {
         },
         "cooking": {
           "name": "Cooking",
-          "level": 43,
+          "level": 53,
           "rank": "Apprentice",
           "max": 75,
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T01:11:11.196Z"
+      "syncedAt": "2026-11-25T11:59:05.762Z"
     }
   },
   "name": "Levevevice",
-  "realm": "Stonebrow (WoW Forever)",
+  "realm": "WoW Forever (WoW Forever)",
   "class": "Warlock",
   "race": "Horde Undead",
   "level": 10,
-  "money": 2075,
+  "money": 0,
   "liveGear": {
     "head": {
       "slot": "Head",
@@ -781,41 +764,35 @@ window.WOW_SYNCED_DATA = {
     "back": {
       "slot": "Back",
       "type": "Cloth",
-      "name": "Item #3833",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
-      "armor": "11 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+2 Intellect",
-        "+2 Stamina (+20 HP)"
-      ],
-      "req": "Item Level 10"
+        "Cloak slot empty"
+      ]
     },
     "chest": {
       "slot": "Chest",
       "type": "Cloth",
-      "name": "Item #3270",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
-      "armor": "25 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+2 Intellect",
-        "+2 Stamina (+20 HP)"
-      ],
-      "req": "Item Level 10"
+        "Chest slot empty"
+      ]
     },
     "wrists": {
       "slot": "Wrists",
       "type": "Cloth",
-      "name": "Item #6060",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
-      "armor": "18 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+2 Intellect",
-        "+2 Stamina (+20 HP)"
-      ],
-      "req": "Item Level 10"
+        "Wrists slot empty"
+      ]
     },
     "hands": {
       "slot": "Hands",
@@ -831,15 +808,13 @@ window.WOW_SYNCED_DATA = {
     "waist": {
       "slot": "Waist",
       "type": "Cloth",
-      "name": "Item #11848",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
-      "armor": "18 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+2 Intellect",
-        "+2 Stamina (+20 HP)"
-      ],
-      "req": "Item Level 10"
+        "Waist slot empty"
+      ]
     },
     "legs": {
       "slot": "Legs",
@@ -855,15 +830,13 @@ window.WOW_SYNCED_DATA = {
     "feet": {
       "slot": "Feet",
       "type": "Cloth",
-      "name": "Item #3274",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
-      "armor": "18 Armor",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
+      "armor": "0 Armor",
       "stats": [
-        "+2 Intellect",
-        "+2 Stamina (+20 HP)"
-      ],
-      "req": "Item Level 10"
+        "Feet slot empty"
+      ]
     },
     "ring1": {
       "slot": "Finger",
@@ -911,19 +884,14 @@ window.WOW_SYNCED_DATA = {
     },
     "mainHand": {
       "slot": "Main Hand",
-      "type": "Dagger",
-      "name": "Beholder's Eye",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
+      "type": "Staff / Dagger",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "14 - 26 Damage (11.1 DPS)",
-        "Speed 1.80",
-        "+2 Agility",
-        "+1 Stamina"
-      ],
-      "req": "Requires Level 13",
-      "tip": "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
+        "Empty Main Hand"
+      ]
     },
     "offHand": {
       "slot": "Off-Hand",
@@ -938,23 +906,21 @@ window.WOW_SYNCED_DATA = {
     },
     "ranged": {
       "slot": "Ranged / Wand",
-      "type": "Cloth",
-      "name": "Item #11287",
-      "quality": "uncommon",
-      "source": "Currently Equipped on Levevevice",
+      "type": "Wand",
+      "name": "None Equipped",
+      "quality": "common",
+      "source": "Not yet equipped",
       "armor": null,
       "stats": [
-        "+2 Intellect",
-        "+2 Stamina (+20 HP)"
-      ],
-      "req": "Item Level 10"
+        "Empty Ranged Slot"
+      ]
     }
   },
   "professions": {
     "primary1": {
       "name": "Tailoring",
-      "level": 0,
-      "rank": "Untrained",
+      "level": 43,
+      "rank": "Apprentice",
       "max": 75,
       "icon": "🧵"
     },
@@ -974,11 +940,11 @@ window.WOW_SYNCED_DATA = {
     },
     "cooking": {
       "name": "Cooking",
-      "level": 43,
+      "level": 53,
       "rank": "Apprentice",
       "max": 75,
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-25T01:11:11.196Z"
+  "syncedAt": "2026-11-25T11:59:05.762Z"
 };

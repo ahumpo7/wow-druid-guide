@@ -1650,9 +1650,9 @@ async function executeGameSyncFromSite(silent = false) {
     }
   } catch (_) {}
 
-  // Step 2: Fallback to GitHub Cloud Gist (rate-limited for silent background polls to avoid 60/hr limit)
+  // Step 2: Fallback to GitHub Cloud Gist (rate-limited for silent background polls to stay under 60/hr limit)
   const now = Date.now();
-  if (!syncedResult && (!silent || now - lastGistFetchTime > 45000)) {
+  if (!syncedResult && (!silent || now - lastGistFetchTime > 65000)) {
     lastGistFetchTime = now;
     try {
       const res = await fetch(`${GITHUB_GIST_API_URL}?t=${now}`, {

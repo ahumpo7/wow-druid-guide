@@ -285,12 +285,24 @@ function parseCharactersFromWoWGuide(content) {
   const characters = [];
   if (!content) return characters;
 
-  // Pattern: ["Name"] = { ["name"] = "Name", ["level"] = 12, ["class"] = "WARLOCK", ... }
-  const entryRegex = /\["([^"\]]+)"\]\s*=\s*\{([^}]+(?:\{[^}]*\}[^}]*)*)\}/g;
+  // Use brace-depth scanning so nested ["equip"] = { ... } never truncates ["class"] or ["level"]
+  const keyRegex = /\["([^"\]]+)"\]\s*=\s*\{/g;
   let match;
-  while ((match = entryRegex.exec(content)) !== null) {
+  while ((match = keyRegex.exec(content)) !== null) {
     const rawName = match[1];
-    const block = match[2];
+    // Skip inner keys like ["equip"]
+    if (rawName === 'equip') continue;
+
+    let depth = 1;
+    let idx = match.index + match[0].length;
+    while (idx < content.length && depth > 0) {
+      if (content[idx] === '{') depth++;
+      else if (content[idx] === '}') depth--;
+      idx++;
+    }
+    if (depth !== 0) continue;
+
+    const block = content.slice(match.index + match[0].length, idx - 1);
     const lvlM = block.match(/\["level"\]\s*=\s*(\d+)/);
     const classM = block.match(/\["class"\]\s*=\s*"([^"]+)"/);
     const moneyM = block.match(/\["money"\]\s*=\s*(\d+)/);
@@ -320,6 +332,7 @@ function parseCharactersFromWoWGuide(content) {
         fromWoWGuide: true
       });
     }
+    keyRegex.lastIndex = idx;
   }
 
   return characters;
