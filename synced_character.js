@@ -1,7 +1,7 @@
 /**
  * World of Warcraft: Forever - Client Sync Bridge (Horde Multi-Character Edition)
  * Auto-generated from live WTF game files.
- * Default Character: Warlock (Levevevice, Level 10)
+ * Default Character: Warlock (Levevevice, Level 12)
  * Secondary Character: Rogue (Phana, Level 6)
  * Tertiary Character:  Druid (Muataurgrumm, Level 1)
  */
@@ -13,9 +13,9 @@ window.WOW_SYNCED_DATA = {
       "realm": "WoW Forever (WoW Forever)",
       "class": "Warlock",
       "race": "Horde Undead",
-      "level": 10,
+      "level": 12,
       "money": 0,
-      "updatedAt": 1795576782,
+      "updatedAt": 1795609757,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -236,7 +236,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T12:11:29.241Z"
+      "syncedAt": "2026-11-25T12:45:07.9012759Z"
     },
     "rogue": {
       "name": "Phana",
@@ -491,7 +491,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T12:11:29.243Z"
+      "syncedAt": "2026-11-25T12:47:03.756Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -721,14 +721,14 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T12:11:29.245Z"
+      "syncedAt": "2026-11-25T12:47:03.759Z"
     }
   },
   "name": "Levevevice",
   "realm": "WoW Forever (WoW Forever)",
   "class": "Warlock",
   "race": "Horde Undead",
-  "level": 10,
+  "level": 12,
   "money": 0,
   "liveGear": {
     "head": {
@@ -949,5 +949,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-25T12:11:29.245Z"
+  "syncedAt": "2026-11-25T12:47:03.759Z"
 };

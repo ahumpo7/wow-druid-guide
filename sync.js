@@ -653,7 +653,27 @@ async function runSync() {
 
   // Fetch remote Gist for multi-machine merging
   console.log(`\n[2] Fetching Cloud Gist for multi-machine synchronization...`);
-  const remoteData = await fetchRemoteGist();
+  const gistRemoteData = await fetchRemoteGist();
+  let remoteData = gistRemoteData ? JSON.parse(JSON.stringify(gistRemoteData)) : null;
+  // Also merge newer entries from existing synced_character.json (e.g. pushed via git by Computer B)
+  try {
+    const existingJsonPath = path.join(__dirname, 'synced_character.json');
+    if (fs.existsSync(existingJsonPath)) {
+      const diskData = JSON.parse(fs.readFileSync(existingJsonPath, 'utf8').replace(/^\uFEFF/, ''));
+      if (diskData && diskData.characters) {
+        if (!remoteData) remoteData = { characters: {} };
+        if (!remoteData.characters) remoteData.characters = {};
+        for (const k of ['warlock', 'rogue', 'druid']) {
+          const dChar = diskData.characters[k];
+          const rChar = remoteData.characters[k];
+          if (dChar && (!rChar || (dChar.updatedAt || 0) > (rChar.updatedAt || 0))) {
+            remoteData.characters[k] = dChar;
+          }
+        }
+      }
+    }
+  } catch (_) {}
+
   if (remoteData) {
     const rW = remoteData.characters && remoteData.characters.warlock;
     const rR = remoteData.characters && remoteData.characters.rogue;
@@ -955,7 +975,7 @@ window.WOW_SYNCED_DATA = ${JSON.stringify(unifiedPayload, null, 2)};
     if (!a || !b) return false;
     return a.name === b.name && a.level === b.level && a.money === b.money && (a.updatedAt || 0) === (b.updatedAt || 0);
   }
-  const rChars = remoteData && remoteData.characters ? remoteData.characters : null;
+  const rChars = gistRemoteData && gistRemoteData.characters ? gistRemoteData.characters : null;
   const unchanged = rChars &&
     isCharacterSame(warlockProfile, rChars.warlock) &&
     isCharacterSame(rogueProfile, rChars.rogue) &&

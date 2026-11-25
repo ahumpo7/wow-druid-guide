@@ -194,7 +194,7 @@ if ($activeProf) {
 $gistData.syncedAt = (Get-Date).ToUniversalTime().ToString("o")
 
 $jsonOut = $gistData | ConvertTo-Json -Depth 15
-Set-Content -Path (Join-Path $ScriptDir "synced_character.json") -Value $jsonOut -Encoding UTF8
+[System.IO.File]::WriteAllText((Join-Path $ScriptDir "synced_character.json"), $jsonOut, (New-Object System.Text.UTF8Encoding $false))
 
 # 6. Upload to Cloud Gist
 if (-not $token) {
