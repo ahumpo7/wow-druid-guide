@@ -1,946 +1,946 @@
 {
-  "activeCharacter": "warlock",
-  "characters": {
-    "warlock": {
-      "name": "Levevevice",
-      "realm": "WoW Forever (WoW Forever)",
-      "class": "Warlock",
-      "race": "Horde Undead",
-      "level": 12,
-      "money": 0,
-      "updatedAt": 1795609757,
-      "spec": "Affliction Drain Tank / Wand Spec",
-      "liveGear": {
-        "head": {
-          "slot": "Head",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped (Level 10)",
-          "armor": "0 Armor",
-          "stats": [
-            "Head armor unlocks around level 20+"
-          ]
-        },
-        "neck": {
-          "slot": "Neck",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Neck items start at level 18+"
-          ]
-        },
-        "shoulders": {
-          "slot": "Shoulders",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Shoulders start dropping around level 17-20"
-          ]
-        },
-        "back": {
-          "slot": "Back",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Cloak slot empty"
-          ]
-        },
-        "chest": {
-          "slot": "Chest",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Chest slot empty"
-          ]
-        },
-        "wrists": {
-          "slot": "Wrists",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Wrists slot empty"
-          ]
-        },
-        "hands": {
-          "slot": "Hands",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Hands slot empty"
-          ]
-        },
-        "waist": {
-          "slot": "Waist",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Waist slot empty"
-          ]
-        },
-        "legs": {
-          "slot": "Legs",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Legs slot empty"
-          ]
-        },
-        "feet": {
-          "slot": "Feet",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Feet slot empty"
-          ]
-        },
-        "ring1": {
-          "slot": "Finger",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Rings start around level 14-16"
-          ]
-        },
-        "ring2": {
-          "slot": "Finger",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Rings start around level 14-16"
-          ]
-        },
-        "trinket1": {
-          "slot": "Trinket",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Trinkets start around level 26+"
-          ]
-        },
-        "trinket2": {
-          "slot": "Trinket",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Trinkets start around level 26+"
-          ]
-        },
-        "mainHand": {
-          "slot": "Main Hand",
-          "type": "Staff / Dagger",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Empty Main Hand"
-          ]
-        },
-        "offHand": {
-          "slot": "Off-Hand",
-          "type": "Held in Off-hand",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Empty Off-Hand"
-          ]
-        },
-        "ranged": {
-          "slot": "Ranged / Wand",
-          "type": "Wand",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Empty Ranged Slot"
-          ]
-        }
-      },
-      "professions": {
-        "primary1": {
-          "name": "Tailoring",
-          "level": 43,
-          "rank": "Apprentice",
-          "max": 75,
-          "icon": "🧵"
-        },
-        "primary2": {
-          "name": "Enchanting",
-          "level": 0,
-          "rank": "Untrained",
-          "max": 75,
-          "icon": "✨"
-        },
-        "firstAid": {
-          "name": "First Aid",
-          "level": 0,
-          "rank": "Untrained",
-          "max": 75,
-          "icon": "🩹"
-        },
-        "cooking": {
-          "name": "Cooking",
-          "level": 53,
-          "rank": "Apprentice",
-          "max": 75,
-          "icon": "🍖"
-        }
-      },
-      "syncedAt": "2026-11-25T12:45:07.9012759Z"
-    },
-    "rogue": {
-      "name": "Phana",
-      "realm": "Belfall (WoW Forever)",
-      "class": "Rogue",
-      "race": "Horde Undead",
-      "level": 6,
-      "money": 32,
-      "updatedAt": 0,
-      "spec": "Combat Swords / Daggers",
-      "liveGear": {
-        "head": {
-          "slot": "Head",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped (Level 6)",
-          "armor": "0 Armor",
-          "stats": [
-            "Head armor unlocks around level 20+"
-          ]
-        },
-        "neck": {
-          "slot": "Neck",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Neck items start at level 18+"
-          ]
-        },
-        "shoulders": {
-          "slot": "Shoulders",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Shoulders start dropping around level 17-20"
-          ]
-        },
-        "back": {
-          "slot": "Back",
-          "type": "Cloth",
-          "name": "Grizzly Cape",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "14 Armor",
-          "stats": [
-            "+2 Strength (+4 AP)",
-            "+1 Stamina (+10 HP)"
-          ],
-          "req": "Requires Level 14",
-          "tip": "⭐ Live equipped! Strength cloak."
-        },
-        "chest": {
-          "slot": "Chest",
-          "type": "Leather",
-          "name": "Grizzly Jerkin",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "88 Armor",
-          "stats": [
-            "+6 Strength (+12 AP)",
-            "+5 Stamina (+50 HP)"
-          ],
-          "req": "Requires Level 15",
-          "tip": "⭐ Live equipped! High armor leather chest."
-        },
-        "wrists": {
-          "slot": "Wrists",
-          "type": "Leather",
-          "name": "Black Wolf Bracers",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "31 Armor",
-          "stats": [
-            "+2 Agility (+2 AP)",
-            "+1 Stamina (+10 HP)"
-          ],
-          "req": "Requires Level 10",
-          "tip": "⭐ Live equipped! Agility wristguards."
-        },
-        "hands": {
-          "slot": "Hands",
-          "type": "Leather",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Hands slot empty"
-          ]
-        },
-        "waist": {
-          "slot": "Waist",
-          "type": "Leather",
-          "name": "Troll's Sweatcloth",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "41 Armor",
-          "stats": [
-            "+3 Stamina (+30 HP)",
-            "+2 Spirit"
-          ],
-          "req": "Requires Level 10",
-          "tip": "⭐ Live equipped! Sturdy leather belt."
-        },
-        "legs": {
-          "slot": "Legs",
-          "type": "Leather",
-          "name": "Grassland Pants",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": "64 Armor",
-          "stats": [
-            "+4 Agility (+4 AP / +0.2% Crit)",
-            "+3 Stamina (+30 HP)"
-          ],
-          "req": "Requires Level 12",
-          "tip": "⭐ Live equipped! Agility leather trousers."
-        },
-        "feet": {
-          "slot": "Feet",
-          "type": "Leather",
-          "name": "Soft Leather Boots",
-          "quality": "common",
-          "source": "Currently Equipped on Phana",
-          "armor": "36 Armor",
-          "stats": [
-            "36 Armor (Pure Armor)"
-          ],
-          "req": "Requires Level 5",
-          "tip": "⭐ Live equipped! Basic leather footwear."
-        },
-        "ring1": {
-          "slot": "Finger",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Rings start around level 14-16"
-          ]
-        },
-        "ring2": {
-          "slot": "Finger",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Rings start around level 14-16"
-          ]
-        },
-        "trinket1": {
-          "slot": "Trinket",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Trinkets start around level 26+"
-          ]
-        },
-        "trinket2": {
-          "slot": "Trinket",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Trinkets start around level 26+"
-          ]
-        },
-        "mainHand": {
-          "slot": "Main Hand",
-          "type": "Dagger",
-          "name": "Beholder's Eye",
-          "quality": "uncommon",
-          "source": "Currently Equipped on Phana",
-          "armor": null,
-          "stats": [
-            "14 - 26 Damage (11.1 DPS)",
-            "Speed 1.80",
-            "+2 Agility",
-            "+1 Stamina"
-          ],
-          "req": "Requires Level 13",
-          "tip": "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
-        },
-        "offHand": {
-          "slot": "Off-Hand",
-          "type": "Off-Hand Weapon",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Empty Off-Hand"
-          ]
-        },
-        "ranged": {
-          "slot": "Ranged / Bow",
-          "type": "Bow",
-          "name": "Fine Longbow",
-          "quality": "common",
-          "source": "Currently Equipped on Phana",
-          "armor": null,
-          "stats": [
-            "8 - 15 Damage (4.8 DPS)",
-            "Speed 2.40"
-          ],
-          "req": "Requires Level 8",
-          "tip": "⭐ Live equipped! Starter ranged pull weapon."
-        }
-      },
-      "professions": {
-        "primary1": {
-          "name": "Skinning",
-          "level": 4,
-          "rank": "Apprentice",
-          "max": 75,
-          "icon": "🗡️"
-        },
-        "primary2": {
-          "name": "Leatherworking",
-          "level": 0,
-          "rank": "Untrained",
-          "max": 75,
-          "icon": "✂️"
-        },
-        "firstAid": {
-          "name": "First Aid",
-          "level": 0,
-          "rank": "Untrained",
-          "max": 75,
-          "icon": "🩹"
-        },
-        "cooking": {
-          "name": "Cooking",
-          "level": 53,
-          "rank": "Apprentice",
-          "max": 75,
-          "icon": "🍖"
-        }
-      },
-      "syncedAt": "2026-11-25T12:47:03.756Z"
-    },
-    "druid": {
-      "name": "Muataurgrumm",
-      "realm": "Longwind (WoW Forever)",
-      "class": "Druid",
-      "race": "Horde Tauren",
-      "level": 1,
-      "money": 0,
-      "updatedAt": 0,
-      "spec": "Feral Cat / Bear Leveling",
-      "liveGear": {
-        "head": {
-          "slot": "Head",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped (Level 1)",
-          "armor": "0 Armor",
-          "stats": [
-            "Head armor unlocks around level 20+"
-          ]
-        },
-        "neck": {
-          "slot": "Neck",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Neck items start at level 18+"
-          ]
-        },
-        "shoulders": {
-          "slot": "Shoulders",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Shoulders start dropping around level 17-20"
-          ]
-        },
-        "back": {
-          "slot": "Back",
-          "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Cloak slot empty"
-          ]
-        },
-        "chest": {
-          "slot": "Chest",
-          "type": "Leather",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Chest slot empty"
-          ]
-        },
-        "wrists": {
-          "slot": "Wrists",
-          "type": "Leather",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Wrists slot empty"
-          ]
-        },
-        "hands": {
-          "slot": "Hands",
-          "type": "Leather",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Hands slot empty"
-          ]
-        },
-        "waist": {
-          "slot": "Waist",
-          "type": "Leather",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Waist slot empty"
-          ]
-        },
-        "legs": {
-          "slot": "Legs",
-          "type": "Leather",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Legs slot empty"
-          ]
-        },
-        "feet": {
-          "slot": "Feet",
-          "type": "Leather",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
-          "stats": [
-            "Feet slot empty"
-          ]
-        },
-        "ring1": {
-          "slot": "Finger",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Rings start around level 14-16"
-          ]
-        },
-        "ring2": {
-          "slot": "Finger",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Rings start around level 14-16"
-          ]
-        },
-        "trinket1": {
-          "slot": "Trinket",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Trinkets start around level 26+"
-          ]
-        },
-        "trinket2": {
-          "slot": "Trinket",
-          "type": "Empty",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Trinkets start around level 26+"
-          ]
-        },
-        "mainHand": {
-          "slot": "Main Hand",
-          "type": "Two-Handed Staff / Mace",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Empty Main Hand"
-          ]
-        },
-        "offHand": {
-          "slot": "Off-Hand",
-          "type": "Two-Handed",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Two-Handed weapon equipped"
-          ]
-        },
-        "ranged": {
-          "slot": "Ranged / Relic",
-          "type": "Idol",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": null,
-          "stats": [
-            "Empty Ranged Slot"
-          ]
-        }
-      },
-      "professions": {
-        "primary1": {
-          "name": "Skinning",
-          "level": 1,
-          "rank": "Apprentice",
-          "max": 75,
-          "icon": "🐾"
-        },
-        "primary2": {
-          "name": "Leatherworking",
-          "level": 0,
-          "rank": "Untrained",
-          "max": 75,
-          "icon": "✂️"
-        },
-        "firstAid": {
-          "name": "First Aid",
-          "level": 0,
-          "rank": "Untrained",
-          "max": 75,
-          "icon": "🩹"
-        },
-        "cooking": {
-          "name": "Cooking",
-          "level": 53,
-          "rank": "Apprentice",
-          "max": 75,
-          "icon": "🍖"
-        }
-      },
-      "syncedAt": "2026-11-25T12:47:03.759Z"
-    }
-  },
-  "name": "Levevevice",
-  "realm": "WoW Forever (WoW Forever)",
-  "class": "Warlock",
-  "race": "Horde Undead",
-  "level": 12,
-  "money": 0,
-  "liveGear": {
-    "head": {
-      "slot": "Head",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped (Level 10)",
-      "armor": "0 Armor",
-      "stats": [
-        "Head armor unlocks around level 20+"
-      ]
-    },
-    "neck": {
-      "slot": "Neck",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Neck items start at level 18+"
-      ]
-    },
-    "shoulders": {
-      "slot": "Shoulders",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Shoulders start dropping around level 17-20"
-      ]
-    },
-    "back": {
-      "slot": "Back",
-      "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Cloak slot empty"
-      ]
-    },
-    "chest": {
-      "slot": "Chest",
-      "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Chest slot empty"
-      ]
-    },
-    "wrists": {
-      "slot": "Wrists",
-      "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Wrists slot empty"
-      ]
-    },
-    "hands": {
-      "slot": "Hands",
-      "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Hands slot empty"
-      ]
-    },
-    "waist": {
-      "slot": "Waist",
-      "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Waist slot empty"
-      ]
-    },
-    "legs": {
-      "slot": "Legs",
-      "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Legs slot empty"
-      ]
-    },
-    "feet": {
-      "slot": "Feet",
-      "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
-      "stats": [
-        "Feet slot empty"
-      ]
-    },
-    "ring1": {
-      "slot": "Finger",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Rings start around level 14-16"
-      ]
-    },
-    "ring2": {
-      "slot": "Finger",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Rings start around level 14-16"
-      ]
-    },
-    "trinket1": {
-      "slot": "Trinket",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Trinkets start around level 26+"
-      ]
-    },
-    "trinket2": {
-      "slot": "Trinket",
-      "type": "Empty",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Trinkets start around level 26+"
-      ]
-    },
-    "mainHand": {
-      "slot": "Main Hand",
-      "type": "Staff / Dagger",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Empty Main Hand"
-      ]
-    },
-    "offHand": {
-      "slot": "Off-Hand",
-      "type": "Held in Off-hand",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Empty Off-Hand"
-      ]
-    },
-    "ranged": {
-      "slot": "Ranged / Wand",
-      "type": "Wand",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": null,
-      "stats": [
-        "Empty Ranged Slot"
-      ]
-    }
-  },
-  "professions": {
-    "primary1": {
-      "name": "Tailoring",
-      "level": 43,
-      "rank": "Apprentice",
-      "max": 75,
-      "icon": "🧵"
-    },
-    "primary2": {
-      "name": "Enchanting",
-      "level": 0,
-      "rank": "Untrained",
-      "max": 75,
-      "icon": "✨"
-    },
-    "firstAid": {
-      "name": "First Aid",
-      "level": 0,
-      "rank": "Untrained",
-      "max": 75,
-      "icon": "🩹"
-    },
-    "cooking": {
-      "name": "Cooking",
-      "level": 53,
-      "rank": "Apprentice",
-      "max": 75,
-      "icon": "🍖"
-    }
-  },
-  "syncedAt": "2026-11-25T12:47:03.759Z"
+    "activeCharacter":  "warlock",
+    "characters":  {
+                       "warlock":  {
+                                       "name":  "Levevevice",
+                                       "realm":  "WoW Forever (WoW Forever)",
+                                       "class":  "Warlock",
+                                       "race":  "Horde Undead",
+                                       "level":  13,
+                                       "money":  6368,
+                                       "updatedAt":  1795610804,
+                                       "spec":  "Affliction Drain Tank / Wand Spec",
+                                       "liveGear":  {
+                                                        "head":  {
+                                                                     "slot":  "Head",
+                                                                     "type":  "Empty",
+                                                                     "name":  "None Equipped",
+                                                                     "quality":  "common",
+                                                                     "source":  "Not yet equipped (Level 10)",
+                                                                     "armor":  "0 Armor",
+                                                                     "stats":  [
+                                                                                   "Head armor unlocks around level 20+"
+                                                                               ]
+                                                                 },
+                                                        "neck":  {
+                                                                     "slot":  "Neck",
+                                                                     "type":  "Empty",
+                                                                     "name":  "None Equipped",
+                                                                     "quality":  "common",
+                                                                     "source":  "Not yet equipped",
+                                                                     "armor":  null,
+                                                                     "stats":  [
+                                                                                   "Neck items start at level 18+"
+                                                                               ]
+                                                                 },
+                                                        "shoulders":  {
+                                                                          "slot":  "Shoulders",
+                                                                          "type":  "Empty",
+                                                                          "name":  "None Equipped",
+                                                                          "quality":  "common",
+                                                                          "source":  "Not yet equipped",
+                                                                          "armor":  "0 Armor",
+                                                                          "stats":  [
+                                                                                        "Shoulders start dropping around level 17-20"
+                                                                                    ]
+                                                                      },
+                                                        "back":  {
+                                                                     "slot":  "Back",
+                                                                     "type":  "Cloth",
+                                                                     "name":  "None Equipped",
+                                                                     "quality":  "common",
+                                                                     "source":  "Not yet equipped",
+                                                                     "armor":  "0 Armor",
+                                                                     "stats":  [
+                                                                                   "Cloak slot empty"
+                                                                               ]
+                                                                 },
+                                                        "chest":  {
+                                                                      "slot":  "Chest",
+                                                                      "type":  "Cloth",
+                                                                      "name":  "None Equipped",
+                                                                      "quality":  "common",
+                                                                      "source":  "Not yet equipped",
+                                                                      "armor":  "0 Armor",
+                                                                      "stats":  [
+                                                                                    "Chest slot empty"
+                                                                                ]
+                                                                  },
+                                                        "wrists":  {
+                                                                       "slot":  "Wrists",
+                                                                       "type":  "Cloth",
+                                                                       "name":  "None Equipped",
+                                                                       "quality":  "common",
+                                                                       "source":  "Not yet equipped",
+                                                                       "armor":  "0 Armor",
+                                                                       "stats":  [
+                                                                                     "Wrists slot empty"
+                                                                                 ]
+                                                                   },
+                                                        "hands":  {
+                                                                      "slot":  "Hands",
+                                                                      "type":  "Cloth",
+                                                                      "name":  "None Equipped",
+                                                                      "quality":  "common",
+                                                                      "source":  "Not yet equipped",
+                                                                      "armor":  "0 Armor",
+                                                                      "stats":  [
+                                                                                    "Hands slot empty"
+                                                                                ]
+                                                                  },
+                                                        "waist":  {
+                                                                      "slot":  "Waist",
+                                                                      "type":  "Cloth",
+                                                                      "name":  "None Equipped",
+                                                                      "quality":  "common",
+                                                                      "source":  "Not yet equipped",
+                                                                      "armor":  "0 Armor",
+                                                                      "stats":  [
+                                                                                    "Waist slot empty"
+                                                                                ]
+                                                                  },
+                                                        "legs":  {
+                                                                     "slot":  "Legs",
+                                                                     "type":  "Cloth",
+                                                                     "name":  "None Equipped",
+                                                                     "quality":  "common",
+                                                                     "source":  "Not yet equipped",
+                                                                     "armor":  "0 Armor",
+                                                                     "stats":  [
+                                                                                   "Legs slot empty"
+                                                                               ]
+                                                                 },
+                                                        "feet":  {
+                                                                     "slot":  "Feet",
+                                                                     "type":  "Cloth",
+                                                                     "name":  "None Equipped",
+                                                                     "quality":  "common",
+                                                                     "source":  "Not yet equipped",
+                                                                     "armor":  "0 Armor",
+                                                                     "stats":  [
+                                                                                   "Feet slot empty"
+                                                                               ]
+                                                                 },
+                                                        "ring1":  {
+                                                                      "slot":  "Finger",
+                                                                      "type":  "Empty",
+                                                                      "name":  "None Equipped",
+                                                                      "quality":  "common",
+                                                                      "source":  "Not yet equipped",
+                                                                      "armor":  null,
+                                                                      "stats":  [
+                                                                                    "Rings start around level 14-16"
+                                                                                ]
+                                                                  },
+                                                        "ring2":  {
+                                                                      "slot":  "Finger",
+                                                                      "type":  "Empty",
+                                                                      "name":  "None Equipped",
+                                                                      "quality":  "common",
+                                                                      "source":  "Not yet equipped",
+                                                                      "armor":  null,
+                                                                      "stats":  [
+                                                                                    "Rings start around level 14-16"
+                                                                                ]
+                                                                  },
+                                                        "trinket1":  {
+                                                                         "slot":  "Trinket",
+                                                                         "type":  "Empty",
+                                                                         "name":  "None Equipped",
+                                                                         "quality":  "common",
+                                                                         "source":  "Not yet equipped",
+                                                                         "armor":  null,
+                                                                         "stats":  [
+                                                                                       "Trinkets start around level 26+"
+                                                                                   ]
+                                                                     },
+                                                        "trinket2":  {
+                                                                         "slot":  "Trinket",
+                                                                         "type":  "Empty",
+                                                                         "name":  "None Equipped",
+                                                                         "quality":  "common",
+                                                                         "source":  "Not yet equipped",
+                                                                         "armor":  null,
+                                                                         "stats":  [
+                                                                                       "Trinkets start around level 26+"
+                                                                                   ]
+                                                                     },
+                                                        "mainHand":  {
+                                                                         "slot":  "Main Hand",
+                                                                         "type":  "Staff / Dagger",
+                                                                         "name":  "None Equipped",
+                                                                         "quality":  "common",
+                                                                         "source":  "Not yet equipped",
+                                                                         "armor":  null,
+                                                                         "stats":  [
+                                                                                       "Empty Main Hand"
+                                                                                   ]
+                                                                     },
+                                                        "offHand":  {
+                                                                        "slot":  "Off-Hand",
+                                                                        "type":  "Held in Off-hand",
+                                                                        "name":  "None Equipped",
+                                                                        "quality":  "common",
+                                                                        "source":  "Not yet equipped",
+                                                                        "armor":  null,
+                                                                        "stats":  [
+                                                                                      "Empty Off-Hand"
+                                                                                  ]
+                                                                    },
+                                                        "ranged":  {
+                                                                       "slot":  "Ranged / Wand",
+                                                                       "type":  "Wand",
+                                                                       "name":  "None Equipped",
+                                                                       "quality":  "common",
+                                                                       "source":  "Not yet equipped",
+                                                                       "armor":  null,
+                                                                       "stats":  [
+                                                                                     "Empty Ranged Slot"
+                                                                                 ]
+                                                                   }
+                                                    },
+                                       "professions":  {
+                                                           "primary1":  {
+                                                                            "name":  "Tailoring",
+                                                                            "level":  43,
+                                                                            "rank":  "Apprentice",
+                                                                            "max":  75,
+                                                                            "icon":  "🧵"
+                                                                        },
+                                                           "primary2":  {
+                                                                            "name":  "Enchanting",
+                                                                            "level":  0,
+                                                                            "rank":  "Untrained",
+                                                                            "max":  75,
+                                                                            "icon":  "✨"
+                                                                        },
+                                                           "firstAid":  {
+                                                                            "name":  "First Aid",
+                                                                            "level":  0,
+                                                                            "rank":  "Untrained",
+                                                                            "max":  75,
+                                                                            "icon":  "🩹"
+                                                                        },
+                                                           "cooking":  {
+                                                                           "name":  "Cooking",
+                                                                           "level":  53,
+                                                                           "rank":  "Apprentice",
+                                                                           "max":  75,
+                                                                           "icon":  "🍖"
+                                                                       }
+                                                       },
+                                       "syncedAt":  "2026-11-25T12:47:36.3758349Z"
+                                   },
+                       "rogue":  {
+                                     "name":  "Phana",
+                                     "realm":  "Belfall (WoW Forever)",
+                                     "class":  "Rogue",
+                                     "race":  "Horde Undead",
+                                     "level":  6,
+                                     "money":  32,
+                                     "updatedAt":  0,
+                                     "spec":  "Combat Swords / Daggers",
+                                     "liveGear":  {
+                                                      "head":  {
+                                                                   "slot":  "Head",
+                                                                   "type":  "Empty",
+                                                                   "name":  "None Equipped",
+                                                                   "quality":  "common",
+                                                                   "source":  "Not yet equipped (Level 6)",
+                                                                   "armor":  "0 Armor",
+                                                                   "stats":  [
+                                                                                 "Head armor unlocks around level 20+"
+                                                                             ]
+                                                               },
+                                                      "neck":  {
+                                                                   "slot":  "Neck",
+                                                                   "type":  "Empty",
+                                                                   "name":  "None Equipped",
+                                                                   "quality":  "common",
+                                                                   "source":  "Not yet equipped",
+                                                                   "armor":  null,
+                                                                   "stats":  [
+                                                                                 "Neck items start at level 18+"
+                                                                             ]
+                                                               },
+                                                      "shoulders":  {
+                                                                        "slot":  "Shoulders",
+                                                                        "type":  "Empty",
+                                                                        "name":  "None Equipped",
+                                                                        "quality":  "common",
+                                                                        "source":  "Not yet equipped",
+                                                                        "armor":  "0 Armor",
+                                                                        "stats":  [
+                                                                                      "Shoulders start dropping around level 17-20"
+                                                                                  ]
+                                                                    },
+                                                      "back":  {
+                                                                   "slot":  "Back",
+                                                                   "type":  "Cloth",
+                                                                   "name":  "Grizzly Cape",
+                                                                   "quality":  "uncommon",
+                                                                   "source":  "Currently Equipped on Phana",
+                                                                   "armor":  "14 Armor",
+                                                                   "stats":  [
+                                                                                 "+2 Strength (+4 AP)",
+                                                                                 "+1 Stamina (+10 HP)"
+                                                                             ],
+                                                                   "req":  "Requires Level 14",
+                                                                   "tip":  "⭐ Live equipped! Strength cloak."
+                                                               },
+                                                      "chest":  {
+                                                                    "slot":  "Chest",
+                                                                    "type":  "Leather",
+                                                                    "name":  "Grizzly Jerkin",
+                                                                    "quality":  "uncommon",
+                                                                    "source":  "Currently Equipped on Phana",
+                                                                    "armor":  "88 Armor",
+                                                                    "stats":  [
+                                                                                  "+6 Strength (+12 AP)",
+                                                                                  "+5 Stamina (+50 HP)"
+                                                                              ],
+                                                                    "req":  "Requires Level 15",
+                                                                    "tip":  "⭐ Live equipped! High armor leather chest."
+                                                                },
+                                                      "wrists":  {
+                                                                     "slot":  "Wrists",
+                                                                     "type":  "Leather",
+                                                                     "name":  "Black Wolf Bracers",
+                                                                     "quality":  "uncommon",
+                                                                     "source":  "Currently Equipped on Phana",
+                                                                     "armor":  "31 Armor",
+                                                                     "stats":  [
+                                                                                   "+2 Agility (+2 AP)",
+                                                                                   "+1 Stamina (+10 HP)"
+                                                                               ],
+                                                                     "req":  "Requires Level 10",
+                                                                     "tip":  "⭐ Live equipped! Agility wristguards."
+                                                                 },
+                                                      "hands":  {
+                                                                    "slot":  "Hands",
+                                                                    "type":  "Leather",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  "0 Armor",
+                                                                    "stats":  [
+                                                                                  "Hands slot empty"
+                                                                              ]
+                                                                },
+                                                      "waist":  {
+                                                                    "slot":  "Waist",
+                                                                    "type":  "Leather",
+                                                                    "name":  "Troll\u0027s Sweatcloth",
+                                                                    "quality":  "uncommon",
+                                                                    "source":  "Currently Equipped on Phana",
+                                                                    "armor":  "41 Armor",
+                                                                    "stats":  [
+                                                                                  "+3 Stamina (+30 HP)",
+                                                                                  "+2 Spirit"
+                                                                              ],
+                                                                    "req":  "Requires Level 10",
+                                                                    "tip":  "⭐ Live equipped! Sturdy leather belt."
+                                                                },
+                                                      "legs":  {
+                                                                   "slot":  "Legs",
+                                                                   "type":  "Leather",
+                                                                   "name":  "Grassland Pants",
+                                                                   "quality":  "uncommon",
+                                                                   "source":  "Currently Equipped on Phana",
+                                                                   "armor":  "64 Armor",
+                                                                   "stats":  [
+                                                                                 "+4 Agility (+4 AP / +0.2% Crit)",
+                                                                                 "+3 Stamina (+30 HP)"
+                                                                             ],
+                                                                   "req":  "Requires Level 12",
+                                                                   "tip":  "⭐ Live equipped! Agility leather trousers."
+                                                               },
+                                                      "feet":  {
+                                                                   "slot":  "Feet",
+                                                                   "type":  "Leather",
+                                                                   "name":  "Soft Leather Boots",
+                                                                   "quality":  "common",
+                                                                   "source":  "Currently Equipped on Phana",
+                                                                   "armor":  "36 Armor",
+                                                                   "stats":  [
+                                                                                 "36 Armor (Pure Armor)"
+                                                                             ],
+                                                                   "req":  "Requires Level 5",
+                                                                   "tip":  "⭐ Live equipped! Basic leather footwear."
+                                                               },
+                                                      "ring1":  {
+                                                                    "slot":  "Finger",
+                                                                    "type":  "Empty",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  null,
+                                                                    "stats":  [
+                                                                                  "Rings start around level 14-16"
+                                                                              ]
+                                                                },
+                                                      "ring2":  {
+                                                                    "slot":  "Finger",
+                                                                    "type":  "Empty",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  null,
+                                                                    "stats":  [
+                                                                                  "Rings start around level 14-16"
+                                                                              ]
+                                                                },
+                                                      "trinket1":  {
+                                                                       "slot":  "Trinket",
+                                                                       "type":  "Empty",
+                                                                       "name":  "None Equipped",
+                                                                       "quality":  "common",
+                                                                       "source":  "Not yet equipped",
+                                                                       "armor":  null,
+                                                                       "stats":  [
+                                                                                     "Trinkets start around level 26+"
+                                                                                 ]
+                                                                   },
+                                                      "trinket2":  {
+                                                                       "slot":  "Trinket",
+                                                                       "type":  "Empty",
+                                                                       "name":  "None Equipped",
+                                                                       "quality":  "common",
+                                                                       "source":  "Not yet equipped",
+                                                                       "armor":  null,
+                                                                       "stats":  [
+                                                                                     "Trinkets start around level 26+"
+                                                                                 ]
+                                                                   },
+                                                      "mainHand":  {
+                                                                       "slot":  "Main Hand",
+                                                                       "type":  "Dagger",
+                                                                       "name":  "Beholder\u0027s Eye",
+                                                                       "quality":  "uncommon",
+                                                                       "source":  "Currently Equipped on Phana",
+                                                                       "armor":  null,
+                                                                       "stats":  [
+                                                                                     "14 - 26 Damage (11.1 DPS)",
+                                                                                     "Speed 1.80",
+                                                                                     "+2 Agility",
+                                                                                     "+1 Stamina"
+                                                                                 ],
+                                                                       "req":  "Requires Level 13",
+                                                                       "tip":  "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
+                                                                   },
+                                                      "offHand":  {
+                                                                      "slot":  "Off-Hand",
+                                                                      "type":  "Off-Hand Weapon",
+                                                                      "name":  "None Equipped",
+                                                                      "quality":  "common",
+                                                                      "source":  "Not yet equipped",
+                                                                      "armor":  null,
+                                                                      "stats":  [
+                                                                                    "Empty Off-Hand"
+                                                                                ]
+                                                                  },
+                                                      "ranged":  {
+                                                                     "slot":  "Ranged / Bow",
+                                                                     "type":  "Bow",
+                                                                     "name":  "Fine Longbow",
+                                                                     "quality":  "common",
+                                                                     "source":  "Currently Equipped on Phana",
+                                                                     "armor":  null,
+                                                                     "stats":  [
+                                                                                   "8 - 15 Damage (4.8 DPS)",
+                                                                                   "Speed 2.40"
+                                                                               ],
+                                                                     "req":  "Requires Level 8",
+                                                                     "tip":  "⭐ Live equipped! Starter ranged pull weapon."
+                                                                 }
+                                                  },
+                                     "professions":  {
+                                                         "primary1":  {
+                                                                          "name":  "Skinning",
+                                                                          "level":  4,
+                                                                          "rank":  "Apprentice",
+                                                                          "max":  75,
+                                                                          "icon":  "🗡️"
+                                                                      },
+                                                         "primary2":  {
+                                                                          "name":  "Leatherworking",
+                                                                          "level":  0,
+                                                                          "rank":  "Untrained",
+                                                                          "max":  75,
+                                                                          "icon":  "✂️"
+                                                                      },
+                                                         "firstAid":  {
+                                                                          "name":  "First Aid",
+                                                                          "level":  0,
+                                                                          "rank":  "Untrained",
+                                                                          "max":  75,
+                                                                          "icon":  "🩹"
+                                                                      },
+                                                         "cooking":  {
+                                                                         "name":  "Cooking",
+                                                                         "level":  53,
+                                                                         "rank":  "Apprentice",
+                                                                         "max":  75,
+                                                                         "icon":  "🍖"
+                                                                     }
+                                                     },
+                                     "syncedAt":  "2026-11-25T12:47:03.756Z"
+                                 },
+                       "druid":  {
+                                     "name":  "Muataurgrumm",
+                                     "realm":  "Longwind (WoW Forever)",
+                                     "class":  "Druid",
+                                     "race":  "Horde Tauren",
+                                     "level":  1,
+                                     "money":  0,
+                                     "updatedAt":  0,
+                                     "spec":  "Feral Cat / Bear Leveling",
+                                     "liveGear":  {
+                                                      "head":  {
+                                                                   "slot":  "Head",
+                                                                   "type":  "Empty",
+                                                                   "name":  "None Equipped",
+                                                                   "quality":  "common",
+                                                                   "source":  "Not yet equipped (Level 1)",
+                                                                   "armor":  "0 Armor",
+                                                                   "stats":  [
+                                                                                 "Head armor unlocks around level 20+"
+                                                                             ]
+                                                               },
+                                                      "neck":  {
+                                                                   "slot":  "Neck",
+                                                                   "type":  "Empty",
+                                                                   "name":  "None Equipped",
+                                                                   "quality":  "common",
+                                                                   "source":  "Not yet equipped",
+                                                                   "armor":  null,
+                                                                   "stats":  [
+                                                                                 "Neck items start at level 18+"
+                                                                             ]
+                                                               },
+                                                      "shoulders":  {
+                                                                        "slot":  "Shoulders",
+                                                                        "type":  "Empty",
+                                                                        "name":  "None Equipped",
+                                                                        "quality":  "common",
+                                                                        "source":  "Not yet equipped",
+                                                                        "armor":  "0 Armor",
+                                                                        "stats":  [
+                                                                                      "Shoulders start dropping around level 17-20"
+                                                                                  ]
+                                                                    },
+                                                      "back":  {
+                                                                   "slot":  "Back",
+                                                                   "type":  "Cloth",
+                                                                   "name":  "None Equipped",
+                                                                   "quality":  "common",
+                                                                   "source":  "Not yet equipped",
+                                                                   "armor":  "0 Armor",
+                                                                   "stats":  [
+                                                                                 "Cloak slot empty"
+                                                                             ]
+                                                               },
+                                                      "chest":  {
+                                                                    "slot":  "Chest",
+                                                                    "type":  "Leather",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  "0 Armor",
+                                                                    "stats":  [
+                                                                                  "Chest slot empty"
+                                                                              ]
+                                                                },
+                                                      "wrists":  {
+                                                                     "slot":  "Wrists",
+                                                                     "type":  "Leather",
+                                                                     "name":  "None Equipped",
+                                                                     "quality":  "common",
+                                                                     "source":  "Not yet equipped",
+                                                                     "armor":  "0 Armor",
+                                                                     "stats":  [
+                                                                                   "Wrists slot empty"
+                                                                               ]
+                                                                 },
+                                                      "hands":  {
+                                                                    "slot":  "Hands",
+                                                                    "type":  "Leather",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  "0 Armor",
+                                                                    "stats":  [
+                                                                                  "Hands slot empty"
+                                                                              ]
+                                                                },
+                                                      "waist":  {
+                                                                    "slot":  "Waist",
+                                                                    "type":  "Leather",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  "0 Armor",
+                                                                    "stats":  [
+                                                                                  "Waist slot empty"
+                                                                              ]
+                                                                },
+                                                      "legs":  {
+                                                                   "slot":  "Legs",
+                                                                   "type":  "Leather",
+                                                                   "name":  "None Equipped",
+                                                                   "quality":  "common",
+                                                                   "source":  "Not yet equipped",
+                                                                   "armor":  "0 Armor",
+                                                                   "stats":  [
+                                                                                 "Legs slot empty"
+                                                                             ]
+                                                               },
+                                                      "feet":  {
+                                                                   "slot":  "Feet",
+                                                                   "type":  "Leather",
+                                                                   "name":  "None Equipped",
+                                                                   "quality":  "common",
+                                                                   "source":  "Not yet equipped",
+                                                                   "armor":  "0 Armor",
+                                                                   "stats":  [
+                                                                                 "Feet slot empty"
+                                                                             ]
+                                                               },
+                                                      "ring1":  {
+                                                                    "slot":  "Finger",
+                                                                    "type":  "Empty",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  null,
+                                                                    "stats":  [
+                                                                                  "Rings start around level 14-16"
+                                                                              ]
+                                                                },
+                                                      "ring2":  {
+                                                                    "slot":  "Finger",
+                                                                    "type":  "Empty",
+                                                                    "name":  "None Equipped",
+                                                                    "quality":  "common",
+                                                                    "source":  "Not yet equipped",
+                                                                    "armor":  null,
+                                                                    "stats":  [
+                                                                                  "Rings start around level 14-16"
+                                                                              ]
+                                                                },
+                                                      "trinket1":  {
+                                                                       "slot":  "Trinket",
+                                                                       "type":  "Empty",
+                                                                       "name":  "None Equipped",
+                                                                       "quality":  "common",
+                                                                       "source":  "Not yet equipped",
+                                                                       "armor":  null,
+                                                                       "stats":  [
+                                                                                     "Trinkets start around level 26+"
+                                                                                 ]
+                                                                   },
+                                                      "trinket2":  {
+                                                                       "slot":  "Trinket",
+                                                                       "type":  "Empty",
+                                                                       "name":  "None Equipped",
+                                                                       "quality":  "common",
+                                                                       "source":  "Not yet equipped",
+                                                                       "armor":  null,
+                                                                       "stats":  [
+                                                                                     "Trinkets start around level 26+"
+                                                                                 ]
+                                                                   },
+                                                      "mainHand":  {
+                                                                       "slot":  "Main Hand",
+                                                                       "type":  "Two-Handed Staff / Mace",
+                                                                       "name":  "None Equipped",
+                                                                       "quality":  "common",
+                                                                       "source":  "Not yet equipped",
+                                                                       "armor":  null,
+                                                                       "stats":  [
+                                                                                     "Empty Main Hand"
+                                                                                 ]
+                                                                   },
+                                                      "offHand":  {
+                                                                      "slot":  "Off-Hand",
+                                                                      "type":  "Two-Handed",
+                                                                      "name":  "None Equipped",
+                                                                      "quality":  "common",
+                                                                      "source":  "Not yet equipped",
+                                                                      "armor":  null,
+                                                                      "stats":  [
+                                                                                    "Two-Handed weapon equipped"
+                                                                                ]
+                                                                  },
+                                                      "ranged":  {
+                                                                     "slot":  "Ranged / Relic",
+                                                                     "type":  "Idol",
+                                                                     "name":  "None Equipped",
+                                                                     "quality":  "common",
+                                                                     "source":  "Not yet equipped",
+                                                                     "armor":  null,
+                                                                     "stats":  [
+                                                                                   "Empty Ranged Slot"
+                                                                               ]
+                                                                 }
+                                                  },
+                                     "professions":  {
+                                                         "primary1":  {
+                                                                          "name":  "Skinning",
+                                                                          "level":  1,
+                                                                          "rank":  "Apprentice",
+                                                                          "max":  75,
+                                                                          "icon":  "🐾"
+                                                                      },
+                                                         "primary2":  {
+                                                                          "name":  "Leatherworking",
+                                                                          "level":  0,
+                                                                          "rank":  "Untrained",
+                                                                          "max":  75,
+                                                                          "icon":  "✂️"
+                                                                      },
+                                                         "firstAid":  {
+                                                                          "name":  "First Aid",
+                                                                          "level":  0,
+                                                                          "rank":  "Untrained",
+                                                                          "max":  75,
+                                                                          "icon":  "🩹"
+                                                                      },
+                                                         "cooking":  {
+                                                                         "name":  "Cooking",
+                                                                         "level":  53,
+                                                                         "rank":  "Apprentice",
+                                                                         "max":  75,
+                                                                         "icon":  "🍖"
+                                                                     }
+                                                     },
+                                     "syncedAt":  "2026-11-25T12:47:03.759Z"
+                                 }
+                   },
+    "name":  "Levevevice",
+    "realm":  "WoW Forever (WoW Forever)",
+    "class":  "Warlock",
+    "race":  "Horde Undead",
+    "level":  13,
+    "money":  6368,
+    "liveGear":  {
+                     "head":  {
+                                  "slot":  "Head",
+                                  "type":  "Empty",
+                                  "name":  "None Equipped",
+                                  "quality":  "common",
+                                  "source":  "Not yet equipped (Level 10)",
+                                  "armor":  "0 Armor",
+                                  "stats":  [
+                                                "Head armor unlocks around level 20+"
+                                            ]
+                              },
+                     "neck":  {
+                                  "slot":  "Neck",
+                                  "type":  "Empty",
+                                  "name":  "None Equipped",
+                                  "quality":  "common",
+                                  "source":  "Not yet equipped",
+                                  "armor":  null,
+                                  "stats":  [
+                                                "Neck items start at level 18+"
+                                            ]
+                              },
+                     "shoulders":  {
+                                       "slot":  "Shoulders",
+                                       "type":  "Empty",
+                                       "name":  "None Equipped",
+                                       "quality":  "common",
+                                       "source":  "Not yet equipped",
+                                       "armor":  "0 Armor",
+                                       "stats":  [
+                                                     "Shoulders start dropping around level 17-20"
+                                                 ]
+                                   },
+                     "back":  {
+                                  "slot":  "Back",
+                                  "type":  "Cloth",
+                                  "name":  "None Equipped",
+                                  "quality":  "common",
+                                  "source":  "Not yet equipped",
+                                  "armor":  "0 Armor",
+                                  "stats":  [
+                                                "Cloak slot empty"
+                                            ]
+                              },
+                     "chest":  {
+                                   "slot":  "Chest",
+                                   "type":  "Cloth",
+                                   "name":  "None Equipped",
+                                   "quality":  "common",
+                                   "source":  "Not yet equipped",
+                                   "armor":  "0 Armor",
+                                   "stats":  [
+                                                 "Chest slot empty"
+                                             ]
+                               },
+                     "wrists":  {
+                                    "slot":  "Wrists",
+                                    "type":  "Cloth",
+                                    "name":  "None Equipped",
+                                    "quality":  "common",
+                                    "source":  "Not yet equipped",
+                                    "armor":  "0 Armor",
+                                    "stats":  [
+                                                  "Wrists slot empty"
+                                              ]
+                                },
+                     "hands":  {
+                                   "slot":  "Hands",
+                                   "type":  "Cloth",
+                                   "name":  "None Equipped",
+                                   "quality":  "common",
+                                   "source":  "Not yet equipped",
+                                   "armor":  "0 Armor",
+                                   "stats":  [
+                                                 "Hands slot empty"
+                                             ]
+                               },
+                     "waist":  {
+                                   "slot":  "Waist",
+                                   "type":  "Cloth",
+                                   "name":  "None Equipped",
+                                   "quality":  "common",
+                                   "source":  "Not yet equipped",
+                                   "armor":  "0 Armor",
+                                   "stats":  [
+                                                 "Waist slot empty"
+                                             ]
+                               },
+                     "legs":  {
+                                  "slot":  "Legs",
+                                  "type":  "Cloth",
+                                  "name":  "None Equipped",
+                                  "quality":  "common",
+                                  "source":  "Not yet equipped",
+                                  "armor":  "0 Armor",
+                                  "stats":  [
+                                                "Legs slot empty"
+                                            ]
+                              },
+                     "feet":  {
+                                  "slot":  "Feet",
+                                  "type":  "Cloth",
+                                  "name":  "None Equipped",
+                                  "quality":  "common",
+                                  "source":  "Not yet equipped",
+                                  "armor":  "0 Armor",
+                                  "stats":  [
+                                                "Feet slot empty"
+                                            ]
+                              },
+                     "ring1":  {
+                                   "slot":  "Finger",
+                                   "type":  "Empty",
+                                   "name":  "None Equipped",
+                                   "quality":  "common",
+                                   "source":  "Not yet equipped",
+                                   "armor":  null,
+                                   "stats":  [
+                                                 "Rings start around level 14-16"
+                                             ]
+                               },
+                     "ring2":  {
+                                   "slot":  "Finger",
+                                   "type":  "Empty",
+                                   "name":  "None Equipped",
+                                   "quality":  "common",
+                                   "source":  "Not yet equipped",
+                                   "armor":  null,
+                                   "stats":  [
+                                                 "Rings start around level 14-16"
+                                             ]
+                               },
+                     "trinket1":  {
+                                      "slot":  "Trinket",
+                                      "type":  "Empty",
+                                      "name":  "None Equipped",
+                                      "quality":  "common",
+                                      "source":  "Not yet equipped",
+                                      "armor":  null,
+                                      "stats":  [
+                                                    "Trinkets start around level 26+"
+                                                ]
+                                  },
+                     "trinket2":  {
+                                      "slot":  "Trinket",
+                                      "type":  "Empty",
+                                      "name":  "None Equipped",
+                                      "quality":  "common",
+                                      "source":  "Not yet equipped",
+                                      "armor":  null,
+                                      "stats":  [
+                                                    "Trinkets start around level 26+"
+                                                ]
+                                  },
+                     "mainHand":  {
+                                      "slot":  "Main Hand",
+                                      "type":  "Staff / Dagger",
+                                      "name":  "None Equipped",
+                                      "quality":  "common",
+                                      "source":  "Not yet equipped",
+                                      "armor":  null,
+                                      "stats":  [
+                                                    "Empty Main Hand"
+                                                ]
+                                  },
+                     "offHand":  {
+                                     "slot":  "Off-Hand",
+                                     "type":  "Held in Off-hand",
+                                     "name":  "None Equipped",
+                                     "quality":  "common",
+                                     "source":  "Not yet equipped",
+                                     "armor":  null,
+                                     "stats":  [
+                                                   "Empty Off-Hand"
+                                               ]
+                                 },
+                     "ranged":  {
+                                    "slot":  "Ranged / Wand",
+                                    "type":  "Wand",
+                                    "name":  "None Equipped",
+                                    "quality":  "common",
+                                    "source":  "Not yet equipped",
+                                    "armor":  null,
+                                    "stats":  [
+                                                  "Empty Ranged Slot"
+                                              ]
+                                }
+                 },
+    "professions":  {
+                        "primary1":  {
+                                         "name":  "Tailoring",
+                                         "level":  43,
+                                         "rank":  "Apprentice",
+                                         "max":  75,
+                                         "icon":  "🧵"
+                                     },
+                        "primary2":  {
+                                         "name":  "Enchanting",
+                                         "level":  0,
+                                         "rank":  "Untrained",
+                                         "max":  75,
+                                         "icon":  "✨"
+                                     },
+                        "firstAid":  {
+                                         "name":  "First Aid",
+                                         "level":  0,
+                                         "rank":  "Untrained",
+                                         "max":  75,
+                                         "icon":  "🩹"
+                                     },
+                        "cooking":  {
+                                        "name":  "Cooking",
+                                        "level":  53,
+                                        "rank":  "Apprentice",
+                                        "max":  75,
+                                        "icon":  "🍖"
+                                    }
+                    },
+    "syncedAt":  "2026-11-25T12:47:36.3803441Z"
 }
