@@ -1,5 +1,5 @@
 # WoW Forever - Zero-Dependency PowerShell Live Syncer (for PCs without Node.js)
-$ErrorActionPreference = "SilentlyContinue"
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 $GistId = "584b8b9450a8b85003934d27acfa7c7c"
 $ScriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $StateFile = Join-Path $ScriptDir ".ps_sync_state.json"
@@ -7,21 +7,25 @@ $StateFile = Join-Path $ScriptDir ".ps_sync_state.json"
 function Get-GitHubToken {
     $tokenFile = Join-Path $ScriptDir "github_token.txt"
     if (Test-Path $tokenFile) {
-        $t = (Get-Content $tokenFile -Raw).Trim()
+        $t = (Get-Content $tokenFile -Raw -ErrorAction SilentlyContinue).Trim()
         if ($t) { return $t }
     }
     if (Get-Command gh -ErrorAction SilentlyContinue) {
-        $t = (gh auth token 2>$null)
-        if ($t) { return $t.Trim() }
+        try {
+            $t = (gh auth token 2>$null)
+            if ($t) { return $t.Trim() }
+        } catch {}
     }
     if (Get-Command git -ErrorAction SilentlyContinue) {
-        $credInput = "protocol=https`nhost=github.com`n`n"
-        $credOut = $credInput | git credential fill 2>$null
-        foreach ($line in $credOut) {
-            if ($line -match "^password=(.+)$") {
-                return $Matches[1].Trim()
+        try {
+            $credInput = "protocol=https`nhost=github.com`n`n"
+            $credOut = $credInput | git credential fill 2>$null
+            foreach ($line in $credOut) {
+                if ($line -match "^password=(.+)$") {
+                    return $Matches[1].Trim()
+                }
             }
-        }
+        } catch {}
     }
     return $null
 }
@@ -34,7 +38,9 @@ $possibleRoots = @(
     "E:\World of Warcraft\_forever_\WTF\Account",
     "C:\World of Warcraft\_forever_\WTF\Account",
     "C:\Games\World of Warcraft\_forever_\WTF\Account",
-    "D:\Games\World of Warcraft\_forever_\WTF\Account"
+    "D:\Games\World of Warcraft\_forever_\WTF\Account",
+    (Join-Path $env:USERPROFILE "Desktop\World of Warcraft\_forever_\WTF\Account"),
+    (Join-Path $env:USERPROFILE "Games\World of Warcraft\_forever_\WTF\Account")
 )
 
 $wgFiles = @()
@@ -46,6 +52,7 @@ foreach ($root in $possibleRoots) {
 }
 
 if ($wgFiles.Count -eq 0) {
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] No WoWGuide.lua found in WTF\Account. Type /reload in-game on this PC first." -ForegroundColor Yellow
     exit 0
 }
 
@@ -71,17 +78,18 @@ foreach ($f in $wgFiles) {
 }
 
 if (-not $changed) {
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [OK] Watching $($wgFiles.Count) WoWGuide.lua file(s) - no new /reload yet." -ForegroundColor DarkGray
     exit 0
 }
 
 # 3. Parse characters from WoWGuide.lua using brace-depth scanning
 $parsedChars = @()
 foreach ($f in $wgFiles) {
-    $content = Get-Content -Path $f.FullName -Raw
+    $content = Get-Content -Path $f.FullName -Raw -ErrorAction SilentlyContinue
     if (-not $content) { continue }
 
-    $matches = [regex]::Matches($content, '\["([^"\]]+)"\]\s*=\s*\{')
-    foreach ($m in $matches) {
+    $regexMatches = [regex]::Matches($content, '\["([^"\]]+)"\]\s*=\s*\{')
+    foreach ($m in $regexMatches) {
         $charName = $m.Groups[1].Value
         if ($charName -eq "equip") { continue }
 
@@ -116,6 +124,7 @@ foreach ($f in $wgFiles) {
 }
 
 if ($parsedChars.Count -eq 0) {
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] WoWGuide.lua found, but no characters parsed yet." -ForegroundColor Yellow
     $newState | ConvertTo-Json | Set-Content -Path $StateFile -Encoding UTF8
     exit 0
 }
@@ -132,11 +141,14 @@ try {
         $gistData = $gistResp.files."synced_character.json".content | ConvertFrom-Json
     }
 } catch {
-    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] Could not read Cloud Gist: $($_.Exception.Message)" -ForegroundColor Yellow
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] Could not read Cloud Gist: $($_.Exception.Message)" -ForegroundColor Red
     exit 0
 }
 
-if (-not $gistData) { exit 0 }
+if (-not $gistData) {
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] Cloud Gist returned empty synced_character.json." -ForegroundColor Red
+    exit 0
+}
 
 # 5. Merge parsed characters into Gist payload if newer
 $updatedAny = $false
@@ -161,6 +173,8 @@ foreach ($c in $parsedChars) {
         }
         $updatedAny = $true
         Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [SYNC] Detected $($c.classTitle) $($c.name) (Lvl $($c.level)) from WoWGuide.lua!" -ForegroundColor Green
+    } else {
+        Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [OK] Local $($c.name) (updatedAt=$($c.updatedAt)) is older than Cloud Gist ($remoteUpd)." -ForegroundColor Gray
     }
 }
 
@@ -184,7 +198,7 @@ Set-Content -Path (Join-Path $ScriptDir "synced_character.json") -Value $jsonOut
 
 # 6. Upload to Cloud Gist
 if (-not $token) {
-    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] No GitHub token found on this PC (gh / git credential / github_token.txt)." -ForegroundColor Red
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [ERROR] No GitHub token found on this PC! Put your GitHub token in github_token.txt inside $ScriptDir" -ForegroundColor Red
     exit 1
 }
 
@@ -198,5 +212,5 @@ try {
     $newState | ConvertTo-Json | Set-Content -Path $StateFile -Encoding UTF8
     Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [OK] Cloud Gist synced from this PC!" -ForegroundColor Cyan
 } catch {
-    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [!] Gist upload failed: $($_.Exception.Message)" -ForegroundColor Red
+    Write-Host "[$(Get-Date -Format 'HH:mm:ss')] [ERROR] Gist upload failed: $($_.Exception.Message)" -ForegroundColor Red
 }
