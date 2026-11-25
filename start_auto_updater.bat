@@ -14,17 +14,17 @@ if %errorlevel% neq 0 (
     git reset --hard origin/main --quiet 2>nul
 )
 
-netstat -ano | findstr ":3888 " | findstr "LISTENING" >nul 2>&1
-if %errorlevel% neq 0 (
-    where node >nul 2>nul
-    if %errorlevel% equ 0 (
+where node >nul 2>nul
+if %errorlevel% equ 0 (
+    netstat -ano | findstr ":3888 " | findstr "LISTENING" >nul 2>&1
+    if %errorlevel% neq 0 (
         echo [%TIME%] Starting Live Sync Companion ^(server.js^)...
         start "" /b cmd /c "node "%~dp0server.js" > "%~dp0server.log" 2>&1"
     ) else (
-        echo [%TIME%] [ERROR] Node.js is NOT installed on this PC! Install Node.js from https://nodejs.org/ to enable live /reload syncing.
+        echo [%TIME%] [OK] Auto-Updater and Live Sync Companion active ^(Node.js port 3888^).
     )
 ) else (
-    echo [%TIME%] [OK] Auto-Updater and Live Sync Companion active ^(port 3888^).
+    powershell -NoProfile -ExecutionPolicy Bypass -File "%~dp0sync_live.ps1"
 )
 
 timeout /t 15 /nobreak >nul

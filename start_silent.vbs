@@ -1,5 +1,5 @@
 Set WshShell = CreateObject("WScript.Shell")
 Set fso = CreateObject("Scripting.FileSystemObject")
 strDir = fso.GetParentFolderName(WScript.ScriptFullName)
-cmd = "node """ & strDir & "\server.js"""
-WshShell.Run cmd, 0, False
+batPath = Chr(34) & strDir & "\start_auto_updater.bat" & Chr(34)
+WshShell.Run "cmd.exe /c " & batPath, 0, False

@@ -4,3 +4,4 @@ node_modules/
 Thumbs.db
 github_token.txt
 wow_path.txt
+.ps_sync_state.json
