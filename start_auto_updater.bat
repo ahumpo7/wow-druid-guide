@@ -1,5 +1,5 @@
 @echo off
-title WoW Forever - Auto-Updater & Live Sync Launcher
+title WoW Forever - Auto-Updater and Live Sync Launcher
 cd /d "%~dp0"
 
 :loop
