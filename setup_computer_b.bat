@@ -10,7 +10,7 @@ echo [1/4] Pulling latest files from GitHub...
 git checkout -- synced_character.js synced_character.json 2>nul
 git pull origin main --quiet
 
-echo [2/4] Checking GitHub Cloud Sync permission (gist scope)...
+echo [2/4] Verifying GitHub Gist write access (owner: ahumpo7)...
 powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; " ^
   "$dir = '%~dp0'.TrimEnd('\'); " ^
@@ -19,15 +19,21 @@ powershell -NoProfile -ExecutionPolicy Bypass -Command ^
   "if ((Test-Path $tf) -and ((Get-Content $tf -Raw).Trim().Length -gt 10)) { $tok = (Get-Content $tf -Raw).Trim() }; " ^
   "if (-not $tok -and (Get-Command gh -ErrorAction SilentlyContinue)) { $t = (gh auth token 2>$null); if ($t) { $tok = $t.Trim() } }; " ^
   "if (-not $tok -and (Get-Command git -ErrorAction SilentlyContinue)) { $c = \"protocol=https`nhost=github.com`n`n\" | git credential fill 2>$null; foreach ($l in $c) { if ($l -match '^password=(.+)$') { $tok = $Matches[1].Trim() } } }; " ^
-  "$hasGist = $false; " ^
-  "if ($tok) { try { $r = Invoke-WebRequest -Uri 'https://api.github.com/user' -Headers @{Authorization=\"Bearer $tok\";'User-Agent'='WoWGuide'} -UseBasicParsing; $sc = $r.Headers['X-OAuth-Scopes']; if ($sc -match 'gist' -or (Test-Path $tf)) { $hasGist = $true } } catch {} }; " ^
-  "if ($hasGist) { Write-Host '[OK] GitHub authentication with gist access is ready!' -ForegroundColor Green } " ^
+  "$valid = $false; " ^
+  "if ($tok) { try { " ^
+  "  $r = Invoke-WebRequest -Uri 'https://api.github.com/user' -Headers @{Authorization=\"Bearer $tok\";'User-Agent'='WoWGuide'} -UseBasicParsing; " ^
+  "  $u = ($r.Content | ConvertFrom-Json).login; " ^
+  "  $sc = $r.Headers['X-OAuth-Scopes']; " ^
+  "  Write-Host \"    Detected GitHub user: $u (scopes: $sc)\" -ForegroundColor Gray; " ^
+  "  if ($u -eq 'ahumpo7' -and ($sc -match 'gist' -or (Test-Path $tf))) { $valid = $true } " ^
+  "} catch {} }; " ^
+  "if ($valid) { Write-Host '[OK] Authenticated as ahumpo7 with gist access!' -ForegroundColor Green } " ^
   "else { " ^
   "  Write-Host '' ; " ^
-  "  Write-Host '[!] Your Git login on this PC does not have gist upload permission.' -ForegroundColor Yellow ; " ^
-  "  Write-Host '    Opening GitHub token page (gist already checked) in your browser...' -ForegroundColor Cyan ; " ^
+  "  Write-Host '[!] This PC needs a GitHub token from account ahumpo7 (with gist scope).' -ForegroundColor Yellow ; " ^
+  "  Write-Host '    Opening GitHub token page in your browser...' -ForegroundColor Cyan ; " ^
   "  Start-Process 'https://github.com/settings/tokens/new?scopes=gist&description=WoWGuideSync' ; " ^
-  "  $newTok = Read-Host '    Click Generate token on GitHub, paste it here, and press Enter' ; " ^
+  "  $newTok = Read-Host '    Log in as ahumpo7, click Generate token, paste it here, and press Enter' ; " ^
   "  if ($newTok) { Set-Content -Path $tf -Value $newTok.Trim() -Encoding ASCII; Write-Host '[OK] Saved github_token.txt!' -ForegroundColor Green } " ^
   "}"
 
