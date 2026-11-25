@@ -123,11 +123,15 @@ setInterval(() => {
   executeSync('Periodic Cloud & Game Check').catch(() => {});
 }, 120000);
 
-// B) Background Addon Updater (every 60s): pulls latest code from GitHub origin/main
+// B) Background Addon & Sync Updater (every 60s): pulls latest code/syncs from GitHub origin/main
 setInterval(() => {
-  exec('git fetch origin main --quiet && git pull origin main --quiet', { cwd: __dirname }, (err) => {
-    if (!err) {
-      // If pull succeeds, addon files update seamlessly
+  exec('git fetch origin main --quiet && git rev-list HEAD..origin/main --count', { cwd: __dirname }, (err, stdout) => {
+    if (!err && parseInt(stdout.trim(), 10) > 0) {
+      exec('git checkout -- synced_character.js synced_character.json 2>nul & git pull origin main --quiet', { cwd: __dirname }, (pullErr) => {
+        if (!pullErr) {
+          executeSync('Post-Pull Refresh').catch(() => {});
+        }
+      });
     }
   });
 }, 60000);

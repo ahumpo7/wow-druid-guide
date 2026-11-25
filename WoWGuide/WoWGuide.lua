@@ -935,7 +935,7 @@ end
 -- ====================================================================
 function WoWGuide:ShowSyncPopup()
   local ok, err = pcall(function()
-    WoWGuide:SaveCharacterSnapshot()
+    WoWGuide:SaveCharacterSnapshot(liveLevel)
     local lvl = UnitLevel("player") or 1
     local name = UnitName("player") or "Player"
     local code = string.format("%s:%d", name, lvl)
@@ -999,9 +999,9 @@ end
 -- ====================================================================
 -- Character Snapshot Persistence
 -- ====================================================================
-function WoWGuide:SaveCharacterSnapshot()
+function WoWGuide:SaveCharacterSnapshot(overrideLvl)
   local name = UnitName("player") or "Player"
-  local lvl = UnitLevel("player") or 1
+  local lvl = overrideLvl or UnitLevel("player") or 1
   local classToken = DetectPlayerClass()
   local money = GetMoney()
 
@@ -1052,7 +1052,7 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
     selectedClass = playerClass
 
     CreateMinimapButton()
-    WoWGuide:SaveCharacterSnapshot()
+    WoWGuide:SaveCharacterSnapshot(liveLevel)
 
     if DEFAULT_CHAT_FRAME then
       DEFAULT_CHAT_FRAME:AddMessage(string.format("|cFFFF7D0A[WoWGuide]|r Loaded for %s (Level %d %s). Type |cFF38BDF8/guide|r to open your leveling advisor, or |cFF38BDF8/sync|r to export!", playerName, liveLevel, playerClass))
@@ -1067,9 +1067,9 @@ eventFrame:SetScript("OnEvent", function(self, event, ...)
     if mainFrame and mainFrame:IsShown() then
       WoWGuide:RefreshView()
     end
-    WoWGuide:SaveCharacterSnapshot()
+    WoWGuide:SaveCharacterSnapshot(liveLevel)
   elseif event == "UNIT_INVENTORY_CHANGED" or event == "PLAYER_LOGOUT" then
-    WoWGuide:SaveCharacterSnapshot()
+    WoWGuide:SaveCharacterSnapshot(liveLevel)
   end
 end)
 
