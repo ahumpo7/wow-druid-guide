@@ -439,39 +439,83 @@ function renderLevel(lvl) {
   const zoneInstructions = document.getElementById("zoneInstructions");
   if (zoneInstructions) zoneInstructions.textContent = data.zoneInstructions;
 
-  // Talent Card
-  const talentContainer = document.getElementById("talentRecommendationBox");
+  // Class Quest Callout (Dynamic per class & level)
+  const calloutEl = document.getElementById("classQuestCallout");
+  if (calloutEl) {
+    let calloutHtml = "";
+    if (activeClass === "warlock") {
+      if (lvl <= 10) {
+        calloutHtml = `<strong>Level 10 Class Quest:</strong> Speak to <strong>Luther Pickman</strong> in Brill to start <em>"The Binding"</em> and summon your <strong>Voidwalker</strong> personal tank!`;
+      } else if (lvl <= 20) {
+        calloutHtml = `<strong>Upcoming Level 20 Class Quest:</strong> Visit <strong>Caretaker Caice</strong> in Undercity for <em>"Hearts of Wood"</em> to bind your <strong>Succubus</strong> (massive solo DPS!).`;
+      } else if (lvl <= 30) {
+        calloutHtml = `<strong>Upcoming Level 30 Class Quest:</strong> Visit <strong>Mennet Carkiek</strong> in Undercity for <em>"Tome of the Cabal"</em> to unlock your <strong>Felhunter</strong>.`;
+      } else if (lvl <= 40) {
+        calloutHtml = `<strong>Level 40 Free Mount:</strong> Visit any Warlock Trainer at Level 40 to receive <strong>Summon Felsteed</strong> completely free!`;
+      }
+    } else if (activeClass === "rogue") {
+      if (lvl <= 10) {
+        calloutHtml = `<strong>Level 10 Milestone:</strong> Train <strong>Dual Wielding</strong> at your Rogue Trainer (Marion Call in Brill) to equip an off-hand weapon!`;
+      } else if (lvl <= 20) {
+        calloutHtml = `<strong>Level 20 Crucial Quest:</strong> Visit <strong>Shenthul</strong> in Orgrimmar for <em>"The Shattered Hand"</em> at Sludge Fen Tower to unlock <strong>Poisons</strong> and <strong>Thistle Tea</strong>!`;
+      }
+    } else {
+      if (lvl <= 10) {
+        calloutHtml = `<strong>Level 10 Bear Form:</strong> Speak to <strong>Gart Mistrunner</strong> in Bloodhoof Village for <em>"Heeding the Call"</em> (Moonglade) to unlock <strong>Bear Form & Enrage</strong>!`;
+      } else if (lvl <= 16) {
+        calloutHtml = `<strong>Level 16 Aquatic Form:</strong> Visit <strong>Dendrite Starblaze</strong> in Moonglade for <em>"Trial of the Sea Lion"</em>!`;
+      } else if (lvl <= 20) {
+        calloutHtml = `<strong>Level 20 Cat Form:</strong> Visit your Druid Trainer at Level 20 to train <strong>Cat Form, Prowl, Claw, and Rake</strong>!`;
+      }
+    }
+    if (calloutHtml) {
+      calloutEl.style.display = "flex";
+      const txtEl = calloutEl.querySelector(".quest-callout-text");
+      if (txtEl) txtEl.innerHTML = calloutHtml;
+    } else {
+      calloutEl.style.display = "none";
+    }
+  }
+
+  // Talent Card (Targets #talentSpotlightContent in index.html)
+  const talentContainer = document.getElementById("talentSpotlightContent") || document.getElementById("talentRecommendationBox");
   if (talentContainer) {
     if (lvl < 10) {
+      const nextTalent = activeClass === "warlock" ? "Improved Corruption (1/5)" : (activeClass === "rogue" ? "Improved Gouge / Remorseless Attacks" : "Ferocity (1/5)");
       talentContainer.innerHTML = `
-        <div class="talent-callout-empty">
-          <div class="talent-empty-icon">🔒</div>
-          <div class="talent-empty-text">
-            <strong>Talent Points Locked:</strong> Talents unlock at <strong>Level 10</strong>. Prepare your build for ${activeClass === 'warlock' ? 'Improved Corruption' : 'Remorseless Attacks'}!
-          </div>
+        <div class="talent-desc" style="border-left-color: #64748b;">
+          <strong>🔒 Talent Points Locked:</strong> Talents unlock at <strong>Level 10</strong>. Prepare your build for <strong>${nextTalent}</strong>!
         </div>
       `;
     } else if (data.talent) {
       talentContainer.innerHTML = `
-        <div class="talent-card-highlight">
-          <div class="talent-icon-box">${data.talent.icon || '⭐'}</div>
-          <div class="talent-info-box">
-            <div class="talent-name-row">
-              <h4>${data.talent.name}</h4>
-              <span class="tag-badge talent">${data.talent.rank} • ${data.talent.tree.toUpperCase()}</span>
+        <div class="talent-header-row">
+          <div class="talent-name-group">
+            <div class="talent-icon-frame">${data.talent.icon || '⭐'}</div>
+            <div>
+              <div class="talent-title-text">${data.talent.name}</div>
+              <div class="talent-tree-name">${data.talent.tree.toUpperCase()} Tree</div>
             </div>
-            <p class="talent-why">${data.talent.why}</p>
           </div>
+          <span class="talent-rank-pill">Rank ${data.talent.rank}</span>
+        </div>
+        <div class="talent-desc">
+          <div class="talent-why"><strong>Why:</strong> ${data.talent.why}</div>
         </div>
       `;
     } else {
       talentContainer.innerHTML = `
-        <div class="talent-card-highlight">
-          <div class="talent-icon-box">🌲</div>
-          <div class="talent-info-box">
-            <h4>Level ${lvl} Talent Investment</h4>
-            <p class="talent-why">${data.talentNote || 'Allocate your talent point according to the recommended leveling build in the Talent tab.'}</p>
+        <div class="talent-header-row">
+          <div class="talent-name-group">
+            <div class="talent-icon-frame">🌲</div>
+            <div>
+              <div class="talent-title-text">Level ${lvl} Talent Point</div>
+              <div class="talent-tree-name">Recommended Build</div>
+            </div>
           </div>
+        </div>
+        <div class="talent-desc">
+          <div class="talent-why">${data.talentNote || 'Allocate your talent point according to the recommended leveling build in the Talent Build tab.'}</div>
         </div>
       `;
     }
@@ -481,45 +525,123 @@ function renderLevel(lvl) {
   const trainList = document.getElementById("spellsTrainList");
   if (trainList) {
     if (data.trainerTrain && data.trainerTrain.length > 0) {
-      trainList.innerHTML = data.trainerTrain.map(s => `<li class="spell-item train">✓ ${s}</li>`).join("");
+      trainList.innerHTML = data.trainerTrain.map(s => `<div class="spell-item"><span class="spell-name">${s}</span><span class="spell-role">BUY</span></div>`).join("");
     } else {
-      trainList.innerHTML = `<li class="spell-item none">No critical trainer spells to learn at Level ${lvl}. Save your silver!</li>`;
+      trainList.innerHTML = `<div class="spell-item"><span class="spell-name" style="color: var(--text-muted);">No critical trainer spells at Level ${lvl}. Save silver!</span></div>`;
     }
   }
 
   const skipList = document.getElementById("spellsSkipList");
   if (skipList) {
     if (data.trainerSkip && data.trainerSkip.length > 0) {
-      skipList.innerHTML = data.trainerSkip.map(s => `<li class="spell-item skip">✗ ${s}</li>`).join("");
+      skipList.innerHTML = data.trainerSkip.map(s => `<div class="spell-item"><span class="spell-name" style="color:#f87171;">${s}</span><span class="spell-role">SKIP</span></div>`).join("");
     } else {
-      skipList.innerHTML = `<li class="spell-item none">Nothing to skip at this level.</li>`;
+      skipList.innerHTML = `<div class="spell-item"><span class="spell-name" style="color: var(--text-muted);">Nothing to skip at this level.</span></div>`;
     }
   }
 
-  // Rotation Card
-  const rotList = document.getElementById("combatRotationList");
+  // Rotation Card (Targets #rotationStepsList in index.html)
+  const rotList = document.getElementById("rotationStepsList") || document.getElementById("combatRotationList");
   if (rotList) {
     if (data.rotation && data.rotation.length > 0) {
       rotList.innerHTML = data.rotation.map((r, i) => `
-        <li class="rot-step">
-          <span class="rot-num">${i + 1}</span>
-          <span class="rot-text">${r}</span>
-        </li>
+        <div class="rot-step">
+          <div class="rot-num">${i + 1}</div>
+          <div class="rot-desc">${r}</div>
+        </div>
       `).join("");
     }
   }
 
-  // Gear Tips Card
-  const gearTip = document.getElementById("levelGearTipText");
-  if (gearTip) {
-    gearTip.textContent = data.gearTip || "Prioritize weapon DPS and primary stats (Agility for Rogue, Spell Power/Stamina for Warlock).";
+  // Stat Priority Sidebar (Dynamic per class)
+  const statPrioEl = document.getElementById("statPriorityContainer");
+  if (statPrioEl) {
+    let prios = [];
+    if (activeClass === "warlock") {
+      prios = [
+        { name: "1. Wand DPS & Shadow Power", badge: "Top Priority", cls: "prio-1" },
+        { name: "2. Stamina (Health / Life Tap)", badge: "High", cls: "prio-2" },
+        { name: "3. Intellect (Mana & Crit)", badge: "Medium", cls: "prio-3" },
+        { name: "4. Spirit (Out-of-Combat Regen)", badge: "Bonus", cls: "prio-4" }
+      ];
+    } else if (activeClass === "rogue") {
+      prios = [
+        { name: "1. Main-Hand Weapon DPS", badge: "Top Priority", cls: "prio-1" },
+        { name: "2. Agility (AP, Crit & Dodge)", badge: "High", cls: "prio-2" },
+        { name: "3. Strength (Attack Power)", badge: "Medium", cls: "prio-3" },
+        { name: "4. Stamina (Survivability)", badge: "Helpful", cls: "prio-4" }
+      ];
+    } else {
+      prios = [
+        { name: "1. Agility (Cat AP & Crit)", badge: "Top Priority", cls: "prio-1" },
+        { name: "2. Strength (2 AP per point)", badge: "High", cls: "prio-2" },
+        { name: "3. Stamina (Bear & Cat HP)", badge: "Medium", cls: "prio-3" },
+        { name: "4. Spirit / Intellect (Shifting)", badge: "Helpful", cls: "prio-4" }
+      ];
+    }
+    statPrioEl.innerHTML = prios.map(p => `
+      <div class="stat-prio-item">
+        <span class="stat-prio-name">${p.name}</span>
+        <span class="stat-prio-badge ${p.cls}">${p.badge}</span>
+      </div>
+    `).join("");
   }
 
-  // Milestone Highlight
-  document.querySelectorAll(".pill-jump").forEach(pill => {
-    const plvl = parseInt(pill.getAttribute("data-lvl"), 10);
-    pill.classList.toggle("current-milestone", plvl === lvl);
-  });
+  // Dungeon Drops & Gear Tips
+  const gearListEl = document.getElementById("gearItemList");
+  if (gearListEl) {
+    if (data.dungeonGear && data.dungeonGear.length > 0) {
+      gearListEl.innerHTML = data.dungeonGear.map(dg => `
+        <div class="gear-item-card">
+          <div class="gear-item-top">
+            <span class="gear-name ${dg.quality || 'uncommon'}">${dg.name}</span>
+            <span class="gear-source">${dg.source}</span>
+          </div>
+          <div class="gear-stats">${dg.stats}</div>
+          ${dg.tip ? `<div class="gear-tip">${dg.tip}</div>` : ''}
+        </div>
+      `).join("");
+    } else {
+      gearListEl.innerHTML = `<div style="font-size: 0.85rem; color: var(--text-muted);">No mandatory dungeon drops at Level ${lvl}. Focus on quest rewards and solo gear!</div>`;
+    }
+  }
+
+  const gearTip = document.getElementById("generalGearTip") || document.getElementById("levelGearTipText");
+  if (gearTip) {
+    gearTip.textContent = data.gearTip || (activeClass === "warlock"
+      ? "Prioritize Stamina, Intellect, Shadow Spell Power, and keep your Wand upgraded."
+      : (activeClass === "rogue" ? "Prioritize slow high-DPS Main Hand Sword + Agility/Stamina leather." : "Prioritize Agility/Strength leather and high-stat Feral staves/maces."));
+  }
+
+  // Milestone Strip (Dynamic per class)
+  const milestonesEl = document.querySelector(".milestones-strip");
+  if (milestonesEl) {
+    const classMilestones = activeClass === "warlock" ? [
+      { lvl: 10, label: "Lvl 10 (Voidwalker)" },
+      { lvl: 13, label: "Lvl 13 (Greater Wand)" },
+      { lvl: 20, label: "Lvl 20 (Succubus)" },
+      { lvl: 30, label: "Lvl 30 (Siphon Life)" },
+      { lvl: 40, label: "Lvl 40 (Free Felsteed!)" },
+      { lvl: 50, label: "Lvl 50 (Un'Goro)" },
+      { lvl: 60, label: "Lvl 60 (Raid Ready)" }
+    ] : (activeClass === "rogue" ? [
+      { lvl: 10, label: "Lvl 10 (Dual Wield)" },
+      { lvl: 20, label: "Lvl 20 (Poisons & Tea)" },
+      { lvl: 30, label: "Lvl 30 (Blade Flurry)" },
+      { lvl: 40, label: "Lvl 40 (Adrenaline Rush)" },
+      { lvl: 45, label: "Lvl 45 (Thrash Blade)" },
+      { lvl: 60, label: "Lvl 60 (Pre-Raid BiS)" }
+    ] : [
+      { lvl: 10, label: "Lvl 10 (Bear Form)" },
+      { lvl: 16, label: "Lvl 16 (Aquatic Form)" },
+      { lvl: 20, label: "Lvl 20 (Cat Form!)" },
+      { lvl: 30, label: "Lvl 30 (Travel Form)" },
+      { lvl: 40, label: "Lvl 40 (Dire Bear & Mount)" },
+      { lvl: 60, label: "Lvl 60 (Raid Ready)" }
+    ]);
+    milestonesEl.innerHTML = `<span class="milestone-label">Key Milestones:</span>` +
+      classMilestones.map(m => `<button class="pill-jump ${m.lvl === lvl ? 'current-milestone' : ''}" data-lvl="${m.lvl}" onclick="setLevel(${m.lvl})">${m.label}</button>`).join("");
+  }
 }
 
 // Talent System
@@ -669,7 +791,8 @@ function renderTreeNodes() {
 // Interactive Paperdoll (Armor Mockup)
 function renderPaperdoll(presetKey = currentPresetKey) {
   currentPresetKey = presetKey;
-  const presets = activeClass === "warlock" ? WARLOCK_GEAR_PRESETS : (activeClass === "rogue" ? ROGUE_GEAR_PRESETS : (typeof DRUID_GEAR_PRESETS !== "undefined" ? DRUID_GEAR_PRESETS : { live_gear: { items: {} } }));
+  const isWarlock = activeClass === "warlock";
+  const presets = isWarlock ? WARLOCK_GEAR_PRESETS : (activeClass === "rogue" ? ROGUE_GEAR_PRESETS : (typeof DRUID_GEAR_PRESETS !== "undefined" ? DRUID_GEAR_PRESETS : { live_gear: { items: {} } }));
   const data = presets[presetKey] || presets.live_gear;
   const items = data.items || {};
 

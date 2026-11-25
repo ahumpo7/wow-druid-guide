@@ -252,7 +252,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T01:05:30.924Z"
+      "syncedAt": "2026-11-25T01:11:11.194Z"
     },
     "rogue": {
       "name": "Phana",
@@ -506,7 +506,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T01:05:30.926Z"
+      "syncedAt": "2026-11-25T01:11:11.195Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -735,7 +735,7 @@ window.WOW_SYNCED_DATA = {
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-25T01:05:30.927Z"
+      "syncedAt": "2026-11-25T01:11:11.196Z"
     }
   },
   "name": "Levevevice",
@@ -980,5 +980,5 @@ window.WOW_SYNCED_DATA = {
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-25T01:05:30.927Z"
+  "syncedAt": "2026-11-25T01:11:11.196Z"
 };
