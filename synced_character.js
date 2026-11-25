@@ -1,7 +1,7 @@
 /**
  * World of Warcraft: Forever - Client Sync Bridge (Horde Multi-Character Edition)
  * Auto-generated from live WTF game files.
- * Default Character: Warlock (Levevevice, Level 8)
+ * Default Character: Warlock (Levevevice, Level 15)
  * Secondary Character: Rogue (Phana, Level 6)
  * Tertiary Character:  Druid (Muataurgrumm, Level 1)
  */
@@ -13,8 +13,8 @@ window.WOW_SYNCED_DATA = {
       "realm": "Stonebrow (WoW Forever)",
       "class": "Warlock",
       "race": "Horde Undead",
-      "level": 8,
-      "money": 0,
+      "level": 15,
+      "money": 2500,
       "spec": "Affliction Drain Tank / Wand Spec",
       "liveGear": {
         "head": {
@@ -22,7 +22,7 @@ window.WOW_SYNCED_DATA = {
           "type": "Empty",
           "name": "None Equipped",
           "quality": "common",
-          "source": "Not yet equipped (Level 8)",
+          "source": "Not yet equipped (Level 15)",
           "armor": "0 Armor",
           "stats": [
             "Head armor unlocks around level 20+"
@@ -53,35 +53,41 @@ window.WOW_SYNCED_DATA = {
         "back": {
           "slot": "Back",
           "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
+          "name": "Item #3833",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
+          "armor": "17 Armor",
           "stats": [
-            "Cloak slot empty"
-          ]
+            "+3 Intellect",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Item Level 15"
         },
         "chest": {
           "slot": "Chest",
           "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
+          "name": "Item #3270",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
+          "armor": "38 Armor",
           "stats": [
-            "Chest slot empty"
-          ]
+            "+3 Intellect",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Item Level 15"
         },
         "wrists": {
           "slot": "Wrists",
           "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
+          "name": "Item #6060",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
+          "armor": "27 Armor",
           "stats": [
-            "Wrists slot empty"
-          ]
+            "+3 Intellect",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Item Level 15"
         },
         "hands": {
           "slot": "Hands",
@@ -97,35 +103,41 @@ window.WOW_SYNCED_DATA = {
         "waist": {
           "slot": "Waist",
           "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
+          "name": "Item #11848",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
+          "armor": "27 Armor",
           "stats": [
-            "Waist slot empty"
-          ]
+            "+3 Intellect",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Item Level 15"
         },
         "legs": {
           "slot": "Legs",
           "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
+          "name": "Item #3834",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
+          "armor": "27 Armor",
           "stats": [
-            "Legs slot empty"
-          ]
+            "+3 Intellect",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Item Level 15"
         },
         "feet": {
           "slot": "Feet",
           "type": "Cloth",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
-          "armor": "0 Armor",
+          "name": "Item #3274",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
+          "armor": "27 Armor",
           "stats": [
-            "Feet slot empty"
-          ]
+            "+3 Intellect",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Item Level 15"
         },
         "ring1": {
           "slot": "Finger",
@@ -173,14 +185,19 @@ window.WOW_SYNCED_DATA = {
         },
         "mainHand": {
           "slot": "Main Hand",
-          "type": "Staff / Dagger",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
+          "type": "Dagger",
+          "name": "Beholder's Eye",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
           "armor": null,
           "stats": [
-            "Empty Main Hand"
-          ]
+            "14 - 26 Damage (11.1 DPS)",
+            "Speed 1.80",
+            "+2 Agility",
+            "+1 Stamina"
+          ],
+          "req": "Requires Level 13",
+          "tip": "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
         },
         "offHand": {
           "slot": "Off-Hand",
@@ -195,14 +212,16 @@ window.WOW_SYNCED_DATA = {
         },
         "ranged": {
           "slot": "Ranged / Wand",
-          "type": "Wand",
-          "name": "None Equipped",
-          "quality": "common",
-          "source": "Not yet equipped",
+          "type": "Cloth",
+          "name": "Item #11287",
+          "quality": "uncommon",
+          "source": "Currently Equipped on Levevevice",
           "armor": null,
           "stats": [
-            "Empty Ranged Slot"
-          ]
+            "+3 Intellect",
+            "+3 Stamina (+30 HP)"
+          ],
+          "req": "Item Level 15"
         }
       },
       "professions": {
@@ -229,13 +248,13 @@ window.WOW_SYNCED_DATA = {
         },
         "cooking": {
           "name": "Cooking",
-          "level": 21,
+          "level": 43,
           "rank": "Apprentice",
           "max": 75,
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T18:21:24.922Z"
+      "syncedAt": "2026-11-25T00:59:55.636Z"
     },
     "rogue": {
       "name": "Phana",
@@ -483,13 +502,13 @@ window.WOW_SYNCED_DATA = {
         },
         "cooking": {
           "name": "Cooking",
-          "level": 21,
+          "level": 43,
           "rank": "Apprentice",
           "max": 75,
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T18:21:24.924Z"
+      "syncedAt": "2026-11-25T00:59:55.637Z"
     },
     "druid": {
       "name": "Muataurgrumm",
@@ -712,28 +731,28 @@ window.WOW_SYNCED_DATA = {
         },
         "cooking": {
           "name": "Cooking",
-          "level": 21,
+          "level": 43,
           "rank": "Apprentice",
           "max": 75,
           "icon": "🍖"
         }
       },
-      "syncedAt": "2026-11-24T18:21:24.925Z"
+      "syncedAt": "2026-11-25T00:59:55.638Z"
     }
   },
   "name": "Levevevice",
   "realm": "Stonebrow (WoW Forever)",
   "class": "Warlock",
   "race": "Horde Undead",
-  "level": 8,
-  "money": 0,
+  "level": 15,
+  "money": 2500,
   "liveGear": {
     "head": {
       "slot": "Head",
       "type": "Empty",
       "name": "None Equipped",
       "quality": "common",
-      "source": "Not yet equipped (Level 8)",
+      "source": "Not yet equipped (Level 15)",
       "armor": "0 Armor",
       "stats": [
         "Head armor unlocks around level 20+"
@@ -764,35 +783,41 @@ window.WOW_SYNCED_DATA = {
     "back": {
       "slot": "Back",
       "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
+      "name": "Item #3833",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
+      "armor": "17 Armor",
       "stats": [
-        "Cloak slot empty"
-      ]
+        "+3 Intellect",
+        "+3 Stamina (+30 HP)"
+      ],
+      "req": "Item Level 15"
     },
     "chest": {
       "slot": "Chest",
       "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
+      "name": "Item #3270",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
+      "armor": "38 Armor",
       "stats": [
-        "Chest slot empty"
-      ]
+        "+3 Intellect",
+        "+3 Stamina (+30 HP)"
+      ],
+      "req": "Item Level 15"
     },
     "wrists": {
       "slot": "Wrists",
       "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
+      "name": "Item #6060",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
+      "armor": "27 Armor",
       "stats": [
-        "Wrists slot empty"
-      ]
+        "+3 Intellect",
+        "+3 Stamina (+30 HP)"
+      ],
+      "req": "Item Level 15"
     },
     "hands": {
       "slot": "Hands",
@@ -808,35 +833,41 @@ window.WOW_SYNCED_DATA = {
     "waist": {
       "slot": "Waist",
       "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
+      "name": "Item #11848",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
+      "armor": "27 Armor",
       "stats": [
-        "Waist slot empty"
-      ]
+        "+3 Intellect",
+        "+3 Stamina (+30 HP)"
+      ],
+      "req": "Item Level 15"
     },
     "legs": {
       "slot": "Legs",
       "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
+      "name": "Item #3834",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
+      "armor": "27 Armor",
       "stats": [
-        "Legs slot empty"
-      ]
+        "+3 Intellect",
+        "+3 Stamina (+30 HP)"
+      ],
+      "req": "Item Level 15"
     },
     "feet": {
       "slot": "Feet",
       "type": "Cloth",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
-      "armor": "0 Armor",
+      "name": "Item #3274",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
+      "armor": "27 Armor",
       "stats": [
-        "Feet slot empty"
-      ]
+        "+3 Intellect",
+        "+3 Stamina (+30 HP)"
+      ],
+      "req": "Item Level 15"
     },
     "ring1": {
       "slot": "Finger",
@@ -884,14 +915,19 @@ window.WOW_SYNCED_DATA = {
     },
     "mainHand": {
       "slot": "Main Hand",
-      "type": "Staff / Dagger",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
+      "type": "Dagger",
+      "name": "Beholder's Eye",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
       "armor": null,
       "stats": [
-        "Empty Main Hand"
-      ]
+        "14 - 26 Damage (11.1 DPS)",
+        "Speed 1.80",
+        "+2 Agility",
+        "+1 Stamina"
+      ],
+      "req": "Requires Level 13",
+      "tip": "⭐ Live equipped! Fast dagger dropped by Wandering Eye of Kilrogg."
     },
     "offHand": {
       "slot": "Off-Hand",
@@ -906,14 +942,16 @@ window.WOW_SYNCED_DATA = {
     },
     "ranged": {
       "slot": "Ranged / Wand",
-      "type": "Wand",
-      "name": "None Equipped",
-      "quality": "common",
-      "source": "Not yet equipped",
+      "type": "Cloth",
+      "name": "Item #11287",
+      "quality": "uncommon",
+      "source": "Currently Equipped on Levevevice",
       "armor": null,
       "stats": [
-        "Empty Ranged Slot"
-      ]
+        "+3 Intellect",
+        "+3 Stamina (+30 HP)"
+      ],
+      "req": "Item Level 15"
     }
   },
   "professions": {
@@ -940,11 +978,11 @@ window.WOW_SYNCED_DATA = {
     },
     "cooking": {
       "name": "Cooking",
-      "level": 21,
+      "level": 43,
       "rank": "Apprentice",
       "max": 75,
       "icon": "🍖"
     }
   },
-  "syncedAt": "2026-11-24T18:21:24.925Z"
+  "syncedAt": "2026-11-25T00:59:55.638Z"
 };

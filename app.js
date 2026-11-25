@@ -1486,16 +1486,16 @@ function updateSyncedProfessionsUI(professions) {
 }
 
 // Direct 1-Click Game & Gist Sync Action
-async function executeGameSyncFromSite() {
+async function executeGameSyncFromSite(silent = false) {
   const btnHeader = document.getElementById("btnHeaderDirectSync");
-  if (btnHeader) {
+  if (btnHeader && !silent) {
     btnHeader.innerHTML = "⏳ Syncing...";
     btnHeader.style.backgroundColor = "#38bdf8";
     btnHeader.style.color = "#000";
   }
 
   const feedbackEl = document.getElementById("syncFeedbackMsg");
-  if (feedbackEl) {
+  if (feedbackEl && !silent) {
     feedbackEl.style.display = "block";
     feedbackEl.style.color = "#38bdf8";
     feedbackEl.textContent = "⚡ Syncing live character data from WTF & Cloud...";
@@ -1535,22 +1535,28 @@ async function executeGameSyncFromSite() {
   }
 
   if (syncedResult) {
+    const prevTime = window.WOW_SYNCED_DATA ? window.WOW_SYNCED_DATA.syncedAt : null;
+    const prevLevel = window.WOW_SYNCED_DATA && window.WOW_SYNCED_DATA.characters && window.WOW_SYNCED_DATA.characters[activeClass] ? window.WOW_SYNCED_DATA.characters[activeClass].level : null;
     window.WOW_SYNCED_DATA = syncedResult;
-    // Switch or refresh active character
-    switchActiveCharacter(activeClass);
-    if (feedbackEl) {
+    const newLevel = syncedResult.characters && syncedResult.characters[activeClass] ? syncedResult.characters[activeClass].level : null;
+
+    if (!silent || prevTime !== syncedResult.syncedAt || prevLevel !== newLevel) {
+      switchActiveCharacter(activeClass);
+    }
+
+    if (feedbackEl && !silent) {
       feedbackEl.style.color = "#4ade80";
       feedbackEl.textContent = `✓ Successfully synced! Active: ${activeClass.toUpperCase()} (Lvl ${currentLevel})`;
       setTimeout(() => { feedbackEl.style.display = "none"; }, 4000);
     }
   } else {
-    if (feedbackEl) {
+    if (feedbackEl && !silent) {
       feedbackEl.style.color = "#fbbf24";
       feedbackEl.textContent = "⚠️ Could not reach local sync server. Refreshing from local cache.";
     }
   }
 
-  if (btnHeader) {
+  if (btnHeader && !silent) {
     btnHeader.innerHTML = "⚡ Sync";
     btnHeader.style.backgroundColor = "";
     btnHeader.style.color = "";
@@ -1559,9 +1565,41 @@ async function executeGameSyncFromSite() {
 window.executeGameSyncFromSite = executeGameSyncFromSite;
 
 function directSyncHeaderClick() {
-  executeGameSyncFromSite();
+  executeGameSyncFromSite(false);
 }
 window.directSyncHeaderClick = directSyncHeaderClick;
+
+// Live Real-Time Auto-Sync Listener (SSE + Fallback Polling)
+function setupLiveAutoSync() {
+  // Connect to local SSE stream if available
+  try {
+    const es = new EventSource("http://127.0.0.1:3888/api/events");
+    es.onopen = () => {
+      console.log("[Auto-Sync] Connected to live local companion SSE stream.");
+      const dot = document.getElementById("autoSyncDot");
+      if (dot) dot.style.background = "#22c55e";
+    };
+    es.onmessage = (event) => {
+      try {
+        const msg = JSON.parse(event.data);
+        if (msg.type === "sync" && msg.character) {
+          console.log(`[Auto-Sync] Live game update detected (${msg.source})!`);
+          window.WOW_SYNCED_DATA = msg.character;
+          switchActiveCharacter(activeClass);
+        }
+      } catch (_) {}
+    };
+    es.onerror = () => {
+      const dot = document.getElementById("autoSyncDot");
+      if (dot) dot.style.background = "#f59e0b";
+    };
+  } catch (_) {}
+
+  // Fallback periodic sync check every 10 seconds
+  setInterval(() => {
+    executeGameSyncFromSite(true);
+  }, 10000);
+}
 
 // Modal Controls
 function openSyncModal() {
@@ -1879,9 +1917,10 @@ function initApp() {
     switchActiveCharacter(savedChar);
   }
 
-  // Background check for Cloud Gist updates
+  // Background check for Cloud Gist updates & initialize live auto-sync
   setTimeout(() => {
-    executeGameSyncFromSite();
+    executeGameSyncFromSite(true);
+    setupLiveAutoSync();
   }, 1000);
 }
 
