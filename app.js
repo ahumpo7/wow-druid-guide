@@ -1160,7 +1160,7 @@ function renderRotations() {
         <p style="color: var(--text-muted); margin-bottom: 12px;">Maximum sustained physical DPS and defensive uptime:</p>
         <ol style="padding-left: 20px; line-height: 1.8;">
           <li><strong>Poisons:</strong> ALWAYS keep Instant Poison applied to both Main Hand and Off-Hand!</li>
-          <li><strong>Opener:</strong> Open from Stealth with Cheap Shot (4s stun) or Sinister Strike with Remorseless Attacks (+40% crit!).</li>
+          <li><strong>Opener:</strong> Open from Stealth with Cheap Shot (4s stun) or 40-Energy Sinister Strike (Improved Sinister Strike 2/2).</li>
           <li><strong>Slice and Dice:</strong> Spend 1-2 Combo Points to activate Slice and Dice (+20% to +30% attack speed). KEEP IT UP 100% OF THE TIME!</li>
           <li><strong>Riposte on Parry:</strong> Whenever you parry, press Riposte immediately (10 energy for 150% weapon damage + 6s disarm!).</li>
           <li><strong>Finisher:</strong> Spend 4-5 Combo Points on Eviscerate (Relentless Strikes refunds 25 energy).</li>
