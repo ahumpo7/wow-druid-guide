@@ -830,7 +830,7 @@ const DRUID_LEVEL_DATA = {
       "name": "Heart of the Wild",
       "rank": "1/5",
       "tree": "feral",
-      "why": "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!"
+      "why": "WoW Forever: Increases Intellect by 4%-20%, Bear Form Stamina by 4%-20%, and Cat Form Strength by 2%-10% (scales in WoW Forever)."
     },
     "talentNote": "Heart of the Wild (1/5) - FERAL Tree.",
     "trainerTrain": [],
@@ -853,7 +853,7 @@ const DRUID_LEVEL_DATA = {
       "name": "Heart of the Wild",
       "rank": "2/5",
       "tree": "feral",
-      "why": "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!"
+      "why": "WoW Forever: Increases Intellect by 4%-20%, Bear Form Stamina by 4%-20%, and Cat Form Strength by 2%-10% (scales in WoW Forever)."
     },
     "talentNote": "Heart of the Wild (2/5) - FERAL Tree.",
     "trainerTrain": [
@@ -882,7 +882,7 @@ const DRUID_LEVEL_DATA = {
       "name": "Heart of the Wild",
       "rank": "3/5",
       "tree": "feral",
-      "why": "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!"
+      "why": "WoW Forever: Increases Intellect by 4%-20%, Bear Form Stamina by 4%-20%, and Cat Form Strength by 2%-10% (scales in WoW Forever)."
     },
     "talentNote": "Heart of the Wild (3/5) - FERAL Tree.",
     "trainerTrain": [],
@@ -905,7 +905,7 @@ const DRUID_LEVEL_DATA = {
       "name": "Heart of the Wild",
       "rank": "4/5",
       "tree": "feral",
-      "why": "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!"
+      "why": "WoW Forever: Increases Intellect by 4%-20%, Bear Form Stamina by 4%-20%, and Cat Form Strength by 2%-10% (scales in WoW Forever)."
     },
     "talentNote": "Heart of the Wild (4/5) - FERAL Tree.",
     "trainerTrain": [
@@ -933,7 +933,7 @@ const DRUID_LEVEL_DATA = {
       "name": "Heart of the Wild",
       "rank": "5/5",
       "tree": "feral",
-      "why": "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!"
+      "why": "WoW Forever: Increases Intellect by 4%-20%, Bear Form Stamina by 4%-20%, and Cat Form Strength by 2%-10% (scales in WoW Forever)."
     },
     "talentNote": "Heart of the Wild (5/5) - FERAL Tree.",
     "trainerTrain": [],
@@ -956,7 +956,7 @@ const DRUID_LEVEL_DATA = {
       "name": "Leader of the Pack",
       "rank": "1/1",
       "tree": "feral",
-      "why": "While in Cat or Bear Form, gives you and all party members within 45 yards a 3% increased physical critical strike chance!"
+      "why": "WoW Forever Feral Capstone: Increases physical critical strike chance by 3% for you and your raid/party while in Cat or Bear Form."
     },
     "talentNote": "Leader of the Pack (1/1) - FERAL Tree.",
     "trainerTrain": [
@@ -1555,14 +1555,14 @@ const DRUID_TALENTS_CONFIG = [
     "name": "Heart of the Wild",
     "max": 5,
     "tree": "feral",
-    "desc": "Increases your Intellect by 4%-20%, your Stamina in Bear Form by 4%-20%, and your Strength in Cat Form by 4%-20%!"
+    "desc": "WoW Forever: Increases Intellect by 4%-20%, Bear Form Stamina by 4%-20%, and Cat Form Strength by 2%-10% (scales in WoW Forever)."
   },
   {
     "id": "leader_of_the_pack",
     "name": "Leader of the Pack",
     "max": 1,
     "tree": "feral",
-    "desc": "While in Cat or Bear Form, gives you and all party members within 45 yards a 3% increased physical critical strike chance!"
+    "desc": "WoW Forever Feral Capstone: Increases physical critical strike chance by 3% for you and your raid/party while in Cat or Bear Form."
   },
   {
     "id": "furor",

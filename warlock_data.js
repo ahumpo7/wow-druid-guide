@@ -194,9 +194,9 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "1/5",
       "tree": "affliction",
-      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
+      "why": "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%."
     },
-    "talentNote": "Start of Affliction Mastery. Instant Corruption is the foundation of Warlock leveling.",
+    "talentNote": "Improved Corruption (1/5) - AFFLICTION Tree.",
     "trainerTrain": [
       "Create Healthstone (Minor)",
       "Summon Voidwalker (Quest)",
@@ -233,9 +233,9 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "2/5",
       "tree": "affliction",
-      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
+      "why": "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%."
     },
-    "talentNote": "Corruption cast is noticeably faster.",
+    "talentNote": "Improved Corruption (2/5) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -254,9 +254,9 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "3/5",
       "tree": "affliction",
-      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
+      "why": "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%."
     },
-    "talentNote": "Corruption is almost instant.",
+    "talentNote": "Improved Corruption (3/5) - AFFLICTION Tree.",
     "trainerTrain": [
       "Curse of Weakness (Rank 2)",
       "Shadow Bolt (Rank 3)"
@@ -278,9 +278,9 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "4/5",
       "tree": "affliction",
-      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
+      "why": "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%."
     },
-    "talentNote": "One more point until full instant-cast Corruption!",
+    "talentNote": "Improved Corruption (4/5) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -308,9 +308,9 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "5/5",
       "tree": "affliction",
-      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
+      "why": "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%."
     },
-    "talentNote": "The single biggest quality-of-life milestone for Warlock leveling.",
+    "talentNote": "Improved Corruption (5/5) - AFFLICTION Tree.",
     "trainerTrain": [
       "Corruption (Rank 2)",
       "Drain Life (Rank 1)",
@@ -333,12 +333,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "The Crossroads",
     "zoneInstructions": "Investigate The Forgotten Pools and The Lushwater Oasis for Apothecary Helbrim. Kill Oasis Snapjaws and Centaur. Drain Soul right as the mob dies to trigger mana regen.",
     "talent": {
-      "name": "Improved Drains",
+      "name": "Improved Life Tap",
       "rank": "1/2",
       "tree": "affliction",
-      "why": "WoW Forever Tier 2 Affliction: Increases damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana (replaces legacy Classic Improved Drain Soul)."
+      "why": "WoW Forever Tier 1 Affliction: Increases the mana awarded by your Life Tap spell by 10%/20%."
     },
-    "talentNote": "Improved Drains boosts your Drain Life, Drain Soul, and Drain Mana effectiveness in WoW Forever.",
+    "talentNote": "Improved Life Tap (1/2) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -354,12 +354,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "The Crossroads, Ratchet",
     "zoneInstructions": "Improved Drain Soul hits 2/2! Killing an enemy while channeling Drain Soul gives +100% mana regeneration and allows 50% mana regen to continue while casting for 10 seconds! Complete 'The Samophlange' chain at the Venture Co. oil rig in Sludge Fen.",
     "talent": {
-      "name": "Improved Drains",
+      "name": "Improved Life Tap",
       "rank": "2/2",
       "tree": "affliction",
-      "why": "WoW Forever Tier 2 Affliction: Increases damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana (replaces legacy Classic Improved Drain Soul)."
+      "why": "WoW Forever Tier 1 Affliction: Increases the mana awarded by your Life Tap spell by 10%/20%."
     },
-    "talentNote": "Max Improved Drains! Pair with Life Tap and Drain Life for zero-downtime leveling.",
+    "talentNote": "Improved Life Tap (2/2) - AFFLICTION Tree.",
     "trainerTrain": [
       "Life Tap (Rank 2)",
       "Unending Breath"
@@ -380,12 +380,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "Ratchet (Gazlowe, Flight Master)",
     "zoneInstructions": "Head to Ratchet and grab the Flight Path. Complete 'Raptor Horns', 'Southsea Freebooters', and 'The Guns of Northwatch'.",
     "talent": {
-      "name": "Improved Life Tap",
-      "rank": "1/2",
+      "name": "Improved Drains",
+      "rank": "1/3",
       "tree": "affliction",
-      "why": "Increases the mana awarded by your Life Tap spell by 10% / 20%."
+      "why": "WoW Forever Tier 2 Affliction: Increases the damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana."
     },
-    "talentNote": "Makes your health-to-mana conversion much more efficient.",
+    "talentNote": "Improved Drains (1/3) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -401,12 +401,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "The Crossroads, Camp Taurajo",
     "zoneInstructions": "Max out Improved Life Tap (+20% mana conversion). Pick up Wailing Caverns quests: 'Leaders of the Fang', 'Deviate Hides', and 'Smart Drinks'. Optionally run Wailing Caverns for Robe of the Moccasin and Deviate Scale Belt.",
     "talent": {
-      "name": "Improved Life Tap",
-      "rank": "2/2",
+      "name": "Improved Drains",
+      "rank": "2/3",
       "tree": "affliction",
-      "why": "Increases the mana awarded by your Life Tap spell by 10% / 20%."
+      "why": "WoW Forever Tier 2 Affliction: Increases the damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana."
     },
-    "talentNote": "Life Tap is now a supercharged mana battery.",
+    "talentNote": "Improved Drains (2/3) - AFFLICTION Tree.",
     "trainerTrain": [
       "Create Soulstone (Minor)",
       "Bane of Agony (Rank 2)",
@@ -435,12 +435,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "Camp Taurajo (Flight Master)",
     "zoneInstructions": "Kill Thunderhawks and Bristleback Quilboars around Camp Taurajo. Complete 'Tribal Warfare' and 'Betrayal from Within'. Prepare for your Level 20 Succubus class quest!",
     "talent": {
-      "name": "Suppression",
-      "rank": "1/5",
+      "name": "Improved Drains",
+      "rank": "3/3",
       "tree": "affliction",
-      "why": "Reduces the chance for enemies to resist your Affliction spells by 2% to 10%."
+      "why": "WoW Forever Tier 2 Affliction: Increases the damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana."
     },
-    "talentNote": "Building toward 70% pushback immunity so you can Drain Tank in melee range.",
+    "talentNote": "Improved Drains (3/3) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -456,12 +456,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "Brill / Undercity / The Crossroads",
     "zoneInstructions": "MAJOR MILESTONE! Pick up 'Devourer of Souls' (Succubus Class Quest) from Caretaker Caice in Undercity or The Crossroads. Travel to the Silverpine hills and the wetlands of the Barrens to collect the Hearts of Wood. Summon and defeat the Succubus to bind her! The Succubus brings high DPS, Seduction CC, and Lash of Pain!",
     "talent": {
-      "name": "Fel Concentration",
-      "rank": "1/5",
+      "name": "Improved Bane of Agony",
+      "rank": "1/2",
       "tree": "affliction",
-      "why": "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+      "why": "WoW Forever Tier 3 Affliction (2 ranks): Increases the damage done by your Bane of Agony spell."
     },
-    "talentNote": "Succubus provides incredible single-target leveling DPS.",
+    "talentNote": "Improved Bane of Agony (1/2) - AFFLICTION Tree.",
     "trainerTrain": [
       "Demon Armor (Rank 1)",
       "Summon Succubus (Quest)",
@@ -496,12 +496,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "Sun Rock Retreat (Flight Master)",
     "zoneInstructions": "Travel west from The Barrens into Stonetalon Mountains. Grab the Flight Path at Sun Rock Retreat. Complete 'Avenge My Village' and kill Grimtotem Tauren.",
     "talent": {
-      "name": "Fel Concentration",
-      "rank": "2/5",
+      "name": "Improved Bane of Agony",
+      "rank": "2/2",
       "tree": "affliction",
-      "why": "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+      "why": "WoW Forever Tier 3 Affliction (2 ranks): Increases the damage done by your Bane of Agony spell."
     },
-    "talentNote": "Channeling Drain Life under attack becomes noticeably smoother.",
+    "talentNote": "Improved Bane of Agony (2/2) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -518,11 +518,11 @@ const WARLOCK_LEVEL_DATA = {
     "zoneInstructions": "Fly to The Sepulcher and run east into Hillsbrad Foothills! Reach Tarren Mill and secure the Flight Path. Pick up 'The Battle for Hillsbrad' (Town Hall & Farmers) and 'Elixir of Suffering'.",
     "talent": {
       "name": "Fel Concentration",
-      "rank": "3/5",
+      "rank": "1/3",
       "tree": "affliction",
-      "why": "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+      "why": "WoW Forever Tier 3 Affliction (3 ranks): 23%/46%/70% chance to avoid interruption while channeling Drain Life, Drain Soul, Drain Mana, and Wrack."
     },
-    "talentNote": "Almost immune to spell pushback.",
+    "talentNote": "Fel Concentration (1/3) - AFFLICTION Tree.",
     "trainerTrain": [
       "Create Healthstone (Lesser)",
       "Drain Life (Rank 2)",
@@ -545,11 +545,11 @@ const WARLOCK_LEVEL_DATA = {
     "zoneInstructions": "MAX FEL CONCENTRATION! You now have a 70% chance to resist pushback while channeling Drain Life. Mobs hitting you in melee will rarely interrupt your heal-drain! You can now face-tank enemies comfortably.",
     "talent": {
       "name": "Fel Concentration",
-      "rank": "4/5",
+      "rank": "2/3",
       "tree": "affliction",
-      "why": "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+      "why": "WoW Forever Tier 3 Affliction (3 ranks): 23%/46%/70% chance to avoid interruption while channeling Drain Life, Drain Soul, Drain Mana, and Wrack."
     },
-    "talentNote": "Drain TANK playstyle is officially online. You heal through mob damage while dealing shadow damage.",
+    "talentNote": "Fel Concentration (2/3) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -569,11 +569,11 @@ const WARLOCK_LEVEL_DATA = {
     "zoneInstructions": "Complete 'The Battle for Hillsbrad' part 1 and 2 at Hillsbrad Fields. Kill Hillsbrad Farmers, Clerics, and Miners. Train Life Tap (Rank 4) and Corruption (Rank 4) in Undercity.",
     "talent": {
       "name": "Fel Concentration",
-      "rank": "5/5",
+      "rank": "3/3",
       "tree": "affliction",
-      "why": "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+      "why": "WoW Forever Tier 3 Affliction (3 ranks): 23%/46%/70% chance to avoid interruption while channeling Drain Life, Drain Soul, Drain Mana, and Wrack."
     },
-    "talentNote": "Use Amplify Curse on tough elites or named quest targets.",
+    "talentNote": "Fel Concentration (3/3) - AFFLICTION Tree.",
     "trainerTrain": [
       "Corruption (Rank 3)",
       "Drain Mana (Rank 1)",
@@ -598,7 +598,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Increases the effect of your next Bane of Agony by 50% or Curse of Exhaustion by 20% on a 3 min cooldown."
     },
-    "talentNote": "Free instant Shadow Bolts will start proccing randomly during fights.",
+    "talentNote": "Amplify Curse (1/1) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -620,7 +620,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Gives your Corruption and Drain Life ticks a 2% / 4% chance to grant an instant-cast Shadow Bolt."
     },
-    "talentNote": "Nightfall procs make combat feel incredibly dynamic and fast.",
+    "talentNote": "Nightfall (1/2) - AFFLICTION Tree.",
     "trainerTrain": [
       "Demon Armor (Rank 2)",
       "Curse of Recklessness (Rank 2)"
@@ -652,7 +652,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Gives your Corruption and Drain Life ticks a 2% / 4% chance to grant an instant-cast Shadow Bolt."
     },
-    "talentNote": "Extra range gives more time to tag mobs before they reach you.",
+    "talentNote": "Nightfall (2/2) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -671,9 +671,9 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Grim Reach",
       "rank": "1/2",
       "tree": "affliction",
-      "why": "Increases the range of your Affliction spells by 10% / 20% (up to 36 yards)."
+      "why": "WoW Forever Tier 2 Affliction: Increases the range of your Affliction spells by 10%/20%."
     },
-    "talentNote": "36-yard Corruption and Agony range lets you pull from safe distances.",
+    "talentNote": "Grim Reach (1/2) - AFFLICTION Tree.",
     "trainerTrain": [
       "Banish (Rank 1)",
       "Bane of Agony (Rank 3)",
@@ -699,9 +699,9 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Grim Reach",
       "rank": "2/2",
       "tree": "affliction",
-      "why": "Increases the range of your Affliction spells by 10% / 20% (up to 36 yards)."
+      "why": "WoW Forever Tier 2 Affliction: Increases the range of your Affliction spells by 10%/20%."
     },
-    "talentNote": "Next level is Siphon Life—the crown jewel of Affliction leveling!",
+    "talentNote": "Grim Reach (2/2) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -722,7 +722,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Transfers health from the target to the caster every 3 sec for 30 sec. Foundation of Affliction soloing."
     },
-    "talentNote": "Your DoT trifecta is now complete: Corruption + Bane of Agony + Siphon Life!",
+    "talentNote": "Siphon Life (1/1) - AFFLICTION Tree.",
     "trainerTrain": [
       "Summon Felhunter (Quest)",
       "Enslave Demon (Rank 1)",
@@ -755,12 +755,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "Mirage Raceway",
     "zoneInstructions": "The Shimmering Flats is the single best solo grinding zone in the game! Mobs are densely packed turtles, basilisks, and scorpids with no line of sight obstructions. Dot 2-3 mobs simultaneously and let Siphon Life heal you through everything!",
     "talent": {
-      "name": "Improved Drain Life",
+      "name": "Suppression",
       "rank": "1/5",
       "tree": "affliction",
-      "why": "Increases the health drained by your Drain Life spell by 2% to 10%."
+      "why": "WoW Forever Tier 1 Affliction: Increases Affliction hit chance by 1%-5% and reduces threat by 4%-20%."
     },
-    "talentNote": "Shadow Mastery increases damage AND healing of all shadow abilities.",
+    "talentNote": "Suppression (1/5) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -776,12 +776,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "Hammerfall (Flight Master, Innkeeper)",
     "zoneInstructions": "Travel east from Tarren Mill across the bridge into Arathi Highlands. Secure the Hammerfall Flight Path. Pick up 'Hammerfall', 'Foul Magics', and 'Sigil of Stromgarde'.",
     "talent": {
-      "name": "Improved Drain Life",
+      "name": "Suppression",
       "rank": "2/5",
       "tree": "affliction",
-      "why": "Increases the health drained by your Drain Life spell by 2% to 10%."
+      "why": "WoW Forever Tier 1 Affliction: Increases Affliction hit chance by 1%-5% and reduces threat by 4%-20%."
     },
-    "talentNote": "Both your damage and healing increase by 4%.",
+    "talentNote": "Suppression (2/5) - AFFLICTION Tree.",
     "trainerTrain": [
       "Curse of the Elements (Rank 1)",
       "Fear (Rank 2)",
@@ -801,12 +801,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "Ghost Walker Post, Shadowprey Village",
     "zoneInstructions": "Travel west from Stonetalon into Desolace. Grab Ghost Walker Post and Shadowprey Village flight paths. Complete 'Gelkis Alliance' (kill Magram centaur) and 'Bone Collector'.",
     "talent": {
-      "name": "Improved Drain Life",
+      "name": "Suppression",
       "rank": "3/5",
       "tree": "affliction",
-      "why": "Increases the health drained by your Drain Life spell by 2% to 10%."
+      "why": "WoW Forever Tier 1 Affliction: Increases Affliction hit chance by 1%-5% and reduces threat by 4%-20%."
     },
-    "talentNote": "6% shadow damage bonus active across all abilities.",
+    "talentNote": "Suppression (3/5) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -823,11 +823,11 @@ const WARLOCK_LEVEL_DATA = {
     "zoneInstructions": "Take the Zeppelin from Undercity directly to Grom'gol Base Camp in Stranglethorn Vale! Grab the Flight Path. Pick up 'Welcome to the Jungle', 'Bloodscalp Ears', and 'Hunt for Yenniku'.",
     "talent": {
       "name": "Improved Drain Life",
-      "rank": "4/5",
+      "rank": "1/5",
       "tree": "affliction",
       "why": "Increases the health drained by your Drain Life spell by 2% to 10%."
     },
-    "talentNote": "Only 1 point away from full +10% Shadow Mastery!",
+    "talentNote": "Improved Drain Life (1/5) - AFFLICTION Tree.",
     "trainerTrain": [
       "Create Healthstone (Rank 3)",
       "Corruption (Rank 4)",
@@ -853,7 +853,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Increases the damage dealt by your Shadow spells or effects by 2% to 10%."
     },
-    "talentNote": "Affliction damage scaling reaches peak efficiency.",
+    "talentNote": "Shadow Mastery (1/5) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -882,7 +882,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Increases the damage dealt by your Shadow spells or effects by 2% to 10%."
     },
-    "talentNote": "Transition into Demonology utility for maximum survivability and Dark Pact synergy.",
+    "talentNote": "Shadow Mastery (2/5) - AFFLICTION Tree.",
     "trainerTrain": [
       "Demon Armor (Rank 3)",
       "Shadow Bolt (Rank 6)",
@@ -910,7 +910,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Increases the damage dealt by your Shadow spells or effects by 2% to 10%."
     },
-    "talentNote": "Your health pool grows rapidly, giving larger Life Tap pools.",
+    "talentNote": "Shadow Mastery (3/5) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -931,7 +931,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Increases the damage dealt by your Shadow spells or effects by 2% to 10%."
     },
-    "talentNote": "+9% total Stamina makes you deceptively tanky against gankers.",
+    "talentNote": "Shadow Mastery (4/5) - AFFLICTION Tree.",
     "trainerTrain": [
       "Create Soulstone (Rank 3)",
       "Bane of Agony (Rank 4)",
@@ -957,7 +957,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Increases the damage dealt by your Shadow spells or effects by 2% to 10%."
     },
-    "talentNote": "Get ready for Level 40: Free Felsteed Mount + Dark Pact capstone!",
+    "talentNote": "Shadow Mastery (5/5) - AFFLICTION Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -978,7 +978,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "affliction",
       "why": "Drains 150-300 mana from your summoned demon and transfers it directly to you. Eliminates mana downtime."
     },
-    "talentNote": "God-mode leveling is active. You literally never have to stop or sit down.",
+    "talentNote": "Dark Pact (1/1) - AFFLICTION Tree.",
     "trainerTrain": [
       "Howl of Terror (Rank 1)",
       "Summon Felsteed (FREE Mount!)"
@@ -1013,7 +1013,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases your total Stamina by 3% to 15%, but reduces your total Spirit by 1% to 5%."
     },
-    "talentNote": "15% stamina scaling keeps your survivability at raid-tier levels.",
+    "talentNote": "Demonic Embrace (1/5) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1034,7 +1034,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases your total Stamina by 3% to 15%, but reduces your total Spirit by 1% to 5%."
     },
-    "talentNote": "Sacrifice shield absorbs huge emergency damage if ganked in Tanaris.",
+    "talentNote": "Demonic Embrace (2/5) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Death Coil (Rank 1)",
       "Corruption (Rank 5)",
@@ -1068,7 +1068,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases your total Stamina by 3% to 15%, but reduces your total Spirit by 1% to 5%."
     },
-    "talentNote": "Emergency Voidwalker Sacrifice shield absorbs ~1,000+ damage.",
+    "talentNote": "Demonic Embrace (3/5) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1089,7 +1089,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases your total Stamina by 3% to 15%, but reduces your total Spirit by 1% to 5%."
     },
-    "talentNote": "Sacrifice is now a guaranteed life-saver.",
+    "talentNote": "Demonic Embrace (4/5) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Curse of Shadow (Rank 1)",
       "Shadow Bolt (Rank 7)"
@@ -1113,7 +1113,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases your total Stamina by 3% to 15%, but reduces your total Spirit by 1% to 5%."
     },
-    "talentNote": "Macro: /cast Fel Domination /cast Summon Voidwalker for instant emergency shield.",
+    "talentNote": "Demonic Embrace (5/5) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1143,7 +1143,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, and Sacrifice by 10% to 30%."
     },
-    "talentNote": "Higher demon mana pool = more mana transferred via Dark Pact.",
+    "talentNote": "Improved Voidwalker (1/3) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Create Healthstone (Greater)",
       "Create Soulstone (Greater)",
@@ -1171,7 +1171,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, and Sacrifice by 10% to 30%."
     },
-    "talentNote": "Pet mana bar grows steadily.",
+    "talentNote": "Improved Voidwalker (2/3) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1192,7 +1192,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, and Sacrifice by 10% to 30%."
     },
-    "talentNote": "+9% pet mana pool.",
+    "talentNote": "Improved Voidwalker (3/3) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Bane of Agony (Rank 5)",
       "Soul Fire (Rank 1)",
@@ -1219,7 +1219,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum mana of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Almost maximum pet mana bonus.",
+    "talentNote": "Fel Intellect (1/5) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1240,7 +1240,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum mana of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Un'Goro is one of the fastest leveling zones in Classic for Affliction Warlocks.",
+    "talentNote": "Fel Intellect (2/5) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Inferno (Quest)",
       "Corruption (Rank 6)",
@@ -1268,7 +1268,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Your next Imp, Voidwalker, Succubus, or Felhunter summon spell has its cast time reduced by 5.5s and mana cost by 50%."
     },
-    "talentNote": "Speeds up regular pet summons significantly.",
+    "talentNote": "Fel Domination (1/1) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1289,7 +1289,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum mana of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Pet summons take only 2.0s without Fel Domination.",
+    "talentNote": "Fel Intellect (3/5) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Shadow Bolt (Rank 8)"
     ],
@@ -1312,7 +1312,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum mana of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Toughens your pet so it never dies to cleaves.",
+    "talentNote": "Fel Intellect (4/5) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1333,7 +1333,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum mana of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Pet survives high-level Undead disease auras.",
+    "talentNote": "Fel Intellect (5/5) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Create Soulstone (Major)",
       "Demon Armor (Rank 5)",
@@ -1359,7 +1359,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum health of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Level 55+: The final stretch to 60 begins!",
+    "talentNote": "Fel Stamina (1/5) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1380,7 +1380,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Reduces the casting time of your summoning spells by 2s / 4s, and the mana cost by 20% / 40%."
     },
-    "talentNote": "Pet health pool is rock-solid.",
+    "talentNote": "Master Summoner (1/2) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Life Tap (Rank 6)",
       "Fear (Rank 3)",
@@ -1406,7 +1406,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Reduces the casting time of your summoning spells by 2s / 4s, and the mana cost by 20% / 40%."
     },
-    "talentNote": "Demon survivability maxed out.",
+    "talentNote": "Master Summoner (2/2) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1427,7 +1427,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum health of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Healthstone now heals for ~1,320 HP in emergency combat.",
+    "talentNote": "Fel Stamina (2/5) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Create Healthstone (Major)",
       "Bane of Agony (Rank 6)",
@@ -1461,7 +1461,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum health of your summoned demons by 3% to 15%."
     },
-    "talentNote": "Massive instant heal for raid survival and PvP.",
+    "talentNote": "Fel Stamina (3/5) - DEMONOLOGY Tree.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1482,7 +1482,7 @@ const WARLOCK_LEVEL_DATA = {
       "tree": "demonology",
       "why": "Increases the maximum health of your summoned demons by 3% to 15%."
     },
-    "talentNote": "You are now fully geared, leveled, and raid-ready for the Horde!",
+    "talentNote": "Fel Stamina (4/5) - DEMONOLOGY Tree.",
     "trainerTrain": [
       "Bane of Doom (Rank 1)",
       "Corruption (Rank 7)",
@@ -1524,7 +1524,7 @@ const WARLOCK_TALENTS_CONFIG = [
     "max": 5,
     "tree": "affliction",
     "icon": "👁️",
-    "desc": "Reduces the chance for enemies to resist your Affliction spells by 2% to 10%."
+    "desc": "WoW Forever Tier 1 Affliction: Increases Affliction hit chance by 1%-5% and reduces threat by 4%-20%."
   },
   {
     "id": "improved_corruption",
@@ -1532,15 +1532,15 @@ const WARLOCK_TALENTS_CONFIG = [
     "max": 5,
     "tree": "affliction",
     "icon": "☣️",
-    "desc": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
+    "desc": "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%."
   },
   {
     "id": "improved_drain_soul",
     "name": "Improved Drains",
-    "max": 2,
+    "max": 3,
     "tree": "affliction",
     "icon": "💀",
-    "desc": "WoW Forever Tier 2 Affliction: Increases damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana (replaces legacy Classic Improved Drain Soul)."
+    "desc": "WoW Forever Tier 2 Affliction: Increases the damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana."
   },
   {
     "id": "improved_life_tap",
@@ -1548,7 +1548,7 @@ const WARLOCK_TALENTS_CONFIG = [
     "max": 2,
     "tree": "affliction",
     "icon": "🩸",
-    "desc": "Increases the mana awarded by your Life Tap spell by 10% / 20%."
+    "desc": "WoW Forever Tier 1 Affliction: Increases the mana awarded by your Life Tap spell by 10%/20%."
   },
   {
     "id": "improved_drain_life",
@@ -1561,10 +1561,18 @@ const WARLOCK_TALENTS_CONFIG = [
   {
     "id": "fel_concentration",
     "name": "Fel Concentration",
-    "max": 5,
+    "max": 3,
     "tree": "affliction",
     "icon": "🛡️",
-    "desc": "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+    "desc": "WoW Forever Tier 3 Affliction (3 ranks): 23%/46%/70% chance to avoid interruption while channeling Drain Life, Drain Soul, Drain Mana, and Wrack."
+  },
+  {
+    "id": "improved_bane_of_agony",
+    "name": "Improved Bane of Agony",
+    "max": 2,
+    "tree": "affliction",
+    "icon": "☣️",
+    "desc": "WoW Forever Tier 3 Affliction (2 ranks): Increases the damage done by your Bane of Agony spell."
   },
   {
     "id": "amplify_curse",
@@ -1580,7 +1588,7 @@ const WARLOCK_TALENTS_CONFIG = [
     "max": 2,
     "tree": "affliction",
     "icon": "🏹",
-    "desc": "Increases the range of your Affliction spells by 10% / 20% (up to 36 yards)."
+    "desc": "WoW Forever Tier 2 Affliction: Increases the range of your Affliction spells by 10%/20%."
   },
   {
     "id": "nightfall",
@@ -1734,13 +1742,13 @@ const WARLOCK_TALENT_ORDER = [
   "improved_corruption",
   "improved_corruption",
   "improved_corruption",
-  "improved_drain_soul",
-  "improved_drain_soul",
   "improved_life_tap",
   "improved_life_tap",
-  "suppression",
-  "fel_concentration",
-  "fel_concentration",
+  "improved_drain_soul",
+  "improved_drain_soul",
+  "improved_drain_soul",
+  "improved_bane_of_agony",
+  "improved_bane_of_agony",
   "fel_concentration",
   "fel_concentration",
   "fel_concentration",
@@ -1750,9 +1758,9 @@ const WARLOCK_TALENT_ORDER = [
   "grim_reach",
   "grim_reach",
   "siphon_life",
-  "improved_drain_life",
-  "improved_drain_life",
-  "improved_drain_life",
+  "suppression",
+  "suppression",
+  "suppression",
   "improved_drain_life",
   "shadow_mastery",
   "shadow_mastery",

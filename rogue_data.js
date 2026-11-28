@@ -756,12 +756,12 @@ const ROGUE_LEVEL_DATA = {
     "hubs": "Mirage Raceway",
     "zoneInstructions": "The salt flats are a paradise for Combat Rogues! Dense turtles, scorpids, and basilisks with no obstructions. Pop Blade Flurry every 2 minutes and cleave pairs of mobs.",
     "talent": {
-      "name": "Sword Specialization",
+      "name": "Hack and Slash",
       "rank": "1/5",
       "tree": "combat",
-      "why": "Gives you a 1% to 5% chance to get an extra attack on the same target after dealing damage with your sword."
+      "why": "WoW Forever Combat: Grants 1%-5% extra attack chance with Swords or Axes, +1%-5% crit with Daggers/Fists, or 3%-15% armor penetration with Maces!"
     },
-    "talentNote": "Start using swords in Main Hand (e.g. Sword of Omen / Thief's Blade) for extra swing procs.",
+    "talentNote": "Hack and Slash (1/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -777,12 +777,12 @@ const ROGUE_LEVEL_DATA = {
     "hubs": "Hammerfall (Flight Master)",
     "zoneInstructions": "Travel east from Hillsbrad into Arathi Highlands. Secure Hammerfall Flight Path. Complete 'Foul Magics', 'The Broken Sigil', and clear Boulderfist Ogres.",
     "talent": {
-      "name": "Sword Specialization",
+      "name": "Hack and Slash",
       "rank": "2/5",
       "tree": "combat",
-      "why": "Gives you a 1% to 5% chance to get an extra attack on the same target after dealing damage with your sword."
+      "why": "WoW Forever Combat: Grants 1%-5% extra attack chance with Swords or Axes, +1%-5% crit with Daggers/Fists, or 3%-15% armor penetration with Maces!"
     },
-    "talentNote": "Extra swing procs can trigger poisons and combo points.",
+    "talentNote": "Hack and Slash (2/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     "trainerTrain": [
       "Eviscerate (Rank 5)",
       "Garrote (Rank 3)",
@@ -802,12 +802,12 @@ const ROGUE_LEVEL_DATA = {
     "hubs": "Shadowprey Village, Ghost Walker Post",
     "zoneInstructions": "Travel into Desolace. Secure flight paths. Complete 'Gelkis Alliance' and 'Bone Collector'. Clear Magram centaur camps with Blade Flurry cleave.",
     "talent": {
-      "name": "Sword Specialization",
+      "name": "Hack and Slash",
       "rank": "3/5",
       "tree": "combat",
-      "why": "Gives you a 1% to 5% chance to get an extra attack on the same target after dealing damage with your sword."
+      "why": "WoW Forever Combat: Grants 1%-5% extra attack chance with Swords or Axes, +1%-5% crit with Daggers/Fists, or 3%-15% armor penetration with Maces!"
     },
-    "talentNote": "Extra attacks feel great when critting.",
+    "talentNote": "Hack and Slash (3/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -823,12 +823,12 @@ const ROGUE_LEVEL_DATA = {
     "hubs": "Grom'gol Base Camp",
     "zoneInstructions": "MAJOR UTILITY MILESTONE! Visit the Rogue Trainer to learn BLIND! Blinds the target for up to 10 seconds (consumes Blinding Powder). Essential for stopping runners, resetting fights, or controlling adds! Take Zeppelin to Grom'gol.",
     "talent": {
-      "name": "Sword Specialization",
+      "name": "Hack and Slash",
       "rank": "4/5",
       "tree": "combat",
-      "why": "Gives you a 1% to 5% chance to get an extra attack on the same target after dealing damage with your sword."
+      "why": "WoW Forever Combat: Grants 1%-5% extra attack chance with Swords or Axes, +1%-5% crit with Daggers/Fists, or 3%-15% armor penetration with Maces!"
     },
-    "talentNote": "Carry Fadeleaf to craft Blinding Powder.",
+    "talentNote": "Hack and Slash (4/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     "trainerTrain": [
       "Blind (Rank 1)",
       "Sprint (Rank 2)",
@@ -849,12 +849,12 @@ const ROGUE_LEVEL_DATA = {
     "hubs": "Grom'gol, Nesingwary's Camp",
     "zoneInstructions": "MAX SWORD SPECIALIZATION! 5% chance on EVERY sword swing to trigger an immediate extra attack! Combined with fast off-hand and Slice and Dice, bonus attacks fly non-stop! Clear Tiger, Panther, and Raptor mastery quests.",
     "talent": {
-      "name": "Sword Specialization",
+      "name": "Hack and Slash",
       "rank": "5/5",
       "tree": "combat",
-      "why": "Gives you a 1% to 5% chance to get an extra attack on the same target after dealing damage with your sword."
+      "why": "WoW Forever Combat: Grants 1%-5% extra attack chance with Swords or Axes, +1%-5% crit with Daggers/Fists, or 3%-15% armor penetration with Maces!"
     },
-    "talentNote": "Swords are now undisputed best-in-slot for leveling.",
+    "talentNote": "Hack and Slash (5/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -1625,11 +1625,11 @@ const ROGUE_TALENTS_CONFIG = [
   },
   {
     "id": "sword_specialization",
-    "name": "Sword Specialization",
+    "name": "Hack and Slash",
     "max": 5,
     "tree": "combat",
     "icon": "⚔️",
-    "desc": "Gives you a 1% to 5% chance to get an extra attack on the same target after dealing damage with your sword."
+    "desc": "WoW Forever Combat: Grants 1%-5% extra attack chance with Swords or Axes, +1%-5% crit with Daggers/Fists, or 3%-15% armor penetration with Maces!"
   },
   {
     "id": "weapon_expertise",
