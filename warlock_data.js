@@ -194,7 +194,7 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "1/5",
       "tree": "affliction",
-      "why": "Reduces the casting time of your Corruption spell by 0.4s to 2.0s (100% instant cast at 5/5!)."
+      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
     },
     "talentNote": "Start of Affliction Mastery. Instant Corruption is the foundation of Warlock leveling.",
     "trainerTrain": [
@@ -233,7 +233,7 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "2/5",
       "tree": "affliction",
-      "why": "Reduces the casting time of your Corruption spell by 0.4s to 2.0s (100% instant cast at 5/5!)."
+      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
     },
     "talentNote": "Corruption cast is noticeably faster.",
     "trainerTrain": [],
@@ -254,7 +254,7 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "3/5",
       "tree": "affliction",
-      "why": "Reduces the casting time of your Corruption spell by 0.4s to 2.0s (100% instant cast at 5/5!)."
+      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
     },
     "talentNote": "Corruption is almost instant.",
     "trainerTrain": [
@@ -278,7 +278,7 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "4/5",
       "tree": "affliction",
-      "why": "Reduces the casting time of your Corruption spell by 0.4s to 2.0s (100% instant cast at 5/5!)."
+      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
     },
     "talentNote": "One more point until full instant-cast Corruption!",
     "trainerTrain": [],
@@ -308,7 +308,7 @@ const WARLOCK_LEVEL_DATA = {
       "name": "Improved Corruption",
       "rank": "5/5",
       "tree": "affliction",
-      "why": "Reduces the casting time of your Corruption spell by 0.4s to 2.0s (100% instant cast at 5/5!)."
+      "why": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
     },
     "talentNote": "The single biggest quality-of-life milestone for Warlock leveling.",
     "trainerTrain": [
@@ -333,12 +333,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "The Crossroads",
     "zoneInstructions": "Investigate The Forgotten Pools and The Lushwater Oasis for Apothecary Helbrim. Kill Oasis Snapjaws and Centaur. Drain Soul right as the mob dies to trigger mana regen.",
     "talent": {
-      "name": "Improved Drain Soul",
+      "name": "Improved Drains",
       "rank": "1/2",
       "tree": "affliction",
-      "why": "Gives a 50% / 100% increase to mana regeneration for 10 sec after killing a target while channeling Drain Soul."
+      "why": "WoW Forever Tier 2 Affliction: Increases damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana (replaces legacy Classic Improved Drain Soul)."
     },
-    "talentNote": "Combines with Life Tap to give zero downtime.",
+    "talentNote": "Improved Drains boosts your Drain Life, Drain Soul, and Drain Mana effectiveness in WoW Forever.",
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
@@ -354,12 +354,12 @@ const WARLOCK_LEVEL_DATA = {
     "hubs": "The Crossroads, Ratchet",
     "zoneInstructions": "Improved Drain Soul hits 2/2! Killing an enemy while channeling Drain Soul gives +100% mana regeneration and allows 50% mana regen to continue while casting for 10 seconds! Complete 'The Samophlange' chain at the Venture Co. oil rig in Sludge Fen.",
     "talent": {
-      "name": "Improved Drain Soul",
+      "name": "Improved Drains",
       "rank": "2/2",
       "tree": "affliction",
-      "why": "Gives a 50% / 100% increase to mana regeneration for 10 sec after killing a target while channeling Drain Soul."
+      "why": "WoW Forever Tier 2 Affliction: Increases damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana (replaces legacy Classic Improved Drain Soul)."
     },
-    "talentNote": "Always finish mobs with Drain Soul to refill your mana bar automatically.",
+    "talentNote": "Max Improved Drains! Pair with Life Tap and Drain Life for zero-downtime leveling.",
     "trainerTrain": [
       "Life Tap (Rank 2)",
       "Unending Breath"
@@ -367,8 +367,8 @@ const WARLOCK_LEVEL_DATA = {
     "trainerSkip": [],
     "rotation": [
       "Instant Corruption -> Bane of Agony",
-      "Wand down to 10% health",
-      "Cast Drain Soul -> Mob dies -> Mana bar surges back to full!"
+      "Wand down or channel Drain Life while Voidwalker tanks",
+      "Use Drain Soul on low-HP mobs to harvest Soul Shards (or Life Tap + First Aid between pulls)"
     ],
     "gearTip": "Necrology Robes or Burlap Vest of the Eagle.",
     "dungeonGear": []
@@ -1518,37 +1518,214 @@ const WARLOCK_LEVEL_DATA = {
 };
 
 const WARLOCK_TALENTS_CONFIG = [
-  // --- Affliction (Tree 1) ---
-  { id: "suppression", name: "Suppression", max: 5, tree: "affliction", icon: "👁️", desc: "Reduces the chance for enemies to resist your Affliction spells by 2% to 10%." },
-  { id: "improved_corruption", name: "Improved Corruption", max: 5, tree: "affliction", icon: "☣️", desc: "Reduces the casting time of your Corruption spell by 0.4s to 2.0s (100% instant cast at 5/5!)." },
-  { id: "improved_drain_soul", name: "Improved Drain Soul", max: 2, tree: "affliction", icon: "💀", desc: "Gives a 50% / 100% increase to mana regeneration for 10 sec after killing a target while channeling Drain Soul." },
-  { id: "improved_life_tap", name: "Improved Life Tap", max: 2, tree: "affliction", icon: "🩸", desc: "Increases the mana awarded by your Life Tap spell by 10% / 20%." },
-  { id: "improved_drain_life", name: "Improved Drain Life", max: 5, tree: "affliction", icon: "🩸", desc: "Increases the health drained by your Drain Life spell by 2% to 10%." },
-  { id: "fel_concentration", name: "Fel Concentration", max: 5, tree: "affliction", icon: "🛡️", desc: "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana." },
-  { id: "amplify_curse", name: "Amplify Curse", max: 1, tree: "affliction", icon: "⚡", desc: "Increases the effect of your next Bane of Agony by 50% or Curse of Exhaustion by 20% on a 3 min cooldown." },
-  { id: "grim_reach", name: "Grim Reach", max: 2, tree: "affliction", icon: "🏹", desc: "Increases the range of your Affliction spells by 10% / 20% (up to 36 yards)." },
-  { id: "nightfall", name: "Nightfall", max: 2, tree: "affliction", icon: "🌑", desc: "Gives your Corruption and Drain Life ticks a 2% / 4% chance to grant an instant-cast Shadow Bolt." },
-  { id: "siphon_life", name: "Siphon Life", max: 1, tree: "affliction", icon: "🩸", desc: "Transfers health from the target to the caster every 3 sec for 30 sec. Foundation of Affliction soloing." },
-  { id: "shadow_mastery", name: "Shadow Mastery", max: 5, tree: "affliction", icon: "🔮", desc: "Increases the damage dealt by your Shadow spells or effects by 2% to 10%." },
-  { id: "dark_pact", name: "Dark Pact", max: 1, tree: "affliction", icon: "🌀", desc: "Drains 150-300 mana from your summoned demon and transfers it directly to you. Eliminates mana downtime." },
-
-  // --- Demonology (Tree 2) ---
-  { id: "improved_healthstone", name: "Improved Healthstone", max: 2, tree: "demonology", icon: "💚", desc: "Increases the amount of health restored by your Healthstone by 10% / 20%." },
-  { id: "improved_imp", name: "Improved Imp", max: 3, tree: "demonology", icon: "🔥", desc: "Increases the effect of your Imp's Firebolt, Fire Shield, and Blood Pact spells by 10% to 30%." },
-  { id: "demonic_embrace", name: "Demonic Embrace", max: 5, tree: "demonology", icon: "💪", desc: "Increases your total Stamina by 3% to 15%, but reduces your total Spirit by 1% to 5%." },
-  { id: "improved_voidwalker", name: "Improved Voidwalker", max: 3, tree: "demonology", icon: "🛡️", desc: "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, and Sacrifice by 10% to 30%." },
-  { id: "fel_intellect", name: "Fel Intellect", max: 5, tree: "demonology", icon: "🧠", desc: "Increases the maximum mana of your summoned demons by 3% to 15%." },
-  { id: "fel_domination", name: "Fel Domination", max: 1, tree: "demonology", icon: "⚡", desc: "Your next Imp, Voidwalker, Succubus, or Felhunter summon spell has its cast time reduced by 5.5s and mana cost by 50%." },
-  { id: "fel_stamina", name: "Fel Stamina", max: 5, tree: "demonology", icon: "❤️", desc: "Increases the maximum health of your summoned demons by 3% to 15%." },
-  { id: "master_summoner", name: "Master Summoner", max: 2, tree: "demonology", icon: "⏱️", desc: "Reduces the casting time of your summoning spells by 2s / 4s, and the mana cost by 20% / 40%." },
-
-  // --- Destruction (Tree 3) ---
-  { id: "improved_shadow_bolt", name: "Improved Shadow Bolt", max: 5, tree: "destruction", icon: "⚡", desc: "Critical strikes from Shadow Bolt increase Shadow damage dealt to the target by 4% to 20% for 4 non-periodic strikes." },
-  { id: "cataclysm", name: "Cataclysm", max: 5, tree: "destruction", icon: "☄️", desc: "Reduces the mana cost of your Destruction spells by 1% to 5%." },
-  { id: "bane", name: "Bane", max: 5, tree: "destruction", icon: "🔥", desc: "Reduces the casting time of your Shadow Bolt and Immolate spells by 0.1s to 0.5s." },
-  { id: "devastation", name: "Devastation", max: 5, tree: "destruction", icon: "💥", desc: "Increases the critical strike chance of your Destruction spells by 1% to 5%." },
-  { id: "shadowburn", name: "Shadowburn", max: 1, tree: "destruction", icon: "🔥", desc: "Instantly blasts the target for Shadow damage. Requires 1 Soul Shard." },
-  { id: "ruin", name: "Ruin", max: 1, tree: "destruction", icon: "👑", desc: "Increases the critical strike damage bonus of your Destruction spells by 100%." }
+  {
+    "id": "suppression",
+    "name": "Suppression",
+    "max": 5,
+    "tree": "affliction",
+    "icon": "👁️",
+    "desc": "Reduces the chance for enemies to resist your Affliction spells by 2% to 10%."
+  },
+  {
+    "id": "improved_corruption",
+    "name": "Improved Corruption",
+    "max": 5,
+    "tree": "affliction",
+    "icon": "☣️",
+    "desc": "Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases Corruption damage by up to 10% in WoW Forever."
+  },
+  {
+    "id": "improved_drain_soul",
+    "name": "Improved Drains",
+    "max": 2,
+    "tree": "affliction",
+    "icon": "💀",
+    "desc": "WoW Forever Tier 2 Affliction: Increases damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana (replaces legacy Classic Improved Drain Soul)."
+  },
+  {
+    "id": "improved_life_tap",
+    "name": "Improved Life Tap",
+    "max": 2,
+    "tree": "affliction",
+    "icon": "🩸",
+    "desc": "Increases the mana awarded by your Life Tap spell by 10% / 20%."
+  },
+  {
+    "id": "improved_drain_life",
+    "name": "Improved Drain Life",
+    "max": 5,
+    "tree": "affliction",
+    "icon": "🩸",
+    "desc": "Increases the health drained by your Drain Life spell by 2% to 10%."
+  },
+  {
+    "id": "fel_concentration",
+    "name": "Fel Concentration",
+    "max": 5,
+    "tree": "affliction",
+    "icon": "🛡️",
+    "desc": "Gives a 14% to 70% chance to avoid interruption caused by damage while channeling Drain Life, Drain Soul, or Drain Mana."
+  },
+  {
+    "id": "amplify_curse",
+    "name": "Amplify Curse",
+    "max": 1,
+    "tree": "affliction",
+    "icon": "⚡",
+    "desc": "Increases the effect of your next Bane of Agony by 50% or Curse of Exhaustion by 20% on a 3 min cooldown."
+  },
+  {
+    "id": "grim_reach",
+    "name": "Grim Reach",
+    "max": 2,
+    "tree": "affliction",
+    "icon": "🏹",
+    "desc": "Increases the range of your Affliction spells by 10% / 20% (up to 36 yards)."
+  },
+  {
+    "id": "nightfall",
+    "name": "Nightfall",
+    "max": 2,
+    "tree": "affliction",
+    "icon": "🌑",
+    "desc": "Gives your Corruption and Drain Life ticks a 2% / 4% chance to grant an instant-cast Shadow Bolt."
+  },
+  {
+    "id": "siphon_life",
+    "name": "Siphon Life",
+    "max": 1,
+    "tree": "affliction",
+    "icon": "🩸",
+    "desc": "Transfers health from the target to the caster every 3 sec for 30 sec. Foundation of Affliction soloing."
+  },
+  {
+    "id": "shadow_mastery",
+    "name": "Shadow Mastery",
+    "max": 5,
+    "tree": "affliction",
+    "icon": "🔮",
+    "desc": "Increases the damage dealt by your Shadow spells or effects by 2% to 10%."
+  },
+  {
+    "id": "dark_pact",
+    "name": "Dark Pact",
+    "max": 1,
+    "tree": "affliction",
+    "icon": "🌀",
+    "desc": "Drains 150-300 mana from your summoned demon and transfers it directly to you. Eliminates mana downtime."
+  },
+  {
+    "id": "improved_healthstone",
+    "name": "Improved Healthstone",
+    "max": 2,
+    "tree": "demonology",
+    "icon": "💚",
+    "desc": "Increases the amount of health restored by your Healthstone by 10% / 20%."
+  },
+  {
+    "id": "improved_imp",
+    "name": "Improved Imp",
+    "max": 3,
+    "tree": "demonology",
+    "icon": "🔥",
+    "desc": "Increases the effect of your Imp's Firebolt, Fire Shield, and Blood Pact spells by 10% to 30%."
+  },
+  {
+    "id": "demonic_embrace",
+    "name": "Demonic Embrace",
+    "max": 5,
+    "tree": "demonology",
+    "icon": "💪",
+    "desc": "Increases your total Stamina by 3% to 15%, but reduces your total Spirit by 1% to 5%."
+  },
+  {
+    "id": "improved_voidwalker",
+    "name": "Improved Voidwalker",
+    "max": 3,
+    "tree": "demonology",
+    "icon": "🛡️",
+    "desc": "Increases the effectiveness of your Voidwalker's Torment, Consume Shadows, and Sacrifice by 10% to 30%."
+  },
+  {
+    "id": "fel_intellect",
+    "name": "Fel Intellect",
+    "max": 5,
+    "tree": "demonology",
+    "icon": "🧠",
+    "desc": "Increases the maximum mana of your summoned demons by 3% to 15%."
+  },
+  {
+    "id": "fel_domination",
+    "name": "Fel Domination",
+    "max": 1,
+    "tree": "demonology",
+    "icon": "⚡",
+    "desc": "Your next Imp, Voidwalker, Succubus, or Felhunter summon spell has its cast time reduced by 5.5s and mana cost by 50%."
+  },
+  {
+    "id": "fel_stamina",
+    "name": "Fel Stamina",
+    "max": 5,
+    "tree": "demonology",
+    "icon": "❤️",
+    "desc": "Increases the maximum health of your summoned demons by 3% to 15%."
+  },
+  {
+    "id": "master_summoner",
+    "name": "Master Summoner",
+    "max": 2,
+    "tree": "demonology",
+    "icon": "⏱️",
+    "desc": "Reduces the casting time of your summoning spells by 2s / 4s, and the mana cost by 20% / 40%."
+  },
+  {
+    "id": "improved_shadow_bolt",
+    "name": "Improved Shadow Bolt",
+    "max": 5,
+    "tree": "destruction",
+    "icon": "⚡",
+    "desc": "Critical strikes from Shadow Bolt increase Shadow damage dealt to the target by 4% to 20% for 4 non-periodic strikes."
+  },
+  {
+    "id": "cataclysm",
+    "name": "Cataclysm",
+    "max": 5,
+    "tree": "destruction",
+    "icon": "☄️",
+    "desc": "Reduces the mana cost of your Destruction spells by 1% to 5%."
+  },
+  {
+    "id": "bane",
+    "name": "Bane",
+    "max": 5,
+    "tree": "destruction",
+    "icon": "🔥",
+    "desc": "Reduces the casting time of your Shadow Bolt and Immolate spells by 0.1s to 0.5s."
+  },
+  {
+    "id": "devastation",
+    "name": "Devastation",
+    "max": 5,
+    "tree": "destruction",
+    "icon": "💥",
+    "desc": "Increases the critical strike chance of your Destruction spells by 1% to 5%."
+  },
+  {
+    "id": "shadowburn",
+    "name": "Shadowburn",
+    "max": 1,
+    "tree": "destruction",
+    "icon": "🔥",
+    "desc": "Instantly blasts the target for Shadow damage. Requires 1 Soul Shard."
+  },
+  {
+    "id": "ruin",
+    "name": "Ruin",
+    "max": 1,
+    "tree": "destruction",
+    "icon": "👑",
+    "desc": "Increases the critical strike damage bonus of your Destruction spells by 100%."
+  }
 ];
 
 const WARLOCK_TALENT_ORDER = [
