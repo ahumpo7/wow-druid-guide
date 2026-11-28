@@ -212,7 +212,7 @@ const WARLOCK_LEVEL_DATA = {
       "Shoot Wand while Voidwalker tanks",
       "Cast Drain Soul when mob reaches 10% HP to harvest a Soul Shard!"
     ],
-    "gearTip": "Create Minor Healthstone before every combat run for an instant emergency heal. Keep 4-8 Soul Shards ready for pet summons.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": [
       {
         "name": "Staff of the Blessed",
@@ -241,7 +241,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Voidwalker Torment -> Agony -> Corruption -> Immolate -> Wand."
     ],
-    "gearTip": "Keep Voidwalker's Torment at maximum rank from the Demon Trainer in Undercity.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": []
   },
   "12": {
@@ -265,7 +265,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Voidwalker attacks -> Agony -> Corruption -> Wand -> Life Tap -> First Aid bandage."
     ],
-    "gearTip": "Check weapon vendors in Undercity for off-hand books with intellect.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": []
   },
   "13": {
@@ -287,7 +287,7 @@ const WARLOCK_LEVEL_DATA = {
       "Voidwalker Torment -> Agony -> Corruption -> Drain Life or Shoot Greater Magic Wand!",
       "Greater Magic Wand deals 17.5 DPS for 0 mana!"
     ],
-    "gearTip": "🔥 GREATER MAGIC WAND: 17.5 Arcane DPS. Craft via Enchanting (75) or purchase on AH.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": [
       {
         "name": "Greater Magic Wand",
@@ -323,7 +323,7 @@ const WARLOCK_LEVEL_DATA = {
       "Apply Bane of Agony instantly",
       "Wand with Greater Magic Wand -> Mob dies -> Life Tap -> Keep running!"
     ],
-    "gearTip": "Look for 'Of the Eagle' cloth robes and pants.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": []
   },
   "15": {
@@ -344,7 +344,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Instant Corruption -> Agony -> Wand -> Channel Drain Soul on final 5% HP."
     ],
-    "gearTip": "First Aid: Keep your bandages updated to Thick Linen or Silk.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": []
   },
   "16": {
@@ -370,7 +370,7 @@ const WARLOCK_LEVEL_DATA = {
       "Wand down or channel Drain Life while Voidwalker tanks",
       "Use Drain Soul on low-HP mobs to harvest Soul Shards (or Life Tap + First Aid between pulls)"
     ],
-    "gearTip": "Necrology Robes or Burlap Vest of the Eagle.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": []
   },
   "17": {
@@ -391,7 +391,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Instant Corruption -> Agony -> Wand -> Drain Soul finisher -> Life Tap."
     ],
-    "gearTip": "Check Ratchet vendors for upgraded bags (8-slot / 10-slot).",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": []
   },
   "18": {
@@ -417,7 +417,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Instant Corruption -> Bane of Agony -> Wand -> Drain Soul -> Life Tap."
     ],
-    "gearTip": "Look for high Stamina pieces—every point of Stamina translates to more mana via Life Tap!",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": [
       {
         "name": "Robe of the Moccasin",
@@ -446,7 +446,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Instant Corruption -> Agony -> Wand -> Drain Soul finisher."
     ],
-    "gearTip": "Save Silk Cloth and Wool Cloth for tailoring/bandages.",
+    "gearTip": "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     "dungeonGear": []
   },
   "20": {
@@ -478,7 +478,7 @@ const WARLOCK_LEVEL_DATA = {
       "Channel Drain Life or Shoot Wand",
       "Finish with Drain Soul for mana refund"
     ],
-    "gearTip": "Greater Magic Wand remains excellent, but keep an eye out for Shadowfang Keep caster drops.",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": [
       {
         "name": "Robes of Arugal",
@@ -507,7 +507,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Succubus attacks -> Instant Corruption -> Agony -> Drain Life -> Wand."
     ],
-    "gearTip": "Look for 'Of Shadow Wrath' gear (+Shadow Spell Damage). It scales every single tick of Corruption and Drain Life!",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "22": {
@@ -534,7 +534,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Instant Corruption -> Agony -> Drain Life directly tanking mobs in face."
     ],
-    "gearTip": "Check Tarren Mill vendors for high stamina cloth gear.",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "23": {
@@ -558,7 +558,7 @@ const WARLOCK_LEVEL_DATA = {
       "Drain Life heals you for all damage taken",
       "Finish with Drain Soul -> Life Tap back to full mana!"
     ],
-    "gearTip": "Shadow Spell Damage pieces make Drain Life heal for more!",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "24": {
@@ -583,7 +583,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Amplify Curse + Bane of Agony -> Instant Corruption -> Drain Life -> Wand."
     ],
-    "gearTip": "Shadowfang Keep drop: Robes of Arugal or Necrology Robes.",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "25": {
@@ -605,7 +605,7 @@ const WARLOCK_LEVEL_DATA = {
       "Instant Corruption -> Bane of Agony -> Drain Life",
       "Watch for Nightfall 'Shadow Trance' buff -> Immediately fire INSTANT SHADOW BOLT!"
     ],
-    "gearTip": "Freewind Post quests reward solid leather/cloth and green rings.",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "26": {
@@ -629,7 +629,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Instant Corruption -> Agony -> Drain Life -> INSTANT Shadow Bolt on proc!"
     ],
-    "gearTip": "🔥 TARGET ITEM: Gravestone Scepter (BFD quest: Blackfathom Villainy). Best wand in the entire 20-40 bracket!",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": [
       {
         "name": "Gravestone Scepter",
@@ -658,7 +658,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Tag from 33 yards with Instant Corruption -> Agony -> Drain Life."
     ],
-    "gearTip": "Ensure your bags have 8-10 Soul Shards for dungeon groups or elite quests.",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "28": {
@@ -686,7 +686,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "36yd Corruption -> 36yd Agony -> Drain Life -> Instant Shadow Bolt on Nightfall proc."
     ],
-    "gearTip": "Silk bandages from First Aid (150) heal for 400 HP over 8 sec.",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "29": {
@@ -707,7 +707,7 @@ const WARLOCK_LEVEL_DATA = {
     "rotation": [
       "Instant Corruption -> Bane of Agony -> Drain Life -> Drain Soul on kill."
     ],
-    "gearTip": "Sell full bags at Mirage Raceway vendor.",
+    "gearTip": "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     "dungeonGear": []
   },
   "30": {
@@ -732,10 +732,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Instant Corruption -> Siphon Life -> Bane of Agony (all 3 DoTs ticking!)",
-      "Channel Drain Life -> Double healing incoming!",
-      "Health stays near 100% while mob melts",
-      "Life Tap to full mana -> Next mob immediately!"
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Shadow Damage gear makes Siphon Life tick for massive healing numbers.",
     "dungeonGear": [
@@ -764,7 +763,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Multi-dot: Dot Mob A (Corruption + Siphon + Agony), Dot Mob B, Drain Life Mob A."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Heavy Silk Bandages heal for 640 HP.",
     "dungeonGear": []
@@ -789,7 +790,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Corruption -> Siphon Life -> Agony -> Drain Life -> Instant Shadow Bolt on proc."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Look for 'Of Shadow Wrath' shoulders and belts.",
     "dungeonGear": []
@@ -810,7 +813,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Multi-dot centaur camps with Siphon Life + Corruption."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Shadowprey Village has fishing vendors and fish quests.",
     "dungeonGear": []
@@ -836,7 +841,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Corruption -> Siphon Life -> Agony -> Drain Life -> Wand."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Keep PvP trinket or healthstone ready on Grom'gol's contested roads.",
     "dungeonGear": []
@@ -857,7 +864,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Full 10% boosted DoTs: Siphon Life + Corruption + Agony -> Drain Life face tank!"
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Robes of Arugal or Robe of the Lich (from Razorfen Downs).",
     "dungeonGear": [
@@ -893,7 +902,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Siphon Life -> Corruption -> Agony -> Drain Life -> Life Tap."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Kargath vendor sells level 35+ food, water, and reagents.",
     "dungeonGear": []
@@ -914,7 +925,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Siphon Life -> Corruption -> Agony -> Drain Life face-tank."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Elemental Earth from rock elementals is valuable—hold for AH sale.",
     "dungeonGear": []
@@ -940,7 +953,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "DoT trifecta -> Drain Life -> Nightfall Shadow Bolt procs."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Stonard innkeeper and flight path make Swamp of Sorrows easy to traverse.",
     "dungeonGear": []
@@ -961,7 +976,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Siphon Life -> Corruption -> Agony -> Drain Life."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"
     ],
     "gearTip": "Prepare to visit Undercity / Orgrimmar Warlock Trainer at 40.",
     "dungeonGear": []
@@ -985,10 +1002,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Keep Succubus or Imp on Passive with max mana",
-      "Tag mob with Instant Corruption + Siphon Life + Agony",
-      "Face-tank with Drain Life -> Mob dies",
-      "Tap Dark Pact 2-3 times -> Pet gives you all its mana back -> Immediately pull next mob!"
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Mount increases questing and travel speed by 60%! Head immediately to Tanaris (Gadgetzan).",
     "dungeonGear": [
@@ -1017,7 +1033,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact mana from pet."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Water Pouch bounty gives massive XP and gold.",
     "dungeonGear": []
@@ -1043,7 +1061,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "DoT -> Drain Life -> Nether Force Wand finishes."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Nether Force Wand: 40.5 Shadow DPS!",
     "dungeonGear": [
@@ -1072,7 +1092,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Siphon Life -> Corruption -> Agony -> Drain Life -> Dark Pact pet mana."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Camp Mojache has leatherworking and tailoring trainers.",
     "dungeonGear": []
@@ -1096,7 +1118,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Full DoTs -> Drain Life -> Dark Pact."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Hinterlands quests reward exceptional blue items for casters.",
     "dungeonGear": []
@@ -1117,8 +1141,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "DoTs -> Drain Life -> Dark Pact",
-      "If in danger: Pop Fel Domination -> Summon Voidwalker -> Pop Sacrifice for 1200 HP shield!"
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Zul'Farrak run: Zum'rah's Vexing Cane (+Spell Damage staff).",
     "dungeonGear": [
@@ -1154,7 +1179,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Thorium Brotherhood reputation starts here.",
     "dungeonGear": []
@@ -1175,7 +1202,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Multi-dot harpies and drain tank."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Vendor gray drops in Camp Mojache.",
     "dungeonGear": []
@@ -1202,7 +1231,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Prepare soul shards and reagents for your level 50 class quest.",
     "dungeonGear": []
@@ -1223,7 +1254,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "DoT -> Drain Life -> Dark Pact. Multi-pull beasts safely."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Blasted Lands buff consumables grant +25 Stamina or +25 Intellect for 1 hour!",
     "dungeonGear": []
@@ -1249,9 +1282,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Send Succubus -> Corruption -> Siphon Life -> Agony",
-      "Face tank Pterodactyls and Raptors with Drain Life",
-      "Drain pet mana with Dark Pact -> Mob dead -> Pull next dinosaur immediately!"
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Un'Goro Soil and Bloodpetal Sprouts are needed for quests.",
     "dungeonGear": []
@@ -1272,7 +1305,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "DoT trifecta -> Drain Life -> Dark Pact."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Look for Devilsaur spawns—call out to high-level guildies or skinners.",
     "dungeonGear": []
@@ -1295,7 +1330,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Corrupted flowers in Felwood provide Whipper Root Tubers (instant heal!).",
     "dungeonGear": []
@@ -1316,7 +1353,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Drain Life -> Dark Pact -> Drain Soul."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Borean Mantle from world drop or Scholomance prep.",
     "dungeonGear": []
@@ -1342,7 +1381,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Siphon Life -> Corruption -> Agony -> Drain Life face tank."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Cauldron quest turn-ins grant gigantic lump-sum XP payouts!",
     "dungeonGear": []
@@ -1363,7 +1404,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "DoT trifecta -> Drain Life -> Dark Pact pet mana."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Winterfall Furbolgs drop Firewater and Ekos (valuable raid consumables).",
     "dungeonGear": []
@@ -1389,7 +1432,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Siphon Life -> Corruption -> Agony -> Drain Life face-tank."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Collect Argent Dawn Valor Tokens from scourge mobs.",
     "dungeonGear": []
@@ -1410,7 +1455,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "DoTs -> Drain Life -> Dark Pact -> Drain Soul."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Blackrock Mountain dungeons: BRD, LBRS, Stratholme.",
     "dungeonGear": []
@@ -1436,7 +1483,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Curse of Shadows / Elements in dungeons -> Shadow Bolt / Corruption."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Scholomance: Necropile Raiment set pieces.",
     "dungeonGear": [
@@ -1465,7 +1514,9 @@ const WARLOCK_LEVEL_DATA = {
     "trainerTrain": [],
     "trainerSkip": [],
     "rotation": [
-      "Siphon Life -> Corruption -> Agony -> Drain Life -> Dark Pact."
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Collect 300 gold or prep materials for Epic Dreadsteed quest line at Level 60!",
     "dungeonGear": []
@@ -1494,8 +1545,9 @@ const WARLOCK_LEVEL_DATA = {
     ],
     "trainerSkip": [],
     "rotation": [
-      "Solo Drain Tank: Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact",
-      "Raid Boss: Curse of the Elements / Shadows -> Corruption (if debuff slot allows) -> Shadow Bolt spam"
+      "Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)",
+      "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc",
+      "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"
     ],
     "gearTip": "Crown of the Ogre King, Robe of the Void (Crafted Tailoring 300), Briarwood Reed, Rod of the Ogre Magi.",
     "dungeonGear": [

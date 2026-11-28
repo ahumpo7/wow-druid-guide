@@ -287,7 +287,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Feral Swiftness (1/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Cat Form (Quest)", "Claw (Rank 1)", "Prowl (Rank 1)", "Rebirth (Rank 1)", "Rip (Rank 1)", "Mark of the Wild (Rank 2)", "Wrath (Rank 4)"},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -301,7 +301,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Feral Swiftness (2/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -315,7 +315,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Sharpened Claws (1/3) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Rake (Rank 1)", "Moonfire (Rank 4)", "Rejuvenation (Rank 4)"},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -329,7 +329,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Sharpened Claws (2/3) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -343,7 +343,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Sharpened Claws (3/3) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Tiger's Fury (Rank 1)", "Bash (Rank 2)", "Demoralizing Roar (Rank 3)", "Swipe (Rank 2)", "Regrowth (Rank 3)", "Healing Touch (Rank 5)"},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -357,7 +357,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Predatory Strikes (1/3) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -371,7 +371,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Predatory Strikes (2/3) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Abolish Poison", "Maul (Rank 3)", "Rip (Rank 2)", "Hibernate (Rank 2)"},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -385,7 +385,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Predatory Strikes (3/3) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -399,7 +399,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Blood Frenzy (1/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Claw (Rank 2)", "Cower (Rank 1)", "Rake (Rank 2)", "Moonfire (Rank 5)", "Rejuvenation (Rank 5)"},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
     }
   },
@@ -413,7 +413,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Blood Frenzy (2/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Enter Prowl (Stealth) -> Open with Claw", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Rip (Ferocious Bite unlocks at Level 32) -> Shift out to heal if needed"},
+    rotation = {"Prowl -> Open with Claw + Rake DoT (Cat attacks scale directly with slow high-DPS 2H staves/maces in WoW Forever!)", "Spend baseline Omen of Clarity (Clearcasting) procs on free 0-energy Claw/Shred or Rip!", "Finish with Rip at 4-5 Combo Points -> Shift out to Rejuvenation/Healing Touch if needed"},
     dungeonGear = {
       { name = "Manual Crowd Pummeler", quality = "rare", source = "Gnomeregan - Crowd Pummeler 9-60", stats = "+16 Strength, +5 Agility, +50% Attack Speed On-Use!", tip = "Legendary feral weapon! Keep the on-use for bosses!" },
     }
@@ -428,7 +428,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Faerie Fire (Feral) (1/1) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Travel Form (40% Speed!)", "Shred (Rank 1)", "Faerie Fire (Rank 2)", "Mark of the Wild (Rank 3)", "Healing Touch (Rank 6)"},
-    rotation = {"Prowl -> Open with Claw + Faerie Fire (Feral) for zero-mana armor reduction", "Apply Rake DoT -> Claw to 4-5 Combo Points -> Rip finisher", "Shift out to Rejuvenation / Healing Touch between pulls if needed"},
+    rotation = {"Prowl -> Claw + Faerie Fire (Feral) for zero-mana armor reduction", "Apply Rake DoT -> spend baseline Omen of Clarity Clearcasting procs on free Shred/Claw!", "Rip finisher at 4-5 Combo Points -> Travel Form between quest hubs (+40% speed)"},
     dungeonGear = {
     }
   },
@@ -442,7 +442,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Savage Fury (1/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Open with Claw + Faerie Fire (Feral) for zero-mana armor reduction", "Apply Rake DoT -> Claw to 4-5 Combo Points -> Rip finisher", "Shift out to Rejuvenation / Healing Touch between pulls if needed"},
+    rotation = {"Prowl -> Claw + Faerie Fire (Feral) for zero-mana armor reduction", "Apply Rake DoT -> spend baseline Omen of Clarity Clearcasting procs on free Shred/Claw!", "Rip finisher at 4-5 Combo Points -> Travel Form between quest hubs (+40% speed)"},
     dungeonGear = {
     }
   },
@@ -456,7 +456,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Savage Fury (2/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Ferocious Bite (Rank 1)", "Swipe (Rank 3)", "Regrowth (Rank 4)", "Wrath (Rank 5)"},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -470,7 +470,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Primal Fury (1/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -484,7 +484,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Primal Fury (2/2) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Ravage (Rank 1)", "Maul (Rank 4)", "Demoralizing Roar (Rank 4)", "Rip (Rank 3)"},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -498,7 +498,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Heart of the Wild (1/5) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -512,7 +512,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Heart of the Wild (2/5) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Pounce (Rank 1)", "Rake (Rank 3)", "Cower (Rank 2)", "Moonfire (Rank 6)", "Rejuvenation (Rank 6)"},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -526,7 +526,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Heart of the Wild (3/5) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -540,7 +540,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Heart of the Wild (4/5) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Claw (Rank 3)", "Tiger's Fury (Rank 2)", "Bash (Rank 3)", "Healing Touch (Rank 7)"},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -554,7 +554,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Heart of the Wild (5/5) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake -> Shred (behind) or Claw to 4-5 Combo Points (use Omen of Clarity Clearcasting on Shred!)", "Finish with Ferocious Bite (or Rip on high-HP mobs)"},
     dungeonGear = {
     }
   },
@@ -568,7 +568,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Leader of the Pack (1/1) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Dire Bear Form", "Ferocious Bite (Rank 2)", "Regrowth (Rank 5)", "Rebirth (Rank 2)", "Mount Riding"},
-    rotation = {"Prowl (Stealth) -> Open with Ravage (from behind) + Faerie Fire (Feral)", "Apply Rake DoT -> Claw to 4-5 Combo Points", "Finish with Ferocious Bite for instant burst! Shift out to heal when needed"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -582,7 +582,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Furor (1/5) - RESTORATION Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -596,7 +596,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Furor (2/5) - RESTORATION Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Maul (Rank 5)", "Shred (Rank 2)", "Rip (Rank 4)", "Moonfire (Rank 7)", "Rejuvenation (Rank 7)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -610,7 +610,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Furor (3/5) - RESTORATION Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -624,7 +624,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Furor (4/5) - RESTORATION Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Barkskin", "Rake (Rank 4)", "Swipe (Rank 4)", "Demoralizing Roar (Rank 5)", "Healing Touch (Rank 8)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -638,7 +638,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Furor (5/5) - RESTORATION Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
       { name = "Resurgence Rod", quality = "rare", source = "Maraudon Quest: Corruption of Earth and Seed", stats = "+15 Stamina, +15 Intellect, +15 Spirit", tip = "Incredible all-around staff." },
     }
@@ -653,7 +653,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Nature's Grasp (1/1) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Ravage (Rank 2)", "Cower (Rank 3)", "Regrowth (Rank 6)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -667,7 +667,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Improved Nature's Grasp (1/4) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -681,7 +681,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Improved Nature's Grasp (2/4) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Claw (Rank 4)", "Ferocious Bite (Rank 3)", "Tiger's Fury (Rank 3)", "Moonfire (Rank 8)", "Rejuvenation (Rank 8)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -695,7 +695,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Improved Nature's Grasp (3/4) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -709,7 +709,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Improved Nature's Grasp (4/4) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Maul (Rank 6)", "Shred (Rank 3)", "Rip (Rank 5)", "Healing Touch (Rank 9)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -723,7 +723,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Weapons (1/5) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -737,7 +737,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Weapons (2/5) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Rake (Rank 5)", "Bash (Rank 4)", "Regrowth (Rank 7)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -751,7 +751,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Weapons (3/5) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -765,7 +765,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Weapons (4/5) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Demoralizing Roar (Rank 6)", "Swipe (Rank 5)", "Moonfire (Rank 9)", "Rejuvenation (Rank 9)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -779,7 +779,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Weapons (5/5) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -793,7 +793,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Shapeshifter (1/3) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Ferocious Bite (Rank 4)", "Ravage (Rank 3)", "Cower (Rank 4)", "Healing Touch (Rank 10)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -807,7 +807,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Shapeshifter (2/3) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -821,7 +821,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Natural Shapeshifter (3/3) - BALANCE Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Claw (Rank 5)", "Shred (Rank 4)", "Maul (Rank 7)", "Rip (Rank 6)", "Regrowth (Rank 8)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -835,7 +835,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Thick Hide (1/5) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },
@@ -849,7 +849,7 @@ WoWGuide_Druid.levels = {
     talentNote = "Thick Hide (2/5) - FERAL Tree.",
     gearTip = "Prioritize Agility (Attack Power, Crit %, Dodge %) > Strength (2 Attack Power per point in Cat Form!) > Stamina.",
     trainerTrain = {"Ferocious Bite (Rank 5)", "Rake (Rank 6)", "Rebirth (Rank 3)", "Mark of the Wild (Rank 7)", "Moonfire (Rank 10)", "Rejuvenation (Rank 10)", "Healing Touch (Rank 11)"},
-    rotation = {"Prowl -> Ravage opener + Faerie Fire (Feral) (+3% Crit from Leader of the Pack!)", "Rake -> Claw to 4-5 Combo Points -> Ferocious Bite", "Powershift (Furor 5/5 gives +40 Energy on shift; +60 with Wolfshead Helm!)"},
+    rotation = {"Prowl -> Ravage + Faerie Fire (Feral) (raid-wide +3% crit from Leader of the Pack!)", "Rake -> Shred (on Clearcasting procs) / Claw -> Ferocious Bite", "Convert spare mana into +40 Energy with Shifting Power / Furor shifts for nonstop zero-downtime pulls!"},
     dungeonGear = {
     }
   },

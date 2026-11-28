@@ -1156,32 +1156,31 @@ function renderRotations() {
   } else if (activeClass === "rogue") {
     container.innerHTML = `
       <div class="guide-card">
-        <h3>🗡️ Master Combat Swords Rotation (Level 10–60)</h3>
-        <p style="color: var(--text-muted); margin-bottom: 12px;">Maximum sustained physical DPS and defensive uptime:</p>
+        <h3>🗡️ Master WoW Forever Combat Rotation (Level 10–60)</h3>
+        <p style="color: var(--text-muted); margin-bottom: 12px;">Sustained physical DPS with sticky Combo Points, Shank energy regen, and Hack and Slash:</p>
         <ol style="padding-left: 20px; line-height: 1.8;">
-          <li><strong>Poisons:</strong> ALWAYS keep Instant Poison applied to both Main Hand and Off-Hand!</li>
+          <li><strong>Poisons &amp; Stones:</strong> ALWAYS keep Instant Poison on both weapons (stacks with sharpening stones in WoW Forever!).</li>
           <li><strong>Opener:</strong> Open from Stealth with Cheap Shot (4s stun) or 40-Energy Sinister Strike (Improved Sinister Strike 2/2).</li>
-          <li><strong>Slice and Dice:</strong> Spend 1-2 Combo Points to activate Slice and Dice (+20% to +30% attack speed). KEEP IT UP 100% OF THE TIME!</li>
-          <li><strong>Riposte on Parry:</strong> Whenever you parry, press Riposte immediately (10 energy for 150% weapon damage + 6s disarm!).</li>
-          <li><strong>Finisher:</strong> Spend 4-5 Combo Points on Eviscerate (Relentless Strikes refunds 25 energy).</li>
-          <li><strong>Double Pulls / Packs:</strong> Pop Blade Flurry (+20% speed + cleave both) + Adrenaline Rush (100% energy regen) and shred entire packs!</li>
-          <li><strong>Emergency Survival:</strong> Gouge (4s incapacitate) -> Step back -> Apply First Aid bandage -> Re-engage!</li>
+          <li><strong>Slice and Dice:</strong> Spend 1-2 Combo Points to activate Slice and Dice (+20% to +30% attack speed). KEEP IT UP 100%!</li>
+          <li><strong>Shank (Level 24+):</strong> Weave Shank on cooldown for off-hand energy generation and extra poison procs!</li>
+          <li><strong>Riposte on Parry (Level 20+):</strong> Whenever you parry, press Riposte immediately (150% weapon damage + 6s disarm!).</li>
+          <li><strong>Finisher:</strong> Spend 4-5 Combo Points on Eviscerate (unused Combo Points stick across target swaps in WoW Forever!).</li>
+          <li><strong>Double Pulls / Packs:</strong> Pop Blade Flurry (Lvl 30) + Adrenaline Rush (Lvl 40) with Hack and Slash Swords/Axes!</li>
         </ol>
       </div>
     `;
   } else {
     container.innerHTML = `
       <div class="guide-card">
-        <h3>🐾 Master Feral Cat & Bear Rotation (Level 1–60)</h3>
-        <p style="color: var(--text-muted); margin-bottom: 12px;">Maximum kill velocity, zero downtime, and instant powershifting:</p>
+        <h3>🐾 Master WoW Forever Feral Cat &amp; Bear Rotation (Level 1–60)</h3>
+        <p style="color: var(--text-muted); margin-bottom: 12px;">Weapon-DPS scaling, baseline Omen of Clarity (Lvl 20), and Shifting Power energy sustain:</p>
         <ol style="padding-left: 20px; line-height: 1.8;">
-          <li><strong>Levels 1–9 (Caster Phase):</strong> Cast Wrath at range -> Apply Moonfire DoT -> Melee with 2H staff while spirit mana ticks. Heal with Healing Touch after combat.</li>
-          <li><strong>Levels 10–19 (Bear Form):</strong> Open with Enrage (10 free rage) -> Demoralizing Roar -> Maul on every melee swing. In emergency: Bash (stun) -> Shift out -> Cast Rejuvenation & Regrowth -> Shift back into Bear!</li>
-          <li><strong>Levels 20–60 (Cat Form Opener):</strong> Prowl into melee range. Open with Ravage (from behind) or Tiger's Fury + Claw.</li>
-          <li><strong>Combo Points:</strong> Apply Rake DoT -> Claw to 4–5 Combo Points.</li>
-          <li><strong>Finisher:</strong> Spend Combo Points on Ferocious Bite (instant burst damage) or Rip (if the mob has high armor or high HP).</li>
-          <li><strong>Faerie Fire (Feral):</strong> Always keep Faerie Fire (Feral) active on the mob to reduce target armor by hundreds!</li>
-          <li><strong>Powershifting (With Furor & Wolfshead):</strong> Shifting out and immediately back into Cat Form instantly gives 40-60 Energy! Macro powershifting to never miss a swing.</li>
+          <li><strong>Levels 1–9 (Caster Phase):</strong> Cast Wrath at range -> Apply Moonfire DoT -> Melee with 2H staff while spirit mana ticks.</li>
+          <li><strong>Levels 10–19 (Bear Form):</strong> Enrage -> Demoralizing Roar -> Maul spam. Bash (stun) -> Shift out -> Rejuvenation &amp; Regrowth if low!</li>
+          <li><strong>Levels 20–31 (Early Cat Form):</strong> Prowl -> Claw + Rake -> Rip finisher. Spend baseline <strong>Omen of Clarity</strong> Clearcasting procs on free 0-Energy Shred/Claw or Rip!</li>
+          <li><strong>Levels 32–60 (Full Cat Form):</strong> Prowl -> Ravage (behind) + <strong>Faerie Fire (Feral)</strong> -> Rake -> Shred/Claw -> Ferocious Bite!</li>
+          <li><strong>2H Weapon Scaling:</strong> In WoW Forever, Cat Form attacks scale directly with slow, high-DPS 2H staves/maces (Crescent Staff, Manual Crowd Pummeler, Warden Staff).</li>
+          <li><strong>Shifting Power &amp; Furor:</strong> Convert spare mana into +40 Energy with Shifting Power (or Furor shifts) for zero downtime!</li>
         </ol>
       </div>
     `;

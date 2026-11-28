@@ -144,7 +144,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "MAJOR MILESTONE! Visit Luther Pickman in Brill to accept 'The Binding' (Voidwalker Class Quest). Travel to the ruined tower in northern Tirisfal, defeat the summoned Voidwalker, and bind it to your will! Now you have a personal tank minion with Taunt (Torment) and Sacrifice shield!",
     talent = { name = "Improved Corruption", rank = "1/5", tree = "affliction", why = "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%." },
     talentNote = "Improved Corruption (1/5) - AFFLICTION Tree.",
-    gearTip = "Create Minor Healthstone before every combat run for an instant emergency heal. Keep 4-8 Soul Shards ready for pet summons.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {"Create Healthstone (Minor)", "Summon Voidwalker (Quest)", "Drain Soul (Rank 1)", "Demon Skin (Rank 2)", "Immolate (Rank 2)", "Health Funnel (Rank 1)"},
     rotation = {"Order Voidwalker to attack (Torment grabs aggro)", "Bane of Agony -> Corruption -> Immolate", "Shoot Wand while Voidwalker tanks", "Cast Drain Soul when mob reaches 10% HP to harvest a Soul Shard!"},
     dungeonGear = {
@@ -159,7 +159,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Head south into Silverpine Forest and reach The Sepulcher. Grab the flight path! Pick up 'Proudfang / Moonrage Whitescalp' quests. Watch out for wandering Arugal's pets.",
     talent = { name = "Improved Corruption", rank = "2/5", tree = "affliction", why = "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%." },
     talentNote = "Improved Corruption (2/5) - AFFLICTION Tree.",
-    gearTip = "Keep Voidwalker's Torment at maximum rank from the Demon Trainer in Undercity.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {},
     rotation = {"Voidwalker Torment -> Agony -> Corruption -> Immolate -> Wand."},
     dungeonGear = {
@@ -173,7 +173,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Travel to Pyrewood Village border and kill Moonrage Worgen. Train Life Tap (Rank 2) and Corruption (Rank 2) at the Warlock Trainer in Undercity (Magic Quarter).",
     talent = { name = "Improved Corruption", rank = "3/5", tree = "affliction", why = "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%." },
     talentNote = "Improved Corruption (3/5) - AFFLICTION Tree.",
-    gearTip = "Check weapon vendors in Undercity for off-hand books with intellect.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {"Curse of Weakness (Rank 2)", "Shadow Bolt (Rank 3)"},
     rotation = {"Voidwalker attacks -> Agony -> Corruption -> Wand -> Life Tap -> First Aid bandage."},
     dungeonGear = {
@@ -187,7 +187,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Take the Zeppelin from Brill to Durotar, then walk west to The Crossroads in The Barrens! CRUCIAL: Acquire a Greater Magic Wand (req lvl 13, 17.5 DPS). This wand single-handedly obliterates mobs in seconds without spending any mana!",
     talent = { name = "Improved Corruption", rank = "4/5", tree = "affliction", why = "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%." },
     talentNote = "Improved Corruption (4/5) - AFFLICTION Tree.",
-    gearTip = "GREATER MAGIC WAND: 17.5 Arcane DPS. Craft via Enchanting (75) or purchase on AH.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {},
     rotation = {"Voidwalker Torment -> Agony -> Corruption -> Drain Life or Shoot Greater Magic Wand!", "Greater Magic Wand deals 17.5 DPS for 0 mana!"},
     dungeonGear = {
@@ -202,7 +202,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "GAME CHANGER! Improved Corruption reaches 5/5, making Corruption 100% INSTANT CAST! Now you can tag mobs, kite, and cast DoTs on the run without stopping. Pick up 'Disrupt the Attacks', 'The Forgotten Pools', and 'Plainstrider Menace'.",
     talent = { name = "Improved Corruption", rank = "5/5", tree = "affliction", why = "WoW Forever Tier 1 Affliction: Reduces Corruption cast time by 0.4s per rank (instant at 5/5) and increases periodic damage by up to 10%." },
     talentNote = "Improved Corruption (5/5) - AFFLICTION Tree.",
-    gearTip = "Look for 'Of the Eagle' cloth robes and pants.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {"Corruption (Rank 2)", "Drain Life (Rank 1)", "Curse of Recklessness (Rank 1)"},
     rotation = {"Cast instant Corruption while running toward mob", "Voidwalker charges in and Torments", "Apply Bane of Agony instantly", "Wand with Greater Magic Wand -> Mob dies -> Life Tap -> Keep running!"},
     dungeonGear = {
@@ -216,7 +216,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Investigate The Forgotten Pools and The Lushwater Oasis for Apothecary Helbrim. Kill Oasis Snapjaws and Centaur. Drain Soul right as the mob dies to trigger mana regen.",
     talent = { name = "Improved Life Tap", rank = "1/2", tree = "affliction", why = "WoW Forever Tier 1 Affliction: Increases the mana awarded by your Life Tap spell by 10%/20%." },
     talentNote = "Improved Life Tap (1/2) - AFFLICTION Tree.",
-    gearTip = "First Aid: Keep your bandages updated to Thick Linen or Silk.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {},
     rotation = {"Instant Corruption -> Agony -> Wand -> Channel Drain Soul on final 5% HP."},
     dungeonGear = {
@@ -230,7 +230,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Improved Drain Soul hits 2/2! Killing an enemy while channeling Drain Soul gives +100% mana regeneration and allows 50% mana regen to continue while casting for 10 seconds! Complete 'The Samophlange' chain at the Venture Co. oil rig in Sludge Fen.",
     talent = { name = "Improved Life Tap", rank = "2/2", tree = "affliction", why = "WoW Forever Tier 1 Affliction: Increases the mana awarded by your Life Tap spell by 10%/20%." },
     talentNote = "Improved Life Tap (2/2) - AFFLICTION Tree.",
-    gearTip = "Necrology Robes or Burlap Vest of the Eagle.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {"Life Tap (Rank 2)", "Unending Breath"},
     rotation = {"Instant Corruption -> Bane of Agony", "Wand down or channel Drain Life while Voidwalker tanks", "Use Drain Soul on low-HP mobs to harvest Soul Shards (or Life Tap + First Aid between pulls)"},
     dungeonGear = {
@@ -244,7 +244,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Head to Ratchet and grab the Flight Path. Complete 'Raptor Horns', 'Southsea Freebooters', and 'The Guns of Northwatch'.",
     talent = { name = "Improved Drains", rank = "1/3", tree = "affliction", why = "WoW Forever Tier 2 Affliction: Increases the damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana." },
     talentNote = "Improved Drains (1/3) - AFFLICTION Tree.",
-    gearTip = "Check Ratchet vendors for upgraded bags (8-slot / 10-slot).",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {},
     rotation = {"Instant Corruption -> Agony -> Wand -> Drain Soul finisher -> Life Tap."},
     dungeonGear = {
@@ -258,7 +258,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Max out Improved Life Tap (+20% mana conversion). Pick up Wailing Caverns quests: 'Leaders of the Fang', 'Deviate Hides', and 'Smart Drinks'. Optionally run Wailing Caverns for Robe of the Moccasin and Deviate Scale Belt.",
     talent = { name = "Improved Drains", rank = "2/3", tree = "affliction", why = "WoW Forever Tier 2 Affliction: Increases the damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana." },
     talentNote = "Improved Drains (2/3) - AFFLICTION Tree.",
-    gearTip = "Look for high Stamina pieces - every point of Stamina translates to more mana via Life Tap!",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {"Create Soulstone (Minor)", "Bane of Agony (Rank 2)", "Searing Pain (Rank 1)", "Drain Soul (Rank 2)"},
     rotation = {"Instant Corruption -> Bane of Agony -> Wand -> Drain Soul -> Life Tap."},
     dungeonGear = {
@@ -273,7 +273,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Kill Thunderhawks and Bristleback Quilboars around Camp Taurajo. Complete 'Tribal Warfare' and 'Betrayal from Within'. Prepare for your Level 20 Succubus class quest!",
     talent = { name = "Improved Drains", rank = "3/3", tree = "affliction", why = "WoW Forever Tier 2 Affliction: Increases the damage and health/mana drained by Drain Life, Drain Soul, and Drain Mana." },
     talentNote = "Improved Drains (3/3) - AFFLICTION Tree.",
-    gearTip = "Save Silk Cloth and Wool Cloth for tailoring/bandages.",
+    gearTip = "WoW Forever: Keep Voidwalker tanking (buffed threat!) while Bane of Agony + instant Corruption tick. Use Lesser/Greater Magic Wand to save mana.",
     trainerTrain = {},
     rotation = {"Instant Corruption -> Agony -> Wand -> Drain Soul finisher."},
     dungeonGear = {
@@ -287,7 +287,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "MAJOR MILESTONE! Pick up 'Devourer of Souls' (Succubus Class Quest) from Caretaker Caice in Undercity or The Crossroads. Travel to the Silverpine hills and the wetlands of the Barrens to collect the Hearts of Wood. Summon and defeat the Succubus to bind her! The Succubus brings high DPS, Seduction CC, and Lash of Pain!",
     talent = { name = "Improved Bane of Agony", rank = "1/2", tree = "affliction", why = "WoW Forever Tier 3 Affliction (2 ranks): Increases the damage done by your Bane of Agony spell." },
     talentNote = "Improved Bane of Agony (1/2) - AFFLICTION Tree.",
-    gearTip = "Greater Magic Wand remains excellent, but keep an eye out for Shadowfang Keep caster drops.",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {"Demon Armor (Rank 1)", "Summon Succubus (Quest)", "Ritual of Summoning", "Shadow Bolt (Rank 4)", "Immolate (Rank 3)", "Health Funnel (Rank 2)", "Rain of Fire (Rank 1)"},
     rotation = {"Send Succubus in with Lash of Pain (huge damage burst)", "Instant Corruption -> Bane of Agony", "Channel Drain Life or Shoot Wand", "Finish with Drain Soul for mana refund"},
     dungeonGear = {
@@ -302,7 +302,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Travel west from The Barrens into Stonetalon Mountains. Grab the Flight Path at Sun Rock Retreat. Complete 'Avenge My Village' and kill Grimtotem Tauren.",
     talent = { name = "Improved Bane of Agony", rank = "2/2", tree = "affliction", why = "WoW Forever Tier 3 Affliction (2 ranks): Increases the damage done by your Bane of Agony spell." },
     talentNote = "Improved Bane of Agony (2/2) - AFFLICTION Tree.",
-    gearTip = "Look for 'Of Shadow Wrath' gear (+Shadow Spell Damage). It scales every single tick of Corruption and Drain Life!",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {},
     rotation = {"Succubus attacks -> Instant Corruption -> Agony -> Drain Life -> Wand."},
     dungeonGear = {
@@ -316,7 +316,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Fly to The Sepulcher and run east into Hillsbrad Foothills! Reach Tarren Mill and secure the Flight Path. Pick up 'The Battle for Hillsbrad' (Town Hall & Farmers) and 'Elixir of Suffering'.",
     talent = { name = "Fel Concentration", rank = "1/3", tree = "affliction", why = "WoW Forever Tier 3 Affliction (3 ranks): 23%/46%/70% chance to avoid interruption while channeling Drain Life, Drain Soul, Drain Mana, and Wrack." },
     talentNote = "Fel Concentration (1/3) - AFFLICTION Tree.",
-    gearTip = "Check Tarren Mill vendors for high stamina cloth gear.",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {"Create Healthstone (Lesser)", "Drain Life (Rank 2)", "Curse of Tongues (Rank 1)", "Eye of Kilrogg", "Curse of Weakness (Rank 3)"},
     rotation = {"Instant Corruption -> Agony -> Drain Life directly tanking mobs in face."},
     dungeonGear = {
@@ -330,7 +330,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "MAX FEL CONCENTRATION! You now have a 70% chance to resist pushback while channeling Drain Life. Mobs hitting you in melee will rarely interrupt your heal-drain! You can now face-tank enemies comfortably.",
     talent = { name = "Fel Concentration", rank = "2/3", tree = "affliction", why = "WoW Forever Tier 3 Affliction (3 ranks): 23%/46%/70% chance to avoid interruption while channeling Drain Life, Drain Soul, Drain Mana, and Wrack." },
     talentNote = "Fel Concentration (2/3) - AFFLICTION Tree.",
-    gearTip = "Shadow Spell Damage pieces make Drain Life heal for more!",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {},
     rotation = {"Instant Corruption -> Bane of Agony", "Face tank the mob while channeling Drain Life", "Drain Life heals you for all damage taken", "Finish with Drain Soul -> Life Tap back to full mana!"},
     dungeonGear = {
@@ -344,7 +344,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Complete 'The Battle for Hillsbrad' part 1 and 2 at Hillsbrad Fields. Kill Hillsbrad Farmers, Clerics, and Miners. Train Life Tap (Rank 4) and Corruption (Rank 4) in Undercity.",
     talent = { name = "Fel Concentration", rank = "3/3", tree = "affliction", why = "WoW Forever Tier 3 Affliction (3 ranks): 23%/46%/70% chance to avoid interruption while channeling Drain Life, Drain Soul, Drain Mana, and Wrack." },
     talentNote = "Fel Concentration (3/3) - AFFLICTION Tree.",
-    gearTip = "Shadowfang Keep drop: Robes of Arugal or Necrology Robes.",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {"Corruption (Rank 3)", "Drain Mana (Rank 1)", "Life Tap (Rank 3)"},
     rotation = {"Amplify Curse + Bane of Agony -> Instant Corruption -> Drain Life -> Wand."},
     dungeonGear = {
@@ -358,7 +358,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Head south through The Barrens into Thousand Needles! Climb the elevator and reach Freewind Post on top of the canyon needle. Grab the Flight Path! Pick up 'Alien Egg', 'Wind Rider', and 'A Different Approach'.",
     talent = { name = "Amplify Curse", rank = "1/1", tree = "affliction", why = "Increases the effect of your next Bane of Agony by 50% or Curse of Exhaustion by 20% on a 3 min cooldown." },
     talentNote = "Amplify Curse (1/1) - AFFLICTION Tree.",
-    gearTip = "Freewind Post quests reward solid leather/cloth and green rings.",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {},
     rotation = {"Instant Corruption -> Bane of Agony -> Drain Life", "Watch for Nightfall 'Shadow Trance' buff -> Immediately fire INSTANT SHADOW BOLT!"},
     dungeonGear = {
@@ -372,7 +372,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Max out Nightfall to 2/2 (4% proc chance per tick). With Corruption and Drain Life ticking simultaneously, Nightfall procs frequently! Pick up 'Blackfathom Villainy' for Blackfathom Deeps - the quest reward is the legendary GRAVESTONE SCEPTER (29.0 DPS Shadow Wand!).",
     talent = { name = "Nightfall", rank = "1/2", tree = "affliction", why = "Gives your Corruption and Drain Life ticks a 2% / 4% chance to grant an instant-cast Shadow Bolt." },
     talentNote = "Nightfall (1/2) - AFFLICTION Tree.",
-    gearTip = "TARGET ITEM: Gravestone Scepter (BFD quest: Blackfathom Villainy). Best wand in the entire 20-40 bracket!",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {"Demon Armor (Rank 2)", "Curse of Recklessness (Rank 2)"},
     rotation = {"Instant Corruption -> Agony -> Drain Life -> INSTANT Shadow Bolt on proc!"},
     dungeonGear = {
@@ -387,7 +387,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Clear the Galak Centaur camps in the Thousand Needles basin. Complete 'Assault on Freewind Post'. Turn in 'Alien Egg'.",
     talent = { name = "Nightfall", rank = "2/2", tree = "affliction", why = "Gives your Corruption and Drain Life ticks a 2% / 4% chance to grant an instant-cast Shadow Bolt." },
     talentNote = "Nightfall (2/2) - AFFLICTION Tree.",
-    gearTip = "Ensure your bags have 8-10 Soul Shards for dungeon groups or elite quests.",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {},
     rotation = {"Tag from 33 yards with Instant Corruption -> Agony -> Drain Life."},
     dungeonGear = {
@@ -401,7 +401,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Travel back to Hillsbrad Foothills. Clear Durnholde Keep and the Syndicate camps for 'The Battle for Hillsbrad' finale and 'Prison Break in Durnholde'.",
     talent = { name = "Grim Reach", rank = "1/2", tree = "affliction", why = "WoW Forever Tier 2 Affliction: Increases the range of your Affliction spells by 10%/20%." },
     talentNote = "Grim Reach (1/2) - AFFLICTION Tree.",
-    gearTip = "Silk bandages from First Aid (150) heal for 400 HP over 8 sec.",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {"Banish (Rank 1)", "Bane of Agony (Rank 3)", "Shadow Bolt (Rank 5)", "Create Firestone (Lesser)", "Create Soulstone (Lesser)", "Immolate (Rank 4)"},
     rotation = {"36yd Corruption -> 36yd Agony -> Drain Life -> Instant Shadow Bolt on Nightfall proc."},
     dungeonGear = {
@@ -415,7 +415,7 @@ WoWGuide_Warlock.levels = {
     zoneInstructions = "Head east into the Shimmering Flats! Grab the quests at the Gnomish and Goblin race track: 'Rocket Car Parts', 'Salt Flat Venom', and 'Hardened Shells'. Prepare for Level 30 Felhunter quest!",
     talent = { name = "Grim Reach", rank = "2/2", tree = "affliction", why = "WoW Forever Tier 2 Affliction: Increases the range of your Affliction spells by 10%/20%." },
     talentNote = "Grim Reach (2/2) - AFFLICTION Tree.",
-    gearTip = "Sell full bags at Mirage Raceway vendor.",
+    gearTip = "WoW Forever: DoTs can crit! Stack Bane of Agony + Corruption + Utility Curse, then Drain Life (pushback-protected by Fel Concentration) or Wand.",
     trainerTrain = {},
     rotation = {"Instant Corruption -> Bane of Agony -> Drain Life -> Drain Soul on kill."},
     dungeonGear = {
@@ -431,7 +431,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Siphon Life (1/1) - AFFLICTION Tree.",
     gearTip = "Shadow Damage gear makes Siphon Life tick for massive healing numbers.",
     trainerTrain = {"Summon Felhunter (Quest)", "Enslave Demon (Rank 1)", "Drain Life (Rank 3)", "Drain Soul (Rank 3)", "Hellfire (Rank 1)"},
-    rotation = {"Instant Corruption -> Siphon Life -> Bane of Agony (all 3 DoTs ticking!)", "Channel Drain Life -> Double healing incoming!", "Health stays near 100% while mob melts", "Life Tap to full mana -> Next mob immediately!"},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
       { name = "Hypnotic Blade", quality = "rare", source = "Scarlet Monastery (Library)", stats = "+8 Intellect, +3 Spirit, +9 Spell Damage", tip = "Incredible caster one-hand dagger." },
     }
@@ -446,7 +446,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Suppression (1/5) - AFFLICTION Tree.",
     gearTip = "Heavy Silk Bandages heal for 640 HP.",
     trainerTrain = {},
-    rotation = {"Multi-dot: Dot Mob A (Corruption + Siphon + Agony), Dot Mob B, Drain Life Mob A."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -460,7 +460,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Suppression (2/5) - AFFLICTION Tree.",
     gearTip = "Look for 'Of Shadow Wrath' shoulders and belts.",
     trainerTrain = {"Curse of the Elements (Rank 1)", "Fear (Rank 2)", "Shadow Ward (Rank 1)"},
-    rotation = {"Corruption -> Siphon Life -> Agony -> Drain Life -> Instant Shadow Bolt on proc."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -474,7 +474,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Suppression (3/5) - AFFLICTION Tree.",
     gearTip = "Shadowprey Village has fishing vendors and fish quests.",
     trainerTrain = {},
-    rotation = {"Multi-dot centaur camps with Siphon Life + Corruption."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -488,7 +488,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Improved Drain Life (1/5) - AFFLICTION Tree.",
     gearTip = "Keep PvP trinket or healthstone ready on Grom'gol's contested roads.",
     trainerTrain = {"Create Healthstone (Rank 3)", "Corruption (Rank 4)", "Searing Pain (Rank 2)", "Rain of Fire (Rank 2)"},
-    rotation = {"Corruption -> Siphon Life -> Agony -> Drain Life -> Wand."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -502,7 +502,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Shadow Mastery (1/5) - AFFLICTION Tree.",
     gearTip = "Robes of Arugal or Robe of the Lich (from Razorfen Downs).",
     trainerTrain = {},
-    rotation = {"Full 10% boosted DoTs: Siphon Life + Corruption + Agony -> Drain Life face tank!"},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
       { name = "Robe of the Lich", quality = "rare", source = "Razorfen Downs (Amnennar)", stats = "+20 Stamina, +14 Shadow Spell Damage", tip = "Incredible leveling robe for Affliction Warlocks!" },
     }
@@ -517,7 +517,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Shadow Mastery (2/5) - AFFLICTION Tree.",
     gearTip = "Kargath vendor sells level 35+ food, water, and reagents.",
     trainerTrain = {"Demon Armor (Rank 3)", "Shadow Bolt (Rank 6)", "Life Tap (Rank 4)", "Drain Mana (Rank 2)", "Curse of Weakness (Rank 4)", "Create Firestone (Rank 2)"},
-    rotation = {"Siphon Life -> Corruption -> Agony -> Drain Life -> Life Tap."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -531,7 +531,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Shadow Mastery (3/5) - AFFLICTION Tree.",
     gearTip = "Elemental Earth from rock elementals is valuable - hold for AH sale.",
     trainerTrain = {},
-    rotation = {"Siphon Life -> Corruption -> Agony -> Drain Life face-tank."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -545,7 +545,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Shadow Mastery (4/5) - AFFLICTION Tree.",
     gearTip = "Stonard innkeeper and flight path make Swamp of Sorrows easy to traverse.",
     trainerTrain = {"Create Soulstone (Rank 3)", "Bane of Agony (Rank 4)", "Drain Life (Rank 4)", "Immolate (Rank 5)"},
-    rotation = {"DoT trifecta -> Drain Life -> Nightfall Shadow Bolt procs."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -559,7 +559,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Shadow Mastery (5/5) - AFFLICTION Tree.",
     gearTip = "Prepare to visit Undercity / Orgrimmar Warlock Trainer at 40.",
     trainerTrain = {},
-    rotation = {"Siphon Life -> Corruption -> Agony -> Drain Life."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Life Tap + Cannibalize / First Aid between pulls for zero downtime!"},
     dungeonGear = {
     }
   },
@@ -573,7 +573,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Dark Pact (1/1) - AFFLICTION Tree.",
     gearTip = "Mount increases questing and travel speed by 60%! Head immediately to Tanaris (Gadgetzan).",
     trainerTrain = {"Howl of Terror (Rank 1)", "Summon Felsteed (FREE Mount!)"},
-    rotation = {"Keep Succubus or Imp on Passive with max mana", "Tag mob with Instant Corruption + Siphon Life + Agony", "Face-tank with Drain Life -> Mob dies", "Tap Dark Pact 2-3 times -> Pet gives you all its mana back -> Immediately pull next mob!"},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
       { name = "Spellshock Wand", quality = "rare", source = "World Drop / AH", stats = "48.8 DPS, Arcane Damage", tip = "Superb wand upgrade around level 40-45." },
     }
@@ -588,7 +588,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Demonic Embrace (1/5) - DEMONOLOGY Tree.",
     gearTip = "Water Pouch bounty gives massive XP and gold.",
     trainerTrain = {},
-    rotation = {"Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact mana from pet."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -602,7 +602,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Demonic Embrace (2/5) - DEMONOLOGY Tree.",
     gearTip = "Nether Force Wand: 40.5 Shadow DPS!",
     trainerTrain = {"Death Coil (Rank 1)", "Corruption (Rank 5)", "Banish (Rank 2)", "Curse of Recklessness (Rank 3)"},
-    rotation = {"DoT -> Drain Life -> Nether Force Wand finishes."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
       { name = "Nether Force Wand", quality = "rare", source = "Tanaris Quest Reward", stats = "40.5 DPS, Shadow Damage", tip = "Massive wand upgrade in Tanaris." },
     }
@@ -617,7 +617,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Demonic Embrace (3/5) - DEMONOLOGY Tree.",
     gearTip = "Camp Mojache has leatherworking and tailoring trainers.",
     trainerTrain = {},
-    rotation = {"Siphon Life -> Corruption -> Agony -> Drain Life -> Dark Pact pet mana."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -631,7 +631,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Demonic Embrace (4/5) - DEMONOLOGY Tree.",
     gearTip = "Hinterlands quests reward exceptional blue items for casters.",
     trainerTrain = {"Curse of Shadow (Rank 1)", "Shadow Bolt (Rank 7)"},
-    rotation = {"Full DoTs -> Drain Life -> Dark Pact."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -645,7 +645,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Demonic Embrace (5/5) - DEMONOLOGY Tree.",
     gearTip = "Zul'Farrak run: Zum'rah's Vexing Cane (+Spell Damage staff).",
     trainerTrain = {},
-    rotation = {"DoTs -> Drain Life -> Dark Pact", "If in danger: Pop Fel Domination -> Summon Voidwalker -> Pop Sacrifice for 1200 HP shield!"},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
       { name = "Zum'rah's Vexing Cane", quality = "rare", source = "Witch Doctor Zum'rah (Zul'Farrak)", stats = "+10 Stamina, +21 Shadow Spell Damage", tip = "Premier Warlock staff from ZF!" },
     }
@@ -660,7 +660,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Improved Voidwalker (1/3) - DEMONOLOGY Tree.",
     gearTip = "Thorium Brotherhood reputation starts here.",
     trainerTrain = {"Create Healthstone (Greater)", "Create Soulstone (Greater)", "Demon Armor (Rank 4)", "Drain Life (Rank 5)", "Life Tap (Rank 5)", "Drain Soul (Rank 4)"},
-    rotation = {"Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -674,7 +674,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Improved Voidwalker (2/3) - DEMONOLOGY Tree.",
     gearTip = "Vendor gray drops in Camp Mojache.",
     trainerTrain = {},
-    rotation = {"Multi-dot harpies and drain tank."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -688,7 +688,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Improved Voidwalker (3/3) - DEMONOLOGY Tree.",
     gearTip = "Prepare soul shards and reagents for your level 50 class quest.",
     trainerTrain = {"Bane of Agony (Rank 5)", "Soul Fire (Rank 1)", "Immolate (Rank 6)", "Searing Pain (Rank 3)", "Rain of Fire (Rank 3)"},
-    rotation = {"Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -702,7 +702,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Intellect (1/5) - DEMONOLOGY Tree.",
     gearTip = "Blasted Lands buff consumables grant +25 Stamina or +25 Intellect for 1 hour!",
     trainerTrain = {},
-    rotation = {"DoT -> Drain Life -> Dark Pact. Multi-pull beasts safely."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -716,7 +716,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Intellect (2/5) - DEMONOLOGY Tree.",
     gearTip = "Un'Goro Soil and Bloodpetal Sprouts are needed for quests.",
     trainerTrain = {"Inferno (Quest)", "Corruption (Rank 6)", "Drain Mana (Rank 3)", "Curse of Weakness (Rank 5)"},
-    rotation = {"Send Succubus -> Corruption -> Siphon Life -> Agony", "Face tank Pterodactyls and Raptors with Drain Life", "Drain pet mana with Dark Pact -> Mob dead -> Pull next dinosaur immediately!"},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -730,7 +730,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Domination (1/1) - DEMONOLOGY Tree.",
     gearTip = "Look for Devilsaur spawns - call out to high-level guildies or skinners.",
     trainerTrain = {},
-    rotation = {"DoT trifecta -> Drain Life -> Dark Pact."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -744,7 +744,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Intellect (3/5) - DEMONOLOGY Tree.",
     gearTip = "Corrupted flowers in Felwood provide Whipper Root Tubers (instant heal!).",
     trainerTrain = {"Shadow Bolt (Rank 8)"},
-    rotation = {"Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -758,7 +758,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Intellect (4/5) - DEMONOLOGY Tree.",
     gearTip = "Borean Mantle from world drop or Scholomance prep.",
     trainerTrain = {},
-    rotation = {"Drain Life -> Dark Pact -> Drain Soul."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -772,7 +772,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Intellect (5/5) - DEMONOLOGY Tree.",
     gearTip = "Cauldron quest turn-ins grant gigantic lump-sum XP payouts!",
     trainerTrain = {"Create Soulstone (Major)", "Demon Armor (Rank 5)", "Drain Life (Rank 6)", "Hellfire (Rank 2)"},
-    rotation = {"Siphon Life -> Corruption -> Agony -> Drain Life face tank."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -786,7 +786,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Stamina (1/5) - DEMONOLOGY Tree.",
     gearTip = "Winterfall Furbolgs drop Firewater and Ekos (valuable raid consumables).",
     trainerTrain = {},
-    rotation = {"DoT trifecta -> Drain Life -> Dark Pact pet mana."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -800,7 +800,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Master Summoner (1/2) - DEMONOLOGY Tree.",
     gearTip = "Collect Argent Dawn Valor Tokens from scourge mobs.",
     trainerTrain = {"Life Tap (Rank 6)", "Fear (Rank 3)", "Immolate (Rank 7)", "Rain of Fire (Rank 4)"},
-    rotation = {"Siphon Life -> Corruption -> Agony -> Drain Life face-tank."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -814,7 +814,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Master Summoner (2/2) - DEMONOLOGY Tree.",
     gearTip = "Blackrock Mountain dungeons: BRD, LBRS, Stratholme.",
     trainerTrain = {},
-    rotation = {"DoTs -> Drain Life -> Dark Pact -> Drain Soul."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -828,7 +828,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Stamina (2/5) - DEMONOLOGY Tree.",
     gearTip = "Scholomance: Necropile Raiment set pieces.",
     trainerTrain = {"Create Healthstone (Major)", "Bane of Agony (Rank 6)", "Banish (Rank 3)", "Drain Soul (Rank 5)"},
-    rotation = {"Curse of Shadows / Elements in dungeons -> Shadow Bolt / Corruption."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
       { name = "Skibi's Pendant", quality = "rare", source = "Scholomance", stats = "+15 Intellect, +5 Spirit, +14 Spell Damage", tip = "Superb neck piece." },
     }
@@ -843,7 +843,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Stamina (3/5) - DEMONOLOGY Tree.",
     gearTip = "Collect 300 gold or prep materials for Epic Dreadsteed quest line at Level 60!",
     trainerTrain = {},
-    rotation = {"Siphon Life -> Corruption -> Agony -> Drain Life -> Dark Pact."},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
     }
   },
@@ -857,7 +857,7 @@ WoWGuide_Warlock.levels = {
     talentNote = "Fel Stamina (4/5) - DEMONOLOGY Tree.",
     gearTip = "Crown of the Ogre King, Robe of the Void (Crafted Tailoring 300), Briarwood Reed, Rod of the Ogre Magi.",
     trainerTrain = {"Bane of Doom (Rank 1)", "Corruption (Rank 7)", "Shadow Bolt (Rank 9)", "Ritual of Doom", "Summon Dreadsteed (Epic Mount Quest)", "Demon Armor (Rank 6)", "Immolate (Rank 8)"},
-    rotation = {"Solo Drain Tank: Corruption -> Siphon Life -> Agony -> Drain Life -> Dark Pact", "Raid Boss: Curse of the Elements / Shadows -> Corruption (if debuff slot allows) -> Shadow Bolt spam"},
+    rotation = {"Send Voidwalker/Succubus -> Instant Corruption + Siphon Life + Bane of Agony (all 3 DoTs rolling!)", "Channel Drain Life (boosted by Improved Drains & Fel Concentration) -> fire instant Shadow Bolt on Nightfall proc", "Tap Dark Pact / Life Tap to convert pet mana or HP into full mana -> pull next mob with zero drinking!"},
     dungeonGear = {
       { name = "Robe of the Void", quality = "epic", source = "Tailoring (Skill 300)", stats = "+14 Stamina, +46 Shadow Spell Damage, Use: Heal 1200", tip = "The ultimate classic Warlock chestpiece!" },
       { name = "Briarwood Reed", quality = "rare", source = "Jed Runewatcher (UBRS)", stats = "Equip: +29 Spell Damage", tip = "Essential pre-raid BiS trinket!" },

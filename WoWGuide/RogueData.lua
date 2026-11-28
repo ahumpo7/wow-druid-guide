@@ -290,7 +290,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Dual wield hit penalty is reduced. Working toward +5% hit chance.",
     gearTip = "Always carry 1-2 vials of Thistle Tea for emergency 100 energy bursts.",
     trainerTrain = {"Poisons (Quest)", "Instant Poison (Rank 1)", "Crippling Poison (Rank 1)", "Distract", "Stealth (Rank 2)", "Backstab (Rank 2)"},
-    rotation = {"ALWAYS KEEP INSTANT POISON APPLIED TO MAIN HAND & OFF HAND!", "Every auto-attack now has a 20% chance to proc 22 bonus nature damage!", "Slice and Dice increases poison application rate by 30%!"},
+    rotation = {"Coat both blades with Instant Poison (stacks with sharpening stones in WoW Forever!)", "Sinister Strike -> keep Slice and Dice (+20-30% haste) active 100%", "Hit Riposte the instant you Parry for huge cheap damage + 6s Disarm! Combo points stick across target swaps."},
     dungeonGear = {
       { name = "Feet of the Lynx", quality = "rare", source = "World Drop / AH", stats = "+8 Agility, +3 Strength", tip = "Best boots in Classic at Level 19-20." },
     }
@@ -305,7 +305,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Fewer missed Sinister Strikes and auto-attacks.",
     gearTip = "Look for 'Of the Tiger' (+Agi, +Str) or 'Of the Monkey' (+Agi, +Stam).",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte on parry -> Eviscerate."},
+    rotation = {"Coat both blades with Instant Poison (stacks with sharpening stones in WoW Forever!)", "Sinister Strike -> keep Slice and Dice (+20-30% haste) active 100%", "Hit Riposte the instant you Parry for huge cheap damage + 6s Disarm! Combo points stick across target swaps."},
     dungeonGear = {
     }
   },
@@ -319,7 +319,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Hit chance continues scaling.",
     gearTip = "Distract stops wandering guards and turns them around for easy stealth openers.",
     trainerTrain = {"Vanish (Rank 1)", "Sinister Strike (Rank 4)", "Garrote (Rank 2)"},
-    rotation = {"Distract patrols -> Ambush/Sinister Strike -> Slice and Dice -> Riposte."},
+    rotation = {"Coat both blades with Instant Poison (stacks with sharpening stones in WoW Forever!)", "Sinister Strike -> keep Slice and Dice (+20-30% haste) active 100%", "Hit Riposte the instant you Parry for huge cheap damage + 6s Disarm! Combo points stick across target swaps."},
     dungeonGear = {
       { name = "Wolfclaw Gloves", quality = "rare", source = "World Drop / AH", stats = "+6 Agility, +6 Stamina, +5 Strength", tip = "Superb rogue physical gloves." },
     }
@@ -334,7 +334,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Yellow ability attacks will almost never miss same-level mobs.",
     gearTip = "Brawler Gloves (+8 Strength, +7 Stamina).",
     trainerTrain = {},
-    rotation = {"Remorseless opener -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Coat both blades with Instant Poison (stacks with sharpening stones in WoW Forever!)", "Sinister Strike -> keep Slice and Dice (+20-30% haste) active 100%", "Hit Riposte the instant you Parry for huge cheap damage + 6s Disarm! Combo points stick across target swaps."},
     dungeonGear = {
     }
   },
@@ -348,7 +348,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Yellow attacks are hit-capped for leveling.",
     gearTip = "Check Tarren Mill vendors for Silk Bandages.",
     trainerTrain = {"Shank (Rank 1)", "Eviscerate (Rank 4)", "Mind-numbing Poison (Rank 1)", "Pick Pocket (Rank 2)"},
-    rotation = {"Apply Instant Poison II -> Sinister Strike -> Slice and Dice -> Riposte."},
+    rotation = {"Open with Cheap Shot / Sinister Strike -> activate Slice and Dice", "Weave Shank (learned at 24) on cooldown for off-hand energy return + extra poison procs!", "Press Riposte immediately on Parry -> Eviscerate at 4-5 Combo Points (sticky CP carry over to next mob!)"},
     dungeonGear = {
     }
   },
@@ -362,7 +362,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Building toward +50% off-hand damage bonus.",
     gearTip = "Humbert's Helm (Hillsbrad drop) or Engineering goggles.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Open with Cheap Shot / Sinister Strike -> activate Slice and Dice", "Weave Shank (learned at 24) on cooldown for off-hand energy return + extra poison procs!", "Press Riposte immediately on Parry -> Eviscerate at 4-5 Combo Points (sticky CP carry over to next mob!)"},
     dungeonGear = {
       { name = "Triprunner Dungarees", quality = "rare", source = "Quest: Rig Wars (Gnomeregan)", stats = "+18 Agility, +6 Stamina, +3 Strength", tip = "God-tier leather pants for the 25-40 bracket!" },
     }
@@ -377,7 +377,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Off-hand auto-attacks hit noticeably harder.",
     gearTip = "Cheap Shot provides 4 seconds of free damage before mob can touch you.",
     trainerTrain = {"Cheap Shot (Rank 1)", "Rupture (Rank 1)", "Kick (Rank 2)"},
-    rotation = {"Open with CHEAP SHOT (4 sec stun + 2 combo points from Stealth!)", "Cast Slice and Dice immediately", "Sinister Strike spam -> Riposte on parry -> Eviscerate"},
+    rotation = {"Open with Cheap Shot / Sinister Strike -> activate Slice and Dice", "Weave Shank (learned at 24) on cooldown for off-hand energy return + extra poison procs!", "Press Riposte immediately on Parry -> Eviscerate at 4-5 Combo Points (sticky CP carry over to next mob!)"},
     dungeonGear = {
     }
   },
@@ -391,7 +391,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Off-hand damage scaling rapidly.",
     gearTip = "Splintertree Post flight path connects to Crossroads and Orgrimmar.",
     trainerTrain = {},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."},
+    rotation = {"Open with Cheap Shot / Sinister Strike -> activate Slice and Dice", "Weave Shank (learned at 24) on cooldown for off-hand energy return + extra poison procs!", "Press Riposte immediately on Parry -> Eviscerate at 4-5 Combo Points (sticky CP carry over to next mob!)"},
     dungeonGear = {
     }
   },
@@ -405,7 +405,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "One point away from full +50% off-hand damage.",
     gearTip = "Syndicate lockboxes level Lockpicking to 125-150.",
     trainerTrain = {"Instant Poison (Rank 2)", "Ambush (Rank 2)", "Sinister Strike (Rank 5)"},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte -> Eviscerate."},
+    rotation = {"Open with Cheap Shot / Sinister Strike -> activate Slice and Dice", "Weave Shank (learned at 24) on cooldown for off-hand energy return + extra poison procs!", "Press Riposte immediately on Parry -> Eviscerate at 4-5 Combo Points (sticky CP carry over to next mob!)"},
     dungeonGear = {
     }
   },
@@ -419,7 +419,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Next level is Blade Flurry - the premier multi-target physical cooldown!",
     gearTip = "Mirage Raceway vendors sell repair and poison reagents.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Open with Cheap Shot / Sinister Strike -> activate Slice and Dice", "Weave Shank (learned at 24) on cooldown for off-hand energy return + extra poison procs!", "Press Riposte immediately on Parry -> Eviscerate at 4-5 Combo Points (sticky CP carry over to next mob!)"},
     dungeonGear = {
     }
   },
@@ -433,7 +433,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Combine Blade Flurry + Evasion to wipe out double pulls effortlessly.",
     gearTip = "Tigerstrike Mantle (+8 Agility, +7 Stamina) cloak.",
     trainerTrain = {"Kidney Shot (Rank 1)", "Deadly Poison (Rank 1)", "Feint (Rank 2)", "Gouge (Rank 3)"},
-    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% haste + cleave both!)", "Sinister Strike -> Slice and Dice (+30% more haste = +50% total attack speed!)", "Riposte on parry -> Watch both mobs disintegrate!"},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Sword of Omen", quality = "rare", source = "Scarlet Monastery Quest", stats = "22.2 DPS, Speed 2.20, +7 Str, +5 Agi", tip = "Premier quest sword for Combat Rogues!" },
     }
@@ -448,7 +448,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Hack and Slash (1/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     gearTip = "Heavy Silk Bandages keep downtime to 0.",
     trainerTrain = {},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Blade Flurry on double pulls."},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -462,7 +462,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Hack and Slash (2/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     gearTip = "Hammerfall vendors sell level 35+ gear and poison reagents.",
     trainerTrain = {"Eviscerate (Rank 5)", "Garrote (Rank 3)", "Wound Poison (Rank 1)"},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -476,7 +476,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Hack and Slash (3/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     gearTip = "Centaur ears and bones give great XP turn-ins.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -490,7 +490,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Hack and Slash (4/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     gearTip = "Always keep 10-20 Blinding Powders in your bags.",
     trainerTrain = {"Blind (Rank 1)", "Sprint (Rank 2)", "Distract (Rank 2)"},
-    rotation = {"Blind add if two mobs attack -> Focus down primary target", "Or Blind target -> Step back -> Apply bandage -> Re-open with Cheap Shot!"},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -504,7 +504,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Hack and Slash (5/5) - works with Swords, Axes, Maces, or Daggers in WoW Forever!",
     gearTip = "Check AH for Vanquisher's Sword or Black Menace.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Extra attacks proc constantly!"},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -518,7 +518,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Weapon skill reduces glancing blow penalty against higher-level mobs.",
     gearTip = "Slice and Dice Rank 2 duration increased.",
     trainerTrain = {"Sinister Strike (Rank 6)", "Instant Poison (Rank 3)", "Rupture (Rank 2)"},
-    rotation = {"Slice and Dice Rank 2 (+30% attack speed!) -> Sinister Strike -> Riposte."},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -532,7 +532,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Massive mathematical DPS increase in Classic WoW.",
     gearTip = "Elemental Earth sells for high gold on AH.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -546,7 +546,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Direct damage multiplier to your primary spenders.",
     gearTip = "Save gold for Level 40 mount (approx 90g with honored reputation).",
     trainerTrain = {"Shank (Rank 2)", "Deadly Poison (Rank 2)", "Ambush (Rank 3)", "Backstab (Rank 3)"},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -560,7 +560,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Next level is Adrenaline Rush - the ultimate physical burst cooldown!",
     gearTip = "Visit bank to collect Mount gold.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"Pull 2 mobs -> Pop Blade Flurry (+20% speed + cleave both!)", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -574,7 +574,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Macro: /cast Blade Flurry /cast Adrenaline Rush for legendary boss and elite melting!",
     gearTip = "Equip your skeletal warhorse mount. Head immediately to Gadgetzan.",
     trainerTrain = {"Safe Fall", "Eviscerate (Rank 6)", "Mount Riding"},
-    rotation = {"For elites or pack pulls: Pop Blade Flurry + ADRENALINE RUSH", "Spam Sinister Strike every second -> Slice and Dice -> Riposte", "Watch entire packs of mobs melt in 10 seconds flat!"},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Vanquisher's Sword", quality = "rare", source = "Quest: Bring the Light (RFD)", stats = "30.6 DPS, Speed 2.10, +28 Attack Power", tip = "Guaranteed quest sword upgrade at Level 40-45!" },
     }
@@ -589,7 +589,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Combat tree core complete. Now moving to Assassination for Crit!",
     gearTip = "Water pouches give great gold and XP turn-in.",
     trainerTrain = {},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -603,7 +603,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Stacking passive crit for physical strikes.",
     gearTip = "Camp Mojache vendors sell level 40+ reagents.",
     trainerTrain = {"Vanish (Rank 2)", "Garrote (Rank 4)", "Kick (Rank 3)"},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -617,7 +617,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Crit chance continues climbing.",
     gearTip = "Heavy Silk / Mageweave bandages.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -631,7 +631,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "+3% passive crit active.",
     gearTip = "Revantusk troll quests give incredible XP and blue agility rewards.",
     trainerTrain = {"Sinister Strike (Rank 7)", "Instant Poison (Rank 4)", "Mind-numbing Poison (Rank 2)"},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -645,7 +645,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "One point away from full +5% Malice.",
     gearTip = "THRASH BLADE: 39.4 DPS, Speed 2.70, Chance on hit: 1 extra attack! The best leveling sword in Vanilla WoW!",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Thrash Blade", quality = "rare", source = "Quest: Corruption of Earth and Seed (Maraudon)", stats = "66-124 Dmg, 39.4 DPS, Speed 2.70, Extra Attack Proc", tip = "Undisputed #1 leveling sword in Classic WoW!" },
     }
@@ -660,7 +660,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Crits trigger Remorseless Attacks and huge burst.",
     gearTip = "Thorium Point quests give great armor upgrades.",
     trainerTrain = {"Deadly Poison (Rank 3)", "Rupture (Rank 3)", "Feint (Rank 3)"},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -674,7 +674,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Starts building free combo point resets.",
     gearTip = "Mageweave bandages heal for 1,148 HP.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Eviscerate -> Combo point refunds."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -688,7 +688,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "40% combo point refund on every finisher.",
     gearTip = "Blasted Lands Agility buffs grant +25 Agility (+50 AP / +0.8% crit) for 1 hour!",
     trainerTrain = {"Eviscerate (Rank 7)", "Ambush (Rank 4)"},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -702,7 +702,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Combines with Relentless Strikes on next level for infinite energy loops.",
     gearTip = "Blackstone Ring (Princess Theradras in Maraudon) provides +20 AP and +1% Hit!",
     trainerTrain = {},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Eviscerate -> Instant 1 CP refund!"},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Blackstone Ring", quality = "rare", source = "Princess Theradras (Maraudon)", stats = "+6 Stamina, +20 Attack Power, +1% Hit", tip = "BiS leveling ring!" },
     }
@@ -717,7 +717,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "5-point Slice and Dice or Eviscerate refunds 25 energy + 60% chance for 1 combo point!",
     gearTip = "Un'Goro raptors and gorillas are great for Skinning (thick leather/rugged leather).",
     trainerTrain = {"Kidney Shot (Rank 2)", "Crippling Poison (Rank 2)", "Garrote (Rank 5)"},
-    rotation = {"Sinister Strike to 5 Combo Points", "Cast Eviscerate -> Instant 25 energy refunded + 1 combo point granted!", "Immediately cast Slice and Dice or Sinister Strike with refunded energy!"},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -731,7 +731,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Universal damage increase against virtually all leveling mobs.",
     gearTip = "Devilsaur Leather from devilsaurs in Un'Goro is used for BiS raid gloves and legs.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -745,7 +745,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "2% flat damage boost.",
     gearTip = "Whipper Root Tubers in Felwood restore 700-900 HP instantly without sharing potion cooldown!",
     trainerTrain = {"Shank (Rank 3)", "Sinister Strike (Rank 8)", "Instant Poison (Rank 5)"},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -759,7 +759,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Building toward +30% crit damage bonus on Sinister Strike.",
     gearTip = "Pickpocket cultists for heavy lockboxes (Lockpicking 200-225).",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -773,7 +773,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Sinister Strike crits hit noticeably harder.",
     gearTip = "Cauldron quest turn-ins grant massive lump-sum XP!",
     trainerTrain = {"Deadly Poison (Rank 4)", "Wound Poison (Rank 2)", "Rupture (Rank 4)"},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -787,7 +787,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "The final stretch to 60 begins!",
     gearTip = "Winterfall Firewater grants +35 Attack Power and enlarges character for 20 min!",
     trainerTrain = {},
-    rotation = {"Cheap Shot -> Slice and Dice -> Sinister Strike -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -801,7 +801,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Nearly maxed crit bonus.",
     gearTip = "Collect Argent Dawn Valor Tokens from undead.",
     trainerTrain = {"Eviscerate (Rank 8)", "Ambush (Rank 5)", "Kick (Rank 4)"},
-    rotation = {"Sinister Strike -> Slice and Dice -> Riposte -> Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
     }
   },
@@ -815,7 +815,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Mirah's Song paired with Thrash Blade forms the iconic Combat Swords leveling duo.",
     gearTip = "MIRAH'S SONG: 39.4 DPS, Speed 1.80, +9 Agi, +9 Str. Best off-hand sword in the game!",
     trainerTrain = {},
-    rotation = {"Sinister Strike crits shred targets -> Slice and Dice -> Riposte."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Mirah's Song", quality = "rare", source = "Quest: Kirtonos the Herald (Scholomance)", stats = "57-87 Dmg, 39.4 DPS, Speed 1.80, +9 Agi, +9 Str", tip = "The ultimate off-hand sword for Combat Rogues!" },
     }
@@ -830,7 +830,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Less combo points spent refreshing Slice and Dice = more 5-point Eviscerates!",
     gearTip = "Hand of Justice trinket (Emperor Dagran Thaurissan in BRD).",
     trainerTrain = {"Sprint (Rank 3)", "Instant Poison (Rank 6)", "Garrote (Rank 6)"},
-    rotation = {"Slice and Dice now lasts longer -> More energy and combo points spent on Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Hand of Justice", quality = "rare", source = "Emperor Dagran Thaurissan (BRD)", stats = "+20 Attack Power, 2% Chance on hit to grant extra attack", tip = "BiS melee trinket throughout entire Classic era!" },
     }
@@ -845,7 +845,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "Slice and Dice lasts up to 27+ seconds.",
     gearTip = "Cadaverous Armor (Scholomance) or Devilsaur 2-piece set.",
     trainerTrain = {},
-    rotation = {"Sinister Strike -> Long Slice and Dice -> Riposte -> 5-CP Eviscerate."},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Cape of the Black Baron", quality = "rare", source = "Baron Rivendare (Stratholme)", stats = "+15 Agility, +20 Attack Power", tip = "BiS rogue cloak!" },
     }
@@ -860,7 +860,7 @@ WoWGuide_Rogue.levels = {
     talentNote = "You are now fully leveled, geared, and raid-ready for Molten Core!",
     gearTip = "Devilsaur Gauntlets & Leggings (2% Hit bonus), Thrash Blade, Mirah's Song, Hand of Justice, Blackhand's Breadth.",
     trainerTrain = {"Sinister Strike (Rank 9)", "Eviscerate (Rank 9)", "Deadly Poison (Rank 5)"},
-    rotation = {"Keep Slice and Dice up 100% of the fight (5-point Slice and Dice lasts 30.5 seconds!)", "Pop Blade Flurry + Adrenaline Rush during boss burn phases", "Spam Sinister Strike -> Use Riposte on parry -> Eviscerate at 5 Combo Points!"},
+    rotation = {"On multi-pulls/elites: Pop Blade Flurry + Adrenaline Rush!", "Sinister Strike + weave Shank on cooldown -> keep Slice and Dice active 100% of the time", "Hit Riposte on Parry -> 5-CP Eviscerate (Hack and Slash procs extra swings with Swords/Axes!)"},
     dungeonGear = {
       { name = "Devilsaur Leggings", quality = "rare", source = "Crafted via Leatherworking (300)", stats = "+12 Stamina, +46 AP, +1% Crit, 2pc: +2% Hit", tip = "Mandatory pre-raid physical DPS armor!" },
       { name = "Devilsaur Gauntlets", quality = "rare", source = "Crafted via Leatherworking (290)", stats = "+9 Stamina, +28 AP, +1% Crit, 2pc: +2% Hit", tip = "Mandatory pre-raid physical DPS gloves!" },
